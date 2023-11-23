@@ -1,0 +1,100 @@
+---
+title: 获取web3交易记录
+api: GET /api/mpc/web3/trans_list
+description: "获取钱包下所有子钱包转账记录，最多返回100条"
+---
+
+#### 请求参数数据结构
+<ParamField query="ids" type="string" required>
+    多`request_id`的字符串，英文逗号分割
+</ParamField>
+
+
+
+#### 响应参数数据结构
+<ResponseField type="object[ ]">
+    <Expandable title="object">
+        <ResponseField name="id" type="integer">Web3交易ID</ResponseField>
+        <ResponseField name="request_id" type="string">交易唯一标识</ResponseField>
+        <ResponseField name="sub_wallet_id" type="integer">子钱包id</ResponseField>
+        <ResponseField name="txid" type="string">交易hash</ResponseField>
+        <ResponseField name="symbol" type="string">交易币种</ResponseField>
+        <ResponseField name="main_chain_symbol" type="string">主链币币名（唯一标识），例：`ETH`</ResponseField>
+        <ResponseField name="amount" type="string">交易金额。-1表示无穷大</ResponseField>
+        <ResponseField name="fee_symbol" type="string">手续费币种，例：ETH</ResponseField>
+        <ResponseField name="fee" type="string">手续费，例：0.00123</ResponseField>
+        <ResponseField name="real_fee" type="string">真实消耗的手续费，例：0.00111</ResponseField>
+        <ResponseField name="created_at" type="long">创建时间时间戳</ResponseField>
+        <ResponseField name="updated_at" type="long">修改时间时间戳</ResponseField>
+        <ResponseField name="address_from" type="string">交易from地址</ResponseField>
+        <ResponseField name="address_to" type="string">交易to地址</ResponseField>
+        <ResponseField name="interactive_contract" type="string">交互合约</ResponseField>
+        <ResponseField name="confirmations" type="integer">区块确认数，例：10</ResponseField>
+        <ResponseField name="input_data" type="string">合约交易的方法参数组成的16进制数据</ResponseField>
+        <ResponseField name="status" type="integer">交易状态: 1100 待签名，1200 支付中，2000 支付完成，2100 审批拒绝，2200 拒绝，2300 交易丢弃，2400 支付失败</ResponseField>
+        <ResponseField name="trans_source" type="integer">交易类型： `1`app, `2`openapi</ResponseField>
+        <ResponseField name="tx_height" type="long">交易完成的区块高度</ResponseField>
+    </Expandable>
+</ResponseField>
+
+
+
+<RequestExample>
+  ```curl cURL
+  curl
+  --url https://openapi.hicoin.vip/api/mpc/web3/trans_list?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data=SWYYr-LBVAmaS0eq8n-CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov-7hsRsVmOhyPqC-JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8-BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht-n_ZcBdxIDt975dbOFUiH-oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ-6cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb-5g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI
+  ```
+</RequestExample>
+
+
+
+<ResponseExample>
+```json
+[
+    {
+        "id":435,
+        "request_id":"0000000003",
+        "sub_wallet_id":1000895,
+        "txid":"0xbc87e486d28df91fe715436415bab38cc1cf5e4b23fbb8497ff688b823c08ba7",
+        "symbol":"",
+        "main_chain_symbol":"HECO",
+        "amount":"0",
+        "fee_symbol":"HECO",
+        "fee":"0.00018",
+        "real_fee":"0.000107277",
+        "created_at":1684220373000,
+        "updated_at":1684222558000,
+        "address_from":"0xd5c2d98BF2d205039F62ee40c9A7ab1B36125d6d",
+        "address_to":"",
+        "confirmations":4,
+        "input_data":"0xca718c65",
+        "interactive_contract":"0xe012F3957226894B1a2a44b3ef5070417a069dC2",
+        "status":2400,
+        "trans_source":2,
+        "tx_height":3120013
+    },
+    {
+        "id":436,
+        "request_id":"0000000003",
+        "sub_wallet_id":1000895,
+        "txid":"0xeab40bf0072c25514bc61fe58e5e36cc082ea7f50ae33f33013dd365beba9438",
+        "symbol":"",
+        "main_chain_symbol":"HECO",
+        "amount":"0",
+        "fee_symbol":"HECO",
+        "fee":"0.00018",
+        "real_fee":"0.000107277",
+        "created_at":1684220373000,
+        "updated_at":1684222558000,
+        "address_from":"0xBDeBecf1fEDc622Cc50dE2F2aD6925D1EE15fCf9",
+        "address_to":"",
+        "confirmations":4,
+        "input_data":"0xca718c65",
+        "interactive_contract":"0x0AabA82E4ba9c2Fdf80B9F8E1AcE885f092B64F0",
+        "status":2400,
+        "trans_source":2,
+        "tx_height":3120113
+    }
+]
+```
+</ResponseExample>

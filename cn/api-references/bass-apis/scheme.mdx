@@ -1,0 +1,45 @@
+---
+title: 对接方案
+---
+
+## I. 概述
+
+为了让公链接入者更便捷、快速的接入ChainUp Custody，我们提供了BaaS服务，以满足公链对接需求，平台基于过往客户的对接经验，梳理了一套对接方案。具体如下：
+
+整个方案共分三个流程：
+
+1. 注册充币地址
+
+2. 用户充币
+
+3. 用户提币
+
+整体对接流程如下
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/apis/bass-flow_cn.png" width="600"/>
+</div>
+
+## II. 注册充币地址
+
+1. 可通过币种名称查询可用地址数量 注：（每次向Custody推送地址条数上限为`100`条，每次推送时会检查Custody剩余的地址可用数是否大于`5000`，如果有5000个地址没有被使用，则不允许注册；接口地址：`/api/v1/address/available`）
+
+2. 向BaaS平台推送币种名称和地址列表，响应成功后及代表注册地址成功, 接口地址：`/api/v1/address/register`。
+
+注：若注册币种的类型为memo类型，则同一个地址只允许注册一次。
+
+## III. 用户充币
+
+1. 第三方钱包监测到地址有充币交易,发起充值通知，通知BaaS系统,  接口地址：`/api/v1/deposit/notify`
+
+2. BaaS返回通知结果
+
+## IV. 用户提币
+
+1. 用户在Custody系统发起提币请求
+
+2. 主链开发者拉取提币列表（**接口地址**：`/api/v1/withdraw/consume`）
+
+3. 上链成功后，向BaaS通知提现结果,BaaS接口响应（**接口地址**: `/api/v1/withdraw/notify`）
+
+注：如遇特殊情况可以撤销提币请求，向BaaS接口推送通知（**接口地址**：`/api/v1/withdraw/cancel`）

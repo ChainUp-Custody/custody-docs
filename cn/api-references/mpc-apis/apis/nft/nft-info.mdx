@@ -1,0 +1,52 @@
+---
+title: 获取NFT信息
+api: GET /api/nft/info
+description: "获取NFT图片，名称等数据"
+---
+
+#### 请求参数数据结构
+<ParamField query="base_symbol" type="long" required>
+    主链币种名称，币种唯一标识，例：`ETH`
+</ParamField>
+<ParamField query="contract_address" type="string" required>
+    NFT币种合约地址
+</ParamField>
+<ParamField query="token_id" type="string">
+    NFT token id
+</ParamField>
+
+
+
+#### 响应参数数据结构
+<ResponseField name="base_symbol" type="string">主链币种名称，币种唯一标识，例：`ETH`</ResponseField>
+<ResponseField name="contract_address" type="string">NFT币种合约地址</ResponseField>
+<ResponseField name="token_id" type="string">NFT token id</ResponseField>
+<ResponseField name="nft_name" type="string">NFT 名称, 不存在时, 使用 "# + tokenId", 如: #1000001</ResponseField>
+<ResponseField name="image" type="string">nft图片或视频url, 或图片base64</ResponseField>
+<ResponseField name="image_type" type="string">nft图片或视频类型, 如：".png", ".mp4"</ResponseField>
+<ResponseField name="is_video" type="bool">是否是视频, `true`: image是视频, 反之不是视频</ResponseField>
+
+
+
+<RequestExample>
+  ```curl cURL
+  curl
+  --url https://openapi.hicoin.vip/api/nft/info?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data=SWYYr-LBVAmaS0eq8n-CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov-7hsRsVmOhyPqC-JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8-BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht-n_ZcBdxIDt975dbOFUiH-oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ-6cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb-5g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI
+  ```
+</RequestExample>
+
+
+
+<ResponseExample>
+```json
+{
+     "base_symbol": "bsc",
+     "contract_address": "0xC2A19349D5f451071C3085B90f531D19F190FF21",
+     "token_id": "75000000000000000281",
+     "nft_name": "#75000000000000000281",
+     "image": "https://ipfs.io/ipfs/QmXCaMVmRWviaFtRpEH7dJXrJav8dsJdGcsj7M8NpgAgPW",
+     "image_type": ".svg",
+     "is_video": false,
+}
+```
+</ResponseExample>

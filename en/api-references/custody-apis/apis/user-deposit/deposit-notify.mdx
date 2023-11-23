@@ -1,0 +1,35 @@
+---
+title: Nonsync callback notification for user deposit
+---
+
+| Description:       | This interface only defines the interface specification, the specific interface needs to be implemented by the developer |
+| :----------------- | ------------------------------------------------------------ |
+| Interface address: | The interface address is provided by the developer and can be configured on the platform by contacting the administrator |
+| Request method:    | POST                                                         |
+
+
+
+**Decrypted Request Parameters**
+
+| Param         | type   | Required | Description                                                  |
+| ------------- | ------ | -------- | ------------------------------------------------------------ |
+| charset       | String | Required | Coding format, no special case, transfer parameter `UTF-8`   |
+| version       | String | Required | Interface version number, no special case,transfer parameter `v2` |
+| side          | String | Required | Notice type, deposit notice: deposit, withdrawal notice: withdraw |
+| notify_time   | string | Required | Notice time                                                  |
+| id            | string | Required | Deposit id                                                   |
+| uid           | string | Required | Deposit user ID                                              |
+| symbol        | string | Required | currency                                                     |
+| amount        | string | Required | Deposit amount                                               |
+| address_to    | string | Required | Depositing address                                           |
+| created_at    | string | Required | Creation time                                                |
+| updated_at    | string | Required | Revision time                                                |
+| txid          | string | Required | Blockchain transaction ID                                    |
+| confirmations | string | Required | Number of blockchain confirmations                           |
+| status        | string | Required | 0 to be confirmed, 1 success, 2 failed, 4 pending KYT verification, 5 pending manual review (KYT risk level too high), 6 Pending manual review (KYT Deposit Circuit Breaker) |
+
+
+
+Return string （note that the return parameter does **not need to be encrypted** here）：
+* `SUCCESS` means SUCCESS
+* `FAILURE` means FAILURE

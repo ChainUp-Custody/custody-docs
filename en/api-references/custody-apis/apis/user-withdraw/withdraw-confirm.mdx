@@ -1,0 +1,44 @@
+---
+title: Second confirmation of withdrawal information
+---
+
+| Description:       | After receiving a withdrawal request, the platform will call the secondary confirmation interface provided by the third party to confirm that the request is a withdrawal request normally initiated by the merchant. This interface only defines the interface specification, the specific interface needs to be implemented by the developer. |
+| :----------------- | ------------------------------------------------------------ |
+| Interface address: | The interface address is provided by the developer and can be configured on the platform by contacting the administrator |
+| Request method:    | POST                                                         |
+
+
+
+**Decrypted Request Parameters**
+
+| Param      | type   | Required | Description                                                  |
+| ---------- | ------ | -------- | ------------------------------------------------------------ |
+| time       | long   | Required | Current timestamp                                            |
+| charset    | String | Required | Coding format, no special case, transfer parameter `UTF-8`   |
+| version    | String | Required | Interface version number, no special case,transfer parameter `v2` |
+| request_id | String | Required | Request unique identity                                      |
+| from_uid   | String | Required | Transfer out user ID                                         |
+| to_address | String | Required | Transfer in user address                                     |
+| amount     | String | Required | Withdrawal amount, including withdrawal service charge; The service charge needs to be configured in the background of the merchant |
+| symbol     | String | Required | Withdrawal currency                                          |
+| check_sum  | String | Required | Random check code. The third party returns this field as it is. The platform considers it successful |
+
+
+
+**Response Data Parameters **
+
+| Param     | type   | Required | Description                          |
+| --------- | ------ | -------- | ------------------------------------ |
+| check_sum | String | Required | Check in request parameter check_sum |
+| time      | String | Optional | time stamp                           |
+
+
+
+<ResponseExample>
+```json
+{
+    "check_sum":"1234",
+    "time":"12345678"
+}
+```
+</ResponseExample>

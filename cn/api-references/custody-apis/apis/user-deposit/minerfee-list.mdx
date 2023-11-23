@@ -1,0 +1,80 @@
+---
+title: 获取归集矿工费
+api: GET /api/v2/billing/syncMinerFeeList
+description: "账户类型的币种充值后需要进行归集，UTXO无归集矿工费费用"
+---
+
+#### 请求参数数据结构
+<ParamField query="time" type="long" required>
+    当前时间戳
+</ParamField>
+<ParamField query="charset" type="string" required>
+    编码格式，无特殊情况，传参数utf-8
+</ParamField>
+<ParamField query="version" type="string" required>
+    接口版本号，无特殊情况，传参数v2
+</ParamField>
+
+<ParamField query="max_id" type="integer">
+    返回大于 id 的 100 条归集矿 工费记录数据
+</ParamField>
+
+
+#### 响应参数数据结构
+<ResponseField type="object[ ]">
+    <Expandable title="object">
+        <ResponseField name="id" type="integer">归集唯一ID</ResponseField>
+        <ResponseField name="symbol" type="string">币种</ResponseField>
+        <ResponseField name="amount" type="string">归集金额</ResponseField>
+        <ResponseField name="fee" type="string">归集手续费</ResponseField>
+        <ResponseField name="created_at" type="long">创建时间</ResponseField>
+        <ResponseField name="updated_at" type="long">修改时间</ResponseField>
+        <ResponseField name="txid" type="string">区块链交易ID</ResponseField>
+        <ResponseField name="confirmations" type="integer">区块链确认数</ResponseField>
+        <ResponseField name="status" type="integer">0待确认，1 成功，2 失败，4 待KYT验证，5 待人工审核(KYT风险等级过高)，6 待人工审核(KYT充值熔断)</ResponseField>
+        <ResponseField name="address_from" type="string">归集发送地址</ResponseField>
+        <ResponseField name="address_to" type="string">归集到帐地址</ResponseField>
+        <ResponseField name="txid_type" type="string">0 链上交易，1 联盟转账交易</ResponseField>
+        <ResponseField name="base_symbol" type="string">主链币名称</ResponseField>
+        <ResponseField name="contract_address" type="string">币种合约地址</ResponseField>
+        <ResponseField name="email" type="string">邮箱</ResponseField>
+    </Expandable>
+</ResponseField>
+
+
+
+<RequestExample>
+  ```curl cURL
+  curl
+  --url https://openapi.hicoin.vip/api/v2/billing/syncMinerFeeList?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data=SWYYr-LBVAmaS0eq8n-CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov-7hsRsVmOhyPqC-JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8-BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht-n_ZcBdxIDt975dbOFUiH-oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ-6cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb-5g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI
+  ```
+</RequestExample>
+
+
+
+<ResponseExample>
+```json
+{ "code":"0",
+  "data":[
+      {
+         "id":1,
+          "symbol":"BTC",
+          "amount":"11",
+          "fee":"0.00111",
+          "created_at":1539050731000,
+          "updated_at":1543483252000,
+          "txid":"",
+          "confirmations":0,
+          "status":2,
+          "address_from":"",
+          "address_to":"",
+          "txid_type":"1",
+          "base_symbol":"",
+          "contract_address":"123",
+          "email":""
+      }
+  ],
+  "msg": "成功"
+  }
+```
+</ResponseExample>

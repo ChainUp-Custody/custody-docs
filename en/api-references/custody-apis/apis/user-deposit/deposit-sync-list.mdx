@@ -1,0 +1,101 @@
+---
+title: Synchronize deposit records
+api: GET /api/v2/billing/syncDepositList
+---
+
+#### Decrypted Request Parameters
+<ParamField query="time" type="long" required>
+    current timestamp
+</ParamField>
+<ParamField query="charset" type="string" required>
+    encoding format, no special case, pass parameter UTF-8
+</ParamField>
+<ParamField query="version" type="string" required>
+    interface version number, no special case, pass parameter v2
+</ParamField>
+
+<ParamField query="max_id" type="string" required>
+    returns 100 records greater than id
+</ParamField>
+
+
+#### Response Data Parameters
+<ResponseField type="object[ ]">
+    <Expandable title="object">
+        <ResponseField name="id" type="integer">deposit unique id</ResponseField>
+        <ResponseField name="uid" type="integer">deposit user id</ResponseField>
+        <ResponseField name="symbol" type="string">currency</ResponseField>
+        <ResponseField name="amount" type="string">deposit amount</ResponseField>
+        <ResponseField name="created_at" type="long">creation time</ResponseField>
+        <ResponseField name="updated_at" type="long">change time</ResponseField>
+        <ResponseField name="txid" type="string">blockchain transaction ID</ResponseField>
+        <ResponseField name="confirmations" type="integer">number of blockchain confirmations</ResponseField>
+        <ResponseField name="address_from" type="string">deposit source address</ResponseField>
+        <ResponseField name="address_to" type="string">depositing account address</ResponseField>
+        <ResponseField name="status" type="integer">0 to be confirmed, 1 success, 2 failed, 4 pending KYT verification, 5 pending manual review (KYT risk level too high), 6 Pending manual review (KYT Deposit Circuit Breaker)</ResponseField>
+    </Expandable>
+</ResponseField>
+
+
+
+<RequestExample>
+  ```curl cURL
+  curl
+  --url https://openapi.hicoin.vip/api/v2/billing/syncDepositList?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data=SWYYr-LBVAmaS0eq8n-CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov-7hsRsVmOhyPqC-JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8-BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht-n_ZcBdxIDt975dbOFUiH-oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ-6cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb-5g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI
+  ```
+</RequestExample>
+
+
+
+<ResponseExample>
+```json
+{
+    "code":"0",
+    "data":[
+        {
+            "withdraw_fee":"0",
+            "symbol":"BTC",
+            "amount":"0.0001",
+            "real_fee":"0",
+            "fee":"0",
+            "address_to":"1CfYiePwcf3mWhLBQH2ac35C7jmE2udQqH",
+            "created_at":1539050731000,
+            "txid":"",
+            "confirmations":0,
+            "address_from":"",
+            "uid":10596,
+            "withdraw_fee_symbol":"BTC",
+            "fee_symbol":"BTC",
+            "saas_status":0,
+            "updated_at":1543483252000,
+            "company_status":2,
+            "id":45325,
+            "request_id":"",
+            "status":2
+        },
+        {
+            "withdraw_fee":"0.0000001",
+            "symbol":"BTC",
+            "amount":"0.0001",
+            "real_fee":"0",
+            "fee":"0.0000001",
+            "address_to":"17m2GM8aRrrnxPt5JhYPJd4qUFqF8rJDop",
+            "created_at":1539065092000,
+            "txid":"",
+            "confirmations":0,
+            "address_from":"",
+            "uid":10595,
+            "withdraw_fee_symbol":"BTC",
+            "fee_symbol":"BTC",
+            "saas_status":1,
+            "updated_at":1543851222000,
+            "company_status":2,
+            "id":45332,
+            "request_id":"",
+            "status":2
+        }
+    ],
+    "msg":"success"
+}
+```
+</ResponseExample>

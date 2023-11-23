@@ -1,0 +1,69 @@
+---
+title: 转账信息异步确认
+api: POST /same-with-withdraw-check-sum
+description: "转账信息异步确认"
+---
+
+#### 请求参数数据结构
+<ParamField query="time" type="long" required>
+    当前时间戳
+</ParamField>
+<ParamField query="charset" type="string" required>
+    编码格式，无特殊情况，传参数utf-8
+</ParamField>
+<ParamField query="version" type="string" required>
+    接口版本号，无特殊情况，传参数v2
+</ParamField>
+
+
+<ParamField query="request_id" type="string" required>
+    请求唯一标识，最多支持64位
+</ParamField>
+<ParamField query="symbol" type="string" required>
+    转账币种，Custody获取币种名称
+</ParamField>
+<ParamField query="amount" type="string" required>
+    转账数量，包含转账手续费
+</ParamField>
+<ParamField query="to" type="string" required>
+    转入商户，目前填写商户`APPID`
+</ParamField>
+<ParamField query="check_sum" type="string" required>
+    随机校验码，第三方原样返回此字段平台认为成功
+</ParamField>
+<ParamField query="remark" type="string">
+    备注字段
+</ParamField>
+
+
+#### 响应参数数据结构
+<Expandable title="object">
+    <ResponseField name="time" type="long">当前时间戳</ResponseField>
+    <ResponseField name="check_sum" type="string">随机校验码，第三方原样返回此字段平台认为成功</ResponseField>
+</Expandable>
+
+
+
+<RequestExample>
+  ```curl cURL
+  curl -X POST \
+  --url https://domain/same-with-withdraw-check-sum?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data=SWYYr-LBVAmaS0eq8n-CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov-7hsRsVmOhyPqC-JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8-BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht-n_ZcBdxIDt975dbOFUiH-oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ-6cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb-5g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI
+  ```
+</RequestExample>
+
+
+
+<ResponseExample>
+```json
+{
+    "code":"0",
+    "data":[
+        {
+            "time":1551429063111,
+            "check_sum":"123124"
+        }
+    ],
+    "msg":"成功"
+}
+```
+</ResponseExample>

@@ -1,0 +1,88 @@
+---
+title: 批量获取提现记录
+api: GET /api/v2/billing/withdrawList
+description: "批量获取提现记录"
+---
+
+#### 请求参数数据结构
+<ParamField query="time" type="long" required>
+    当前时间戳
+</ParamField>
+<ParamField query="charset" type="string" required>
+    编码格式，无特殊情况，传参数utf-8
+</ParamField>
+<ParamField query="version" type="string" required>
+    接口版本号，无特殊情况，传参数v2
+</ParamField>
+
+<ParamField query="ids" type="string" required>
+    多个充值request_id使用逗号隔开，最多100个request_id
+</ParamField>
+
+
+#### 响应参数数据结构
+<ResponseField type="object[ ]">
+    <Expandable title="object">
+        <ResponseField name="request_id" type="string">请求id</ResponseField>
+        <ResponseField name="id" type="integer">提现id</ResponseField>
+        <ResponseField name="uid" type="integer">提现用户id</ResponseField>
+        <ResponseField name="symbol" type="string">币种</ResponseField>
+        <ResponseField name="amount" type="string">提现金额</ResponseField>
+        <ResponseField name="withdraw_fee_symbol" type="string">提现手续费币种</ResponseField>
+        <ResponseField name="withdraw_fee" type="string">提现手续费</ResponseField>
+        <ResponseField name="fee_symbol" type="string">挖矿手续费币种</ResponseField>
+        <ResponseField name="real_fee" type="string">矿工费</ResponseField>
+        <ResponseField name="created_at" type="long">创建时间</ResponseField>
+        <ResponseField name="updated_at" type="long">修改时间</ResponseField>
+        <ResponseField name="address_from" type="string">来源地址</ResponseField>
+        <ResponseField name="address_to" type="string">到账地址</ResponseField>
+        <ResponseField name="txid" type="string">区块链交易ID</ResponseField>
+        <ResponseField name="confirmations" type="integer">区块链确认数</ResponseField>
+        <ResponseField name="saas_status" type="integer">平台审核状态</ResponseField>
+        <ResponseField name="company_status" type="integer">商户审核状态</ResponseField>
+        <ResponseField name="status" type="integer">提现状态: 0 风控审核中，1 支付中，2 审核拒绝，4 失败，5 成功， 6 已撤销，7 待KYT验证， 8 待人工审核(KYT风险等级过高)</ResponseField>
+    </Expandable>
+</ResponseField>
+
+
+
+<RequestExample>
+  ```curl cURL
+  curl
+  --url https://openapi.hicoin.vip/api/v2/billing/withdrawList?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data=SWYYr-LBVAmaS0eq8n-CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov-7hsRsVmOhyPqC-JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8-BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht-n_ZcBdxIDt975dbOFUiH-oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ-6cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb-5g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI
+  ```
+</RequestExample>
+
+
+
+<ResponseExample>
+```json
+{
+    "code":"0",
+    "data":[
+        {
+            "withdraw_fee":"0.4",
+            "symbol":"LTC",
+            "amount":"10",
+            "real_fee":"0",
+            "fee":"0",
+            "address_to":"LhFrA5ZJL15UdRV1uEfFxfdqWJUbBhXpRk1",
+            "created_at":1551429063000,
+            "txid":"",
+            "confirmations":0,
+            "address_from":"",
+            "uid":10739,
+            "withdraw_fee_symbol":"ETH",
+            "fee_symbol":"LTC",
+            "saas_status":0,
+            "updated_at":1551429063000,
+            "company_status":0,
+            "id":48393,
+            "request_id":"123",
+            "status":0
+        }
+    ],
+    "msg":"成功"
+}
+```
+</ResponseExample>

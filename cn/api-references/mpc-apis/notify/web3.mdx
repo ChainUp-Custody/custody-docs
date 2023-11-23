@@ -1,0 +1,34 @@
+---
+title: Web3交易通知
+---
+
+#### 请求参数数据结构
+
+| Param            | 类型   | 是否必须 | 说明                                                         |
+| :--------------- | :----- | :------- | :----------------------------------------------------------- |
+| charset            | String | 是       | 编码格式，无特殊情况，传参数`utf-8`                          |
+| side               | String | 是       | 通知类型， 收款通知：`deposit`， 转账通知： `withdraw`，Web3交易通知：`web3-trans`  |
+| notify_time        | String | 是       | 通知时间，例：2022-11-02 11:04:05                            |
+| id                 | String | 是       | 收款id                                                       |
+| request_id         | String | 是       | 转账唯一标识                                                 |
+| sub_wallet_id      | String | 是       | 子钱包id                                                     |
+| main_chain_symbol  | String | 是       | 主链币币名（唯一标识），例：ETH    |
+| symbol             | String | 否       | 币种唯一标识，例：USDTERC20                                  |
+| amount             | String | 是       | 交易金额                                                     |
+| created_at         | String | 是       | 创建时间时间，如：2006-01-02 15:04:05                         |
+| updated_at         | String | 是       | 修改时间时间，如：2006-01-02 15:04:05                         |
+| address_from       | String | 是       | 出币地址                                                     |
+| address_to         | String | 是       | 到账地址                                                     |
+| txid               | String | 是       | 交易hash                                                     |
+| confirmations      | String | 是       | 区块确认数，例：10                                           |
+| status             | String | 是       | 转账状态: 1000 未审批, 1100 审批通过, 待签名，1200 支付中，2000 支付完成，2100 审批拒绝，2200 拒绝，2300 交易丢弃，2400 支付失败 |
+| interactive_contract     | String | 是       | 交互合约                                                     |
+| fee_symbol               | String | 是       | 手续费币种，例：ETH                                            |
+| fee                      | String | 是       | 手续费                                    |
+| real_fee                 | String | 是       | 真实消耗的手续费              |
+| input_data               | String | 是       | 合约交易的方法参数组成的16进制数据       |
+| trans_type               | String | 是       | 交易类型, 0:授权交易，1：转账交易            |
+| dapp_img                 | String | 是       | dapp 图片		       |
+| dapp_name                | String | 是       | dapp名称	     |
+| dapp_url                 | String | 是       | dapp 访问url	 |
+| tx_height                | String | 是       | 交易完成的区块高度                                             |

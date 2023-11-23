@@ -1,0 +1,72 @@
+---
+title: Getting Started
+---
+
+
+## Development Notes
+
+### Two pairs of public and private key functions (API mode）
+
+- **The first pair of public and private keys**：  The developer shall generate a pair of public and private keys in advance when opening the asset management account. The public key (rsa_third_pub) is provided to the platform and the private key is kept by itself. The private key is the only proof for the third-party application to call the wallet service and shall not be disclosed to anyone. When the third party requests the wallet service, the private key is used to encrypt the request parameters. When the platform receives the request, the public key (rsa_third_pub) is used to decrypt the request data.
+
+- **The second pair of public and private keys**： After the developer opens the asset management account, the platform will provide the wallet public key (rsa_wallet_pub) to the developer. When the third-party application receives the response data or asynchronous notification of the wallet, it needs to use the public key to decrypt.
+
+### Why is it necessary to confirm the withdrawal twice (API method)
+
+When the wallet service receives a request from a third-party application, in confirm that the request is a legitimate request from a third-party application, it will call the interface provided by the third-party to confirm. To a certain extent, this process can avoid the influence caused by the loss of the third party’s private key, and also provides an effective barrier for the security of the wallet service.
+
+| Production domain name (https://openapi.hicoin.vip/) |    test environment not supported                     |
+| :------------------------------------------------------ | ------------------------------------------------------------ |
+| app_id:                                                 | Please get it after creating the wallet                      |
+| rsa_wallet_pub:                                         | Custody system public key; Please create the wallet and get it from the Custody system |
+| rsa_third_prv:                                          | Client private key; Independent generation and preservation  |
+| rsa_third_pub:                                          | Client public key; Autonomous generation; Please create the wallet and configure it to the Custody system |
+
+Recommended password length：`2048`
+
+Recommended key format：`PKCS#8`
+
+```sh
+openssl genrsa -out rsa_private_key.pem 2048
+
+openssl rsa -in rsa_private_key.pem -pubout -out rsa_public_key_2048.pem
+
+openssl pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform pem -nocrypt -out private_pkcs8.pem
+```
+
+
+## Account preparation
+
+The developer prepares the following information：
+
+1. Generate a pair of public and private keys and provide the public key to the platform;
+
+2. IP of third-party application server;
+
+3. deposit and withdrawal callback notification address;
+
+4. Reconfirm the address for withdrawal;
+
+5. Whether to enable the automatic collection function. After the function is enabled, the system will automatically transfer the user’s deposit funds to the merchant collection account.
+
+Contact relevant personnel of the platform to provide the above five types of information. The platform prepares an asset management account for you and provides you with the following information:
+
+1. Unique identification of the merchant：`app_id`；
+
+2. The wallet public key：`rsa_wallet_pub`.
+
+
+## Interface Process
+
+Documentation is the interface that the wallet service provides to third-party applications.
+
+The interface providers in the following documents are referred to as **wallet services**，and the interface callers are referred to as **third-party applications**. When the third-party application requests the wallet service, it encrypts the request parameters through the RSA algorithm and decrypts the response data after receiving the wallet service
+
+## Interface rules
+
+| Transfer mode:               | https(HTTP is temporarily used in the test environment)      |
+| :--------------------------- | ------------------------------------------------------------ |
+| Signature field:             | All Required fields, except the Sign field, need to be signed |
+| The response status code is: | 0, indicating successful processing, and non-0 indicates request error or system exception |
+| Request address:             | domain name + interface address                              |
+| Encryption algorithm:        | RSA， See **API List**- `Overview` for details               |

@@ -1,0 +1,113 @@
+---
+title: Get MPC Coin Details
+api: GET /api/mpc/coin_list
+description: "Get the details of MPC wallet main chain coins and tokens supported by ChainUp Custody"
+---
+
+#### Request Parameters
+<ParamField query="time" type="long" required>
+    Current timestamp, e.g.: `1600128590`
+</ParamField>
+<ParamField query="charset" type="string" required>
+    Encoding format, typically `utf-8`
+</ParamField>
+<ParamField query="symbol" type="string">
+    Unique identifier for the coin, used for transfers, e.g.：`USDTERC20`
+</ParamField>
+<ParamField query="base_symbol" type="string">
+    Main chain coins, Unique identifier for the coin, used for transfers, e.g.：`ETH`
+</ParamField>
+<ParamField query="open_chain" type="bool">
+    Main chain coin, default to getting all, `true` to get opened coins, `false` to get unopened coins
+</ParamField>
+
+
+
+#### Response Data Parameters
+<ResponseField type="object[ ]">
+    <Expandable title="object">
+        <ResponseField name="address_regex" type="string">Address regex pattern, e.g.：`.*`</ResponseField>
+        <ResponseField name="address_tag_regex" type="string">Address tag regex pattern</ResponseField>
+        <ResponseField name="base_symbol" type="string">Unique identifier of the base coin of the main chain, e.g.：`MATIC1`</ResponseField>
+        <ResponseField name="contract_address" type="string">Contract address supported by MPC main chain</ResponseField>
+        <ResponseField name="decimals" type="integer">Coin precision</ResponseField>
+        <ResponseField name="deposit_confirmation" type="integer">Number of confirmations for deposits</ResponseField>
+        <ResponseField name="address_link" type="string">区块浏览器地址查询链接前缀</ResponseField>
+        <ResponseField name="tx_link" type="string">区块浏览器交易查询链接前缀</ResponseField>
+        <ResponseField name="icon" type="string">Coin icon</ResponseField>
+        <ResponseField name="if_open_chain" type="bool">Indicates if the main chain is open (false/true)</ResponseField>
+        <ResponseField name="name" type="string">Coin name</ResponseField>
+        <ResponseField name="real_symbol" type="string">Name of the coin on the blockchain</ResponseField>
+        <ResponseField name="support_memo" type="string">Indicates if memo is supported (0:not supported, 1:supported)</ResponseField>
+        <ResponseField name="support_token" type="string">Indicates if token coins are supported (0:not supported, 1:supported for main chain coins, empty for tokens)</ResponseField>
+        <ResponseField name="coin_net" type="string">Coin network</ResponseField>
+        <ResponseField name="symbol" type="string">Unique identifier for the coin, e.g.：`MATIC1`</ResponseField>
+        <ResponseField name="symbol_alias" type="string">Real name of the coin</ResponseField>
+        <ResponseField name="support_acceleration" type="bool">Indicates if acceleration is supported (false/true)</ResponseField>
+        <ResponseField name="support_multi_addr" type="bool">Support for multiple addresses, `true`: supported, `false`: not supported</ResponseField>
+        <ResponseField name="merge_address_symbol" type="string">Merged address main chain coin, Unique identifier for the coin</ResponseField>
+        <ResponseField name="coin_type" type="integer">所属主链币类型, `0` 账户类型, `1` utxo类型主链, `2` Memo类型</ResponseField>
+    </Expandable>
+</ResponseField>
+
+
+
+<RequestExample>
+  ```curl cURL
+  curl
+  --url https://openapi.hicoin.vip/api/mpc/wallet/coin_list?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data=SWYYr-LBVAmaS0eq8n-CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov-7hsRsVmOhyPqC-JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8-BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht-n_ZcBdxIDt975dbOFUiH-oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ-6cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb-5g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI
+  ```
+</RequestExample>
+
+
+
+<ResponseExample>
+```json
+[
+    {
+        "address_regex":".*",
+        "address_tag_regex":"",
+        "base_symbol":"BSC",
+        "coin_net":"BSC",
+        "contract_address":"0xe9e7cea3dedca5984780bafc599bd69add087d56",
+        "decimals":"18",
+        "deposit_confirmation":"1",
+        "address_link":"https://www.bscscan.com/address/",
+        "tx_link":"https://www.bscscan.com/tx/",
+        "icon":"",
+        "if_open_chain":true,
+        "name":"BUSD Token;BSC;BUSD",
+        "real_symbol":"BUSD",
+        "support_memo":"0",
+        "support_token":"0",
+        "symbol":"BUSD",
+        "symbol_alias":"BUSD",
+        "support_acceleration": true,
+        "support_multi_addr" : true,
+        "merge_address_symbol" : "ETH"
+    },
+    {
+        "address_regex":".*",
+        "address_tag_regex":"",
+        "base_symbol":"ETH",
+        "coin_net":"ETH",
+        "contract_address":"0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "decimals":"18",
+        "deposit_confirmation":"1",
+        "address_link":"https://etherscan.io/address/",
+        "tx_link":"https://etherscan.io/tx/",
+        "icon":"",
+        "if_open_chain":false,
+        "name":"USDTERC20;ETH;USDT",
+        "real_symbol":"USDTERC20",
+        "support_memo":"0",
+        "support_token":"0",
+        "symbol":"USDTERC20",
+        "symbol_alias":"USDT",
+        "support_acceleration": true,
+        "support_multi_addr" : true,
+        "merge_address_symbol" : "ETH"
+    }
+]
+```
+</ResponseExample>

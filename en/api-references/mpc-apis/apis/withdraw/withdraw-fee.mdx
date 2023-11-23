@@ -1,0 +1,75 @@
+---
+title: Estimated Gas Fee
+api: GET /api/mpc/billing/gas_estimate
+description: "Obtain the estimated miner fee required for transfer."
+---
+
+#### Request Parameters
+<ParamField query="sub_wallet_id" type="integer">
+    When withdrawing from multiple UTXO addresses, this parameter must be passed
+</ParamField>
+<ParamField query="from" type="string">
+    Withdrawal address, either 'from' or 'sub_wallet_id' must be passed
+</ParamField>
+<ParamField query="to" type="string" required>
+    Destination address (to account address)
+</ParamField>
+<ParamField query="memo" type="string">
+    Memo for the destination address, should be filled in when the transfer type is Memo
+</ParamField>
+<ParamField query="symbol" type="string" required>
+    Unique identifier for the coin, e.g.：`USDTERC20`
+</ParamField>
+<ParamField query="amount" type="string" required>
+    Amount
+</ParamField>
+
+
+#### Response Data Parameters
+<Expandable title="object">
+    <ResponseField name="fee_unit" type="string">Fee unit, e.g.：`Gwei`、`sat/b`</ResponseField>
+    <ResponseField name="fee_rate1" type="string">Fee rate tier 1 for BTC series</ResponseField>
+    <ResponseField name="fee_rate2" type="string">Fee rate tier 2 for BTC series</ResponseField>
+    <ResponseField name="fee_rate3" type="string">Fee rate tier 3 for BTC series</ResponseField>
+    <ResponseField name="size" type="long">Size in bytes for BTC series (parameter value cannot be modified)</ResponseField>
+    <ResponseField name="fee_decimals" type="integer">BTC类型系列, 用于计算主币手续费, 计算式：`(fee_rate/10^fee_decimals)*size`</ResponseField>
+    <ResponseField name="gas_limit" type="long">Gas limit for ETH series (also available for some other series like ATOM)</ResponseField>
+    <ResponseField name="gas_price1" type="string">Gas recommended price tier 1 for ETH series</ResponseField>
+    <ResponseField name="gas_price2" type="string">Gas recommended price tier 2 for ETH series</ResponseField>
+    <ResponseField name="gas_price3" type="string">Gas recommended price tier 3 for ETH series</ResponseField>
+    <ResponseField name="gas_decimals" type="integer">ETH类型系列, 用于计算主币手续费, 计算式：`(gas_price/10^gas_decimals)*gas_limit`</ResponseField>
+    <ResponseField name="fee" type="string">Fee for other series such as DOT and TRX, using the 'fee' field for transaction fees</ResponseField>
+    <ResponseField name="fee_changeable" type="bool">For other series such as DOT and TRX, indicates whether the 'fee' parameter value can be changed. Set to true for modifiable and false for non-modifiable values</ResponseField>
+    <ResponseField name="trans_fee" type="integer">Reference transaction fee, unit is the base coin of the main chain</ResponseField>
+</Expandable>
+
+
+
+<RequestExample>
+  ```curl cURL
+  curl
+  --url https://openapi.hicoin.vip/api/mpc/billing/gas_estimate?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data=SWYYr-LBVAmaS0eq8n-CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov-7hsRsVmOhyPqC-JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8-BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht-n_ZcBdxIDt975dbOFUiH-oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ-6cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb-5g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI
+  ```
+</RequestExample>
+
+
+
+<ResponseExample>
+```json
+{
+    "fee_unit":"Gwei",
+    "fee_rate1":"0",
+    "fee_rate2":"0",
+    "fee_rate3":"0",
+    "size":20,
+    "gas_limit":0,
+    "gas_price1":"0",
+    "gas_price2":"0",
+    "gas_price3":"0",
+    "gas_decimals":9,
+    "fee":"0.00159",
+    "fee_changeable":false
+    "trans_fee":"0.00159"
+}
+```
+</ResponseExample>

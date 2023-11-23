@@ -1,0 +1,68 @@
+---
+title: 提现通知
+api: POST /api/v1/withdraw/notify
+description: "提现通知调用接口"
+---
+
+备注
+
+1. 同一txid，不同地址，分开通知
+
+2. 同一txid，相同地址，金额累加通知
+
+3. 同一笔充值，请确保request_id不变，否则会造成重复上账
+
+4. 请求解密后会包括 request_id
+
+
+#### 请求参数data解密之后数据结构
+<ParamField query="address_from" type="string">
+    from地址
+</ParamField>
+<ParamField query="address_to" type="string" required>
+    to地址
+</ParamField>
+<ParamField query="txid" type="string" required>
+    交易id
+</ParamField>
+<ParamField query="trans_id" type="string" required>
+    提现流水id
+</ParamField>
+<ParamField query="amount" type="decimal" required>
+    金额
+</ParamField>
+<ParamField query="fee" type="decimal" required>
+    真实矿工费
+</ParamField>
+<ParamField query="confirm" type="integer" required>
+    确认数，confirm传0时，会将这笔提现记录状态修改为“支付中”，通过`/api/v1/withdraw/consume`接口就不会在重复获取这笔提现记录
+</ParamField>
+<ParamField query="symbol" type="string" required>
+    币种名称
+</ParamField>
+<ParamField query="balance" type="decimal" required>
+    热钱包余额
+</ParamField>
+<ParamField query="memo" type="string">
+    to地址memo标识
+</ParamField>
+
+
+
+
+#### 响应参数data解密之后数据结构
+无
+
+
+<RequestExample>
+  ```curl cURL
+  curl -X POST \
+  --url https://baas.waas.group/api/v1/withdraw/notify \
+  --data '{
+          "app_id": "8ee3794a7e5bd188c6af4fd7dda191f3",
+          "time": 1616539980,
+          "sign": "qVQZ0W1vl6Mh4wMadMHR1XM8N-ZD9xlQhhiIrPlbmmyoDDAgxqwYbtFZBAvPswX4t_6N46ZOFcGuH2K6abiqpl4FtizBkbC3MUlZ6LYU4EPtay_nh6wF97L5jrs7-Qjw5SrFsHTDY4j7mKUXOPrQWrSYAU6QQy6NHjNHazjo592HbG-Cbso_wDOwRDMsLtc4cj6ZxYwjXwYlpkMTK-l_J1iHE16YTI3WyH0fSvNXc3423h5rbJ8UyFPfHLVO433yMnsoexj1KG1oLKlAlrv-t8sIw1A-KBSFTs0o6wuqpBNSLGvH0vh-iAtBJarhcaxdfZG1L8XnYDUAlgKHNzECAW",
+          "data": "wYEom2ihnpZRcI0PeJKCwkwUcN_SZzWDm-QhIiScBVahdMATenUe8ssVqqouTp4PBEStDi3tsUAHnBXLEFFeLDugqrffhQTLKYB2sN3stxOAP_9PO6ucUI-ck_eOzuOVq4ZXTxfdX6csf2o1yyZwtozcfik7ViL49ctTO2yjAdtO17BuAzdxSvyCm_ZyI0EANNglR029b4_TyrhT9gSmIeVT5Is_JJNaifoTmpWz0aB5LvjxojBjsMupExb3dXV9uykNybgjakbTZPwOx-ycZZrGvk8nLxWSaCTajAA3K_Kb4Wj40hn_XRH0X-_37MaxJKK-672wr7Ce94aY2UCiQQ", "sign": "siGNQawtTmtEAj3C56tNSV_mOuMYzG_SYxIwaT0LlU-68_VVKRCS22b8mNykOmDs2zJh9PTl9Bzs-8Eo10rAivVajcBWBp6qw3RKimOURbYOL_EKYrbZyuJH84YoavCtm_r-pI16L3EsUFdzuyqRnSutRyuK15EKnxn4aYUbFa2oBMC9jK7sdONLx3KwQ8oolvOjQSrAFjhuL9rxxc5v-EXUDoamchH2NfF5-oYrNSkrMWpw01B9hU0AUSYktPeTuqWKCt3_sEEH8jYvx7N3joG-lHq6JlYIgC7HBMlFh_ZKfvE0dMCS4wT2-unejSrudM9kG9GgkiCSEp_jD0PacQ"
+  }'
+  ```
+</RequestExample>

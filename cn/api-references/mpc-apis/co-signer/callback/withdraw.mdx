@@ -1,0 +1,49 @@
+---
+title: 提现回调
+api: POST /{custom-url}
+---
+
+`Content-Type application/json;charset=UTF-8`
+
+
+#### 回调参数格式
+
+
+| Param         | 类型    | 是否必须 | 说明                                                   |
+| :------------ | :------ | :------- | :----------------------------------------------------- |
+| type          | String  | 是       | 回调类型，`sign_start`签名开始，`sign_success`签名成功 |
+| withdraw_id   | Integer | 是       | 交易ID                                                 |
+| request_id    | String  | 是       | 发起交易唯一标识                                       |
+| pending_round | Boolean | 是       | 加速状态，true是，false否（普通交易）                  |
+| from          | String  | 是       | 交易出币地址                                           |
+| to            | String  | 是       | 交易到账地址                                           |
+| memo          | String  | 否       | 交易到账memo                                           |
+| amount        | Decimal | 是       | 交易金额                                               |
+| symbol        | String  | 是       | 交易币种唯一标识                                       |
+| txid          | String  | 否       | 交易hash，签名成功返回txid                      |
+
+
+<RequestExample>
+  ```curl cURL
+  curl -X POST \
+  --url https://custom-url/example-callback \
+  --data '{
+        "type":"sign_start",
+        "withdraw_id":321456,
+        "request_id":"c70d1eebb7c687ec8d56bead73f104",
+        "pending_round":false,
+        "from":"0xc70d1eebb7c687ec8d56bead73f104d41e6e0bda",
+        "to":"0x5EDc9177997Bf6B4db559A5C184051858B3B3704",
+        "memo": "123321",
+        "amount":167230.4978,
+        "symbol":"BTC"
+  }'
+  ```
+</RequestExample>
+
+
+####  回调响应参数格式
+
+返回字符串：
+* `SUCCESS`表示成功
+* `FAILURE`表示失败

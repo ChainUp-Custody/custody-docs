@@ -1,0 +1,75 @@
+---
+title: 转账预估手续费
+api: GET /api/mpc/billing/gas_estimate
+description: "获取转账需要的预估手续费用"
+---
+
+#### 请求参数数据结构
+<ParamField query="sub_wallet_id" type="integer">
+    UTXO多地址出金时, 该参数必传, 指定from无效
+</ParamField>
+<ParamField query="from" type="string">
+    出币地址, `/api/mpc/coin_list`接口coin_type != 1时, 该参数必传
+</ParamField>
+<ParamField query="to" type="string" required>
+    到账地址
+</ParamField>
+<ParamField query="memo" type="string">
+    转账到账地址memo，Memo类型转账时如有可填入
+</ParamField>
+<ParamField query="symbol" type="string" required>
+    币种唯一标识，例：`USDTERC20`
+</ParamField>
+<ParamField query="amount" type="string" required>
+    金额
+</ParamField>
+
+
+#### 响应参数数据结构
+<Expandable title="object">
+    <ResponseField name="fee_unit" type="string">手续费单位，例：`Gwei`、`sat/b`</ResponseField>
+    <ResponseField name="fee_rate1" type="string">BTC类型系列，费率一档</ResponseField>
+    <ResponseField name="fee_rate2" type="string">BTC类型系列，费率二档</ResponseField>
+    <ResponseField name="fee_rate3" type="string">BTC类型系列，费率三档</ResponseField>
+    <ResponseField name="size" type="long">BTC类型系列，字节大小，该参数值不可修改</ResponseField>
+    <ResponseField name="fee_decimals" type="integer">BTC类型系列，用于计算主币手续费，计算式：`(fee_rate/10^fee_decimals)*size`</ResponseField>
+    <ResponseField name="gas_limit" type="long">ETH类型系列（部分其他系列币种如ATOM也有此参数值），gas限制</ResponseField>
+    <ResponseField name="gas_price1" type="string">ETH类型系列，gas推荐单价一档</ResponseField>
+    <ResponseField name="gas_price2" type="string">ETH类型系列，gas推荐单价二档</ResponseField>
+    <ResponseField name="gas_price3" type="string">ETH类型系列，gas推荐单价三档</ResponseField>
+    <ResponseField name="gas_decimals" type="integer">ETH类型系列，用于计算主币手续费，计算式：`(gas_price/10^gas_decimals)*gas_limit`</ResponseField>
+    <ResponseField name="fee" type="string">其他系列，如DOT\TRX，使用fee字段做手续费</ResponseField>
+    <ResponseField name="fee_changeable" type="bool">其他系列，如DOT\TRX，使用fee参数值是否可更改，`true`可修改，`false`不可修改</ResponseField>
+    <ResponseField name="trans_fee" type="integer">参考交易手续费，单位是主链币</ResponseField>
+</Expandable>
+
+
+
+<RequestExample>
+  ```curl cURL
+  curl
+  --url https://openapi.hicoin.vip/api/mpc/billing/gas_estimate?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data=SWYYr-LBVAmaS0eq8n-CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov-7hsRsVmOhyPqC-JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8-BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht-n_ZcBdxIDt975dbOFUiH-oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ-6cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb-5g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI
+  ```
+</RequestExample>
+
+
+
+<ResponseExample>
+```json
+{
+    "fee_unit":"Gwei",
+    "fee_rate1":"0",
+    "fee_rate2":"0",
+    "fee_rate3":"0",
+    "size":20,
+    "gas_limit":0,
+    "gas_price1":"0",
+    "gas_price2":"0",
+    "gas_price3":"0",
+    "gas_decimals":9,
+    "fee":"0.00159",
+    "fee_changeable":false
+    "trans_fee":"0.00159"
+}
+```
+</ResponseExample>

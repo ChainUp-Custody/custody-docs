@@ -1,0 +1,58 @@
+---
+title: 获取指定账户信息
+api: GET /api/v2/account/getByUidAndSymbol
+description: "根据币种及用户ID查询用户的账户。另外，若商户开启自动归集后，用户账户将被转移到商户的归集账户中"
+---
+
+#### 请求参数数据结构
+<ParamField query="time" type="long" required>
+    当前时间戳
+</ParamField>
+<ParamField query="charset" type="string" required>
+    编码格式，无特殊情况，传参数utf-8
+</ParamField>
+<ParamField query="version" type="string" required>
+    接口版本号，无特殊情况，传参数v2
+</ParamField>
+
+
+<ParamField query="uid" type="string">
+    用户ID
+</ParamField>
+<ParamField query="symbol" type="string">
+    币种
+</ParamField>
+
+
+
+#### 响应参数数据结构
+<Expandable title="object">
+    <ResponseField name="normal_balance" type="string">正常账户余额</ResponseField>
+    <ResponseField name="lock_balance" type="string">冻结账户余额</ResponseField>
+    <ResponseField name="deposit_address" type="string">币种对应的充值地址</ResponseField>
+</Expandable>
+
+
+
+<RequestExample>
+  ```curl cURL
+  curl
+  --url https://openapi.hicoin.vip/api/v2/account/getByUidAndSymbol?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data=SWYYr-LBVAmaS0eq8n-CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov-7hsRsVmOhyPqC-JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8-BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht-n_ZcBdxIDt975dbOFUiH-oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ-6cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb-5g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI
+  ```
+</RequestExample>
+
+
+
+<ResponseExample>
+```json
+{
+    "code":"0",
+    "data":{
+        "normal_balance":"2.99400066",
+        "deposit_address":"0x6956f9af53b22117f2fc94dfe7c74ff3893b2acd",
+        "lock_balance":"0"
+    },
+    "msg":"成功"
+}
+```
+</ResponseExample>

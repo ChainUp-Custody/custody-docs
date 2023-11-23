@@ -1,0 +1,52 @@
+---
+title: Web3 Transaction Callback
+api: POST /{custom-url}
+---
+
+`Content-Type application/json;charset=UTF-8`
+
+
+#### Callback Request Parameters
+
+
+| Param                | Type    | Required | Description                                         |
+| :------------------- | :------ | :------- | :-------------------------------------------------- |
+| type                 | String  | Yes      | Callback type: `sign_start` for signature initiation, `sign_success` for successful signature |
+| trans_id             | Integer | Yes      | Transaction ID                                      |
+| request_id           | String  | Yes      | Unique identifier for the transaction                |
+| pending_round        | Boolean | Yes      | Acceleration status: `true` for accelerated transactions, `false` for regular transactions |
+| from                 | String  | Yes      | Sender address of the transaction                    |
+| to                   | String  | Yes      | Recipient address of the transaction                 |
+| amount               | Decimal | Yes      | Transaction amount. Use `-1` for infinity            |
+| main_chain_symbol    | String  | Yes      | Main chain symbol (unique identifier), e.g., "ETH"   |
+| input_data           | String  | Yes      | Input data for the transaction                       |
+| interactive_contract | String  | Yes      | Interactive contract                                 |
+| txid                 | String  | No       | Transaction hash. Returned when the signature is successful  |
+
+
+<RequestExample>
+  ```curl cURL
+  curl -X POST \
+  --url https://custom-url/example-callback \
+  --data '{
+        "type":"sign_start",
+        "trans_id":432,
+        "request_id":"0000000003",
+        "pending_round":false,
+        "from":"0xc70d1eebb7c687ec8d56bead73f104d41e6e0bda",
+        "to":"0x5EDc9177997Bf6B4db559A5C184051858B3B3704",
+        "amount":0,
+        "main_chain_symbol":"HECO",
+        "input_data":"0xca718c65",
+        "interactive_contract":"0xe012F3957226894B1a2a44b3ef5070417a069dC2",
+        "txid":"",
+  }'
+  ```
+</RequestExample>
+
+
+####  Callback Response Parameters
+
+Return string：
+* `SUCCESS` means SUCCESS
+* `FAILURE` means FAILURE

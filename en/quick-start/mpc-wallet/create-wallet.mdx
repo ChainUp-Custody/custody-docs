@@ -1,0 +1,77 @@
+---
+title: 创建MPC钱包
+---
+
+## I. 简介
+
+MPC钱包分为**主钱包**、**子钱包**两个类型。
+
+一个主钱包可以创建**多个子钱包**。
+
+### I.I. 应用场景
+
+- 主钱包可用于某个业务线的资产统计；子钱包分配给**不同的用户**使用。
+
+- 主钱包可用于公司总资产的统计；子钱包分配给**不同的业务部门**使用。
+
+
+## II. 创建主钱包
+
+- 请妥善设计主钱包名称，为了区分钱包的用途及方便团队成员管理，创建后暂不支持更改钱包名称。
+
+- 若钱包默认配置不满足您的需求，可联系商务经理或发邮件获取支持(custody@chainup.com)。
+
+- 私钥密码用于加解密私钥分片，**非常重要**，请务必妥善管理。
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+        <img src="/images/quickstart/mpc-main1_cn.png" width="200"/>
+        <img src="/images/quickstart/mpc-main2_cn.png" width="200"/>
+        <img src="/images/quickstart/mpc-main3_cn.png" width="200"/>
+    </CardGroup>
+</div>
+
+- 请保持网络通畅，停留在原页面稍等片刻。
+
+- 钱包创建成功！为了您的资产安全请务必及时备份私钥(未备份将限制部分功能的使用)。
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/quickstart/mpc-main4_cn.png" width="200"/>
+        <img src="/images/quickstart/mpc-main5_cn.png" width="200"/>
+    </CardGroup>
+</div>
+
+
+## III. 创建子钱包
+
+当您创建完MPC主钱包并完成私钥备份后，您可以继续创建MPC主钱包下的子钱包。
+
+<Warning>
+**注意**
+
+当您创建一个MPC主钱包后，系统会自动创建一个关联子钱包，**类型为Web3**
+</Warning>
+
+- 选择目标主钱包。
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/quickstart/mpc-sub1_cn.png" width="200"/>
+        <img src="/images/quickstart/mpc-sub2_cn.png" width="200"/>
+    </CardGroup>
+</div>
+
+- 打开子钱包列表，开始创建子钱包。
+
+- 请妥善设计子钱包名称，创建成功后的子钱包名称**不支持修改**。
+
+- 输入**私钥密码**进行签名，**签名成功**后即创建成功。
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+        <img src="/images/quickstart/mpc-sub3_cn.png" width="200"/>
+        <img src="/images/quickstart/mpc-sub5_cn.png" width="200"/>
+        <img src="/images/quickstart/mpc-sub6_cn.png" width="200"/>
+    </CardGroup>
+</div>

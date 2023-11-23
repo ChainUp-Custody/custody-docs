@@ -1,0 +1,52 @@
+---
+title: Web3交易回调
+api: POST /{custom-url}
+---
+
+`Content-Type application/json;charset=UTF-8`
+
+
+#### 回调参数格式
+
+
+| Param         | 类型    | 是否必须 | 说明                                                   |
+| :------------ | :------ | :------- | :----------------------------------------------------- |
+| type                 | String  | 是       | 回调类型，`sign_start`签名开始，`sign_success`签名成功 |
+| trans_id             | Integer | 是       | 交易ID                                             |
+| request_id           | String  | 是       | 发起交易唯一标识                                     |
+| pending_round        | Boolean | 是       | 加速状态，true是，false否（普通交易）                  |
+| from                 | String  | 是       | 交易from地址                                         |
+| to                   | String  | 是       | 交易to地址                                         |
+| amount               | Decimal | 是       | 交易金额。-1表示无穷大                               |
+| main_chain_symbol    | String  | 是       | 主链币币名（唯一标识），例：ETH                   |
+| input_data           | String  | 是       | 交易币种唯一标识                                      |
+| interactive_contract | String  | 是       |交互合约	  |
+| txid                 | String  | 否       | 交易hash，签名成功返回txid                                       |
+
+
+<RequestExample>
+  ```curl cURL
+  curl -X POST \
+  --url https://custom-url/example-callback \
+  --data '{
+        "type":"sign_start",
+        "trans_id":432,
+        "request_id":"0000000003",
+        "pending_round":false,
+        "from":"0xc70d1eebb7c687ec8d56bead73f104d41e6e0bda",
+        "to":"0x5EDc9177997Bf6B4db559A5C184051858B3B3704",
+        "amount":0,
+        "main_chain_symbol":"HECO",
+        "input_data":"0xca718c65",
+        "interactive_contract":"0xe012F3957226894B1a2a44b3ef5070417a069dC2",
+        "txid":"",
+  }'
+  ```
+</RequestExample>
+
+
+####  回调响应参数格式
+
+返回字符串：
+* `SUCCESS`表示成功
+* `FAILURE`表示失败
