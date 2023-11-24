@@ -1,0 +1,43 @@
+---
+title: Available Address
+api: POST /api/v1/address/available
+description: "Number of addresses that are available in the pushed addresses"
+---
+
+
+#### Decrypted Request Parameters
+<ParamField query="symbol" type="string" required>
+    Token Name
+</ParamField>
+
+
+#### Decrypted Response Data Parameters
+<Expandable title="object">
+    <ResponseField name="symbol" type="string">Token Name</ResponseField>
+    <ResponseField name="count" type="integer">Number of addresses available</ResponseField>
+</Expandable>
+
+
+
+<RequestExample>
+  ```curl cURL
+  curl -X POST \
+  --url https://baas.waas.group/api/v1/address/available \
+  --data '{
+          "app_id": "8ee3794a7e5bd188c6af4fd7dda191f3",
+          "time": 1616539980,
+          "sign": "qVQZ0W1vl6Mh4wMadMHR1XM8N-ZD9xlQhhiIrPlbmmyoDDAgxqwYbtFZBAvPswX4t_6N46ZOFcGuH2K6abiqpl4FtizBkbC3MUlZ6LYU4EPtay_nh6wF97L5jrs7-Qjw5SrFsHTDY4j7mKUXOPrQWrSYAU6QQy6NHjNHazjo592HbG-Cbso_wDOwRDMsLtc4cj6ZxYwjXwYlpkMTK-l_J1iHE16YTI3WyH0fSvNXc3423h5rbJ8UyFPfHLVO433yMnsoexj1KG1oLKlAlrv-t8sIw1A-KBSFTs0o6wuqpBNSLGvH0vh-iAtBJarhcaxdfZG1L8XnYDUAlgKHNzECAW",
+          "data": "wYEom2ihnpZRcI0PeJKCwkwUcN_SZzWDm-QhIiScBVahdMATenUe8ssVqqouTp4PBEStDi3tsUAHnBXLEFFeLDugqrffhQTLKYB2sN3stxOAP_9PO6ucUI-ck_eOzuOVq4ZXTxfdX6csf2o1yyZwtozcfik7ViL49ctTO2yjAdtO17BuAzdxSvyCm_ZyI0EANNglR029b4_TyrhT9gSmIeVT5Is_JJNaifoTmpWz0aB5LvjxojBjsMupExb3dXV9uykNybgjakbTZPwOx-ycZZrGvk8nLxWSaCTajAA3K_Kb4Wj40hn_XRH0X-_37MaxJKK-672wr7Ce94aY2UCiQQ", "sign": "siGNQawtTmtEAj3C56tNSV_mOuMYzG_SYxIwaT0LlU-68_VVKRCS22b8mNykOmDs2zJh9PTl9Bzs-8Eo10rAivVajcBWBp6qw3RKimOURbYOL_EKYrbZyuJH84YoavCtm_r-pI16L3EsUFdzuyqRnSutRyuK15EKnxn4aYUbFa2oBMC9jK7sdONLx3KwQ8oolvOjQSrAFjhuL9rxxc5v-EXUDoamchH2NfF5-oYrNSkrMWpw01B9hU0AUSYktPeTuqWKCt3_sEEH8jYvx7N3joG-lHq6JlYIgC7HBMlFh_ZKfvE0dMCS4wT2-unejSrudM9kG9GgkiCSEp_jD0PacQ"
+  }'
+  ```
+</RequestExample>
+
+
+<ResponseExample>
+```json
+{
+    "symbol":"BTC",
+    "count":1
+}
+```
+</ResponseExample>

@@ -1,0 +1,31 @@
+---
+title: Transfer (Withdrawal)
+---
+
+#### Decrypted Request Parameters
+
+| Param            | Type    | Requried | Description                                                  |
+| :--------------- | :------ | :------- | :----------------------------------------------------------- |
+| charset          | String  | Yes      | Encoding format, no special circumstances, pass parameter `utf-8` |
+| side             | String  | Yes      |Notification type: Receive notification: `deposit`, Transfer notification: `withdraw`, Web3 transaction notification: `web3-trans`|
+| notify_time      | String  | Yes      | Notification time，example：2022-11-02 11:04:05              |
+| id               | String  | Yes      | transfer id, example: 12345                                  |
+| request_id       | String  | Yes      | The unique identifier for transferring coins                 |
+| sub_wallet_id    | String  | Yes      | Sub wallet id                                                |
+| symbol           | String  | Yes      | The unique identifier of the coin, example: USDTERC20        |
+| amount           | String  | Yes      | transfer amount, for example: 1.23                           |
+| fee_symbol       | String  | Yes      | gas fee coins，example：ETH                                  |
+| fee              | String  | Yes      | gas fee，example：0.00123                                    |
+| real_fee         | String  | Yes      | The actual gas fee consumed，example：0.00111                |
+| created_at       | Long    | Yes      | Created time timestamp, example: 2006-01-02 15:04:05                                       |
+| updated_at       | Long    | Yes      | Modified time timestamp, example: 2006-01-02 15:04:05                                      |
+| address_from     | String  | Yes      | from account address                                         |
+| address_to       | String  | Yes      | to account address                                           |
+| memo             | String  | No       | to account address memo，example：123321                     |
+| txid             | String  | Yes      | Transaction hash                                             |
+| confirmations    | Integer | Yes      | Number of block confirmations，example：10                   |
+| status           | Integer | Yes      | transfer status: `1000` awaiting approval, `1100` Approved while awaiting signature, `1200` Payment in progress, `2000`Payment completed, `2100` Not Approved, `2200` Rejected, `2300` Transaction discarded, `2400`Payment failed |
+| transfer_source  | Integer | Yes      | transfer Type：`1`app, `2`openapi                            |
+| base_symbol      | String  | No       | The unique identifier of the main chain of the coin to be transferred, for example: ETH |
+| contract_address | String  | No       | transfer coin's contract address                             |
+| tx_height        | Long   |Yes   | Block height at which the transaction is completed |

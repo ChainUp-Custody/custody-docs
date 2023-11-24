@@ -1,0 +1,40 @@
+---
+title: Register Address
+api: POST /api/v1/address/register
+description: "Push address to the platform, this address is used to assign to users"
+---
+
+<Tip>
+A maximum of 100 addresses per push to Custody, with each push checking that the number of addresses remaining available to Custody is greater than 5,000 and disallowing registration if 5,000 addresses are not being used. If the address is memo type, only one address needs to be registered, and the memo will be allocated by Party B
+</Tip>
+
+
+#### Decrypted Request Parameters
+<ParamField query="symbol" type="string" required>
+    Token name
+</ParamField>
+<ParamField query="addresses" type="string" required>
+    Address list (can be separated by commas, up to 100 at a time)
+</ParamField>
+<ParamField query="memo" type="bool" required>
+    Whether it is memo type
+</ParamField>
+
+
+#### Decrypted Response Data Parameters
+None
+
+
+
+<RequestExample>
+  ```curl cURL
+  curl -X POST \
+  --url https://baas.waas.group/api/v1/address/register \
+  --data '{
+          "app_id": "8ee3794a7e5bd188c6af4fd7dda191f3",
+          "time": 1616539980,
+          "sign": "qVQZ0W1vl6Mh4wMadMHR1XM8N-ZD9xlQhhiIrPlbmmyoDDAgxqwYbtFZBAvPswX4t_6N46ZOFcGuH2K6abiqpl4FtizBkbC3MUlZ6LYU4EPtay_nh6wF97L5jrs7-Qjw5SrFsHTDY4j7mKUXOPrQWrSYAU6QQy6NHjNHazjo592HbG-Cbso_wDOwRDMsLtc4cj6ZxYwjXwYlpkMTK-l_J1iHE16YTI3WyH0fSvNXc3423h5rbJ8UyFPfHLVO433yMnsoexj1KG1oLKlAlrv-t8sIw1A-KBSFTs0o6wuqpBNSLGvH0vh-iAtBJarhcaxdfZG1L8XnYDUAlgKHNzECAW",
+          "data": "wYEom2ihnpZRcI0PeJKCwkwUcN_SZzWDm-QhIiScBVahdMATenUe8ssVqqouTp4PBEStDi3tsUAHnBXLEFFeLDugqrffhQTLKYB2sN3stxOAP_9PO6ucUI-ck_eOzuOVq4ZXTxfdX6csf2o1yyZwtozcfik7ViL49ctTO2yjAdtO17BuAzdxSvyCm_ZyI0EANNglR029b4_TyrhT9gSmIeVT5Is_JJNaifoTmpWz0aB5LvjxojBjsMupExb3dXV9uykNybgjakbTZPwOx-ycZZrGvk8nLxWSaCTajAA3K_Kb4Wj40hn_XRH0X-_37MaxJKK-672wr7Ce94aY2UCiQQ", "sign": "siGNQawtTmtEAj3C56tNSV_mOuMYzG_SYxIwaT0LlU-68_VVKRCS22b8mNykOmDs2zJh9PTl9Bzs-8Eo10rAivVajcBWBp6qw3RKimOURbYOL_EKYrbZyuJH84YoavCtm_r-pI16L3EsUFdzuyqRnSutRyuK15EKnxn4aYUbFa2oBMC9jK7sdONLx3KwQ8oolvOjQSrAFjhuL9rxxc5v-EXUDoamchH2NfF5-oYrNSkrMWpw01B9hU0AUSYktPeTuqWKCt3_sEEH8jYvx7N3joG-lHq6JlYIgC7HBMlFh_ZKfvE0dMCS4wT2-unejSrudM9kG9GgkiCSEp_jD0PacQ"
+  }'
+  ```
+</RequestExample>

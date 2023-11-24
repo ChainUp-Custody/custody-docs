@@ -1,0 +1,17 @@
+---
+title: Co-Signer Transaction Signature Verification
+---
+
+Co-Signer provides a more secure dual-verification feature for transactions.
+
+In addition to the Co-Signer callback mechanism, Clients can simultaneously pass the `sign` field when initiating a transaction. Co-Signer will additionally verify whether the `sign` is legal.
+
+#### Specific signature rules are as follows
+
+* Sign the parameters in the format `k1=v1&k2=v2`, and sort k in `ASCII ascending order`; parameters with empty values are not included in the signature.
+
+* The digits involved in the signature must `not end with the digit 0`, for example, 1.0001000, please use 1.0001 for the signature.
+
+* After concatenating the parameters, convert to lowercase and then use MD5 encryption. For example, if the parameters before encryption are `address_to=0x5edc9177997bf6b4db559a5c184051858b3b3704&amount=1.0001`, the MD5 encryption result is `c10c47a46b616526e739985ce1c7f15d`.
+
+* Use the `SHA256 algorithm` to sign the MD5 data with RSA, and then encode it with `BASE64` to obtain the final signature data.

@@ -1,0 +1,39 @@
+---
+title: Create a Sub-wallet
+api: POST /api/mpc/sub_wallet/create
+description: "Pass in the specified sub-wallet name to create a new sub-wallet for the main wallet"
+---
+
+#### Request Parameters
+<ParamField query="base_symbol" type="string" required>
+    Name of sub-wallet, up to 50 characters. No duplicate names., e.g.：mpc mining pool
+</ParamField>
+<ParamField query="app_show_status" type="string">
+    Type of sub-wallet. 1: Asset sub-wallet, 2: web3 sub-wallet (if not specified, the default sub-wallet type is web3)
+</ParamField>
+
+
+
+#### Response Data Parameters
+<Expandable title="object">
+    <ResponseField name="sub_wallet_id" type="integer">Sub wallet id</ResponseField>
+</Expandable>
+
+
+
+<RequestExample>
+  ```curl cURL
+  curl -X POST \
+  --url https://openapi.hicoin.vip/api/mpc/sub_wallet/create?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data=SWYYr-LBVAmaS0eq8n-CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov-7hsRsVmOhyPqC-JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8-BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht-n_ZcBdxIDt975dbOFUiH-oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ-6cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb-5g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI
+  ```
+</RequestExample>
+
+
+
+<ResponseExample>
+```json
+{
+    "sub_wallet_id": 10234122
+}
+```
+</ResponseExample>

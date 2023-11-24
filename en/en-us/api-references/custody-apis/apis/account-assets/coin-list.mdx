@@ -1,0 +1,73 @@
+---
+title: List of supported currencies
+api: GET /api/v2/user/getCoinList
+description: "Get a list of the currencies of the merchant"
+---
+
+#### Decrypted Request Parameters
+<ParamField query="time" type="long" required>
+    current timestamp
+</ParamField>
+<ParamField query="charset" type="string" required>
+    encoding format, no special case, pass parameter UTF-8
+</ParamField>
+<ParamField query="version" type="string" required>
+    interface version number, no special case, pass parameter v2
+</ParamField>
+
+
+
+#### Response Data Parameters
+<ResponseField type="object[ ]">
+    <Expandable title="object">
+        <ResponseField name="symbol" type="string">currency(Be sure to use the value returned by this field when calling the interface to withdraw coins, and any query interface)</ResponseField>
+        <ResponseField name="icon" type="string">currency icon</ResponseField>
+        <ResponseField name="real_symbol" type="string">Crypto currency on-chain names</ResponseField>
+        <ResponseField name="decimals" type="string">Decimals</ResponseField>
+        <ResponseField name="name" type="string">Full name of coin</ResponseField>
+        <ResponseField name="base_symbol" type="string">Main Chain Coin Name</ResponseField>
+        <ResponseField name="contract_address" type="string">Contract Address</ResponseField>
+        <ResponseField name="deposit_confirmation" type="string">Deposit confirmation</ResponseField>
+        <ResponseField name="explorer" type="string">Explorer</ResponseField>
+        <ResponseField name="address_regex" type="string">Address regex</ResponseField>
+        <ResponseField name="address_tag_regex" type="string">Address tag regex</ResponseField>
+        <ResponseField name="support_memo" type="string">Whether memo is supported, 0 not supported 1 supported</ResponseField>
+        <ResponseField name="support_token" type="string">Whether to support token coins, 0 does not support 1 supports, only main chain coins have value, tokens are empty</ResponseField>
+    </Expandable>
+</ResponseField>
+
+
+
+<RequestExample>
+  ```curl cURL
+  curl
+  --url https://openapi.hicoin.vip/api/v2/user/getCoinList?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data=SWYYr-LBVAmaS0eq8n-CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov-7hsRsVmOhyPqC-JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8-BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht-n_ZcBdxIDt975dbOFUiH-oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ-6cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb-5g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI
+  ```
+</RequestExample>
+
+
+
+<ResponseExample>
+```json
+{
+  "code":"0",
+  "data":[
+      {
+          "symbol":"BTC",
+          "icon":"http://chainup-oss.oss-cn-beijing.aliyuncs.com/saas/1565681771193.png",
+          "real_symbol":"BTC",
+          "decimals":"8",
+          "name":"Bitcoin",
+          "base_symbol":"BTC",
+          "contract_address":"",
+          "deposit_confirmation":"2",
+          "explorer":"https://btc.com/",
+          "address_regex":"^(1|3)[a-zA-Z0-9]{24,36}$",
+          "address_tag_regex":"",
+          "support_memo":"0",
+          "support_token":"0"
+      }
+   ]
+ }
+```
+</ResponseExample>

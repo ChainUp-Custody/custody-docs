@@ -1,0 +1,75 @@
+---
+title: Overview
+---
+
+## Domain and API Key
+
+
+| Production Environment Domain (https://openapi.hicoin.vip/) | Not applicable to the testing environment    |
+| :------------------------------------------------------------------------ | ------------------------------------------------- |
+| app_id:                                                                   | Obtain after creating a wallet                                  |
+| rsa_wallet_pub:                                                           | Custody system public key; Obtain from Custody system after creating a wallet    |
+| rsa_third_prv:                                                            | Client private key; Generated and saved independently                          |
+| rsa_third_pub:                                                            | Client public key; Generated independently; Configure in Custody system after creating a wallet |
+| rsa_co_signer_pri:                                                        | Co-Signer private key; Generated using Co-Signer or generated and saved independently    |
+| rsa_co_signer_pub:                                                        | Co-Signer public key; Generated using Co-Signer or generated independently; Configure in Custody system after creating a wallet |
+
+
+### RSA Public-Private Key Format
+
+Password Length: 2048
+
+Key Format: PKCS#8
+
+```sh
+openssl genrsa -out rsa_private_key.pem 2048
+
+openssl rsa -in rsa_private_key.pem -pubout -out rsa_public_key_2048.pem
+
+openssl pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform pem -nocrypt -out private_pkcs8.pem
+```
+
+## Interface Rules
+
+| Transmission Method: | https (temporary use of http in the testing environment)                           |
+| :--------------------- | ------------------------------------------------------ |
+| Response Status Code: | `0` indicates processing `success`, non-0 indicates **request error** or **system exception** |
+| Request Address:     | Domain + Interface Address                                          |
+| Encryption Algorithm: | RSA                                                   |
+
+
+## Common Request Parameters
+
+| Param  | Type   | Required | Description                                               |
+| :----- | :----- | :------- | :-------------------------------------------------------- |
+| app_id | String | Required | Merchant unique identifier                                |
+| data   | String | Optional | Encrypted string; encrypted with the Client's RSA private key, specific encryption information is described in the `Request Parameter Data Structure` of each interface |
+
+
+
+## Common Response Parameters
+
+| Param | Type   | Required | Description                                               |
+| :---- | :----- | :------- | :-------------------------------------------------------- |
+| data  | String | Required | Encrypted string; encrypted with Custody's RSA private key, specific encryption information is described in the `Response Result Data Decryption Format` |
+
+
+
+### Decrypted Response Parameters
+
+| Param | Type   | Required | Description                                               |
+| :---- | :----- | :------- | :-------------------------------------------------------- |
+| code  | String | Yes      | Status code, e.g., 100002                                |
+| msg   | String | Yes      | Explanation of the response result, e.g., Request parameter error |
+| data  | String | No       | Specific response data; data structure defined in the `Response Parameter Data Structure` of each interface |
+
+
+## Encryption and Decryption Mode
+
+The values of the request parameter data and the response field data are both encrypted with RSA and then encrypted with **base64urlsafe**.
+
+<Warning>
+In traditional base64 encoding, there are two symbols, + and /, which will be directly escaped by the URL. Therefore, if you want to transmit these encoded strings via URL, you need to do traditional base64 encoding first, and then replace + and / with - _ respectively. On the receiving end, do the opposite decoding action.
+
+RSA encryption and decryption use `segmented encryption`.
+</Warning>

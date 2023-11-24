@@ -1,0 +1,75 @@
+---
+title: Create Web3 Transaction
+api: POST /api/mpc/web3/trans/create
+description: "Create a Web3 transaction."
+---
+
+#### Request Parameters
+<ParamField query="sub_wallet_id" type="integer" required>
+    Sub wallet id
+</ParamField>
+<ParamField query="request_id" type="string" required>
+   	The unique identifier for transferring coins
+</ParamField>
+<ParamField query="main_chain_symbol" type="string" required>
+    Main chain coin symbol, Unique identifier for the coin, e.g.：`USDTERC20`
+</ParamField>
+<ParamField query="from" type="string">
+    交易发起地址, 子钱包存在多地址时, 可指定交易地址, 不指定时默认使用子钱包“常用地址“
+</ParamField>
+<ParamField query="interactive_contract" type="string" required>
+    Interactive contract
+</ParamField>
+<ParamField query="amount" type="string" required>
+   	Transaction amount (-1 for infinite)
+</ParamField>
+<ParamField query="gas_price" type="string" required>
+    Gas fee，unit：Gwei
+</ParamField>
+<ParamField query="gas_limit" type="string" required>
+   	Gas limit fee
+</ParamField>
+<ParamField query="input_data" type="string" required>
+   	Hexadecimal data for contract transaction
+</ParamField>
+<ParamField query="trans_type" type="string" required>
+   	0: Authorization transaction, 1: Other transaction. If 0, the amount field is invalid.
+</ParamField>
+<ParamField query="dapp_name" type="string">
+   	Dapp name
+</ParamField>
+<ParamField query="dapp_url" type="string">
+   	Dapp URL
+</ParamField>
+<ParamField query="dapp_img" type="string">
+   	Dapp image
+</ParamField>
+<ParamField query="sign" type="string">
+   	RSA private key signature. Parameters involved in the signature: "request_id", "sub_wallet_id", "main_chain_symbol", "interactive_contract", "amount", "input_data". Refer to [`Co-Signer Transaction Signature Verification`](/api-references/mpc-apis/co-signer/sign-verify) for detailed signing rules.
+</ParamField>
+
+
+
+#### Response Data Parameters
+<Expandable title="object">
+    <ResponseField name="trans_id" type="integer">Web3 transaction ID</ResponseField>
+</Expandable>
+
+
+
+<RequestExample>
+  ```curl cURL
+  curl -X POST \
+  --url https://openapi.hicoin.vip/api/mpc/web3/trans/create?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data=SWYYr-LBVAmaS0eq8n-CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov-7hsRsVmOhyPqC-JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8-BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht-n_ZcBdxIDt975dbOFUiH-oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ-6cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb-5g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI
+  ```
+</RequestExample>
+
+
+
+<ResponseExample>
+```json
+{
+     "trans_id": 198012
+}
+```
+</ResponseExample>

@@ -1,0 +1,113 @@
+---
+title: Docking Solutions
+---
+
+## Overview
+
+
+To allow customers more convenient and quicker access to Custody service, our platform has a comprehensive set of docking solutions based on previous clients’ requirement. The whole program is divided into four processes:
+
+- Obtain the deposit address
+
+- User deposit
+
+- User withdrawal
+
+- Financial reconciliation
+
+Note: If the client’s project timeline is urgent, the necessary processes [obtaining the deposit address], [user deposit], [user withdrawal], and [financial reconciliation] can be developed in two weeks.
+
+
+## Obtain the deposit address
+
+
+1. Customer registers with Custody system (email address is recommended)
+
+2. After successful registration, the address can be obtained through the UID of the Custody system
+
+Note: Obtaining the address in advance helps to ensure efficient address allocation after user registration; If the user registers and then obtains the address through the interface, it may fail due to reasons such as network issue, resulting in users’ inability to use the services.
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/apis/custody-get-address_en.png" width="400"/>
+</div>
+
+
+## User deposit
+
+1. The user completes registration in their system;
+
+2. When the user checks the currency deposit address on the user interface, the system will assign a currency address to the user;
+
+3. Users send coins to the address;
+
+4. The Custody system monitors and accounts for the transaction of coins in the blockchain address on behalf of the clients, and notifies the client actively or automatically obtaining it within the system.
+
+5. After the system confirms the validity of the information for coin deposit, the coins will be credited into the user’s account;
+
+6. The system notifies the user that the coins are successfully deposited.
+
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/apis/custody-deposit_en.png" width="600"/>
+</div>
+
+
+Note: The asynchronous callback of teh Custody system will be triggered when each order is final, and it can be sent up to 5 times per day;
+
+- Timed task: a total of five callbacks
+
+    - Notification time: 1s for the first time, 2min for the second time, 8min for the third time, 32min for the fourth time, 128min for the fifth time
+
+**Callback logic**：
+
+If the callback is successful, update the callback status;
+
+If the callback fails, continue the callback and update the interval between the next callback;
+
+When the callback fails five times, the callback is stopped
+
+
+## User withdrawal
+
+1. The user initiates withdrawal in their system;
+
+2. After the customer’s system has been approved, it will notify the Custody system;
+
+3. The Custody system provides two withdrawal conformation to the customer system;
+
+4. After the customer system confirms that the withdrawal information is valid, the Custody system verifies the withdrawal information, and then the payment is initiated;
+
+5. The Custody system monitors the status of withdrawal orders, and actively notifies the client upon completion of withdrawal or actively acquires it by the customer system;
+
+6. The customer system informs the user that the withdrawal is successful.
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/apis/custody-withdraw_en.png" width="600"/>
+</div>
+
+
+## Financial reconciliation
+
+1. Perform checks on accounts between the customer system and Custody system periodically (daily is recommended)
+
+2. At midnight the the next day, the system retrieves all the deposits and withdrawals for the previous day as well as the aggregated orders and collection of the miners’ fees
+
+3. The customer system’s orders are reconciled against those in the Custody system
+
+4. If the order quantity, amount and status are correct, the reconciliation will be successful; Otherwise contact Custody support to resolve the issue
+
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/apis/custody-financial_en.png" width="400"/>
+</div>
+
+
+In the Custody system, there are three kinds of cost expenses in the tripartite system: `collecting miners’ fees`, `extracting miners’ fees`, and `profit-sharing` commission;
+
+- Collection of Miners’ Fee: With each currency’s account type, after depositing the coins, the funds on the address will be collected to the hot wallet address and the blockchain network. Part of the main chain blockchain transaction will consume the miner fee and the cost of which will be borne by the client. The client can contact us if they would like this capital expenditure will be handled by us;
+
+- Miner’s fee: Miner’s fee (in some currencies) shall be borne by the three parties when withdrawing coins to the address of non-ChainUp Custody and using the blockchain network. This part of capital expenditure can be viewed directly in the coin withdrawal order;
+
+- Distribution fee: temporarily not charged.
+
+
