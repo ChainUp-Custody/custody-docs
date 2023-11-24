@@ -111,6 +111,13 @@
       ]
     },
     {
+      "group": "合规托管",
+      "pages": [
+        "zh-cn/quick-start/compliance-custody/compliance-mpc",
+        "zh-cn/quick-start/compliance-custody/compliance-joint"
+      ]
+    },
+    {
       "group": "简介",
       "pages": [
         "zh-cn/api-references/intro/custody-apis",
