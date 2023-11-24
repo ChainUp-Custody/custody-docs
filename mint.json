@@ -59,8 +59,7 @@
         "zh-cn/introduction/custody-solution/mpc-wallet",
         "zh-cn/introduction/custody-solution/joint-custody",
         "zh-cn/introduction/custody-solution/compliance-custody",
-        "zh-cn/introduction/custody-solution/wapi",
-        "zh-cn/introduction/custody-solution/waas"
+        "zh-cn/introduction/custody-solution/wapi"
       ]
     },
     {
@@ -78,15 +77,6 @@
       "group": "概述",
       "pages": [
         "zh-cn/quick-start/overview/quickstart"
-      ]
-    },
-    {
-      "group": "统一托管",
-      "pages": [
-        "zh-cn/quick-start/joint-custody/download-app",
-        "zh-cn/quick-start/joint-custody/create-account",
-        "zh-cn/quick-start/joint-custody/create-wallet",
-        "zh-cn/quick-start/joint-custody/api-integration"
       ]
     },
     {
@@ -109,6 +99,15 @@
             "zh-cn/quick-start/mpc-wallet/api-integration/co-signer"
           ]
         }
+      ]
+    },
+    {
+      "group": "统一托管",
+      "pages": [
+        "zh-cn/quick-start/joint-custody/download-app",
+        "zh-cn/quick-start/joint-custody/create-account",
+        "zh-cn/quick-start/joint-custody/create-wallet",
+        "zh-cn/quick-start/joint-custody/api-integration"
       ]
     },
     {
