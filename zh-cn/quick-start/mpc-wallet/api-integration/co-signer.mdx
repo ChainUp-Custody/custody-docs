@@ -280,7 +280,8 @@ echo ${STR_PASSWORD} | nohup ${project_path}/co-signer -server >>nohup.nout 2>&1
 
 ## V. 添加Co-Signer服务器白名单
 
-ChainUp Custody需要访问Co-Signer创建**同权私钥**、**生成地址**，故 `对接方` 需要将Co-Signer的启动端口对ChainUp Custody的服务器ip添加安全组或白名单，以下是Custody的Ip：
+ChainUp Custody需要访问Co-Signer创建同权私钥、生成地址，故需要将Co-Signer的启动端口对ChainUp Custody的服务器IP添加安全组或白名单，以下是Custody的IP：
 
-- openapi.hicoin.vip（**54.254.7.206**）
-- openapi.hicoin.vip（**54.251.87.91**）
+- Co-Signer服务器开通Custody服务器(IP: **54.254.7.206**)访问**28888端口**权限，注意28888端口为Co-Signer程序监听端口，**可自定义**。
+
+- Co-Signer服务器需访问Custody服务器，需开通访问**54.251.87.91:433**权限。
