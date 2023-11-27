@@ -113,10 +113,33 @@
     {
       "group": "合规托管",
       "pages": [
-        "zh-cn/quick-start/compliance-custody/compliance-mpc",
-        "zh-cn/quick-start/compliance-custody/compliance-joint"
+        {
+          "group": "应用MPC钱包",
+          "pages": [
+            "zh-cn/quick-start/compliance-custody-mpc/open-mpc",
+            "zh-cn/quick-start/compliance-custody-mpc/strategy-mpc"
+          ]
+        },
+      {
+          "group": "应用统一托管钱包",
+          "pages": [
+            "zh-cn/quick-start/compliance-custody-joint/open-joint",
+            "zh-cn/quick-start/compliance-custody-joint/strategy-joint"
+          ]
+    
+        }
+      ]
+      
+    },
+    {
+      "group": "获取地址",
+      "pages": [
+        "zh-cn/api-references/custody-apis/apis/get-address/create-user",
+        "zh-cn/api-references/custody-apis/apis/get-address/register-email",
+        "zh-cn/api-references/custody-apis/apis/get-address/get-deposit-address"
       ]
     },
+
     {
       "group": "简介",
       "pages": [
