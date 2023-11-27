@@ -1,10 +1,10 @@
 {
   "name": "ChainUp Custody",
   "logo": {
-    "dark": "/logo/chainupcustody-logo.svg",
-    "light": "/logo/chainupcustody-logo.svg"
+    "dark": "/zh-cn/logo/chainupcustody-logo.svg",
+    "light": "/zh-cn/logo/chainupcustody-logo.svg"
   },
-  "favicon": "/logo/chainupcustody.svg",
+  "favicon": "/zh-cn/logo/chainupcustody.svg",
   "colors": {
     "primary": "#2662FF",
     "light": "#2662FF",
@@ -17,7 +17,7 @@
   "topbarLinks": [
     {
       "name": "EN",
-      "url": "https://custodydocsnew.chainup.com/en-us/introduction/overview/chainup-custody"
+      "url": "https://custodydocs-v2.chainup.com/en-us/introduction/overview/chainup-custody"
     }
   ],
   "modeToggle": {
