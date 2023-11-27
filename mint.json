@@ -129,17 +129,7 @@
     
         }
       ]
-      
     },
-    {
-      "group": "获取地址",
-      "pages": [
-        "zh-cn/api-references/custody-apis/apis/get-address/create-user",
-        "zh-cn/api-references/custody-apis/apis/get-address/register-email",
-        "zh-cn/api-references/custody-apis/apis/get-address/get-deposit-address"
-      ]
-    },
-
     {
       "group": "简介",
       "pages": [

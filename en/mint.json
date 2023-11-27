@@ -81,15 +81,6 @@
       ]
     },
     {
-      "group": "统一托管",
-      "pages": [
-        "en-us/quick-start/joint-custody/download-app",
-        "en-us/quick-start/joint-custody/create-account",
-        "en-us/quick-start/joint-custody/create-wallet",
-        "en-us/quick-start/joint-custody/api-integration"
-      ]
-    },
-    {
       "group": "MPC钱包",
       "pages": [
         "en-us/quick-start/mpc-wallet/download-app",
@@ -107,6 +98,34 @@
           "pages": [
             "en-us/quick-start/mpc-wallet/api-integration/api",
             "en-us/quick-start/mpc-wallet/api-integration/co-signer"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "统一托管",
+      "pages": [
+        "en-us/quick-start/joint-custody/download-app",
+        "en-us/quick-start/joint-custody/create-account",
+        "en-us/quick-start/joint-custody/create-wallet",
+        "en-us/quick-start/joint-custody/api-integration"
+      ]
+    },
+    {
+      "group": "合规托管",
+      "pages": [
+        {
+          "group": "应用MPC钱包",
+          "pages": [
+            "en-us/quick-start/compliance-custody-mpc/open-mpc",
+            "en-us/quick-start/compliance-custody-mpc/strategy-mpc"
+          ]
+        },
+        {
+          "group": "应用统一托管钱包",
+          "pages": [
+            "en-us/quick-start/compliance-custody-joint/open-joint",
+            "en-us/quick-start/compliance-custody-joint/strategy-joint"
           ]
         }
       ]
@@ -135,7 +154,7 @@
           "pages": [
             "en-us/api-references/mpc-apis/apis/description",
             {
-              "group": "Wallet",
+              "group": "Main Wallet",
               "pages": [
                 "en-us/api-references/mpc-apis/apis/wallet/open-coin",
                 "en-us/api-references/mpc-apis/apis/wallet/coin-list",
@@ -304,9 +323,79 @@
       ]
     },
     {
-      "group": "概述",
+      "group": "帮助中心简介",
       "pages":[
-        "en-us/help-center/overview"
+        "en-us/help-center/introduction/manage-custody"
+      ]
+    },
+    {
+      "group": "管理MPC钱包系统",
+      "pages":[
+        {
+          "group": "用户设置",
+          "pages":[
+            "en-us/help-center/manage-mpc/user-setting/user-role",
+            "en-us/help-center/manage-mpc/user-setting/add-user"
+          ]
+        },
+        {
+          "group": "我的钱包",
+          "pages":[
+            "en-us/help-center/manage-mpc/my-wallet/off-line-tool",
+            "en-us/help-center/manage-mpc/my-wallet/framework",
+            "en-us/help-center/manage-mpc/my-wallet/address-format",
+            "en-us/help-center/manage-mpc/my-wallet/address-path"
+          ]
+        },
+        {
+          "group": "资产管理",
+          "pages":[
+            "en-us/help-center/manage-mpc/asset-manage/my-asset",
+            "en-us/help-center/manage-mpc/asset-manage/coin",
+            "en-us/help-center/manage-mpc/asset-manage/nft"
+          ]
+        },
+        {
+          "group": "钱包交易",
+          "pages":[
+            "en-us/help-center/manage-mpc/transaction/transfer"
+          ]
+        },
+        {
+          "group": "Web3访问",
+          "pages":[
+            "en-us/help-center/manage-mpc/web3/fil-multi-sign",
+            "en-us/help-center/manage-mpc/web3/fil-node",
+            "en-us/help-center/manage-mpc/web3/dapp"
+          ]
+        },
+        {
+          "group": "资产归集",
+          "pages":[
+            {
+              "group": "合约归集",
+              "pages":[
+                "en-us/help-center/manage-mpc/consolidation/contact/about",
+                "en-us/help-center/manage-mpc/consolidation/contact/rules",
+                "en-us/help-center/manage-mpc/consolidation/contact/execute"
+              ]
+            },
+            {
+              "group": "Co-Signer归集",
+              "pages":[
+                "en-us/help-center/manage-mpc/consolidation/co-signer/about",
+                "en-us/help-center/manage-mpc/consolidation/co-signer/rules",
+                "en-us/help-center/manage-mpc/consolidation/co-signer/execute"
+              ]
+            }
+          ]
+        },
+        {
+          "group": "交易策略引擎",
+          "pages":[
+            "en-us/help-center/manage-mpc/strategy/transfer"
+          ]
+        }
       ]
     }
   ],
