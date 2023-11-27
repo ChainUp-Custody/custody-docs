@@ -55,7 +55,7 @@ title: Co-Signer配置
 2. 修改程序可执行权限
 
 ```sh
-chmod +X co-signer-(version)
+chmod +x co-signer-(version)
 ```
 
 - **SGX版本**
@@ -253,16 +253,6 @@ Options:
         ```
     </Step>
 </Steps>
-
-- **Co-Signer 合并版本v1.0.x中的文件，统一生成keystore文件**
-
-该命令主要用于**合并v1.0.x**中的加密文件，使用v1.1.x版本以上可忽略
-
-执行命令后按提示输入密码, 密码与配置钱包种子使用的密码一致！执行成功后conf目录下生成文件：keystore.json
-
-```sh
-./co-signer -keystore-gen
-```
 
 
 - **启动程序shell脚本示例**
