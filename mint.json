@@ -344,8 +344,10 @@
             "help-center/manage-mpc/my-wallet/off-line-tool",
             "help-center/manage-mpc/my-wallet/framework",
             "help-center/manage-mpc/my-wallet/address-format",
-            "help-center/manage-mpc/my-wallet/address-path"
+            "help-center/manage-mpc/my-wallet/address-path",
+            "help-center/manage-mpc/my-wallet/change address"
           ]
+
         },
         {
           "group": "资产管理",
@@ -394,6 +396,48 @@
           "group": "交易策略引擎",
           "pages":[
             "help-center/manage-mpc/strategy/transfer"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "管理统一托管系统",
+      "pages":[
+        {
+          "group": "用户设置",
+          "pages":[
+            "help-center/manage-joint/custody-user-settings/add-custody-user",
+            "help-center/manage-joint/custody-user-settings/custody-user-role"
+          ]
+        },
+        {
+          "group": "我的钱包",
+          "pages":[
+            "help-center/manage-joint/custody-wallet-manage/custody-wallet-structure",
+            "help-center/manage-joint/custody-wallet-manage/custody-adddress-type",
+            "help-center/manage-joint/custody-wallet-manage/sub-address-manage"
+          ]
+
+        },
+        {
+          "group": "资产管理",
+          "pages":[
+            "help-center/manage-joint/custody-asset-manage/my-custody-asset",
+            "help-center/manage-joint/custody-asset-manage/custody-coin-manage"
+          ]
+        },
+        {
+          "group": "钱包交易",
+          "pages":[
+            "help-center/manage-joint/custody-transaction/custody-transfer",
+            "help-center/manage-joint/custody-transaction/custody-transafer-information"
+          ]
+        },
+        {
+          "group": "风控管理",
+          "pages":[
+            "help-center/manage-joint/custody-wallet-manage/custody-wallet-structure",
+            "help-center/manage-joint/custody-strategy/whitelist-custody"
           ]
         }
       ]
