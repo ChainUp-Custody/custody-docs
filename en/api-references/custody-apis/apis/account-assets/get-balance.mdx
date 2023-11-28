@@ -1,7 +1,7 @@
 ---
-title: Balance of merchant collection account
+title: Balance of merchant consolidation account
 api: GET /api/v2/account/getCompanyBySymbol
-description: "After opening the automatic collection of merchant funds, the merchant can obtain the balance of merchant collection account through this interface"
+description: "After opening the automatic consolidation of merchant funds, the merchant can obtain the balance of merchant consolidation account through this interface"
 ---
 
 #### Decrypted Request Parameters
@@ -17,14 +17,14 @@ description: "After opening the automatic collection of merchant funds, the merc
 
 
 <ParamField query="symbol" type="string">
-    currency
+    coin
 </ParamField>
 
 
 
 #### Response Data Parameters
 <Expandable title="object">
-    <ResponseField name="symbol" type="string">currency name</ResponseField>
+    <ResponseField name="symbol" type="string">coin name</ResponseField>
     <ResponseField name="balance" type="string">collection account balance</ResponseField>
 </Expandable>
 

@@ -1,5 +1,5 @@
 ---
-title: List of supported currencies
+title: List of supported coins
 api: GET /api/v2/user/getCoinList
 description: "Get a list of the currencies of the merchant"
 ---
@@ -20,9 +20,9 @@ description: "Get a list of the currencies of the merchant"
 #### Response Data Parameters
 <ResponseField type="object[ ]">
     <Expandable title="object">
-        <ResponseField name="symbol" type="string">currency(Be sure to use the value returned by this field when calling the interface to withdraw coins, and any query interface)</ResponseField>
-        <ResponseField name="icon" type="string">currency icon</ResponseField>
-        <ResponseField name="real_symbol" type="string">Crypto currency on-chain names</ResponseField>
+        <ResponseField name="symbol" type="string">coin(Be sure to use the value returned by this field when calling the interface to withdraw coins, and any query interface)</ResponseField>
+        <ResponseField name="icon" type="string">coin icon</ResponseField>
+        <ResponseField name="real_symbol" type="string">Crypto currency (coin) on-chain names</ResponseField>
         <ResponseField name="decimals" type="string">Decimals</ResponseField>
         <ResponseField name="name" type="string">Full name of coin</ResponseField>
         <ResponseField name="base_symbol" type="string">Main Chain Coin Name</ResponseField>

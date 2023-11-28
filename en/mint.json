@@ -34,7 +34,7 @@
       "url": "quick-start"
     },
     {
-      "name": "Api Reference",
+      "name": "API",
       "url": "api-references"
     },
     {
@@ -47,7 +47,7 @@
   },
   "navigation": [
     {
-      "group": "概述",
+      "group": "Overview",
       "pages": [
         "introduction/overview/chainup-custody",
         "introduction/overview/chainup-community"
@@ -131,7 +131,7 @@
       ]
     },
     {
-      "group": "简介",
+      "group": "Introduction to APIs",
       "pages": [
         "api-references/intro/custody-apis",
         "api-references/intro/custody-apis-intro"

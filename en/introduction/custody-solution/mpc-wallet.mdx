@@ -1,38 +1,37 @@
 ---
-title: MPC钱包
+title: MPC Wallet
 ---
 
-ChainUp Custody基于 MPC（Secure Muti-Party Computation，多方安全计算)-TSS（Threshold Signature Scheme，门限签名）技术，为机构用户打造的安全的数字资产自托管钱包系统，提供多层次的安全保障，可量身定制资产、私钥管理和灾难恢复方案。
+ChainUp Custody has built a secure digital asset self-custody wallet system for institutional users based on MPC (Secure Multi-Party Computation) - TSS (Threshold Signature Scheme) technology. It provides multi-layer security guarantees and can be customized for asset, private key management, and disaster recovery plans.
 
+- **One-stop Asset Management Platform**
 
-
-- **一站式资产管理平台**
-
-ChainUp Custody支持用户同时在App和PC端管理MPC钱包资产，ChainUp Custody提供用户友好的操作平台，功能强大，操作简单，界面简单大方，用户可以在任何地方访问钱包信息，在一个简单的界面上安全地存储和访问超过200多个主链资产。
+ChainUp Custody supports users in managing MPC wallet assets on both the App and PC platforms. ChainUp Custody provides a user-friendly operation platform with powerful features, simple operations, and a clean interface. Users can securely store and access over 200 main chain assets from anywhere with a simple interface.
 
 <div className="w-full flex items-center justify-center">
     <img src="/images/mpc1.jpeg"/>
 </div>
 
-- **分布式密钥存储技术**
+- **Distributed Key Storage Technology**
 
-ChainUp Custody采用了分布式密钥存储技术，允许用户生成并管理所有私钥片段。其中，用户本地保存了其中一片私钥，而另外两片分别存储在亚马逊云和微软云上。这种分布式存储方式结合了硬件隔离技术，使用户能够完全掌控其资产，ChainUp Custody支持3-3的TSS配置，在用户发起交易签名时，这三个私钥片段将同时参与签名，从而消除了私钥管理中的单点故障问题，并显著提高了资产自我管理的安全性，确保用户的投资资产达到市场上最高级别的安全保障水平。
+ChainUp Custody employs distributed key storage technology, allowing users to generate and manage all private key fragments. Users locally save one of the private key fragments, while the other two are stored in Amazon Cloud and Microsoft Cloud, respectively. This distributed storage method, combined with hardware isolation technology, enables users to have complete control over their assets. ChainUp Custody supports a 3-3 TSS configuration. When a user initiates a transaction signature, these three private key fragments simultaneously participate in the signing process, eliminating single-point failure issues in private key management and significantly enhancing the security of self-managed assets to the highest level in the market.
 
-- **方便备份和恢复**
+- **Convenient Backup and Recovery**
 
-MPC钱包支持用户快速方便地管理自己的私钥，ChainUp Custody支持私钥多重备份方式，包括本地备份助记词和云盘备份，当用户更换设备或出现任何本地私钥丢失的情况，可以实现一步恢复。同时ChainUp Custody保证用户拥有已创建MPC钱包的永久使用权，若用户不再使用ChainUp Custody平台的服务，也可以通过私钥离线恢复工具，获得已创建MPC钱包地址的完整私钥助记词，将其倒入其他钱包后即可继续使用。
+The MPC wallet supports users in quickly and conveniently managing their private keys. ChainUp Custody supports multiple backup methods for private keys, including local backup mnemonics and cloud backup. In cases where users change devices or experience any local private key loss, recovery can be achieved in a single step. Additionally, ChainUp Custody ensures that users have permanent ownership of the created MPC wallet. If users no longer use the ChainUp Custody platform's services, they can use the offline recovery tool with the private key to obtain the complete mnemonic of the created MPC wallet address. This can be imported into another wallet for continued use.
 
-- **全流程节点监控和审核**
+- **Full-Process Node Monitoring and Auditing**
 
-用户可以自定义交易策略，受风控的资产交易订单需要由规定的共管成员审批，达到特定审批阈值后才可以进入最后的签名广播环节。同时提供交易全流程节点监控，用户可以直观了解交易订单在每个环节的状态，确保审批流清晰，完整可追溯，不仅满足内部控制与财务审计需求，同时确保交易的安全性和可信度。
+Users can customize transaction strategies, and asset trading orders subject to risk control require approval from designated co-managers before entering the final signature broadcasting stage. The platform also provides full-process node monitoring for transactions, allowing users to intuitively understand the status of the transaction orders at each stage. This ensures a clear, complete, and traceable approval flow, meeting internal control and financial audit requirements. Simultaneously, it ensures the security and reliability of transactions.
+
 <div className="w-full flex items-center justify-center">
     <img src="/images/strategy.png" width="200"/>
 </div>
 
-- **基于角色的操作控制**
+- **Role-Based Operation Control**
 
-ChainUp Custody的MPC钱包通过提供基于角色的访问控制，让用户能够对钱包权限进行严格管理。您可以定义审批员和普通成员等角色权限，用户可以根据自身的组织结构对MPC钱包进行合理的角色分配，从而有效隔离用户对于不同子钱包的信息访问和操作权限。此外，MPC钱包的关键操作功能均需要通过谷歌验证码或是私钥密码进行验证，用户也可以开通生物识别提高验证效率。
+ChainUp Custody's MPC wallet offers role-based access control, enabling strict management of wallet permissions. Users can define roles such as approvers and ordinary members, allowing for reasonable role assignment based on their organizational structure. This effectively isolates users' information access and operational permissions for different sub-wallets. Additionally, critical functions of the MPC wallet require validation through Google Authenticator or private key password, and users can also enable biometric verification to enhance efficiency.
 
-- **引人入胜的Web3体验**
+- **Engaging Web3 Experience**
 
-ChainUp Custody提供了用于构建、保护和管理 Web3 应用程序、游戏和体验的端到端解决方案。用户可以轻松访问不同的Web3项目，直接将 Web3 钱包连接到 dApp，同时用户也可以配置 NFT的交易策略， 从而轻松实现所有钱包Web3交易的跟踪、审核和控制。
+ChainUp Custody provides an end-to-end solution for building, protecting, and managing Web3 applications, games, and experiences. Users can easily access different Web3 projects, directly connect their Web3 wallet to dApps, and configure NFT trading strategies. This allows for easy tracking, auditing, and control of all Web3 wallet transactions.

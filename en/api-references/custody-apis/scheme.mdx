@@ -1,5 +1,5 @@
 ---
-title: Docking Solutions
+title: Integration
 ---
 
 ## Overview
@@ -36,7 +36,7 @@ Note: Obtaining the address in advance helps to ensure efficient address allocat
 
 1. The user completes registration in their system;
 
-2. When the user checks the currency deposit address on the user interface, the system will assign a currency address to the user;
+2. When the user checks the coin deposit address on the user interface, the system will assign a coin address to the user;
 
 3. Users send coins to the address;
 
@@ -90,7 +90,7 @@ When the callback fails five times, the callback is stopped
 
 1. Perform checks on accounts between the customer system and Custody system periodically (daily is recommended)
 
-2. At midnight the the next day, the system retrieves all the deposits and withdrawals for the previous day as well as the aggregated orders and collection of the miners’ fees
+2. At midnight the the next day, the system retrieves all the deposits and withdrawals for the previous day as well as the aggregated orders and consolidation of the miner fees
 
 3. The customer system’s orders are reconciled against those in the Custody system
 
@@ -102,12 +102,12 @@ When the callback fails five times, the callback is stopped
 </div>
 
 
-In the Custody system, there are three kinds of cost expenses in the tripartite system: `collecting miners’ fees`, `extracting miners’ fees`, and `profit-sharing` commission;
+In the Custody system, there are three kinds of cost expenses in the tripartite system: `Consolidation Miner fees`, `Extracting miner fees`, and `profit-sharing` commission;
 
-- Collection of Miners’ Fee: With each currency’s account type, after depositing the coins, the funds on the address will be collected to the hot wallet address and the blockchain network. Part of the main chain blockchain transaction will consume the miner fee and the cost of which will be borne by the client. The client can contact us if they would like this capital expenditure will be handled by us;
+- Consolidation of Miner Fee: With each coin’s account type, after depositing the coins, the funds on the address will be consolidated to the hot wallet address and the blockchain network. Part of the main chain blockchain transaction will consume the miner fee and the cost of which will be borne by the client. The client can contact us if they would like this capital expenditure will be handled by us;
 
-- Miner’s fee: Miner’s fee (in some currencies) shall be borne by the three parties when withdrawing coins to the address of non-ChainUp Custody and using the blockchain network. This part of capital expenditure can be viewed directly in the coin withdrawal order;
+- Miner fee: Miner fee (in some coins) shall be borne by the three parties when withdrawing coins to the address of non-ChainUp Custody and using the blockchain network. This part of capital expenditure can be viewed directly in the coin withdrawal order;
 
-- Distribution fee: temporarily not charged.
+- Commission: temporarily not charged.
 
 

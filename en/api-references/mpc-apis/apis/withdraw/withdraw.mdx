@@ -5,18 +5,18 @@ description: "Initiate a Transfer"
 ---
 
 <Note>
-预估手续费为**可选参数**, 不传系统将默认使用**当前最优矿工费**签名交易
+The estimated transaction fee is an **optional parameter**. If not provided, the system will default to using the **current optimal miner fee** for signing transactions.
 </Note>
 
 #### Request Parameters
 <ParamField query="sub_wallet_id" type="integer" required>
-    Sub wallet id
+    Sub-wallet ID
 </ParamField>
 <ParamField query="symbol" type="string" required>
-    Unique identifier for the coin, e.g.：`USDTERC20`
+    Unique identifier for the coin, e.g., `USDTERC20`
 </ParamField>
 <ParamField query="from" type="string">
-    指定出币地址
+    Specify the transfer coin address
 </ParamField>
 <ParamField query="address_to" type="string" required>
     Transfer address

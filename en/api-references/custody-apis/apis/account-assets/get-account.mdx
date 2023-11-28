@@ -1,7 +1,7 @@
 ---
 title: Account information for specified user
 api: GET /api/v2/account/getByUidAndSymbol
-description: "Search the user’s account according to the currency and user ID. In addition, if the merchant starts automatic collection, the user account will be transferred to the merchant’s collection account"
+description: "Search the user’s account according to the coin and user ID. In addition, if the merchant starts automatic consolidation, the user account will be transferred to the merchant’s consolidation account"
 ---
 
 #### Decrypted Request Parameters
@@ -20,7 +20,7 @@ description: "Search the user’s account according to the currency and user ID.
     user ID
 </ParamField>
 <ParamField query="symbol" type="string">
-    currency
+    coin
 </ParamField>
 
 

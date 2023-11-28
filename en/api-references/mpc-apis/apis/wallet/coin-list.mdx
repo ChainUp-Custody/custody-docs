@@ -32,8 +32,8 @@ description: "Get the details of MPC wallet main chain coins and tokens supporte
         <ResponseField name="contract_address" type="string">Contract address supported by MPC main chain</ResponseField>
         <ResponseField name="decimals" type="integer">Coin precision</ResponseField>
         <ResponseField name="deposit_confirmation" type="integer">Number of confirmations for deposits</ResponseField>
-        <ResponseField name="address_link" type="string">区块浏览器地址查询链接前缀</ResponseField>
-        <ResponseField name="tx_link" type="string">区块浏览器交易查询链接前缀</ResponseField>
+        <ResponseField name="address_link" type="string">Prefix for the block explorer address query link.</ResponseField>
+        <ResponseField name="tx_link" type="string">Prefix for the block explorer address query link.</ResponseField>
         <ResponseField name="icon" type="string">Coin icon</ResponseField>
         <ResponseField name="if_open_chain" type="bool">Indicates if the main chain is open (false/true)</ResponseField>
         <ResponseField name="name" type="string">Coin name</ResponseField>
@@ -46,7 +46,7 @@ description: "Get the details of MPC wallet main chain coins and tokens supporte
         <ResponseField name="support_acceleration" type="bool">Indicates if acceleration is supported (false/true)</ResponseField>
         <ResponseField name="support_multi_addr" type="bool">Support for multiple addresses, `true`: supported, `false`: not supported</ResponseField>
         <ResponseField name="merge_address_symbol" type="string">Merged address main chain coin, Unique identifier for the coin</ResponseField>
-        <ResponseField name="coin_type" type="integer">所属主链币类型, `0` 账户类型, `1` utxo类型主链, `2` Memo类型</ResponseField>
+       <ResponseField name="coin_type" type="integer">Belongs to the main chain coin type, `0` for account type, `1` for utxo-type main chain, `2` for Memo type</ResponseField>
     </Expandable>
 </ResponseField>
 
