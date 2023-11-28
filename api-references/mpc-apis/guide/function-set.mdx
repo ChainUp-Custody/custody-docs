@@ -27,7 +27,7 @@ title: 功能配置
 <Tip>
 Co-Signer RSA公钥除了对接口数据进行加密外，也参与对Co-Signer私钥片段加密的过程，为了私钥片段安全考虑，建议Co-Signer RSA公钥与业务服务 RSA公钥设置为不一致
 
-Co-Signer内置生成RSA公私钥命令，仅限Co-Signer使用，请参考[Co-Signer配置](/zh-cn/quick-start/mpc-wallet/api-integration/co-signer)
+Co-Signer内置生成RSA公私钥命令，仅限Co-Signer使用，请参考[Co-Signer配置](/quick-start/mpc-wallet/api-integration/co-signer)
 </Tip>
 
 
@@ -40,7 +40,7 @@ Co-Signer内置生成RSA公私钥命令，仅限Co-Signer使用，请参考[Co-S
 
 * **签名回调**：在API发起创建地址或为Co-Signer生成私钥片段时，ChainUp会回调Co-Signer进行签名操作；该回调地址由客户在ChainUp平台内，创建API页面配置【Co-Signer接口地址】
 
-* **交易审批回调地址**：请参考[Co-Signer配置](/zh-cn/api-references/mpc-apis/co-signer/callback/withdraw)
+* **交易审批回调地址**：请参考[Co-Signer配置](/api-references/mpc-apis/co-signer/callback/withdraw)
 
 
 ## II. 配置Co-Signer
@@ -49,7 +49,7 @@ Co-Signer 常用于自动化签名 OpenAPI 发起的、以及自动归集交易
 
 ### II.I. Co-Signer服务器选择
 
-Co-Signer支持部署在普通服务器或 `支持SGX` 的服务器，为了安全起见，建议使用带有 SGX 的服务器；推荐微软云服务商；[查看Co-Signer服务器配置要求](/zh-cn/quick-start/mpc-wallet/api-integration/co-signer)
+Co-Signer支持部署在普通服务器或 `支持SGX` 的服务器，为了安全起见，建议使用带有 SGX 的服务器；推荐微软云服务商；[查看Co-Signer服务器配置要求](/quick-start/mpc-wallet/api-integration/co-signer)
 
 ### II.II. Co-Signer配置
 
@@ -63,7 +63,7 @@ Co-Signer 提供了回调处理程序，该程序属于可选组件；
 * 若未配置回调处理程序（**安全级别**：⭐⭐⭐⭐）
 > API Co-Signer 会验证交易签名，并签署所有 OpenAPI 发起的交易请求；
 
-* [查看Co-Signer配置教程](/zh-cn/quick-start/mpc-wallet/api-integration/co-signer)
+* [查看Co-Signer配置教程](/quick-start/mpc-wallet/api-integration/co-signer)
 
 
 ### II.III. 创建Co-Signer私钥片段
