@@ -1,0 +1,45 @@
+---
+title: 地址格式
+---
+
+## I. 地址类型
+
+MPC钱包支持的地址类型包括UTXO类型、账户类型和Memo类型。UTXO类型使用Legacy地址，适用于比特币等采用UTXO模型的主链。账户类型适用于主链的账户地址，例如ETH、BSC、HECO等，采用Bip-44标准生成。而Memo类型则是为了保证充值地址的唯一性，在API创建时包含Memo字段，以提供额外的标识信息。
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/mpc-frame2-cn.png" width="600"/>
+</div>
+
+
+**账户类型**：
+
+当您在创建关注账户类型主链的钱包时，系统将为您生成账户类型的地址。特别是，ETH和绝大部分基于EVM网络的主链（如ETH、BSC、HECO等）的地址均为相同地址。
+
+MPC钱包目前支持账户类型创建多地址（仅限API创建）。此外，子钱包也支持创建多个地址，其中第一个创建的地址被标记为常用地址，仅可在APP/WEB中使用。
+
+
+
+
+**UTXO类型**：
+
+在您创建关注账户类型主链的钱包时，系统将为您生成UTXO的Legacy地址。Legacy地址采用比特币的原始地址格式，以“1”开头，与您的私钥关联的公钥的哈希输出。
+
+Custody还支持创建UTXO的找零地址，第二个创建的地址被用作找零地址，用于接收转账中未使用的UTXO。详细了解什么是找零地址。
+
+
+
+
+**Memo类型**：
+
+Memo是一种保证充值地址唯一性的数字串，与充币地址成对出现并一一对应。需要注意的是，MPC app创建的Memo类型地址本身并不存在Memo字段，而API创建的Memo类型地址包含Memo字段。
+
+
+
+
+## II. 地址合并
+
+为减少地址过多，难以维护的问题，MPC钱包支持地址合并，目前支持地址合并的协议如下：
+
+- 支持地址合并的协议（一）：BTC、BCH
+
+- 支持地址合并的协议（二）：ETH、ARB、BSC、HECO、FEVM、ETC、MATIC、AVAX-C

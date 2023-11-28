@@ -1,10 +1,10 @@
 {
   "name": "ChainUp Custody",
   "logo": {
-    "dark": "/zh-cn/logo/chainupcustody-logo.svg",
-    "light": "/zh-cn/logo/chainupcustody-logo.svg"
+    "dark": "/logo/chainupcustody-logo.svg",
+    "light": "/logo/chainupcustody-logo.svg"
   },
-  "favicon": "/zh-cn/logo/chainupcustody.svg",
+  "favicon": "/logo/chainupcustody.svg",
   "colors": {
     "primary": "#2662FF",
     "light": "#2662FF",
@@ -17,7 +17,7 @@
   "topbarLinks": [
     {
       "name": "EN",
-      "url": "https://custodydocs-v2.chainup.com/en-us/introduction/overview/chainup-custody"
+      "url": "https://custodydocs-en.chainup.com/introduction/overview/chainup-custody"
     }
   ],
   "modeToggle": {
@@ -31,15 +31,15 @@
   "tabs": [
     {
       "name": "快速入门",
-      "url": "zh-cn/quick-start"
+      "url": "quick-start"
     },
     {
       "name": "API文档",
-      "url": "zh-cn/api-references"
+      "url": "api-references"
     },
     {
       "name": "帮助中心",
-      "url": "zh-cn/help-center"
+      "url": "help-center"
     }
   ],
   "primaryTab": {
@@ -49,54 +49,54 @@
     {
       "group": "概述",
       "pages": [
-        "zh-cn/introduction/overview/chainup-custody",
-        "zh-cn/introduction/overview/chainup-community"
+        "introduction/overview/chainup-custody",
+        "introduction/overview/chainup-community"
       ]
     },
     {
       "group": "托管解决方案",
       "pages": [
-        "zh-cn/introduction/custody-solution/mpc-wallet",
-        "zh-cn/introduction/custody-solution/joint-custody",
-        "zh-cn/introduction/custody-solution/compliance-custody",
-        "zh-cn/introduction/custody-solution/wapi"
+        "introduction/custody-solution/mpc-wallet",
+        "introduction/custody-solution/joint-custody",
+        "introduction/custody-solution/compliance-custody",
+        "introduction/custody-solution/wapi"
       ]
     },
     {
       "group": "应用场景",
       "pages": [
-        "zh-cn/introduction/use-cases/crpyto-exchange",
-        "zh-cn/introduction/use-cases/traditional-asset",
-        "zh-cn/introduction/use-cases/public-chain-op",
-        "zh-cn/introduction/use-cases/nft-market",
-        "zh-cn/introduction/use-cases/decentralized-protocols",
-        "zh-cn/introduction/use-cases/institutions-families"
+        "introduction/use-cases/crpyto-exchange",
+        "introduction/use-cases/traditional-asset",
+        "introduction/use-cases/public-chain-op",
+        "introduction/use-cases/nft-market",
+        "introduction/use-cases/decentralized-protocols",
+        "introduction/use-cases/institutions-families"
       ]
     },
     {
       "group": "概述",
       "pages": [
-        "zh-cn/quick-start/overview/quickstart"
+        "quick-start/overview/quickstart"
       ]
     },
     {
       "group": "MPC钱包",
       "pages": [
-        "zh-cn/quick-start/mpc-wallet/download-app",
-        "zh-cn/quick-start/mpc-wallet/create-account",
-        "zh-cn/quick-start/mpc-wallet/create-wallet",
+        "quick-start/mpc-wallet/download-app",
+        "quick-start/mpc-wallet/create-account",
+        "quick-start/mpc-wallet/create-wallet",
         {
           "group": "私钥管理",
           "pages": [
-            "zh-cn/quick-start/mpc-wallet/private-manage/private-backup",
-            "zh-cn/quick-start/mpc-wallet/private-manage/private-recover"
+            "quick-start/mpc-wallet/private-manage/private-backup",
+            "quick-start/mpc-wallet/private-manage/private-recover"
           ]
         },
         {
           "group": "API集成",
           "pages": [
-            "zh-cn/quick-start/mpc-wallet/api-integration/api",
-            "zh-cn/quick-start/mpc-wallet/api-integration/co-signer"
+            "quick-start/mpc-wallet/api-integration/api",
+            "quick-start/mpc-wallet/api-integration/co-signer"
           ]
         }
       ]
@@ -104,10 +104,10 @@
     {
       "group": "统一托管",
       "pages": [
-        "zh-cn/quick-start/joint-custody/download-app",
-        "zh-cn/quick-start/joint-custody/create-account",
-        "zh-cn/quick-start/joint-custody/create-wallet",
-        "zh-cn/quick-start/joint-custody/api-integration"
+        "quick-start/joint-custody/download-app",
+        "quick-start/joint-custody/create-account",
+        "quick-start/joint-custody/create-wallet",
+        "quick-start/joint-custody/api-integration"
       ]
     },
     {
@@ -116,15 +116,15 @@
         {
           "group": "应用MPC钱包",
           "pages": [
-            "zh-cn/quick-start/compliance-custody-mpc/open-mpc",
-            "zh-cn/quick-start/compliance-custody-mpc/strategy-mpc"
+            "quick-start/compliance-custody-mpc/open-mpc",
+            "quick-start/compliance-custody-mpc/strategy-mpc"
           ]
         },
       {
           "group": "应用统一托管钱包",
           "pages": [
-            "zh-cn/quick-start/compliance-custody-joint/open-joint",
-            "zh-cn/quick-start/compliance-custody-joint/strategy-joint"
+            "quick-start/compliance-custody-joint/open-joint",
+            "quick-start/compliance-custody-joint/strategy-joint"
           ]
     
         }
@@ -133,8 +133,8 @@
     {
       "group": "简介",
       "pages": [
-        "zh-cn/api-references/intro/custody-apis",
-        "zh-cn/api-references/intro/custody-apis-intro"
+        "api-references/intro/custody-apis",
+        "api-references/intro/custody-apis-intro"
       ]
     },
     {
@@ -143,72 +143,72 @@
         {
           "group": "接入指引",
           "pages": [
-            "zh-cn/api-references/mpc-apis/guide/overview",
-            "zh-cn/api-references/mpc-apis/guide/create-account",
-            "zh-cn/api-references/mpc-apis/guide/function-set",
-            "zh-cn/api-references/mpc-apis/guide/test-flow"
+            "api-references/mpc-apis/guide/overview",
+            "api-references/mpc-apis/guide/create-account",
+            "api-references/mpc-apis/guide/function-set",
+            "api-references/mpc-apis/guide/test-flow"
           ]
         },
         {
           "group": "API接口",
           "pages": [
-            "zh-cn/api-references/mpc-apis/apis/description",
+            "api-references/mpc-apis/apis/description",
             {
               "group": "钱包",
               "pages": [
-                "zh-cn/api-references/mpc-apis/apis/wallet/open-coin",
-                "zh-cn/api-references/mpc-apis/apis/wallet/coin-list",
-                "zh-cn/api-references/mpc-apis/apis/wallet/chain-height"
+                "api-references/mpc-apis/apis/wallet/open-coin",
+                "api-references/mpc-apis/apis/wallet/coin-list",
+                "api-references/mpc-apis/apis/wallet/chain-height"
               ]
             },
             {
               "group": "子钱包",
               "pages": [
-                "zh-cn/api-references/mpc-apis/apis/sub-wallet/subwallet-create",
-                "zh-cn/api-references/mpc-apis/apis/sub-wallet/subwallet-create-address",
-                "zh-cn/api-references/mpc-apis/apis/sub-wallet/subwallet-get-address",
-                "zh-cn/api-references/mpc-apis/apis/sub-wallet/subwallet-assets",
-                "zh-cn/api-references/mpc-apis/apis/sub-wallet/subwallet-show-status"
+                "api-references/mpc-apis/apis/sub-wallet/subwallet-create",
+                "api-references/mpc-apis/apis/sub-wallet/subwallet-create-address",
+                "api-references/mpc-apis/apis/sub-wallet/subwallet-get-address",
+                "api-references/mpc-apis/apis/sub-wallet/subwallet-assets",
+                "api-references/mpc-apis/apis/sub-wallet/subwallet-show-status"
               ]
             },
             {
               "group": "转账",
               "pages": [
-                "zh-cn/api-references/mpc-apis/apis/withdraw/withdraw",
-                "zh-cn/api-references/mpc-apis/apis/withdraw/withdraw-fee",
-                "zh-cn/api-references/mpc-apis/apis/withdraw/withdraw-pending",
-                "zh-cn/api-references/mpc-apis/apis/withdraw/withdraw-list",
-                "zh-cn/api-references/mpc-apis/apis/withdraw/withdraw-sync-list"
+                "api-references/mpc-apis/apis/withdraw/withdraw",
+                "api-references/mpc-apis/apis/withdraw/withdraw-fee",
+                "api-references/mpc-apis/apis/withdraw/withdraw-pending",
+                "api-references/mpc-apis/apis/withdraw/withdraw-list",
+                "api-references/mpc-apis/apis/withdraw/withdraw-sync-list"
               ]
             },
             {
               "group": "收款",
               "pages": [
-                "zh-cn/api-references/mpc-apis/apis/deposit/deposit-list",
-                "zh-cn/api-references/mpc-apis/apis/deposit/deposit-sync-list"
+                "api-references/mpc-apis/apis/deposit/deposit-list",
+                "api-references/mpc-apis/apis/deposit/deposit-sync-list"
               ]
             },
             {
               "group": "归集",
               "pages": [
-                "zh-cn/api-references/mpc-apis/apis/consolidation/consolidation-subwallet",
-                "zh-cn/api-references/mpc-apis/apis/consolidation/consolidation-symbol-set",
-                "zh-cn/api-references/mpc-apis/apis/consolidation/consolidation-sync-list"
+                "api-references/mpc-apis/apis/consolidation/consolidation-subwallet",
+                "api-references/mpc-apis/apis/consolidation/consolidation-symbol-set",
+                "api-references/mpc-apis/apis/consolidation/consolidation-sync-list"
               ]
             },
             {
               "group": "Web3交易",
               "pages": [
-                "zh-cn/api-references/mpc-apis/apis/web3/web3-create",
-                "zh-cn/api-references/mpc-apis/apis/web3/web3-pending",
-                "zh-cn/api-references/mpc-apis/apis/web3/web3-record-list",
-                "zh-cn/api-references/mpc-apis/apis/web3/web3-record-sync-list"
+                "api-references/mpc-apis/apis/web3/web3-create",
+                "api-references/mpc-apis/apis/web3/web3-pending",
+                "api-references/mpc-apis/apis/web3/web3-record-list",
+                "api-references/mpc-apis/apis/web3/web3-record-sync-list"
               ]
             },
             {
               "group": "NFT",
               "pages": [
-                "zh-cn/api-references/mpc-apis/apis/nft/nft-info"
+                "api-references/mpc-apis/apis/nft/nft-info"
               ]
             }
           ]
@@ -216,116 +216,116 @@
         {
           "group": "交易通知",
           "pages": [
-            "zh-cn/api-references/mpc-apis/notify/description",
-            "zh-cn/api-references/mpc-apis/notify/deposit",
-            "zh-cn/api-references/mpc-apis/notify/withdraw",
-            "zh-cn/api-references/mpc-apis/notify/web3"
+            "api-references/mpc-apis/notify/description",
+            "api-references/mpc-apis/notify/deposit",
+            "api-references/mpc-apis/notify/withdraw",
+            "api-references/mpc-apis/notify/web3"
           ]
         },
         {
           "group": "Co-Signer",
           "pages": [
-            "zh-cn/api-references/mpc-apis/co-signer/flow",
+            "api-references/mpc-apis/co-signer/flow",
             {
               "group": "Co-Signer回调",
               "pages": [
-                "zh-cn/api-references/mpc-apis/co-signer/callback/withdraw",
-                "zh-cn/api-references/mpc-apis/co-signer/callback/web3"
+                "api-references/mpc-apis/co-signer/callback/withdraw",
+                "api-references/mpc-apis/co-signer/callback/web3"
               ]
             },
-            "zh-cn/api-references/mpc-apis/co-signer/sign-verify"
+            "api-references/mpc-apis/co-signer/sign-verify"
           ]
         },
-        "zh-cn/api-references/mpc-apis/err-code"
+        "api-references/mpc-apis/err-code"
       ]
     },
     {
       "group": "统一托管APIs",
       "pages": [
-        "zh-cn/api-references/custody-apis/guide",
-        "zh-cn/api-references/custody-apis/scheme",
-        "zh-cn/api-references/custody-apis/prepare",
-        "zh-cn/api-references/custody-apis/sdk",
+        "api-references/custody-apis/guide",
+        "api-references/custody-apis/scheme",
+        "api-references/custody-apis/prepare",
+        "api-references/custody-apis/sdk",
         {
           "group": "API接口",
           "pages": [
-            "zh-cn/api-references/custody-apis/apis/description",
+            "api-references/custody-apis/apis/description",
             {
               "group": "获取地址",
               "pages": [
-                "zh-cn/api-references/custody-apis/apis/get-address/create-user",
-                "zh-cn/api-references/custody-apis/apis/get-address/register-email",
-                "zh-cn/api-references/custody-apis/apis/get-address/get-deposit-address"
+                "api-references/custody-apis/apis/get-address/create-user",
+                "api-references/custody-apis/apis/get-address/register-email",
+                "api-references/custody-apis/apis/get-address/get-deposit-address"
               ]
             },
             {
               "group": "账户资产",
               "pages": [
-                "zh-cn/api-references/custody-apis/apis/account-assets/user-info",
-                "zh-cn/api-references/custody-apis/apis/account-assets/coin-list",
-                "zh-cn/api-references/custody-apis/apis/account-assets/get-account",
-                "zh-cn/api-references/custody-apis/apis/account-assets/get-balance"
+                "api-references/custody-apis/apis/account-assets/user-info",
+                "api-references/custody-apis/apis/account-assets/coin-list",
+                "api-references/custody-apis/apis/account-assets/get-account",
+                "api-references/custody-apis/apis/account-assets/get-balance"
               ]
             },
             {
               "group": "用户充值",
               "pages": [
-                "zh-cn/api-references/custody-apis/apis/user-deposit/deposit-sync-list",
-                "zh-cn/api-references/custody-apis/apis/user-deposit/deposit-list",
-                "zh-cn/api-references/custody-apis/apis/user-deposit/deposit-notify",
-                "zh-cn/api-references/custody-apis/apis/user-deposit/minerfee-list"
+                "api-references/custody-apis/apis/user-deposit/deposit-sync-list",
+                "api-references/custody-apis/apis/user-deposit/deposit-list",
+                "api-references/custody-apis/apis/user-deposit/deposit-notify",
+                "api-references/custody-apis/apis/user-deposit/minerfee-list"
               ]
             },
             {
               "group": "用户提现",
               "pages": [
-                "zh-cn/api-references/custody-apis/apis/user-withdraw/withdraw",
-                "zh-cn/api-references/custody-apis/apis/user-withdraw/withdraw-confirm",
-                "zh-cn/api-references/custody-apis/apis/user-withdraw/withdraw-notify",
-                "zh-cn/api-references/custody-apis/apis/user-withdraw/withdraw-sync-list",
-                "zh-cn/api-references/custody-apis/apis/user-withdraw/withdraw-list"
+                "api-references/custody-apis/apis/user-withdraw/withdraw",
+                "api-references/custody-apis/apis/user-withdraw/withdraw-confirm",
+                "api-references/custody-apis/apis/user-withdraw/withdraw-notify",
+                "api-references/custody-apis/apis/user-withdraw/withdraw-sync-list",
+                "api-references/custody-apis/apis/user-withdraw/withdraw-list"
               ]
             },
             {
               "group": "商户转账",
               "pages": [
-                "zh-cn/api-references/custody-apis/apis/company-transfer/company-transfer",
-                "zh-cn/api-references/custody-apis/apis/company-transfer/company-transfer-check-sum",
-                "zh-cn/api-references/custody-apis/apis/company-transfer/company-transfer-list",
-                "zh-cn/api-references/custody-apis/apis/company-transfer/company-transfer-sync-list"
+                "api-references/custody-apis/apis/company-transfer/company-transfer",
+                "api-references/custody-apis/apis/company-transfer/company-transfer-check-sum",
+                "api-references/custody-apis/apis/company-transfer/company-transfer-list",
+                "api-references/custody-apis/apis/company-transfer/company-transfer-sync-list"
               ]
             }
           ]
         },
-        "zh-cn/api-references/custody-apis/err-code"
+        "api-references/custody-apis/err-code"
       ]
     },
     {
       "group": "ChainUp Custody WAPI",
       "pages": [
-        "zh-cn/api-references/bass-apis/prepare",
-        "zh-cn/api-references/bass-apis/scheme",
-        "zh-cn/api-references/bass-apis/sdk",
+        "api-references/bass-apis/prepare",
+        "api-references/bass-apis/scheme",
+        "api-references/bass-apis/sdk",
         {
           "group": "API文档",
           "pages": [
-            "zh-cn/api-references/bass-apis/apis/description",
-            "zh-cn/api-references/bass-apis/apis/address-register",
-            "zh-cn/api-references/bass-apis/apis/address-available",
-            "zh-cn/api-references/bass-apis/apis/deposit-notify",
-            "zh-cn/api-references/bass-apis/apis/withdraw-consume",
-            "zh-cn/api-references/bass-apis/apis/withdraw-notify",
-            "zh-cn/api-references/bass-apis/apis/internal-notify",
-            "zh-cn/api-references/bass-apis/apis/withdraw-cancel"
+            "api-references/bass-apis/apis/description",
+            "api-references/bass-apis/apis/address-register",
+            "api-references/bass-apis/apis/address-available",
+            "api-references/bass-apis/apis/deposit-notify",
+            "api-references/bass-apis/apis/withdraw-consume",
+            "api-references/bass-apis/apis/withdraw-notify",
+            "api-references/bass-apis/apis/internal-notify",
+            "api-references/bass-apis/apis/withdraw-cancel"
           ]
         },
-        "zh-cn/api-references/bass-apis/err-code"
+        "api-references/bass-apis/err-code"
       ]
     },
     {
       "group": "帮助中心简介",
       "pages":[
-        "zh-cn/help-center/introduction/manage-custody"
+        "help-center/introduction/manage-custody"
       ]
     },
     {
@@ -334,39 +334,39 @@
         {
           "group": "用户设置",
           "pages":[
-            "zh-cn/help-center/manage-mpc/user-setting/user-role",
-            "zh-cn/help-center/manage-mpc/user-setting/add-user"
+            "help-center/manage-mpc/user-setting/user-role",
+            "help-center/manage-mpc/user-setting/add-user"
           ]
         },
         {
           "group": "我的钱包",
           "pages":[
-            "zh-cn/help-center/manage-mpc/my-wallet/off-line-tool",
-            "zh-cn/help-center/manage-mpc/my-wallet/framework",
-            "zh-cn/help-center/manage-mpc/my-wallet/address-format",
-            "zh-cn/help-center/manage-mpc/my-wallet/address-path"
+            "help-center/manage-mpc/my-wallet/off-line-tool",
+            "help-center/manage-mpc/my-wallet/framework",
+            "help-center/manage-mpc/my-wallet/address-format",
+            "help-center/manage-mpc/my-wallet/address-path"
           ]
         },
         {
           "group": "资产管理",
           "pages":[
-            "zh-cn/help-center/manage-mpc/asset-manage/my-asset",
-            "zh-cn/help-center/manage-mpc/asset-manage/coin",
-            "zh-cn/help-center/manage-mpc/asset-manage/nft"
+            "help-center/manage-mpc/asset-manage/my-asset",
+            "help-center/manage-mpc/asset-manage/coin",
+            "help-center/manage-mpc/asset-manage/nft"
           ]
         },
         {
           "group": "钱包交易",
           "pages":[
-            "zh-cn/help-center/manage-mpc/transaction/transfer"
+            "help-center/manage-mpc/transaction/transfer"
           ]
         },
         {
           "group": "Web3访问",
           "pages":[
-            "zh-cn/help-center/manage-mpc/web3/fil-multi-sign",
-            "zh-cn/help-center/manage-mpc/web3/fil-node",
-            "zh-cn/help-center/manage-mpc/web3/dapp"
+            "help-center/manage-mpc/web3/fil-multi-sign",
+            "help-center/manage-mpc/web3/fil-node",
+            "help-center/manage-mpc/web3/dapp"
           ]
         },
         {
@@ -375,17 +375,17 @@
             {
               "group": "合约归集",
               "pages":[
-                "zh-cn/help-center/manage-mpc/consolidation/contact/about",
-                "zh-cn/help-center/manage-mpc/consolidation/contact/rules",
-                "zh-cn/help-center/manage-mpc/consolidation/contact/execute"
+                "help-center/manage-mpc/consolidation/contact/about",
+                "help-center/manage-mpc/consolidation/contact/rules",
+                "help-center/manage-mpc/consolidation/contact/execute"
               ]
             },
             {
               "group": "Co-Signer归集",
               "pages":[
-                "zh-cn/help-center/manage-mpc/consolidation/co-signer/about",
-                "zh-cn/help-center/manage-mpc/consolidation/co-signer/rules",
-                "zh-cn/help-center/manage-mpc/consolidation/co-signer/execute"
+                "help-center/manage-mpc/consolidation/co-signer/about",
+                "help-center/manage-mpc/consolidation/co-signer/rules",
+                "help-center/manage-mpc/consolidation/co-signer/execute"
               ]
             }
           ]
@@ -393,7 +393,7 @@
         {
           "group": "交易策略引擎",
           "pages":[
-            "zh-cn/help-center/manage-mpc/strategy/transfer"
+            "help-center/manage-mpc/strategy/transfer"
           ]
         }
       ]
