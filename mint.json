@@ -54,7 +54,7 @@
       ]
     },
     {
-      "group": "托管解决方案",
+      "group": "产品介绍",
       "pages": [
         "introduction/custody-solution/mpc-wallet",
         "introduction/custody-solution/joint-custody",
@@ -63,7 +63,7 @@
       ]
     },
     {
-      "group": "应用场景",
+      "group": "应用场景&解决方案",
       "pages": [
         "introduction/use-cases/crpyto-exchange",
         "introduction/use-cases/traditional-asset",
@@ -345,7 +345,7 @@
             "help-center/manage-mpc/my-wallet/framework",
             "help-center/manage-mpc/my-wallet/address-format",
             "help-center/manage-mpc/my-wallet/address-path",
-            "help-center/manage-mpc/my-wallet/change address"
+            "help-center/manage-mpc/my-wallet/change-address"
           ]
 
         },
