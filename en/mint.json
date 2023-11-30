@@ -54,7 +54,7 @@
       ]
     },
     {
-      "group": "托管解决方案",
+      "group": "Custody Solutions",
       "pages": [
         "introduction/custody-solution/mpc-wallet",
         "introduction/custody-solution/joint-custody",
@@ -64,7 +64,7 @@
       ]
     },
     {
-      "group": "应用场景",
+      "group": "Use Case",
       "pages": [
         "introduction/use-cases/crpyto-exchange",
         "introduction/use-cases/traditional-asset",
