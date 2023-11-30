@@ -75,26 +75,26 @@
       ]
     },
     {
-      "group": "概述",
+      "group": "Overview",
       "pages": [
         "quick-start/overview/quickstart"
       ]
     },
     {
-      "group": "MPC钱包",
+      "group": "MPC Wallet",
       "pages": [
         "quick-start/mpc-wallet/download-app",
         "quick-start/mpc-wallet/create-account",
         "quick-start/mpc-wallet/create-wallet",
         {
-          "group": "私钥管理",
+          "group": "Key Management",
           "pages": [
             "quick-start/mpc-wallet/private-manage/private-backup",
             "quick-start/mpc-wallet/private-manage/private-recover"
           ]
         },
         {
-          "group": "API集成",
+          "group": "API Management",
           "pages": [
             "quick-start/mpc-wallet/api-integration/api",
             "quick-start/mpc-wallet/api-integration/co-signer"
@@ -103,7 +103,7 @@
       ]
     },
     {
-      "group": "统一托管",
+      "group": "Joint Custody",
       "pages": [
         "quick-start/joint-custody/download-app",
         "quick-start/joint-custody/create-account",
@@ -112,17 +112,17 @@
       ]
     },
     {
-      "group": "合规托管",
+      "group": "Compliance Services",
       "pages": [
         {
-          "group": "应用MPC钱包",
+          "group": "For MPC Wallet",
           "pages": [
             "quick-start/compliance-custody-mpc/open-mpc",
             "quick-start/compliance-custody-mpc/strategy-mpc"
           ]
         },
         {
-          "group": "应用统一托管钱包",
+          "group": "For Compliant Custody ",
           "pages": [
             "quick-start/compliance-custody-joint/open-joint",
             "quick-start/compliance-custody-joint/strategy-joint"

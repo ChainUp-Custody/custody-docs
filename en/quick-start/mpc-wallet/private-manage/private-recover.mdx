@@ -1,21 +1,20 @@
 ---
-title: 私钥恢复
+title: Private Key Recovery
 ---
 
-## I. 简介
+## I. Introduction
 
-ChainUp Custody MPC钱包是一种保护用户隐私和安全性的钱包类型。它使用多个私钥分片，并通过密钥分片在多个设备之间进行分散存储，从而增强了钱包的安全性。私钥的恢复功能在MPC钱包中起到关键作用，它允许用户在丢失或损坏设备的情况下恢复其钱包。
+The ChainUp Custody MPC Wallet is a wallet designed to protect user privacy and security. It employs multiple private key shares, dispersed across multiple devices through key sharing, enhancing the wallet's security. The private key recovery feature plays a crucial role in the MPC wallet, allowing users to recover their wallet in case of device loss or damage.
 
 <Note>
-为了资产安全，私钥分片与账号是强绑定的，也就是说当您私钥分片与账号同时丢失才会对您的资产有影响。
+For asset security, private key shares are strongly tied to the account. This means that the loss of both your private key shares and the account would impact your assets.
 </Note>
 
-私钥分片恢复支持两种方式：**手动恢复**、**云端恢复**。
+Private key recovery supports two methods: **manual recovery** and **cloud recovery**.
 
+## II. Manual Recovery
 
-## II. 手动恢复
-
-输入您在本地安全的离线环境手动保管的私钥分片(助记词)完成恢复。
+Input the private key shares (recovery phrase) manually stored in a secure offline environment to complete the recovery.
 
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={3}>
@@ -25,9 +24,9 @@ ChainUp Custody MPC钱包是一种保护用户隐私和安全性的钱包类型�
     </CardGroup>
 </div>
 
-## III. 云端恢复
+## III. Cloud Recovery
 
-将您备份到云盘的加密私钥分片文件自动下载到本地设备完成恢复（该加密私钥文件需要通过私钥密码解析）。
+Automatically download the encrypted private key shares file backed up to the cloud onto the local device to complete the recovery (the encrypted private key file needs to be decrypted with the private key password).
 
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={3}>
@@ -36,4 +35,3 @@ ChainUp Custody MPC钱包是一种保护用户隐私和安全性的钱包类型�
         <img src="/images/quickstart/mpc-recovercloud3_cn.png" width="200"/>
     </CardGroup>
 </div>
-

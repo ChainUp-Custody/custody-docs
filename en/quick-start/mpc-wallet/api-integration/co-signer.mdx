@@ -4,53 +4,53 @@ title: Co-Signer Configuration
 
 ## I. Overview
 
-This document will introduce the functionality of Co-Signer and how to configure Co-Signer to meet the business requirements of customers. In the ChainUp Custody ecosystem, Co-Signer is not only a security measure but also a crucial factor in driving decentralization and trust, aiming to provide users with a more secure, transparent, and efficient digital experience.
+This document will introduce the functionality of Co-Signer and how to configure Co-Signer to meet the client's business requirements. In the ChainUp Custody ecosystem, Co-Signer serves not only as a security measure but also as a key factor in promoting decentralization and trust, aiming to provide users with a more secure, transparent, and efficient digital experience.
 
 ## II. What is Co-Signer?
 
-In the field of blockchain or digital assets, **"Co-Signer"** usually refers to a mechanism where multiple individuals or entities need to jointly sign a transaction or contract. This mechanism is mainly used to enhance the security and trustworthiness of transactions or contracts. The purpose of using Co-Signer is to ensure that multiple confirmations and authorizations are required when critical operations are involved, thereby reducing potential risks and increasing overall security. This is particularly important for high-value transactions or critical business operations in the digital asset and blockchain network.
+In the field of blockchain or digital assets, "Co-Signer" usually refers to a mechanism where multiple individuals or entities need to jointly sign a transaction or contract. This mechanism is primarily used to enhance the security and credibility of transactions or contracts. The purpose of using Co-Signer is to ensure that critical operations require confirmation and authorization from multiple parties, thereby reducing potential risks and increasing overall security. This is particularly crucial for high-value transactions or critical business operations in digital assets and blockchain networks.
 
 ## III. Role of Co-Signer
 
 **Secure Digital Asset Management**
 
-In the field of digital assets, Co-Signer is used to protect high-value digital assets. Multi-signature wallets ensure that private keys are distributed in different locations, preventing the leakage or misuse of a single private key.
+In the digital asset domain, Co-Signer is employed to safeguard high-value digital assets. A multi-signature wallet ensures that private keys are distributed in different locations, preventing a single private key from being compromised or misused.
 
 **Smart Contract Operations**
 
-For smart contracts requiring multi-party confirmation, Co-Signer provides a secure mechanism. For example, distributed applications (DApps) may require multiple parties to co-sign to execute sensitive operations.
+For smart contracts that require multi-party confirmation, Co-Signer provides a secure mechanism. For instance, distributed applications (DApps) may require multiple participants to jointly sign for executing sensitive operations.
 
 **Transaction Security**
 
-For transactions on the blockchain, especially those involving large sums of money, multi-signature enhances the security of the transaction. Even if one account is compromised, it is not sufficient to complete the transaction.
+For transactions on the blockchain, especially those involving substantial funds, multi-signature functionality enhances transaction security. Even if one account is compromised, it is insufficient to complete the transaction.
 
-**Enterprise Applications**
+**Enterprise-level Applications**
 
-In enterprise-level blockchain applications, Co-Signer is used to ensure that multiple authorized entities must agree to specific decisions or transactions to meet compliance and audit requirements.
+In enterprise-level blockchain applications, Co-Signer is used to ensure that multiple authorized entities must agree on specific decisions or transactions to meet compliance and auditing requirements.
 
 ## IV. Deploying Co-Signer
 
 ### IV.I. Server Configuration Requirements
 
 <Tip>
-**Minimum CPU Requirements: AMD64 or ARM64 architecture, 2 cores, 2.0 GHz frequency**
+**Minimum CPU Requirements: AMD64 or ARM64 architecture, 2 cores, 2.0 GHz clock speed**
 
 **Memory: 8GB**
 
-**Hard Disk: 256GB**
+**Hard Drive: 256GB**
 </Tip>
 
 ### IV.II. Co-Signer Deployment Process
 
 #### Obtaining Co-Signer
 
-- **Regular Version**
+- **Standard Version**
 
-1. Run the program to download  
+1. Run the program for download
 
-  File address: https://github.com/ChainUp-Custody/mpc-co-signer/releases, select co-signer-linux-(version) version. This version is directly executable on Linux.
+   File Address: [https://github.com/ChainUp-Custody/mpc-co-signer/releases](https://github.com/ChainUp-Custody/mpc-co-signer/releases), choose the co-signer-linux-(version) version. This version is directly executable on Linux.
 
-2. Modify the program's executable permissions
+2. Modify program executable permissions
 
 ```sh
 chmod +x co-signer-(version)
@@ -59,11 +59,11 @@ chmod +x co-signer-(version)
 - **SGX Version**
 <Steps>
 
-    <Step title="Purchase Microsoft Cloud SGX Server">
-        For Microsoft Cloud SGX server, please refer to the documentation: [Microsoft Azure Confidential Computing](https://learn.microsoft.com/zh-cn/azure/confidential-computing/virtual-machine-solutions-sgx)
+    <Step title="Buy Microsoft cloud sgx server">
+        Please refer to the documentation for Microsoft cloud sgx server：https://learn.microsoft.com/zh-cn/azure/confidential-computing/virtual-machine-solutions-sgx
     </Step>
 
-    <Step title="Install Ego Environment">
+    <Step title="Install ego environment">
        ```sh
        sudo apt-get install software-properties-common
        sudo apt install snapd
@@ -74,33 +74,33 @@ chmod +x co-signer-(version)
        ```
     </Step>
 
-    <Step title="Create Working Directory">
+    <Step title="Create working directory">
         ```sh
         mkdir -p <work path/>
         ```
     </Step>
 
-    <Step title="Switch to Working Directory">
+    <Step title="Switch to working directory">
         ```sh
         cd <work path/>
         ```
     </Step>
 
-    <Step title="Download Program">
-        File address: [Co-Signer Releases](https://github.com/ChainUp-Custody/mpc-co-signer/releases), select co-signer-linux-(version) version. Please follow the subsequent steps to compile and package using Ego.
+    <Step title="Download program">
+        File address: https://github.com/ChainUp-Custody/mpc-co-signer/releases,  选择co-signer-linux-(version) 版本，请按照后续步骤使用ego进行编译打包
 
-        Note: Support for SGX is available after **v1.1.0** version.
+        Note: SGX is supported after **v1.1.0** version
     </Step>
 
-    <Step title="Add Configuration File enclave.json in the Working Directory">
+    <Step title="Add the configuration file enclave.json in the working directory. The content of the configuration file is as follows">
         <Warning>
-        **Important Note**
+        **Important**
 
-        1. In the configuration file, the value of exe should be: co-signer-sgx. If you modify the executable program name, the value of exe should be changed to the custom name.
+         1. The value of exe in the configuration file: co-signer-sgx. If the executable program name is modified, the value of exe needs to be modified to a custom name.
 
-        2. The configuration file specifies that co-signer can only run in the /data/co-signer/ directory. If you want to customize the running directory, please change **all** /data/co-signer/ in the configuration to the custom directory.
+         2. The configuration file stipulates that co-signer can only run in the directory /data/co-signer/. If you need to customize the running directory, please change **all** /data/co-signer/ in the configuration to custom Define directory
 
-        3. Heap memory, **heapSize** configuration is recommended to be: 6G (6144).
+         3. Heap memory, the recommended **heapSize** configuration is: 6G (6144)
 
         </Warning>
         ```json
@@ -119,7 +119,7 @@ chmod +x co-signer-(version)
         ```
     </Step>
 
-    <Step title="Re-sign and Bundle to Get the Runnable SGX Program">
+    <Step title="After re-signing and packaging, you will get a executable sgx executable program">
         ```sh
         ego sign
 
@@ -128,8 +128,6 @@ chmod +x co-signer-(version)
     </Step>
 
 </Steps>
-
-
 #### Run Co-Signer
 
 To view the help for the executable program: `co-signer -h`, the result is as follows:
@@ -168,3 +166,122 @@ Options:
 6. -verify-sign-pub-import    Import the public key used to verify the sign of the customer (sign), and generate it to the keystore.json file. After importing, co-signer will verify the withdrawal and web3 customer sign (sign), and the sign generation method is detailed in the API documentation.
 7. -custody-pub-import        Tool mode: Enter the startup password, import the public key of custody, and generate it to the keystore.json file.
 8. -keystore-gen              Tool mode: Used to unify import files such as seed.dat, rsaPri.pem, rsaPub.pem in v1.0.x version into the keystore.json file.
+```
+
+
+**Add Configuration and Start Co-Signer**
+
+<Steps>
+
+    <Step title="Create a folder in the same directory as the executable program">
+        ```sh
+        mkdir conf
+        ```
+    </Step>
+    <Step title="Add a configuration file in the conf directory, file name: config.yaml">
+        Configuration file content is as follows:
+        ```yaml
+        ## Main configuration information
+        main:
+            ## Co-signer service IP address
+            tcp: "0.0.0.0:28888"
+            ## Encrypted storage file used by v1.1.x version
+            keystore_file: "conf/keystore.json"
+
+        ## Custody system
+        custody_service:
+            ## app_id, obtained after creating a merchant
+            app_id: ""
+            ## API domain address, see the interface documentation
+            domain: ""
+            ## Request and response language, supporting zh_CN and en_US
+            language: "zh_CN"
+
+        ## Customer system
+        custom_service:
+            ## Withdrawal signature callback address, when not configured, sign needs to be verified forcefully
+            withdraw_callback_url: ""
+            ## Web3 transaction signature callback address, when not configured, sign needs to be verified forcefully
+            web3_callback_url: ""
+        ```
+    </Step>
+    <Step title="Configure the Rsa private key used by Co-Signer">
+     **Method One** 
+
+        Execute the command and enter the password as prompted. The password is the same as the one used for the wallet seed configuration! After successful execution, a file named keystore.json is generated in the conf directory.
+
+        The private key is used to encrypt request parameters when requesting the Custody service. The corresponding public key of the private key needs to be configured to Custody. Custody uses this public key to decrypt Co-Signer request data.
+
+        ```sh
+        ./co-signer -rsa-gen
+        ```
+
+     **Method Two**
+
+        Execute the command and enter the password as prompted. The password is the same as the one used for the wallet seed configuration! After successful execution, a file named keystore.json is generated in the conf directory.
+
+        The private key is used to encrypt request parameters when requesting the Custody service. The corresponding public key of the private key needs to be configured to Custody. Custody uses this public key to decrypt Co-Signer request data.
+
+        ```sh
+        ./co-signer -rsa-pri-import MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCzoQHv17B0tMPPLn8JzQd4OAovEYYhAyKXSK4WTvnf/WHsspzo4n3gpjdQPuQysri5iMIocAnZYgmQCosDiOIYSx4p9HJxTYRIzPZ25SjMtpxbzgHQtyIaw4CcPkE6CF7vDUpwil1T9NfegsvhWZ/9wAOf4AJmJIEvOnbAIq6DMpgGu59mWidRKls7UtQ9cwf2NYcE3eUE985juCsDOummmWLS1hBto7nCIiEhtXCGJgWCZyVrAWQZ10tIo0XW5ftiCU4EE5GgWNi6xA6GL6/xdygsCh3tsKRUfcfHIAFmEhVJoUrMiuws5xua1qPotz0t2Tm5QTHkrCGUeizzDJjhAgMBAAECggEBAIvnx35q3ADKGghwCnozurGj1Cq811829eYmsZCminAvBeo5Y4Tvg2NJkqNpmIr0MHQxVCfyu3kYpqIN1CA4qQCK4T+EKO6elX2uRfhsm852HGpUlY1eVa3Kv4zx4BO3GVnPXD8zRWVyuf+QmAM4rygQOcJ30uaDYCrMulkDqjB8FF8JrE0ycCdT2lvEvAAU3e8YeDRaOaYkBhRjDVntE+VjAyCDgvqtgwpI1A7iYK5o/lU+64BlQkp6xpglN5BF1aXwj3O4+zT7WJBkZqPMOHO11o81w3oCDXO9xZPMnjsO7o5HPKhCkEiaLQrymzzbgR7UYLP56OkTnlSb6sYG99ECgYEA6AxypkvKlc4fU6PIIfx
+  ```
+</Step>
+     <Step title="Co-Signer configures Custody public key">
+         After executing the command, enter the password as prompted. The password is consistent with the password used to configure the wallet seed! After successful execution, a file is generated in the conf directory: keystore.json
+
+         The public key is provided by Custody, and Co-Signer uses the public key to decrypt the data returned by the Custody service.
+
+         ```sh
+         ./co-signer -custody-pub-import 'Cusotdy RSA Public key'
+         ```
+     </Step>
+     <Step title="Co-Signer configures the public key used to verify the signature when not calling back to the client system">
+         After executing the command, enter the password as prompted. The password is consistent with the password used to configure the wallet seed! After successful execution, a file is generated in the conf directory: keystore.json
+
+         After importing, Co-Signer will verify the withdrawal and web3 transaction signatures (sign). Please refer to the API documentation for the sign generation method.
+
+         ```sh
+         ./co-signer -verify-sign-pub-import 'RSA Public key'
+         ```
+     </Step>
+</Steps>
+
+
+- **Startup shell script example**
+
+Start Co-Signer. It is recommended to use a shell script to start (to avoid password leakage to the terminal)
+
+```sh
+#!/bin/bash -e
+
+project_path=$(
+    cd $(dirname $0)
+    pwd
+)
+
+STR_PASSWORD=""
+echo -n "Please enter your password:"
+stty -echo
+read STR_PASSWORD
+stty echo
+
+
+if [[ ! -n "$STR_PASSWORD" ]]; then
+    echo "Password cannot be null"
+    exit 1
+fi
+
+echo ""
+echo "Startup Program..."
+echo ""
+
+# start
+echo ${STR_PASSWORD} | nohup ${project_path}/co-signer -server >>nohup.nout 2>&1 &
+```
+
+## V. Add Co-Signer Server to Whitelist
+ChainUp Custody needs to access Co-Signer to create equi-weight private keys and generate addresses. Therefore, you need to add the ChainUp Custody server IP to the security group or whitelist of the Co-Signer's startup port. The Custody server IP is as follows:
+
+1. Allow the Custody server (IP: 54.254.7.206) to access the 28888 port on the Co-Signer server. Note that the 28888 port is the listening port of the Co-Signer program and can be customized.
+
+2. The Co-Signer server needs to access the Custody server, and permission to access 54.251.87.91:433 needs to be granted.

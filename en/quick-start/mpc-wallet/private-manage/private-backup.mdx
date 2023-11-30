@@ -1,57 +1,51 @@
 ---
-title: 私钥备份
+title: Private Key Backup
 ---
 
-## I. 简介
+## I. Introduction
 
+The MPC wallet comprises **three private key shares**, with two encrypted shares stored on **Microsoft Cloud Services** and **Amazon Cloud Services**, and the other stored on your **local device**. To ensure the security of your assets, it is essential to timely backup the locally stored private key share and keep it secure. These private key shares exist in the form of a **recovery phrase**, making them easy to remember.
 
-MPC钱包的**私钥分片有三个**，其中两个分片经过加密存储在**微软云服务商**和**亚马逊云服务商**中，另外一个则存放在您的**本地设备**。为了保障资产安全，您需要及时将本地存放的私钥分片进行备份，并妥善保存。这些私钥分片以助记词的形式存在，便于记忆。
-
-私钥分片备份有两种方式可供选择：**本地备份**和**云端备份**。
-
+There are two backup options for private key shares: **local backup** and **cloud backup**.
 
 <Warning>
-为了确保您的资产安全，请务必及时备份您的私钥分片。未备份的钱包功能将受限。
+To ensure the security of your assets, please make sure to backup your private key shares promptly. Wallet functions that are not backed up will be restricted.
 </Warning>
 
+## II. Backup Process
 
-## II. 备份流程
+### **Manual Backup**
 
-### **手动备份** 
-
-手动记录私钥助记词并在本地保管，提供高安全性保障。
+Manually record the recovery phrase of the private key and store it locally for high-security assurance.
 
 <Steps>
-<Step title="打开私钥备份功能">
-    打开**安全**功能，选择主钱包进行手动备份私钥。
+<Step title="Open Private Key Backup Feature">
+    Open the **Security** feature, select the main wallet, and manually backup the private key.
 </Step>
-<Step title="输入私钥密码">
-    通过私钥密码或生物识别验证
+<Step title="Enter Private Key Password">
+    Verify with the private key password or biometric authentication.
 </Step>
-<Step title="查看助记词并保存">
-    将私钥助记词记录在安全的离线环境进行保存。
+<Step title="View Recovery Phrase and Save">
+    Record the recovery phrase in a secure offline environment.
 </Step>
 </Steps>
 
+### **Cloud Backup**
 
-
-### **云端备份** 
-
-将私钥分片加密后备份到云盘，既安全又便捷。
+Encrypt and backup the private key shares to the cloud for a secure and convenient solution.
 
 <Steps>
-<Step title="打开私钥备份功能">
-    打开**安全**功能，选择主钱包进行手动备份私钥。
+<Step title="Open Private Key Backup Feature">
+    Open the **Security** feature, select the main wallet, and manually backup the private key.
 </Step>
-<Step title="选择云盘">
-    根据移动设备的性质选择合适的云端方式。
+<Step title="Select Cloud Drive">
+    Choose a suitable cloud backup option based on the nature of your mobile device.
     <Warning>
-1. Custody MPC钱包在您的云盘中备份的文件夹名称是“do not delete Custody backup”请您务必不要删除文件夹和文件夹中的备份文件。
-2. 由于huawei 鸿蒙系统的特殊性，暂不支持huawei设备进行云端备份。
+1. The folder name in your cloud drive where Custody MPC Wallet backs up files is "do not delete Custody backup." Please make sure not to delete the folder and files within it.
+2. Due to the special nature of Huawei HarmonyOS, cloud backup is currently not supported for Huawei devices.
 </Warning>
 </Step>
-<Step title="云盘备份">
-    等待云盘备份完成，及备份成功。
+<Step title="Cloud Backup">
+    Wait for the cloud backup to complete, ensuring the backup is successful.
 </Step>
 </Steps>
-
