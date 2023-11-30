@@ -1,21 +1,19 @@
 ---
-title: 钱包架构
+title: Wallet Architecture
 ---
 
-ChainUp Custody的MPC钱包以四层结构为基础，包括账户、主钱包、子钱包、和币种地址，旨在方便不同业务、部门管理各自的资金和审批流程。
+ChainUp Custody's MPC wallet is based on a four-layer structure, including Account, Main Wallet, Sub-Wallet, and Coin Type Address. It aims to facilitate different businesses and departments in managing their funds and approval processes.
 
+## I. Structure Overview
 
+1. An account can create multiple main wallets.
 
-## I. 结构概览
+2. A main wallet can create multiple sub-wallets.
 
-1. 一个账户能够创建多个主钱包。
-
-2. 一个主钱包能够创建多个子钱包。
-
-3. 每个子钱包支持多种币种，每种资产币种可以有一个或多个地址。
+3. Each sub-wallet supports multiple coin types, and each asset coin type can have one or more addresses.
 
 <Tip> 
-想要了解币种多地址,可阅读[地址格式](/help-center/manage-mpc/my-wallet/address-format)了解相关信息。
+To understand multi-address coin types, you can read [Address Format](/help-center/manage-mpc/my-wallet/address-format) for more information.
 </Tip>
 
 
@@ -25,13 +23,11 @@ ChainUp Custody的MPC钱包以四层结构为基础，包括账户、主钱包�
     <img src="/images/help-center/mpc-frame1-cn.png" width="600"/>
 </div>
 
-## II. 实践案例
+## II. Practical Cases
+MPC main wallets can be used for asset statistics for a specific business line, while sub-wallets can be allocated to different users.
 
-1. MPC主钱包可用于某个业务线的资产统计，而子钱包则可以分配给不同的用户使用。
-
-2. MPC主钱包也可以用于公司总资产的统计，而子钱包则分配给不同的业务部门使用。
-
+MPC main wallets can also be used for the overall asset statistics of the company, while sub-wallets are allocated to different business departments.
 <Tip> 
-当您终止使用，或者ChainUp Custody服务不可用时，您可通过专属[离线私钥恢复工具](/help-center/manage-mpc/my-wallet/off-line-tool)，获取已创建钱包的完整私钥。
+When you terminate usage or if ChainUp Custody services are unavailable, you can use the dedicated [Offline Private Key Recovery Tool](/help-center/manage-mpc/my-wallet/off-line-tool) to obtain the complete private keys of the created wallets.
 </Tip>
 

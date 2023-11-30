@@ -1,71 +1,68 @@
 ---
-title: FIL多签钱包管理
+title: FIL Multi-Sign Wallet
 ---
 
-## I. 概述
+## I. Overview
 
-Filcoin主网提供了支持多个账户管理无私钥钱包的功能，这项功能称为FIL多签钱包。用户可以通过发起提案和进行提案投票来有效管理该钱包。
+The Filcoin mainnet provides functionality to manage wallet without private keys, known as FIL multi-signature wallets. Users can effectively manage these wallets by initiating proposals and voting on them.
 
-FIL多签钱包适用于以下业务场景：
+FIL multi-signature wallets are suitable for the following business scenarios:
 
-**1. 多股东共同管理FIL资产：** 通过多签钱包，多个不同的股东可以共同管理FIL资产。根据设定的股东数量和阈值，科学地管理和控制您的FIL资产。
+**1. Joint management of FIL assets by multiple shareholders:** Multiple shareholders can collectively manage FIL assets through multi-signature wallets. Manage and control your FIL assets scientifically based on the set number of shareholders and threshold.
 
-**2. 多成员管理FIL节点：** 您可以使用多签钱包作为FIL节点的所有者或受益人，实现多成员共同管理FIL节点的功能。
-
-
-### I.I. 名词与术语
-
-**签署者（signer）：** 多重签名钱包中的参与者。
-
-**阈值：** 多重签名钱包提案需要达到特定条件才能被记录在区块链上。
-
-**提案：** 多重签名钱包成员发起的交易。
-
-**提案投票：** 多重签名钱包成员确认有效的、未达到门槛的提案交易。
-
-**f1地址：** FIL主网使用secp256k1算法根据私钥生成的地址。
-
-**f3地址：** FIL主网使用BLS算法根据私钥生成的地址。
-
-**f2地址：** FIL主网通过特定算法生成的无私钥地址。
-
-**f0地址：** 上述不同类型的新地址在FIL主网中的字段标识，相当于编号。
+**2. Multi-member management of FIL nodes:** You can use a multi-signature wallet as the owner or beneficiary of FIL nodes, achieving the functionality of multi-member management of FIL nodes.
 
 
+### I.I. Terms and Definitions
+
+**Signer:** Participants in the multi-signature wallet.
+
+**Threshold:** Specific conditions that multi-signature wallet proposals need to meet to be recorded on the blockchain.
+
+**Proposal:** Transactions initiated by members of the multi-signature wallet.
+
+**Proposal Voting:** Members of the multi-signature wallet confirm valid proposals that have not reached the threshold.
+
+**f1 Address:** Address generated based on the private key using the secp256k1 algorithm on the FIL mainnet.
+
+**f3 Address:** Address generated based on the private key using the BLS algorithm on the FIL mainnet.
+
+**f2 Address:** Address generated on the FIL mainnet using a specific algorithm without a private key.
+
+**f0 Address:** Field identifier in the FIL mainnet for the different types of new addresses mentioned above, equivalent to a code.
 
 
-## II. FIL多签钱包交易流程
+## II. FIL Multi-Signature Wallet Transaction Flow
 
 <div className="w-full flex items-center justify-center">
     <img src="/images/help-center/mpc-fil-msign1_cn.png" width="600"/>
 </div>
 
-多重签名钱包的签署者（signers）发起提案交易至多签名钱包：该提案交易一经上链，其他多签名成员对其进行投票并在区块链上确认；区块链检验提案是否已达到当前多重签名钱包设定的门槛，一旦达到门槛条件，提案即被执行。
+Signers in the multi-signature wallet initiate proposal transactions to the multi-signature wallet. Once the proposal is on-chain, other multi-signature members vote on it and confirm it on the blockchain. The blockchain checks whether the proposal has reached the threshold set by the current multi-signature wallet. Once the threshold conditions are met, the proposal is executed.
 
-## III. MPC钱包支持的FIL多签功能
+## III. FIL Multi-Signature Features Supported by MPC Wallet
 
-ChainUp Custody的MPC钱包现在支持多种功能，包括创建和管理FIL多签钱包、管理多签钱包的签署者和阈值、以及进行多签钱包余额提现和提案处理等操作。
-
-
+ChainUp Custody's MPC wallet now supports various features, including creating and managing FIL multi-signature wallets, managing signers and thresholds for multi-signature wallets, and performing balance withdrawals and proposal handling for multi-signature wallets.
 
 
-### III.I. 创建和管理多签钱包
+
+### III.I. Create and Manage Multi-Signature Wallets
 
 <Steps>
-<Step title="打开功能">
-    登录ChainUp Custody账号，选择MPC系统，选择【发现】-【FIL多签钱包】功能。
+<Step title="Open Functionality">
+    Log in to your ChainUp Custody account, select the MPC system, and choose the "Discovery" - "FIL Multi-Signature Wallet" function.
 </Step>
-<Step title="使用FIL多签钱包功能">
-在FIL多签钱包管理功能中，您可以选择创建新的多签钱包或添加现有的多签钱包：
+<Step title="Use FIL Multi-Signature Wallet Function">
+In the FIL Multi-Signature Wallet Management function, you can choose to create a new multi-signature wallet or add an existing one:
 
-    **创建多签钱包**：若目前没有适用的多签钱包可供使用，您可以选择创建一个全新的多签钱包。
+    **Create Multi-Signature Wallet:** If there is no suitable multi-signature wallet available, you can choose to create a brand new one.
     <Tip> 
-在创建多签钱包时，确保选择正确的地址发布创建交易，并准确输入所需的签名者（signers）和阈值信息。一旦交易成功上链，您就能成功创建多签钱包。
+When creating a multi-signature wallet, make sure to choose the correct address for publishing the creation transaction and enter the required signer and threshold information accurately. Once the transaction is successfully on-chain, you will have successfully created a multi-signature wallet.
 </Tip>
 
-    **添加多签钱包**：若您的MPC钱包中的某个FIL地址已被设置为某个多签钱包的签署者，您可使用MPC功能来管理您的多签钱包。
+    **Add Multi-Signature Wallet:** If an address in your MPC wallet has been set as a signer for a multi-signature wallet, you can use the MPC function to manage your multi-signature wallet.
  <Tip> 
-输入您目前管理的多签钱包地址，即可成功添加您管理的多签钱包。
+Enter the address of the multi-signature wallet you currently manage, and you can successfully add the multi-signature wallet you manage.
 </Tip>
 
 </Step>
@@ -73,13 +70,13 @@ ChainUp Custody的MPC钱包现在支持多种功能，包括创建和管理FIL�
 
 
 
-### III.II. 管理多签钱包signers和阈值
+### III.II. Manage Signers and Thresholds for Multi-Signature Wallets
 
-ChainUp Custody的MPC钱包支持用户发布、编辑多签钱包的签名者（signers）和阈值的提案，并且能够对这些提案进行投票。
+ChainUp Custody's MPC wallet supports users in proposing and voting on proposals to edit signers and thresholds for multi-signature wallets.
 
 
 
-**编辑signers**
+**Edit Signers**
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
         <img src="/images/help-center/mpc-fil-msign6_cn.jpg" width="200"/>
@@ -87,13 +84,12 @@ ChainUp Custody的MPC钱包支持用户发布、编辑多签钱包的签名者�
     </CardGroup>
 </div>
 
-在多签钱包页面中，点击"更多"，然后选择"编辑 signers"，即可发起编辑该多签钱包的签名者（signers）提案。
-您可以选择添加或减少签名者（signers）； 选择完成并输入相应参数后，交易上链，该提案发起成功。
+In the multi-signature wallet page, click on "More," then select "Edit Signers" to initiate a proposal to edit the signers for that multi-signature wallet.
+You can choose to add or remove signers. Once you have selected and entered the relevant parameters, the transaction is on-chain, and the proposal is successfully initiated.
 
 
 
-
-**编辑阈值**
+**Edit Thresholds**
 
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
@@ -102,13 +98,13 @@ ChainUp Custody的MPC钱包支持用户发布、编辑多签钱包的签名者�
     </CardGroup>
 </div>
 
-在多签钱包页面，点击“更多”，选择“编辑阈值”，即可发起编辑该多重签名钱包阈值的提案。
-输入符合规则的新阈值，等到交易上链后，编辑多签阈值提案发起成功。
+In the multi-signature wallet page, click on "More," then select "Edit Thresholds" to initiate a proposal to edit the threshold for that multi-signature wallet.
+Enter the new threshold that complies with the rules. Once the transaction is on-chain, the edit threshold proposal is successfully initiated.
 
 
 
 
-### III.III. 多签钱包余额提现
+### III.III. Balance Withdrawal for Multi-Signature Wallets
 
 
 <div className="w-full flex items-center justify-center">
@@ -119,36 +115,33 @@ ChainUp Custody的MPC钱包支持用户发布、编辑多签钱包的签名者�
     </CardGroup>
 </div>
 
-ChainUp Custody的MPC钱包FIL多签管理工具支持发起FIL多签钱包余额提现的提案。
+ChainUp Custody's MPC wallet FIL multi-signature management tool supports initiating proposals for balance withdrawals from FIL multi-signature wallets.
 
-您可以在多签钱包页面直接点击“提现”按钮，或者在多签钱包列表页面通过左滑快捷操作来选择提现操作。
+You can directly click the "Withdraw" button on the multi-signature wallet page, or use the left swipe shortcut operation on the multi-signature wallet list page to choose the withdrawal operation.
 
-输入您希望提现的金额和目标地址，随后等待交易成功上链。这样您的余额提现提案将会成功发起。
-
-
+Enter the amount you wish to withdraw and the target address. Wait for the transaction to successfully go on-chain. Your balance withdrawal proposal will be successfully initiated.
 
 
 
+### III.IV. Proposal Handling
 
-### III.IV. 提案处理
-
-ChainUp Custody的MPC钱包具备FIL多签管理工具，支持处理FIL多签钱包的提案功能。
+ChainUp Custody's MPC wallet has FIL multi-signature management tools and supports the functionality of handling proposals for FIL multi-signature wallets.
 
 
 
 
-**提案投票**
+**Proposal Voting**
 
-创建或添加多签钱包后，您需要投票的提案将以待办事项的形式呈现。完成这些待办事项即可投票处理相关提案。
-
-
+After creating or adding a multi-signature wallet, proposals that require your vote will be presented as tasks. Completing these tasks allows you to vote and process related proposals.
 
 
-**手动提案处理**
 
-在多签钱包页面-更多中选择处理提案。
 
-输入您希望处理的提案TXID，即可针对该提案进行投票。
+**Manual Proposal Handling**
+
+In the multi-signature wallet page, choose "More" and select "Handle Proposal."
+
+Enter the TXID of the proposal you wish to handle, and you can vote on that proposal.
 
 
 

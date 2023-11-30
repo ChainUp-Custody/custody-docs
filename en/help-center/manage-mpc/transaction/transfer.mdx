@@ -1,81 +1,76 @@
 ---
-title: MPC钱包交易
+title: Transfer and Receiving
 ---
 
+## I. Overview
 
-## I. 概述
+A transaction refers to the transfer of digital currency from the source address to the destination address, primarily comprising two categories of transactions: transfer and receiving, also known as withdrawal and deposit.
 
-交易是指数字货币从原地址到目标地址的转移，主要包含两个类别的交易：出金和入金，也可以称之为充值和提现。
+### Withdrawal Transactions
+When you initiate the transfer of digital currency from Custody through the app or API, this transaction is referred to as a withdrawal. Withdrawal involves the process of transferring digital currency from your address to another target address. This may involve withdrawal operations initiated by you on the Custody platform, sending digital currency to an external address.
 
-### 出金交易
-当您从Custody通过APP或者API发生转出数字货币的行为时，这笔交易被称为出金。出金是指将数字货币从您的地址转移到其他目标地址的过程。这可能涉及到您在Custody平台上主动发起的提现操作，将数字货币发送到外部地址。
-### 入金交易 
-如果其他地址向您的地址转入数字货币时，这笔交易为入金。入金是指将数字货币从外部地址转移到您的Custody地址的过程。这可能是由外部用户或平台向您的Custody地址充值数字货币。
+### Deposit Transactions
+When digital currency is transferred to your address from another address, this transaction is a deposit. Deposit involves the process of transferring digital currency from an external address to your Custody address. This may occur when external users or platforms deposit digital currency to your Custody address.
 
 <Tip> 
-* 通过明确区分出金和入金，您可以更清晰地了解数字货币在Custody平台上的流动和转移过程，有助于准确记录和监控您的数字资产。
+* By clearly distinguishing between withdrawal and deposit, you can have a clearer understanding of the flow and transfer process of digital currency on the Custody platform, aiding in accurate recording and monitoring of your digital assets.
 </Tip>
 
-## II. 提币状态
+## II. Withdrawal Status
 <div className="w-full flex items-center justify-center">
     <img src="/images/help-center/withdrawal_cn.png" width="800"/>
 </div>
 
-**1.KYT验证中状态**
+**1. KYT Verification Pending Status**
 
-发起提币后，如果您已开通并配置了提币地址和币种的KYT（Know Your Transaction），提币将进入“KYT验证中”状态。MPC钱包生成KYT验证订单，验证提币交易的KYT风险/服务超时。人工确认通过后，进入提币审批环节。
+After initiating a withdrawal, if you have opened and configured withdrawal addresses and KYT (Know Your Transaction) for the currency, the withdrawal enters the "KYT Verification Pending" status. The MPC wallet generates a KYT verification order to verify the KYT risk/service timeout of the withdrawal transaction. After manual confirmation, it enters the withdrawal approval stage.
 
-**2.提币审批流程**
+**2. Withdrawal Approval Process**
 
-如果提币钱包和币种配置了审批策略，会进入提币审批流程。在达到审批流程中设置的通过阈值后，结束提币审批流程，进入签名流程。如果无审批配置，则直接进入未审批状态。
+If withdrawal wallets and currencies are configured with approval policies, it enters the withdrawal approval process. After reaching the approval threshold set in the approval process, the withdrawal approval process ends, and it enters the signature process. If there is no approval configuration, it directly enters the unapproved state.
 
-**3.签名流程**
+**3. Signature Process**
 
-所有的MPC钱包都经历签名流程。在此流程中，私钥持有者使用本地私钥片段与服务器私钥片段配合对交易进行签名。状态为“待签名”，拒绝签名则以“拒绝”为终态结束本次提币，签名通过则进入广播交易流程。
+All MPC wallets go through the signature process. In this process, the private key holder signs the transaction using the local private key fragment in conjunction with the server's private key fragment. The status is "Awaiting Signature," and rejection of the signature ends the withdrawal with a "Rejected" status, while approval proceeds to the broadcast transaction process.
 
-**4.广播交易流程**
+**4. Broadcast Transaction Process**
 
-签名完成后，钱包开始广播交易，订单状态变为“支付中”。等待区块链处理交易。
+After signing is completed, the wallet starts broadcasting the transaction, and the order status becomes "Payment in Progress." It waits for the blockchain to process the transaction.
 
-**5.支付完成状态**
+**5. Payment Completed Status**
 
-当交易成功上链时，提币完成，状态变为“支付完成”。本次提币结束。
+When the transaction is successfully confirmed on the blockchain, the withdrawal is completed, and the status becomes "Payment Completed." The withdrawal ends.
 
-**6.交易失败状态**
+**6. Transaction Failed Status**
 
-如果区块链交易失败，状态为“交易失败”，本次提币资金会退回地址中，但Gas费已被消耗不会退还。
+If the blockchain transaction fails, the status is "Transaction Failed," and the funds for this withdrawal are returned to the address, but gas fees consumed will not be refunded.
 
-**7.交易丢失状态**
+**7. Transaction Lost Status**
 
-在交易pending状态下，重新签名取消支付，状态为“交易丢失”，结束本次提币。
+In the pending state of the transaction, rejecting the signature and canceling the payment results in a "Transaction Lost" status, ending the withdrawal.
 
-
-## III. 充币状态
+## III. Deposit Status
 
 <div className="w-full flex items-center justify-center">
     <img src="/images/help-center/deposit_cn.png" width="800"/>
 </div>
 
-**1.未确认状态**
+**1. Unconfirmed Status**
 
-其他地址转账给您的MPC钱包地址时，初始状态为“未确认”。在交易达到确认数之后，状态将会变成“已确认”。
+When another address transfers digital currency to your MPC wallet address, the initial status is "Unconfirmed." After the transaction reaches the confirmation count, the status changes to "Confirmed."
 
+**2. KYT Verification Pending Status**
 
-**2.KYT验证中状态**
+If the deposit address and currency are configured with KYT (Know Your Transaction), the deposit transaction enters the "KYT Verification Pending" status. The wallet generates a KYT verification order and submits it to the KYT service provider for verification. Manual processing may be required at this stage, with the status being "KYT Manual Processing."
 
-如果充值的地址和币种开通并配置了KYT（Know Your Transaction），充值交易将进入“KYT验证中”状态。钱包生成KYT验证订单并提交到KYT服务商验证。人工处理可能需要在此阶段进行，此时状态为“KYT人工处理”。
+**3. KYT Manual Processing Status**
 
+If the risk level returned by the KYT service provider requires manual processing, the deposit status is "KYT Manual Processing." After manual processing is completed, it moves on to the next stage.
 
-**3.KYT人工处理状态**
+**4. Confirmed Status**
 
-如果KYT服务商返回的风险等级需要人工处理，充值状态为“KYT人工处理”。人工处理完成后，进入下一阶段。
+If KYT is not configured, KYT verification passes, or KYT manual processing is completed, and the funds have been credited, the deposit status is "Completed." This concludes the deposit transaction.
 
+**5. Failed/Exception Status**
 
-**4.已确认状态**
-
-未配置KYT、KYT验证通过以及KYT人工处理完毕，资金已到账，充值状态为“已完成”。该笔充值交易结束。
-
-
-**5.失败/异常状态**
-
-如果交易订单异常，例如主网回滚等特殊情况下，交易将以“失败/异常”为终态结束。
+If the transaction order is exceptional, such as a mainnet rollback, the transaction ends in a "Failed/Exception" status.

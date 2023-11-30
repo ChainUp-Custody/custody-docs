@@ -1,164 +1,125 @@
 ---
-title: 配置Co-Signer规则
+title: Configure Co-Signer Rules
 ---
 
-## I. 概述
-用户完成Co-Signer归集规则的配置后，Custody系统将按照规定的归集策略执行相应的归集操作。这将导致归集应用范围内的钱包/地址上的资产被统一转账至预设的归集钱包地址。在被归集的钱包（出金地址）缺乏矿工费的情况下，加油站将会根据设定的加油策略为该钱包的主链币充值。
+## I. Overview
 
+After users configure Co-Signer consolidation rules, the Custody system will execute corresponding consolidation operations based on the defined consolidation strategy. This will result in the assets on wallets/addresses within the consolidation application scope being uniformly transferred to the preset consolidation wallet address. In cases where the wallet to be consolidated (withdrawal address) lacks mining fees, the gas station will recharge the wallet's mainnet coin according to the set refueling strategy.
 
-<Tip> 
-强烈建议您不要主动为同一资产同时配置合约归集策略和Co-signer归集策略。如果您误操作，系统将根据您配置策略的时间，选择执行最早配置的归集策略。
+<Tip>
+It is strongly recommended not to actively configure contract consolidation strategies and Co-Signer consolidation strategies for the same asset simultaneously. If you make a mistake, the system will execute the consolidation strategy configured earliest based on the time of your configuration.
 </Tip>
 
+### I.I. Prerequisites for Using the Feature
 
-### I.I. 使用功能前提
+Please ensure that the main wallet has not expired, as expiration will render all wallet-related business functions unusable.
 
-请确保主钱包没有过期，过期情况会导致所有钱包相关业务功能无法使用。
+Ensure that API and Co-Signer have been configured to ensure the normal operation of the API, enabling the smooth execution of Co-Signer's consolidation function.
 
-确保已完成API和Co-signer的配置，以确保API的正常运行，从而使Co-signer的归集功能能够顺利执行。
+Upgrade the App version to **6.4.5** or above.
 
-请将App版本升级至**6.4.5**及以上。
+## II. Configure Co-Signer Consolidation Rules
 
+Co-Signer consolidation involves four dimensions:
 
-## II. 配置Co-Signer归集规则
+1. Configure Consolidation Wallet and Gas Station
+2. Determine the Consolidation Application Scope
+3. Configure Consolidation Strategy
+4. Configure Refueling Strategy
 
-Co-Signer归集包含四个维度：
+### II.I. Step One: Configure Consolidation Wallet and Gas Station
 
-1.配置归集钱包和加油站
+#### What is a Consolidation Wallet
 
-2.决定归集应用范围
+A consolidation wallet is responsible for consolidating assets dispersed in other different wallets to its address.
 
-3.配置归集策略
+#### What is a Gas Station
 
-4.配置加油策略
+A gas station is responsible for replenishing mining fees to the corresponding wallet. When the application wallet fails to initiate the consolidation transfer due to a lack of mining fees, the gas station will provide the necessary mining fee support.
 
-
-### II.I. 步骤一：配置归集钱包和加油站
-
-#### 什么是归集钱包
-
-归集钱包是一个负责将分散在其他不同钱包的资产集中归集到其地址上的唯一资金接收方。
-
-
-#### 什么是加油站
-
-加油站是一个负责补充矿工费至对应钱包的服务，当应用钱包因缺少矿工费而无法成功发起归集转账时，加油站将负责提供必要的矿工费支持。
-
-
-
-
-#### **操作步骤**
-
+#### **Operating Steps**
 <Steps>
-<Step title="打开Co-signer归集功能">
-App扫码登录Custody Web端，使用"归集管理-Co-SIgner归集"功能进行设置。
+<Step title="Open Co-Signer Consolidation Feature">
+    Use the "Consolidation Management - Co-Signer Consolidation" feature on the Custody Web portal by scanning the QR code with the Custody App.
 </Step>
-<Step title="确认配置">
- 使用Custody App扫描提供的二维码，利用本地私钥片段签名确认归集钱包和加油站的配置。
+<Step title="Confirm Configuration">
+    Use the Custody App to scan the provided QR code and sign with local key fragments to confirm the configuration of the consolidation wallet and gas station.
 </Step>
-
 </Steps>
 
 <Warning>
-**关键步骤和注意事项**
+**Key Steps and Considerations**
 
- 在这一步骤中，共管成员可以通过选择主钱包下的子钱包并启动相应配置。值得注意的是，归集钱包和加油站可以选择同一个。
+In this step, co-managers can choose the sub-wallets under the main wallet and initiate the corresponding configuration. It's worth noting that the consolidation wallet and gas station can be the same.
 
-请务必检查所选的归集钱包和加油站是否可用。只有当它们处于可用状态时，归集和加油功能才能正常运作。如果发现所选的归集钱包或加油站已停用，及时进行修改以确保系统的正常运行。
+Ensure to check if the selected consolidation wallet and gas station are available. The consolidation and refueling functions will only work when they are in an available state. If you find that the selected consolidation wallet or gas station is disabled, make timely modifications to ensure the normal operation of the system.
 
-如果您的归集钱包和加油站拥有同一资产的多条地址，只有常用地址可以用作归集到账地址或加油出金地址。在配置完成后，您可以查看具体的常用地址明细。
-
+If your consolidation wallet and gas station have multiple addresses for the same asset, only commonly used addresses can be used as the consolidation destination address or refueling withdrawal address. After configuration, you can view the details of the specific commonly used addresses.
 </Warning>
 
+### II.II. Step Two: Determine the Scope of Consolidation Application
 
-
-
-
-### II.II. 步骤二：决定归集应用范围
-
-
-<div className="w-full flex items-center justify-center">
-    <img src="/images/help-center/co-signer-collect3_cn.PNG" width="600"/>
-</div>
-
+![Co-Signer Collection](/images/help-center/co-signer-collect3_cn.PNG)
 
 <Warning>
-**关键步骤和注意事项**
+**Key Steps and Considerations**
 
-决定哪些子钱包的资产会进行归集。请注意，归集钱包和加油站将会自动排除于归集应用范围外。
+Decide which sub-wallets' assets will be consolidated. Note that the consolidation wallet and gas station will be automatically excluded from the consolidation application scope.
 
-共管成员可以根据子钱包的类型决定应用归集范围：`全部子钱包`，`全部API创建子钱包`，`单钱包`。
+Co-managers can decide the consolidation application scope based on the sub-wallet's type: `All Sub-Wallets`, `All API-Created Sub-Wallets`, `Single Wallet`.
 
-若您的子钱包拥有多条需归集资产的地址，则钱包所有地址资产都将属于归集应用范围。
+If your sub-wallet has multiple addresses with assets to be consolidated, all assets of the wallet's addresses will be within the consolidation application scope.
 
 </Warning>
 
+### II.III. Step Three: Configure Consolidation Strategy
 
+Configuring the consolidation strategy is a crucial step, involving deciding which currencies will be consolidated, the threshold to trigger consolidation, and other related conditions.
 
-
-
-
-
-### II.III. 步骤三：配置归集策略
-
-配置归集策略是一个关键步骤，它涉及到决定哪些币种会进行归集、触发归集的阈值以及其他相关条件。
-
-<div className="w-full flex items-center justify-center">
-    <img src="/images/help-center/co-signer-collect4_cn.PNG" width="600"/>
-</div>
+![Co-Signer Collection](/images/help-center/co-signer-collect4_cn.PNG)
 
 <Warning>
-**关键步骤和注意事项**
+**Key Steps and Considerations**
 
-决定哪些币种会进行归集，触发归集的阈值和其他条件：在这一步，共管钱包需要仔细考虑要进行归集的币种，设定触发归集的阈值，并确定其他相关条件。
+Decide which currencies will be consolidated, the threshold to trigger consolidation, and other conditions: In this step, co-managers need to carefully consider the currencies to be consolidated, set the threshold to trigger consolidation, and determine other relevant conditions.
 
-批量创建和管理归集策略：共管钱包可以批量创建多个币种的归集策略，新创建的策略默认开启。创建成功后，可以对归集策略进行相关的编辑、删除和关闭操作，支持批量处理。
+Batch create and manage consolidation strategies: Co-managers can batch create multiple currency consolidation strategies, with newly created strategies being enabled by default. After successful creation, consolidation strategies can be edited, deleted, and closed in batches.
 
-决定加油站在什么情况下将矿工费补充至子钱包来支持归集：共管成员需要明确定义何种情况下会创建归集订单与加油订单，以保障归集的正常进行同时消耗合理区间范围的矿工费。
+Define when the gas station will replenish the gas fee to the sub-wallet to support consolidation: Co-managers need to clearly define under what conditions consolidation orders and refueling orders will be created to ensure the normal progress of consolidation while consuming a reasonable range of gas fees.
 
-针对归集主币的特殊注意事项：如果归集主币，务必仔细填写归集策略的阈值和加油策略的补充数。建议将归集阈值设置大于补充数，以确保所需的矿工费不会因为归集而导致运营问题。
+Special considerations for consolidating the main currency: If consolidating the main currency, be sure to fill in the threshold and supplementary quantity of the consolidation strategy and gas replenishment strategy carefully. It is recommended to set the consolidation threshold higher than the supplementary quantity to ensure that the required gas fee will not cause operational issues due to consolidation.
 
-遵守Custody系统默认的加速策略：所有的归集订单将遵守Custody系统默认的加速策略，以促进归集尽快完成。
-
+Comply with Custody system's default acceleration strategy: All consolidation orders will comply with Custody system's default acceleration strategy to expedite the consolidation process.
 </Warning>
 
 
 
+### II.IV. Step Four: Configure Refueling Strategy
+The refueling strategy will determine under what conditions the gas station will replenish the gas fee to the sub-wallet to support consolidation.
 
-
-### II.IV. 步骤四：配置加油策略
-加油策略将决定加油站在什么情况下将矿工费补充至子钱包来支持归集。
-
-<div className="w-full flex items-center justify-center">
-    <img src="/images/help-center/co-signer-collect5_cn.PNG" width="600"/>
-</div>
+![Co-Signer Collection](/images/help-center/co-signer-collect5_cn.PNG)
 
 <Warning>
-**关键步骤和注意事项**
+**Key Steps and Considerations**
 
-共管成员可以创建主链币维度的策略，即当归集币种缺乏归集所需的矿工费时，加油站需要将主链币补充到多少。
+Co-managers can create strategies on the main chain currency level, i.e., when the consolidated currency lacks the gas fee required for consolidation, the gas station needs to replenish how much of the main chain currency.
 
-新创建的加油策略默认开启，创建成功后，可以对加油策略进行相关的编辑、删除和关闭操作，支持批量处理。
+Newly created refueling strategies are enabled by default. After successful creation, refueling strategies can be edited, deleted, and closed in batches.
 
-遵守Custody系统默认的加速策略：所有的加油订单将遵守Custody系统默认的加速策略，以促进加油尽快完成。
-
+Comply with Custody system's default acceleration strategy: All refueling orders will comply with Custody system's default acceleration strategy to expedite the refueling process.
 </Warning>
 
+## III. Other Feature: Notification Messages
 
-
-## III. 其他功能：消息通知
-
-如果您的归集业务缺少所需的手续费主链币，Custody系统将会向您发送通知邮件，以确保您及时了解并采取必要的行动。一旦系统检测到归集业务缺少所需的手续费主链币，将会向设定的通知邮箱发送提醒邮件。
+If your consolidation business lacks the required gas fee main chain currency, the Custody system will send you notification emails to ensure that you are informed in a timely manner and can take necessary actions. Once the system detects that the consolidation business lacks the required gas fee main chain currency, it will send a reminder email to the set notification mailbox.
 
 <Tip>
 
-**关键步骤和注意事项**
+**Key Steps and Considerations**
 
-共管成员可以在系统中设定最多5个不同的通知邮箱。
+Co-managers can set up to 5 different notification mailboxes in the system.
 
-邮箱的编辑和修改需要通过GA验证。
-
+Editing and modifying the mailbox require GA verification.
 </Tip>
-
 
 

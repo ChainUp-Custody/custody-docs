@@ -1,21 +1,17 @@
 ---
-title: 地址推导路径
+title: Address Derivation Path
 ---
 
-MPC钱包的地址采用了Bip-44标准，其中路径的结构包括预定义的5级树结构。具体路径为：
+MPC Wallet addresses follow the Bip-44 standard, where the path structure includes a predefined 5-level tree structure. The specific path is:
 
 `m / purpose' / coin_type' / account' / change / address_index`
 
-具体细节如下：
+Here are the details:
 
-第一层的purpose 总是设定为 44'；
+- The first level, purpose, is always set to 44';
+- The second level, coin_type, specifically refers to the cryptocurrency;
+- The third level of the tree is the account, allowing users to logically subdivide the wallet into separate sub-accounts for accounting or organizational purposes;
+- The fourth level is change, and the wallet has two subtrees, one for receiving addresses and another for creating change addresses. This level uses regular derivation, allowing the export of extended public keys in an insecure environment;
+- The available addresses are derived from HD wallets as the child level of the fourth level, i.e., the fifth level address_index.
 
-第二层的 coin_type 特指币种；
-
-树的第三层级是 account，允许用户为了会计或组织目的，在逻辑上细分钱包到独立的子账户；
-
-第四层级是 change，钱包有两个子树，一个用于接收地址，另一个用来创建找零地址。这一层级使用的都是常规衍生，允许在不安全环境下导出扩展公钥；
-
-可用的地址由HD钱包派生为第四层级的子级，即第五层级 address_index。
-
-对于MPC钱包，路径为：`m / 44 / 0(比特币) / 子钱包 / 0 | 1 / address_index`，其中 `子钱包` 是特定主链的子钱包索引，`0或1` 表示地址的规范，`address_index` 表示创建地址的业务层序号。
+For the MPC Wallet, the path is: `m / 44 / 0(Bitcoin) / Sub-wallet / 0 | 1 / address_index`, where `Sub-wallet` is the index of the specific main chain's sub-wallet, `0 or 1` indicates the address convention, and `address_index` represents the business layer sequence number for creating addresses.

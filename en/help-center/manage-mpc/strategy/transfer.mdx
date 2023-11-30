@@ -1,55 +1,44 @@
 ---
-title: MPC钱包转账策略
+title: Transfer Strategy
 ---
 
-## I. 概述
-ChainUp Custody的策略引擎为您的MPC钱包提供了强大的交易规则定制功能，用于精确管理和控制转出交易。这一灵活的系统允许您根据个性化需求定义一系列交易规则，确保资产的安全和有效流转。这些规则可以掌控特定资产的转账审批流程，明确可批准交易的用户。
+## I. Overview
+ChainUp Custody's policy engine provides powerful transaction rule customization for your MPC wallet, allowing precise management and control of outgoing transactions. This flexible system allows you to define a series of transaction rules based on personalized requirements, ensuring the safe and efficient circulation of assets. These rules can govern the approval process for the transfer of specific assets, specifying users authorized to approve transactions.
 
+The ChainUp Custody policy engine automatically applies the transfer policies you define to all transfer transactions created manually through the web or app. Once a member initiates a transfer request, the relevant transfer policy will be applied by the approver based on the rules you have set:
 
-ChainUp Custody策略引擎会自动将您定义的转账策略应用于通过Web端或App端人工创建的所有转账交易。一旦成员发起了转账请求，相关的转账策略将根据您设定的规则由审批人采取相应操作：
+**Approve Transaction:** When a transaction reaches the approval threshold, it is automatically submitted to the wallet administrator for signature confirmation and then broadcast to the blockchain.
 
-**同意交易：** 当交易达到审批阈值时，自动提交给钱包管理员进行签名确认，之后广播至区块链。
-
-**拒绝交易：** 当交易未达到审批阈值时，自动终止，确保未经授权的交易无法继续进行。
-
-
+**Reject Transaction:** When a transaction does not reach the approval threshold, it is automatically terminated, ensuring unauthorized transactions cannot proceed.
 
 <Warning>
-**关键步骤和注意事项**
+**Key Steps and Considerations**
 
-我们强调正确实施转账策略的重要性。您的转账策略是资产保护的关键层，请您根据业务需求进行定制。
+Implementing transfer policies correctly is crucial. Your transfer policies are a critical layer of asset protection, so customize them according to your business needs.
 
-MPC钱包的管理员（钱包创建者）发起的交易不受转账策略管理。
+Transactions initiated by MPC wallet administrators (wallet creators) are not governed by transfer policies.
 
-API发起的交易不受转账策略管理。
+Transactions initiated via API are not governed by transfer policies.
 </Warning>
 
+## II. Who Can Manage the Policy Engine?
 
+Currently, only MPC wallet administrators (wallet creators) have the authority to modify transfer policies. The functionality to edit and view transfer policies is available only on the Custody App.
 
-## II. 谁可以管理策略引擎？
+## III. Creating Transfer Policies
 
-目前，只有MPC钱包的管理员（钱包创建者）有权修改转账策略。转账策略的编辑和查看功能仅在Custody App上提供。
+You can define the following parameters for transfer policies:
 
+**Policy Name:** Name the transfer policy for easy identification.
 
+**Approval Flow:** Set up approvers and approval thresholds to ensure transfers go through the appropriate approval process.
 
-
-## III. 创建转账策略
-
-您可以定义转账策略的以下参数：
-
-**策略名：** 为转账策略命名以方便识别。
-
-**审批流：** 设定审批人和审批阈值，确保转账经过适当的审批流程。
-
-**风控资产：** 可多选币种和NFT，明确受到策略保护的资产范围。
-
-
-
+**Risk Control Assets:** Select multiple currencies and NFTs to specify the range of assets protected by the policy.
 
 <Warning>
-**关键步骤和注意事项**
+**Key Steps and Considerations**
 
-一个MPC子钱包可以创建多条转账策略，但每种资产的转账策略必须唯一。
+A single MPC wallet can create multiple transfer policies, but each asset's transfer policy must be unique.
 
-若资产从未编辑过转账策略，则该资产的交易默认只需钱包管理员进行最后一步的签名确认。
+If an asset has never had a transfer policy edited, transactions for that asset will default to requiring only the wallet administrator's final signature confirmation.
 </Warning>

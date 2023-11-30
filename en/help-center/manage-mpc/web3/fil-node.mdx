@@ -1,25 +1,24 @@
 ---
-title: FIL节点管理
+title: FIL Node Management
 ---
 
-## I. 概述
+## I. Overview
 
-为了使FIL节点所有者更轻松地、不再依赖Lotus命令来管理节点，我们推出了MPC钱包的FIL节点管理功能。您只需将MPC钱包的FIL地址添加到节点的Owner或多签节点的Owner中，即可方便地使用界面操作管理节点。这样可以提供更便捷、低门槛和更安全的节点管理体验。
-
-
+To make it easier for FIL node owners to manage nodes without relying on Lotus commands, we have introduced the FIL node management feature in the MPC wallet. You only need to add the FIL address of the MPC wallet to the Owner or multisig Node's Owner, and you can easily manage the node through the interface. This provides a more convenient, low-threshold, and secure node management experience.
 
 
-## II. FIL节点管理操作流程
 
-如果您是首次使用FIL节点管理功能，可以按照以下步骤进行配置：
+## II. FIL Node Management Workflow
+
+If you are using the FIL Node Management feature for the first time, you can follow these steps for configuration:
 
 
 <Steps>
-<Step title="使用功能">
+<Step title="Use the Feature">
 
-Custody MPC钱包的Filecoin矿池管理工具可通过钱包界面上的Filecoin矿池管理图标快速进入使用。
+The Filecoin mining pool management tool of Custody MPC wallet can be quickly accessed through the Filecoin mining pool management icon on the wallet interface.
 
-如果您的钱包已开通FIL币种，也可通过左滑快捷操作来点击Filecoin矿池管理工具按钮，进入相关功能。
+If your wallet has opened the FIL currency, you can also click the Filecoin mining pool management tool button through the left swipe shortcut operation on the wallet list page to access the relevant functionality.
 
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
@@ -31,27 +30,27 @@ Custody MPC钱包的Filecoin矿池管理工具可通过钱包界面上的Filecoi
 
 
 </Step>
-<Step title="查看节点">
+<Step title="View Nodes">
 
-如果您的地址是某个FIL节点的所有者，或者该节点的所有者地址是一个多重签名地址，并且您是其中的签名者之一，那么该节点就是您所管理的节点。
+If your address is the owner of a FIL node or the owner's address is a multisig address, and you are one of the signers, then that node is the one you manage.
 
-如果您不是节点的所有者或多重签名地址中的成员，那么该节点被视为您的观察节点。
+If you are not the owner of the node or a member of the multisig address, then that node is considered your observation node.
 
 <Tip> 
-|	|管理节点	|观察节点|
+|	|Manage Node	|Observation Node|
 |----|---------|--------|
-|查看节点信息	|√  |	√ |
-|节点余额提现	|√	|   × |
-|更换owner	    |√	|   × |
-|更换worker	    |√	|   × |
-|处理节点交易	|√  |	× |
+|View Node Information	|√  |	√ |
+|Node Balance Withdrawal	|√	|   × |
+|Change Owner	    |√	|   × |
+|Change Worker	    |√	|   × |
+|Process Node Transactions	|√  |	× |
 
 </Tip>
 
 
 
 </Step>
-<Step title="添加节点">
+<Step title="Add Node">
 
 
 
@@ -62,17 +61,17 @@ Custody MPC钱包的Filecoin矿池管理工具可通过钱包界面上的Filecoi
     </CardGroup>
 </div>
 
-在节点列表页面，点击“添加”，在新页面中输入节点的地址即可添加节点；
+On the node list page, click "Add," and enter the node's address on the new page to add the node;
 
-钱包会根据您的FIL地址以及输入节点的所有者信息来区分您所管理的节点和观察的节点。
+The wallet will distinguish between the nodes you manage and the observed nodes based on your FIL address and the owner information of the input node.
 </Step>
-<Step title="管理节点">
+<Step title="Manage Node">
 
 
-目前MPC钱包支持以下三种节点操作：余额提现、更换owner、更换worker。
+Currently, the MPC wallet supports three types of node operations: balance withdrawal, change owner, and change worker.
 
 
-**余额提现**
+**Balance Withdrawal**
 
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
@@ -81,102 +80,98 @@ Custody MPC钱包的Filecoin矿池管理工具可通过钱包界面上的Filecoi
     </CardGroup>
 </div>
 
-您可以使用MPC钱包直接提取您FIL节点的可用余额，提取的资金将会转入节点的受益人或owner地址中。
+You can use the MPC wallet to directly withdraw the available balance of your FIL node, and the withdrawn funds will be transferred to the beneficiary or owner address of the node.
 
-在节点页面中选择余额提现。
+Select "Withdraw" on the node page.
 
-输入提现金额，并签名，交易上链成功之后即可完成提现。
+Enter the withdrawal amount and sign. After the transaction is successfully on-chain, the withdrawal is complete.
 
 
 
-**更换Owner**
+**Change Owner**
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
         <img src="/images/help-center/mpc-fil-node10_cn.png" width="200"/>
         <img src="/images/help-center/mpc-fil-node11_cn.png" width="200"/>
     </CardGroup>
 </div>
-在所需更换Owner的节点中，点击“更换Owner”。
+In the node where you want to change the Owner, click "Change Owner".
 
 
-输入您所期望更换的新Owner地址，完成签名上链后，等待新Owner确认接收，节点Owner更换即可成功完成。
+Enter the new Owner address you expect, complete the signing and on-chain, wait for the new Owner to confirm the receipt, and the node Owner change will be successfully completed.
 
 
 <Warning>
-**关键步骤和注意事项**
+**Key Steps and Notes**
 
-更换owner是将您的节点转移给新的owner，您现在的地址将会失去对此节点的控制，请务必保证是本人真实操作；
+Changing the owner transfers your node to the new owner, and your address will lose control of this node. Please make sure it is a genuine operation;
 
-更换owner成功后，如果您已经不是新owner，该节点将会由管理的节点转为观察的节点。
+After the owner is changed successfully, if you are no longer the new owner, the node will change from a managed node to an observed node.
 </Warning>
-
-
-
-
-**更换Worker**
+**Change Worker**
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
         <img src="/images/help-center/mpc-fil-node12_cn.png" width="200"/>
         <img src="/images/help-center/mpc-fil-node13_cn.png" width="200"/>
     </CardGroup>
 </div>
-您可以使用MPC钱包更换您所管理的节点的Worker地址。
+You can use the MPC wallet to change the Worker address of the node you manage.
 
-在节点管理界面中，点击“更换worker”。
+In the node management interface, click "Change Worker."
 
-输入您希望更换的新Worker地址，完成签名后等待交易上链。在FIL网络上，更换Worker需要等待发起更换交易后经过900个区块高度，然后再次发起确认更换Worker的交易。
+Enter the new Worker address you want to change to, complete the signing, and wait for the transaction to be on-chain. On the FIL network, changing the Worker requires waiting for 900 block heights after initiating the change transaction and then initiating the confirmation transaction to change the Worker again.
 
 
 </Step>
-<Step title="节点待办">
+<Step title="Node To-Do List">
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
         <img src="/images/help-center/mpc-fil-node14_cn.png" width="200"/>
         <img src="/images/help-center/mpc-fil-node14_cn.png" width="200"/>
     </CardGroup>
 </div>
-MPC钱包会将您管理的节点的相关交易操作以待办的方式呈现，等待您处理。
+The MPC wallet will present the relevant transaction operations of the nodes you manage as to-dos, waiting for you to process.
 
-如果其他节点Owner邀请您成为节点的Owner，您会收到一个待办事项。
+If other node owners invite you to become the owner of a node, you will receive a to-do.
 
-您可以通过待办详情查看有关交易的所有发起信息和节点信息。若您确定要成为该节点的Owner，请点击“签名”，待交易上链后即可完成操作。
-
-
-
-**确认更换Worker待办**
-
-您将在发起更换Worker交易后，约经过900个高度后收到确认更换Worker的待办事项，您可以在此时进行相应的操作，签名上链之后，节点Worker更换成功。
+You can view all the initiation information and node information about the transaction through the to-do details. If you are sure you want to become the owner of the node, click "Sign," and the operation will be completed after the transaction is on-chain.
 
 
-**多签待办**
 
-如果您是多签钱包的Signer且管理着该节点的Owner身份，您将收到该节点相关的**待办事项**。
+**Confirm Change Worker To-Do**
 
-主网多签成员在MPC钱包中能够发起提案和进行提案签名操作，无需复杂区分发起提案和提案签名，MPC签名将标注发起提案和提案签名。若所有多签成员均使用MPC钱包，则不会出现因其他工具导致同一个业务发起多个提案的情况。
+After initiating the change Worker transaction, you will receive a to-do to confirm the change Worker after about 900 block heights. You can perform the corresponding operation at this time, sign on-chain, and the node Worker change will be successful.
 
-在其他多签成员使用不同工具发起多个提案针对同一笔交易时，MPC钱包将进行提案过滤，确保只保留一个提案，避免出现重复提案或重复签名导致交易成功但操作失败等情况。
+
+**Multisig To-Do**
+
+If you are a signer of a multisig wallet and manage the owner identity of the node, you will receive relevant **to-dos** for that node.
+
+On the mainnet, multisig members in the MPC wallet can initiate proposals and sign proposal operations without distinguishing between initiating proposals and signing proposals. MPC signatures will mark the initiation of proposals and the signing of proposals. If all multisig members use the MPC wallet, there will be no situation where multiple proposals are initiated for the same transaction due to different tools.
+
+When other multisig members use different tools to initiate multiple proposals for the same transaction, the MPC wallet will filter proposals to ensure that only one proposal is retained, avoiding duplicate proposals or duplicate signatures causing the transaction to succeed but the operation to fail.
 
 </Step>
 </Steps>
 
 
-## III. 状态说明
+## III. Status Explanation
 
-MPC钱包的Filecoin矿池管理工具包含多种状态：
+The Filecoin mining pool management tool of the MPC wallet includes various states:
 
-**1. 待签名：** 需要您进行签名的交易状态。
+**1. To Sign:** The transaction status that requires your signature.
 
-**2. 已完成：** 交易已成功完成。
+**2. Completed:** The transaction has been successfully completed.
 
-**3. 待确认：** 更换Worker时，需要您确认新Worker的更换状态。
+**3. To Confirm:** When changing the Worker, you need to confirm the change status of the new Worker.
 
-**4. 待他人签名：** 当Owner地址为多签地址时，您已签名，但尚未达到签名阈值，等待其他多签成员的签名。
+**4. To Be Signed by Others:** When the Owner address is a multisig address, you have signed but have not reached the signing threshold, waiting for other multisig members to sign.
 
-**5. 链上交易失败：** 交易未能成功上链，主网将此交易标记为失败，您可重新发起交易。
+**5. On-Chain Transaction Failed:** The transaction failed to be successfully on-chain, and the mainnet marks this transaction as a failure. You can re-initiate the transaction.
 
-**6. 操作失败：** 包含以下两种情况：
+**6. Operation Failed:** Includes the following two situations:
 
-    受邀成为Owner时，如果发起方重新发起更换Owner并成功上链，则您之前接收的成为Owner的交易将自动标记为失败。
+    - When invited to become the Owner, if the initiator re-initiates the change Owner and successfully on-chains, the transaction you previously received to become the Owner will be automatically marked as failed.
 
-    更换Worker时，如果链上存在未确认的其他更换Worker交易，则本次更换操作将失败。
+    - When changing the Worker, if there is an unconfirmed change Worker transaction on-chain, this change operation will fail.
 

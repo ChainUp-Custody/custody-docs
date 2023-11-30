@@ -1,11 +1,11 @@
 ---
-title: 找零地址
+title: Change Address
 ---
 
-"找零地址"（Change Address），指的是一个专门的地址，用于接收比特币或其他UTXO类型加密货币的交易完成后的找零或未使用的输出。当你发送加密货币支付时，所发送的金额通常不会与你在交易中使用的单个输入（或未使用的交易输出，UTXO）的金额完全匹配。
+A "Change Address" refers to a dedicated address used to receive the change or unused outputs after completing a transaction with Bitcoin or other UTXO-type cryptocurrencies. When you send a cryptocurrency payment, the amount you send typically doesn't match the exact amount of a single input (or unused transaction output, UTXO) that you use in the transaction.
 
-例如，如果你想发送0.5 BTC，而你有一个1 BTC的UTXO，你不能直接分割该UTXO，发送0.5 BTC，并将剩余的0.5 BTC保留在同一个UTXO中。相反，多余的0.5 BTC将会被发送到一个新生成的地址，即找零地址。这有助于确保交易的输入和输出平衡正确，保持账本的准确性。
+For example, if you want to send 0.5 BTC, and you have a UTXO of 1 BTC, you can't split that UTXO directly, send 0.5 BTC, and keep the remaining 0.5 BTC in the same UTXO. Instead, the excess 0.5 BTC will be sent to a newly generated address, known as the change address. This helps ensure that the inputs and outputs of the transaction balance correctly, maintaining the accuracy of the ledger.
 
-在ChainUp Custody中，找零地址是由系统分配并保持不可更改的。用户无法修改找零地址的标签。通常情况下，对于每个子钱包的UTXO系列加密货币，第一个创建的地址将被自动指定为找零地址。如果您已经分配了此地址，则会将第一个新创建的地址指定为找零地址。
+In ChainUp Custody, change addresses are assigned by the system and remain immutable. Users cannot modify the label of the change address. Typically, for each sub-wallet's UTXO-series cryptocurrency, the first created address will automatically be designated as the change address. If this address has already been assigned, the first newly created address will be designated as the change address.
 
-当您从您的MPC钱包发送交易时，系统将自动选择必要的UTXO并将所需金额发送到收款地址。任何剩余余额将被发送到您钱包中新生成的找零地址。
+When you send a transaction from your MPC wallet, the system will automatically select the necessary UTXOs and send the required amount to the receiving address. Any remaining balance will be sent to the newly generated change address in your wallet.

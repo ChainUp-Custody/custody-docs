@@ -323,23 +323,23 @@
       ]
     },
     {
-      "group": "帮助中心简介",
+      "group": "ChainUp Custody Help Center",
       "pages":[
         "help-center/introduction/manage-custody"
       ]
     },
     {
-      "group": "管理MPC钱包系统",
+      "group": "Managing MPC Wallet",
       "pages":[
         {
-          "group": "用户设置",
+          "group": "Team Members",
           "pages":[
             "help-center/manage-mpc/user-setting/user-role",
             "help-center/manage-mpc/user-setting/add-user"
           ]
         },
         {
-          "group": "我的钱包",
+          "group": "My Wallet",
           "pages":[
             "help-center/manage-mpc/my-wallet/off-line-tool",
             "help-center/manage-mpc/my-wallet/framework",
@@ -348,7 +348,7 @@
           ]
         },
         {
-          "group": "资产管理",
+          "group": "Asset Management",
           "pages":[
             "help-center/manage-mpc/asset-manage/my-asset",
             "help-center/manage-mpc/asset-manage/coin",
@@ -356,13 +356,13 @@
           ]
         },
         {
-          "group": "钱包交易",
+          "group": "Transactions",
           "pages":[
             "help-center/manage-mpc/transaction/transfer"
           ]
         },
         {
-          "group": "Web3访问",
+          "group": "Web3 Access",
           "pages":[
             "help-center/manage-mpc/web3/fil-multi-sign",
             "help-center/manage-mpc/web3/fil-node",
@@ -370,10 +370,10 @@
           ]
         },
         {
-          "group": "资产归集",
+          "group": "Asset Consolidation",
           "pages":[
             {
-              "group": "合约归集",
+              "group": "Contract Consolidation",
               "pages":[
                 "help-center/manage-mpc/consolidation/contact/about",
                 "help-center/manage-mpc/consolidation/contact/rules",
@@ -381,7 +381,7 @@
               ]
             },
             {
-              "group": "Co-Signer归集",
+              "group": "Co-Signer Consolidation",
               "pages":[
                 "help-center/manage-mpc/consolidation/co-signer/about",
                 "help-center/manage-mpc/consolidation/co-signer/rules",
@@ -391,7 +391,7 @@
           ]
         },
         {
-          "group": "交易策略引擎",
+          "group": "Strategy Engine",
           "pages":[
             "help-center/manage-mpc/strategy/transfer"
           ]
