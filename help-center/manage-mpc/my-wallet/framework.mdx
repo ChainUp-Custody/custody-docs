@@ -8,22 +8,30 @@ ChainUp Custody的MPC钱包以四层结构为基础，包括账户、主钱包�
 
 ## I. 结构概览
 
-1. 一个账户能够创建一个或多个主钱包。
+1. 一个账户能够创建多个主钱包。
 
-2. 一个主钱包能够创建一个或多个子钱包。
+2. 一个主钱包能够创建多个子钱包。
 
-3. 每个子钱包包含多个币种，每个币种可以有一个或多个地址。
+3. 每个子钱包支持多种币种，每种资产币种可以有一个或多个地址。
+
+<Tip> 
+想要了解币种多地址,可阅读[地址格式](/help-center/manage-mpc/my-wallet/address-format)了解相关信息。
+</Tip>
+
+
 
 
 <div className="w-full flex items-center justify-center">
     <img src="/images/help-center/mpc-frame1-cn.png" width="600"/>
 </div>
 
-## II. 应用场景
+## II. 实践案例
 
-1. 主钱包可用于某个业务线的资产统计，而子钱包则可以分配给不同的用户使用。
+1. MPC主钱包可用于某个业务线的资产统计，而子钱包则可以分配给不同的用户使用。
 
-2. 主钱包也可以用于公司总资产的统计，而子钱包则分配给不同的业务部门使用。
+2. MPC主钱包也可以用于公司总资产的统计，而子钱包则分配给不同的业务部门使用。
 
-
+<Tip> 
+当您终止使用，或者ChainUp Custody服务不可用时，您可通过专属[离线私钥恢复工具](/help-center/manage-mpc/my-wallet/off-line-tool)，获取已创建钱包的完整私钥。
+</Tip>
 
