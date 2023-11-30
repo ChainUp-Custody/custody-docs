@@ -1,81 +1,75 @@
 ---
-title: API配置
+title: API Configuration
 ---
 
-## I. 概述
+## I. Overview
 
-ChainUp Custody提供了强大且易于集成的 API工具，以自动化您的工作流程、快速创建并配置钱包并接收有关钱包各类信息。
+ChainUp Custody provides powerful and easy-to-integrate API tools to automate your workflow, quickly create and configure wallets, and receive various wallet-related information.
 
-## II. 我可以使用 ChainUp Custody API 做什么？
+## II. What Can I Do with ChainUp Custody API?
 
-**自动化钱包管理工作流程**
+**Automate Wallet Management Workflow**
 
-使用API快速创建和命名钱包，实现自动化的钱包管理。这使得批量创建和命名钱包的过程更加高效和便捷。
+Efficiently and conveniently create and name wallets in bulk using the API, automating the wallet management process.
 
-**自动化交易工作流程**
+**Automate Transaction Workflow**
 
-实现区块链交易的批量化处理，实现资产的自动化转移，并使用安全的API Co-Signer自动签署交易。
+Batch process blockchain transactions, automate asset transfers, and automatically sign transactions using the secure API Co-Signer.
 
-**扩展钱包和地址创建**
+**Expand Wallet and Address Creation**
 
-快速而经济高效地配置多个钱包。这对于游戏工作室、提供NFT服务或构建dApp的开发者来说，可以轻松管理大量的数字资产。
+Configure multiple wallets quickly and cost-effectively. This is useful for game studios, NFT service providers, or developers building dApps to easily manage a large number of digital assets.
 
-**快速查看交易信息**
+**Quickly View Transaction Information**
 
-快速获取钱包地址信息和交易明细，用户可以方便地获取全量的交易记录和明细，确保他们能够方便快捷地了解和监控其数字资产。
+Quickly retrieve wallet address information and transaction details, allowing users to easily access a complete record of transactions and details to monitor their digital assets conveniently.
 
+## III. API Configuration
 
-## III. 配置API
-
-您可以在Custody的Web端方便地配置MPC钱包的API信息，实现更灵活的钱包管理。
-
-
-
+You can easily configure the API information for the MPC wallet on the Custody PC version for more flexible wallet management.
 
 <Warning>
-**重要提示**
+**Important Note**
 
-一个MPC主钱包仅能配置一个API。为确保API功能生效，API配置需要与Co-Signer配置同步进行。
+An MPC main wallet can only configure one API. To ensure the functionality of the API, API configuration needs to be synchronized with Co-Signer configuration.
 
-只有钱包创建者才可配置API信息，编辑修改信息需要通过GA验证。
+Only the wallet creator can configure API information, and editing requires GA verification.
 
-请参考API文档，详细了解如何有效地对接API： [API文档](/api-references/intro/custody-apis)。
+Refer to the API documentation for detailed information on effective API integration: [API Documentation](/api-references/intro/custody-apis).
 
-通过配置MPC钱包的API信息，您将能够更加方便地使用API功能，实现更灵活、高效的数字资产管理。
+By configuring the API information for the MPC wallet, you will be able to use API features more conveniently, enabling more flexible and efficient digital asset management.
 </Warning>
 
+### III.I. API Management
 
-### III.I. API管理
+In the Custody PC(Web) version, use the "**API Management**."
 
-在Custody Web端中，使用“**API管理模块**” 。
+Create or edit API information for the MPC wallet and then successfully modify it through GA verification.
 
-创建或编辑MPC钱包的API信息，然后通过GA验证即修改成功。
+### III.II. Configuration Fields
 
+You need to provide the following information to complete API configuration:
 
-### III.II. 配置字段
+**Bind IP Address**
 
-您需要提供以下字段信息来完成API配置
+This field is used to specify the IP address on which the API interface listens. Binding a specific IP address enhances system security, allowing requests only from a specific IP range.
 
-**绑定IP地址**
+**Transaction Status Notification Address**
 
-该字段用于指定API接口监听的IP地址。绑定特定IP地址可以增强系统安全性，只允许特定IP范围的请求。
+Used to receive transaction status notifications at the specified URL. When a transaction status change occurs, the system will send a notification to this address to ensure timely updates on the latest transaction status.
 
-**交易状态通知地址**
+**Co-Signer Interface Address**
 
-用于接收交易状态通知的URL地址。当发生交易状态变化时，系统将向该地址发送通知，以便客户系统及时了解交易的最新状态。
+Specify the API interface address of the Co-Signer service. Co-Signer is a service for implementing automatic asset aggregation. Configuring the correct interface address ensures the normal invocation of Co-Signer services.
 
-**Co-Signer接口地址**
+**Co-Signer RSA Public Key**
 
-指定Co-Signer服务的API接口地址。Co-Signer是一个用于实现资产自动归集的功能，配置正确的接口地址确保正常的Co-Signer服务调用。
+Provide the RSA public key for the Co-Signer service, used for encrypting and decrypting related data. Ensuring the correct RSA public key helps maintain communication security.
 
-**Co-Signer RSA公钥**
+**Client System RSA Public Key**
 
-提供Co-Signer服务的RSA公钥，用于加密和解密相关数据。确保正确的RSA公钥有助于维护通信的安全性。
+The RSA public key of the client system, used for encrypting sensitive information and ensuring that only the client system can decrypt it. Providing the correct RSA public key helps protect data security during the communication process.
 
-**客户系统 RSA公钥**
+**Remarks**
 
-客户系统的RSA公钥，用于加密敏感信息并确保只有客户系统能够解密。提供正确的RSA公钥有助于保护通信过程中的数据安全。
-
-**备注**
-
-提供额外的配置说明或标记。此字段通常用于记录与API配置相关的附加信息，方便管理员和开发者理解配置的特殊要求或约定。
+Provide additional configuration instructions or labels. This field is usually used to record additional information related to API configuration, making it easy for administrators and developers to understand special requirements or agreements associated with the configuration.
