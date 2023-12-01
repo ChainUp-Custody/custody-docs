@@ -2,15 +2,15 @@
 title: Co-Signer Configuration
 ---
 
-## I. Overview
+##  Overview
 
 This document will introduce the functionality of Co-Signer and how to configure Co-Signer to meet the client's business requirements. In the ChainUp Custody ecosystem, Co-Signer serves not only as a security measure but also as a key factor in promoting decentralization and trust, aiming to provide users with a more secure, transparent, and efficient digital experience.
 
-## II. What is Co-Signer?
+##  What is Co-Signer?
 
 In the field of blockchain or digital assets, "Co-Signer" usually refers to a mechanism where multiple individuals or entities need to jointly sign a transaction or contract. This mechanism is primarily used to enhance the security and credibility of transactions or contracts. The purpose of using Co-Signer is to ensure that critical operations require confirmation and authorization from multiple parties, thereby reducing potential risks and increasing overall security. This is particularly crucial for high-value transactions or critical business operations in digital assets and blockchain networks.
 
-## III. Role of Co-Signer
+##  Role of Co-Signer
 
 **Secure Digital Asset Management**
 
@@ -28,9 +28,9 @@ For transactions on the blockchain, especially those involving substantial funds
 
 In enterprise-level blockchain applications, Co-Signer is used to ensure that multiple authorized entities must agree on specific decisions or transactions to meet compliance and auditing requirements.
 
-## IV. Deploying Co-Signer
+##  Deploying Co-Signer
 
-### IV.I. Server Configuration Requirements
+###  Server Configuration Requirements
 
 <Tip>
 **Minimum CPU Requirements: AMD64 or ARM64 architecture, 2 cores, 2.0 GHz clock speed**
@@ -40,7 +40,7 @@ In enterprise-level blockchain applications, Co-Signer is used to ensure that mu
 **Hard Drive: 256GB**
 </Tip>
 
-### IV.II. Co-Signer Deployment Process
+###  Co-Signer Deployment Process
 
 #### Obtaining Co-Signer
 
@@ -279,9 +279,9 @@ echo ""
 echo ${STR_PASSWORD} | nohup ${project_path}/co-signer -server >>nohup.nout 2>&1 &
 ```
 
-## V. Add Co-Signer Server to Whitelist
+##  Add Co-Signer Server to Whitelist
 ChainUp Custody needs to access Co-Signer to create equi-weight private keys and generate addresses. Therefore, you need to add the ChainUp Custody server IP to the security group or whitelist of the Co-Signer's startup port. The Custody server IP is as follows:
 
-1. Allow the Custody server (IP: 54.254.7.206) to access the 28888 port on the Co-Signer server. Note that the 28888 port is the listening port of the Co-Signer program and can be customized.
+1. Allow the Custody server (IP: **54.254.7.206**) to access the 28888 port on the Co-Signer server. Note that the 28888 port is the listening port of the Co-Signer program and can be customized.
 
-2. The Co-Signer server needs to access the Custody server, and permission to access 54.251.87.91:433 needs to be granted.
+2. The Co-Signer server needs to access the Custody server, and permission to access **54.251.87.91:433** needs to be granted.

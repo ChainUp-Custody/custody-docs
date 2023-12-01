@@ -59,8 +59,7 @@
         "introduction/custody-solution/mpc-wallet",
         "introduction/custody-solution/joint-custody",
         "introduction/custody-solution/compliance-custody",
-        "introduction/custody-solution/wapi",
-        "introduction/custody-solution/waas"
+        "introduction/custody-solution/wapi"
       ]
     },
     {

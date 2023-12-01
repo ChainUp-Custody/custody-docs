@@ -2,7 +2,7 @@
 title: Configure Co-Signer Rules
 ---
 
-## I. Overview
+##  Overview
 
 After users configure Co-Signer consolidation rules, the Custody system will execute corresponding consolidation operations based on the defined consolidation strategy. This will result in the assets on wallets/addresses within the consolidation application scope being uniformly transferred to the preset consolidation wallet address. In cases where the wallet to be consolidated (withdrawal address) lacks mining fees, the gas station will recharge the wallet's mainnet coin according to the set refueling strategy.
 
@@ -10,7 +10,7 @@ After users configure Co-Signer consolidation rules, the Custody system will exe
 It is strongly recommended not to actively configure contract consolidation strategies and Co-Signer consolidation strategies for the same asset simultaneously. If you make a mistake, the system will execute the consolidation strategy configured earliest based on the time of your configuration.
 </Tip>
 
-### I.I. Prerequisites for Using the Feature
+###  Prerequisites for Using the Feature
 
 Please ensure that the main wallet has not expired, as expiration will render all wallet-related business functions unusable.
 
@@ -18,7 +18,7 @@ Ensure that API and Co-Signer have been configured to ensure the normal operatio
 
 Upgrade the App version to **6.4.5** or above.
 
-## II. Configure Co-Signer Consolidation Rules
+##  Configure Co-Signer Consolidation Rules
 
 Co-Signer consolidation involves four dimensions:
 
@@ -27,7 +27,7 @@ Co-Signer consolidation involves four dimensions:
 3. Configure Consolidation Strategy
 4. Configure Refueling Strategy
 
-### II.I. Step One: Configure Consolidation Wallet and Gas Station
+###  Step One: Configure Consolidation Wallet and Gas Station
 
 #### What is a Consolidation Wallet
 
@@ -57,7 +57,7 @@ Ensure to check if the selected consolidation wallet and gas station are availab
 If your consolidation wallet and gas station have multiple addresses for the same asset, only commonly used addresses can be used as the consolidation destination address or refueling withdrawal address. After configuration, you can view the details of the specific commonly used addresses.
 </Warning>
 
-### II.II. Step Two: Determine the Scope of Consolidation Application
+###  Step Two: Determine the Scope of Consolidation Application
 
 ![Co-Signer Collection](images/help-center/configcosign1.png)
 
@@ -72,7 +72,7 @@ If your sub-wallet has multiple addresses with assets to be consolidated, all as
 
 </Warning>
 
-### II.III. Step Three: Configure Consolidation Strategy
+###  Step Three: Configure Consolidation Strategy
 
 Configuring the consolidation strategy is a crucial step, involving deciding which currencies will be consolidated, the threshold to trigger consolidation, and other related conditions.
 
@@ -94,7 +94,7 @@ Comply with Custody system's default acceleration strategy: All consolidation or
 
 
 
-### II.IV. Step Four: Configure Refueling Strategy
+###  Step Four: Configure Refueling Strategy
 The refueling strategy will determine under what conditions the gas station will replenish the gas fee to the sub-wallet to support consolidation.
 
 ![Co-Signer Collection](images/help-center/configcosign3.png)
@@ -109,17 +109,17 @@ Newly created refueling strategies are enabled by default. After successful crea
 Comply with Custody system's default acceleration strategy: All refueling orders will comply with Custody system's default acceleration strategy to expedite the refueling process.
 </Warning>
 
-## III. Other Feature: Notification Messages
+##  Other Feature: Notification Messages
 
 If your consolidation business lacks the required gas fee main chain currency, the Custody system will send you notification emails to ensure that you are informed in a timely manner and can take necessary actions. Once the system detects that the consolidation business lacks the required gas fee main chain currency, it will send a reminder email to the set notification mailbox.
 
-<Tip>
+<Warning>
 
 **Key Steps and Considerations**
 
 Co-managers can set up to 5 different notification mailboxes in the system.
 
 Editing and modifying the mailbox require GA verification.
-</Tip>
+</Warning>
 
 
