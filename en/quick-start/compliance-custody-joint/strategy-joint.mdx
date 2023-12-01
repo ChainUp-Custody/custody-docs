@@ -2,7 +2,7 @@
 title: Configure KYT Policies
 ---
 
-## I. Easily Configure and Automate Your Compliance Policies
+##  Easily Configure and Automate Your Compliance Policies
 
 ChainUp Custody collaborates with leading KYT service providers, allowing customers to perform real-time transaction monitoring directly from the ChainUp Custody compliance platform.
 
@@ -16,7 +16,7 @@ ChainUp Custody collaborates with leading KYT service providers, allowing custom
 Please note that only administrators of Joint Custody wallets can decide KYT policies!
 </Warning>
 
-### II. Compliance Assets and Corresponding Policies
+###  Compliance Assets and Corresponding Policies
 You can determine which currencies' deposit and withdrawal transactions need KYT monitoring and decide under what conditions KYT verification should be triggered.
 
 <Accordion title="1. Currency Quantity Policy">
@@ -30,7 +30,7 @@ When the transaction value of the currency is greater than or equal to a certain
 Please note that either the currency quantity policy or the currency value policy can be effective, not both.
 </Warning>
 
-### III. Circuit Breaker Mechanism
+###  Circuit Breaker Mechanism
 
 The role of the circuit breaker mechanism is that once a specific risk level is triggered by a transaction, all subsequent transactions need to undergo KYT verification. You can choose whether to enable the circuit breaker strategy.
 <Warning>
@@ -39,7 +39,7 @@ It is important to note that the circuit breaker mechanism takes precedence over
 
 For example, if the alert level for the circuit breaker mechanism is set to "High Risk," and a user has three deposit transactions to their address, where the first transaction has an alert level of "Severe" and the second and third transactions have an alert level of "Low." In this case, the user's address triggers the circuit breaker mechanism, and all three transactions require manual handling. After handling the transaction with the "Severe" alert level and lifting the circuit breaker mechanism, the second and third transactions will automatically execute based on the corresponding alert level handling.
 
-### IV. View and Process Transactions
+###  View and Process Transactions
 If your transactions trigger KYT verification, you can view all verified transaction information and verification results in the **Custody system** under **KYT Transaction Information**. If a transaction triggers manual review, you can also perform relevant review operations on this page.
 
 #### Compliance Custody Transfer Process

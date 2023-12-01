@@ -14,7 +14,7 @@ title: 统一说明
 | rsa_co_signer_pub:            | Co-Signer公钥；使用Co-Signer生成，或自主生成；请创建钱包后配置到Custody系统 |
 
 
-### I.I. RSA公私钥格式
+### RSA公私钥格式
 
 密码长度：2048
 
@@ -51,7 +51,7 @@ openssl pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform pem -nocrypt -
 | data  | String | 必须     | 加密之后的字符串；Custody的RSA私钥加密，具体加密信息见 `响应结果data解密后格式` |
 
 
-### IV.I. 响应结果data解密后格式
+### 响应结果data解密后格式
 
 | Param | 类型   | 是否必须 | 说明                                                   |
 | :---- | :----- | :------- | :----------------------------------------------------- |

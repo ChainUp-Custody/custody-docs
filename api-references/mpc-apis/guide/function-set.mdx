@@ -12,10 +12,10 @@ title: 功能配置
     <img src="/images/apis/mpc-api1_cn.png" width="600"/>
 </div>
 
-### I.I. 关于RSA公钥
+### 关于RSA公钥
 为了保证数据传输安全，ChainUp采用 `RSA-2048` **PKCS#8** 密钥格式的非对称加密算法对 API 请求和响应的数据进行加解密；其中公钥用于解密请求数据需要上传到ChainUp，私钥用于加密数据由客户自行配置到对应服务器并妥善保管；
 
-### I.II. RSA公私钥对的说明
+### RSA公私钥对的说明
 第一对RSA公私钥：创建 API 后，ChainUp Custody会默认生成，其中 `RSA公钥` 会给到开发者，开发者用于`响应参数解密`
 
 第二对RSA公私钥：开发者生成，客户业务系统请求 API 前对参数加密，并将 `RSA公钥` 配置到ChainUp Custody用于`请求参数解密`
@@ -31,7 +31,7 @@ Co-Signer内置生成RSA公私钥命令，仅限Co-Signer使用，请参考[Co-S
 </Tip>
 
 
-### I.III. 关于回调通知
+### 关于回调通知
 目前系统支持三种业务类型回调服务；`交易状态回调`、`签名回调`、`交易审批回调`
 
 其中交易状态回调地址、签名回调是由客户在ChainUp平台配置，且由ChainUp主动触发，交易审批回调地址由客户在Co-Signer程序内配置，且由Co-Signer主动触发
@@ -47,11 +47,11 @@ Co-Signer内置生成RSA公私钥命令，仅限Co-Signer使用，请参考[Co-S
 
 Co-Signer 常用于自动化签名 OpenAPI 发起的、以及自动归集交易
 
-### II.I. Co-Signer服务器选择
+### Co-Signer服务器选择
 
-Co-Signer支持部署在普通服务器或 `支持SGX` 的服务器，为了安全起见，建议使用带有 SGX 的服务器；推荐微软云服务商；[查看Co-Signer服务器配置要求](/quick-start/mpc-wallet/api-integration/co-signer#iv-i)
+Co-Signer支持部署在普通服务器或 `支持SGX` 的服务器，为了安全起见，建议使用带有 SGX 的服务器；推荐微软云服务商；[查看Co-Signer服务器配置要求](/quick-start/mpc-wallet/api-integration/co-signer#co-signer)
 
-### II.II. Co-Signer配置
+### Co-Signer配置
 
 Co-Signer 提供了回调处理程序，该程序属于可选组件；
 
@@ -63,10 +63,10 @@ Co-Signer 提供了回调处理程序，该程序属于可选组件；
 * 若未配置回调处理程序（**安全级别**：⭐⭐⭐⭐）
 > API Co-Signer 会验证交易签名，并签署所有 OpenAPI 发起的交易请求；
 
-* [查看Co-Signer配置教程](/quick-start/mpc-wallet/api-integration/co-signer#iv-ii-co-signer)
+* [查看Co-Signer配置教程](/quick-start/mpc-wallet/api-integration/co-signer#co-signer-2)
 
 
-### II.III. 创建Co-Signer私钥片段
+### 创建Co-Signer私钥片段
 完成API及Co-Signer程序配置后，在APP为Co-Signer创建私钥片段。
 
 `钱包创建者`可在MPC钱包【安全】-【Co-Signer】页面中创建Co-Signer私钥片段；创建的Co-Signer私钥片段将通过客户在ChainUp平台配置的 Co-Signer RSA公钥加密同步到Co-Signer服务器。
@@ -99,13 +99,13 @@ Co-Signer私钥片段丢失或泄露，可刷新出新的私钥片段或删除Co
     <img src="/images/apis/mpc-auto-collect3_cn.png" width="600"/>
 </div>
 
-### III.I. 应用归集范围
+### 应用归集范围
 配置要进行资金归集的子钱包；
 
-### III.II. 归集策略
+### 归集策略
 配置要进行资金归集的币种、归集阈值；超过归集阈值且低于设置的矿工费时会自动触发资金归集；用户可通过控制台或API自定义归集的阈值以及最大矿工费。
 
-### III.III. 加油策略
+### 加油策略
 为归集币种配置补充矿工费，由于代币归集需要使用主币作为矿工费，当地址的代币满足归集策略且地址没有主币时，将会触发从加油钱包向待归集地址补充矿工费，补充矿工费的数量可自定义，请务必注意补充的矿工费要低于归集阈值。
 
 策略配置完成，系统自动运行，可在设置的钱包内查看资产变动情况。
