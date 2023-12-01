@@ -122,7 +122,7 @@
           ]
         },
         {
-          "group": "For Compliant Custody ",
+          "group": "For Joint Custody ",
           "pages": [
             "quick-start/compliance-custody-joint/open-joint",
             "quick-start/compliance-custody-joint/strategy-joint"
@@ -323,7 +323,7 @@
       ]
     },
     {
-      "group": "ChainUp Custody Help Center",
+      "group": "Introduction",
       "pages":[
         "help-center/introduction/manage-custody"
       ]
@@ -362,7 +362,7 @@
           ]
         },
         {
-          "group": "Web3 Access",
+          "group": "Web3",
           "pages":[
             "help-center/manage-mpc/web3/fil-multi-sign",
             "help-center/manage-mpc/web3/fil-node",
