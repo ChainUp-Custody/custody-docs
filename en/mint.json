@@ -340,10 +340,11 @@
         {
           "group": "My Wallet",
           "pages":[
-            "help-center/manage-mpc/my-wallet/off-line-tool",
             "help-center/manage-mpc/my-wallet/framework",
             "help-center/manage-mpc/my-wallet/address-format",
-            "help-center/manage-mpc/my-wallet/address-path"
+            "help-center/manage-mpc/my-wallet/address-path",
+            "help-center/manage-mpc/my-wallet/change-address", 
+            "help-center/manage-mpc/my-wallet/off-line-tool"
           ]
         },
         {
