@@ -401,7 +401,7 @@
     }
   ],
   "api": {
-    "baseUrl": "https://openapi.hicoin.vip",
+    "baseUrl": "https://openapi.chainup.com",
     "playground": {
       "mode": "simple"
     }

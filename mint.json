@@ -26,7 +26,7 @@
   },
   "topbarCtaButton": {
     "name": "官网",
-    "url": "https://custody.chainup.com"
+    "url": "https://custody.chainup.com/zh-CN"
   },
   "tabs": [
     {
@@ -403,7 +403,7 @@
     }
   ],
   "api": {
-    "baseUrl": "https://openapi.hicoin.vip",
+    "baseUrl": "https://openapi.chainup.com",
     "playground": {
       "mode": "simple"
     }
