@@ -84,6 +84,7 @@
       "pages": [
         "quick-start/mpc-wallet/download-app",
         "quick-start/mpc-wallet/create-account",
+        "quick-start/mpc-wallet/cancel-account",
         "quick-start/mpc-wallet/create-wallet",
         {
           "group": "私钥管理",
@@ -106,6 +107,7 @@
       "pages": [
         "quick-start/joint-custody/download-app",
         "quick-start/joint-custody/create-account",
+        "quick-start/joint-custody/cancel-account",
         "quick-start/joint-custody/create-wallet",
         "quick-start/joint-custody/api-integration"
       ]
@@ -346,8 +348,7 @@
             "help-center/manage-mpc/my-wallet/address-format",
             "help-center/manage-mpc/my-wallet/address-path",
             "help-center/manage-mpc/my-wallet/change-address",
-            "help-center/manage-mpc/my-wallet/off-line-tool",
-          "help-center/manage-mpc/my-wallet/cancel-account" 
+            "help-center/manage-mpc/my-wallet/off-line-tool"
         ]
         },
         {
