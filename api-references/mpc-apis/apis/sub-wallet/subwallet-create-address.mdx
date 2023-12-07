@@ -17,7 +17,7 @@ description: "为指定子钱包及币种创建地址；同一个子钱包可以
 #### 响应参数数据结构
 <Expandable title="object">
     <ResponseField name="address" type="string">创建的地址</ResponseField>
-    <ResponseField name="sub_wallet_id" type="integer">地址类型，1：用户地址，2：系统地址(包括归集地址、找零地址)。`系统地址`不可给分配给用户使用, UTXO交易的找零都会找零到找零地址</ResponseField>
+    <ResponseField name="addr_type" type="integer">地址类型，1：用户地址，2：系统地址(包括归集地址、找零地址)。`系统地址`不可给分配给用户使用, UTXO交易的找零都会找零到找零地址</ResponseField>
     <ResponseField name="memo" type="string">Memo主链下币种时分配</ResponseField>
 </Expandable>
 
