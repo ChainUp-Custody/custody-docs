@@ -1,0 +1,294 @@
+---
+title: Co-Signer配置
+---
+
+## I. 概述
+
+本文将介绍Co-Signer的功能以及如何配置Co- Signer来满足客户的业务要求。在ChainUp Custoy的生态系统中，Co-Signer不仅是一种安全措施，也是推动去中心化和信任的关键因素，目的是为用户提供更加安全、透明和高效的数字化体验。
+
+## II. 什么是Co-Signer?
+
+在区块链或数字资产领域，`"Co-Signer"（共同签署者）`通常是指多个个体或实体需要联合签署某个交易或合约的一种机制。这种机制主要用于加强交易或合约的安全性和可信度。使用 Co-Signer 的目的是为了确保在涉及到关键操作时，需要多方的确认和授权，从而减少潜在的风险和增加整体的安全性。这对于数字资产和区块链网络中的高价值交易或者关键业务操作尤为重要。
+
+
+## III. Co-Signer 作用
+
+**安全的数字资产管理**
+
+在数字资产领域，Co-Signer用于保护高价值的数字资产。多重签名钱包确保私钥分布在不同的地方，防止单一私钥被泄露或滥用。
+
+**智能合约操作**
+
+对于需要多方确认的智能合约，Co-Signer提供了一种安全的机制。例如，分布式应用程序（DApps）可能要求多个参与方共同签署以执行敏感操作。
+
+**交易安全性**
+
+对于区块链上的交易，特别是涉及大额资金的交易，多重签名提高了交易的安全性。即使其中一个账户被攻击，也不足以完成交易。
+
+**企业级应用**
+在企业级区块链应用中，Co-Signer 用于确保多个授权实体必须同意特定的决策或交易，以满足合规性和审计的需求。
+
+
+## IV. 部署Co-Signer
+
+### Co-Signer服务器配置要求
+
+<Tip>
+**CPU最低要求: AMD64 或ARM64 架构，2核，主频2.0 GHz**
+
+**内存：8GB**
+
+**硬盘：256GB**
+</Tip>
+
+### Co-Signer部署流程
+
+
+#### 获取Co-Signer
+
+- **普通版本**
+
+1. 运行程序下载   
+
+  文件地址: https://github.com/ChainUp-Custody/mpc-co-signer/releases,  选择co-signer-linux-(version) 版本，该版本Linux可直接运行
+
+2. 修改程序可执行权限
+
+```sh
+chmod +x co-signer-(version)
+```
+
+- **SGX版本**
+<Steps>
+
+    <Step title="购买微软云sgx服务器">
+        微软云sgx服务器请参考文档：https://learn.microsoft.com/zh-cn/azure/confidential-computing/virtual-machine-solutions-sgx
+    </Step>
+
+    <Step title="安装ego环境">
+       ```sh
+       sudo apt-get install software-properties-common
+       sudo apt install snapd
+       sudo wget -qO- https://download.01.org/intel-sgx/sgx_repo/ubuntu/intel-sgx-deb.key | sudo apt-key add
+       sudo add-apt-repository "deb [arch=amd64] https://download.01.org/intel-sgx/sgx_repo/ubuntu `lsb_release -cs` main"
+       sudo wget https://github.com/edgelesssys/ego/releases/download/v1.3.0/ego_1.3.0_amd64.deb
+       sudo apt install -y ./ego_1.3.0_amd64.deb build-essential libssl-dev
+       ```
+    </Step>
+
+    <Step title="创建工作目录">
+        ```sh
+        mkdir -p <work path/>
+        ```
+    </Step>
+
+    <Step title="切换到工作目录">
+        ```sh
+        cd <work path/>
+        ```
+    </Step>
+
+    <Step title="下载程序">
+        文件地址: https://github.com/ChainUp-Custody/mpc-co-signer/releases,  选择co-signer-linux-(version) 版本，请按照后续步骤使用ego进行编译打包
+
+        注意：**v1.1.0**版本后支持SGX
+    </Step>
+
+    <Step title="在工作目录下添加配置文件enclave.json, 配置文件内容如下">
+        <Warning>
+        **重要提示**
+
+        1. 配置文件中exe的值：co-signer-sgx, 如果修改了可执行程序名称，exe的值需修改为自定义名称
+
+        2. 配置文件规定co-signer只能在目录/data/co-signer/下运行, 如需自定义运行目录, 请将配置中的**所有的** /data/co-signer/修改为自定义目录
+
+        3. 堆内存，**heapSize**配置建议配置为：6G (6144)
+
+        </Warning>
+        ```json
+        {
+            "exe": "mpc-co-signer",
+            "key": "private.pem",
+            "debug": false,
+            "heapSize": 2048,
+            "executableHeap": false,
+            "productID": 1,
+            "securityVersion": 1,
+            "mounts": [{"readOnly":false, "type":"hostfs", "source":"/etc/ssl/certs/", "target":"/etc/ssl/certs/"},{"readOnly":false, "type":"hostfs", "source":"/data/co-signer/", "target":"/data/co-signer/"}],
+            "env": [{"name":"HOME","fromHost":true},{"name":"PWD","value":"/data/co-signer/"}],
+            "files": null
+        }
+        ```
+    </Step>
+
+    <Step title="重新sign并打包后得到可运行sgx运行程序">
+        ```sh
+        ego sign
+
+        ego bundle co-signer-sgx-(version)
+        ```
+    </Step>
+
+</Steps>
+
+
+
+
+#### 运行Co-Signer
+
+可执行程序查看帮助：`co-signer -h`, 结果如下:
+
+```sh
+v1.1.0
+
+Usage: co-signer [-hv] [-server] [-rsa-gen] [-recover-seed mnemonic] [-rsa-pri-import rsa private key] [-verify-sign-pub-import develop rsa public key to verify unsign transaction] [-keystore-gen] [-custody
+-pub-import]
+
+Options:
+    -custody-pub-import string
+            import custody public key
+    -h this is help
+    -keystore-gen
+            Used to merge files (including seed.dat, rsaPri.pem, etc.) to generate a new keystore.json file
+    -recover-seed string
+            recover seed by mnemonic, use '-' between each word
+    -rsa-gen
+            generate rsa pem by tools
+    -rsa-pri-import string
+            import current rsa private key
+    -server
+            start co-signer otherwise only tools
+    -v this is version
+    -verify-sign-pub-import string
+            import the public key used for verifying sign
+
+
+## 说明
+1. -v                         获取co-signer版本号
+2. -server                    启动co-signer参数，启动时不使用该参数则为工具模式
+3. -conf                      启动co-signer时指定配置文件, 默认为：./conf/config.yaml
+4. -rsa-gen                   工具模式：输入启动密码，生成加密的私钥和未加密的公钥，生成至keystore.json文件中
+5. -rsa-pri-import            工具模式：输入启动密码，导入现有的rsa私钥，生成加密后的rsa私钥文件（仅导入私钥），生成至keystore.json文件中
+6. -verify-sign-pub-import    导入校验客户签名(sign)使用的公钥，生成至keystore.json文件中；导入后co-signer会校验提现和web3客户签名(sign)，sign生成方式详见API文档
+7. -custody-pub-import        工具模式：输入启动密码，导入custody的公钥，生成至keystore.json文件中
+8. -keystore-gen              工具模式：用于将v1.0.x版本的seed.dat，rsaPri.pem，rsaPub.pem等文件统一导入至keystore.json文件
+```
+
+
+**添加配置并启动Co-Signer**
+
+<Steps>
+
+    <Step title="在可执行程序同级目录创建文件夹">
+        ```sh
+        mkdir conf
+        ```
+    </Step>
+    <Step title="在conf目录下添加配置文件，文件名: config.yaml">
+        配置文件内容如下：
+        ```yaml
+        ## 主配置信息
+        main:
+            ## co-signer的服务ip地址
+            tcp: "0.0.0.0:28888"
+            ## v1.1.x版本使用的加密存储文件
+            keystore_file: "conf/keystore.json"
+
+        ## custody系统
+        custody_service:
+            ## app_id，创建商户后获取
+            app_id: ""
+            ## api域名地址，见接口文档
+            domain: ""
+            ## 请求获取响应语言，支持zh_CN和en_US
+            language: "zh_CN"
+
+        ## 客户系统
+        custom_service:
+            ## withdraw签名回调地址，未配置时需要强制验证sign
+            withdraw_callback_url: ""
+            ## web3交易签名回调地址，未配置时需要强制验证sign
+            web3_callback_url: ""
+        ```
+    </Step>
+    <Step title="配置Co-Signer使用的Rsa私钥">
+     **方式一** 
+
+        执行命令后按提示输入密码, 密码与配置钱包种子使用的密码一致！执行成功后conf目录下生成文件：keystore.json
+
+        私钥为请求Custody服务时加密请求参数使用，私钥对应公钥需配置到Custody, Custody使用该公钥解密Co-Signer请求数据
+
+        ```sh
+        ./co-signer -rsa-gen
+        ```
+
+     **方式二**
+
+        执行命令后按提示输入密码, 密码与配置钱包种子使用的密码一致！执行成功后conf目录下生成文件：keystore.json
+
+        私钥为请求Custody服务时加密请求参数使用，私钥对应公钥需配置到Custody, Custody使用该公钥解密Co-Signer请求数据
+
+        ```sh
+        ./co-signer -rsa-pri-import MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCzoQHv17B0tMPPLn8JzQd4OAovEYYhAyKXSK4WTvnf/WHsspzo4n3gpjdQPuQysri5iMIocAnZYgmQCosDiOIYSx4p9HJxTYRIzPZ25SjMtpxbzgHQtyIaw4CcPkE6CF7vDUpwil1T9NfegsvhWZ/9wAOf4AJmJIEvOnbAIq6DMpgGu59mWidRKls7UtQ9cwf2NYcE3eUE985juCsDOummmWLS1hBto7nCIiEhtXCGJgWCZyVrAWQZ10tIo0XW5ftiCU4EE5GgWNi6xA6GL6/xdygsCh3tsKRUfcfHIAFmEhVJoUrMiuws5xua1qPotz0t2Tm5QTHkrCGUeizzDJjhAgMBAAECggEBAIvnx35q3ADKGghwCnozurGj1Cq811829eYmsZCminAvBeo5Y4Tvg2NJkqNpmIr0MHQxVCfyu3kYpqIN1CA4qQCK4T+EKO6elX2uRfhsm852HGpUlY1eVa3Kv4zx4BO3GVnPXD8zRWVyuf+QmAM4rygQOcJ30uaDYCrMulkDqjB8FF8JrE0ycCdT2lvEvAAU3e8YeDRaOaYkBhRjDVntE+VjAyCDgvqtgwpI1A7iYK5o/lU+64BlQkp6xpglN5BF1aXwj3O4+zT7WJBkZqPMOHO11o81w3oCDXO9xZPMnjsO7o5HPKhCkEiaLQrymzzbgR7UYLP56OkTnlSb6sYG99ECgYEA6AxypkvKlc4fU6PIIfxUsJfjJyRIucg+SsiOFxJDQ1JWx6sCKnj2Ak4T/bPLmBEAeoBCnRH8EviovYsUSn0VOj92akODOilywB8GSnLWg+0D7v3sKQVcKd2ykRTk9nS3YRz1nFX+SsdWrrCk7g3aLw6BiGz/uSVEmzqOXf6D2dMCgYEAxitx0iFytrdnD8dfPr0C/OSZUG0UIC6DU/BWlbY3Ws6EpQxPiZp7NtKLNS9UohFk89YplZJKnVfX0vTtnJMaXn7iTf6XNTr2o4hwCK8CIB8Zjw56oCaDBdwbOxoOVh0Kpt4uueFg9GTPP6a6+kk/APNcbekpJzRMQ8RqE4OuffsCgYEAqYT2eMAjtj7Hqe2bdiCFqiC7xEuAiaBcyXssOnSQCO1tEh6+zVJivhpWBmBD2sqI4/UxNNf/o8heVWH2J9irGktkcYryohnHh8ziZp7wUZ5j4kNENE+DHd6k5dIy1k077kkesOAtjmmDzMilJHegLgJV5NlkE9jC/vfPK6GUpxsCgYAV3jVxOr+t6g81borUIYdy4McKWP8fjgJwANWNL85r9t4sWG9uf92Y7yLte4ubVtANGFT+bGZPdqIaZWzTGmiOhPH0KWQGO7t70FKMosNZSBVJ9A8UHSvYObHHk9iBKDNEtr/xQy2vynAUVhHMDMknEbPhbRldeifwUnxiKuXWgQKBgQCZkVUrQZJ73Qf8jOiBA1x1Frh8yxSdU/mrvWV/SvC31BbHt3aGKPeKFOfTrQVmAgME4JsAOxwIL0X6C5MdxCOy5Lbefgk8OBpkV8VthNzMQbDXjcWgiYO46G5NFE/kbR0CZzqUFgZkqktQw0aONcUaUhxT9YmhCkWzyiuWd4yCLQ==
+        ```
+    </Step>
+    <Step title="Co-Signer配置Custody公钥">
+        执行命令后按提示输入密码, 密码与配置钱包种子使用的密码一致！执行成功后conf目录下生成文件：keystore.json
+
+        该公钥由Custody提供，Co-Signer使用该公钥解密Custody服务返回数据
+
+        ```sh
+        ./co-signer -custody-pub-import 'Cusotdy RSA Public key'
+        ```
+    </Step>
+    <Step title="Co-Signer 配置不回调客户系统时校验签名(sign)所使用的公钥">
+        执行命令后按提示输入密码, 密码与配置钱包种子使用的密码一致！执行成功后conf目录下生成文件：keystore.json
+
+        导入后Co-Signer会校验提现和web3交易签名(sign)，sign生成方式详见API文档
+
+        ```sh
+        ./co-signer -verify-sign-pub-import 'RSA Public key'
+        ```
+    </Step>
+</Steps>
+
+
+- **启动程序shell脚本示例**
+
+启动Co-Signer，推荐使用shell脚本启动（避免密码泄露到终端）
+
+```sh
+#!/bin/bash -e
+
+project_path=$(
+    cd $(dirname $0)
+    pwd
+)
+
+STR_PASSWORD=""
+echo -n "Please enter your password:"
+stty -echo
+read STR_PASSWORD
+stty echo
+
+
+if [[ ! -n "$STR_PASSWORD" ]]; then
+    echo "Password cannot be null"
+    exit 1
+fi
+
+echo ""
+echo "Startup Program..."
+echo ""
+
+# start
+echo ${STR_PASSWORD} | nohup ${project_path}/co-signer -server >>nohup.nout 2>&1 &
+```
+
+## V. 添加Co-Signer服务器白名单
+
+ChainUp Custody需要访问Co-Signer创建同权私钥、生成地址，故需要将Co-Signer的启动端口对ChainUp Custody的服务器IP添加安全组或白名单，以下是Custody的IP：
+
+1. Co-Signer服务器开通Custody服务器(IP: **54.254.7.206**)访问**28888端口**权限，注意28888端口为Co-Signer程序监听端口，**可自定义**。
+
+2. Co-Signer服务器需访问Custody服务器，需开通访问**54.251.87.91:433**权限。
