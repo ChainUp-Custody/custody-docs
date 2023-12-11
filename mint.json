@@ -411,23 +411,23 @@
       {
         "group": "账户安全",
         "pages": [
-          "user-guide/mpc-wallet/account/login-password",
-          "user-guide/mpc-wallet/account/binding-ga",
+          "user-guide/mpc-wallet/account/password",
+          "user-guide/mpc-wallet/account/bind-ga",
           "user-guide/mpc-wallet/account/bio-identity",
-          "user-guide/mpc-wallet/account/account-kyc"
+          "user-guide/mpc-wallet/account/kyc"
         ]
       },
       {
         "group": "配置钱包",
         "pages": [
-          "user-guide/mpc-wallet/wallet/create-wallet",
+          "user-guide/mpc-wallet/wallet/create-wallet", 
+          "user-guide/mpc-wallet/wallet/manage-wallet",
           "user-guide/mpc-wallet/wallet/add-user"
         ]
       },
       {
         "group": "私钥管理",
         "pages": [
-          "user-guide/mpc-wallet/private-manage/private-password",
           "user-guide/mpc-wallet/private-manage/private-backup",
           "user-guide/mpc-wallet/private-manage/private-recover",
           "user-guide/mpc-wallet/private-manage/off-line-tool"
