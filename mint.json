@@ -473,7 +473,6 @@
           {
             "group": "Co-Signer归集",
             "pages":[
-              "user-guide/mpc-wallet/consolidate/co-signer/about",
               "user-guide/mpc-wallet/consolidate/co-signer/rules",
               "user-guide/mpc-wallet/consolidate/co-signer/execute"
             ]
