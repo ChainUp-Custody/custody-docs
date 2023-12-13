@@ -8,38 +8,42 @@ ChainUp Custody为用户提供了强大且易于集成的API工具，可以帮�
 
 ## II. 操作流程
 
-### 配置API
+<Steps>
 
+<Step title="配置API">
 您可以在Custody的Web端方便地配置MPC钱包的API信息，实现更灵活的钱包管理。
 
 <div className="w-full flex items-center justify-center">
     <img src="/images/user-guide/apicn.png"/>
 </div>
 
+
 <Warning>
 **重要提示**
 一个MPC主钱包仅能配置一个API。为确保API功能生效，API配置需要与Co-Signer配置同步进行。只有钱包创建者才可配置API信息，编辑修改信息需要通过GA验证。请参考[API文档](/api-references/intro/custody-apis)，详细了解如何有效地对接API。
 </Warning>
 
-#### API字段填写
+</Step>
 
+
+<Step title="API字段填写">
 <div className="w-full flex items-center justify-center">
     <img src="/images/user-guide/api2cn.png"/>
 </div>
 
-在API配置过程中，您需要提供以下字段信息：
+<Note> **字段描述** ：
+**绑定IP地址**：只允许特定IP范围的请求。每个API最多绑定10个IP地址，多个IP之间使用半角逗号分隔
+**备注**：提供额外的配置说明或标记。此字段通常用于记录与API配置相关的附加信息，方便管理员和开发者理解配置的特殊要求或约定。
+</Note>
+</Step>
 
-1. **绑定IP地址**：该字段用于指定API接口监听的IP地址。绑定特定IP地址可以增强系统安全性，只允许特定IP范围的请求。每个API最多绑定10个IP地址，多个IP之间使用半角逗号分隔
-2. **交易状态通知地址**：用于接收交易状态通知的URL地址。当发生交易状态变化时，系统将向该地址发送通知，以便客户系统及时了解交易的最新状态。
-3. **Co-Signer接口地址**：指定Co-Signer服务的API接口地址。Co-Signer是一个用于实现资产自动归集的功能，配置正确的接口地址确保正常的Co-Signer服务调用。
-4. **Co-Signer RSA公钥**：提供Co-Signer服务的RSA公钥，用于加密和解密相关数据。确保正确的RSA公钥有助于维护通信的安全性。
-5. **客户系统 RSA公钥**：客户系统的RSA公钥，用于加密敏感信息并确保只有客户系统能够解密。提供正确的RSA公钥有助于保护通信过程中的数据安全。
-6. **备注**：提供额外的配置说明或标记。此字段通常用于记录与API配置相关的附加信息，方便管理员和开发者理解配置的特殊要求或约定。
-
-#### 编辑或停用API
+<Step title="编辑或停用API">
 <div className="w-full flex items-center justify-center">
     <img src="/images/user-guide/api4cn.png"/>
 </div>
+
+</Step>
+</Steps>
 
 ## III. 常见问题
 
