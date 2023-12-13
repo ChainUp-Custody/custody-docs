@@ -34,7 +34,10 @@ title: 配置Co-Signer规则
 归集钱包和加油站可以选择同一个;
 使用Custody App扫描提供的二维码，利用本地私钥片段签名确认归集钱包和加油站的配置。
  <div className="w-full flex items-center justify-center">
-    <img src="/images/user-guide/ruleco1cn.png" width="600"/>
+    <CardGroup cols={2}>
+        <img src="/images/user-guide/ruleco2cn.png" width="350"/>
+        <img src="/images/user-guide/ruleco3cn.png" width="350"/>
+    </CardGroup>
 </div>
 <Tip>
 共管成员创建配置后，钱包创建者会收到一条待办任务，需要签名确认，配置才可生效。
@@ -44,7 +47,7 @@ title: 配置Co-Signer规则
    决定哪些子钱包的资产会进行归集。
 
    <div className="w-full flex items-center justify-center">
-    <img src="/images/help-center/co-signer-collect3_cn.png" width="600"/>
+    <img src="/images/help-center/co-signer-collect3_cn.PNG" width="600"/>
 </div>
 
 
@@ -61,7 +64,7 @@ title: 配置Co-Signer规则
  
 
  <div className="w-full flex items-center justify-center">
-    <img src="/images/help-center/co-signer-collect4_cn.png" width="600"/>
+    <img src="/images/help-center/co-signer-collect4_cn.PNG" width="600"/>
 </div>
 
  <Tip>
@@ -71,14 +74,9 @@ title: 配置Co-Signer规则
 </Step>
 <Step title="配置加油策略">
 加油策略将决定加油站在什么情况下将矿工费补充至子钱包来支持归集。
-
- <div className="w-full flex items-center justify-center">
-    <CardGroup cols={2}>
-        <img src="/images/user-guide/ruleco2cn.png" width="350"/>
-        <img src="/images/user-guide/ruleco3cn.png" width="350"/>
-    </CardGroup>
+<div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/co-signer-collect5_cn.PNG" width="600"/>
 </div>
-
  <Tip>
 共管成员可以创建主链币维度的策略，即当归集币种缺乏归集所需的矿工费时，加油站需要将主链币补充到多少。
 
@@ -86,15 +84,15 @@ title: 配置Co-Signer规则
 </Tip>
 
 </Step>
-</Steps>
 
 
-## III. 消息通知
+<Step title="配置消息通知">
 
 如果您的归集业务缺少所需的手续费主链币，Custody系统将会向您发送通知邮件，以确保您及时了解并采取必要的行动。一旦系统检测到归集业务缺少所需的手续费主链币，将会向设定的通知邮箱发送提醒邮件。
 <div className="w-full flex items-center justify-center">
     <img src="/images/user-guide/ruleinfocn.png" width="600"/>
 </div>
+
 <Warning>
 
 **关键步骤和注意事项**
@@ -104,6 +102,8 @@ title: 配置Co-Signer规则
 邮箱的编辑和修改需要通过GA验证。
 
 </Warning>
+</Step>
+</Steps>
 
 ## IIII.常见问题
 
