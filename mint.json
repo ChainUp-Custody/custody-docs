@@ -436,7 +436,6 @@
       {
         "group": "日常运营",
         "pages": [
-          "user-guide/mpc-wallet/operation/transfer-explain",
           "user-guide/mpc-wallet/operation/receive",
           "user-guide/mpc-wallet/operation/transfer",
           "user-guide/mpc-wallet/operation/record",
