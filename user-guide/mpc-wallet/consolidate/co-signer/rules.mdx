@@ -27,27 +27,52 @@ title: 配置Co-Signer规则
 
    归集钱包和加油站可以选择同一个。
 </Step>
+
 <Step title="确认钱包配置">
     使用Custody App扫描提供的二维码，利用本地私钥片段签名确认归集钱包和加油站的配置。
 </Step>
 <Step title="决定归集应用范围">
    决定哪些子钱包的资产会进行归集。
+
+   <div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/co-signer-collect3_cn.PNG" width="600"/>
+</div>
+
+
    <Tip>
    请注意：
    归集钱包和加油站将会自动排除于归集应用范围外。
 
    若您的子钱包拥有多条需归集资产的地址，则钱包所有地址资产都将属于归集应用范围。
    </Tip>
+
 </Step>
 <Step title="配置归集策略">
    配置归集策略是一个关键步骤，它涉及到决定哪些币种会进行归集、触发归集的阈值以及其他相关条件。
-  <Tip>
+ 
+
+ <div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/co-signer-collect4_cn.PNG" width="600"/>
+</div>
+
+ <Tip>
    如果归集主币，务必仔细填写归集策略的阈值和加油策略的补充数。建议将归集阈值设置大于补充数，以确保所需的矿工费不会因为归集而导致运营问题。
  </Tip>
+
 </Step>
 <Step title="配置加油策略">
-   加油策略将决定加油站在什么情况下将矿工费补充至子钱包来支持归集。
-   
+加油策略将决定加油站在什么情况下将矿工费补充至子钱包来支持归集。
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/co-signer-collect5_cn.PNG" width="600"/>
+</div>
+
+ <Tip>
+共管成员可以创建主链币维度的策略，即当归集币种缺乏归集所需的矿工费时，加油站需要将主链币补充到多少。
+
+新创建的加油策略默认开启，创建成功后，可以对加油策略进行相关的编辑、删除和关闭操作，支持批量处理。
+</Tip>
+
 </Step>
 </Steps>
 
