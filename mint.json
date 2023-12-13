@@ -465,7 +465,6 @@
           {
             "group": "合约归集",
             "pages":[
-              "user-guide/mpc-wallet/consolidate/contact/about",
               "user-guide/mpc-wallet/consolidate/contact/rules",
               "user-guide/mpc-wallet/consolidate/contact/execute"
             ]
