@@ -28,12 +28,28 @@ title: 配置合约归集规则
 <Steps>
 <Step title="创建并发布归集合约">
     在MPC Web端选择“归集管理”，并点击“+”创建归集合约。
+<div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/contract-collect1_cn.PNG" />
+</div>
 </Step>
 <Step title="编辑归集规则">
    输入归集规则名称、选择主链并确定归集地址，然后选择归集到账子钱包。
+   <div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/contract-collect2_cn.PNG" />
+</div>
 </Step>
+
+<Step title="选择归集到账子钱包">
+   <div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/contract-collect3_cn.PNG" />
+</div>
+</Step>
+
 <Step title="签名发布合约">
     私钥持有者使用Custody App扫码签名，以成功发布归集规则。
+<div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/contract-collect5_cn.PNG" />
+</div>
 </Step>
 </Steps>
 
@@ -42,9 +58,23 @@ title: 配置合约归集规则
 <Steps>
 <Step title="编辑归集阈值">
     在归集管理页面点击“编辑归集”，然后在编辑页面点击“+”添加归集币种。
+<div className="w-full flex items-center justify-center">
+<CardGroup cols={2}>
+    <img src="/images/help-center/contract-collect6_cn.PNG" />
+    <img src="/images/help-center/contract-collect7_cn.PNG" />
+    </CardGroup>
+</div>
 </Step>
 <Step title="编辑归集阈值">
     添加需要归集的代币后，点击“编辑阈值”设置归集阈值：**当资产数额大于阈值时将触发合约归集。**
+ 
+<div className="w-full flex items-center justify-center">
+<CardGroup cols={2}>
+    <img src="/images/help-center/contract-collect8_cn.PNG" />
+    <img src="/images/help-center/contract-collect9_cn.PNG" />
+    </CardGroup>
+</div>
+
 </Step>
 </Steps>
 
@@ -52,17 +82,27 @@ title: 配置合约归集规则
 
 <Steps>
 <Step title="打开MPC代币归集">
-    登录并打开 Custody App，切换到MPC系统，打开“发现- MPC代币归集”功能。
+Custody APP的【发现】-【MPC代币归集】功能，点击选择已经配置了归集合约的主钱包进行授权操作。
+
+<div className="w-full flex items-center justify-center">
+<CardGroup cols={2}>
+    <img src="/images/help-center/contract-collect10_cn.PNG" width="200"/>
+    <img src="/images/help-center/contract-collect11_cn.PNG" width="200"/>
+    </CardGroup>
+</div>
+
 </Step>
 <Step title="授权管理">
    在归集工具中点击“授权管理”，私钥持有者需要通过私钥签名授权子钱包。
+<CardGroup cols={3}>
+    <img src="/images/help-center/contract-collect12_cn.PNG" width="200"/>
+    <img src="/images/help-center/contract-collect13_cn.PNG" width="200"/>
+    <img src="/images/help-center/contract-collect14_cn.PNG" width="200"/>
+    </CardGroup>
+</div>
 
 <Warning>
-**关键步骤和注意事项**
-
-- 需要归集的每一个子钱包的归集资产都需要分别授权。对于不需要归集的子钱包，只需取消归集即可。
-- 请使用Custody APP的【发现】-【MPC代币归集】功能，点击选择已经配置了归集合约的主钱包进行授权操作。
-
+需要归集的每一个子钱包的归集资产都需要分别授权。对于不需要归集的子钱包，只需取消归集即可。
 </Warning>
 
 </Step>
