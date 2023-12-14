@@ -341,8 +341,7 @@
           "group": "用户设置",
           "pages":[
             "help-center/manage-mpc/user-setting/user-role",
-            "help-center/manage-mpc/user-setting/add-user",
-            "help-center/manage-mpc/user-setting/cancel-account"
+            "help-center/manage-mpc/user-setting/add-user"
           ]
         },
         {
@@ -416,7 +415,8 @@
           "user-guide/mpc-wallet/account/password",
           "user-guide/mpc-wallet/account/bind-ga",
           "user-guide/mpc-wallet/account/bio-identity",
-          "user-guide/mpc-wallet/account/kyc"
+          "user-guide/mpc-wallet/account/kyc",
+          "user-guide/mpc-wallet/cancel-account"
         ]
       },
       {
