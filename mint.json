@@ -447,7 +447,6 @@
       {
         "group": "交易合规",
         "pages": [
-          "user-guide/mpc-wallet/kyt/active",
           "user-guide/mpc-wallet/kyt/setting",
           "user-guide/mpc-wallet/kyt/operate"
         ]

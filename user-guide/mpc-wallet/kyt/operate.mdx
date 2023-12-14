@@ -1,0 +1,60 @@
+---
+title: 应用KYT服务
+---
+
+## I. 功能简介
+
+MPC KYT（Know Your Transaction）是一种强大的区块链交易资金安全验证方式。它可以对高风险、不明确或非法的交易进行警报，从而进行相应的操作，以确保资金的合法性、安全性和透明性。MPC KYT支持两种服务模式：独立服务和Custody服务，并且与Trustformer、Chainalysis和Elliptic三家KYT服务商合作，为用户提供优质的KYT服务。
+
+## II. 操作流程
+
+<Steps>
+<Step title="查看KYT订单">
+您可以在KYT-KYT订单中查看您当前主钱包下的全部KYT订单。
+
+<div className="w-full flex items-center justify-center">
+<img src="/images/help-center/mpc-fil-node15_cn.png" width="200"/>
+</div>
+
+点击订单可以查看订单详情。
+
+<div className="w-full flex items-center justify-center">
+<img src="/images/help-center/mpc-fil-node14_cn.png" width="200"/>
+</div>
+
+在交易信息中也会展示您的验证过KYT的订单。
+
+<div className="w-full flex items-center justify-center">
+<img src="/images/help-center/mpc-fil-node17_cn.png" width="200"/>
+</div>
+
+</Step>
+<Step title="处理KYT待办">
+您可以在待办中查看需要处理的KYT待办。
+
+<div className="w-full flex items-center justify-center">
+<img src="/images/help-center/mpc-fil-node15_cn.png" width="200"/>
+</div>
+
+</Step>
+<Step title="理解KYT状态">
+KYT包含以下几种状态：
+
+1. KYT验证中：此状态包含两种不同情况：
+    - 您的业务已经创建KYT订单，并提交到KYT服务商正在验证，此时只需要等待KYT服务商返回验证结果即可；
+    - 您的业务已经提交KYT服务商验证，但是KYT服务验证超时，此时将会给您生成一条KYT验证中超时的待办；
+2. KYT人工处理：如果您配置的收款处理方式为“人工处理”，此时充值订单到达您配置的报警级别，此时订单状态为KYT人工处理，您需要确认处理此待办，如未处理此待办，为保证资金安全，则该钱包的该币种将会被拦截出金和归集。
+3. KYT拒绝：如果您配置的提现处理方式为“拒绝提现”，此时提现订单达到您配置的报警级别，则该订单将会直接被拒绝提币，此状态为订单终态；
+
+</Step>
+</Steps>
+
+<warning>
+**注意：** 在KYT验证中状态，您可以选择继续验证或者确认通过。选择继续验证则会继续等待KYT服务商的验证结果，选择确认通过您可以自行查询处理结果并选择对应的结果，本次将不会等待KYT服务商返回结果。
+</warning>
+
+## III. 常见问题
+
+<Accordion title="KYT服务如何处理风险交易？">
+KYT服务会对风险交易进行报警，并根据您的配置进行相应的处理。例如，如果您配置的收款处理方式为“人工处理”，此时充值订单到达您配置的报警级别，此时订单状态为KYT人工处理，您需要确认处理此待办，如未处理此待办，为保证资金安全，则该钱包的该币种将会被拦截出金和归集。
+</Accordion>
