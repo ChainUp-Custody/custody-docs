@@ -17,7 +17,18 @@ ChainUp Custody MPC钱包采用了多私钥分片的方式来保护用户的隐�
 ### 手动恢复
 
 <Steps>
-<Step title="输入私钥分片">
+<Step title="APP 私钥管理">
+   打开APP **安全**功能，选择私钥管理
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/user-guide/safecn.png" width="200"/>
+        <img src="/images/quickstart/mpcrecover1cn.png" width="200"/>
+    </CardGroup>
+</div>
+</Step>
+
+
+<Step title="选择本地恢复，并输入私钥分片">
     输入您在本地安全的离线环境中手动保管的私钥分片（助记词）完成恢复。
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={3}>
@@ -32,11 +43,20 @@ ChainUp Custody MPC钱包采用了多私钥分片的方式来保护用户的隐�
 ### 云端恢复
 
 <Steps>
+<Step title="选择云端恢复">
+  选择私钥管理页面中，需要云端恢复私钥的钱包
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/quickstart/mpc-recovercloud1_cn.png" width="200"/>
+         <img src="/images/quickstart/mpc-recover1_cn.png" width="200"/>
+    </CardGroup>
+</div>
+
+</Step>
 <Step title="下载并解析私钥分片文件">
     将您备份到云盘的加密私钥分片文件自动下载到本地设备，并通过私钥密码解析完成恢复。
 <div className="w-full flex items-center justify-center">
-    <CardGroup cols={3}>
-        <img src="/images/quickstart/mpc-recovercloud1_cn.png" width="200"/>
+    <CardGroup cols={2}>
         <img src="/images/quickstart/mpc-recovercloud2_cn.png" width="200"/>
         <img src="/images/quickstart/mpc-recovercloud3_cn.png" width="200"/>
     </CardGroup>
