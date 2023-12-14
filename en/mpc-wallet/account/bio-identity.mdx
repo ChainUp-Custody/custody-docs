@@ -1,0 +1,73 @@
+---
+title: 生物识别操作手册
+---
+
+## I. 功能简介
+
+生物识别技术是一种身体特征识别技术，通过识别个人生物特征来验证身份。由于生物特征是独特的，难以伪造或复制，因此比传统的密码或PIN码更安全。Custody App支持用户开启生物识别进行免密支付或免密操作，只需使用自己的生物特征即可完成验证。这减少了密码或GA验证码输入的烦恼，使用户操作更加简单和顺畅。
+
+然而，虽然生物识别技术带来了许多便利，但也存在隐私和安全方面的考虑。请您综合考虑所有因素来决定是否开启MPC系统操作的生物识别。
+
+## II. 操作流程
+
+
+
+<Steps>
+
+<Step title="进入生物识别功能">
+    点击底部导航的【安全】模块, 选择生物识别功能。
+      <div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/safecn.png" width="200"/>
+</div>
+</Step>
+
+<Step title="分场景开启生物识别">
+
+#### A. 免密操作
+
+开启需要验证GA（谷歌验证码）。
+
+<tip>
+这种模式下，您可以使用生物识别验证来替代谷歌验证码。相关场景包括发起转账、审批交易、团队成员管理等。
+</tip>
+
+#### B. 免密支付
+
+    主钱包维度开启；
+    开启需要验证私钥密码；
+<tip>
+    如果其他主钱包应用了相同的私钥密码，您可以同时选择开启这些钱包的免密支付功能。
+</tip>
+
+  <div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/user-guide/bio1cn.png" width="200"/>
+        <img src="/images/user-guide/bio2cn.png" width="200"/>
+    </CardGroup>
+</div>
+</Step>
+</Steps>
+
+### 其他途径开启生物识别
+
+    在进行常规验证时，例如输入GA或私钥密码，您可以点击验证弹窗的左上角快捷开启图标按钮。
+   <div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/bio3cn.png" width="200"/>
+</div>
+
+
+## III. 常见问题
+
+<Accordion title="为什么无法开启生物识别？">
+请注意以下情况可能会导致您的生物识别功能无法开启：
+1. 本地设备的生物识别功能没有授权给Custody App。
+2. 本地设备没有启用生物识别功能，应用无法读取到生物信息。
+3. 钱包本地没有存储私钥。
+</Accordion>
+
+<Accordion title="为什么生物识别失效或无法使用？">
+生物识别功能自动关闭或无法使用的情况：
+1. 本地私钥发生修改，例如修改密码或重新备份。
+2. 本地设备的生物信息发生修改，例如添加新的面容或指纹。
+3. 本地设备的生物识别功能关闭或取消了授权。
+</Accordion>

@@ -40,6 +40,10 @@
     {
       "name": "Help Center",
       "url": "help-center"
+    },
+    {
+      "name": "User Guide",
+      "url": "user-guide"
     }
   ],
   "primaryTab": {
@@ -400,7 +404,95 @@
           ]
         }
       ]
+    },
+    {
+      "group": "MPC Wallet User Guide",
+      "pages": [
+        {
+          "group": "Account",
+          "pages": [
+            "user-guide/mpc-wallet/account/password",
+            "user-guide/mpc-wallet/account/bind-ga",
+            "user-guide/mpc-wallet/account/bio-identity",
+            "user-guide/mpc-wallet/account/kyc",
+            "user-guide/mpc-wallet/account/cancel-account"
+          ]
+        },
+        {
+          "group": "Wallet",
+          "pages": [
+            "user-guide/mpc-wallet/wallet/create-wallet", 
+            "user-guide/mpc-wallet/wallet/manage-wallet",
+            "user-guide/mpc-wallet/wallet/add-user"
+          ]
+        },
+        {
+          "group": "Private Key",
+          "pages": [
+            "user-guide/mpc-wallet/private-manage/private-backup",
+            "user-guide/mpc-wallet/private-manage/private-recover",
+            "user-guide/mpc-wallet/private-manage/off-line-tool"
+          ]
+        },
+        {
+          "group": "Operations",
+          "pages": [
+            "user-guide/mpc-wallet/operation/receive",
+            "user-guide/mpc-wallet/operation/transfer",
+            "user-guide/mpc-wallet/operation/record",
+            "user-guide/mpc-wallet/operation/to-do"
+          ]
+        },
+        {
+          "group": "Compliance Services",
+          "pages": [
+            "user-guide/mpc-wallet/kyt/setting",
+            "user-guide/mpc-wallet/kyt/operate"
+          ]
+        },
+        {
+          "group": "API Management",
+          "pages": [
+            "user-guide/mpc-wallet/api-integration/api",
+            "user-guide/mpc-wallet/api-integration/co-signer"
+          ]
+        } ,
+        {
+          "group": "Asset Consolidation",
+          "pages":
+          [
+            {
+              "group": "Contract Consolidation",
+              "pages":[
+                "user-guide/mpc-wallet/consolidate/contact/rules",
+                "user-guide/mpc-wallet/consolidate/contact/execute"
+              ]
+            },
+            {
+              "group": "Co-Signer Consolidation",
+              "pages":[
+                "user-guide/mpc-wallet/consolidate/co-signer/rules",
+                "user-guide/mpc-wallet/consolidate/co-signer/execute"
+              ]
+            }
+          ]
+    },
+    {
+      "group": "Strategy Engine",
+      "pages":[
+        "user-guide/mpc-wallet/strategy/approval-flow"
+      ]
+    },
+    {
+      "group": "Web3 Access",
+      "pages":[
+        "user-guide/mpc-wallet/web3/fil-multi-sign",
+        "user-guide/mpc-wallet/web3/fil-node",
+        "user-guide/mpc-wallet/web3/dapp"
+      ]
     }
+  ]
+  }
   ],
   "api": {
     "baseUrl": "https://openapi.chainup.com",

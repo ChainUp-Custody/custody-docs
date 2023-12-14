@@ -1,0 +1,178 @@
+---
+title: FIL多签钱包管理
+---
+
+## I. 功能简介
+
+Filcoin主网提供了支持多个账户管理无私钥钱包的功能，这项功能称为FIL多签钱包。用户可以通过发起提案和进行提案投票来有效管理该钱包。
+
+**FIL多签钱包适用于以下业务场景：**
+
+- **多股东共同管理FIL资产：**
+
+通过多签钱包，多个不同的股东可以共同管理FIL资产。根据设定的股东数量和阈值，科学地管理和控制您的FIL资产。
+
+- **多成员管理FIL节点：**
+
+您可以使用多签钱包作为FIL节点的所有者或受益人，实现多成员共同管理FIL节点的功能。
+
+<Tip>
+如您想了解更详细的关于FIL的名词与术语，以及FIL多签钱包交易流程，请参考 [FIL多签钱包管理](help-center/manage-mpc/web3/fil-multi-sign)
+</Tip>
+
+## II. 操作流程
+
+### 创建和管理多签钱包
+
+<Steps>
+<Step title="打开功能">
+    登录ChainUp Custody账号，选择MPC系统，选择【发现】-【FIL多签钱包】功能。
+<div className="w-full flex items-center justify-center">
+        <img src="/images/help-center/mpc-fil-msign2_cn.jpg" width="200"/>
+</div>
+
+
+</Step>
+<Step title="使用FIL多签钱包功能">
+在FIL多签钱包管理功能中，您可以选择创建新的多签钱包或添加现有的多签钱包：
+<div className="w-full flex items-center justify-center">
+        <img src="/images/help-center/mpc-fil-msign3_cn.jpg" width="200"/>
+</div>
+</Step>
+
+
+<Step title="创建多签钱包">
+若目前没有适用的多签钱包可供使用，您可以选择创建一个全新的多签钱包。
+<div className="w-full flex items-center justify-center">
+        <img src="/images/help-center/mpc-fil-msign5_cn.jpg" width="200"/>
+</div>
+
+<Warning> 
+在创建多签钱包时，确保选择正确的地址发布创建交易，并准确输入所需的签名者（signers）和阈值信息。
+
+一旦交易成功上链，您就能成功创建多签钱包。
+</Warning>
+
+</Step>
+
+<Step title="添加多签钱包">
+若您的MPC钱包中的某个FIL地址已被设置为某个多签钱包的签署者，您可使用MPC功能来管理您的多签钱包。
+<div className="w-full flex items-center justify-center">
+        <img src="/images/help-center/mpc-fil-msign5_cn.jpg" width="200"/>
+</div>
+
+<Warning> 
+输入您目前管理的多签钱包地址，即可成功添加您管理的多签钱包。
+</Warning>
+
+</Step>
+</Steps>
+
+### 管理多签钱包signers和阈值
+
+ChainUp Custody的MPC钱包支持用户发布、编辑多签钱包的签名者（signers）和阈值的提案，并且能够对这些提案进行投票。
+
+<Steps>
+<Step title="编辑signers">
+在多签钱包页面中，点击"更多"，然后选择"编辑 signers"，即可发起编辑该多签钱包的签名者（signers）提案。
+
+您可以选择添加或减少签名者（signers）； 选择完成并输入相应参数后，交易上链，该提案发起成功。
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/help-center/mpc-fil-msign6_cn.jpg" width="200"/>
+        <img src="/images/help-center/mpc-fil-msign7_cn.jpg" width="200"/>
+    </CardGroup>
+</div>
+
+</Step>
+
+<Step title="编辑阈值">
+在多签钱包页面，点击“更多”，选择“编辑阈值”，即可发起编辑该多重签名钱包阈值的提案。
+
+输入符合规则的新阈值，等到交易上链后，编辑多签阈值提案发起成功。
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/help-center/mpc-fil-msign8_cn.jpg" width="200"/>
+        <img src="/images/help-center/mpc-fil-msign9_cn.jpg" width="200"/>
+    </CardGroup>
+</div>
+
+
+</Step>
+</Steps>
+
+### 多签钱包余额提现
+
+ChainUp Custody的MPC钱包FIL多签管理工具支持发起FIL多签钱包余额提现的提案。
+
+<Steps>
+<Step title="发起提现">
+您可以在多签钱包页面直接点击“提现”按钮，或者在多签钱包列表页面通过左滑快捷操作来选择提现操作。
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/help-center/mpc-fil-msign10_cn.jpg" width="200"/>
+        <img src="/images/help-center/mpc-fil-msign11_cn.jpg" width="200"/>
+    </CardGroup>
+</div>
+
+</Step>
+<Step title="填写提现金额和地址">
+
+输入您希望提现的金额和目标地址，随后等待交易成功上链。
+
+这样您的余额提现提案将会成功发起。
+<div className="w-full flex items-center justify-center">
+<img src="/images/help-center/mpc-fil-msign12_cn.jpg" width="200"/>
+</div>
+</Step>
+</Steps>
+
+### 提案处理
+
+ChainUp Custody的MPC钱包具备FIL多签管理工具，支持处理FIL多签钱包的提案功能。
+
+<Steps>
+<Step title="提案投票">
+创建或添加多签钱包后，您需要投票的提案将以待办事项的形式呈现。
+
+完成这些待办事项即可投票处理相关提案。
+
+<div className="w-full flex items-center justify-center">
+<img src="/images/help-center/mpc-fil-msign13_cn.jpg" width="200"/>
+</div>
+
+</Step>
+
+<Step title="手动提案处理">
+在多签钱包页面-更多中选择处理提案。
+
+输入您希望处理的提案TXID，即可针对该提案进行投票。
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/help-center/mpc-fil-msign14_cn.jpg" width="200"/>
+        <img src="/images/help-center/mpc-fil-msign15_cn.jpg" width="200"/>
+    </CardGroup>
+</div>
+
+</Step>
+</Steps>
+
+## III. 常见问题
+
+<Accordion title="我可以在一个钱包中设置多个签署者吗？">
+是的，每个多签钱包可以有多个签署者。签署者数量和阈值可以在创建多签钱包时设定，也可以在后续通过提案来修改。
+</Accordion>
+
+<Accordion title="如果一个签署者被删除，他们可以再次被添加吗？">
+是的，如果一个签署者被删除，他们可以被再次添加。请注意，只有多签钱包的创建者才可以添加或删除签署者。
+</Accordion>
+
+<Accordion title="我可以更改多签钱包的阈值吗？">
+是的，您可以更改多签钱包的阈值。更改阈值需要通过提案进行，需要达到当前阈值的签署者同意才能更改。
+</Accordion>
+
+<Accordion title="如果我不是多签钱包的创建者，我可以发起提案吗？">
+是的，所有的多签钱包签署者都可以发起提案。但是，提案需要达到设定的阈值才能被执行。
+</Accordion>

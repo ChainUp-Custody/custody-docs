@@ -1,0 +1,86 @@
+---
+title: 私钥离线恢复
+---
+
+## I. 功能简介
+
+ChainUp Custody是一个去中心化的企业级钱包，不存储客户的私钥。如果您需要恢复您在MPC钱包中创建的私钥，您可以下载并使用ChainUp Custody的离线私钥恢复工具。在离线环境中使用此工具，可以恢复所有MPC钱包的完整私钥。私钥恢复成功后，您可以将其导入到其他硬件或软件钱包中，以完全控制您的数字资产。
+
+## II. 操作流程
+
+### 准备阶段
+
+<Steps>
+<Step title="在APP中获取所有私钥分片助记词">
+ 在您的APP **安全**功能中 选择【私钥管理】，通过【查看助记词】来获取您的MPC钱包的三片私钥分片的助记词。
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={4}>
+    <img src="/images/user-guide/safecn.png" width="200"/>
+    <img src="/images/user-guide/off1cn.png" width="200"/>
+    <img src="/images/user-guide/off2cn.png" width="200"/>
+    <img src="/images/user-guide/off3cn.png" width="200"/>
+    </CardGroup>
+</div>
+
+</Step>
+<Step title="获取钱包信息文档">
+    获取您的MPC钱包的钱包信息文档。
+    <div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/off4cn.png" width="600"/>
+</div>
+
+</Step>
+</Steps>
+
+### 离线导出私钥
+
+<Steps>
+<Step title="下载并安装工具">
+    通过官网渠道下载私钥离线恢复工具。您可以通过以下两种方式进行下载：
+
+    1. Custody Web端：MPC系统-【私钥恢复】
+    2. [GitHub](https://github.com/ChainUp-Custody/mpc-desktop-application/releases)
+ <div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/off5cn.png" width="600"/>
+</div>
+<Note>
+请注意，目前私钥工具不支持MacOs 10系统。
+</Note>
+</Step>
+
+<Step title="启动工具">
+    启动已安装的私钥恢复工具，并确保您的设备处于离线状态以增强安全性。
+</Step>
+
+<Step title="输入助记词">
+    输入您想要恢复的MPC钱包的三片私钥助记词，确认输入的助记词是否正确。
+ <div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/off6cn.png" width="600"/>
+</div>
+
+</Step>
+
+<Step title="导入钱包信息">
+导入对应的MPC钱包的钱包信息文档。恢复私钥可能需要一些时间，这与您的私钥以及您想要导出的子钱包数量有关。
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/off7cn.png" width="600"/>
+</div>
+
+</Step>
+
+<Step title="下载私钥文档">
+    当私钥恢复成功后，工具将自动生成私钥文档。在下载私钥文档时，请确保您处于离线的安全环境。私钥文档中包含完整的私钥，可以导入到通用的EOA钱包中（请确认该钱包的安全性）进行正常使用。请按照指引完成恢复私钥的完整流程。
+ <div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/off8cn.png" width="600"/>
+</div>
+
+</Step>
+</Steps>
+
+## III. 常见问题
+
+<Accordion title="我应该如何安全地保存我的私钥？">
+完成恢复和私钥导入过程后，请安全删除与离线私钥恢复工具相关的任何敏感信息，切勿公开或与任何人分享。将您的私钥存储在安全且离线的位置，例如硬件钱包或加密存储设备。定期备份您的私钥，以确保其安全性并防止任何潜在的丢失。
+</Accordion>
+
+
