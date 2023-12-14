@@ -482,7 +482,6 @@
   {
     "group": "交易策略引擎",
     "pages":[
-      "user-guide/mpc-wallet/strategy/transfer",
       "user-guide/mpc-wallet/strategy/approval-flow"
     ]
   },
