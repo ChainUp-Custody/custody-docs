@@ -1,8 +1,9 @@
 ---
 title: Initiate a withdraw
-api: POST /api/v2/billing/withdraw
 description: "If the withdrawal address is the internal address of the Alliance, it will not be linked; Otherwise, you need to chain up. In addition, in order to avoid illegal withdrawal requests, when the wallet service receives a withdrawal request from a third-party application, it will call the `Withdrawal Reconfirmation Interface` provided by the third party."
 ---
+
+`POST /api/v2/billing/withdraw`
 
 #### Decrypted Request Parameters
 <ParamField query="time" type="long" required>
