@@ -167,7 +167,8 @@
                 "api-references/mpc-apis/apis/sub-wallet/subwallet-create-address",
                 "api-references/mpc-apis/apis/sub-wallet/subwallet-get-address",
                 "api-references/mpc-apis/apis/sub-wallet/subwallet-assets",
-                "api-references/mpc-apis/apis/sub-wallet/subwallet-show-status"
+                "api-references/mpc-apis/apis/sub-wallet/subwallet-show-status",
+                "api-references/mpc-apis/apis/sub-wallet/subwallet-address-info"
               ]
             },
             {
@@ -254,7 +255,8 @@
               "pages": [
                 "api-references/custody-apis/apis/get-address/create-user",
                 "api-references/custody-apis/apis/get-address/register-email",
-                "api-references/custody-apis/apis/get-address/get-deposit-address"
+                "api-references/custody-apis/apis/get-address/get-deposit-address",
+                "api-references/custody-apis/apis/get-address/get-address-info"
               ]
             },
             {
