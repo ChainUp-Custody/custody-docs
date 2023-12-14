@@ -1,31 +1,78 @@
 ---
 title: 链接Dapp
 ---
+
+## I. 功能简介
 随着对 Web3 可访问性和使用的需求不断增长，越来越多的用户希望直接使用 dApp 来管理他们的 NFT、获取奖励等。ChainUp Custody 的 Web3 钱包链接功能允许您的用户直接将其钱包地址连接到 Web3 应用程序 (dApp)，无需使用其他钱包或任何其他应用程序。
 
- <Tip> 
-在执行操作时，请确保您的网络连接正常，并确保您具有相应主链的Web3类型子钱包，并且已完成必要的私钥签名授权步骤。
-</Tip>
-
-
-<Steps>
-<Step title="打开ChainUp Custody App">
-    打开您的ChainUp Custody App，并登录您的账户。
-</Step>
-<Step title="进入发现功能模块">
-    底部导航栏中定位并点击“发现”功能模块。
-</Step>
-<Step title="选择所需DApp">
-    点击您想要访问的DApp，这将带您进入DApp页面并显示相关信息。
-</Step>
-<Step title="授权子钱包">
-    若您要使用DApp功能，需要通过私钥签名授权子钱包。
-
-    若您尚未开通与DApp相关的主链，DApp功能将无法使用。您需要开通相应主链后方可使用该DApp功能。
-    <Tip> 
+<Note> 
 请确保您已开通相应主链的Web3类型子钱包，否则将无法授权DApp使用。
+
 若您的钱包不支持Dapp的主链，请联系客服团队进行开通。
+</Note>
+
+## II. 操作流程
+<Steps>
+<Step title="进入发现功能模块, 选择DApp">
+    在Custody APP 的底部导航栏中 点击“发现”功能模块。
+
+    您可以直接选择Custody配置的DApp，也可以自己输入URL访问你想要访问的DApp。
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/user-guide/dapp1cn.png" width="200"/>
+           <img src="/images/user-guide/dapp2cn.png" width="200"/>
+    </CardGroup>
+</div>
+
+
+</Step>
+
+
+<Step title="登录DApp">
+在各种DApp提供的链接方式中，请您选择“MetaMask”链接，选择之后会弹出MPC钱包链接DApp弹窗。
+
+您需要选择链接DApp的主链、RPC地址以及您的Web3钱包
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/user-guide/dapp3cn.png" width="200"/>
+           <img src="/images/user-guide/dapp4cn.png" width="200"/>
+    </CardGroup>
+</div>
+</Step>
+
+
+<Step title="授权子钱包">
+<Tip> 
+不论是授权还是支付，均需要您签名、支付Gas费并广播上链。
 </Tip>
+
+使用非主链币交易时，DApp会发起授权申请，MPC钱包会弹出授权窗口。您可以查看授权信息，并编辑授权DApp合约的累计交易金额限额；
+
+主链币交易或者已经授权的交易会直接发起支付，MPC钱包会弹出支付窗口；
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+        <img src="/images/user-guide/dapp5cn.png" width="200"/>
+     <img src="/images/user-guide/dapp6cn.png" width="200"/>
+      <img src="/images/user-guide/dapp7cn.png" width="200"/>
+    </CardGroup>
+</div>
 </Step>
 </Steps>
+
+
+## III. 常见问题
+
+<Accordion title="资产钱包支持链接web3应用吗？">
+不，资产钱包不支持链接web3应用。因此，在您需要使用web3 DApp之前，请先创建web3子钱包。
+</Accordion>
+
+<Accordion title="web3交易支持MPC加速吗？">
+是的，web3交易支持MPC加速。如果交易10分钟未上链，您会收到交易加速待办。web3交易加速与提币加速操作一致。
+</Accordion>
+
+<Accordion title="任何人都可以使用web3子钱包链接DApp吗？">
+不，只有钱包创建者才可以使用web3子钱包链接DApp。
+</Accordion>
 
