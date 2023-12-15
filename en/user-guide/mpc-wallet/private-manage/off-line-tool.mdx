@@ -1,0 +1,85 @@
+---
+title: Offline Private Key Recovery
+---
+
+## I. Function Introduction
+
+As a decentralized enterprise-level wallet, ChainUp Custody does not store customers' private keys. If you need to recover the private keys you created in your MPC wallet, you can download and use ChainUp Custody's offline private key recovery tool. By using this tool in an offline environment, you can recover the complete private keys of all MPC wallets. Once the private key recovery is successful, you can import it into other hardware or software wallets, fully controlling your digital assets.
+
+## II. Operation Procedure
+
+### Preparation Stage
+
+<Steps>
+<Step title="Obtain all mnemonic phrases for private key shares in the APP">
+In the **Security** feature of your APP, select 【Private Key Management】, and obtain the mnemonic phrases for the three private key shares of your MPC wallet through 【View Mnemonic】.
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={4}>
+    <img src="/images/user-guide/safecn.png" width="200"/>
+    <img src="/images/user-guide/off1cn.png" width="200"/>
+    <img src="/images/user-guide/off2cn.png" width="200"/>
+    <img src="/images/user-guide/off3cn.png" width="200"/>
+    </CardGroup>
+</div>
+
+</Step>
+<Step title="Obtain Wallet Information Document">
+    Obtain the wallet information document for your MPC wallet.
+    <div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/off4cn.png" width="600"/>
+</div>
+
+</Step>
+</Steps>
+
+### Offline Export of Private Key
+
+<Steps>
+<Step title="Download and Install the Tool">
+    Download the offline private key recovery tool through official channels. You can download it in two ways:
+
+    1. Custody Web: MPC System - 【Private Key Recovery】
+    2. [GitHub](https://github.com/ChainUp-Custody/mpc-desktop-application/releases)
+ <div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/off5cn.png" width="600"/>
+</div>
+<Note>
+Please note, the private key tool currently does not support MacOS 10 systems.
+</Note>
+</Step>
+
+<Step title="Launch the Tool">
+    Launch the installed private key recovery tool and ensure your device is in an offline state to enhance security.
+</Step>
+
+<Step title="Enter the Mnemonic">
+    Enter the mnemonic for the three private key shares of the MPC wallet you want to recover, and confirm the entered mnemonic is correct.
+ <div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/off6cn.png" width="600"/>
+</div>
+
+</Step>
+
+<Step title="Import Wallet Information">
+Import the wallet information document for the corresponding MPC wallet. The recovery of the private key may take some time, depending on your private key and the number of sub-wallets you want to export.
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/off7cn.png" width="600"/>
+</div>
+
+</Step>
+
+<Step title="Download the Private Key Document">
+    When the private key recovery is successful, the tool will automatically generate a private key document. When downloading the private key document, please ensure you are in a secure offline environment. The private key document contains the complete private key, which can be imported into a standard EOA wallet (please confirm the security of this wallet) for normal use. Please follow the instructions to successfully complete the entire private key recovery process.
+ <div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/off8cn.png" width="600"/>
+</div>
+
+</Step>
+</Steps>
+
+## III. Frequently Asked Questions
+
+<Accordion title="How should I securely store my private key?">
+After completing the recovery and private key import process, securely delete any sensitive information related to the offline private key recovery tool, and do not disclose or share it with anyone. Store your private key in a secure and offline location, such as a hardware wallet or encrypted storage device. Regularly back up your private key to ensure its security and prevent any potential loss.
+</Accordion>
+

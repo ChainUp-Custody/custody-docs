@@ -1,0 +1,66 @@
+---
+title: API Configuration
+---
+
+## I. Function Introduction
+
+ChainUp Custody provides users with powerful and easy-to-integrate API tools that can help you automate workflows, quickly create and configure wallets, and receive all kinds of information about the wallet. Whether it's automating wallet management, transaction processes, or quickly viewing transaction information, it can be achieved through the API.
+
+## II. Operation Procedure
+
+<Steps>
+
+<Step title="Configure API">
+You can conveniently configure the API information of the MPC wallet on the web side of Custody for more flexible wallet management.
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/api.png"/>
+</div>
+
+
+<Warning>
+**Important Note**
+Each MPC main wallet can only configure one API. To ensure the effectiveness of the API function, the API configuration needs to be synchronized with the Co-Signer configuration. Only the wallet creator can configure the API information, and editing and modifying the information requires GA verification. Please refer to the [API documentation](/api-references/intro/custody-apis) for a detailed understanding of how to effectively dock the API.
+</Warning>
+
+</Step>
+
+
+<Step title="API Field Filling">
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/api2.png"/>
+</div>
+
+<note>
+**Field Description**:
+**Bind IP Address**: Only allows requests from a specific IP range. Each API can bind up to 10 IP addresses, separated by commas.
+**Remarks**: Provides additional configuration instructions or markers. This field is usually used to record additional information related to the API configuration, making it easier for administrators and developers to understand the special requirements or agreements of the configuration.
+</note>
+
+</Step>
+
+<Step title="Edit or Disable API">
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/api4.png"/>
+</div>
+
+</Step>
+</Steps>
+
+## III. Frequently Asked Questions
+
+<Accordion title="What can I do with the ChainUp Custody API?">
+The ChainUp Custody API can help you achieve the following:
+- Automate wallet management workflows: Use the API to quickly create and name wallets, realizing automated wallet management.
+- Automate transaction workflows: Implement batch processing of blockchain transactions, automate asset transfers, and use a secure API Co-Signer to automatically sign transactions.
+- Expand wallet and address creation: Quickly and cost-effectively configure multiple wallets. This makes it easy for game studios, NFT service providers, or dApp developers to manage large amounts of digital assets.
+- Quickly view transaction information: Quickly obtain wallet address information and transaction details, users can conveniently obtain a full range of transaction records and details, ensuring they can conveniently and quickly understand and monitor their digital assets.
+</Accordion>
+
+<Accordion title="If I have multiple IP addresses, how should I configure them?">
+Each API can bind up to 10 IP addresses, separated by commas.
+</Accordion>
+
+<Accordion title="How do I use the API documentation?">
+You can refer to the [API documentation](/api-references/intro/custody-apis) for a detailed understanding of how to effectively dock the API. The API documentation provides detailed API interface information and usage methods and is an important reference resource for you to use the API.
+</Accordion>

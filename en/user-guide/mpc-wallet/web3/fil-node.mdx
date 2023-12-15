@@ -1,0 +1,191 @@
+---
+title: FIL Node Management
+---
+
+## I. Function Introduction
+
+To make it easier for FIL node owners to manage nodes without relying on Lotus commands, we have launched the FIL node management feature of the MPC wallet.
+
+You only need to add the FIL address of the MPC wallet to the Owner of the node or the Owner of the multisig node, and you can easily manage the node with interface operations. This provides a more convenient, low-threshold, and safer node management experience.
+
+## II. Operation Procedure
+
+### Configure FIL Node Management Function
+If you are using the FIL node management function for the first time, you can configure it according to the following steps:
+<Steps>
+<Step title="Use the function">
+
+The Filecoin mining pool management tool of the Custody MPC wallet can be quickly accessed and used through the Filecoin mining pool management icon on the wallet interface.
+
+If your wallet has activated the FIL currency, you can also click the Filecoin mining pool management tool button through the left swipe shortcut operation to enter the relevant function.
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/help-center/mpc-fil-node1_cn.png" width="200"/>
+        <img src="/images/help-center/mpc-fil-node2_cn.png" width="200"/>
+    </CardGroup>
+</div>
+
+</Step>
+<Step title="View Nodes">
+
+If your address is the owner of a FIL node, or if the owner's address of the node is a multisig address and you are one of the signatories, then the node is the node you manage.
+
+If you are not the owner of the node or a member of the multisig address, then the node is considered your observed node.
+
+<Tip> 
+|	|Managed Nodes	|Observed Nodes|
+|----|---------|--------|
+|View node information	|√  |	√ |
+|Node balance withdrawal	|√	|   × |
+|Change owner	    |√	|   × |
+|Change worker	    |√	|   × |
+|Handle node transactions	|√  |	× |
+
+</Tip>
+
+</Step>
+<Step title="Add Nodes">
+
+On the node list page, click "Add", and enter the node's address on the new page to add the node;
+
+The wallet will distinguish the nodes you manage and observe based on your FIL address and the owner information of the input node.
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/help-center/mpc-fil-node6_cn.png" width="200"/>
+        <img src="/images/help-center/mpc-fil-node7_cn.png" width="200"/>
+    </CardGroup>
+</div>
+</Step>
+</Steps>
+
+### Manage Nodes
+
+Currently, the MPC wallet supports the following three node operations: **Balance Withdrawal**, **Change Owner**, and **Change Worker**.
+
+
+<Steps>
+<Step title="Balance Withdrawal">
+
+You can directly withdraw the available balance of your FIL node using the MPC wallet. The withdrawn funds will be transferred into the beneficiary or owner address of the node.
+
+Select balance withdrawal in the node page. Enter the withdrawal amount and sign. Once the transaction is successfully on-chain, the withdrawal can be completed.
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/help-center/mpc-fil-node8_cn.png" width="200"/>
+        <img src="/images/help-center/mpc-fil-node9_cn.png" width="200"/>
+    </CardGroup>
+</div>
+</Step>
+
+<Step title="Change Owner">
+
+In the node that needs to change the Owner, click "Change Owner".
+
+Enter the new Owner address you expect to change to, complete the signature on-chain, wait for the new Owner to confirm receipt, and the node Owner change can be successfully completed.
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/help-center/mpc-fil-node10_cn.png" width="200"/>
+        <img src="/images/help-center/mpc-fil-node11_cn.png" width="200"/>
+    </CardGroup>
+</div>
+<Warning>
+**Notes**
+
+Changing the owner is to transfer your node to a new owner. Your current address will lose control of this node. Please make sure it is your real operation;
+
+After the owner change is successful, if you are no longer the new owner, this node will change from a managed node to an observed node.
+</Warning>
+
+</Step>
+
+<Step title="Change Worker">
+
+In the node management interface, click "Change Worker".
+
+Enter the new Worker address you want to change, complete the signature and wait for the transaction to be on-chain.
+
+On the FIL network, changing the Worker requires waiting for about 900 block heights after initiating the change transaction, and then initiating the transaction to confirm the Worker change again.
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/help-center/mpc-fil-node12_cn.png" width="200"/>
+        <img src="/images/help-center/mpc-fil-node13_cn.png" width="200"/>
+    </CardGroup>
+</div>
+
+</Step>
+</Steps>
+
+### Node To-Do List
+
+The MPC wallet will present the related transaction operations of your managed nodes as to-do items waiting for your processing.
+
+You can view all the initiation information and node information related to the transaction through the to-do details.
+
+<Steps>
+<Step title="Receive Invitation to Become Owner">
+If other node Owners invite you to become the owner of the node, you will receive a to-do item.
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/help-center/mpc-fil-node14_cn.png" width="200"/>
+        <img src="/images/help-center/mpc-fil-node17_cn.png" width="200"/>
+    </CardGroup>
+</div>
+</Step>
+
+<Step title="Confirm Worker Change">
+
+You will receive a to-do item to confirm the worker change about 900 heights after initiating the worker change transaction.
+
+You can perform the corresponding operation at this time. After signing and going on-chain, the node Worker change is successful.
+
+<div className="w-full flex items-center justify-center">
+        <img src="/images/help-center/mpc-fil-node16_cn.png" width="200"/>
+
+</div>
+</Step>
+<Step title="Multisig To-Do">
+
+If you are a signer of the multisig wallet and manage the owner identity of the node, you will receive the **to-do items** related to this node.
+
+Mainnet multisig members can initiate proposals and perform proposal signature operations in the MPC wallet, without complex distinction between initiating proposals and proposal signatures. MPC signatures will mark initiating proposals and proposal signatures.
+
+<div className="w-full flex items-center justify-center">
+        <img src="/images/help-center/mpc-fil-node15_cn.png" width="200"/>
+</div>
+
+<Note>
+If all multisig members use the MPC wallet, there will be no situation where multiple proposals are initiated for the same transaction due to the use of other tools.
+
+When other multisig members initiate multiple proposals for the same transaction using different tools, the MPC wallet will filter the proposals to ensure that only one proposal is retained, avoiding situations such as repeated proposals or repeated signatures that cause the transaction to succeed but the operation fails.
+</Note>
+
+</Step>
+</Steps>
+
+## III. Frequently Asked Questions
+
+<Accordion title="What do the various statuses in the FIL node management tool mean?">
+In the MPC wallet Filecoin mining pool management tool, there are the following states:
+
+- **Waiting for Signature**: Transactions that need your signature.
+- **Completed**: The transaction has been successfully completed.
+- **Waiting for Confirmation**: The operation of changing the worker needs to be confirmed.
+- **Waiting for Others to Sign**: If the owner address is a multisig address and you have signed but have not reached the signature threshold, this state means waiting for other multisig members to sign.
+- **On-chain Transaction Failure**: The transaction fails to go on-chain, this transaction is set as a failed transaction by the mainnet, and the transaction can be initiated again.
+- **Operation Failure**: There are two situations, one is when you are invited to become an owner, if the initiator re-initiates the change owner and this transaction is successfully on-chain, the transaction you received earlier to become the owner will be automatically set as failed; the second is when initiating a worker change, if there is another unconfirmed worker change transaction on the chain, this worker change will fail.
+</Accordion>
+
+<Accordion title="Does the Filecoin mining pool management tool support the generation of f3 addresses?">
+Currently, the Filecoin mining pool management tool does not support the generation of f3 addresses, so the node owner cannot use the Filecoin mining pool management tool for the time being.
+</Accordion>
+
+<Accordion title="Are the signatures in the Filecoin mining pool management tool mainnet signatures or MPC signatures?">
+All transactions in the Filecoin mining pool management tool are transaction types supported by the mainnet, and all signatures are mainnet signatures, not MPC signatures.
+</Accordion>
+
+<Accordion title="Does the Filecoin mining pool management tool support transaction acceleration?">
+Yes, all transactions in the Filecoin mining pool management tool support acceleration. The acceleration rules are consistent with the withdrawal, that is, if the transaction is not on-chain for more than 10 minutes, and the transaction is not a type of on-chain transaction failure, then acceleration can be performed unlimited times.
+</Accordion>

@@ -1,0 +1,130 @@
+---
+title: Managing MPC Wallet
+---
+
+## I. Function Introduction
+
+The MPC Wallet Management feature allows users to manage main wallets and sub-wallets. Users can switch to select the main wallet they want to manage, edit the alias of the main wallet, view the asset details of the sub-wallet, and switch to select the sub-wallet they want to manage.
+
+## II. Operation Procedure
+
+### Managing Main Wallet
+
+<Steps>
+<Step title="Select Main Wallet to Manage">
+You can switch to select the main wallet you want to manage based on the type of wallet creation.
+
+- Created by me: You are the creator/private key holder of the main wallet
+- Managed by me: You have co-management member permissions (approval member or ordinary member) in any sub-wallet of the main wallet
+
+**ChainUp Custody MPC APP** operation page
+
+ <div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/user-guide/managecn.jpg" width="200"/>
+        <img src="/images/user-guide/managemain1cn.jpg" width="200"/>
+    </CardGroup>
+ </div>
+
+
+**ChainUp Custody MPC Web** operation page
+
+<div className="w-full flex items-center justify-center">
+<img src="/images/user-guide/webmanagewallet1cn.png" width="600"/>
+</div>
+
+</Step>
+
+<Step title="Main Wallet Edit Page">
+Click on the edit wallet function in the upper right corner, and you will enter the main wallet edit page.
+
+**ChainUp Custody MPC APP** operation page
+
+<div className="w-full flex items-center justify-center">
+<img src="/images/user-guide/managemain2cn.jpg" width="200"/>
+</div>
+
+**ChainUp Custody MPC Web** operation page
+
+<div className="w-full flex items-center justify-center">
+<img src="/images/user-guide/webmanagewallet2cn.png" width="600"/>
+ </div>
+
+</Step>
+
+<Step title="Main Wallet Sorting and Editing Alias">
+You can edit an alias for all accessible main wallets under your account.
+
+**ChainUp Custody MPC APP** operation page
+<div className="w-full flex items-center justify-center">
+<img src="/images/user-guide/managemain3cn.jpg" width="200"/>
+</div>
+
+**ChainUp Custody MPC Web** operation page
+<div className="w-full flex items-center justify-center">
+<img src="/images/user-guide/webmanagewallet3cn.png" width="600"/>
+</div>
+<Note>Please note, this alias only takes effect for you.</Note>
+
+</Step>
+</Steps>
+
+
+
+### Managing Sub-Wallet
+
+<Steps>
+<Step title="Select Sub-Wallet to Manage">
+After selecting a main wallet, the system will default to select a sub-wallet for you based on your account's usage habits and the asset ranking of the sub-wallets you manage.
+
+You can view the asset details of this sub-wallet. At the same time, you can click the switch button to search and select the sub-wallet you want to manage.
+
+<Note>Please note, you can only switch to select the sub-wallet under the currently selected main wallet that you have permission to.</Note>
+
+<div className="w-full flex items-center justify-center">
+<img src="/images/user-guide/webmanagewallet4cn.png" width="600"/>
+</div>
+</Step>
+
+<Step title="Sub-Wallet Edit Page">
+You can enter the sub-wallet edit page for management through the APP.
+ <div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/user-guide/managesub1cn.jpg" width="200"/>
+        <img src="/images/user-guide/managesub2cn.jpg" width="200"/>
+    </CardGroup>
+ </div>
+
+</Step>
+
+<Step title="Sub-Wallet Sorting and Editing Alias">
+You can edit an alias for the sub-wallets you manage.
+
+<div className="w-full flex items-center justify-center">
+        <img src="/images/user-guide/managesub3cn.jpg" width="200"/>
+ </div>
+<Note>Please note, this alias only takes effect for you.</Note>
+</Step>
+</Steps>
+
+## III. Frequently Asked Questions
+
+<Accordion title="Why can't I select a certain main wallet?">
+We do not support users to select wallets in the following states for related operations: wallets where the private key is being created. Please wait in the App for the private key of this wallet to be successfully created.
+</Accordion>
+
+<Accordion title="Why can't I edit a certain main wallet?">
+Sorry, we currently do not support users to edit the wallet alias for wallets where the private key is being created. Please try again after waiting in the App for the private key of this wallet to be successfully created.
+</Accordion>
+
+<Accordion title="How do I switch to access other main wallets?">
+You can click the MPC button at the top to return to the home page: select the main wallet. When you have entered the function management page of a certain main wallet, you can return to the home page: select the main wallet by clicking the main wallet switch button in the upper left corner.
+</Accordion>
+
+<Accordion title="How do I get permissions for other main wallets/sub-wallets?">
+For the main wallet you created, you will have all management permissions for all sub-wallets under this main wallet. For the main wallet you co-manage, your permissions will be determined by the creator of that main wallet.
+</Accordion>
+
+<Accordion title="As a wallet creator, can I edit the approval strategy for each sub-wallet on the MPC wallet platform?">
+Sorry, we currently do not support users to manage team members and transfer strategies under different wallets on the MPC wallet platform. If you still cannot receive payments, please contact online customer service for help.
+</Accordion>

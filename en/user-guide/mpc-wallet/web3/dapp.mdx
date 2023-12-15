@@ -1,0 +1,77 @@
+---
+title: Connect to DApp
+---
+
+## I. Function Introduction
+With the growing demand for Web3 accessibility and use, more and more users want to directly use dApps to manage their NFTs, earn rewards, etc. ChainUp Custody's Web3 wallet connection function allows your users to directly connect their wallet addresses to Web3 applications (dApps) without using any other wallets or any other applications.
+
+<Note> 
+Please ensure that you have opened the corresponding main chain's Web3 type sub-wallet, otherwise you will not be able to authorize DApp use.
+
+If your wallet does not support the main chain of Dapp, please contact the customer service team to open it.
+</Note>
+
+## II. Operation Procedure
+<Steps>
+<Step title="Enter the Discovery function module, select DApp">
+    Click on the "Discovery" function module in the bottom navigation bar of the Custody APP.
+
+    You can directly select the DApp configured by Custody, or you can enter the URL to visit the DApp you want to visit.
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/user-guide/dapp1cn.png" width="200"/>
+           <img src="/images/user-guide/dapp2cn.png" width="200"/>
+    </CardGroup>
+</div>
+
+
+</Step>
+
+
+<Step title="Log in to DApp">
+Among the various connection methods provided by DApp, please choose "MetaMask" connection, and after choosing, the MPC wallet will pop up the DApp connection dialog box.
+
+You need to choose the main chain of the DApp connection, the RPC address, and your Web3 wallet
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/user-guide/dapp3cn.png" width="200"/>
+           <img src="/images/user-guide/dapp4cn.png" width="200"/>
+    </CardGroup>
+</div>
+</Step>
+
+
+<Step title="Authorize Sub-Wallet">
+<Tip> 
+Whether it is authorization or payment, you need to sign, pay Gas fees, and broadcast on-chain.
+</Tip>
+
+When trading with non-main chain coins, DApp will initiate an authorization request, and the MPC wallet will pop up the authorization window. You can view the authorization information and edit the total transaction amount limit of the DApp contract;
+
+The main chain coin transaction or already authorized transaction will directly initiate payment, and the MPC wallet will pop up the payment window;
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+        <img src="/images/user-guide/dapp5cn.png" width="200"/>
+     <img src="/images/user-guide/dapp6cn.png" width="200"/>
+      <img src="/images/user-guide/dapp7cn.png" width="200"/>
+    </CardGroup>
+</div>
+</Step>
+</Steps>
+
+
+## III. Frequently Asked Questions
+
+<Accordion title="Does the asset wallet support linking web3 applications?">
+No, the asset wallet does not support linking web3 applications. Therefore, before you need to use the web3 DApp, please create a web3 sub-wallet first.
+</Accordion>
+
+<Accordion title="Does web3 transaction support MPC acceleration?">
+Yes, web3 transactions support MPC acceleration. If the transaction is not on-chain for 10 minutes, you will receive a transaction acceleration to-do. The web3 transaction acceleration is consistent with the withdrawal acceleration operation.
+</Accordion>
+
+<Accordion title="Can anyone use the web3 sub-wallet to link DApp?">
+No, only the wallet creator can use the web3 sub-wallet to link DApp.
+</Accordion>

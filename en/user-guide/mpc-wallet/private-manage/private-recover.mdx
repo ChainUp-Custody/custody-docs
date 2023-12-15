@@ -1,0 +1,75 @@
+---
+title: Private Key Recovery
+---
+
+## I. Function Introduction
+
+The ChainUp Custody MPC Wallet is designed to protect user privacy and security by employing multiple private key shares. These shares are dispersed across multiple devices through key sharing, enhancing the wallet's security. The private key recovery feature plays a crucial role in the MPC wallet, allowing users to recover their wallet in case of device loss or damage.
+
+<Note>
+For asset security, private key shares are strongly tied to the account. This means that the loss of both your private key shares and the account could impact your assets.
+</Note>
+
+Private key recovery supports two methods: **manual recovery** and **cloud recovery**.
+
+## II. Operation Procedure
+
+### Manual Recovery
+
+<Steps>
+<Step title="APP Private Key Management">
+   Open the **Security** feature in the APP, select Private Key Management.
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/user-guide/safecn.png" width="200"/>
+        <img src="/images/quickstart/mpcrecover1cn.png" width="200"/>
+    </CardGroup>
+</div>
+</Step>
+
+
+<Step title="Select Local Recovery and Enter Private Key Share">
+    Input your manually stored private key shares (recovery phrase) in a secure offline environment to complete the recovery.
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+        <img src="/images/quickstart/mpc-recover1_cn.png" width="200"/>
+        <img src="/images/quickstart/mpc-recover2_cn.png" width="200"/>
+        <img src="/images/quickstart/mpc-recover3_cn.png" width="200"/>
+    </CardGroup>
+</div>
+</Step>
+</Steps>
+
+### Cloud Recovery
+
+<Steps>
+<Step title="Select Cloud Recovery">
+  In the Private Key Management page, select the wallet for which you need to recover the private key from the cloud.
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/quickstart/mpc-recovercloud1_cn.png" width="200"/>
+         <img src="/images/quickstart/mpc-recover1_cn.png" width="200"/>
+    </CardGroup>
+</div>
+
+</Step>
+<Step title="Download and Parse Private Key Share File">
+    Automatically download the encrypted private key shares file that you backed up to the cloud onto the local device, and decrypt it with the private key password to complete the recovery.
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/quickstart/mpc-recovercloud2_cn.png" width="200"/>
+        <img src="/images/quickstart/mpc-recovercloud3_cn.png" width="200"/>
+    </CardGroup>
+</div>
+
+</Step>
+</Steps>
+
+## III. Frequently Asked Questions
+
+<Accordion title="What if I forget my private key password?">
+If you forget your private key password, you need to reset the password through private key recovery. If you encounter any problems in this process, you can always contact our customer service team for help.
+</Accordion>
+<Accordion title="What if I lose my private key shares?">
+If you lose your private key shares, but still have your account, you can still recover your private key through manual recovery or cloud recovery. If you lose both your private key shares and your account, your assets may be at risk of loss.
+</Accordion>

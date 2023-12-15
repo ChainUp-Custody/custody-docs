@@ -1,0 +1,135 @@
+---
+title: Configuring Contract Consolidation Rules
+---
+
+## I. Function Introduction
+
+By creating smart contracts and configuring consolidation rules through the Custody Web interface, you can ensure that the system will operate according to predefined rules during consolidation. Simultaneously, you can also authorize contract consolidation for sub-wallets in the App, thus accurately determining which sub-wallets have the right to consolidate.
+
+<Warning>
+**Important Tips**
+
+- The ChainUp Custody platform only supports `Web3 sub-wallets` for contract consolidation.
+- Each sub-wallet and token that needs to be consolidated must be authorized in advance.
+- It is strongly recommended not to configure contract consolidation strategy and Co-signer consolidation strategy for the same asset at the same time. If you do so, the system will execute the consolidation strategy that was configured first based on your strategy configuration time.
+
+</Warning>
+
+## II. Operation Procedure
+
+Configuring contract rules mainly includes the following **three steps**:
+
+**1. Create and publish consolidation contracts**
+
+**2. Configure consolidation assets**
+
+**3. Contract authorization**
+
+### Create and Publish Consolidation Contracts
+
+<Steps>
+<Step title="Create and publish consolidation contracts">
+    Select "Consolidation Management" in the MPC Web interface, and click "+" to create a consolidation contract.
+<div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/contract-collect1_cn.PNG" />
+</div>
+</Step>
+<Step title="Edit consolidation rules">
+   Enter the consolidation rule name, select the main chain, confirm the consolidation address, and then select the sub-wallet for consolidation.
+   <div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/contract-collect2_cn.PNG" />
+</div>
+</Step>
+
+<Step title="Select the sub-wallet for consolidation">
+   <div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/contract-collect3_cn.PNG" />
+</div>
+</Step>
+
+<Step title="Sign and publish the contract">
+    The private key holder scans the code with the Custody App to sign and successfully publish the consolidation rules.
+<div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/contract-collect5_cn.PNG" />
+</div>
+</Step>
+</Steps>
+
+### Configure Consolidation Assets
+
+<Steps>
+<Step title="Edit consolidation threshold">
+    Click "Edit Consolidation" on the Consolidation Management page, then click "+" on the editing page to add the consolidation currency.
+<div className="w-full flex items-center justify-center">
+<CardGroup cols={2}>
+    <img src="/images/help-center/contract-collect6_cn.PNG" />
+    <img src="/images/help-center/contract-collect7_cn.PNG" />
+    </CardGroup>
+</div>
+</Step>
+<Step title="Edit consolidation threshold">
+    After adding the tokens to be consolidated, click "Edit Threshold" to set the consolidation threshold: **The contract consolidation will be triggered when the asset amount exceeds the threshold.**
+ 
+<div className="w-full flex items-center justify-center">
+<CardGroup cols={2}>
+    <img src="/images/help-center/contract-collect8_cn.PNG" />
+    <img src="/images/help-center/contract-collect9_cn.PNG" />
+    </CardGroup>
+</div>
+
+</Step>
+</Steps>
+
+### Contract Authorization
+
+<Steps>
+<Step title="Open MPC Token Consolidation">
+In the Custody APP, go to 【Discover】-【MPC Token Consolidation】, click to select the main wallet that has configured the consolidation contract for authorization.
+
+<div className="w-full flex items-center justify-center">
+<CardGroup cols={2}>
+    <img src="/images/help-center/contract-collect10_cn.PNG" width="200"/>
+    <img src="/images/help-center/contract-collect11_cn.PNG" width="200"/>
+    </CardGroup>
+</div>
+
+</Step>
+<Step title="Authorization Management">
+   Click "Authorization Management" in the consolidation tool, the private key holder needs to authorize the sub-wallet through private key signature.
+<div className="w-full flex items-center justify-center">
+<CardGroup cols={3}>
+    <img src="/images/help-center/contract-collect12_cn.PNG" width="200"/>
+    <img src="/images/help-center/contract-collect13_cn.jpeg" width="200"/>
+    <img src="/images/help-center/contract-collect14_cn.jpeg" width="200"/>
+    </CardGroup>
+</div>
+
+<Warning>
+Each sub-wallet that needs to be consolidated must be authorized separately for each asset to be consolidated.
+
+For sub-wallets that do not need to be consolidated, just cancel the consolidation.
+</Warning>
+
+</Step>
+</Steps>
+
+## III. Frequently Asked Questions
+
+<Accordion title="What if I want to change the set consolidation rules?">
+If you want to change the set consolidation rules, you can modify them on the "Consolidation Management" page of the Custody Web interface. Please note that the modified rules need to be reauthorized to take effect.
+</Accordion>
+
+<Accordion title="What types of assets are there for contract consolidation?">
+ChainUp Custody supports **tokens** of the Account type for contract consolidation. The main chain types of such tokens are:
+
+**ETH**
+
+**TRX**
+
+**BSC**
+</Accordion>
+
+<Accordion title="What types of wallets are there for contract consolidation?">
+ChainUp Custody supports all types of MPC sub-wallets for contract consolidation.
+</Accordion>
+

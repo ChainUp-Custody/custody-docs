@@ -1,0 +1,91 @@
+---
+title: Apply KYT Service
+---
+
+## I. Function Introduction
+
+After completing your KYT service configuration, you can view and process transactions through the KYT service. 
+
+<Warning>
+Please note:
+
+The system cannot actually prevent high-risk deposit funds from being broadcasted and credited from the external on the blockchain level. The platform will fulfill the obligation to notify, asking customers to understand and handle it according to the specific risk information provided by the KYT service provider.
+
+Please be sure to complete the KYT manual review operation in time. If a sub-wallet has an unfinished KYT review task, the transaction behavior of this sub-wallet will be restricted.
+</Warning>
+
+
+## II. Operation Procedure
+
+### View KYT Orders
+
+<Steps>
+<Step title="View in KYT-KYT Orders">
+You can view all KYT orders under your current main wallet in KYT-KYT Orders.
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/okyt1cn.png" width="600"/>
+</div>
+</Step>
+
+<Step title="View Details">
+Click on the order to view order details.
+
+<div className="w-full flex items-center justify-center">
+<CardGroup cols={2}>
+    <img src="/images/user-guide/okyt2cn.png" width="200"/> 
+    <img src="/images/user-guide/okyt3cn.png" width="200"/>
+</CardGroup>
+</div>
+
+</Step>
+
+<Step title="View in Transaction Information">
+Your KYT-verified orders will also be displayed in the transaction information.
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/okyt4cn.png" width="700"/> 
+</div>
+
+</Step>
+</Steps>
+
+
+### Handle KYT To-Do
+<Steps>
+<Step title="View in To-Do">
+You can view the KYT to-do items that need to be handled in To-Do.
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/okyt7cn.png" width="700"/> 
+</div>
+</Step>
+
+<Step title="KYT Status">
+KYT includes the following statuses:
+
+1. KYT Verification: This status includes two different situations:
+    - Your business has created a KYT order and submitted it to the KYT service provider for verification. At this time, you only need to wait for the KYT service provider to return the verification result;
+    - Your business has submitted the KYT service provider for verification, but the KYT service verification has timed out. At this time, a KYT verification timeout to-do item will be generated for you;
+2. KYT Manual Processing: If your consolidation processing method is configured as "Manual Processing", when the recharge order reaches your configured alarm level, the order status is KYT Manual Processing. You need to confirm and handle this to-do. If this to-do is not handled, to ensure the safety of funds, the currency of the wallet will be intercepted for withdrawal and consolidation.
+3. KYT Refusal: If your withdrawal processing method is configured as "Refuse Withdrawal", when the withdrawal order reaches your configured alarm level, the order will be directly refused to withdraw coins, and this status is the final state of the order;
+
+<div className="w-full flex items-center justify-center">
+<CardGroup cols={3}>
+    <img src="/images/user-guide/okyt9cn.png" width="200"/> 
+    <img src="/images/user-guide/okyt10cn.png" width="200"/>
+    <img src="/images/user-guide/okyt6cn.png" width="200"/>
+</CardGroup>
+</div>
+
+<warning>
+**Note:** In the KYT Verification status, you can choose to continue verification or confirm pass. Choosing to continue verification will continue to wait for the KYT service provider's verification result, and choosing to confirm pass allows you to query the processing result yourself and choose the corresponding result. This time will not wait for the KYT service provider to return the result.
+</warning>
+</Step>
+</Steps>
+
+
+## III. Frequently Asked Questions
+
+<Accordion title="How does KYT service handle risky transactions?">
+The KYT service will alert risky transactions and handle them according to your configuration. For example, if your consolidation processing method is configured as "Manual Processing", when the recharge order reaches your configured alarm level, the order status is KYT Manual Processing. You need to confirm and handle this to-do. If this to-do is not handled, to ensure the safety of funds, the currency of the wallet will be intercepted for withdrawal and consolidation.
+</Accordion>

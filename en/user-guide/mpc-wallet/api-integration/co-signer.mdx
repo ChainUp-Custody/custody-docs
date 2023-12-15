@@ -1,0 +1,85 @@
+---
+title: Co-Signer Configuration
+---
+
+## I. Function Introduction
+
+The Co-Signer feature of ChainUp Custody is a key security measure used to enhance the security and credibility of transactions. This article will detail the functions of the Co-Signer and its configuration methods to help you meet business requirements and provide a safer, more transparent, and efficient digital experience.
+
+## II. Operation Procedure
+
+<Steps>
+
+<Step title="Preparations Before Development">
+1. Create MPC main and sub-wallets
+
+2. Prepare public and private keys, IP of the third-party application server and Co-Signer server, receiving and transfer callback notification address, domain name of the Co-Signer server
+</Step>
+
+<Step title="Log in to the WEB side">
+Choose the main wallet to configure the Co-Signer
+<div className="w-full flex items-center justify-center">
+<img src="/images/user-guide/api.png"/>
+</div>
+
+</Step>
+
+<Step title="API Management">
+Choose the [API Management] page in the side navigation of the main wallet panel, and fill in the information
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/api2.png"/>
+</div>
+
+</Step>
+
+<Step title="Create Private Key Fragment">
+After the WEB side configuration is completed, you need to log in to the APP to create a private key fragment for the API
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/api3.png"/>
+</div>
+</Step>
+
+<Step title="Log in to the APP for Configuration">
+Log in to the APP, and choose Co-Signer to start configuration after entering the security page
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+    <img src="/images/user-guide/safe.png" width="200"/>
+    <img src="/images/user-guide/cosign1.png" width="200"/>
+    </CardGroup>
+</div>
+
+</Step>
+<Step title="Create a Private Key Fragment for the Main Wallet API">
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+    <img src="/images/user-guide/cosign2.png" width="200"/>
+    <img src="/images/user-guide/cosign3.png" width="200"/>
+    </CardGroup>
+</div>
+
+</Step>
+
+</Steps>
+
+<Warning>
+**Tips**
+1. The equal-rights private key fragment is encrypted and saved using the public key uploaded with the corresponding APPID.
+2. When the private key fragment of the Co-Signer server is leaked or lost, a new equal-rights private key fragment can be generated through the refresh function, and the original equal-rights private key fragment cannot be used.
+3. When the Co-Signer server is temporarily not in use, the private key fragment of the corresponding APPID can be deleted.
+</Warning>
+
+## III. Frequently Asked Questions
+
+<Accordion title="What is a Co-Signer?">
+In the field of blockchain or digital assets, a `"Co-Signer"` usually refers to a mechanism where multiple individuals or entities need to jointly sign a transaction or contract. This mechanism is mainly used to enhance the security and credibility of the transaction or contract. The purpose of using a Co-Signer is to ensure that when it comes to key operations, multiple parties' confirmation and authorization are required, thereby reducing potential risks and increasing overall security. This is especially important for high-value transactions or key business operations in digital assets and blockchain networks.
+</Accordion>
+
+<Accordion title="What does a Co-Signer do?">
+A Co-Signer plays an important role in the following aspects:
+- **Secure Digital Asset Management**: The Co-Signer is used to protect high-value digital assets. Multisignature wallets ensure that private keys are distributed in different places to prevent a single private key from being leaked or misused.
+- **Smart Contract Operations**: For smart contracts that require confirmation from multiple parties, the Co-Signer provides a secure mechanism.
+- **Transaction Security**: For transactions on the blockchain, especially those involving large amounts of funds, multisignature enhances the security of the transaction.
+- **Enterprise-level Applications**: In enterprise-level blockchain applications, the Co-Signer is used to ensure that multiple authorized entities must agree to a specific decision or transaction.
+</Accordion>

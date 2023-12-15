@@ -1,0 +1,88 @@
+---
+title: Transfer
+---
+
+## I. Function Introduction
+
+In the ChainUp Custody wallet, you can perform transfer operations between sub-wallets.
+
+To ensure fund security and efficient approval, we recommend adding a transfer strategy for valuable currencies or NFTs. The transfer process may differ according to different roles.
+
+## II. Operation Procedure
+
+<Steps>
+<Step title="Enter the Transfer Page">
+    In the **APP**, Tokens support quick transfers by swiping left, or you can click to enter the currency details for transfer. NFTs only support transfers after clicking to enter details.
+<div className="w-full flex items-center justify-center">
+
+    <CardGroup cols={2}>
+    <img src="/images/user-guide/transfer1cn.png" width="200"/>
+   <img src="/images/user-guide/transfer2cn.png" width="200"/>
+    </CardGroup>
+</div>
+
+    On the **Web Page**, you can select the sub-wallet for transfer.
+    <div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/transfer4cn.png" />
+</div>
+
+</Step>
+<Step title="Fill in and Confirm Transfer Information">
+    We support transfers to other backed-up sub-wallets. To ensure the accuracy of the miner's fee, the fee will be set at the time of signing.
+    
+    **Ordinary members** can only initiate transfers
+    <div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+    <img src="/images/user-guide/transfer3cn.png" width="200"/>
+    <img src="/images/user-guide/transfer6cn.png" width="200"/>
+    </CardGroup>
+</div>
+    
+    **Approving members** can initiate and approve transfer orders.
+ <div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+    <img src="/images/user-guide/transfer5cn.png" width="200"/>
+    <img src="/images/user-guide/transfer7cn.png" width="200"/>
+ <img src="/images/user-guide/transfer8cn.png" width="200"/>
+    </CardGroup>
+</div>
+
+    When the order meets the approval rules, the **wallet creator** can proceed to the next step, i.e., signing.
+</Step>
+
+
+<Step title="Wallet Creator Confirms and Signs">
+    The wallet creator needs to set the miner's fee (some main chains support custom miner fees, you can appropriately increase the miner's fee to speed up transaction processing), confirm the transaction information, and sign.
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+    <img src="/images/user-guide/transfer9cn.png" width="200"/>
+    <img src="/images/user-guide/transfer10cn.png" width="200"/>
+ <img src="/images/user-guide/transfer11cn.png" width="200"/>
+    </CardGroup>
+</div>
+
+</Step>
+<Step title="Wait for Signature and Transaction Confirmation">
+    After the signature is successful, you need to wait for the blockchain to process. If the processing time is too long, you can speed up the transaction by increasing the miner's fee for the order.
+    
+    Once the blockchain confirms, the transaction is complete. You can view the transaction details in the transaction record.
+
+ <div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+    <img src="/images/user-guide/transfer12cn.png" width="200"/>
+    <img src="/images/user-guide/transfer13cn.png" width="200"/>
+    </CardGroup>
+</div>
+
+</Step>
+</Steps>
+
+## III. Frequently Asked Questions
+
+<Accordion title="Can I transfer to an unbacked sub-wallet?">
+No, for the safety of assets, we only support transfers to backed-up sub-wallets.
+</Accordion>
+<Accordion title="If the miner's fee I set is insufficient, can I increase it during the transaction?">
+If the transaction processing time is too long, you can try to speed up the transaction by increasing the miner's fee for the order. But please note that once the transaction has been confirmed by the blockchain, the miner's fee cannot be changed.
+</Accordion>

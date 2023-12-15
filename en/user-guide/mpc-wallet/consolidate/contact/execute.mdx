@@ -1,0 +1,92 @@
+---
+title: Executing Contract Consolidation
+---
+
+<Tip>
+Please note that only authorized sub-wallets and consolidated assets can execute contract consolidation operations.
+</Tip>
+
+## I. Function Introduction
+The contract consolidation feature of ChainUp Custody refers to the creation of smart contracts to **consolidate** digital assets scattered across different wallets into a specific wallet address. By consolidating small assets, it can significantly reduce the overall transaction costs, improve user transfer experience, and reduce the complexity of managing custody funds.
+
+This document will introduce how to execute contract consolidation, in order to orderly consolidate assets scattered in different wallets to the designated wallet address. Before performing the following steps, please ensure that you have fully configured the contract rules and completed the corresponding authorization work.
+
+Assuming your wallet assets have reached the contract consolidation strategy threshold, you can consolidate the assets to the set wallet address in two ways:
+
+**Manual Consolidation** or **Automatic Consolidation**.
+
+## II. Operation Procedure
+
+### Manual Consolidation
+
+Through the Custody APP, you can manually call the consolidation address to execute contract consolidation. This method provides the flexibility of user active control.
+
+<Warning>
+**Key Steps and Precautions**
+
+- If there are many sub-wallets that need to be consolidated, considering the fluctuation of the mainnet Gas fee, in order to prevent this from causing the consolidation to fail, multiple signatures may be required to complete the consolidation task.
+- For security reasons, manual consolidation needs to be signed by the consolidation wallet to ensure the credibility of the executed contract consolidation operation.
+- During the manual consolidation process, you need to pay the corresponding Gas fee.
+
+</Warning>
+
+<Steps>
+<Step title="Open the manual consolidation interface">
+Way 1: ChainUp Custody APP's 【Discover】-【MPC Token Consolidation】 function
+
+<div className="w-full flex items-center justify-center">
+<CardGroup cols={2}>
+    <img src="/images/help-center/contract-collect10_cn.PNG" width="200"/>
+    <img src="/images/help-center/contract-collect15_cn.png" width="200"/>
+    </CardGroup>
+</div>
+
+Way 2: ChainUp Custody APP's 【To-do】, handling manual consolidation to-do items.
+<div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/contract-collect17_cn.png" width="200"/>
+</div>
+
+</Step>
+<Step title="Confirm consolidation operation">
+    If you decide to consolidate assets, please confirm and enter the private key password to complete the signature.
+    <div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+    <img src="/images/help-center/contract-collect16_cn.jpg" width="200"/>
+    <img src="/images/help-center/contract-collect18_cn.png" width="200"/>
+    </CardGroup>
+    </div>
+</Step>
+
+<Step title="Contract consolidation history">
+You can view all contract consolidation history records on the `Consolidation History`, `Currency Details`, `History Bill` pages.
+    <div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+    <img src="/images/help-center/contract-collect19_cn.png" width="200"/>
+    <img src="/images/help-center/contract-collect20_cn.png" width="200"/>
+    <img src="/images/help-center/contract-collect21_cn.png" width="200"/>
+    </CardGroup>
+    </div>
+</Step>
+
+</Steps>
+
+### Automatic Consolidation
+
+ChainUp's contract consolidation supports automatic consolidation, which can be compatible with all MPC merchants that have opened and not opened the API.
+
+If you need to turn on the automatic consolidation feature of contract consolidation, please contact the customer service team in time. They will provide you with detailed guidance and support to ensure your automatic consolidation service goes smoothly.
+
+<Warning>
+**Key Steps and Precautions**
+
+- Automatic consolidation requires you to be responsible for publishing contracts, authorizing sub-wallets, and the Gas fee required for automatic consolidation.
+
+Ensure that you have completed these necessary preparations before launching the automatic consolidation service.
+
+</Warning>
+
+## III. Frequently Asked Questions
+
+<Accordion title="How to handle custom requirements?">
+If you have additional custom requirements for consolidation, or need to further optimize rule configuration to meet specific business scenarios, please contact our customer service team. We will provide you with support and customized services, tailor the most suitable solution for you.
+</Accordion>

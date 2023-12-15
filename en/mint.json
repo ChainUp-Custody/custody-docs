@@ -340,8 +340,7 @@
           "group": "Team Members",
           "pages":[
             "help-center/manage-mpc/user-setting/user-role",
-            "help-center/manage-mpc/user-setting/add-user",
-            "help-center/manage-mpc/user-setting/cancel-account"
+            "help-center/manage-mpc/user-setting/add-user"
           ]
         },
         {
@@ -405,7 +404,7 @@
         }
       ]
     },
-    {
+ {
       "group": "MPC Wallet User Guide",
       "pages": [
         {

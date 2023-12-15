@@ -1,0 +1,178 @@
+---
+title: FIL Multisig Wallet
+---
+
+## I. Function Introduction
+
+The Filcoin mainnet provides a function that supports multiple accounts to manage a private key-less wallet, this function is called the FIL multisig wallet. Users can effectively manage this wallet by initiating proposals and voting on proposals.
+
+**FIL multisig wallet is suitable for the following business scenarios:**
+
+- **Multiple shareholders jointly manage FIL assets:**
+
+Through the multisig wallet, multiple different shareholders can jointly manage FIL assets. Manage and control your FIL assets scientifically based on the set number of shareholders and threshold.
+
+- **Multiple members manage FIL nodes:**
+
+You can use the multisig wallet as the owner or beneficiary of the FIL node, realizing the function of multiple members jointly managing the FIL node.
+
+<Tip>
+If you want to learn more detailed terms about FIL and the transaction process of the FIL multisig wallet, please refer to [FIL Multisig Wallet Management](help-center/manage-mpc/web3/fil-multi-sign)
+</Tip>
+
+## II. Operation Procedure
+
+### Create and Manage Multisig Wallet
+
+<Steps>
+<Step title="Open Function">
+    Log in to your ChainUp Custody account, select the MPC system, choose the [Discovery] - [FIL Multisig Wallet] function.
+<div className="w-full flex items-center justify-center">
+        <img src="/images/help-center/mpc-fil-msign2_cn.jpg" width="200"/>
+</div>
+
+
+</Step>
+<Step title="Use FIL Multisig Wallet Function">
+In the FIL multisig wallet management function, you can choose to create a new multisig wallet or add an existing multisig wallet:
+<div className="w-full flex items-center justify-center">
+        <img src="/images/help-center/mpc-fil-msign3_cn.jpg" width="200"/>
+</div>
+</Step>
+
+
+<Step title="Create Multisig Wallet">
+If there is currently no suitable multisig wallet available for use, you can choose to create a brand new multisig wallet.
+<div className="w-full flex items-center justify-center">
+        <img src="/images/help-center/mpc-fil-msign5_cn.jpg" width="200"/>
+</div>
+
+<Warning> 
+When creating a multisig wallet, make sure to select the correct address to publish the creation transaction and accurately enter the required signers and threshold information.
+
+Once the transaction is successfully on-chain, you can successfully create a multisig wallet.
+</Warning>
+
+</Step>
+
+<Step title="Add Multisig Wallet">
+If a FIL address in your MPC wallet has been set as a signer of a multisig wallet, you can use the MPC function to manage your multisig wallet.
+<div className="w-full flex items-center justify-center">
+        <img src="/images/help-center/mpc-fil-msign5_cn.jpg" width="200"/>
+</div>
+
+<Warning> 
+Enter the address of the multisig wallet you are currently managing to successfully add the multisig wallet you manage.
+</Warning>
+
+</Step>
+</Steps>
+
+### Manage Multisig Wallet Signers and Threshold
+
+ChainUp Custody's MPC wallet allows users to publish and edit proposals for the signers and threshold of the multisig wallet, and can vote on these proposals.
+
+<Steps>
+<Step title="Edit signers">
+In the multisig wallet page, click "More", then select "Edit signers" to initiate a proposal to edit the signers of this multisig wallet.
+
+You can choose to add or reduce signers; after selecting and entering the corresponding parameters, the transaction will be on-chain, and the proposal will be successfully initiated.
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/help-center/mpc-fil-msign6_cn.jpg" width="200"/>
+        <img src="/images/help-center/mpc-fil-msign7_cn.jpg" width="200"/>
+    </CardGroup>
+</div>
+
+</Step>
+
+<Step title="Edit Threshold">
+On the multisig wallet page, click "More", select "Edit Threshold" to initiate a proposal to edit the threshold of this multisig wallet.
+
+Enter a new threshold that complies with the rules, and wait for the transaction to be on-chain, the proposal to edit the multisig threshold will be successfully initiated.
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/help-center/mpc-fil-msign8_cn.jpg" width="200"/>
+        <img src="/images/help-center/mpc-fil-msign9_cn.jpg" width="200"/>
+    </CardGroup>
+</div>
+
+
+</Step>
+</Steps>
+
+### Multisig Wallet Balance Withdrawal
+
+ChainUp Custody's MPC wallet FIL multisig management tool supports the proposal to withdraw the balance of the FIL multisig wallet.
+
+<Steps>
+<Step title="Initiate Withdrawal">
+You can directly click the "Withdraw" button on the multisig wallet page, or select the withdrawal operation by swiping left on the multisig wallet list page.
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/help-center/mpc-fil-msign10_cn.jpg" width="200"/>
+        <img src="/images/help-center/mpc-fil-msign11_cn.jpg" width="200"/>
+    </CardGroup>
+</div>
+
+</Step>
+<Step title="Fill in the Withdrawal Amount and Address">
+
+Enter the amount you want to withdraw and the target address, then wait for the transaction to be successfully on-chain.
+
+This way your balance withdrawal proposal will be successfully initiated.
+<div className="w-full flex items-center justify-center">
+<img src="/images/help-center/mpc-fil-msign12_cn.jpg" width="200"/>
+</div>
+</Step>
+</Steps>
+
+### Proposal Handling
+
+ChainUp Custody's MPC wallet has a FIL multisig management tool, which supports the function of handling FIL multisig wallet proposals.
+
+<Steps>
+<Step title="Proposal Voting">
+After creating or adding a multisig wallet, the proposals you need to vote on will be presented as to-do items.
+
+Completing these to-do items will vote to handle the related proposals.
+
+<div className="w-full flex items-center justify-center">
+<img src="/images/help-center/mpc-fil-msign13_cn.jpg" width="200"/>
+</div>
+
+</Step>
+
+<Step title="Manual Proposal Handling">
+Select handle proposal in the multisig wallet page - More.
+
+Enter the TXID of the proposal you want to handle, and you can vote on that proposal.
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/help-center/mpc-fil-msign14_cn.jpg" width="200"/>
+        <img src="/images/help-center/mpc-fil-msign15_cn.jpg" width="200"/>
+    </CardGroup>
+</div>
+
+</Step>
+</Steps>
+
+## III. Frequently Asked Questions
+
+<Accordion title="Can I set multiple signers in one wallet?">
+Yes, each multisig wallet can have multiple signers. The number of signers and the threshold can be set when creating the multisig wallet, or they can be modified later through proposals.
+</Accordion>
+
+<Accordion title="If a signer is removed, can they be added again?">
+Yes, if a signer is removed, they can be added again. Please note that only the creator of the multisig wallet can add or remove signers.
+</Accordion>
+
+<Accordion title="Can I change the threshold of the multisig wallet?">
+Yes, you can change the threshold of the multisig wallet. Changing the threshold needs to be done through a proposal, and it needs the consent of the signers that reach the current threshold to change.
+</Accordion>
+
+<Accordion title="If I am not the creator of the multisig wallet, can I initiate a proposal?">
+Yes, all signers of the multisig wallet can initiate proposals. However, the proposal needs to reach the set threshold to be executed.
+</Accordion>

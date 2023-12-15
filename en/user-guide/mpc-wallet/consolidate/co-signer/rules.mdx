@@ -1,0 +1,126 @@
+---
+title: Configuring Co-Signer Rules
+---
+<Tip> 
+We strongly recommend that you do not actively configure both contract consolidation strategy and Co-signer consolidation strategy for the same asset at the same time. If you operate in error, the system will execute the consolidation strategy that was configured earliest according to the time of your strategy configuration.
+</Tip>
+
+## I. Function Introduction
+After the user completes the configuration of the Co-Signer consolidation rules, the Custody system will execute the corresponding consolidation operations according to the prescribed consolidation strategy. This will cause the assets on the wallet/address within the scope of the consolidation application to be transferred uniformly to the preset consolidation wallet address. If the wallet being consolidated (withdrawal address) lacks miner fees, the gas station will recharge the main chain coin for this wallet according to the set gas strategy.
+
+<Note> 
+### Preconditions for Using the Function
+
+Please ensure that the main wallet has not expired. The expiration situation will cause all wallet-related business functions to be unusable.
+
+Ensure that the API and Co-signer configuration has been completed to ensure the normal operation of the API, so that the Co-signer's consolidation function can be smoothly executed.
+
+Please upgrade the App version to **6.4.5** and above.
+</Note>
+
+
+## II. Operation Procedure
+
+<Steps>
+<Step title="Configure the consolidation wallet and gas station">
+   Scan the App to log in to the Custody Web end, use the "Consolidation Management-Co-SIgner Consolidation" function to set your consolidation wallet and gas station.
+ <div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/ruleco1cn.png" width="600"/>
+</div>
+
+</Step>
+
+<Step title="Confirm wallet configuration">
+The consolidation wallet and gas station can be selected as the same;
+Use the Custody App to scan the provided QR code and use the local private key fragment to sign and confirm the configuration of the consolidation wallet and gas station.
+ <div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/user-guide/ruleco2cn.png" width="350"/>
+        <img src="/images/user-guide/ruleco3cn.png" width="350"/>
+    </CardGroup>
+</div>
+<Tip>
+After the co-management member creates the configuration, the wallet creator will receive a to-do task and need to sign to confirm, and the configuration can take effect.
+</Tip>
+</Step>
+<Step title="Decide on the scope of consolidation application">
+   Decide which sub-wallets' assets will be consolidated.
+
+   <div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/co-signer-collect3_cn.PNG" width="600"/>
+</div>
+
+
+   <Tip>
+   Please note:
+   The consolidation wallet and gas station will be automatically excluded from the scope of consolidation application.
+
+   If your sub-wallet has multiple addresses that need to be consolidated, all address assets of the wallet will belong to the scope of consolidation application.
+   </Tip>
+
+</Step>
+<Step title="Configure consolidation strategy">
+   Configuring the consolidation strategy is a key step, which involves deciding which currencies will be consolidated, the threshold for triggering consolidation, and other related conditions.
+ 
+
+ <div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/co-signer-collect4_cn.PNG" width="600"/>
+</div>
+
+ <Tip>
+   If you consolidate the main coin, be sure to carefully fill in the threshold of the consolidation strategy and the supplement number of the gas strategy. It is recommended to set the consolidation threshold to be greater than the supplement number to ensure that the required miner fees will not cause operational problems due to consolidation.
+ </Tip>
+
+</Step>
+<Step title="Configure gas strategy">
+The gas strategy will decide under what circumstances the gas station will supplement miner fees to the sub-wallet to support consolidation.
+<div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/co-signer-collect5_cn.PNG" width="600"/>
+</div>
+ <Tip>
+Co-management members can create strategies in the dimension of the main chain coin, that is, when the consolidation currency lacks the miner fees required for consolidation, how much the gas station needs to supplement the main chain coin.
+
+The newly created gas strategy is turned on by default. After successful creation, you can edit, delete, and close the gas strategy, and support batch processing.
+</Tip>
+
+</Step>
+
+
+<Step title="Configure message notification">
+
+If your consolidation business lacks the required handling fee main chain coin, the Custody system will send you a notification email to ensure that you understand and take necessary actions in time. Once the system detects that the consolidation business lacks the required handling fee main chain coin, it will send a reminder email to the set notification email.
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/ruleinfocn.png" width="600"/>
+</div>
+
+<Warning>
+
+**Key Steps and Precautions**
+
+Co-management members can set up to 5 different notification emails in the system.
+
+Editing and modifying the email requires GA verification.
+
+</Warning>
+</Step>
+</Steps>
+
+## III. Frequently Asked Questions
+
+<Accordion title="What is the main purpose of Co-Signer consolidation?">
+1. **Dispersed asset management**: When users hold the same type of currency in multiple addresses or accounts, through the API consolidation function, these dispersed assets can be integrated into a main address or account for more convenient management and monitoring.
+
+2. **Reduce manual operations**: Co-signer automatic consolidation supports users to configure related parameters independently. The system will automatically execute asset integration operations, thereby avoiding the cumbersome manual transfer process, especially suitable for high-frequency trading or large-scale asset integration.
+
+3. **Exchange process optimization**: Exchanges or service providers can use Co-signer automatic consolidation to optimize the user's asset management experience, reduce the number of transactions and handling fees, and improve overall efficiency.
+</Accordion>
+
+
+<Accordion title="What types of assets does Co-Signer consolidation have?">
+ChainUp Custody supports the consolidation of Account type main chain coins and related tokens. Account type main chains include but are not limited to the following:
+ETH (Ethereum), BNB (Binance Smart Chain), TRX (TRON), DOT (Polkadot)
+</Accordion>
+
+<Accordion title="What types of wallets does Co-Signer consolidation have?">
+ChainUp Custody supports all types of MPC sub-wallets for contract consolidation.
+</Accordion>

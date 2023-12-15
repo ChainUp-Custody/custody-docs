@@ -1,0 +1,158 @@
+---
+title: About KYT Services
+---
+
+## I. Function Introduction
+
+KYT (Know Your Transaction) is a financial regulation and compliance practice designed to help financial institutions and other organizations identify and monitor suspicious transactions related to money laundering, terrorist financing, and other illegal activities. By monitoring transaction data in real-time or near real-time, KYT aims to identify abnormal or suspicious transaction behavior to ensure the compliance of the financial system.
+
+ChainUp Custody supports three leading and well-known KYT service providers in the industry. Users can freely choose based on their business needs and cost considerations, and they can also freely switch during operation.
+
+## II. Operation Procedure
+
+### Activate KYT Services
+
+<Note>
+Please contact our business team and inform them of the KYT service provider you wish to activate and the method of activation.
+</Note>
+
+<Steps>
+<Step title="Choose the KYT service provider and method of activation you want">
+If you intend to activate KYT services, the service providers that ChainUp Custody can integrate with are:
+
+**Chainalysis:** A global leader in blockchain KYT services, providing analysis and ensuring the compliance of digital asset transactions for various institutions and government departments.
+
+**Elliptic:** Focused on providing cryptocurrency compliance and risk management solutions, widely used by large financial and regulatory institutions around the world.
+
+**Trustformer:** Independently developed by ChainUp Group, providing leading digital currency compliance monitoring solutions to ensure the compliance and security of the digital asset ecosystem.
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/kyt1cn.png" width="600"/>
+</div>
+
+</Step>
+<Step title="Choose the way you activate the service">
+    
+**Independent Service:** Users purchase KYT services at their own expense, and can complete the automatic integration of both systems by providing necessary information as required by the system.
+
+**Custody Service:** Purchase the required KYT services through ChainUp Custody. Custody will assist in activating the KYT account, and users can renew the service or switch service providers with Custody at any time.
+
+</Step>
+
+</Steps>
+
+<Warning>
+Please note that under normal circumstances, you only need to choose one way to activate the function, and you can only specify a unique KYT service provider to obtain verification information when verifying KYT. If there are special needs, you can contact Custody at any time to switch the required service provider and method of activation.
+</Warning>
+
+
+### Configure KYT Services and Rules
+<Steps>
+<Step title="Configure KYT Services">
+    Click on KYT-KYT Service Configuration to configure your KYT service. The page will display the service provider's activation status, expiration time, and service switch.
+<div className="w-full flex items-center justify-center">
+    <img src="/images/introduction/kytstrategy.png" width="600"/>
+</div>
+
+</Step>
+<Step title="Select and Configure KYT Services">
+    If you have activated both Independent and Custody services, you can select the service to configure your KYT service.
+
+<div className="w-full flex items-center justify-center">
+<CardGroup cols={2}>
+    <img src="/images/user-guide/kyt3cn.png" width="650"/> 
+    <img src="/images/user-guide/kyt4cn.png" width="200"/>
+</CardGroup>
+</div>
+    If you choose Custody service, no other configuration is needed to confirm.
+
+    If you choose Independent service, you need to enter the information provided by the service provider to successfully configure it. Different service providers require different input configuration information.
+
+<div className="w-full flex items-center justify-center">
+     <CardGroup cols={3}>
+<img src="/images/user-guide/kyt5cn.png" width="250"/> 
+    <img src="/images/user-guide/kyt6cn.png" width="250"/>
+    <img src="/images/user-guide/kyt7cn.png" width="250"/>
+</CardGroup>
+</div>
+
+</Step>
+
+
+<Step title="Configure Coins">
+
+    Configure the coins that need to be verified by KYT, click "Go to Select"
+    
+    
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/kyt8cn.png" width="600"/>
+</div>
+
+Select the coins you need to configure and set the minimum verification amount/quantity.
+<Warning>
+**Minimum Verification Amount:** Indicates that the U-based amount of this coin will only be verified by KYT when it reaches the configured amount. Note: The U-based amount may vary due to exchange rate changes, etc.
+
+**Minimum Verification Quantity:** KYT verification will only be carried out after reaching this coin quantity.
+</Warning>
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/kyt9cn.png" width="600"/>
+</div>
+
+
+<Tip>
+Note: Only one of the minimum verification amount and minimum verification quantity can take effect.
+</Tip>
+
+</Step>
+<Step title="Configure Alarm Levels">
+    Configure different KYT alarm levels for the handling of deposits and withdrawals. The handling methods for receipts are: "Manual Review" and "Allow Entry"; the handling methods for withdrawals are: "Allow Withdrawal" and "Refuse Withdrawal".
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/kyt10cn.png" width="600"/>
+</div>
+
+</Step>
+<Step title="Configure Effective Sub-Wallets">
+    KYT needs to configure which sub-wallets are effective. By default, all sub-wallets are effective, including APP-created and API-created sub-wallets.
+    
+    If you want to decide on the effective sub-wallets yourself, you can click Manage to manage them;
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/kyt11cn.png" width="600"/>
+</div>
+
+</Step>
+<Step title="Complete Configuration">
+    After all the above configurations are completed, the "Save" button can be clicked. Click and verify GA to complete the configuration.
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/kyt13cn.png" width="600"/>
+</div>
+
+</Step>
+</Steps>
+
+<warning>
+**Note:** KYT includes the following states:
+1. KYT Verification: This state includes two different situations:
+    - Your business has already created a KYT order and submitted it to the KYT service provider for verification, at this time you just need to wait for the KYT service provider to return the verification result;
+    - Your business has submitted the KYT service provider for verification, but the KYT service verification has timed out, at this time a KYT verification timeout to-do will be generated for you;
+2. KYT Manual Processing: If your configured receipt processing method is "Manual Processing", at this time the deposit order reaches your configured alarm level, the order status is KYT manual processing, and you need to confirm the processing of this to-do. If this to-do is not processed, to ensure the safety of funds, the coin of this wallet will be blocked from withdrawal and consolidation.
+3. KYT Rejection: If your configured withdrawal processing method is "Refuse Withdrawal", at this time the withdrawal order reaches your configured alarm level, then the order will be directly refused to withdraw, and this status is the final state of the order;
+</warning>
+
+## III. Frequently Asked Questions
+
+<Accordion title="Why do I need to configure KYT services?">
+Configuring KYT services is to enhance the security of the account, perform secondary verification with KYT to prevent unauthorized access.
+</Accordion>
+
+<Accordion title="How do I backup KYT service configuration information?">
+You can backup KYT service configuration information by taking screenshots or writing it down by hand. In case of device replacement or loss of KYT service configuration information, you can use the backup information for recovery.
+</Accordion>
+
+<Accordion title="Which service providers does KYT service support?">
+Currently, Custody supports KYT services provided by the following three KYT service providers: Trustformer, Chainalysis, and Elliptic.
+</Accordion>
+
+<Accordion title="How does KYT service handle risky transactions?">
+KYT service will alert risky transactions and handle them according to your configuration. For example, if your configured receipt processing method is "Manual Processing", at this time the deposit order reaches your configured alarm level, the order status is KYT manual processing, and you need to confirm the processing of this to-do. If this to-do is not processed, to ensure the safety of funds, the coin of this wallet will be blocked from withdrawal and consolidation.
+</Accordion>
