@@ -5,7 +5,7 @@ title: MPC Wallet Member Roles
 ##  Overview
 
 To ensure the security of wallet-related data and compliance with the company's financial approval system, as well as to safeguard the security of company funds, setting roles with different permissions is crucial for the wallet. In setting wallet roles, ChainUp Custody aims to find the best balance between security, compliance with approval processes, and user-friendliness.
-Taking into account these factors, Custody MPC wallet roles are divided into three categories: Wallet Administrator, Approver, and Regular Member.
+Taking into account these factors, Custody MPC wallet roles are divided into three categories: Wallet Administrator, Approver, and Ordinary Member.
 
 ##  Role Descriptions
 
@@ -29,8 +29,8 @@ An administrator is the only user with full permissions for the MPC wallet. The 
 * Approve members
 
 
-### Approver
-Approvers can approve transactions based on triggered transfer policies, and they also have the permissions of regular members.
+### Approval Memeber (Approver)
+Approvers can approve transactions based on triggered transfer policies, and they also have the permissions of ordinary members.
 
 #### Recommended Responsibilities
 * Initiate transactions
@@ -45,8 +45,8 @@ Approvers can approve transactions based on triggered transfer policies, and the
 Wallet administrators can edit transfer policies through the "Security-Transfer Policy" of the Custody App, including adding members to the approval flow, and members added to the approval flow will automatically become approvers. Refer to [Transfer Policy](/help-center/manage-mpc/strategy/transfer) for the specific process.
 </Tip>
 
-### Regular Member
-Regular members can initiate transactions, access allocated wallets, and query related information.
+### Ordinary Member
+Ordinary members can initiate transactions, access allocated wallets, and query related information.
 
 #### Recommended Responsibilities
 * Initiate transactions
@@ -57,13 +57,13 @@ Regular members can initiate transactions, access allocated wallets, and query r
 * Configure Co-Signer consolidation policies
 
 <Tip>
-Wallet administrators can add associated users under the account through the "Team Members" function in the Custody App. In the Custody App's "Security-Team Management," team members can be added as regular members of the MPC sub-wallet. Refer to [Adding a New Wallet User](/help-center/manage-mpc/user-setting/add-user) for the specific process.
+Wallet administrators can add associated users under the account through the "Team Members" function in the Custody App. In the Custody App's "Security-Team Management," team members can be added as Ordinary members of the MPC sub-wallet. Refer to [Adding a New Wallet User](/help-center/manage-mpc/user-setting/add-user) for the specific process.
 </Tip>
 
 
 ##  Role Function Access Table
 
-| Wallet Role | Wallet Administrator | Approver | Regular Member |
+| Wallet Role | Wallet Administrator | Approver | Ordinary Member |
 | ------- | ------- | ------- | ------- |
 | Create Sub-Wallet | √ | × | × |
 | Create New Address | √ | × | × |
