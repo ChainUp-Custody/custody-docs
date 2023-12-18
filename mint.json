@@ -40,6 +40,10 @@
     {
       "name": "帮助中心",
       "url": "help-center"
+    },
+    {
+      "name": "操作手册",
+      "url": "user-guide"
     }
   ],
   "primaryTab": {
@@ -349,14 +353,7 @@
             "help-center/manage-mpc/my-wallet/off-line-tool"
           ]
         },
-        {
-          "group": "资产管理",
-          "pages": [
-            "help-center/manage-mpc/asset-manage/my-asset",
-            "help-center/manage-mpc/asset-manage/coin",
-            "help-center/manage-mpc/asset-manage/nft"
-          ]
-        },
+
         {
           "group": "钱包交易",
           "pages": [
