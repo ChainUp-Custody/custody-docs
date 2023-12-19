@@ -325,33 +325,33 @@
     },
     {
       "group": "Introduction",
-      "pages":[
+      "pages": [
         "help-center/introduction/manage-custody"
       ]
     },
     {
       "group": "Managing MPC Wallet",
-      "pages":[
+      "pages": [
         {
           "group": "Team Members",
-          "pages":[
+          "pages": [
             "help-center/manage-mpc/user-setting/user-role",
             "help-center/manage-mpc/user-setting/add-user"
           ]
         },
         {
           "group": "My Wallet",
-          "pages":[
+          "pages": [
             "help-center/manage-mpc/my-wallet/framework",
             "help-center/manage-mpc/my-wallet/address-format",
             "help-center/manage-mpc/my-wallet/address-path",
-            "help-center/manage-mpc/my-wallet/change-address", 
+            "help-center/manage-mpc/my-wallet/change-address",
             "help-center/manage-mpc/my-wallet/off-line-tool"
           ]
         },
         {
           "group": "Asset Management",
-          "pages":[
+          "pages": [
             "help-center/manage-mpc/asset-manage/my-asset",
             "help-center/manage-mpc/asset-manage/coin",
             "help-center/manage-mpc/asset-manage/nft"
@@ -359,13 +359,13 @@
         },
         {
           "group": "Transactions",
-          "pages":[
+          "pages": [
             "help-center/manage-mpc/transaction/transfer"
           ]
         },
         {
           "group": "Web3",
-          "pages":[
+          "pages": [
             "help-center/manage-mpc/web3/fil-multi-sign",
             "help-center/manage-mpc/web3/fil-node",
             "help-center/manage-mpc/web3/dapp"
@@ -373,10 +373,10 @@
         },
         {
           "group": "Asset Consolidation",
-          "pages":[
+          "pages": [
             {
               "group": "Contract Consolidation",
-              "pages":[
+              "pages": [
                 "help-center/manage-mpc/consolidation/contact/about",
                 "help-center/manage-mpc/consolidation/contact/rules",
                 "help-center/manage-mpc/consolidation/contact/execute"
@@ -384,7 +384,7 @@
             },
             {
               "group": "Co-Signer Consolidation",
-              "pages":[
+              "pages": [
                 "help-center/manage-mpc/consolidation/co-signer/about",
                 "help-center/manage-mpc/consolidation/co-signer/rules",
                 "help-center/manage-mpc/consolidation/co-signer/execute"
@@ -394,12 +394,100 @@
         },
         {
           "group": "Strategy Engine",
-          "pages":[
+          "pages": [
             "help-center/manage-mpc/strategy/transfer"
           ]
         }
       ]
+    },
+ {
+      "group": "MPC Wallet User Guide",
+      "pages": [
+        {
+          "group": "Account",
+          "pages": [
+            "user-guide/mpc-wallet/account/password",
+            "user-guide/mpc-wallet/account/bind-ga",
+            "user-guide/mpc-wallet/account/bio-identity",
+            "user-guide/mpc-wallet/account/kyc",
+            "user-guide/mpc-wallet/account/cancel-account"
+          ]
+        },
+        {
+          "group": "Wallet",
+          "pages": [
+            "user-guide/mpc-wallet/wallet/create-wallet", 
+            "user-guide/mpc-wallet/wallet/manage-wallet",
+            "user-guide/mpc-wallet/wallet/add-user"
+          ]
+        },
+        {
+          "group": "Private Key",
+          "pages": [
+            "user-guide/mpc-wallet/private-manage/private-backup",
+            "user-guide/mpc-wallet/private-manage/private-recover",
+            "user-guide/mpc-wallet/private-manage/off-line-tool"
+          ]
+        },
+        {
+          "group": "Operations",
+          "pages": [
+            "user-guide/mpc-wallet/operation/receive",
+            "user-guide/mpc-wallet/operation/transfer",
+            "user-guide/mpc-wallet/operation/record",
+            "user-guide/mpc-wallet/operation/to-do"
+          ]
+        },
+        {
+          "group": "Compliance Services",
+          "pages": [
+            "user-guide/mpc-wallet/kyt/setting",
+            "user-guide/mpc-wallet/kyt/operate"
+          ]
+        },
+        {
+          "group": "API Management",
+          "pages": [
+            "user-guide/mpc-wallet/api-integration/api",
+            "user-guide/mpc-wallet/api-integration/co-signer"
+          ]
+        } ,
+        {
+          "group": "Asset Consolidation",
+          "pages":
+          [
+            {
+              "group": "Contract Consolidation",
+              "pages":[
+                "user-guide/mpc-wallet/consolidate/contact/rules",
+                "user-guide/mpc-wallet/consolidate/contact/execute"
+              ]
+            },
+            {
+              "group": "Co-Signer Consolidation",
+              "pages":[
+                "user-guide/mpc-wallet/consolidate/co-signer/rules",
+                "user-guide/mpc-wallet/consolidate/co-signer/execute"
+              ]
+            }
+          ]
+    },
+    {
+      "group": "Strategy Engine",
+      "pages":[
+        "user-guide/mpc-wallet/strategy/approval-flow"
+      ]
+    },
+    {
+      "group": "Web3 Access",
+      "pages":[
+        "user-guide/mpc-wallet/web3/fil-multi-sign",
+        "user-guide/mpc-wallet/web3/fil-node",
+        "user-guide/mpc-wallet/web3/dapp"
+      ]
     }
+  ]
+  }
   ],
   "api": {
     "baseUrl": "https://openapi.chainup.com",
@@ -407,9 +495,9 @@
       "mode": "simple"
     }
   },
-  "feedback":{
-    "suggestEdit":true,
-    "raiseIssue":true,
-    "thumbsRating":true
+  "feedback": {
+    "suggestEdit": true,
+    "raiseIssue": true,
+    "thumbsRating": true
   }
 }

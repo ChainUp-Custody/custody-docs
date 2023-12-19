@@ -40,6 +40,10 @@
     {
       "name": "帮助中心",
       "url": "help-center"
+    },
+    {
+      "name": "操作指南",
+      "url": "user-guide"
     }
   ],
   "primaryTab": {
@@ -120,13 +124,12 @@
             "quick-start/compliance-custody-mpc/strategy-mpc"
           ]
         },
-      {
+        {
           "group": "应用统一托管",
           "pages": [
             "quick-start/compliance-custody-joint/open-joint",
             "quick-start/compliance-custody-joint/strategy-joint"
           ]
-    
         }
       ]
     },
@@ -326,48 +329,40 @@
     },
     {
       "group": "简介",
-      "pages":[
+      "pages": [
         "help-center/introduction/manage-custody"
       ]
     },
     {
       "group": "管理MPC钱包系统",
-      "pages":[
+      "pages": [
         {
           "group": "用户设置",
-          "pages":[
+          "pages": [
             "help-center/manage-mpc/user-setting/user-role",
             "help-center/manage-mpc/user-setting/add-user"
           ]
         },
         {
           "group": "我的钱包",
-          "pages":[
-
+          "pages": [
             "help-center/manage-mpc/my-wallet/framework",
             "help-center/manage-mpc/my-wallet/address-format",
             "help-center/manage-mpc/my-wallet/address-path",
             "help-center/manage-mpc/my-wallet/change-address",
             "help-center/manage-mpc/my-wallet/off-line-tool"
-        ]
-        },
-        {
-          "group": "资产管理",
-          "pages":[
-            "help-center/manage-mpc/asset-manage/my-asset",
-            "help-center/manage-mpc/asset-manage/coin",
-            "help-center/manage-mpc/asset-manage/nft"
           ]
         },
+
         {
           "group": "钱包交易",
-          "pages":[
+          "pages": [
             "help-center/manage-mpc/transaction/transfer"
           ]
         },
         {
           "group": "Web3访问",
-          "pages":[
+          "pages": [
             "help-center/manage-mpc/web3/fil-multi-sign",
             "help-center/manage-mpc/web3/fil-node",
             "help-center/manage-mpc/web3/dapp"
@@ -375,10 +370,10 @@
         },
         {
           "group": "资产归集",
-          "pages":[
+          "pages": [
             {
               "group": "合约归集",
-              "pages":[
+              "pages": [
                 "help-center/manage-mpc/consolidation/contact/about",
                 "help-center/manage-mpc/consolidation/contact/rules",
                 "help-center/manage-mpc/consolidation/contact/execute"
@@ -386,7 +381,7 @@
             },
             {
               "group": "Co-Signer归集",
-              "pages":[
+              "pages": [
                 "help-center/manage-mpc/consolidation/co-signer/about",
                 "help-center/manage-mpc/consolidation/co-signer/rules",
                 "help-center/manage-mpc/consolidation/co-signer/execute"
@@ -396,12 +391,100 @@
         },
         {
           "group": "交易策略引擎",
-          "pages":[
+          "pages": [
             "help-center/manage-mpc/strategy/transfer"
           ]
         }
       ]
-    }
+    },
+  {
+    "group": "MPC钱包操作指南",
+    "pages": [
+      {
+        "group": "账户安全",
+        "pages": [
+          "user-guide/mpc-wallet/account/password",
+          "user-guide/mpc-wallet/account/bind-ga",
+          "user-guide/mpc-wallet/account/bio-identity",
+          "user-guide/mpc-wallet/account/kyc",
+          "user-guide/mpc-wallet/account/cancel-account"
+        ]
+      },
+      {
+        "group": "配置钱包",
+        "pages": [
+          "user-guide/mpc-wallet/wallet/create-wallet", 
+          "user-guide/mpc-wallet/wallet/manage-wallet",
+          "user-guide/mpc-wallet/wallet/add-user"
+        ]
+      },
+      {
+        "group": "私钥管理",
+        "pages": [
+          "user-guide/mpc-wallet/private-manage/private-backup",
+          "user-guide/mpc-wallet/private-manage/private-recover",
+          "user-guide/mpc-wallet/private-manage/off-line-tool"
+        ]
+      },
+      {
+        "group": "日常运营",
+        "pages": [
+          "user-guide/mpc-wallet/operation/receive",
+          "user-guide/mpc-wallet/operation/transfer",
+          "user-guide/mpc-wallet/operation/record",
+          "user-guide/mpc-wallet/operation/to-do"
+        ]
+      },
+      {
+        "group": "交易合规",
+        "pages": [
+          "user-guide/mpc-wallet/kyt/setting",
+          "user-guide/mpc-wallet/kyt/operate"
+        ]
+      },
+      {
+        "group": "API管理",
+        "pages": [
+          "user-guide/mpc-wallet/api-integration/api",
+          "user-guide/mpc-wallet/api-integration/co-signer"
+        ]
+      } ,
+      {
+        "group": "资产归集",
+        "pages":
+        [
+          {
+            "group": "合约归集",
+            "pages":[
+              "user-guide/mpc-wallet/consolidate/contact/rules",
+              "user-guide/mpc-wallet/consolidate/contact/execute"
+            ]
+          },
+          {
+            "group": "Co-Signer归集",
+            "pages":[
+              "user-guide/mpc-wallet/consolidate/co-signer/rules",
+              "user-guide/mpc-wallet/consolidate/co-signer/execute"
+            ]
+          }
+        ]
+  },
+  {
+    "group": "交易策略引擎",
+    "pages":[
+      "user-guide/mpc-wallet/strategy/approval-flow"
+    ]
+  },
+  {
+    "group": "Web3访问",
+    "pages":[
+      "user-guide/mpc-wallet/web3/fil-multi-sign",
+      "user-guide/mpc-wallet/web3/fil-node",
+      "user-guide/mpc-wallet/web3/dapp"
+    ]
+  }
+]
+}
 ],
 
 "api": {
