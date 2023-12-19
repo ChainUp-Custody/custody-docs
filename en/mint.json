@@ -251,7 +251,7 @@
           "pages": [
             "api-references/custody-apis/apis/description",
             {
-              "group": "Get the address",
+              "group": "Get Address",
               "pages": [
                 "api-references/custody-apis/apis/get-address/create-user",
                 "api-references/custody-apis/apis/get-address/register-email",
@@ -260,7 +260,7 @@
               ]
             },
             {
-              "group": "Account balance",
+              "group": "Account Balance",
               "pages": [
                 "api-references/custody-apis/apis/account-assets/user-info",
                 "api-references/custody-apis/apis/account-assets/coin-list",

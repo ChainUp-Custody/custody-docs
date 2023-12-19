@@ -1,6 +1,6 @@
 ---
-title: Address of the user-specified currency
-description: "To obtain the user specified currency account address. If there is no address, the user is assigned an address, and the account should not be generated. The account is still generated on demand."
+title: Address of the User-specified Coin
+description: "To obtain the user specified coin account address. If there is no address, the user is assigned an address, and the account should not be generated. The account is still generated on demand."
 ---
 
 `POST /api/v2/account/getDepositAddress`
@@ -21,14 +21,14 @@ description: "To obtain the user specified currency account address. If there is
     user ID
 </ParamField>
 <ParamField query="symbol" type="string" required>
-   currency
+   coin
 </ParamField>
 
 
 #### Response Data Parameters
 <Expandable title="object">
     <ResponseField name="uid" type="integer">the unique identity of the user in the wallet service</ResponseField>
-    <ResponseField name="address" type="string">the currency account address</ResponseField>
+    <ResponseField name="address" type="string">the coin account address</ResponseField>
 </Expandable>
 
 

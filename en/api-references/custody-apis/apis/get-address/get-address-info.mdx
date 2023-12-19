@@ -1,33 +1,32 @@
 ---
-title: 验证地址信息
-description: "传入指定地址，响应地址对应的custody用户及币种信息"
+title: Verify Address Information
+description: "Input a specific address and get the response of the corresponding custody user and currency information"
 ---
 
 `GET /api/v2/account/getDepositAddressInfo`
 
-#### 请求参数数据结构
+#### Decrypted Request Parameters
 <ParamField query="time" type="long" required>
-    当前时间戳
+    Current timestamp
 </ParamField>
 <ParamField query="charset" type="string" required>
-    编码格式，无特殊情况，传参数utf-8
+    Encoding format, unless otherwise specified, pass parameter utf-8
 </ParamField>
 <ParamField query="version" type="string" required>
-    接口版本号，无特殊情况，传参数v2
+    API version number, unless otherwise specified, pass parameter v2
 </ParamField>
 
 
 <ParamField query="address" type="string" required>
-    任意地址
+    Any address
 </ParamField>
 
 
-#### 响应参数数据结构
+#### Response Data Parameters
 <Expandable title="object">
-    <ResponseField name="uid" type="integer">用户在钱包服务的唯一标识</ResponseField>
-    <ResponseField name="symbol" type="string">币种唯一标识</ResponseField>
+    <ResponseField name="uid" type="integer">Unique identifier of the user in the wallet service</ResponseField>
+    <ResponseField name="symbol" type="string">Unique identifier of the currency</ResponseField>
 </Expandable>
-
 
 
 <RequestExample>
@@ -38,7 +37,6 @@ description: "传入指定地址，响应地址对应的custody用户及币种�
 </RequestExample>
 
 
-
 <ResponseExample>
 ```json
 {
@@ -47,7 +45,7 @@ description: "传入指定地址，响应地址对应的custody用户及币种�
         "uid":"3529218",
         "symbol":"ETH"
     },
-    "msg":"成功"
+    "msg":"Success"
 }
 ```
 </ResponseExample>
