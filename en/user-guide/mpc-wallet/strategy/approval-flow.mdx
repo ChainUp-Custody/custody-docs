@@ -28,7 +28,7 @@ Transactions initiated via API are not subject to transfer strategy management.
     Log into the Custody APP's MPC wallet, open 【Security】-【Transfer Strategy】 feature.
 
 <div className="w-full flex items-center justify-center">
-<img src="/images/user-guide/safecn.png" width="200"/>
+        <img src="/images/user-guide/safe.jpg" width="200"/>
 </div>
 
 </Step>
@@ -37,8 +37,8 @@ Transactions initiated via API are not subject to transfer strategy management.
 
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
-        <img src="/images/user-guide/approval1cn.png" width="200"/>
-      <img src="/images/user-guide/approval2cn.png" width="200"/>
+        <img src="/images/user-guide/str1.png" width="200"/>
+      <img src="/images/user-guide/str2.png" width="200"/>
         </CardGroup>
 </div>
 
@@ -48,14 +48,13 @@ In this step, you can define the following parameters of the transfer strategy:
 
 1. **Strategy Name**: Name your strategy for easy future search and management.
 2. **Approving Members and Approval Threshold**: Select team members of the sub-wallet as approving members and set an approval threshold.
-3. **Currency for Approval**: Select the currency to be approved for transfer.
+3. **Coin for Approval**: Select the coin to be approved for transfer.
+
 
 <div className="w-full flex items-center justify-center">
-    <CardGroup cols={2}>
-        <img src="/images/user-guide/approval3cn.png" width="200"/>
-      <img src="/images/user-guide/approval4cn.png" width="200"/>
-        </CardGroup>
+        <img src="/images/strategy.png" width="200"/>
 </div>
+
 
 <Warning>
 **Key Steps and Points to Note**
@@ -76,66 +75,74 @@ You can quickly view [To-Do details](/user-guide/mpc-wallet/operation/to-do) or 
 </Tip>
 
 <Steps>
-<Step title="Initiate Transfer">
-Whether it's an ordinary member, an approving member, or the wallet creator, all can initiate a transfer by logging into the Custody APP or PC.
-
-You need to select the sub-wallet and currency for transfer, enter the address, quantity, and remarks to confirm the transfer, then wait for approval.
-
-In the **APP**, Token supports quick transfer by swiping left, or you can click to enter the currency details for transfer. NFT only supports transfer after clicking to enter details.
+<Step title="Enter the Transfer Page">
+    In the **APP**, Tokens support quick transfers by swiping left, or you can click to enter the coin details for transfer. NFTs only support transfers after clicking to enter details.
 <div className="w-full flex items-center justify-center">
+
     <CardGroup cols={2}>
-    <img src="/images/user-guide/transfer1cn.png" width="200"/>
-   <img src="/images/user-guide/transfer2cn.png" width="200"/>
+    <img src="/images/user-guide/transfer1.jpg" width="200"/>
+   <img src="/images/user-guide/transfer2.jpg" width="200"/>
     </CardGroup>
 </div>
 
     On the **Web Page**, you can select the sub-wallet for transfer.
     <div className="w-full flex items-center justify-center">
-    <img src="/images/user-guide/transfer4cn.png" />
+    <img src="/images/user-guide/transfer4.jpg" />
 </div>
 
-
 </Step>
-
-<Step title="Approving Member Approves">
-
-The approving members of this transfer strategy will receive an approval prompt in the "To-Do" section. Approving members can perform approval operations.
-
-If the member initiating the transfer is also an approving member, then the approval status of that member is defaulted to approved.
-
-Once the order meets the approval rules, the wallet creator needs to authorize and sign it.
-
+<Step title="Fill in and Confirm Transfer Information">
+    We support transfers to other backed-up sub-wallets. To ensure the accuracy of the miner's fee, the fee will be set at the time of signing.
+    
+    **Ordinary members** can only initiate transfers
+    <div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+    <img src="/images/user-guide/transfer3.jpg" width="200"/>
+    <img src="/images/user-guide/transfer6.jpg" width="200"/>
+    </CardGroup>
+</div>
+    
+    **Approving members** can initiate and approve transfer orders.
  <div className="w-full flex items-center justify-center">
     <CardGroup cols={3}>
-    <img src="/images/user-guide/transfer5cn.png" width="200"/>
-    <img src="/images/user-guide/transfer7cn.png" width="200"/>
- <img src="/images/user-guide/transfer8cn.png" width="200"/>
+    <img src="/images/user-guide/transfer5.png" width="200"/>
+    <img src="/images/user-guide/transfer7.png" width="200"/>
+ <img src="/images/user-guide/transfer8.png" width="200"/>
     </CardGroup>
 </div>
 
-
-<Tip>
-**Approve Transaction:** When the transaction meets the approval threshold, it is automatically submitted to the wallet administrator for signature confirmation, and then broadcast to the blockchain.
-
-**Reject Transaction:** When the transaction does not meet the approval threshold, it is automatically terminated, ensuring unauthorized transactions are prevented.
-</Tip>
-
+    When the order meets the approval rules, the **wallet creator** can proceed to the next step, i.e., signing.
 </Step>
 
-<Step title="Wallet Creator Signs">
-The wallet creator can make the final approval of the transfer request. If they do not agree with the transfer request, they can directly cancel the transaction; if they agree with the transfer request, they can perform the signature operation.
+
+<Step title="Wallet Creator Confirms and Signs">
+    The wallet creator needs to set the miner's fee (some main chains support custom miner fees, you can appropriately increase the miner's fee to speed up transaction processing), confirm the transaction information, and sign.
 
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={3}>
-    <img src="/images/user-guide/transfer9cn.png" width="200"/>
-    <img src="/images/user-guide/transfer10cn.png" width="200"/>
- <img src="/images/user-guide/transfer11cn.png" width="200"/>
+    <img src="/images/user-guide/transfer9.jpg" width="200"/>
+    <img src="/images/user-guide/transfer10.jpg" width="200"/>
+ <img src="/images/user-guide/transfer11.jpg" width="200"/>
     </CardGroup>
 </div>
 
 </Step>
+<Step title="Wait for Signature and Transaction Confirmation">
+    After the signature is successful, you need to wait for the blockchain to process. If the processing time is too long, you can speed up the transaction by increasing the miner's fee for the order.
+    
+    Once the blockchain confirms, the transaction is complete. You can view the transaction details in the transaction record.
 
+ <div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+    <img src="/images/user-guide/his1.png" width="200"/>
+    <img src="/images/user-guide/his2.png" width="200"/>
+     <img src="/images/user-guide/his3.png" width="200"/>
+    </CardGroup>
+</div>
+
+</Step>
 </Steps>
+
 
 
 
