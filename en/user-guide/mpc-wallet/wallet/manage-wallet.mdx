@@ -4,7 +4,7 @@ title: Managing MPC Wallet
 
 ## I. Function Introduction
 
-The MPC Wallet Management feature allows users to manage main wallets and sub-wallets. Users can switch to select the main wallet they want to manage, edit the alias of the main wallet, view the asset details of the sub-wallet, and switch to select the sub-wallet they want to manage.
+The MPC Wallet Management feature allows users to manage main wallets and sub-wallets. Users can switch to select the main wallet they want to manage, edit the remark of the main wallet, view the asset details of the sub-wallet, and switch to select the sub-wallet they want to manage.
 
 ## II. Operation Procedure
 
@@ -21,8 +21,8 @@ You can switch to select the main wallet you want to manage based on the type of
 
  <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
-        <img src="/images/user-guide/managecn.jpg" width="200"/>
-        <img src="/images/user-guide/managemain1cn.jpg" width="200"/>
+        <img src="/images/user-guide/manage1.png" width="200"/>
+        <img src="/images/user-guide/manage2.png" width="200"/>
     </CardGroup>
  </div>
 
@@ -30,42 +30,33 @@ You can switch to select the main wallet you want to manage based on the type of
 **ChainUp Custody MPC Web** operation page
 
 <div className="w-full flex items-center justify-center">
-<img src="/images/user-guide/webmanagewallet1cn.png" width="600"/>
+<img src="/images/user-guide/manage3.png" width="600"/>
 </div>
 
 </Step>
 
 <Step title="Main Wallet Edit Page">
 Click on the edit wallet function in the upper right corner, and you will enter the main wallet edit page.
+You can edit the remark and orders for all accessible main wallets under your account.
 
 **ChainUp Custody MPC APP** operation page
 
-<div className="w-full flex items-center justify-center">
-<img src="/images/user-guide/managemain2cn.jpg" width="200"/>
-</div>
-
-**ChainUp Custody MPC Web** operation page
-
-<div className="w-full flex items-center justify-center">
-<img src="/images/user-guide/webmanagewallet2cn.png" width="600"/>
+ <div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/user-guide/manage4.png" width="200"/>
+        <img src="/images/user-guide/manage5.png" width="200"/>
+    </CardGroup>
  </div>
 
-</Step>
-
-<Step title="Main Wallet Sorting and Editing Alias">
-You can edit an alias for all accessible main wallets under your account.
-
-**ChainUp Custody MPC APP** operation page
-<div className="w-full flex items-center justify-center">
-<img src="/images/user-guide/managemain3cn.jpg" width="200"/>
-</div>
 
 **ChainUp Custody MPC Web** operation page
-<div className="w-full flex items-center justify-center">
-<img src="/images/user-guide/webmanagewallet3cn.png" width="600"/>
-</div>
-<Note>Please note, this alias only takes effect for you.</Note>
 
+ <div className="w-full flex items-center justify-center">
+        <img src="/images/user-guide/manage6.png" width="600"/>
+ </div>
+ <div className="w-full flex items-center justify-center">
+<img src="/images/user-guide/manage7.png" width="600"/>
+</div>
 </Step>
 </Steps>
 
@@ -82,29 +73,24 @@ You can view the asset details of this sub-wallet. At the same time, you can cli
 <Note>Please note, you can only switch to select the sub-wallet under the currently selected main wallet that you have permission to.</Note>
 
 <div className="w-full flex items-center justify-center">
-<img src="/images/user-guide/webmanagewallet4cn.png" width="600"/>
+<img src="/images/user-guide/websub.png" width="600"/>
 </div>
 </Step>
 
 <Step title="Sub-Wallet Edit Page">
 You can enter the sub-wallet edit page for management through the APP.
+Then you can edit remark and orders for the sub-wallets you manage.
+
  <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
-        <img src="/images/user-guide/managesub1cn.jpg" width="200"/>
-        <img src="/images/user-guide/managesub2cn.jpg" width="200"/>
+        <img src="/images/user-guide/manage9.png" width="200"/>
+        <img src="/images/user-guide/manage10.png" width="200"/>
     </CardGroup>
  </div>
 
+<Note>Please note, this remark only takes effect for you.</Note>
 </Step>
 
-<Step title="Sub-Wallet Sorting and Editing Alias">
-You can edit an alias for the sub-wallets you manage.
-
-<div className="w-full flex items-center justify-center">
-        <img src="/images/user-guide/managesub3cn.jpg" width="200"/>
- </div>
-<Note>Please note, this alias only takes effect for you.</Note>
-</Step>
 </Steps>
 
 ## III. Frequently Asked Questions
@@ -114,7 +100,7 @@ We do not support users to select wallets in the following states for related op
 </Accordion>
 
 <Accordion title="Why can't I edit a certain main wallet?">
-Sorry, we currently do not support users to edit the wallet alias for wallets where the private key is being created. Please try again after waiting in the App for the private key of this wallet to be successfully created.
+Sorry, we currently do not support users to edit the wallet remark for wallets where the private key is being created. Please try again after waiting in the App for the private key of this wallet to be successfully created.
 </Accordion>
 
 <Accordion title="How do I switch to access other main wallets?">
