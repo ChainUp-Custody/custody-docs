@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../user-guide"
+		},
+		{
+			"path": "../quick-start"
+		},
+		{
+			"path": "../logo"
+		},
+		{
+			"path": "../introduction"
+		},
+		{
+			"path": "../images"
+		},
+		{
+			"path": "../help-center"
+		},
+		{
+			"path": "../api-references"
+		}
+	]
+}
