@@ -1,17 +1,17 @@
 ---
-title: Configuring Contract Consolidation Rules
+title: Configuring Auto Sweeping Rules
 ---
 
 ## I. Function Introduction
 
-By creating smart contracts and configuring consolidation rules through the Custody Web interface, you can ensure that the system will operate according to predefined rules during consolidation. Simultaneously, you can also authorize contract consolidation for sub-wallets in the App, thus accurately determining which sub-wallets have the right to consolidate.
+By creating smart contracts and auto sweeping rules through the Custody Web interface, you can ensure that the system will operate according to predefined rules during consolidation. Simultaneously, you can also authorize sweeping contract for sub-wallets in the App, thus accurately determining which sub-wallets have the right to sweep assets.
 
 <Warning>
 **Important Tips**
 
-- The ChainUp Custody platform only supports `Web3 sub-wallets` for contract consolidation.
-- Each sub-wallet and token that needs to be consolidated must be authorized in advance.
-- It is strongly recommended not to configure contract consolidation strategy and Co-signer consolidation strategy for the same asset at the same time. If you do so, the system will execute the consolidation strategy that was configured first based on your strategy configuration time.
+- The ChainUp Custody platform only supports `Web3 sub-wallets` for Sweep ERC-20 Tokens feature.
+- Each sub-wallet and token that needs to be swept must be authorized in advance.
+- It is strongly recommended not to configure the same asset strategy for both the Sweep ERC-20 Tokens feature and the Sweep All Coins feature simultaneously. If an error occurs, the system will execute the sweeping operation configured earliest based on the time of your operation.
 
 </Warning>
 
@@ -19,37 +19,37 @@ By creating smart contracts and configuring consolidation rules through the Cust
 
 Configuring contract rules mainly includes the following **three steps**:
 
-**1. Create and publish contract consolidation**
+**1. Create and publish sweeping contract**
 
-**2. Configure consolidation assets**
+**2. Configure assets**
 
 **3. Contract authorization**
 
-### Create and Publish Contract Consolidation 
+### Create and Publish Sweeping Contract 
 
 <Steps>
-<Step title="Create and Publish Contract Consolidation">
-    Select "Consolidation" in the MPC Web interface, and click "+" to create a contract consolidation.
+<Step title="Create and Publish Sweeping Contract">
+    Select "【Auto Sweep】-【Sweep ERC-20 Tokens】" in the MPC Web interface, and click "+" to create a sweeping contract.
 <div className="w-full flex items-center justify-center">
     <img src="/images/user-guide/contract.png" />
 </div>
 </Step>
-<Step title="Edit Consolidation Rules">
-   Enter the consolidation rule name, select the main chain, confirm the consolidation address, and then select the sub-wallet for consolidation.
+<Step title="Edit Auto Sweeping Rules">
+   Enter the rule name, select the main chain, confirm the address, and then select the sub-wallet for auto sweeping.
 </Step>
 
 <Step title="Sign and Publish">
-    The private key holder scans the code with the Custody App to sign and successfully publish the consolidation rules.
+    The private key holder scans the code with the Custody App to sign and successfully publish the auto sweeping rules.
 </Step>
 </Steps>
 
-### Configure Consolidation Assets
+### Configure Sweeping Assets
 
 <Steps>
-<Step title="Edit Consolidation Threshold">
-    Click "Edit Consolidation" on the Consolidation Management page, then click "+" on the editing page to add the consolidation coin.
+<Step title="Edit Sweeping Threshold">
+    Click "【Auto Sweep】-【Sweep ERC-20 Tokens】" in the MPC Web interface, then click "+" on the editing page to add tokens.
 
-    After adding the tokens to be consolidated, click "Edit Threshold" to set the consolidation threshold: **The contract consolidation will be triggered when the asset amount exceeds the threshold.**
+    After adding the tokens, click "Edit Threshold" to set the sweeping threshold: **The auto sweeping feature will be triggered when the asset amount exceeds the threshold.**
 </Step>
 </Steps>
 
@@ -57,7 +57,7 @@ Configuring contract rules mainly includes the following **three steps**:
 
 <Steps>
 <Step title="Open Consolidation Function">
-In the Custody APP, go to 【Discover】-【Collection】, click to select the main wallet that has configured the contract consolidation for authorization.
+In the Custody APP, go to 【Discover】-【Sweep Tokens】, click to select the main wallet that has configured the sweeping contract for authorization.
 
 <div className="w-full flex items-center justify-center">
 <CardGroup cols={2}>
@@ -68,10 +68,10 @@ In the Custody APP, go to 【Discover】-【Collection】, click to select the m
 
 </Step>
 <Step title="Authorization Management">
-   Click "Authorization Management" in the consolidation tool, the private key holder needs to authorize the sub-wallet through private key signature.
+   Click "Authorization Management" button, the private key holder needs to authorize the sub-wallet through private key signature.
 
 <Warning>
-Each sub-wallet that needs to be consolidated must be authorized separately for each asset to be consolidated.
+Each sub-wallet that needs to be swept must be authorized separately for each asset.
 
 For sub-wallets that do not need to be consolidated, just cancel the consolidation.
 </Warning>
@@ -81,12 +81,12 @@ For sub-wallets that do not need to be consolidated, just cancel the consolidati
 
 ## III. Frequently Asked Questions
 
-<Accordion title="What if I want to change the set consolidation rules?">
-If you want to change the set consolidation rules, you can modify them on the "Consolidation Management" page of the Custody Web interface. Please note that the modified rules need to be reauthorized to take effect.
+<Accordion title="What if I want to change the auto sweeping rules?">
+If you want to change the auto sweeping rules, you can modify them on the "【Auto Sweep】-【Sweep ERC-20 Tokens】" page of the Custody Web interface. Please note that the modified rules need to be reauthorized to take effect.
 </Accordion>
 
-<Accordion title="What types of assets are there for contract consolidation?">
-ChainUp Custody supports **tokens** of the Account type for contract consolidation. The main chain types of such tokens are:
+<Accordion title="What types of assets does the Sweep ERC-20 Tokens feature support?">
+The feature supports the Account type ERC-20 tokens. The main chain types of such tokens are:
 
 **ETH**
 
@@ -95,7 +95,7 @@ ChainUp Custody supports **tokens** of the Account type for contract consolidati
 **BSC**
 </Accordion>
 
-<Accordion title="What types of wallets are there for contract consolidation?">
-ChainUp Custody supports all types of MPC sub-wallets for contract consolidation.
+<Accordion title="What types of wallets does the Sweep ERC-20 Tokens feature support?">
+The Sweep ERC-20 Tokens feature supports Web3 sub-wallets for auto sweeping.
 </Accordion>
 

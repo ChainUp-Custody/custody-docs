@@ -1,13 +1,13 @@
 ---
-title: Configure Co-Signer Rules
+title: Configure Auto Sweeping Rules
 ---
 
 ##  Overview
 
-After users configure Co-Signer consolidation rules, the Custody system will execute corresponding consolidation operations based on the defined consolidation strategy. This will result in the assets on wallets/addresses within the consolidation application scope being uniformly transferred to the preset consolidation wallet address. In cases where the wallet to be consolidated (withdrawal address) lacks mining fees, the gas station will recharge the wallet's mainnet coin according to the set refueling strategy.
+After users configure auto sweeping rules, the Custody system will execute corresponding sweeping operations based on the defined auto sweeping or auto fueling strategy. This will result in the assets on wallets/addresses within the  appliied scope of sweeping being uniformly transferred to the preset omnibus wallet address. In cases where the wallet to be swepy (withdrawal address) lacks mining fees, the gas station will recharge the wallet's mainnet coin according to the set auto fueling strategy.
 
 <Tip>
-It is strongly recommended not to actively configure contract consolidation strategies and Co-Signer consolidation strategies for the same asset simultaneously. If you make a mistake, the system will execute the consolidation strategy configured earliest based on the time of your configuration.
+It is strongly recommended not to configure the same asset strategy for both the Sweep ERC-20 Tokens feature and the Sweep All Coins feature simultaneously. If an error occurs, the system will execute the sweeping operation configured earliest based on the time of your operation.
 </Tip>
 
 ###  Prerequisites for Using the Feature
@@ -18,20 +18,20 @@ Ensure that API and Co-Signer have been configured to ensure the normal operatio
 
 Upgrade the App version to **6.4.5** or above.
 
-##  Configure Co-Signer Consolidation Rules
+##  Configure Auto Sweeping Rules
 
-Co-Signer consolidation involves four dimensions:
+The rules involves four dimensions:
 
-1. Configure Consolidation Wallet and Gas Station
-2. Determine the Consolidation Application Scope
-3. Configure Consolidation Strategy
-4. Configure Refueling Strategy
+1. Configure Omnibus Wallet and Gas Station
+2. Determine the Applied Scope for auto sweeping
+3. Configure Auto Sweeping Strategy
+4. Configure Auto Fueling Strategy
 
-###  Step One: Configure Consolidation Wallet and Gas Station
+###  Step One: Configure Omnibus Wallet and Gas Station
 
-#### What is a Consolidation Wallet
+#### What is a Omnibus Wallet
 
-A consolidation wallet is responsible for consolidating assets dispersed in other different wallets to its address.
+A Omnibus wallet is responsible for consolidating assets dispersed in other different wallets to its address.
 
 #### What is a Gas Station
 
@@ -40,17 +40,17 @@ A gas station is responsible for replenishing mining fees to the corresponding w
 #### **Operating Steps**
 <Steps>
 <Step title="Open Co-Signer Consolidation Feature">
-    Use the "Consolidation Management - Co-Signer Consolidation" feature on the Custody Web portal by scanning the QR code with the Custody App.
+    Use the "Auto Sweep - Sweep All Coins" feature on the Custody Web portal by scanning the QR code with the Custody App.
 </Step>
 <Step title="Confirm Configuration">
-    Use the Custody App to scan the provided QR code and sign with local key fragments to confirm the configuration of the consolidation wallet and gas station.
+    Use the Custody App to scan the provided QR code and sign with local key fragments to confirm the configuration of the omnibus wallet and gas station.
 </Step>
 </Steps>
 
 <Warning>
 **Key Steps and Considerations**
 
-In this step, co-managers can choose the sub-wallets under the main wallet and initiate the corresponding configuration. It's worth noting that the consolidation wallet and gas station can be the same.
+In this step, co-managers can choose the sub-wallets under the main wallet and initiate the corresponding configuration. It's worth noting that the omnibus wallet and gas station can be the same.
 
 Ensure to check if the selected consolidation wallet and gas station are available. The consolidation and refueling functions will only work when they are in an available state. If you find that the selected consolidation wallet or gas station is disabled, make timely modifications to ensure the normal operation of the system.
 
@@ -64,54 +64,54 @@ If your consolidation wallet and gas station have multiple addresses for the sam
 <Warning>
 **Key Steps and Considerations**
 
-Decide which sub-wallets' assets will be consolidated. Note that the consolidation wallet and gas station will be automatically excluded from the consolidation application scope.
+Decide which sub-wallets' assets will be consolidated. Note that the omnibus wallet and gas station will be automatically excluded from the applied scope for sweeping.
 
-Co-managers can decide the consolidation application scope based on the sub-wallet's type: `All Sub-Wallets`, `All API-Created Sub-Wallets`, `Single Wallet`.
+Co-managers can decide the applied scope based on the sub-wallet's type: `All Sub-Wallets`, `All API-Created Sub-Wallets`, `Single Wallet`.
 
 If your sub-wallet has multiple addresses with assets to be consolidated, all assets of the wallet's addresses will be within the consolidation application scope.
 
 </Warning>
 
-###  Step Three: Configure Consolidation Strategy
+###  Step Three: Configure Auto Sweeping Strategy
 
-Configuring the consolidation strategy is a crucial step, involving deciding which currencies will be consolidated, the threshold to trigger consolidation, and other related conditions.
+Configuring the auto sweeping strategy is a crucial step, involving deciding which currencies will be consolidated, the threshold to trigger sweeping, and other related conditions.
 
 ![Co-Signer Collection](images/help-center/configcosign2.png)
 
 <Warning>
 **Key Steps and Considerations**
 
-Decide which currencies will be consolidated, the threshold to trigger consolidation, and other conditions: In this step, co-managers need to carefully consider the currencies to be consolidated, set the threshold to trigger consolidation, and determine other relevant conditions.
+Decide which currencies will be swept, the sweeping threshold, and other conditions: In this step, co-managers need to carefully consider the currencies to be swept, set the sweeping threshold, and determine other relevant conditions.
 
-Batch create and manage consolidation strategies: Co-managers can batch create multiple coin consolidation strategies, with newly created strategies being enabled by default. After successful creation, consolidation strategies can be edited, deleted, and closed in batches.
+Batch create and manage strategies: Co-managers can batch create strategies for multiple coin , with newly created strategies being enabled by default. After successful creation, auto sweeping strategies can be edited, deleted, and closed in batches.
 
-Define when the gas station will replenish the gas fee to the sub-wallet to support consolidation: Co-managers need to clearly define under what conditions consolidation orders and refueling orders will be created to ensure the normal progress of consolidation while consuming a reasonable range of gas fees.
+Define when the gas station will replenish the gas fee to the sub-wallet to support consolidation: Co-managers need to clearly define under what conditions auto sweeping orders and auto fueling orders will be created to ensure the normal progress of consolidation while consuming a reasonable range of gas fees.
 
-Special considerations for consolidating the main coin: If consolidating the main coin, be sure to fill in the threshold and supplementary quantity of the consolidation strategy and gas replenishment strategy carefully. It is recommended to set the consolidation threshold higher than the supplementary quantity to ensure that the required gas fee will not cause operational issues due to consolidation.
+Special considerations for consolidating the main coin: If consolidating the main coin, be sure to fill in the threshold and supplementary quantity of the consolidation strategy and gas replenishment strategy carefully. It is recommended to set the sweeping threshold higher than the supplementary quantity to ensure that the required gas fee will not cause operational issues due to consolidation.
 
-Comply with Custody system's default acceleration strategy: All consolidation orders will comply with Custody system's default acceleration strategy to expedite the consolidation process.
+Comply with Custody system's default acceleration strategy: All auto sweeping orders will comply with Custody system's default acceleration strategy to expedite the sweeping process.
 </Warning>
 
 
 
-###  Step Four: Configure Refueling Strategy
-The refueling strategy will determine under what conditions the gas station will replenish the gas fee to the sub-wallet to support consolidation.
+###  Step Four: Configure Auto Fueling Strategy
+The auto fueling strategy will determine under what conditions the gas station will replenish the gas fee to the sub-wallet to support consolidation.
 
 ![Co-Signer Collection](images/help-center/configcosign3.png)
 
 <Warning>
 **Key Steps and Considerations**
 
-Co-managers can create strategies on the main chain coin level, i.e., when the consolidated coin lacks the gas fee required for consolidation, the gas station needs to replenish how much of the main chain coin.
+Co-managers can create strategies on the main chain coin level, i.e., when the consolidated coin lacks the gas fee required for sweeping, the gas station needs to replenish how much of the main chain coin.
 
-Newly created refueling strategies are enabled by default. After successful creation, refueling strategies can be edited, deleted, and closed in batches.
+Newly created auto fueling strategies are enabled by default. After successful creation, refueling strategies can be edited, deleted, and closed in batches.
 
-Comply with Custody system's default acceleration strategy: All refueling orders will comply with Custody system's default acceleration strategy to expedite the refueling process.
+Comply with Custody system's default acceleration strategy: All auto fueling orders will comply with Custody system's default acceleration strategy to expedite the auto fueling process.
 </Warning>
 
 ##  Other Feature: Notification Messages
 
-If your consolidation business lacks the required gas fee main chain coin, the Custody system will send you notification emails to ensure that you are informed in a timely manner and can take necessary actions. Once the system detects that the consolidation business lacks the required gas fee main chain coin, it will send a reminder email to the set notification mailbox.
+If your wallets lacks the required gas fee main chain coin for sweeping, the Custody system will send you notification emails to ensure that you are informed in a timely manner and can take necessary actions. Once the system detects that the consolidation business lacks the required gas fee main chain coin, it will send a reminder email to the set notification mailbox.
 
 <Warning>
 
