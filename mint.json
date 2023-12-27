@@ -369,10 +369,10 @@
           ]
         },
         {
-          "group": "资产归集",
+          "group": "自动归集",
           "pages": [
             {
-              "group": "合约归集",
+              "group": "归集ERC-20代币",
               "pages": [
                 "help-center/manage-mpc/consolidation/contact/about",
                 "help-center/manage-mpc/consolidation/contact/rules",
@@ -380,7 +380,7 @@
               ]
             },
             {
-              "group": "Co-Signer归集",
+              "group": "归集全币种",
               "pages": [
                 "help-center/manage-mpc/consolidation/co-signer/about",
                 "help-center/manage-mpc/consolidation/co-signer/rules",
@@ -450,18 +450,18 @@
         ]
       } ,
       {
-        "group": "资产归集",
+        "group": "自动归集功能",
         "pages":
         [
           {
-            "group": "合约归集",
+            "group": "ERC-20代币归集",
             "pages":[
               "user-guide/mpc-wallet/consolidate/contact/rules",
               "user-guide/mpc-wallet/consolidate/contact/execute"
             ]
           },
           {
-            "group": "Co-Signer归集",
+            "group": "全币种归集",
             "pages":[
               "user-guide/mpc-wallet/consolidate/co-signer/rules",
               "user-guide/mpc-wallet/consolidate/co-signer/execute"
