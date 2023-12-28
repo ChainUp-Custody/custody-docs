@@ -66,7 +66,7 @@ KYT includes the following statuses:
 1. KYT Verification: This status includes two different situations:
     - Your business has created a KYT order and submitted it to the KYT service provider for verification. At this time, you only need to wait for the KYT service provider to return the verification result;
     - Your business has submitted the KYT service provider for verification, but the KYT service verification has timed out. At this time, a KYT verification timeout to-do item will be generated for you;
-2. KYT Manual Processing: If your consolidation processing method is configured as "Manual Processing", when the recharge order reaches your configured alarm level, the order status is KYT Manual Processing. You need to confirm and handle this to-do. If this to-do is not handled, to ensure the safety of funds, the currency of the wallet will be intercepted for withdrawal and consolidation.
+2. KYT Manual Processing: If your auto sweeping processing method is configured as "Manual Processing", when the recharge order reaches your configured alarm level, the order status is KYT Manual Processing. You need to confirm and handle this to-do. If this to-do is not handled, to ensure the safety of funds, the currency of the wallet will be intercepted for withdrawal and auto sweeping.
 3. KYT Refusal: If your withdrawal processing method is configured as "Refuse Withdrawal", when the withdrawal order reaches your configured alarm level, the order will be directly refused to withdraw coins, and this status is the final state of the order;
 
 <div className="w-full flex items-center justify-center">
@@ -87,5 +87,5 @@ KYT includes the following statuses:
 ##  Frequently Asked Questions
 
 <Accordion title="How does KYT service handle risky transactions?">
-The KYT service will alert risky transactions and handle them according to your configuration. For example, if your consolidation processing method is configured as "Manual Processing", when the recharge order reaches your configured alarm level, the order status is KYT Manual Processing. You need to confirm and handle this to-do. If this to-do is not handled, to ensure the safety of funds, the currency of the wallet will be intercepted for withdrawal and consolidation.
+The KYT service will alert risky transactions and handle them according to your configuration. For example, if your sweeping processing method is configured as "Manual Processing", when the recharge order reaches your configured alarm level, the order status is KYT Manual Processing. You need to confirm and handle this to-do. If this to-do is not handled, to ensure the safety of funds, the currency of the wallet will be intercepted for withdrawal and auto sweeping.
 </Accordion>

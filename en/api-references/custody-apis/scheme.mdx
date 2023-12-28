@@ -90,7 +90,7 @@ When the callback fails five times, the callback is stopped
 
 1. Perform checks on accounts between the customer system and Custody system periodically (daily is recommended)
 
-2. At midnight the the next day, the system retrieves all the deposits and withdrawals for the previous day as well as the aggregated orders and consolidation of the miner fees
+2. At midnight the the next day, the system retrieves all the deposits and withdrawals for the previous day as well as the aggregated orders and sweeping miner fees
 
 3. The customer system’s orders are reconciled against those in the Custody system
 
@@ -102,9 +102,9 @@ When the callback fails five times, the callback is stopped
 </div>
 
 
-In the Custody system, there are three kinds of cost expenses in the tripartite system: `Consolidation Miner fees`, `Extracting miner fees`, and `profit-sharing` commission;
+In the Custody system, there are three kinds of cost expenses in the tripartite system: `Sweeping Miner fees`, `Extracting miner fees`, and `profit-sharing` commission;
 
-- Consolidation of Miner Fee: With each coin’s account type, after depositing the coins, the funds on the address will be consolidated to the hot wallet address and the blockchain network. Part of the main chain blockchain transaction will consume the miner fee and the cost of which will be borne by the client. The client can contact us if they would like this capital expenditure will be handled by us;
+- Sweeping Miner Fee: With each coin’s account type, after depositing the coins, the funds on the address will be swept to the hot wallet address and the blockchain network. Part of the main chain blockchain transaction will consume the miner fee and the cost of which will be borne by the client. The client can contact us if they would like this capital expenditure will be handled by us;
 
 - Miner fee: Miner fee (in some coins) shall be borne by the three parties when withdrawing coins to the address of non-ChainUp Custody and using the blockchain network. This part of capital expenditure can be viewed directly in the coin withdrawal order;
 

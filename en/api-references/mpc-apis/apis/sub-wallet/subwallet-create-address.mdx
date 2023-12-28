@@ -17,7 +17,7 @@ description: "Create an address for a specified sub-wallet and coin; the same su
 #### Response Data Parameters
 <Expandable title="object">
     <ResponseField name="address" type="string">Created address</ResponseField>
-    <ResponseField name="addr_type" type="integer">Address type, 1: User address, 2: System address (including Consolidation address, change address). `System addresses` **cannot** be assigned to users for use; change in UTXO transactions will be directed to the change address</ResponseField>
+    <ResponseField name="addr_type" type="integer">Address type, 1: User address, 2: System address (including sweeping address, change address). `System addresses` **cannot** be assigned to users for use; change in UTXO transactions will be directed to the change address</ResponseField>
     <ResponseField name="memo" type="string">Memo assigned for Memo types under the main chain</ResponseField>
 </Expandable>
 

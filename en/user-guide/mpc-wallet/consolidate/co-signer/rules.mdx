@@ -6,7 +6,7 @@ It is strongly recommended not to configure the same asset strategy for both the
 </Tip>
 
 ##  Function Introduction
-After the user completes the configuration of the auto sweeping rules, the Custody system will execute the corresponding consolidation operations according to the prescribed consolidation strategy. This will cause the assets on the wallet/address within the scope of the consolidation application to be transferred uniformly to the preset consolidation wallet address. If the wallet being consolidated (withdrawal address) lacks miner fees, the gas station will recharge the main chain coin for this wallet according to the set gas strategy.
+After the user completes the configuration of the auto sweeping rules, the Custody system will execute the corresponding sweeping operations according to the prescribed auto sweep strategy. This will cause the assets on the wallet/address within the applied scope to be transferred uniformly to the preset omnibus wallet address. If the wallet being swept (withdrawal address) lacks miner fees, the gas station will recharge the main chain coin for this wallet according to the set gas strategy.
 
 <Note> 
 ### Preconditions for Using the Function
@@ -54,7 +54,7 @@ After the co-management member creates the configuration, the wallet creator wil
    Please note:
    The omnibus wallet and gas station can be included from the appkied scope of auto sweeping.
 
-   If your sub-wallet has multiple addresses that need to be consolidated, all address assets of the wallet will belong to the scope of consolidation application.
+   If your sub-wallet has multiple addresses that need to be swept, all address assets of the wallet will belong to the scope of sweeping application.
    </Tip>
 
 </Step>
@@ -72,7 +72,7 @@ After the co-management member creates the configuration, the wallet creator wil
 
 </Step>
 <Step title="Configure Auto Fueling Strategy">
-The auto fueling strategy will decide under what circumstances the gas station will supplement miner fees to the sub-wallet to support consolidation.
+The auto fueling strategy will decide under what circumstances the gas station will supplement miner fees to the sub-wallet to support auto sweep feature.
 <div className="w-full flex items-center justify-center">
   <img src="/images/help-center/configcosign3.png" width="600"/>
 </div>
@@ -106,7 +106,7 @@ Editing and modifying the email requires GA verification.
 
 ##  Frequently Asked Questions
 
-<Accordion title="What is the main purpose of Co-Signer consolidation?">
+<Accordion title="What is the main purpose of Sweep All Coins?">
 1. **Through the Sweep All Coins feature, users can merge identical currencies scattered across various addresses or accounts into a single primary address or account, facilitating more convenient management and monitoring.
 
 2. **Reduce manual operations**: The Sweep All Coins feature supports users to configure related parameters independently. The system will automatically execute asset integration operations, thereby avoiding the cumbersome manual transfer process, especially suitable for high-frequency trading or large-scale asset integration.

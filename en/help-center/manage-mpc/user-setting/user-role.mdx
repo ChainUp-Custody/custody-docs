@@ -22,7 +22,7 @@ An administrator is the only user with full permissions for the MPC wallet. The 
 * Use the web3 sub-wallet to link DApps
 * Manage FIL multi-signature wallets
 * Manage FIL nodes
-* Authorize contracts and consolidate
+* Authorize sweeping contracts 
 * Configure Co-Signer
 * Create KYT
 * Handle KYT risks
@@ -38,8 +38,8 @@ Approvers can approve transactions based on triggered transfer policies, and the
 * View wallet information
 * Handle transaction approvals
 * Handle KYT risks
-* Configure contract consolidation policies
-* Configure Co-Signer consolidation policies
+* Configure auto sweep rules for sweep ERC-20 tokens feature
+* Configure auto sweep rules for sweep all coins feature
 
 <Tip>
 Wallet administrators can edit transfer policies through the "Security-Transfer Policy" of the Custody App, including adding members to the approval flow, and members added to the approval flow will automatically become approvers. Refer to [Transfer Policy](/help-center/manage-mpc/strategy/transfer) for the specific process.
@@ -53,8 +53,8 @@ Ordinary members can initiate transactions, access allocated wallets, and query 
 * View bills
 * View wallet information
 * Handle KYT risks
-* Configure contract consolidation policies
-* Configure Co-Signer consolidation policies
+* Configure auto sweep rules for sweep ERC-20 tokens feature
+* Configure auto sweep rules for sweep all coins feature
 
 <Tip>
 Wallet administrators can add associated users under the account through the "Team Members" function in the Custody App. In the Custody App's "Security-Team Management," team members can be added as Ordinary members of the MPC sub-wallet. Refer to [Adding a New Wallet User](/help-center/manage-mpc/user-setting/add-user) for the specific process.
@@ -77,11 +77,11 @@ Wallet administrators can add associated users under the account through the "Te
 | Connect to DApp | √ | × | × |
 | Manage FIL Multi-Signature Wallet | √ | × | × |
 | Manage FIL Nodes | √ | × | × |
-| Configure Contract Consolidation Rules | √ | √ | √ |
-| Contract Consolidation Authorization | √ | × | × |
-| Manual Contract Consolidation | √ | × | × |
+| Configure Auto Sweep Rules For Sweep ERC-20 Tokens Feature | √ | √ | √ |
+| Sweeping Contract Authorization | √ | × | × |
+| Manual Sweep ERC-20 Tokens | √ | × | × |
 | Create KYT Policies | √ | × | × |
 | Handle KYT Risks | √ | √ | √ |
-| Decide Co-Signer Wallets and Gas Stations | √ | × | × |
-| Configure Co-Signer Consolidation Policies | √ | √ | √ |
+| Decide Omnibus Wallets and Gas Stations | √ | × | × |
+| Configure Auto Sweep Rules For Sweep All Coins Feature  | √ | √ | √ |
 

@@ -135,7 +135,7 @@ Note: Only one of the minimum verification amount and minimum verification quant
 1. KYT Verification: This state includes two different situations:
     - Your business has already created a KYT order and submitted it to the KYT service provider for verification, at this time you just need to wait for the KYT service provider to return the verification result;
     - Your business has submitted the KYT service provider for verification, but the KYT service verification has timed out, at this time a KYT verification timeout to-do will be generated for you;
-2. KYT Manual Processing: If your configured receipt processing method is "Manual Processing", at this time the deposit order reaches your configured alarm level, the order status is KYT manual processing, and you need to confirm the processing of this to-do. If this to-do is not processed, to ensure the safety of funds, the coin of this wallet will be blocked from withdrawal and consolidation.
+2. KYT Manual Processing: If your configured receipt processing method is "Manual Processing", at this time the deposit order reaches your configured alarm level, the order status is KYT manual processing, and you need to confirm the processing of this to-do. If this to-do is not processed, to ensure the safety of funds, the coin of this wallet will be blocked from withdrawal and auto sweeping.
 3. KYT Rejection: If your configured withdrawal processing method is "Refuse Withdrawal", at this time the withdrawal order reaches your configured alarm level, then the order will be directly refused to withdraw, and this status is the final state of the order;
 </warning>
 
@@ -154,5 +154,5 @@ Currently, Custody supports KYT services provided by the following three KYT ser
 </Accordion>
 
 <Accordion title="How does KYT service handle risky transactions?">
-KYT service will alert risky transactions and handle them according to your configuration. For example, if your configured receipt processing method is "Manual Processing", at this time the deposit order reaches your configured alarm level, the order status is KYT manual processing, and you need to confirm the processing of this to-do. If this to-do is not processed, to ensure the safety of funds, the coin of this wallet will be blocked from withdrawal and consolidation.
+KYT service will alert risky transactions and handle them according to your configuration. For example, if your configured receipt processing method is "Manual Processing", at this time the deposit order reaches your configured alarm level, the order status is KYT manual processing, and you need to confirm the processing of this to-do. If this to-do is not processed, to ensure the safety of funds, the coin of this wallet will be blocked from withdrawal and auto sweeping.
 </Accordion>

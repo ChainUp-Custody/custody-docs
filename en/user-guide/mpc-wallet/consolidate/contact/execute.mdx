@@ -7,11 +7,11 @@ Please note that only authorized sub-wallets and tokens can execute auto sweepin
 </Note>
 
 ##  Function Introduction
-The Sweep ERC-20 Tokens feature of ChainUp Custody refers to the creation of smart contracts to **sweep** digital assets scattered across different wallets into a specific wallet address. By consolidating small assets, it can significantly reduce the overall transaction costs, improve user transfer experience, and reduce the complexity of managing custody funds.
+The Sweep ERC-20 Tokens feature of ChainUp Custody refers to the creation of smart contracts to **sweep** digital assets scattered across different wallets into a specific wallet address. By sweeping small assets, it can significantly reduce the overall transaction costs, improve user transfer experience, and reduce the complexity of managing custody funds.
 
 This document will introduce how to sweep ERC-20 tokens, in order to orderly sweep assets scattered in different wallets to the designated wallet address. Before performing the following steps, please ensure that you have fully configured the auto sweeping rules and completed the corresponding authorization work.
 
-Assuming your wallet assets have reached the sweeping threshold, you can consolidate the assets to the set wallet address in two ways:
+Assuming your wallet assets have reached the sweeping threshold, you can sweep the assets to the set wallet address in two ways:
 
 **Manual Sweeping** or **Automatic Sweeping**.
 
@@ -24,8 +24,8 @@ Through the Custody APP, you can manually sweep ERC-20 tokens according to your 
 <Warning>
 **Key Steps and Precautions**
 
-- If there are many sub-wallets that need to be consolidated, considering the fluctuation of the mainnet Gas fee, in order to prevent this from causing the sweeping orders to fail, multiple signatures may be required to complete the auto sweeping operation.
-- For security reasons, manual sweeping operation needs to be signed by the wallet's private key to ensure the credibility of the executed contract consolidation operation.
+- If there are many sub-wallets that need to be swept, considering the fluctuation of the mainnet Gas fee, in order to prevent this from causing the sweeping orders to fail, multiple signatures may be required to complete the auto sweeping operation.
+- For security reasons, manual sweeping operation needs to be signed by the wallet's private key to ensure the credibility of the executed sweeping ERC0-20 tokens operation.
 - During the manual sweeping process, you need to pay the corresponding miners fee.
 
 </Warning>
@@ -50,7 +50,7 @@ Way 2: ChainUp Custody APP's 【To-do】, handling relative To-Do tasks.
 </Step>
 
 <Step title="Contract Sweeping History">
-You can view all contract consolidation history records on the `Sweeping History`, `Coin Details`, `History Bill` pages.
+You can view all sweeping history records on the `Sweeping History`, `Coin Details`, `History Bill` pages.
     <div className="w-full flex items-center justify-center">
     <CardGroup cols={3}>
     <img src="/images/user-guide/his1.png" width="200"/>
@@ -64,7 +64,7 @@ You can view all contract consolidation history records on the `Sweeping History
 
 ### Automatic Sweeping
 
-The Sweep ERC-20 Tokens Feature supports automatic consolidation, which can be compatible with all MPC Wallet clients, irrespective of whether they have activated the API or not..
+The Sweep ERC-20 Tokens Feature supports auto sweep feature, which can be compatible with all MPC Wallet clients, irrespective of whether they have activated the API or not..
 
 If you need to turn on the automatic sweeping feature for ERC-20 tokens, please contact the customer service team in time. They will provide you with detailed guidance and support to ensure your automatic sweeping operation goes smoothly.
 

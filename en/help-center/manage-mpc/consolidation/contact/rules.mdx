@@ -3,7 +3,7 @@ title: Configure Auto Sweeping Rules
 ---
 
 ##  Overview
-Creating smart contracts and configuring auto sweeping rules through the Custody web interface ensures that the system executes corresponding consolidation operations according to the rules during the consolidation process. Simultaneously, by authorizing sub-wallets for contract consolidation in the App, you can precisely determine which sub-wallets have the right to consolidate.
+Creating smart contracts and configuring auto sweeping rules through the Custody web interface ensures that the system executes corresponding auto sweep operations according to the rules during the sweeping process. Simultaneously, by authorizing sub-wallets for sweeping contract in the App, you can precisely determine which sub-wallets have the right to sweep assets.
 
 <Warning>
 **Key Steps and Considerations**
@@ -31,13 +31,13 @@ Configuring auto sweeping rules involves three processes:
 <Step title="Create and Publish a Sweeping Contract">
     In the MPC web interface, select "Sweep ERC-20 Tokens," and click "+" to create a sweeping contract.
 </Step>
-<Step title="Edit Consolidation Rules">
+<Step title="Edit Auto Sweep Rules">
    1. Enter the rule name, select the main chain, and confirm the sweeping address.
 
    2. Choose the aimed sub-wallet to receive assets.
 </Step>
 <Step title="Sign and Publish the Contract">
-    The private key holder signs using the Custody App to scan the code, and the consolidation rule is successfully published.
+    The private key holder signs using the Custody App to scan the code, and the auto sweep rule is successfully published.
 </Step>
 </Steps>
 
@@ -47,8 +47,8 @@ Configuring auto sweeping rules involves three processes:
 <Step title="Edit Sweeping Threshold">
     Click Edit button on the Sweep ERC-20 Tokens page, and click "+" on the edit page to add tokens.
 </Step>
-<Step title="Edit Consolidation Threshold">
-    After adding the tokens that need sweeping, click "Edit Threshold" to set the consolidation threshold: **trigger auto sweeping when the asset amount exceeds the threshold.**
+<Step title="Edit Sweeping Threshold">
+    After adding the tokens that need sweeping, click "Edit Threshold" to set the sweeping threshold: **trigger auto sweeping when the asset amount exceeds the threshold.**
 </Step>
 </Steps>
 
@@ -64,7 +64,7 @@ Configuring auto sweeping rules involves three processes:
   <Warning>
 **Key Steps and Considerations**
 
-For each type of asset to be swept in the sub-wallets requiring consolidation via 'sweep,' individual authorizations are necessary. For sub-wallets that do not require consolidation, simply deselect the 'sweep' option.
+For each type of asset to be swept in the sub-wallets requiring auto sweeping via 'sweep,' individual authorizations are necessary. For sub-wallets that do not require sweeping, simply deselect the 'sweep' option.
 
 Please use the Custody App's [Discover] - [Sweep Tokens] function, click to select the main wallet that has configured the sweeping contract for authorization.
 </Warning>
