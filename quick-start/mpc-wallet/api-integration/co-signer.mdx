@@ -34,9 +34,9 @@ title: Co-Signer配置
 ### Co-Signer服务器配置要求
 
 <Tip>
-**CPU最低要求: AMD64 或ARM64 架构，2核，主频2.0 GHz**
+**CPU最低要求: AMD64 或ARM64 架构，8核，主频2.0 GHz**
 
-**内存：8GB**
+**内存：64GB**
 
 **硬盘：256GB**
 </Tip>
@@ -102,7 +102,7 @@ chmod +x co-signer-(version)
 
         2. 配置文件规定co-signer只能在目录/data/co-signer/下运行, 如需自定义运行目录, 请将配置中的**所有的** /data/co-signer/修改为自定义目录
 
-        3. 堆内存，**heapSize**配置建议配置为：6G (6144)
+        3. 堆内存，**heapSize**配置建议配置为：60G (61440)
 
         </Warning>
         ```json
@@ -110,7 +110,7 @@ chmod +x co-signer-(version)
             "exe": "mpc-co-signer",
             "key": "private.pem",
             "debug": false,
-            "heapSize": 2048,
+            "heapSize": 61440,
             "executableHeap": false,
             "productID": 1,
             "securityVersion": 1,

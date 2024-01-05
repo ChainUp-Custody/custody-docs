@@ -33,9 +33,9 @@ In enterprise-level blockchain applications, Co-Signer is used to ensure that mu
 ###  Server Configuration Requirements
 
 <Tip>
-**Minimum CPU Requirements: AMD64 or ARM64 architecture, 2 cores, 2.0 GHz clock speed**
+**Minimum CPU Requirements: AMD64 or ARM64 architecture, 8 cores, 2.0 GHz clock speed**
 
-**Memory: 8GB**
+**Memory: 64GB**
 
 **Hard Drive: 256GB**
 </Tip>
@@ -100,7 +100,7 @@ chmod +x co-signer-(version)
 
          2. The configuration file stipulates that co-signer can only run in the directory /data/co-signer/. If you need to customize the running directory, please change **all** /data/co-signer/ in the configuration to custom Define directory
 
-         3. Heap memory, the recommended **heapSize** configuration is: 6G (6144)
+         3. Heap memory, the recommended **heapSize** configuration is: 60G (61440)
 
         </Warning>
         ```json
@@ -108,7 +108,7 @@ chmod +x co-signer-(version)
             "exe": "mpc-co-signer",
             "key": "private.pem",
             "debug": false,
-            "heapSize": 2048,
+            "heapSize": 61440,
             "executableHeap": false,
             "productID": 1,
             "securityVersion": 1,
