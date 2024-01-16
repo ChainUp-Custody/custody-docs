@@ -344,7 +344,7 @@
           ]
         },
         {
-          "group": "我的金库",
+          "group": "我的工作站",
           "pages": [
             "help-center/manage-mpc/my-wallet/framework",
             "help-center/manage-mpc/my-wallet/address-format",
@@ -475,7 +475,7 @@
     "pages":[
       "user-guide/mpc-wallet/strategy/approval-flow",
       "user-guide/mpc-wallet/strategy/gas-fee-stratefy",
-      "user-guide/mpc-wallet/strategy/sign-contact"
+      "user-guide/mpc-wallet/strategy/sign-protect"
     ]
   },
   {
