@@ -1,20 +1,23 @@
 ---
-title: 添加新的MPC钱包用户
+title: 添加新的MPC工作站用户
 ---
 
 ## I. 功能简介
 
-<Note>只有钱包私钥持有者才可以添加/删除钱包成员。</Note>
-在MPC钱包中，您可以添加新的用户，并为他们分配不同的角色。目前系统有三类角色：
+<Note>只有工作站创建者才可以添加/删除工作站成员。</Note>
+在MPC工作站中，您可以添加新的用户，并为他们分配不同的角色。目前系统有三类角色：
 
-- **管理员** ：创建钱包的成员默认为钱包管理员，具有钱包所有权限；
-- **审批成员** ：管理员将普通成员添加到审批策略后自动成为审批成员，具有发起收款、转账、审批等权限；
-- **普通成员** ：管理员添加到钱包的成员默认为普通成员；具有发起收款、转账等基础权限；
+- **工作站创建者** ：创建工作站的成员默认为创建者（Owner），具有最高权限；
+- **工作站管理员** ：创建者可以将通讯录的成员添加到工作站，并将其分配为工作站管理员，管理员有权限发起工作站下所有金库的收款、转账、并将拥有工作站同权私钥，对转账交易进行签名和加速；
+<Tip> 
+目前，工作站管理员暂时无法对除了手动转账签名和加速以外的私钥操作行为进行签名。
+</Tip>
+- **普通成员** ：创建者添加到金库的成员默认为普通成员；具有发起收款、转账等基础权限；
 
 具体成员角色说明可以参考[MPC用户角色介绍](/help-center/manage-mpc/user-setting/user-role)
 
 <Tip>
-**成为MPC钱包成员需满足：**
+**成为MPC工作站成员需满足：**
 1. 拥有ChainUp Custody账号
 2. 需要完成KYC认证
 3. 绑定并开启谷歌验证器
@@ -23,8 +26,8 @@ title: 添加新的MPC钱包用户
 ## II. 操作流程
 
 <Steps>
-<Step title="选择MPC子钱包">
-   选择想要管理的MPC子钱包。
+<Step title="添加工作站成员">
+   点击账号头像，打开工作站成员功能，点击添加按钮，选择通讯录成员，或直接输入账号添加
 
 <div className="w-full flex items-center justify-center"> 
 <CardGroup cols={2}>
@@ -34,71 +37,38 @@ title: 添加新的MPC钱包用户
 </div>
 </Step>
 
-<Step title="添加成员为MPC钱包普通成员">
-    从您的通讯录成员列表选择用户，将其添加为MPC子钱包的普通成员。
+<Step title="分配新成员角色">
+    您可以为用户分配一种权限类型：1.工作站角色 2.金库角色
+    若您选择工作站角色，您可以将其分配为工作站管理员，这将要求您向其发送同权私钥。
+
+    若您选择金库角色，您可以将其分配为特定金库的普通成员。
 <div className="w-full flex items-center justify-center"> 
 <img src="/images/user-guide/add3cn.jpg" width="200"/>
 </div>
 <Tip>
-**邀请MPC钱包普通成员需注意：**
+**分配工作站管理员角色需注意：**
+创建者拥有本地已备份的工作站私钥片段，并且可以获得对方账号的RSA公钥。
+</Tip>
 
-当普通成员加入交易审批流后，该成员自动升级为审批员, 添加交易审批流可参考[转账策略](/help-center/manage-mpc/strategy/transfer)。
 </Tip>
 </Step>
 
-<Step title="如该用户不在您的团队（通讯录）中，可输入账号">
-    输入Custody钱包注册的账号（手机号/邮箱）。
-    <div className="w-full flex items-center justify-center"> 
-<img src="/images/user-guide/add4cn.jpg" width="200"/>
-</div>
-</Step>
-
-
-<Step title="使用通讯录功能管理所有团队成员">
-您可以添加或删除团队成员，修改备注名，并且查看该成员在不同钱包的角色详情。
-   
-   
-    **途径一** 
-    
-    浏览器打开ChainUp Custody PC 平台， 使用【Custody】APP，首页或云端钱包【扫码】功能扫描二维码登录，点击列表页【通讯录】。
-
-<div className="w-full flex items-center justify-center"> 
-<CardGroup cols={2}>
-<img src="/images/user-guide/webadd1cn.png" width="500"/>
-<img src="/images/user-guide/webadd2cn.png" width="500"/>
-</CardGroup>
-</div>
-
-     **途径二** 
-     
-     登录ChainUp Custody App，点击头像，打开账户设置，选择【通讯录】功能。
-
-<div className="w-full flex items-center justify-center"> 
-<CardGroup cols={3}>
-<img src="/images/user-guide/add5cn.jpg" width="200"/>
-<img src="/images/user-guide/add6cn.jpg" width="200"/>
-<img src="/images/user-guide/add7cn.jpg" width="200"/>
-</CardGroup>
-</div>
-
-</Step>
-</Steps>
 
 ## III. 常见问题
 
 <Accordion title="如何修改用户的角色？">
-管理员可以在钱包设置中修改用户的角色。请注意，只有钱包的创建者才可以修改用户角色。
+创建者可以在工作站成员中查看用户的权限详情，并修改用户的角色。请注意，若该成员属于某个金库的审批流，则他将自动拥有该金库的共管权限且无法取消。
 </Accordion>
 
-<Accordion title="如果我不是钱包的创建者，我可以添加用户吗？">
-抱歉，只有钱包的创建者才可以添加用户。如果您不是钱包的创建者，您无法添加新的用户。
+<Accordion title="如果我不是工作站创建者，我可以添加用户吗？">
+抱歉，只有工作站创建者才可以添加用户。
 </Accordion>
 
-<Accordion title="我可以在一个钱包中设置多个管理员吗？">
-抱歉，每个钱包只能有一个管理员。管理员是创建钱包的用户，他们拥有钱包的所有权限。
+<Accordion title="工作站的角色限制？">
+您的工作站总成员数量限制与您购买的服务套餐相一致，但对于具体的角色并无限制。
 </Accordion>
 
-<Accordion title="如果一个用户被删除，他们可以再次被添加吗？">
-是的，如果一个用户被删除，他们可以被再次添加。请注意，只有钱包的创建者才可以添加用户。
+<Accordion title="工作站管理员如何管理他的私钥？">
+目前系统不支持工作站管理员对其私钥进行备份和恢复。如果因更换设备等原因导致私钥片段丢失，请联系工作站创建者重新发送（在“工作站成员”中选择相应工作站，查看您的具体权限以进行操作）
 </Accordion>
 

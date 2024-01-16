@@ -1,22 +1,22 @@
 ---
-title: 创建子钱包
+title: 创建金库
 api: POST /api/mpc/sub_wallet/create
-description: "传入指定的子钱包名称，为钱包创建一个新的子钱包"
+description: "传入指定的金库名称，为钱包创建一个新的金库"
 ---
 
 #### 请求参数数据结构
 <ParamField query="sub_wallet_name" type="string" required>
-    子钱包名称，`最大支持50个字符`，同一钱包下子钱包不能重名，例：mpc矿池
+    金库名称，`最大支持50个字符`，同一钱包下金库不能重名，例：mpc矿池
 </ParamField>
 <ParamField query="app_show_status" type="string">
-    创建后app和web端是否展示该子钱包，`1`展示, `2`不展示；默认不展示
+    创建后app和web端是否展示该金库，`1`展示, `2`不展示；默认不展示
 </ParamField>
 
 
 
 #### 响应参数数据结构
 <Expandable title="object">
-    <ResponseField name="sub_wallet_id" type="integer">子钱包id</ResponseField>
+    <ResponseField name="sub_wallet_id" type="integer">金库id</ResponseField>
 </Expandable>
 
 

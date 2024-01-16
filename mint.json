@@ -84,7 +84,7 @@
       ]
     },
     {
-      "group": "MPC钱包",
+      "group": "MPC工作站",
       "pages": [
         "quick-start/mpc-wallet/download-app",
         "quick-start/mpc-wallet/create-account",
@@ -118,7 +118,7 @@
       "group": "合规托管",
       "pages": [
         {
-          "group": "应用MPC钱包",
+          "group": "应用MPC工作站",
           "pages": [
             "quick-start/compliance-custody-mpc/open-mpc",
             "quick-start/compliance-custody-mpc/strategy-mpc"
@@ -141,7 +141,7 @@
       ]
     },
     {
-      "group": "MPC钱包APIs",
+      "group": "MPC工作站APIs",
       "pages": [
         {
           "group": "接入指引",
@@ -157,7 +157,7 @@
           "pages": [
             "api-references/mpc-apis/apis/description",
             {
-              "group": "钱包",
+              "group": "工作站",
               "pages": [
                 "api-references/mpc-apis/apis/wallet/open-coin",
                 "api-references/mpc-apis/apis/wallet/coin-list",
@@ -165,7 +165,7 @@
               ]
             },
             {
-              "group": "子钱包",
+              "group": "金库",
               "pages": [
                 "api-references/mpc-apis/apis/sub-wallet/subwallet-create",
                 "api-references/mpc-apis/apis/sub-wallet/subwallet-create-address",
@@ -334,7 +334,7 @@
       ]
     },
     {
-      "group": "管理MPC钱包系统",
+      "group": "管理MPC系统",
       "pages": [
         {
           "group": "用户设置",
@@ -344,7 +344,7 @@
           ]
         },
         {
-          "group": "我的钱包",
+          "group": "我的金库",
           "pages": [
             "help-center/manage-mpc/my-wallet/framework",
             "help-center/manage-mpc/my-wallet/address-format",
@@ -355,7 +355,7 @@
         },
 
         {
-          "group": "钱包交易",
+          "group": "金库交易",
           "pages": [
             "help-center/manage-mpc/transaction/transfer"
           ]
@@ -398,7 +398,7 @@
       ]
     },
   {
-    "group": "MPC钱包操作指南",
+    "group": "MPC工作站操作指南",
     "pages": [
       {
         "group": "账户安全",
@@ -411,11 +411,12 @@
         ]
       },
       {
-        "group": "配置钱包",
+        "group": "配置工作站",
         "pages": [
           "user-guide/mpc-wallet/wallet/create-wallet", 
           "user-guide/mpc-wallet/wallet/manage-wallet",
-          "user-guide/mpc-wallet/wallet/add-user"
+          "user-guide/mpc-wallet/wallet/add-user",
+          "user-guide/mpc-wallet/wallet/become-admin"
         ]
       },
       {
@@ -472,7 +473,9 @@
   {
     "group": "交易策略引擎",
     "pages":[
-      "user-guide/mpc-wallet/strategy/approval-flow"
+      "user-guide/mpc-wallet/strategy/approval-flow",
+      "user-guide/mpc-wallet/strategy/gas-fee-stratefy",
+      "user-guide/mpc-wallet/strategy/sign-contact"
     ]
   },
   {

@@ -6,7 +6,7 @@ description: "创建一笔Web3交易"
 
 #### 请求参数数据结构
 <ParamField query="sub_wallet_id" type="integer" required>
-    子钱包id
+    金库id
 </ParamField>
 <ParamField query="request_id" type="string" required>
    	转账唯一标识
@@ -15,7 +15,7 @@ description: "创建一笔Web3交易"
     主链币币名，币种唯一标识，例：`USDTERC20`
 </ParamField>
 <ParamField query="from" type="string">
-    交易发起地址，子钱包存在多地址时, 可指定交易地址, 不指定时默认使用子钱包“常用地址“
+    交易发起地址，金库存在多地址时, 可指定交易地址, 不指定时默认使用金库“常用地址“
 </ParamField>
 <ParamField query="interactive_contract" type="string" required>
     交互合约

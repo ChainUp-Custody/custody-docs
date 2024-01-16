@@ -8,12 +8,12 @@ title: 配置全币种归集规则
 </Warning>
 
 ## I. 功能简介
-用户完成全币种归集规则的配置后，Custody系统将按照规定的归集策略执行相应的归集操作。这将导致归集应用范围内的钱包/地址上的资产被统一转账至预设的归集钱包地址。在被归集的钱包（出金地址）缺乏矿工费的情况下，加油站将会根据设定的加油策略为该钱包的主链币充值。
+用户完成全币种归集规则的配置后，Custody系统将按照规定的归集策略执行相应的归集操作。这将导致归集应用范围内的钱包/地址上的资产被统一转账至预设的归集金库地址。在被归集的钱包（出金地址）缺乏矿工费的情况下，加油站将会根据设定的加油策略为该钱包的主链币充值。
 
 <Note> 
 ### 使用功能前提
 
-请确保主钱包没有过期，过期情况会导致所有钱包相关业务功能无法使用。
+请确保工作站没有过期，过期情况会导致所有钱包相关业务功能无法使用。
 
 确保已完成API和Co-signer的配置，以确保API的正常运行，从而使全币种归集功能能够顺利执行。
 
@@ -24,8 +24,8 @@ title: 配置全币种归集规则
 ## II. 操作流程
 
 <Steps>
-<Step title="配置归集钱包和加油站">
-   App扫码登录Custody Web端，使用"全币种归集"功能进行设置您的归集钱包和加油站。 
+<Step title="配置归集金库和加油站">
+   App扫码登录Custody Web端，使用"全币种归集"功能进行设置您的归集金库和加油站。 
   <div className="w-full flex items-center justify-center">
     <img src="/images/user-guide/sweepcoinfirst.png" width="600"/>
 </div>
@@ -33,8 +33,8 @@ title: 配置全币种归集规则
 </Step>
 
 <Step title="确认钱包配置">
-归集钱包和加油站可以选择同一个;
-使用Custody App扫描提供的二维码，利用本地私钥片段签名确认归集钱包和加油站的配置。
+归集金库和加油站可以选择同一个;
+使用Custody App扫描提供的二维码，利用本地私钥片段签名确认归集金库和加油站的配置。
  <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
         <img src="/images/user-guide/ruleco2cn.png" width="350"/>
@@ -42,11 +42,11 @@ title: 配置全币种归集规则
     </CardGroup>
 </div>
 <Tip>
-共管成员创建配置后，钱包创建者会收到一条待办任务，需要签名确认，配置才可生效。
+共管成员创建配置后，工作站创建者会收到一条待办任务，需要签名确认，配置才可生效。
 </Tip>
 </Step>
 <Step title="决定归集应用范围">
-   决定哪些子钱包的资产会进行归集。
+   决定哪些金库的资产会进行归集。
 
    <div className="w-full flex items-center justify-center">
     <img src="/images/help-center/co-signer-collect3_cn.PNG" width="600"/>
@@ -56,9 +56,9 @@ title: 配置全币种归集规则
    <Warning>
    **重要提示**
 
-   归集钱包和加油站可以包含在归集应用范围内。
+   归集金库和加油站可以包含在归集应用范围内。
 
-   若您的子钱包拥有多条需归集资产的地址，则钱包所有地址资产都将属于归集应用范围。
+   若您的金库拥有多条需归集资产的地址，则金库所有地址资产都将属于归集应用范围。
    </Warning>
 
 </Step>
@@ -76,7 +76,7 @@ title: 配置全币种归集规则
 
 </Step>
 <Step title="配置加油策略">
-加油策略将决定加油站在什么情况下将矿工费补充至子钱包来支持归集。
+加油策略将决定加油站在什么情况下将矿工费补充至金库来支持归集。
 <div className="w-full flex items-center justify-center">
     <img src="/images/help-center/co-signer-collect5_cn.PNG" width="600"/>
 </div>
@@ -124,6 +124,6 @@ ChainUp Custody支持Account类型的主链币和相关代币进行归集，Acco
 ETH（Ethereum）, BNB（Binance Smart Chain）,TRX（TRON）,DOT（Polkadot）
 </Accordion>
 
-<Accordion title="哪类MPC钱包支持全币种归集功能？">
-ChainUp Custody支持所有类型的MPC子钱包进行自动归集。
+<Accordion title="哪类MPC金库支持全币种归集功能？">
+ChainUp Custody支持所有类型的MPC金库进行自动归集。
 </Accordion>

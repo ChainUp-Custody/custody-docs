@@ -1,12 +1,12 @@
 ---
-title: 子钱包创建地址
+title: 金库创建地址
 api: POST /api/mpc/sub_wallet/create/address
-description: "为指定子钱包及币种创建地址；同一个子钱包可以创建多个地址，Memo类型会创建多个memo"
+description: "为指定金库及币种创建地址；同一个金库可以创建多个地址，Memo类型会创建多个memo"
 ---
 
 #### 请求参数数据结构
 <ParamField query="sub_wallet_id" type="integer" required>
-    子钱包id
+    金库id
 </ParamField>
 <ParamField query="symbol" type="string" required>
     币种唯一标识，例：`USDTERC20`

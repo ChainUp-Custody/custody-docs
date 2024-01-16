@@ -6,7 +6,7 @@ title: 功能配置
 
 ## I. 创建API
 
-请钱包创建者登录[ChainUp控制台系统](https://custody.ChainUp.com/)，在API管理页面创建API；
+请工作站创建者登录[ChainUp控制台系统](https://custody.ChainUp.com/)，在API管理页面创建API；
 
 <div className="w-full flex items-center justify-center">
     <img src="/images/apis/mpc-api1_cn.png" width="600"/>
@@ -69,7 +69,7 @@ Co-Signer 提供了回调处理程序，该程序属于可选组件；
 ### 创建Co-Signer私钥片段
 完成API及Co-Signer程序配置后，在APP为Co-Signer创建私钥片段。
 
-`钱包创建者`可在MPC钱包【安全】-【Co-Signer】页面中创建Co-Signer私钥片段；创建的Co-Signer私钥片段将通过客户在ChainUp平台配置的 Co-Signer RSA公钥加密同步到Co-Signer服务器。
+`工作站创建者`可在MPC系统【安全】-【Co-Signer】页面中创建Co-Signer私钥片段；创建的Co-Signer私钥片段将通过客户在ChainUp平台配置的 Co-Signer RSA公钥加密同步到Co-Signer服务器。
 
 <Warning>
 创建时请务必保证APPID为启用状态，Co-Signer服务正常；
@@ -83,8 +83,8 @@ Co-Signer私钥片段丢失或泄露，可刷新出新的私钥片段或删除Co
 
 登录[ChainUp管理平台](https://custody.chainup.com/)，在Co-Signer页面中创建；
 
-* 钱包成员（`任意角色`）设置资金归集到账钱包及加油钱包；
-> 仅支持选择在APP端显示的子钱包；为了保证资金效率建议`归集钱包`与`加油钱包`设置为不同的钱包（由于账户类型的主链出金是单笔执行，若配置成相同钱包，在为地址补充矿工费时，出金交易会等待直到补充矿工费完成。）
+* 钱包成员（`任意角色`）设置资金归集到账钱包及加油站；
+> 仅支持选择在APP端显示的金库；为了保证资金效率建议`归集金库`与`加油站`设置为不同的钱包（由于账户类型的主链出金是单笔执行，若配置成相同钱包，在为地址补充矿工费时，出金交易会等待直到补充矿工费完成。）
 <div className="w-full flex items-center justify-center">
     <img src="/images/apis/mpc-auto-collect1_cn.png" width="600"/>
 </div>
@@ -94,19 +94,19 @@ Co-Signer私钥片段丢失或泄露，可刷新出新的私钥片段或删除Co
     <img src="/images/apis/mpc-auto-collect2_cn.png" width="200"/>
 </div>
 
-* 钱包成员（`任意角色`）配置子钱包归集、加油应用范围，币种归集、加油规则等信息
+* 钱包成员（`任意角色`）配置金库归集、加油应用范围，币种归集、加油规则等信息
 <div className="w-full flex items-center justify-center">
     <img src="/images/apis/mpc-auto-collect3_cn.png" width="600"/>
 </div>
 
 ### 应用归集范围
-配置要进行资金归集的子钱包；
+配置要进行资金归集的金库；
 
 ### 归集策略
 配置要进行资金归集的币种、归集阈值；超过归集阈值且低于设置的矿工费时会自动触发资金归集；用户可通过控制台或API自定义归集的阈值以及最大矿工费。
 
 ### 加油策略
-为归集币种配置补充矿工费，由于代币归集需要使用主币作为矿工费，当地址的代币满足归集策略且地址没有主币时，将会触发从加油钱包向待归集地址补充矿工费，补充矿工费的数量可自定义，请务必注意补充的矿工费要低于归集阈值。
+为归集币种配置补充矿工费，由于代币归集需要使用主币作为矿工费，当地址的代币满足归集策略且地址没有主币时，将会触发从加油站向待归集地址补充矿工费，补充矿工费的数量可自定义，请务必注意补充的矿工费要低于归集阈值。
 
 策略配置完成，系统自动运行，可在设置的钱包内查看资产变动情况。
 
