@@ -34,8 +34,8 @@ API发起的交易不受转账策略管理。
 </div>
 
 </Step>
-<Step title="选择适用策略的金库">
-   在转账策略中，选择您想要应用转账策略的MPC金库。
+<Step title="选择适用策略的钱包">
+   在转账策略中，选择您想要应用转账策略的MPC钱包。
 
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
@@ -49,7 +49,7 @@ API发起的交易不受转账策略管理。
 在此步骤中，您可以定义转账策略的以下参数：
 
 1. **策略名称**：为您的策略命名，方便您以后查找和管理。
-2. **审批成员与审批阈值**：选择金库的团队成员作为审批成员，并设置审批阈值。
+2. **审批成员与审批阈值**：选择钱包的团队成员作为审批成员，并设置审批阈值。
 3. **审批的币种**：选择需要审批的转账币种。
 
 <div className="w-full flex items-center justify-center">
@@ -62,7 +62,7 @@ API发起的交易不受转账策略管理。
 <Warning>
 **关键步骤和注意事项**
 
-一个金库可以创建多条转账策略，但每种资产的转账策略必须唯一。
+一个钱包可以创建多条转账策略，但每种资产的转账策略必须唯一。
 
 若资产从未编辑过转账策略，则该资产的交易默认只需工作站创建者进行最后一步的签名确认。
 </Warning>
@@ -81,7 +81,7 @@ API发起的交易不受转账策略管理。
 <Step title="发起转账">
 无论是普通成员、审批成员，还是工作站创建者，都可以通过登录Custody APP或PC端发起转账。
 
-您需要选择转账的金库和币种，输入地址、数量、备注后确认转账，然后等待审批。
+您需要选择转账的钱包和币种，输入地址、数量、备注后确认转账，然后等待审批。
 
 在**APP**，Token支持左滑快速转账，也可以点击进入币种详情转账。NFT只支持点击进入详情后进行转账。
 <div className="w-full flex items-center justify-center">
@@ -91,7 +91,7 @@ API发起的交易不受转账策略管理。
     </CardGroup>
 </div>
 
-    在**Web 页面**，您可以选择金库后进行转账。
+    在**Web 页面**，您可以选择钱包后进行转账。
     <div className="w-full flex items-center justify-center">
     <img src="/images/user-guide/transfer4cn.png" />
 </div>

@@ -84,7 +84,7 @@ Co-Signer私钥片段丢失或泄露，可刷新出新的私钥片段或删除Co
 登录[ChainUp管理平台](https://custody.chainup.com/)，在Co-Signer页面中创建；
 
 * 钱包成员（`任意角色`）设置资金归集到账钱包及加油站；
-> 仅支持选择在APP端显示的金库；为了保证资金效率建议`归集金库`与`加油站`设置为不同的钱包（由于账户类型的主链出金是单笔执行，若配置成相同钱包，在为地址补充矿工费时，出金交易会等待直到补充矿工费完成。）
+> 仅支持选择在APP端显示的钱包；为了保证资金效率建议`归集钱包`与`加油站`设置为不同的钱包（由于账户类型的主链出金是单笔执行，若配置成相同钱包，在为地址补充矿工费时，出金交易会等待直到补充矿工费完成。）
 <div className="w-full flex items-center justify-center">
     <img src="/images/apis/mpc-auto-collect1_cn.png" width="600"/>
 </div>
@@ -94,13 +94,13 @@ Co-Signer私钥片段丢失或泄露，可刷新出新的私钥片段或删除Co
     <img src="/images/apis/mpc-auto-collect2_cn.png" width="200"/>
 </div>
 
-* 钱包成员（`任意角色`）配置金库归集、加油应用范围，币种归集、加油规则等信息
+* 钱包成员（`任意角色`）配置钱包归集、加油应用范围，币种归集、加油规则等信息
 <div className="w-full flex items-center justify-center">
     <img src="/images/apis/mpc-auto-collect3_cn.png" width="600"/>
 </div>
 
 ### 应用归集范围
-配置要进行资金归集的金库；
+配置要进行资金归集的钱包；
 
 ### 归集策略
 配置要进行资金归集的币种、归集阈值；超过归集阈值且低于设置的矿工费时会自动触发资金归集；用户可通过控制台或API自定义归集的阈值以及最大矿工费。

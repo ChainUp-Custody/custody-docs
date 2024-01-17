@@ -4,13 +4,13 @@ title: 配置ERC-20代币归集规则
 
 ## I. 功能简介
 
-通过Custody Web端创建智能合约并配置归集规则，您可以确保系统在执行归集时，将按照预定的规则进行操作。同时，您也可以在App中为金库处理归集合约授权，从而精确决定哪些金库有权进行归集。
+通过Custody Web端创建智能合约并配置归集规则，您可以确保系统在执行归集时，将按照预定的规则进行操作。同时，您也可以在App中为钱包处理归集合约授权，从而精确决定哪些钱包有权进行归集。
 
 <Warning>
 **重要提示**
 
-- ChainUp Custody平台仅支持`Web3金库`进行合约归集。
-- 需要进行归集的每个金库和代币都必须事先得到授权。
+- ChainUp Custody平台仅支持`Web3钱包`进行合约归集。
+- 需要进行归集的每个钱包和代币都必须事先得到授权。
 - 强烈建议不要同时为相同资产配置ERC-20代币归集策略和全币种归集策略。如果这样操作，系统将根据您配置策略的时间，选择执行最早配置的归集策略。
 
 </Warning>
@@ -35,13 +35,13 @@ title: 配置ERC-20代币归集规则
 </div>
 </Step>
 <Step title="编辑归集规则">
-   输入归集规则名称、选择主链并确定归集地址，然后选择归集到账金库。
+   输入归集规则名称、选择主链并确定归集地址，然后选择归集到账钱包。
    <div className="w-full flex items-center justify-center">
     <img src="/images/user-guide/cnerc20create2.png" />
 </div>
 </Step>
 
-<Step title="选择归集到账金库">
+<Step title="选择归集到账钱包">
    <div className="w-full flex items-center justify-center">
     <img src="/images/user-guide/cnselectwalllet.png" />
 </div>
@@ -92,7 +92,7 @@ Custody APP的【发现】-【代币归集】功能，点击选择已经配置�
 
 </Step>
 <Step title="授权管理">
-   在归集工具中点击“授权管理”，私钥持有者需要通过私钥签名授权金库。
+   在归集工具中点击“授权管理”，私钥持有者需要通过私钥签名授权钱包。
 <div className="w-full flex items-center justify-center">
 <CardGroup cols={3}>
     <img src="/images/help-center/contract-collect12_cn.PNG" width="200"/>
@@ -102,9 +102,9 @@ Custody APP的【发现】-【代币归集】功能，点击选择已经配置�
 </div>
 
 <Warning>
-需要归集的每一个金库的归集资产都需要分别授权。
+需要归集的每一个钱包的归集资产都需要分别授权。
 
-对于不需要归集的金库，只需取消归集即可。
+对于不需要归集的钱包，只需取消归集即可。
 </Warning>
 
 </Step>
@@ -127,5 +127,5 @@ ERC-20代币归集功能支持Account类型的**代币**进行合约归集，该
 </Accordion>
 
 <Accordion title="ERC-20代币归集功能支持哪类钱包？">
-ERC-20代币归集功能只支持Web3类型的MPC金库。
+ERC-20代币归集功能只支持Web3类型的MPC钱包。
 </Accordion>

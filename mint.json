@@ -165,7 +165,7 @@
               ]
             },
             {
-              "group": "金库",
+              "group": "钱包",
               "pages": [
                 "api-references/mpc-apis/apis/sub-wallet/subwallet-create",
                 "api-references/mpc-apis/apis/sub-wallet/subwallet-create-address",
@@ -355,7 +355,7 @@
         },
 
         {
-          "group": "金库交易",
+          "group": "钱包交易",
           "pages": [
             "help-center/manage-mpc/transaction/transfer"
           ]

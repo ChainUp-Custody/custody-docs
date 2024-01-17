@@ -1,7 +1,7 @@
 ---
 title: 同步归集记录
 api: GET /api/mpc/billing/sync_auto_collect_list
-description: "获取工作站下所有金库归集记录，最多返回100条"
+description: "获取工作站下所有钱包归集记录，最多返回100条"
 ---
 
 #### 请求参数数据结构
@@ -15,7 +15,7 @@ description: "获取工作站下所有金库归集记录，最多返回100条"
 <ResponseField type="object[ ]">
     <Expandable title="object">
         <ResponseField name="id" type="integer">归集id</ResponseField>
-        <ResponseField name="sub_wallet_id" type="integer">金库id</ResponseField>
+        <ResponseField name="sub_wallet_id" type="integer">钱包id</ResponseField>
         <ResponseField name="symbol" type="string">币种唯一标识，归集时使用，例：`USDTERC20`</ResponseField>
         <ResponseField name="amount" type="string">归集金额</ResponseField>
         <ResponseField name="fee_symbol" type="string">手续费币种，例：ETH</ResponseField>
