@@ -3,6 +3,10 @@ title: 提现回调
 api: POST /{custom-url}
 ---
 
+**Co-Signer**签名前回调客户系统确认提现是否正常。
+* 返回`FALSE`:Co-Signer将忽略交易不进行签名;
+* 返回`SUCESS`:Co-Signer对交易进行签名。 
+
 `Content-Type application/json;charset=UTF-8`
 
 
