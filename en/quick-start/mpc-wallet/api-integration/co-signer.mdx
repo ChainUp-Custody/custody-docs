@@ -207,7 +207,7 @@ Options:
     <Step title="Configure the Rsa private key used by Co-Signer ">
      **Method One: `co-signer` generates Rsa public and private keys** 
 
-        After executing the command, enter the **Co-Signer** startup password as prompted. The password is the same as the one used for the wallet seed configuration! After successful execution, a file named keystore.json is generated in the conf directory.
+        After executing the command, enter the **Co-Signer** startup password as prompted. After successful execution, a file named keystore.json is generated in the conf directory.
 
         The private key is used to encrypt request parameters when requesting the Custody service. The corresponding public key of the private key needs to be configured to Custody. Custody uses this public key to decrypt **Co-Signer**  request data.
 
