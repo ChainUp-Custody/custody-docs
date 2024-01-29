@@ -1,0 +1,76 @@
+---
+title: Co-Signer配置
+---
+
+## I. 功能简介
+
+ChainUp Custody的Co-Signer功能是一种关键的安全措施，用于提升交易的安全性和可信度。本文将详细介绍Co-Signer的功能及其配置方法，以帮助您满足业务要求并提供更安全、透明和高效的数字化体验。
+
+## II. 操作流程
+
+<Steps>
+
+<Step title="开发前准备">
+1. 创建MPC主、子钱包
+
+2. 准备公私钥、第三方应用服务器和Co-Signer服务器的IP、收款，转账回调通知地址、Co-Signer服务器的域名
+</Step>
+
+<Step title="登录WEB端">
+选择配置Co-signer 的主钱包
+<div className="w-full flex items-center justify-center">
+<img src="/images/user-guide/apicn.png"/>
+</div>
+
+</Step>
+
+<Step title="API 管理">
+在主钱包面板的侧导航中选择【API 管理】页面， 填入信息
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/api2cn.png"/>
+</div>
+
+</Step>
+
+<Step title="创建私钥片段">
+WEB端配置完成后，需要登录APP 为API 创建私钥片段
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/api3cn.png"/>
+</div>
+</Step>
+
+<Step title="登录APP进行配置">
+登录APP， 进入安全页面后选择Co-Signer开始配置, 为主钱包API 创建私钥片段
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+    <img src="/images/user-guide/safecn.png" width="200"/>
+    <img src="/images/user-guide/cosign1cn.png" width="200"/>
+     <img src="/images/user-guide/cosign2cn.png" width="200"/>
+    </CardGroup>
+</div>
+</Step>
+
+</Steps>
+
+<Warning>
+**提示**
+1. 同权私钥片段是使用对应APPID上传的公钥加密保存。
+2. 当Co-Signer服务器的私钥片段泄露、丢失时,可通过刷新功能生成新的同权私钥片段,原同权私钥片段不可用。
+3. 当Co-Signer服务器暂停使用时,可将对应APPID的私钥片段删除。
+</Warning>
+
+## III. 常见问题
+
+<Accordion title="什么是Co-Signer?">
+在区块链或数字资产领域，`"Co-Signer"（共同签署者）`通常是指多个个体或实体需要联合签署某个交易或合约的一种机制。这种机制主要用于加强交易或合约的安全性和可信度。使用 Co-Signer 的目的是为了确保在涉及到关键操作时，需要多方的确认和授权，从而减少潜在的风险和增加整体的安全性。这对于数字资产和区块链网络中的高价值交易或者关键业务操作尤为重要。
+</Accordion>
+
+<Accordion title="Co-Signer有什么作用？">
+Co-Signer在以下几个方面发挥重要作用：
+- **安全的数字资产管理**：Co-Signer用于保护高价值的数字资产，多重签名钱包确保私钥分布在不同的地方，防止单一私钥被泄露或滥用。
+- **智能合约操作**：对于需要多方确认的智能合约，Co-Signer提供了一种安全的机制。
+- **交易安全性**：对于区块链上的交易，特别是涉及大额资金的交易，多重签名提高了交易的安全性。
+- **企业级应用**：在企业级区块链应用中，Co-Signer用于确保多个授权实体必须同意特定的决策或交易。
+</Accordion>
