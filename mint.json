@@ -529,6 +529,12 @@
         "user-guide/custody-wallet/strategy/approval-flow",
         "user-guide/custody-wallet/strategy/address-book"
       ]
+    },
+    {
+      "group": "增值服务",
+      "pages": [
+        "user-guide/custody-wallet/value-added/wealth"
+      ]
     }
   ] 
  }
