@@ -482,6 +482,8 @@
       "user-guide/mpc-wallet/web3/fil-node",
       "user-guide/mpc-wallet/web3/dapp"
     ]
+  }
+]
 },
 {
   "group": "托管Cloud钱包操作指南",
@@ -500,7 +502,6 @@
       "group": "配置钱包",
       "pages": [
         "user-guide/custody-wallet/wallet/create-wallet", 
-        "user-guide/custody-wallet/wallet/manage-wallet",
         "user-guide/custody-wallet/wallet/add-user"
       ]
     },
@@ -510,7 +511,8 @@
         "user-guide/custody-wallet/operation/receive",
         "user-guide/custody-wallet/operation/transfer",
         "user-guide/custody-wallet/operation/record",
-        "user-guide/custody-wallet/operation/to-do"
+        "user-guide/custody-wallet/operation/to-do",
+        "user-guide/custody-wallet/operation/invoice"
       ]
     },
     {
@@ -521,21 +523,15 @@
       ]
     },
     {
-      "group": "API管理",
+      "group": "安全策略",
       "pages": [
-        "user-guide/custody-wallet/api-integration/api"
+        "user-guide/custody-wallet/strategy/api",
+        "user-guide/custody-wallet/strategy/approval-flow",
+        "user-guide/custody-wallet/strategy/address-book"
       ]
     }
-]
-},
-{
-  "group": "交易策略引擎",
-  "pages":[
-    "user-guide/custody-wallet/strategy/approval-flow"
-   ]
-  }
- ]
-}
+  ] 
+ }
 ],
 
 "api": {
