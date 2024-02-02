@@ -1,17 +1,16 @@
 ---
-title: 添加新的托管用户
+title: 添加托管共管钱包成员
 ---
 
 ## I. 功能简介
 
-<Note>只有钱包私钥持有者才可以添加/删除钱包成员。</Note>
-在托管中，您可以添加新的用户，并为他们分配不同的角色。目前系统有三类角色：
+<Note>只有钱包管理员才可以添加/删除钱包成员。</Note>
+在托管钱包中，您可以添加新的用户，并为他们分配不同的角色。目前系统有三类角色：
 
 - **管理员** ：创建钱包的成员默认为钱包管理员，具有钱包所有权限；
 - **审批成员** ：管理员将普通成员添加到审批策略后自动成为审批成员，具有发起收款、转账、审批等权限；
 - **普通成员** ：管理员添加到钱包的成员默认为普通成员；具有发起收款、转账等基础权限；
 
-具体成员角色说明可以参考[用户角色介绍](/help-center/manage-mpc/user-setting/user-role)
 
 <Tip>
 **成为托管成员需满足：**
@@ -24,26 +23,25 @@ title: 添加新的托管用户
 
 <Steps>
 <Step title="选择托管钱包">
-   选择想要管理的托管钱包。
-
+登录托管钱包网页端，选择想要管理的托管钱包后点击左侧导航栏【共管钱包】。
 <div className="w-full flex items-center justify-center"> 
-<CardGroup cols={2}>
-<img src="/images/user-guide/add1cn.jpg" width="200"/>
-<img src="/images/user-guide/add2cn.jpg" width="200"/>
-</CardGroup>
+<img src="/images/custody-guide/adduser.png" width="500"/>
 </div>
 </Step>
 
 <Step title="添加成员为托管普通成员">
-    从您的通讯录成员列表选择用户，将其添加为托管钱包的普通成员。
+点击左侧导航栏【共管钱包】, 从您的通讯录成员列表选择用户，将其添加为托管钱包的普通成员。
 <div className="w-full flex items-center justify-center"> 
-<img src="/images/user-guide/add3cn.jpg" width="200"/>
+<img src="/images/custody-guide/adduser1.png" width="500"/>
 </div>
 <Tip>
 **邀请托管普通成员需注意：**
-
-当普通成员加入交易审批流后，该成员自动升级为审批员, 添加交易审批流可参考[转账策略](/help-center/manage-mpc/strategy/transfer)。
+当普通成员加入交易审批流后，该成员自动升级为审批员, 添加交易审批流可参考[安全策略](/user-guide/custody-wallet/strategy/transfer)。
 </Tip>
+<div className="w-full flex items-center justify-center"> 
+<img src="/images/custody-guide/adduser2.png" width="500"/>
+</div>
+
 </Step>
 
 <Step title="如该用户不在您的团队（通讯录）中，可输入账号">
@@ -64,18 +62,18 @@ title: 添加新的托管用户
 
 <div className="w-full flex items-center justify-center"> 
 <CardGroup cols={2}>
-<img src="/images/user-guide/webadd1cn.png" width="500"/>
+<img src="/images/custody-guide/webadd1cn.png" width="500"/>
 <img src="/images/user-guide/webadd2cn.png" width="500"/>
 </CardGroup>
 </div>
 
      **途径二** 
      
-     登录ChainUp Custody App，点击头像，打开账户设置，选择【通讯录】功能。
+     登录ChainUp Custody App，点击头像，打开个人账户设置，选择【通讯录】功能。
 
 <div className="w-full flex items-center justify-center"> 
 <CardGroup cols={3}>
-<img src="/images/user-guide/add5cn.jpg" width="200"/>
+<img src="/images/custody-guide/personalcn.png" width="200"/>
 <img src="/images/user-guide/add6cn.jpg" width="200"/>
 <img src="/images/user-guide/add7cn.jpg" width="200"/>
 </CardGroup>
