@@ -16,7 +16,7 @@
   },
   "topbarLinks": [
     {
-      "name": "English",
+      "name": "英文",
       "url": "https://custodydocs-en.chainup.com/introduction/overview/chainup-custody"
     }
   ],
@@ -357,8 +357,8 @@
         {
           "group": "钱包交易",
           "pages": [
-            "help-center/manage-mpc/transaction/transfer"
-            
+            "help-center/manage-mpc/transaction/transfer",
+            "help-center/manage-mpc/transaction/BRC-20"
           ]
         },
         {
