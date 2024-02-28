@@ -237,7 +237,8 @@
                 "api-references/mpc-apis/co-signer/callback/web3"
               ]
             },
-            "api-references/mpc-apis/co-signer/sign-verify"
+            "api-references/mpc-apis/co-signer/sign-verify",
+            "api-references/mpc-apis/co-signer/deploy"
           ]
         },
         "api-references/mpc-apis/err-code"
