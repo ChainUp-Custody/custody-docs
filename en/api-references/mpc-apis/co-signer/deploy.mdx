@@ -2,7 +2,7 @@
 title: Co-Signer Deployment
 ---
 
-## I. Co-Signer Server Configuration Requirements
+## Co-Signer Server Configuration Requirements
 
 <Tip>
 **Minimum CPU Requirement: AMD64 or ARM64 architecture, 8 cores, 2.0 GHz**
@@ -12,7 +12,7 @@ title: Co-Signer Deployment
 **Disk: 256GB**
 </Tip>
 
-## II. Co-Signer Deployment Process
+## Co-Signer Deployment Process
 
 ### Obtain Co-Signer
 
@@ -275,7 +275,7 @@ echo ${STR_PASSWORD} | nohup ${project_path}/co-signer -server >>nohup.out 2>&1 
 
 
 
-## III. Add Co-Signer Server to the Whitelist
+## Add Co-Signer Server to the Whitelist
 
 ChainUp Custody needs access to the Co-Signer to create coequal private keys and generate addresses. Therefore, it's necessary to add the IP of the Co-Signer server to the security group or whitelist of the ChainUp Custody server. Below are the IP addresses for Custody:
 
