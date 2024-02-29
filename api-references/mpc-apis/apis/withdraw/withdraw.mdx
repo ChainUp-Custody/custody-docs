@@ -33,21 +33,6 @@ description: "发起一笔转账交易"
 <ParamField query="remark" type="string">
     转账备注，例：`mpc矿池`
 </ParamField>
-<ParamField query="fee_rate" type="string">
-   	BTC类型系列，费率；注意：不要和其他系列参数一起传入
-</ParamField>
-<ParamField query="size" type="string">
-   	BTC类型系列，字节大小；注意：不要和其他系列参数一起传入
-</ParamField>
-<ParamField query="gas_price" type="string">
-    ETH类型系列，gas推荐单价；注意：不要和其他系列参数一起传入
-</ParamField>
-<ParamField query="gas_limit" type="string">
-   	ETH类型系列，gas限制；注意：不要和其他系列参数一起传入
-</ParamField>
-<ParamField query="fee" type="string">
-    其他系列，如DOT\TRX，使用fee；注意：不要和其他系列参数一起传入；`gas_limit除外，如ATOM`
-</ParamField>
 <ParamField query="sign" type="string">
    	使用RSA私钥签名, 参与签名的参数: "request_id", "sub_wallet_id", "symbol", "address_to", "amount", "memo"。签名规则详见[Co-Signer交易签名验证](/api-references/mpc-apis/co-signer/sign-verify)
 </ParamField>
