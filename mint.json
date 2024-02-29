@@ -179,8 +179,6 @@
               "group": "转账",
               "pages": [
                 "api-references/mpc-apis/apis/withdraw/withdraw",
-                "api-references/mpc-apis/apis/withdraw/withdraw-fee",
-                "api-references/mpc-apis/apis/withdraw/withdraw-pending",
                 "api-references/mpc-apis/apis/withdraw/withdraw-list",
                 "api-references/mpc-apis/apis/withdraw/withdraw-sync-list"
               ]
