@@ -138,14 +138,14 @@ Options:
 
 
 *Explanation**
-1. -v: Get the version number of Co-Signer.
-2. -server: Parameter to start Co-Signer. If not used, it operates in tool mode.
-3. -conf: Specify the configuration file when starting Co-Signer. Default: ./conf/config.yaml
-4. -rsa-gen: Tool mode: Input the startup password to generate an encrypted private key and an unencrypted public key, stored in the keystore.json file.
-5. -rsa-pri-import: Tool mode: Input the startup password to import an existing RSA private key, generate an encrypted RSA private key file (import only the private key), stored in the keystore.json file.
-6. -verify-sign-pub-import: Import the public key used for verifying client signatures (sign). Stored in the keystore.json file. After import, Co-Signer will verify client signatures (sign) for withdrawals and web3 transactions. See the API documentation for sign generation details.
-7. -custody-pub-import: Tool mode: Input the startup password to import Custody's public key, stored in the keystore.json file.
-8. -keystore-gen: Tool mode: Used to unify the import of files such as seed.dat, rsaPri.pem, rsaPub.pem from v1.0.x versions into the keystore.json file.
+1. -v:                               Get the version number of Co-Signer.
+2. -server:                          Parameter to start Co-Signer. If not used, it operates in tool mode.
+3. -conf:                            Specify the configuration file when starting Co-Signer. Default: ./conf/config.yaml
+4. -rsa-gen:                         Tool mode: Input the startup password to generate an encrypted private key and an unencrypted public key, stored in the keystore.json file.
+5. -rsa-pri-import:                  Tool mode: Input the startup password to import an existing RSA private key, generate an encrypted RSA private key file (import only the private key), stored in the keystore.json file.
+6. -verify-sign-pub-import:          Import the public key used for verifying client signatures (sign). Stored in the keystore.json file. After import, Co-Signer will verify client signatures (sign) for withdrawals and web3 transactions. See the API documentation for sign generation details.
+7. -custody-pub-import:              Tool mode: Input the startup password to import Custody's public key, stored in the keystore.json file.
+8. -keystore-gen:                    Tool mode: Used to unify the import of files such as seed.dat, rsaPri.pem, rsaPub.pem from v1.0.x versions into the keystore.json file.
 
 ```
 
@@ -214,7 +214,7 @@ Options:
     <Step title="Configure Custody Public Key for Co-Signer">
     
     ```sh
-    ./co-signer -custody-pub-import 'Cusotdy RSA Public key'
+    ./co-signer -custody-pub-import 'Custody RSA Public key'
     ```
 
     After executing the above command, enter the Co-Signer startup password as prompted. After successful execution, the keystore.json file is generated/updated in the conf directory.
