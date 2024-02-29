@@ -1,22 +1,22 @@
 ---
-title: Create MPC Wallet
+title: Create MPC System
 ---
 
 ##  Introduction
 
-The MPC wallet consists of two types: the **main wallet** and **sub-wallets**.
+The MPC System consists of two types: the **Workspace** and **wallets**.
 
-A main wallet can create **multiple sub-wallets**.
+A workspace can create **multiple wallets**.
 
 ###  Use Cases
 
-1. The main wallet can be used for asset statistics for a specific business line, and sub-wallets can be allocated to **different users**.
+1. The workspace can be used for asset statistics for a specific business line, and wallets can be allocated to **different users**.
 
-2. The main wallet can be used for the overall asset statistics of a company, and sub-wallets can be allocated to **different business departments**.
+2. The workspace can be used for the overall asset statistics of a company, and wallets can be allocated to **different business departments**.
 
-##  Create Main Wallet
+##  Create Workspace
 
-After logging into the Custody App and switching to the MPC system, you can create an MPC main wallet based on your business needs.
+After logging into the Custody App and switching to the MPC system, you can create an MPC Workspace based on your business needs.
 
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={3}>
@@ -27,22 +27,22 @@ After logging into the Custody App and switching to the MPC system, you can crea
 </div>
 
 <Note>
-When you create an MPC main wallet, the system will automatically create an associated sub-wallet of type Web3.
+When you create an MPC Workspace, the system will automatically create an associated wallet of type Web3.
 </Note>
 
 <Warning>
 **Key Steps and Considerations:**
 
-- Design the main wallet name carefully. For differentiation of wallet purposes and convenient team management, the wallet name cannot be changed after creation.
+- Design the workspace name carefully. For differentiation of wallet purposes and convenient team management, the wallet name cannot be changed after creation.
   
 - If the default wallet configuration does not meet your requirements, you can contact your account manager or email for support (custody@chainup.com).
 
 - The private key password is crucial for encrypting and decrypting private key shares. Please manage it carefully.
 </Warning>
 
-##  Create Sub-Wallet
+##  Create wallet
 
-After creating the MPC main wallet and completing the backup of private key shares, you can proceed to create sub-wallets under the MPC main wallet.
+After creating the MPC workspace and completing the backup of private key shares, you can proceed to create wallets under the MPC workspace.
 
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={3}>
@@ -53,14 +53,14 @@ After creating the MPC main wallet and completing the backup of private key shar
 </div>
 
 <Steps>
-<Step title="Select Target Main Wallet">
-    Open the list of sub-wallets and begin creating a sub-wallet.
+<Step title="Select Target Workspace">
+    Open the list of wallets and begin creating a wallet.
 <Warning>
-Design the sub-wallet name carefully, as the name cannot be changed after creation.
+Design the wallet name carefully, as the name cannot be changed after creation.
 </Warning>
 </Step>
 <Step title="Create with Private Key Signature">
-    Enter the **private key password** for signing, and after successful signing, the sub-wallet is created.
+    Enter the **private key password** for signing, and after successful signing, the wallet is created.
 </Step>
 </Steps>
 

@@ -1,0 +1,23 @@
+---
+title: Signature Protection
+---
+
+## I. Function Introduction
+
+Welcome to using ChainUp Custody. We provide a robust signature protection feature for your MPC system, aiming to effectively control the transaction behaviors of users with equal-weight private keys (such as workspace administrators).
+
+By enabling this feature, the transaction signature operations of other private key holders, apart from the workspace creator, will be strictly controlled.
+
+
+## II. Control Scenarios
+**Transactions without approval flow**: Non-creator private key holders will not be able to independently initiate and sign **transactions without an approval process**.
+**Transactions with approval flow**: For transactions that already have an approval process, other private key holders will not be able to sign **transactions initiated and approved by themselves**.
+
+The main advantage of this strategy is to enhance internal control and effectively prevent potential risky behaviors. ChainUp Custody is committed to providing a safe and reliable management solution for your digital assets, letting you focus on your business development with peace of mind.
+
+## III. Operation Procedure
+<Tip>
+Only the workspace creator can operate this.
+</Tip>
+
+Open the Custody App, select the MPC system, go to the security function module, choose the policy engine, and enter the signature protection function. Here, you can select the corresponding workspace and decide whether to enable or disable this control function. Through simple operations, you can flexibly manage the signature protection function to meet your personalized needs for the security of the MPC system.
