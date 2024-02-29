@@ -90,8 +90,8 @@ chmod +x co-signer-(version)
             "env": [{"name":"HOME","fromHost":true},{"name":"PWD","value":"/data/co-signer/"}],
             "files": null
         }
-     
-</step>
+     ```
+</Step>
 
 <Step title="Re-sign and package to obtain a runnable SGX executable program">
     ```sh
@@ -147,6 +147,8 @@ Options:
 7. -custody-pub-import: Tool mode: Input the startup password to import Custody's public key, stored in the keystore.json file.
 8. -keystore-gen: Tool mode: Used to unify the import of files such as seed.dat, rsaPri.pem, rsaPub.pem from v1.0.x versions into the keystore.json file.
 
+```
+
 **Adding Configuration and Starting Co-Signer**
 
 <Steps>
@@ -157,7 +159,7 @@ Options:
         mkdir conf
         ```
 
-
+    </Step>
     <Step title="Add Configuration File in the conf Directory, File Name: config.yaml">
     Configuration file content as follows:
     ```yaml
