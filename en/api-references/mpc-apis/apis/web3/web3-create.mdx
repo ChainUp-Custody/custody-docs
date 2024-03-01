@@ -6,7 +6,7 @@ description: "Create a Web3 transaction."
 
 #### Request Parameters
 <ParamField query="sub_wallet_id" type="integer" required>
-    Sub wallet id
+    Wallet id
 </ParamField>
 <ParamField query="request_id" type="string" required>
    	The unique identifier for transferring coins
@@ -15,7 +15,7 @@ description: "Create a Web3 transaction."
     Main chain coin symbol, Unique identifier for the coin, e.g.：`USDTERC20`
 </ParamField>
 <ParamField query="from" type="string">
-    Transaction initiation address. In the case of multiple addresses in the sub-wallet, you can specify the transaction address. If not specified, the sub-wallet's "commonly used address" will be used by default.
+    Transaction initiation address. In the case of multiple addresses in the wallet, you can specify the transaction address. If not specified, the wallet's "commonly used address" will be used by default.
 </ParamField>
 <ParamField query="interactive_contract" type="string" required>
     Interactive contract

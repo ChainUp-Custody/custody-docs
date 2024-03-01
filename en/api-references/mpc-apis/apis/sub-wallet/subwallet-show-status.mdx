@@ -1,12 +1,12 @@
 ---
-title: Modify the Display Status
+title: Modify the Wallet Display Status
 api: POST /api/mpc/sub_wallet/change_show_status
-description: "The display of the specified sub-wallet in the App and web portal is essential for initiating transactions. If it is not displayed, transactions cannot be initiated in the app."
+description: "The display of the specified wallet in the App and web portal is essential for initiating transactions. If it is not displayed, transactions cannot be initiated in the app."
 ---
 
 #### Request Parameters
 <ParamField query="sub_wallet_ids" type="string" required>
-    A string of multiple sub-wallet ids, separated by commas
+    A string of multiple wallet ids, separated by commas
 </ParamField>
 <ParamField query="app_show_status" type="string" required>
     1 show ,2 don't show

@@ -1,7 +1,7 @@
 ---
 title: Sync Receiving record
 api: GET /api/mpc/billing/sync_deposit_list
-description: "Get all sub-wallet receiving records under the main wallet, and return up to 100 records"
+description: "Get all wallet receiving records under the workspace, and return up to 100 records"
 ---
 
 #### Request Parameters
@@ -15,7 +15,7 @@ description: "Get all sub-wallet receiving records under the main wallet, and re
 <ResponseField type="object[ ]">
     <Expandable title="object">
         <ResponseField name="id" type="integer">Receiving id</ResponseField>
-            <ResponseField name="sub_wallet_id" type="integer">Sub wallet id</ResponseField>
+            <ResponseField name="sub_wallet_id" type="integer">Wallet id</ResponseField>
             <ResponseField name="symbol" type="string">Unique identifier for the coin, used for transfers, e.g.：`USDTERC20`</ResponseField>
             <ResponseField name="created_at" type="long">Creation timestamp</ResponseField>
             <ResponseField name="updated_at" type="long">Modified timestamp</ResponseField>
