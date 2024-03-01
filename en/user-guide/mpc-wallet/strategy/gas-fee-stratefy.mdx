@@ -4,8 +4,6 @@ title: Miner (Gas) Fee Policy
 
 ## I. Function Introduction
 
-ChainUp Custody's strategy engine provides a miner fee policy for your MPC system to prevent private key holders from setting excessively high custom miner fees due to malicious actions or errors, leading to financial loss.
-
 ChainUp Custody's strategy engine will automatically apply your defined miner fee policy to all types of transactions. When these transactions require manual setting of miner fees, it will control according to the policy, preventing the manual entry of excessively high transaction miner fees.
 
 <Warning>
@@ -28,8 +26,41 @@ Management of transaction range: Includes all asset transactions, whether they a
 Only the workspace creator can operate this.
 </Tip>
 
-Open the Custody App, click on the MPC system, go to the security function module, choose the strategy engine, and then enter the function page. Here, you can pick an appropriate workspace and decide whether to enable or disable this control function.
+<Steps>
+<Step title="Login and Open Miner Fee Policy">
+    Log in to the Custody APP's MPC system, navigate to the "Security" - "Strategy Engine" function.
 
-Once you choose to enable it, you will have the right to choose the limit for controlling custom miner fees to prevent excessively high transaction miner fees due to errors or internal malicious actions, thereby avoiding asset loss.
+<div className="w-full flex items-center justify-center">
+        <img src="/images/user-guide/safe.jpg" width="200"/>
+</div>
 
-Through simple steps, you can easily and flexibly manage the signature protection function to meet your personalized needs for the security of the MPC system.
+</Step>
+<Step title="Choose the Workspace for the Policy">
+   In the strategy engine, choose the MPC workspace you want to apply the miner fee policy to.
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/user-guide/safecn.png" width="200"/>
+        <img src="/images/user-guide/workspacelist.jpeg" width="200"/>
+    </CardGroup>
+</div>
+
+</Step>
+<Step title="Add and Configure Miner Fee Policy">
+In this step, you can define the limit for controlling custom miner fees to prevent excessively high transaction miner fees due to errors or internal malicious actions, thereby avoiding asset loss.
+
+<div className="w-full flex items-center justify-center">
+        <img src="/images/user-guide/minerfeesetting.jpeg" width="200"/>
+</div>
+
+<Warning>
+**Key Steps and Points to Note**
+
+Ensure to set the miner fee limit appropriately to balance between transaction speed and cost efficiency.
+
+Review the miner fee policy regularly to adapt to the changing network conditions.
+</Warning>
+
+</Step>
+
+</Steps>
