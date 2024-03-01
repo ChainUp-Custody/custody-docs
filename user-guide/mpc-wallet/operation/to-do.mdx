@@ -6,17 +6,14 @@ title: 工作流
 
 您可以查看并处理与您账户相关的待办任务。您的待办任务类型将取决于您在选定的工作站中的账户角色。
 
-## II. 操作流程
+## II. 工作流：待办
 
-<Steps>
-<Step title="查看待办信息">
-在**APP**，您可以通过底部导航进入【工作流】页面，查看并处理您管理的全部工作站待办信息。
+### 查看待办信息
+
+在**APP**，您可以通过底部导航进入【工作流】页面，选择【待办】模块，查看并处理您需要处理的全部工作站待办信息。
+
 <div className="w-full flex items-center justify-center">
-    <CardGroup cols={3}>
-    <img src="/images/user-guide/todo1cn.png" width="200"/>
-    <img src="/images/user-guide/todo2cn.png" width="200"/>
-    <img src="/images/user-guide/todo3cn.png" width="200"/>
-    </CardGroup>
+    <img src="/images/user-guide/todoappcn.jpeg" width="400"/>
 </div>
 
 <Tip>
@@ -25,23 +22,21 @@ title: 工作流
 
 在**Web 页面**，点击左侧菜单栏的“工作流”模块，跳转至该功能页。
 <div className="w-full flex items-center justify-center">
-    <img src="/images/user-guide/todo4cn.png" />
+    <img src="/images/user-guide/todowebcn.jpeg" width="400"/>
 </div>
+
 <Tip>
 您只可以查看，选择，操作当前所选工作站下与您账户关联的待办任务。
 </Tip>
 
-</Step>
-<Step title="处理运营代办">
+### 处理运营代办
 您可操作的待办事项类型与您在选定的工作站中的账户角色有关。
 
 **审批成员** 可以进行交易审批，同意或拒绝交易，确认或取消归集与加油站配置。
 
-**工作站创建者和管理员**可以进行取消交易，交易签名，交易加速等操作。
+**工作站创建者和管理员**可以进行取消交易，交易签名，交易加速等操作。**工作站管理员**还可以在这个模块接收同权私钥。
 
-<div className="w-full flex items-center justify-center">
-    <img src="/images/user-guide/todo5cn.png" />
-</div>
+
 
 
 <Warning>
@@ -49,10 +44,31 @@ title: 工作流
 1. 在MPC系统平台操作时，交易审批需要通过GA验证。
 2. 对于任何需要私钥签名的操作，您都可以使用本地已备份私钥的ChainUp Custody App来扫描二维码。
 </Warning>
-</Step>
-</Steps>
 
-## III. 常见问题
+
+
+## III. 工作流：已办
+
+### 查看已办信息
+
+您可以在App或Web系统进入【工作流】页面，选择【已办】模块，查看您历史处理过的任务记录。
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/doneappcn.jpeg" width="400"/>
+</div>
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/donewebcn.jpeg" width="400"/>
+</div>
+
+<Tip>
+交易类的已办，比如您处理过的交易审批，交易签名，您可以点击已办，查看对应交易的最新状态。 
+</Tip>
+
+
+
+
+
+## IV. 常见问题
 
 <Accordion title="我如何查看其他工作站的工作流？">
 您可点击页面顶部的MPC按钮，或是点击左侧工作站切换按钮，切换其他工作站后，再进入该工作站的运营待办模块进行查看。
