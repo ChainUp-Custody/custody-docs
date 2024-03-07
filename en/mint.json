@@ -84,7 +84,7 @@
       ]
     },
     {
-      "group": "MPC Wallet",
+      "group": "MPC Workspace",
       "pages": [
         "quick-start/mpc-wallet/download-app",
         "quick-start/mpc-wallet/create-account",
@@ -118,7 +118,7 @@
       "group": "Compliance Services",
       "pages": [
         {
-          "group": "For MPC Wallet",
+          "group": "For MPC Workspace",
           "pages": [
             "quick-start/compliance-custody-mpc/open-mpc",
             "quick-start/compliance-custody-mpc/strategy-mpc"
@@ -141,7 +141,7 @@
       ]
     },
     {
-      "group": "MPC Wallet APIs",
+      "group": "MPC Workspace APIs",
       "pages": [
         {
           "group": "Integration Guide",
@@ -157,7 +157,7 @@
           "pages": [
             "api-references/mpc-apis/apis/description",
             {
-              "group": "Main Wallet",
+              "group": "Workspace",
               "pages": [
                 "api-references/mpc-apis/apis/wallet/open-coin",
                 "api-references/mpc-apis/apis/wallet/coin-list",
@@ -165,7 +165,7 @@
               ]
             },
             {
-              "group": "Sub-wallet",
+              "group": "Wallet",
               "pages": [
                 "api-references/mpc-apis/apis/sub-wallet/subwallet-create",
                 "api-references/mpc-apis/apis/sub-wallet/subwallet-create-address",
@@ -333,7 +333,7 @@
       ]
     },
     {
-      "group": "Managing MPC Wallet",
+      "group": "Managing MPC System",
       "pages": [
         {
           "group": "Team Members",
@@ -343,7 +343,7 @@
           ]
         },
         {
-          "group": "My Wallet",
+          "group": "My Workspace",
           "pages": [
             "help-center/manage-mpc/my-wallet/framework",
             "help-center/manage-mpc/my-wallet/address-format",
