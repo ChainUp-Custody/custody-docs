@@ -2,11 +2,11 @@
 title: Preparation
 ---
 
-Before system development, the wallet needs to complete the following preparations.
+Before system development, the workspace needs to complete the following preparations.
 
 ## Create API
 
-The wallet creator should log in to the [ChainUp Console](https://custody.chainup.com/) System and create an API on the API Management page.
+The workspace creator should log in to the [ChainUp Console](https://custody.chainup.com/) System and create an API on the API Management page.
 
 <div className="w-full flex items-center justify-center">
     <img src="/images/apis/mpc-api1_en.png" width="600"/>
@@ -67,7 +67,7 @@ Co-Signer provides a callback handler, which is an optional component:
 ### Create Co-Signer Private Key Shares
 After configuring API and Co-Signer programs, create private key shares for Co-Signer in the app.
 
-The **wallet creator** can create Co-Signer private key shares on the MPC Wallet **Security - Co-Signer** page. The created Co-Signer private key shares will be encrypted and synchronized to the Co-Signer server using the Co-Signer RSA public key configured by the client on the ChainUp platform.
+The **workspace creator** can create Co-Signer private key shares on the MPC workspace **Security - Co-Signer** page. The created Co-Signer private key shares will be encrypted and synchronized to the Co-Signer server using the Co-Signer RSA public key configured by the client on the ChainUp platform.
 
 <Warning>
 **Notes**
@@ -83,24 +83,24 @@ To enhance assets security and utilization, some main chains need to be configur
 
 Login to the [ChainUp management](https://custody.chainup.com/) platform and create it on the Co-Signer page;
 
-* Wallet members (`any role`) set the sweeping assets to the omnibus wallet and gas station.
-> Only sub-wallets displayed in the app can be selected. For efficient assets use, it is recommended to set the `omnibus wallet` and `gas station` to different wallets (due to the nature of single-execution transfer for account-type main chains, if configured with the same wallet, the withdrawal transaction(transfer) will wait until the miner fee is supplemented when supplementing the miner fee for the address).
+* workspace members (`any role`) set the sweeping assets to the omnibus wallet and gas station.
+> Only wallets displayed in the app can be selected. For efficient assets use, it is recommended to set the `omnibus wallet` and `gas station` to different wallets (due to the nature of single-execution transfer for account-type main chains, if configured with the same wallet, the withdrawal transaction(transfer) will wait until the miner fee is supplemented when supplementing the miner fee for the address).
 <div className="w-full flex items-center justify-center">
     <img src="/images/apis/mpc-auto-collect1_en.png" width="600"/>
 </div>
 
-* The `wallet creator` approves the signature in the app. Encrypt the set wallets with the wallet's private key to ensure the correct address for auto sweep.
+* The `workspace creator` approves the signature in the app. Encrypt the set workspaces with the workspace's private key to ensure the correct address for auto sweep.
 <div className="w-full flex items-center justify-center">
     <img src="/images/apis/mpc-auto-collect2_en.png" width="200"/>
 </div>
 
-* Wallet members (`any role`) configure sub-wallet for auto sweep, applied scope for sweeping, assets for sweeping, auto fueling rules, and other information.
+* workspace members (`any role`) configure wallet for auto sweep, applied scope for sweeping, assets for sweeping, auto fueling rules, and other information.
 <div className="w-full flex items-center justify-center">
     <img src="/images/apis/mpc-auto-collect3_en.png" width="600"/>
 </div>
 
 ### Applied Scope
-Configure the sub-wallets for which assets should be swept.
+Configure the wallets for which assets should be swept.
 
 ### Auto Sweep Strategy
 Configure the currencies for which assets should be swept, along with the sweeping threshold. Assets will be automatically triggered when the threshold is exceeded and the miner fee is set below the configured level. Users can customize the sweeping threshold and maximum miner fee through the Console or API.
@@ -108,7 +108,7 @@ Configure the currencies for which assets should be swept, along with the sweepi
 ### Refueling Strategy
 Configure the replenishment of miner fees for the auto sweep. Since sweeping operation requires the use of the main coin as a miner fee, when the token in the address meets the auto sweep strategy and the address does not have the main coin, replenishment of miner fees will be triggered from the refueling wallet to the address to be swept. The quantity of replenished miner fees can be customized, and it is essential to ensure that the replenished miner fee is lower than the sweeping threshold.
 
-Once the strategy is configured, the system runs automatically, and users can view asset changes in the set wallet.
+Once the strategy is configured, the system runs automatically, and users can view asset changes in the set workspace.
 
 <Tip>
 It is recommended for clients to configure insufficient miner fee alerts to replenish in a timely manner and avoid affecting user transfers (withdrawals).

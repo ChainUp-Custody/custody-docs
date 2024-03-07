@@ -13,7 +13,7 @@ title: 配置全币种归集规则
 <Note> 
 ### 使用功能前提
 
-请确保主钱包没有过期，过期情况会导致所有钱包相关业务功能无法使用。
+请确保工作站没有过期，过期情况会导致所有钱包相关业务功能无法使用。
 
 确保已完成API和Co-Signer的配置，以确保API的正常运行，从而使全币种归集功能能够顺利执行。
 
@@ -42,11 +42,11 @@ title: 配置全币种归集规则
     </CardGroup>
 </div>
 <Tip>
-共管成员创建配置后，钱包创建者会收到一条待办任务，需要签名确认，配置才可生效。
+共管成员创建配置后，工作站创建者会收到一条待办任务，需要签名确认，配置才可生效。
 </Tip>
 </Step>
 <Step title="决定归集应用范围">
-   决定哪些子钱包的资产会进行归集。
+   决定哪些钱包的资产会进行归集。
 
    <div className="w-full flex items-center justify-center">
     <img src="/images/help-center/co-signer-collect3_cn.PNG" width="600"/>
@@ -58,7 +58,7 @@ title: 配置全币种归集规则
 
    归集钱包和加油站可以包含在归集应用范围内。
 
-   若您的子钱包拥有多条需归集资产的地址，则钱包所有地址资产都将属于归集应用范围。
+   若您的钱包拥有多条需归集资产的地址，则钱包所有地址资产都将属于归集应用范围。
    </Warning>
 
 </Step>
@@ -76,7 +76,7 @@ title: 配置全币种归集规则
 
 </Step>
 <Step title="配置加油策略">
-加油策略将决定加油站在什么情况下将矿工费补充至子钱包来支持归集。
+加油策略将决定加油站在什么情况下将矿工费补充至钱包来支持归集。
 <div className="w-full flex items-center justify-center">
     <img src="/images/help-center/co-signer-collect5_cn.PNG" width="600"/>
 </div>
@@ -121,9 +121,17 @@ title: 配置全币种归集规则
 
 <Accordion title="全币种归集功能支持的资产类型有哪些？">
 ChainUp Custody支持Account类型的主链币和相关代币进行归集，Account类型的主链包括且不限于以下几种：
-ETH（Ethereum）, BNB（Binance Smart Chain）,TRX（TRON）,DOT（Polkadot）
+
+Ethereum
+
+Binance Smart Chain
+
+TRON
+
+Polkadot
+
 </Accordion>
 
 <Accordion title="哪类MPC钱包支持全币种归集功能？">
-ChainUp Custody支持所有类型的MPC子钱包进行自动归集。
+ChainUp Custody支持所有类型的MPC钱包进行自动归集。
 </Accordion>

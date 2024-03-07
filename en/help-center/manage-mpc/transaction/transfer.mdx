@@ -1,5 +1,5 @@
 ---
-title: MPC Wallet Transactions
+title: MPC Workspace Transactions
 ---
 
 ##  Overview
@@ -23,7 +23,7 @@ When digital currency is transferred to your address from another address, this 
 
 **1. KYT Verification Pending Status**
 
-After initiating a withdrawal, if you have opened and configured withdrawal addresses and KYT (Know Your Transaction) for the currency, the withdrawal enters the "KYT Verification Pending" status. The MPC wallet generates a KYT verification order to verify the KYT risk/service timeout of the withdrawal transaction. After manual confirmation, it enters the withdrawal approval stage.
+After initiating a withdrawal, if you have opened and configured withdrawal addresses and KYT (Know Your Transaction) for the currency, the withdrawal enters the "KYT Verification Pending" status. The MPC Workspace generates a KYT verification order to verify the KYT risk/service timeout of the withdrawal transaction. After manual confirmation, it enters the withdrawal approval stage.
 
 **2. Withdrawal Approval Process**
 
@@ -31,7 +31,7 @@ If withdrawal wallets and currencies are configured with approval policies, it e
 
 **3. Signature Process**
 
-All MPC wallets go through the signature process. In this process, the private key holder signs the transaction using the local private key fragment in conjunction with the server's private key fragment. The status is "Awaiting Signature," and rejection of the signature ends the withdrawal with a "Rejected" status, while approval proceeds to the broadcast transaction process.
+All MPC Workspaces go through the signature process. In this process, the private key holder signs the transaction using the local private key fragment in conjunction with the server's private key fragment. The status is "Awaiting Signature," and rejection of the signature ends the withdrawal with a "Rejected" status, while approval proceeds to the broadcast transaction process.
 
 **4. Broadcast Transaction Process**
 

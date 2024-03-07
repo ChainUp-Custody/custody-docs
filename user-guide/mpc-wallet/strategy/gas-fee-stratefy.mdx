@@ -1,0 +1,65 @@
+---
+title: 矿工费策略
+---
+
+## I. 功能简介
+
+ChainUp Custody的策略引擎为您的MPC系统提供了矿工费策略，以防止私钥持有人出于恶意或误操作而设置过高的自定义矿工费，从而导致资金损失
+
+
+ChainUp Custody策略引擎会自动将您定义的矿工费策略应用于所有类型的交易。当这些交易需要人工设置矿工费时将会根据策略进行相关的控制，阻止人为填写过高的交易矿工费。
+
+
+<Warning>
+**关键步骤和注意事项**
+
+我们强调正确实施转账策略的重要性。您的转账策略是资产保护的关键层，请您根据业务需求进行定制。
+
+若您开启了矿工费策略，所有资产交易，包括API发起的交易，创建者发起的交易，都会受到矿工费策略的控制。
+
+</Warning>
+
+## II. 管理场景
+管理交易类型：覆盖所有交易，涵盖手动提币和API提币。
+
+管理交易范围：包含所有资产的交易，无论是加密货币还是NFT。
+
+## III. 操作流程
+<Tip>
+只有工作站创建者才可操作。
+</Tip>
+
+<Steps>
+<Step title="登录并打开矿工费策略">
+    登录Custody APP的MPC系统，导航到 【安全】 - 【策略引擎】 功能。
+
+<div className="w-full flex items-center justify-center">
+  <img src="/images/user-guide/safecn.png" width="200"/>
+</div>
+
+</Step>
+<Step title="选择适用策略的工作站">
+   在策略引擎中，选择你想应用矿工费策略的MPC工作站。
+
+<div className="w-full flex items-center justify-center">
+<img src="/images/user-guide/workspacelist.jpeg" width="200"/>
+</div>
+
+</Step>
+<Step title="添加和配置矿工费策略">
+在这个步骤中，你可以定义控制自定义矿工费的限额，以防止因误操作或内部恶意行为而导致交易矿工费过高，从而避免资产损失。
+
+<div className="w-full flex items-center justify-center">
+        <img src="/images/user-guide/minerfeesetting.jpeg" width="200"/>
+</div>
+<Warning>
+**关键步骤与注意事项**
+
+确保适当地设置矿工费限额，以在交易速度和成本效益之间取得平衡。
+
+定期检查矿工费策略，以适应变化的网络条件。
+</Warning>
+
+</Step>
+
+</Steps>

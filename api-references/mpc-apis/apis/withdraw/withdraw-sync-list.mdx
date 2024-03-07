@@ -1,7 +1,7 @@
 ---
 title: 同步转账记录
 api: GET /api/mpc/billing/sync_withdraw_list
-description: "获取钱包下所有子钱包转账记录，最多返回100条"
+description: "获取钱包下所有钱包转账记录，最多返回100条"
 ---
 
 #### 请求参数数据结构
@@ -16,7 +16,7 @@ description: "获取钱包下所有子钱包转账记录，最多返回100条"
     <Expandable title="object">
         <ResponseField name="id" type="integer">转账id</ResponseField>
         <ResponseField name="request_id" type="string">转账唯一标识</ResponseField>
-        <ResponseField name="sub_wallet_id" type="integer">子钱包id</ResponseField>
+        <ResponseField name="sub_wallet_id" type="integer">钱包id</ResponseField>
         <ResponseField name="symbol" type="string">币种唯一标识，转账时使用，例：`USDTERC20`</ResponseField>
         <ResponseField name="amount" type="string">转账金额</ResponseField>
         <ResponseField name="fee_symbol" type="string">矿工费币种，例：ETH</ResponseField>
