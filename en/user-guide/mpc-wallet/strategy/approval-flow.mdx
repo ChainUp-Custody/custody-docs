@@ -1,38 +1,38 @@
 ---
-title: Strategy Engine (Transfer Policy)
+title: Strategy Engine 
 ---
 
 ## Function Introduction
 
 ChainUp Custody's strategy engine provides a powerful transaction rule customization function for your MPC system, used for precise management and control of outgoing transactions. This flexible system allows you to define a series of transaction rules according to personalized needs, ensuring the security and effective circulation of assets. These rules can control the transfer approval process of specific assets and clarify the users who can approve transactions.
 
-ChainUp Custody's strategy engine will automatically apply your defined transfer policy to all transfer transactions manually created through the Web or App. Once a member initiates a transfer request, the relevant transfer policy will be acted upon by the approver according to the rules you set:
+ChainUp Custody's strategy engine will automatically apply your defined transfer strategy to all transfer transactions manually created through the Web or App. Once a member initiates a transfer request, the relevant transfer strategy will be acted upon by the approver according to the rules you set:
 
 <Warning>
 **Key Steps and Points to Note**
 
-We emphasize the importance of correctly implementing transfer policies. Your transfer policy is a key layer of asset protection; please customize it according to your business needs.
+We emphasize the importance of correctly implementing transfer policies. Your transfer strategy is a key layer of asset protection; please customize it according to your business needs.
 
-Transactions initiated by the MPC workspace creator are not managed by the transfer policy.
+Transactions initiated by the MPC workspace creator are not managed by the transfer strategy.
 
-Transactions initiated via API are not managed by the transfer policy.
+Transactions initiated via API are not managed by the transfer strategy.
 </Warning>
 
 ## Operation Procedure
 
-### Customize Your Transfer Policy
+### Customize Your Transfer Strategy
 
 <Steps>
-<Step title="Login and Open Transfer Policy">
-    Log in to the Custody APP's MPC system, open the "Security" - "Transfer Policy" function.
+<Step title="Login and Open Transfer Strategy">
+    Log in to the Custody APP's MPC system, open the "Security" - "Transfer Strategy" function.
 
 <div className="w-full flex items-center justify-center">
         <img src="/images/user-guide/safe.jpg" width="200"/>
 </div>
 
 </Step>
-<Step title="Choose the Wallet for the Policy">
-   In the transfer policy, choose the MPC wallet you want to apply the transfer policy to.
+<Step title="Choose the Wallet for the Strategy">
+   In the transfer strategy, choose the MPC wallet you want to apply the transfer strategy to.
 
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
@@ -42,10 +42,10 @@ Transactions initiated via API are not managed by the transfer policy.
 </div>
 
 </Step>
-<Step title="Add and Configure Transfer Policy">
-In this step, you can define the following parameters of the transfer policy:
+<Step title="Add and Configure Transfer Strategy">
+In this step, you can define the following parameters of the transfer strategy:
 
-1. **Policy Name**: Name your policy for easy search and management in the future.
+1. **Strategy Name**: Name your strategy for easy search and management in the future.
 2. **Approvers and Approval Threshold**: Select the wallet's team members as approval members and set the approval threshold.
 3. **Coin for Approval**: Choose the transfer coin that needs approval.
 
@@ -56,9 +56,9 @@ In this step, you can define the following parameters of the transfer policy:
 <Warning>
 **Key Steps and Points to Note**
 
-A wallet can create multiple transfer policies, but each asset's transfer policy must be unique.
+A wallet can create multiple transfer policies, but each asset's transfer Strategy must be unique.
 
-If an asset has never edited a transfer policy, the asset's transaction defaults to requiring the workspace creator for the final signature confirmation.
+If an asset has never edited a transfer Strategy, the asset's transaction defaults to requiring the workspace creator for the final signature confirmation.
 </Warning>
 
 </Step>
@@ -105,7 +105,7 @@ On the **Web Page**, you can select the wallet for transfer.
 
 <Step title="Approval Members Approve">
 
-The approval members of this transfer policy will receive approval prompts in "To Do". Approval members can perform approval operations.
+The approval members of this transfer Strategy will receive approval prompts in "To Do". Approval members can perform approval operations.
 
 If the member initiating the transfer is an approval member, then the approval member's approval status is defaulted as passed.
 
