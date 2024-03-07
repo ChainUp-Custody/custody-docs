@@ -1,4 +1,4 @@
-{
+  {
   "name": "ChainUp Custody",
   "logo": {
     "dark": "/logo/chainupcustody-logo.svg",
@@ -397,7 +397,7 @@
       ]
     },
  {
-      "group": "MPC Wallet User Guide",
+      "group": "MPC Workspace User Guide",
       "pages": [
         {
           "group": "Account",
@@ -410,11 +410,12 @@
           ]
         },
         {
-          "group": "Wallet",
+          "group": "Workspace",
           "pages": [
             "user-guide/mpc-wallet/wallet/create-wallet", 
             "user-guide/mpc-wallet/wallet/manage-wallet",
-            "user-guide/mpc-wallet/wallet/add-user"
+            "user-guide/mpc-wallet/wallet/add-user",
+            "user-guide/mpc-wallet/wallet/become-admin"
           ]
         },
         {
@@ -471,7 +472,9 @@
     {
       "group": "Strategy Engine",
       "pages":[
-        "user-guide/mpc-wallet/strategy/approval-flow"
+        "user-guide/mpc-wallet/strategy/approval-flow",
+        "user-guide/mpc-wallet/strategy/gas-fee-stratefy",
+        "user-guide/mpc-wallet/strategy/sign-protect"
       ]
     },
     {
