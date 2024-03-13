@@ -248,7 +248,7 @@ read STR_PASSWORD
 stty echo
 
 
-if [[ ! -n "$STR_PASSWORD" ]]; then
+if [ ! -n "$STR_PASSWORD" ]; then
     echo "Password cannot be null"
     exit 1
 fi

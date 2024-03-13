@@ -28,7 +28,8 @@ description: "Get a list of the currencies of the merchant"
         <ResponseField name="name" type="string">Full name of coin</ResponseField>
         <ResponseField name="base_symbol" type="string">Main Chain Coin Name</ResponseField>
         <ResponseField name="contract_address" type="string">Contract Address</ResponseField>
-        <ResponseField name="deposit_confirmation" type="string">Deposit confirmation</ResponseField>
+        <ResponseField name="deposit_confirmation" type="string">Deposit Received</ResponseField>
+        <ResponseField name="withdraw_confirmation" type="string">Withdrawal Available</ResponseField>
         <ResponseField name="explorer" type="string">Explorer</ResponseField>
         <ResponseField name="address_regex" type="string">Address regex</ResponseField>
         <ResponseField name="address_tag_regex" type="string">Address tag regex</ResponseField>
@@ -37,6 +38,7 @@ description: "Get a list of the currencies of the merchant"
         <ResponseField name="address_link" type="string">Prefix for the block explorer address query link.</ResponseField>
         <ResponseField name="txid_link" type="string">Prefix for the block explorer address query link.</ResponseField>
         <ResponseField name="merge_address_symbol" type="string">Merged address main chain coin, Unique identifier for the coin</ResponseField>
+        <ResponseField name="margin_symbol" type="string">Is it a margin coin</ResponseField>
     </Expandable>
 </ResponseField>
 
