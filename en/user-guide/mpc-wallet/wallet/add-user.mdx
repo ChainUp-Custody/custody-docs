@@ -1,104 +1,85 @@
 ---
-title: Add New MPC Wallet Member
+title: Adding New MPC Workspace Users
 ---
 
-##  Function Introduction
+## Function Introduction
 
-<Note>Only the wallet private key holder can add/delete wallet members.</Note>
-In the MPC wallet, you can add new users and assign them different roles. The system currently has three types of roles:
+<Note>
+Only the workspace creator can add/delete workspace members.
+</Note>
 
-- **Administrator**: The member who created the wallet is the default wallet administrator, possessing all wallet permissions.
-- **Approval Member**: After the administrator adds ordinary members to the approval strategy, they automatically become approval members, possessing permissions such as initiating receipts, transfers, approvals, etc.
-- **Ordinary Member**: The members added to the wallet by the administrator are default ordinary members; they have basic permissions such as initiating receipts and transfers.
+In the MPC workspace, you can add new users and assign them different roles. The system currently has three types of roles:
+- **Workspace Creator**: The member who creates the workspace defaults as the creator (Owner), with the highest authority;
+- **Workspace Admin**: The creator can add members from the contact list to the workspace and assign them as workspace admins. Admins have the authority to initiate receipts, transfers for all wallets under the workspace, and will have the workspace co-privilege private key to sign and accelerate transfer transactions;
+<Tip> 
+Currently, workspace admins temporarily cannot sign for private key operation behaviors other than manual transfer signatures and accelerations.
+</Tip>
+- **Ordinary Members**: Members added to the wallet by the creator default as ordinary members; they have basic permissions such as initiating receipts, transfers;
 
-You can refer to the [MPC User Role Introduction](/help-center/manage-mpc/user-setting/user-role) for specific member role descriptions.
+For specific member role descriptions, you can refer to [MPC User Role Introduction](/help-center/manage-mpc/user-setting/user-role)
 
 <Tip>
-**To become an MPC wallet member, you must meet the following conditions:**
+**To become an MPC workspace member, you must meet the following requirements:**
 1. Have a ChainUp Custody account
-2. Complete KYC verification
-3. Bind and enable Google Authenticator
+2. Complete KYC authentication
+3. Bind and activate Google Authenticator
 </Tip>
 
-##  Operation Procedure
+## Operation Procedure
 
 <Steps>
-<Step title="Select MPC Sub-Wallet">
-   Choose the MPC sub-wallet you want to manage.
-
-<div className="w-full flex items-center justify-center"> 
-<CardGroup cols={2}>
-<img src="/images/user-guide/user1.png" width="200"/>
-<img src="/images/user-guide/user2.png" width="200"/>
-</CardGroup>
-</div>
+<Step title="Adding Workspace Members">
+   Click on the account avatar, open the workspace member function, click the add button, select members from the contact list, or directly enter the account to add.
 </Step>
 
-<Step title="Add Members as Ordinary Members of the MPC Wallet">
-    Select users from your contact list and add them as ordinary members of the MPC sub-wallet.
-<div className="w-full flex items-center justify-center"> 
-<img src="/images/user-guide/user3.png" width="200"/>
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/user-guide/account.png" width="200"/>
+        <img src="/images/user-guide/userlist.jpg" width="200"/>
+    </CardGroup>
 </div>
-<Tip>
-**Please note when inviting ordinary members to the MPC wallet:**
 
-When ordinary members join the transaction approval flow, they are automatically upgraded to approvers. You can refer to [Transfer Strategy](/help-center/manage-mpc/strategy/transfer) for adding transaction approval flow.
-</Tip>
-</Step>
-
-<Step title="Add New Contacts">
-    If the user is not in your team (contact list), you can enter the account registered with the Custody wallet (mobile number/email).
-    <div className="w-full flex items-center justify-center"> 
-<img src="/images/user-guide/user4.png" width="200"/>
-</div>
-</Step>
-
-
-<Step title="Manage All Team Members Using the Contact List Function">
-You can add or delete team members, modify nicknames, and view the role details of the member in different wallets.
-   
-   
-    **Method One** 
+<Step title="Assigning Roles to New Members">
+    You can assign one type of authority to users: 1. Workspace role 2. Wallet role
     
-    Open the ChainUp Custody PC platform in your browser, use the 【Custody】APP, scan the QR code on the homepage or cloud wallet 【Scan】 function to log in, and click on the list page 【Contact List】.
+    If you choose the workspace role, you can assign them as workspace admins, which will require you to send a co-privilege private key to them.
 
-<div className="w-full flex items-center justify-center"> 
-<CardGroup cols={2}>
-<img src="/images/user-guide/user5.png" width="500"/>
-<img src="/images/user-guide/user6.png" width="500"/>
-</CardGroup>
+    If you choose the wallet role, you can assign them as ordinary members of a specific wallet.
+  
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+        <img src="/images/user-guide/choseright.jpg" width="200"/>
+        <img src="/images/user-guide/userdetail.jpg" width="200"/>
+        <img src="/images/user-guide/userright.jpg" width="200"/>
+    </CardGroup>
 </div>
 
-     **Method Two** 
-     
-     Log in to the ChainUp Custody App, click on your avatar, open account settings, and select the 【Contact List】 function.
 
-<div className="w-full flex items-center justify-center"> 
-<CardGroup cols={3}>
-<img src="/images/user-guide/user7.png" width="200"/>
-<img src="/images/user-guide/user8.png" width="200"/>
-<img src="/images/user-guide/user9.png" width="200"/>
-</CardGroup>
-</div>
+<Tip>
+**Note when assigning the workspace admin role:**
+The creator owns the locally backed-up workspace private key fragment and can obtain the RSA public key of the other party's account.
+</Tip>
 
 </Step>
 </Steps>
 
-##  Frequently Asked Questions
 
-<Accordion title="How to change a user's role?">
-The administrator can modify the user's role in the wallet settings. Please note that only the creator of the wallet can modify user roles.
+## III. Frequently Asked Questions
+
+<Accordion title="How can I change a user's role?">
+The creator can view the user's permission details in the workspace members and modify the user's role. Please note, if the member is part of an approval flow of a certain wallet, they will automatically have co-management authority of that wallet and it cannot be canceled.
 </Accordion>
 
-<Accordion title="Can I add users if I am not the creator of the wallet?">
-Sorry, only the creator of the wallet can add users. If you are not the creator of the wallet, you cannot add new users.
+<Accordion title="Can I add users if I am not the workspace creator?">
+Sorry, only the workspace creator can add users.
 </Accordion>
 
-<Accordion title="Can I set multiple administrators in one wallet?">
-Sorry, each wallet can only have one administrator. The administrator is the user who created the wallet, and they have all the permissions of the wallet.
+<Accordion title="Are there any role restrictions in the workspace?">
+The total number of members in your workspace is limited to the service package you purchased, but there are no restrictions on specific roles.
 </Accordion>
 
-<Accordion title="If a user is deleted, can they be added again?">
-Yes, if a user is deleted, they can be added again. Please note that only the creator of the wallet can add users.
+<Accordion title="How does a workspace admin manage their private key?">
+The current system does not support the workspace admin to back up and restore their private key. If the private key fragment is lost due to reasons such as changing devices, please contact the workspace creator to resend it (Select the corresponding workspace in "Workspace Members", check your specific permissions to operate).
 </Accordion>
 

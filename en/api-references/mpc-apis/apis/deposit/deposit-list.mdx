@@ -1,7 +1,7 @@
 ---
 title: Get Receiving records
 api: GET /api/mpc/billing/deposit_list
-description: "Get all sub-wallet receiving records under the main wallet, and return up to 100 records"
+description: "Get all wallet receiving records under the workspace, and return up to 100 records"
 ---
 
 #### Request Parameters
@@ -15,7 +15,7 @@ description: "Get all sub-wallet receiving records under the main wallet, and re
 <ResponseField type="object[ ]">
     <Expandable title="object">
         <ResponseField name="id" type="integer">Receiving id</ResponseField>
-        <ResponseField name="sub_wallet_id" type="integer">Sub wallet id</ResponseField>
+        <ResponseField name="sub_wallet_id" type="integer">Wallet id</ResponseField>
         <ResponseField name="symbol" type="string">Unique identifier for the coin, used for transfers, e.g.：`USDTERC20`</ResponseField>
         <ResponseField name="created_at" type="long">Creation timestamp</ResponseField>
         <ResponseField name="updated_at" type="long">Modified timestamp</ResponseField>
@@ -26,8 +26,8 @@ description: "Get all sub-wallet receiving records under the main wallet, and re
         <ResponseField name="txid" type="string">Transaction hash</ResponseField>
         <ResponseField name="confirmations" type="integer">Number of block confirmations, e.g.：10</ResponseField>
         <ResponseField name="status" type="integer">receiving status: `1000` unconfirmed, `1100` confirmed (transaction block confirmed), `2000` completed (shown at account), `3000` abnormal</ResponseField>
-        <ResponseField name="deposit_type" type="integer">充值类型, 1: 普通币种充值, 2：NFT充值</ResponseField>
-        <ResponseField name="token_id" type="string">NFT充值的tokenId, 当: `deposit_type=2`时, 该值不为空</ResponseField>
+        <ResponseField name="deposit_type" type="integer">Deposit Type, 1: Regular coin deposit, 2: NFT deposit</ResponseField>
+        <ResponseField name="token_id" type="string">TokenId for NFT deposit, this value is not empty when: `deposit_type=2`</ResponseField>
         <ResponseField name="base_symbol" type="string">The unique identifier of the main chain of the coin to be received, e.g.：ETH</ResponseField>
         <ResponseField name="contract_address" type="string">received coin's contract address</ResponseField>
         <ResponseField name="tx_height" type="long">Block height at which the transaction is completed</ResponseField>
@@ -39,7 +39,7 @@ description: "Get all sub-wallet receiving records under the main wallet, and re
 <RequestExample>
   ```curl cURL
   curl -X GET \
-  --url https://openapi.chainup.com/api/mpc/billing/deposit_list?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data=SWYYr-LBVAmaS0eq8n-CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov-7hsRsVmOhyPqC-JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8-BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht-n_ZcBdxIDt975dbOFUiH-oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ-6cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb-5g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI
+  --url 'https://openapi.chainup.com/api/mpc/billing/deposit_list?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data=SWYYr-LBVAmaS0eq8n-CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov-7hsRsVmOhyPqC-JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8-BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht-n_ZcBdxIDt975dbOFUiH-oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ-6cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb-5g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI'
   ```
 </RequestExample>
 
@@ -57,7 +57,7 @@ description: "Get all sub-wallet receiving records under the main wallet, and re
         "txid":"0xfd0b04024bd1d849ba69e301733194154cb42a05c1dd32065367d8c6336af711",
         "confirmations":20,
         "contract_address":"",
-        "sub_wallet_id":"123",
+        "sub_wallet_id":123,
         "address_from":"0xc70d1eebb7c687ec8d56bead73f104d41e6e0bda",
         "updated_at":1672323030000,
         "base_symbol":"ETH",
@@ -74,7 +74,7 @@ description: "Get all sub-wallet receiving records under the main wallet, and re
         "txid":"0x97cccb68595182d8df439fe17d33376d4bb69abf49d56e08d46fa5f281e095fb",
         "confirmations":5,
         "contract_address":"",
-        "sub_wallet_id":"123",
+        "sub_wallet_id":123,
         "address_from":"0xe897Fd38f319cB343ffD03Ba2f7426BA99bb97c4",
         "updated_at":1672323030000,
         "base_symbol":"ETH",

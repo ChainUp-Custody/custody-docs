@@ -1,7 +1,7 @@
 ---
 title: Synchronize Transfer Records
 api: GET /api/mpc/billing/sync_withdraw_list
-description: "Get all sub-wallet transfer records under the main wallet, and return up to 100 records"
+description: "Get all wallet transfer records under the workspace, and return up to 100 records"
 ---
 
 #### Request Parameters
@@ -16,7 +16,7 @@ description: "Get all sub-wallet transfer records under the main wallet, and ret
     <Expandable title="object">
         <ResponseField name="id" type="integer">transfer id</ResponseField>
             <ResponseField name="request_id" type="string">The unique identifier for transferring coins</ResponseField>
-            <ResponseField name="sub_wallet_id" type="integer">Sub wallet id</ResponseField>
+            <ResponseField name="sub_wallet_id" type="integer">Wallet id</ResponseField>
             <ResponseField name="symbol" type="string">Unique identifier for the coin, used for transfers, e.g.：`USDTERC20`</ResponseField>
             <ResponseField name="amount" type="string">transfer amount</ResponseField>
             <ResponseField name="fee_symbol" type="string">gas fee coins, e.g.：ETH</ResponseField>
@@ -42,7 +42,7 @@ description: "Get all sub-wallet transfer records under the main wallet, and ret
 <RequestExample>
   ```curl cURL
   curl -X GET \
-  --url https://openapi.chainup.com/api/mpc/billing/sync_withdraw_list?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data=SWYYr-LBVAmaS0eq8n-CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov-7hsRsVmOhyPqC-JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8-BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht-n_ZcBdxIDt975dbOFUiH-oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ-6cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb-5g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI
+  --url 'https://openapi.chainup.com/api/mpc/billing/sync_withdraw_list?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data=SWYYr-LBVAmaS0eq8n-CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov-7hsRsVmOhyPqC-JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8-BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht-n_ZcBdxIDt975dbOFUiH-oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ-6cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb-5g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI'
   ```
 </RequestExample>
 
@@ -63,7 +63,7 @@ description: "Get all sub-wallet transfer records under the main wallet, and ret
         "txid":"0x8e6beba81b90835fc9fcd40a2bdca33243c7c3b81ac765c240837d4810874a55",
         "confirmations":0,
         "contract_address":"",
-        "sub_wallet_id":"123",
+        "sub_wallet_id":123,
         "address_from":"0x5EDc9177997Bf6B4db559A5C184051858B3B3704",
         "fee_symbol":"ETH",
         "updated_at":1672318660000,
@@ -85,7 +85,7 @@ description: "Get all sub-wallet transfer records under the main wallet, and ret
         "txid":"dee604ca778aee55ef0d17260ee4a96d69dfbc965228288598dce0cf9c829542",
         "confirmations":0,
         "contract_address":"",
-        "sub_wallet_id":"123",
+        "sub_wallet_id":123,
         "address_from":"TC1rbTinyRyNC5sBJdxGcADbVXh9xcHwwQ",
         "fee_symbol":"TRX",
         "updated_at":1672318660000,

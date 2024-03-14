@@ -4,7 +4,7 @@ title: 地址格式
 
 ## I. 地址类型
 
-MPC钱包支持的地址类型包括UTXO类型、账户类型和Memo类型。UTXO类型使用Legacy地址，适用于比特币等采用UTXO模型的主链。账户类型适用于主链的账户地址，例如ETH、BSC、HECO等，采用Bip-44标准生成。而Memo类型则是为了保证充值地址的唯一性，在API创建时包含Memo字段，以提供额外的标识信息。
+MPC系统支持的地址类型包括UTXO类型、账户类型和Memo类型。UTXO类型使用Legacy地址，适用于比特币等采用UTXO模型的主链。账户类型适用于主链的账户地址，例如ETH、BSC、HECO等，采用Bip-44标准生成。而Memo类型则是为了保证充值地址的唯一性，在API创建时包含Memo字段，以提供额外的标识信息。
 
 <div className="w-full flex items-center justify-center">
     <img src="/images/help-center/address.png" width="600"/>
@@ -38,8 +38,47 @@ Memo是一种保证充值地址唯一性的数字串，与充币地址成对出�
 
 ## II. 地址合并
 
-为减少地址过多，难以维护的问题，MPC钱包支持地址合并，目前支持地址合并的协议如下：
+为了简化地址管理、减少维护困难、充值错误等问题，并提高地址管理效率，Custody MPC系统目前支持以下主网的地址合并功能。具体支持地址合并的协议如下：
 
-支持地址合并的协议（一）：BTC、BCH
+**UTXO系列：**
 
-支持地址合并的协议（二）：ETH、ARB、BSC、HECO、FEVM、ETC、MATIC、AVAX-C
+Bitcoin
+
+Bitcoin Cash
+
+Bitcoin SV
+
+**EVM系列：**
+
+Avalanche (X-Chain)
+
+Polygon
+
+OKTC
+
+Ethereum PoW
+
+HECO
+
+BNB Smart Chain
+
+CELO
+
+Fantom
+
+Arbitrum One
+
+Optimism
+
+BASE
+
+Wizarre Scroll
+
+Ethereum
+
+Filcoin VM
+
+<Tip> 
+通过这些支持，我们旨在为用户提供更便捷、高效的地址管理体验，减少潜在的问题和错误，确保系统的稳定性和用户满意度。
+</Tip>
+

@@ -1,0 +1,63 @@
+---
+title: BRC-20 Transactions
+---
+## I. Overview
+
+BRC20 is an experimental standard for issuing fungible tokens on the Bitcoin network. Unlike ERC20, the main difference lies in the fact that the Bitcoin network does not support smart contracts. Instead, tokens are deployed, minted, and transferred by setting inscriptions in JSON data format using the Ordinals protocol.
+
+BRC-20 aims to establish a new standard for creating interchangeable tokens using the Bitcoin base layer. This document will elaborate on the basic concepts of BRC-20 transactions in Custody's MPC wallet, covering principles and use cases of receiving and transferring tokens.
+
+For more information on BRC-20, refer to the GitBook: [Layer1 Foundation](https://layer1.gitbook.io/layer1-foundation/foundation/purpose)
+
+All BRC-20 transaction orders follow the transaction process and status of the MPC wallet, similar to other currencies.
+
+ChainUp Custody's MPC Web3 wallet supports the receipt and transfer of BRC-20 tokens.
+
+## II. Receiving BRC-20
+
+<Note>
+If you wish to receive BRC-20 tokens using the Custody wallet,
+* Ensure your app is upgraded to version X or higher.
+* Select the Web3 wallet to receive BRC-20 tokens.
+</Note>
+
+## III. Transferring BRC-20
+
+### Principles of BRC-20 Transactions
+
+The BRC-20 protocol mandates that all inscriptions must be committed before transfers can occur. Generally, tokens received directly constitute **available balances** and cannot be directly transferred. This balance must be committed and converted into **transferable balances** (available for transfer) before successful transmission.
+
+**The specific process is as follows:**
+<div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/BRC1EN.png" width="600"/>
+</div>
+
+### Transferring BRC-20
+
+Based on the analysis of enterprise users and observations of operational behaviors, Custody believes that allowing most customers to manage their transferable and **available balances** themselves is complex and challenging. The core requirement of users is to be able to transact without understanding the transfer logic of BRC-20 tokens and to be able to transfer out all BRC-20 balances in their wallet at any time.
+
+To minimize transmission blocks and reduce user operational processes, the BRC-20 transfer function of Custody's MPC wallet is **divided into the following two categories:**
+
+#### Transferring Inscription
+
+Generally, most BRC-20 assets received on your Web3 wallet belong to **available balances**. When you use the transfer inscription, the system will automatically inscribe the available balance, making it a transferable balance, thereby initiating a transfer transaction successfully.
+
+Your maximum transfer inscription value = maximum available balance. For example, if your wallet's total balance is 1000 "ordi," and 700 "ordi" is transferable balance inscribed by a third party, then your wallet's maximum transfer inscription value is 300.
+
+<note>
+Please note that the two steps of the transfer inscription function are consecutive and cannot be interrupted. Users cannot use the inscription commit function separately.
+</note>
+
+#### Transfer
+
+If you have already inscribed your wallet's BRC-20 balance through a third-party platform, this portion of the balance will belong to transferable balance, and you can directly use the transfer function to initiate a transaction.
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/BRC2EN.png" width="600"/>
+</div>
+
+Your maximum transfer inscription value = maximum transferable balance. For example, if your wallet's total balance is 1000 "ordi," and you have inscribed 700 "ordi" using a third-party platform, then your wallet's maximum transfer value is 700.
+
+### Balancing Balances Using the Transfer Function
+
+If you wish to enhance control over balances by changing BRC-20 **transferable balances** to **available balances** (rendering **transferable balances** invalid), you only need to use the transfer function to transfer the balance to your own address.

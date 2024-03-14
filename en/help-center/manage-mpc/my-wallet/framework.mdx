@@ -1,33 +1,32 @@
 ---
-title: Wallet Architecture
+title: Workspace Architecture
 ---
 
-ChainUp Custody's MPC wallet is based on a four-layer structure, including Account, Main Wallet, Sub-Wallet, and Coin Type Address. It aims to facilitate different businesses and departments in managing their funds and approval processes.
+ChainUp Custody's MPC workspace is based on a four-layer structure, including accounts, workspaces, wallets, and coin addresses, aiming to facilitate different businesses and departments to manage their own funds and approval processes.
 
-##  Structure Overview
+## I. Structure Overview
 
-1. An account can create multiple main wallets.
+1. One account can create multiple workspaces.
 
-2. A main wallet can create multiple sub-wallets.
+2. One workspace can create multiple wallets.
 
-3. Each sub-wallet supports multiple coin types, and each asset coin type can have one or more addresses.
+3. Each wallet supports multiple coins, and each coin can have one or more addresses.
 
 <Tip> 
-To understand multi-address coin types, you can read [Address Format](/help-center/manage-mpc/my-wallet/address-format) for more information.
+To understand multi-address coins, you can read [Address Format](/help-center/manage-mpc/my-wallet/address-format) for related information.
 </Tip>
 
-
-
-
 <div className="w-full flex items-center justify-center">
-    <img src="/images/help-center/accounten.png" width="600"/>
+    <img src="/images/help-center/accounten.png" width="200"/>
 </div>
 
-##  Practical Cases
-MPC main wallets can be used for asset statistics for a specific business line, while sub-wallets can be allocated to different users.
+## II. Practical Cases
 
-MPC main wallets can also be used for the overall asset statistics of the company, while sub-wallets are allocated to different business departments.
+1. MPC workspace can be used for asset statistics of a certain business line, while wallets can be allocated to different users.
+
+2. MPC workspace can also be used for company total asset statistics, while wallets are allocated to different business departments.
+
 <Tip> 
-When you terminate usage or if ChainUp Custody services are unavailable, you can use the dedicated [Offline Private Key Recovery Tool](/help-center/manage-mpc/my-wallet/off-line-tool) to obtain the complete private keys of the created wallets.
+When you stop using, or when ChainUp Custody service is not available, you can use the exclusive [Offline Private Key Recovery Tool](/help-center/manage-mpc/my-wallet/off-line-tool) to obtain the complete private key of the created wallet.
 </Tip>
 

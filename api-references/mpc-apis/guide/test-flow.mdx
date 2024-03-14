@@ -6,9 +6,9 @@ title: 对接测试
 
 ## I. 获取充币地址
 
-* 创建子钱包 `/api/mpc/sub_wallet/create`
+* 创建钱包 `/api/mpc/sub_wallet/create`
 
-* 为子钱包创建币种地址 `/api/mpc/sub_wallet/create/address`
+* 为钱包创建币种地址 `/api/mpc/sub_wallet/create/address`
 
 * ChainUp回调Co-Signer签名，Co-Signer与ChainUp node协同完成签名
 
@@ -51,8 +51,6 @@ title: 对接测试
 * 签名完成，ChainUp将交易向区块链广播并监控状态
 
 <Tip>
-若交易矿工费过低，可对该笔交易进行加速，以便快速上链；用户可在控制台或使用API操作；`/api/mpc/billing/withdraw_pending`
-
 可通过接口获取支持加速的主链：`/api/mpc/wallet/open_coin`
 </Tip>
 

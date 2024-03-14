@@ -13,9 +13,9 @@ title: 配置全币种归集规则
 <Note> 
 ### 使用功能前提
 
-请确保主钱包没有过期，过期情况会导致所有钱包相关业务功能无法使用。
+请确保工作站没有过期，过期情况会导致所有钱包相关业务功能无法使用。
 
-确保已完成API和Co-signer的配置，以确保API的正常运行，从而使全币种归集功能能够顺利执行。
+确保已完成API和Co-Signer的配置，以确保API的正常运行，从而使全币种归集功能能够顺利执行。
 
 请将App版本升级至**6.4.5**及以上。
 </Note>
@@ -42,11 +42,11 @@ title: 配置全币种归集规则
     </CardGroup>
 </div>
 <Tip>
-共管成员创建配置后，钱包创建者会收到一条待办任务，需要签名确认，配置才可生效。
+共管成员创建配置后，工作站创建者会收到一条待办任务，需要签名确认，配置才可生效。
 </Tip>
 </Step>
 <Step title="决定归集应用范围">
-   决定哪些子钱包的资产会进行归集。
+   决定哪些钱包的资产会进行归集。
 
    <div className="w-full flex items-center justify-center">
     <img src="/images/help-center/co-signer-collect3_cn.PNG" width="600"/>
@@ -58,7 +58,7 @@ title: 配置全币种归集规则
 
    归集钱包和加油站可以包含在归集应用范围内。
 
-   若您的子钱包拥有多条需归集资产的地址，则钱包所有地址资产都将属于归集应用范围。
+   若您的钱包拥有多条需归集资产的地址，则钱包所有地址资产都将属于归集应用范围。
    </Warning>
 
 </Step>
@@ -76,7 +76,7 @@ title: 配置全币种归集规则
 
 </Step>
 <Step title="配置加油策略">
-加油策略将决定加油站在什么情况下将矿工费补充至子钱包来支持归集。
+加油策略将决定加油站在什么情况下将矿工费补充至钱包来支持归集。
 <div className="w-full flex items-center justify-center">
     <img src="/images/help-center/co-signer-collect5_cn.PNG" width="600"/>
 </div>
@@ -91,7 +91,7 @@ title: 配置全币种归集规则
 
 <Step title="配置消息通知">
 
-如果您的归集业务缺少所需的手续费主链币，Custody系统将会向您发送通知邮件，以确保您及时了解并采取必要的行动。一旦系统检测到归集业务缺少所需的手续费主链币，将会向设定的通知邮箱发送提醒邮件。
+如果您的归集业务缺少所需的矿工费主链币，Custody系统将会向您发送通知邮件，以确保您及时了解并采取必要的行动。一旦系统检测到归集业务缺少所需的矿工费主链币，将会向设定的通知邮箱发送提醒邮件。
 <div className="w-full flex items-center justify-center">
     <img src="/images/user-guide/notificationcn.png" width="600"/>
 </div>
@@ -115,15 +115,23 @@ title: 配置全币种归集规则
 
 2. **减少手动操作**： 全币种归集功能支持用户自主配置相关参数，系统会自动执行资产整合操作，从而避免了繁琐的手动转账过程，特别适用于高频交易或大规模资产整合。
 
-3. **交易所流程优化**： 交易所或服务提供商可以利用Co-signer自动归集来优化用户的资产管理体验，降低交易次数和手续费，提高整体效率。
+3. **交易所流程优化**： 交易所或服务提供商可以利用Co-Signer自动归集来优化用户的资产管理体验，降低交易次数和矿工费，提高整体效率。
 </Accordion>
 
 
 <Accordion title="全币种归集功能支持的资产类型有哪些？">
 ChainUp Custody支持Account类型的主链币和相关代币进行归集，Account类型的主链包括且不限于以下几种：
-ETH（Ethereum）, BNB（Binance Smart Chain）,TRX（TRON）,DOT（Polkadot）
+
+Ethereum
+
+Binance Smart Chain
+
+TRON
+
+Polkadot
+
 </Accordion>
 
 <Accordion title="哪类MPC钱包支持全币种归集功能？">
-ChainUp Custody支持所有类型的MPC子钱包进行自动归集。
+ChainUp Custody支持所有类型的MPC钱包进行自动归集。
 </Accordion>

@@ -1,0 +1,63 @@
+---
+title: Miner (Gas) Fee Policy
+---
+
+## I. Function Introduction
+
+ChainUp Custody's strategy engine will automatically apply your defined miner fee policy to all types of transactions. When these transactions require manual setting of miner fees, it will control according to the policy, preventing the manual entry of excessively high transaction miner fees.
+
+<Warning>
+**Key Steps and Points to Note**
+
+We emphasize the importance of correctly implementing transfer policies. Your transfer policy is a key layer of asset protection; please customize it according to your business needs.
+
+If you enable the miner fee policy, all asset transactions, including transactions initiated via API and those initiated by the creator, will be controlled by the miner fee policy.
+
+</Warning>
+
+## II. Management Scenarios
+Management of transaction types: Covers all transactions, including manual withdrawals (transfers) and API withdrawals.
+
+Management of transaction range: Includes all asset transactions, whether they are cryptocurrencies or NFTs.
+
+
+## III. Operation Procedure
+<Tip>
+Only the workspace creator can operate this.
+</Tip>
+
+<Steps>
+<Step title="Login and Open Miner Fee Policy">
+    Log in to the Custody APP's MPC system, navigate to the "Security" - "Strategy Engine" function.
+
+<div className="w-full flex items-center justify-center">
+        <img src="/images/user-guide/safe.jpg" width="200"/>
+</div>
+
+</Step>
+<Step title="Choose the Workspace for the Policy">
+   In the strategy engine, choose the MPC workspace you want to apply the miner fee policy to.
+
+<div className="w-full flex items-center justify-center">
+        <img src="/images/user-guide/workspacelist.jpg" width="200"/>
+</div>
+
+</Step>
+<Step title="Add and Configure Miner Fee Policy">
+In this step, you can define the limit for controlling custom miner fees to prevent excessively high transaction miner fees due to errors or internal malicious actions, thereby avoiding asset loss.
+
+<div className="w-full flex items-center justify-center">
+        <img src="/images/user-guide/minerfeesetting.jpg" width="200"/>
+</div>
+
+<Warning>
+**Key Steps and Points to Note**
+
+Ensure to set the miner fee limit appropriately to balance between transaction speed and cost efficiency.
+
+Review the miner fee policy regularly to adapt to the changing network conditions.
+</Warning>
+
+</Step>
+
+</Steps>

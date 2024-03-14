@@ -1,4 +1,4 @@
-{
+  {
   "name": "ChainUp Custody",
   "logo": {
     "dark": "/logo/chainupcustody-logo.svg",
@@ -16,7 +16,7 @@
   },
   "topbarLinks": [
     {
-      "name": "简体中文",
+      "name": "ZH-CN",
       "url": "https://custodydocs-zh.chainup.com/introduction/overview/chainup-custody"
     }
   ],
@@ -84,7 +84,7 @@
       ]
     },
     {
-      "group": "MPC Wallet",
+      "group": "MPC Workspace",
       "pages": [
         "quick-start/mpc-wallet/download-app",
         "quick-start/mpc-wallet/create-account",
@@ -118,7 +118,7 @@
       "group": "Compliance Services",
       "pages": [
         {
-          "group": "For MPC Wallet",
+          "group": "For MPC Workspace",
           "pages": [
             "quick-start/compliance-custody-mpc/open-mpc",
             "quick-start/compliance-custody-mpc/strategy-mpc"
@@ -141,7 +141,7 @@
       ]
     },
     {
-      "group": "MPC Wallet APIs",
+      "group": "MPC Workspace APIs",
       "pages": [
         {
           "group": "Integration Guide",
@@ -157,7 +157,7 @@
           "pages": [
             "api-references/mpc-apis/apis/description",
             {
-              "group": "Main Wallet",
+              "group": "Workspace",
               "pages": [
                 "api-references/mpc-apis/apis/wallet/open-coin",
                 "api-references/mpc-apis/apis/wallet/coin-list",
@@ -165,7 +165,7 @@
               ]
             },
             {
-              "group": "Sub-wallet",
+              "group": "Wallet",
               "pages": [
                 "api-references/mpc-apis/apis/sub-wallet/subwallet-create",
                 "api-references/mpc-apis/apis/sub-wallet/subwallet-create-address",
@@ -179,8 +179,6 @@
               "group": "Transfer (Withdrawal)",
               "pages": [
                 "api-references/mpc-apis/apis/withdraw/withdraw",
-                "api-references/mpc-apis/apis/withdraw/withdraw-fee",
-                "api-references/mpc-apis/apis/withdraw/withdraw-pending",
                 "api-references/mpc-apis/apis/withdraw/withdraw-list",
                 "api-references/mpc-apis/apis/withdraw/withdraw-sync-list"
               ]
@@ -237,7 +235,8 @@
                 "api-references/mpc-apis/co-signer/callback/web3"
               ]
             },
-            "api-references/mpc-apis/co-signer/sign-verify"
+            "api-references/mpc-apis/co-signer/sign-verify",
+            "api-references/mpc-apis/co-signer/deploy"
           ]
         },
         "api-references/mpc-apis/err-code"
@@ -334,7 +333,7 @@
       ]
     },
     {
-      "group": "Managing MPC Wallet",
+      "group": "Managing MPC System",
       "pages": [
         {
           "group": "Team Members",
@@ -344,7 +343,7 @@
           ]
         },
         {
-          "group": "My Wallet",
+          "group": "My Workspace",
           "pages": [
             "help-center/manage-mpc/my-wallet/framework",
             "help-center/manage-mpc/my-wallet/address-format",
@@ -356,7 +355,8 @@
         {
           "group": "Transactions",
           "pages": [
-            "help-center/manage-mpc/transaction/transfer"
+            "help-center/manage-mpc/transaction/transfer",
+            "help-center/manage-mpc/transaction/BRC-20"
           ]
         },
         {
@@ -397,7 +397,7 @@
       ]
     },
  {
-      "group": "MPC Wallet User Guide",
+      "group": "MPC Workspace User Guide",
       "pages": [
         {
           "group": "Account",
@@ -410,11 +410,12 @@
           ]
         },
         {
-          "group": "Wallet",
+          "group": "Workspace",
           "pages": [
             "user-guide/mpc-wallet/wallet/create-wallet", 
             "user-guide/mpc-wallet/wallet/manage-wallet",
-            "user-guide/mpc-wallet/wallet/add-user"
+            "user-guide/mpc-wallet/wallet/add-user",
+            "user-guide/mpc-wallet/wallet/become-admin"
           ]
         },
         {
@@ -471,7 +472,9 @@
     {
       "group": "Strategy Engine",
       "pages":[
-        "user-guide/mpc-wallet/strategy/approval-flow"
+        "user-guide/mpc-wallet/strategy/approval-flow",
+        "user-guide/mpc-wallet/strategy/gas-fee-stratefy",
+        "user-guide/mpc-wallet/strategy/sign-protect"
       ]
     },
     {
