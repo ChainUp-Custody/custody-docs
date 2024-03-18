@@ -84,7 +84,7 @@
       ]
     },
     {
-      "group": "MPC Workspace",
+      "group": "MPC Wallet",
       "pages": [
         "quick-start/mpc-wallet/download-app",
         "quick-start/mpc-wallet/create-account",
@@ -141,7 +141,7 @@
       ]
     },
     {
-      "group": "MPC Workspace APIs",
+      "group": "MPC Wallet APIs",
       "pages": [
         {
           "group": "Integration Guide",
@@ -392,6 +392,17 @@
           "group": "Strategy Engine",
           "pages": [
             "help-center/manage-mpc/strategy/transfer"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Managing Joint Custody System",
+      "pages": [
+        {
+          "group": "Transactions",
+          "pages": [
+            "help-center/manage-joint/account-transfer/confirmation"
           ]
         }
       ]

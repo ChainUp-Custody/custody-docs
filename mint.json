@@ -84,7 +84,7 @@
       ]
     },
     {
-      "group": "MPC工作站",
+      "group": "MPC钱包",
       "pages": [
         "quick-start/mpc-wallet/download-app",
         "quick-start/mpc-wallet/create-account",
@@ -141,7 +141,7 @@
       ]
     },
     {
-      "group": "MPC工作站APIs",
+      "group": "MPC钱包APIs",
       "pages": [
         {
           "group": "接入指引",
@@ -393,6 +393,17 @@
           "group": "交易策略引擎",
           "pages": [
             "help-center/manage-mpc/strategy/transfer"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "管理统一托管系统",
+      "pages": [
+        {
+          "group": "账号交易",
+          "pages": [
+            "help-center/manage-joint/account-transfer/confirmation"
           ]
         }
       ]

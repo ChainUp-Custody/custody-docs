@@ -30,7 +30,7 @@ We emphasize the importance of correctly implementing the transfer strategy. You
 
 An MPC wallet can create multiple transfer strategies, but the transfer strategy for each asset must be unique.
 
-If an asset has never edited a transfer strategy, the transaction of the asset defaults to only require the workspace creator's final signature confirmation.
+If an asset has never edited a transfer strategy, the transaction of the asset defaults to only require the workspace owner's final signature confirmation.
 
 Transactions initiated by API are not managed by the transfer strategy.
 </Warning>
@@ -57,6 +57,6 @@ Workspace creators can enable or disable signature protection for their workspac
 
 ## II. Who can manage the strategy engine?
 
-Currently, only the MPC workspace creator has the authority to manage the strategy engine. All editing and viewing functions of the strategy engine are only provided on the Custody App.
+Currently, only the MPC workspace owner has the authority to manage the strategy engine. All editing and viewing functions of the strategy engine are only provided on the Custody App.
 
 

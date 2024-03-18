@@ -13,7 +13,7 @@ ChainUp Custody's strategy engine will automatically apply your defined transfer
 
 We emphasize the importance of correctly implementing transfer policies. Your transfer strategy is a key layer of asset protection; please customize it according to your business needs.
 
-Transactions initiated by the MPC workspace creator are not managed by the transfer strategy.
+Transactions initiated by the MPC workspace owner are not managed by the transfer strategy.
 
 Transactions initiated via API are not managed by the transfer strategy.
 </Warning>
@@ -58,7 +58,7 @@ In this step, you can define the following parameters of the transfer strategy:
 
 A wallet can create multiple transfer policies, but each asset's transfer Strategy must be unique.
 
-If an asset has never edited a transfer Strategy, the asset's transaction defaults to requiring the workspace creator for the final signature confirmation.
+If an asset has never edited a transfer Strategy, the asset's transaction defaults to requiring the workspace owner for the final signature confirmation.
 </Warning>
 
 </Step>
@@ -73,7 +73,7 @@ You can efficiently and conveniently understand the current approval progress by
 
 <Steps>
 <Step title="Initiate Transfer">
-Whether it's a ordinary member, approval member, or workspace creator, they can initiate a transfer by logging into the Custody APP or PC version.
+Whether it's a ordinary member, approval member, or workspace owner, they can initiate a transfer by logging into the Custody APP or PC version.
 
 You need to select the wallet and coin for the transfer, enter the address, quantity, and remarks after confirming the transfer, and then wait for approval.
 
@@ -109,7 +109,7 @@ The approval members of this transfer Strategy will receive approval prompts in 
 
 If the member initiating the transfer is an approval member, then the approval member's approval status is defaulted as passed.
 
-When the order meets the approval rules, it requires the workspace creator or admin to handle the authorization signature.
+When the order meets the approval rules, it requires the workspace owner or admin to handle the authorization signature.
 
  <div className="w-full flex items-center justify-center">
     <CardGroup cols={3}>
@@ -120,7 +120,7 @@ When the order meets the approval rules, it requires the workspace creator or ad
 </div>
 
 <Tip>
-**Agree to the transaction:** When the transaction reaches the approval threshold, it is automatically submitted to the workspace creator or workspace admin for signature confirmation, then broadcast to the blockchain.
+**Agree to the transaction:** When the transaction reaches the approval threshold, it is automatically submitted to the workspace owner or workspace admin for signature confirmation, then broadcast to the blockchain.
 
 **Reject the transaction:** When the transaction does not reach the approval threshold, it is automatically terminated to ensure unauthorized transactions are stopped.
 </Tip>
@@ -128,7 +128,7 @@ When the order meets the approval rules, it requires the workspace creator or ad
 </Step>
 
 <Step title="Transaction Signature">
-The workspace creator can give the final approval to the transfer request. If they disagree with the transfer request, they can directly cancel the transaction; if they agree with the transfer request, they can perform a signature operation.
+The workspace owner can give the final approval to the transfer request. If they disagree with the transfer request, they can directly cancel the transaction; if they agree with the transfer request, they can perform a signature operation.
 
 
  <div className="w-full flex items-center justify-center">

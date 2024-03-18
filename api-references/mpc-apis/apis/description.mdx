@@ -43,7 +43,7 @@ openssl pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform pem -nocrypt -
 | Param  | 类型   | 是否必须 | 说明                                                      |
 | :----- | :----- | :------- | :-------------------------------------------------------- |
 | app_id | String | 必须     | 商户唯一标识                                              |
-| data   | String | 可选     | `json格式数据`加密之后的字符串；客户的RSA私钥加密，具体加密信息见各接口 `请求参数数据结构` |
+| data   | String | 可选     | `json格式的数据`加密之后的字符串；客户的RSA私钥加密，具体加密信息见各接口 `请求参数数据结构` |
 
 ```curl
 curl -X GET \
@@ -55,7 +55,7 @@ curl -X GET \
 
 | Param | 类型   | 是否必须 | 说明                                                      |
 | :---- | :----- | :------- | :-------------------------------------------------------- |
-| data  | String | 必须     | `json格式数据`加密之后的字符串；Custody的RSA私钥加密，具体加密信息见 `响应结果data解密后格式` |
+| data  | String | 必须     | `json格式的数据`加密之后的字符串；Custody的RSA私钥加密，具体加密信息见 `响应结果data解密后格式` |
 
 ```json
 {

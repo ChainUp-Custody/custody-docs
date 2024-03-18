@@ -1,0 +1,77 @@
+---
+title: Confirmation Number
+---
+
+## Introduction
+
+To further improve the speed of customer deposits, ChainUp Custody has adjusted the confirmation numbers for supported networks.
+
+## Obtian Confirmation Number
+
+Customers can obtain the latest confirmation numbers through the following three methods:
+
+1. Console (APP/WEB): Visit the deposit details page for the corresponding currency.
+
+2. OpenAPI interface: Use the GET `/api/v2/user/getCoinList` endpoint.
+
+3. View on the current page, as detailed in the table below.
+
+
+|Network|Deposit Confirmation Number	|Withdrawal Unlock Confirmation Number |
+|----|---------|--------|
+|Bitcoin	           | 1	    |   2|
+|Ethereum	           |   6    |   	30|
+|Solana	               | 200    |   	200|
+|BNB Smart Chain	   | 15	    |   15|
+|BNB Chain	           | 1	    |   30|
+|Ripple	               | 1	    |   6|
+|Cardano	           | 30	    |   30|
+|Avalanche (C-Chain)|	12	    |   20|
+|Avalanche (X-Chain)|	1	    |   6|
+|Dogecoin	           | 6	    |   50|
+|Polkadot	           | 3	    |   30|
+|TRON	               | 1	    |   10|
+|Polygon	           | 64	    |   128|
+|NEAR Protocol	       | 1	    |   30|
+|Bitcoin Cash	       | 2	    |   6|
+|Litecoin	           | 3	    |   6|
+|Internet Computer	   | 1	    |   12|
+|Aptos	               | 1	    |   30|
+|Filecoin	           | 60	    |   90|
+|Filecoin EVM	       | 60	    |   90|
+|Cosmos	               | 10	    |   15|
+|Ethereum Classic   |	70	    |   150|
+|Hedera	               | 1	    |   10|
+|Stellar	           | 1	    |   6|
+|Optimism	           | 64	    |   128|
+|VeChain	           | 12	    |   30|
+|Monero	               | 6	    |   6|
+|Fantom	               | 1	    |   6|
+|Arbitrum One       |	64	    |   128|
+|BASE	               | 64	    |   128|
+|Wizarre Scroll	       | 30	    |   30|
+|Algorand	           | 1	    |   30|
+|Bitcoin SV         |	3	    |   现有安全块+3|
+|Tezos	               | 4	    |   8|
+|EOS	               | 360    |   	360|
+|eCash	               | 32	    |   64|
+|NEO N3	               | 3	    |   5|
+|Terra Classic	       | 1	    |   6|
+|Terra	               | 1	    |   6|
+|Zcash	               | 6	    |   6|
+|Zilliqa	           | 1	    |   30|
+|Kusama	               | 3	    |   6|
+|Qtum	               | 16	    |   24|
+|NEM	               | 1	    |   6|
+|Dash	               | 2	    |   6|
+|EthereumPoW	       | 6	    |   6|
+|HECO	               | 6	    |   30|
+
+
+<Note>
+1. Deposit Confirmation Number: The number of block confirmations required for a deposit to be credited. Until the confirmation number is reached, the current asset will not be credited.
+
+2. Withdrawal Unlock Confirmation Number: The number of block confirmations required for asset withdrawals to be unlocked. Until the confirmation number is reached, the current asset cannot be withdrawn.
+
+3. For token confirmation numbers, please refer to the corresponding network.
+</Note>

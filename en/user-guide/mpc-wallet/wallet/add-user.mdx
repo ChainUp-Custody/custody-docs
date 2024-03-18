@@ -5,12 +5,12 @@ title: Adding New MPC Workspace Users
 ## Function Introduction
 
 <Note>
-Only the workspace creator can add/delete workspace members.
+Only the workspace owner can add/delete workspace members.
 </Note>
 
 In the MPC workspace, you can add new users and assign them different roles. The system currently has three types of roles:
 - **Workspace Creator**: The member who creates the workspace defaults as the creator (Owner), with the highest authority;
-- **Workspace Admin**: The creator can add members from the contact list to the workspace and assign them as workspace admins. Admins have the authority to initiate receipts, transfers for all wallets under the workspace, and will have the workspace co-privilege private key to sign and accelerate transfer transactions;
+- **Admin**: The creator can add members from the contact list to the workspace and assign them as workspace admins. Admins have the authority to initiate receipts, transfers for all wallets under the workspace, and will have the workspace co-privilege private key to sign and accelerate transfer transactions;
 <Tip> 
 Currently, workspace admins temporarily cannot sign for private key operation behaviors other than manual transfer signatures and accelerations.
 </Tip>
@@ -71,8 +71,8 @@ The creator owns the locally backed-up workspace private key fragment and can ob
 The creator can view the user's permission details in the workspace members and modify the user's role. Please note, if the member is part of an approval flow of a certain wallet, they will automatically have co-management authority of that wallet and it cannot be canceled.
 </Accordion>
 
-<Accordion title="Can I add users if I am not the workspace creator?">
-Sorry, only the workspace creator can add users.
+<Accordion title="Can I add users if I am not the workspace owner?">
+Sorry, only the workspace owner can add users.
 </Accordion>
 
 <Accordion title="Are there any role restrictions in the workspace?">
@@ -80,6 +80,6 @@ The total number of members in your workspace is limited to the service package 
 </Accordion>
 
 <Accordion title="How does a workspace admin manage their private key?">
-The current system does not support the workspace admin to back up and restore their private key. If the private key fragment is lost due to reasons such as changing devices, please contact the workspace creator to resend it (Select the corresponding workspace in "Workspace Members", check your specific permissions to operate).
+The current system does not support the workspace admin to back up and restore their private key. If the private key fragment is lost due to reasons such as changing devices, please contact the workspace owner to resend it (Select the corresponding workspace in "Workspace Members", check your specific permissions to operate).
 </Accordion>
 
