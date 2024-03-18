@@ -9,10 +9,10 @@ Only the workspace owner can add/delete workspace members.
 </Note>
 
 In the MPC workspace, you can add new users and assign them different roles. The system currently has three types of roles:
-- **Workspace Creator**: The member who creates the workspace defaults as the creator (Owner), with the highest authority;
-- **Admin**: The creator can add members from the contact list to the workspace and assign them as workspace admins. Admins have the authority to initiate receipts, transfers for all wallets under the workspace, and will have the workspace co-privilege private key to sign and accelerate transfer transactions;
+- **Workspace Owner**: The member who creates the workspace defaults as the creator (Owner), with the highest authority;
+- **Admin**: The creator can add members from the contact list to the workspace and assign them as admins. Admins have the authority to initiate receipts, transfers for all wallets under the workspace, and will have the workspace co-privilege private key to sign and accelerate transfer transactions;
 <Tip> 
-Currently, workspace admins temporarily cannot sign for private key operation behaviors other than manual transfer signatures and accelerations.
+Currently, admins temporarily cannot sign for private key operation behaviors other than manual transfer signatures and accelerations.
 </Tip>
 - **Ordinary Members**: Members added to the wallet by the creator default as ordinary members; they have basic permissions such as initiating receipts, transfers;
 
@@ -42,7 +42,7 @@ For specific member role descriptions, you can refer to [MPC User Role Introduct
 <Step title="Assigning Roles to New Members">
     You can assign one type of authority to users: 1. Workspace role 2. Wallet role
     
-    If you choose the workspace role, you can assign them as workspace admins, which will require you to send a co-privilege private key to them.
+    If you choose the workspace role, you can assign them as admins, which will require you to send a co-privilege private key to them.
 
     If you choose the wallet role, you can assign them as ordinary members of a specific wallet.
   
@@ -57,7 +57,7 @@ For specific member role descriptions, you can refer to [MPC User Role Introduct
 
 
 <Tip>
-**Note when assigning the workspace admin role:**
+**Note when assigning the admin role:**
 The creator owns the locally backed-up workspace private key fragment and can obtain the RSA public key of the other party's account.
 </Tip>
 
@@ -79,7 +79,7 @@ Sorry, only the workspace owner can add users.
 The total number of members in your workspace is limited to the service package you purchased, but there are no restrictions on specific roles.
 </Accordion>
 
-<Accordion title="How does a workspace admin manage their private key?">
-The current system does not support the workspace admin to back up and restore their private key. If the private key fragment is lost due to reasons such as changing devices, please contact the workspace owner to resend it (Select the corresponding workspace in "Workspace Members", check your specific permissions to operate).
+<Accordion title="How does a admin manage their private key?">
+The current system does not support the admin to back up and restore their private key. If the private key fragment is lost due to reasons such as changing devices, please contact the workspace owner to resend it (Select the corresponding workspace in "Workspace Members", check your specific permissions to operate).
 </Accordion>
 

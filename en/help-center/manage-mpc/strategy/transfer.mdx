@@ -11,7 +11,7 @@ The ChainUp Custody strategy engine includes the following features: transfer st
 
 The system will automatically apply your defined transfer strategy to all transfer transactions manually created through the Web or App. Once a member initiates a transfer request, the related transfer strategy will take the corresponding action according to the rules you set:
 
-**Approve Transaction:** When the transaction reaches the approval threshold, it is automatically submitted to the workspace administrator or creator for signature confirmation, then broadcasted to the blockchain.
+**Approve Transaction:** When the transaction reaches the approval threshold, it is automatically submitted to the admin or creator for signature confirmation, then broadcasted to the blockchain.
 
 **Reject Transaction:** When the transaction does not reach the approval threshold, it is automatically terminated to ensure unauthorized transactions cannot continue.
 
@@ -40,7 +40,7 @@ Transactions initiated by API are not managed by the transfer strategy.
 The system will automatically apply your defined miner fee strategy to each manual customization of the miner fee to prevent misoperations or malicious operations that lead to overpayment of miner fees.
 
 <Tip>
-Workspace creators can set different miner fee strategies for their workspaces. For specific operations, please refer to [Miner Fee Strategy](/user-guide/mpc-wallet/strategy/gas-fee-strategy).
+Workspace owners can set different miner fee strategies for their workspaces. For specific operations, please refer to [Miner Fee Strategy](/user-guide/mpc-wallet/strategy/gas-fee-strategy).
 </Tip>
 
 ### I.III Signature Protection
@@ -52,7 +52,7 @@ In transactions without an approval flow, non-creator private key holders will n
 For transactions with an approval flow, other private key holders cannot sign transactions that they initiated and approved.
 
 <Tip>
-Workspace creators can enable or disable signature protection for their workspaces. For specific operations, please refer to [Signature Protection](/user-guide/mpc-wallet/strategy/sign-protect).
+Workspace owners can enable or disable signature protection for their workspaces. For specific operations, please refer to [Signature Protection](/user-guide/mpc-wallet/strategy/sign-protect).
 </Tip>
 
 ## II. Who can manage the strategy engine?
