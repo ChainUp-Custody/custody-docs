@@ -32,26 +32,41 @@ openssl pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform pem -nocrypt -
 
 | 传输方式:     | https(测试环境暂时使用 http)                           |
 | :------------ | ------------------------------------------------------ |
-| 响应状态码为: | `0`表示处理`成功`，非 0 表示**请求错误**或**系统异常** |
 | 请求地址:     | 域名+接口地址                                          |
-| 加密算法:     | RSA                                                   |
+| 请求头:      | Content-Type:application/x-www-form-urlencoded        |
+| 加密算法:     | RSA，参考 [https://en.wikipedia.org/wiki/RSA_(cryptosystem)](https://en.wikipedia.org/wiki/RSA_(cryptosystem))       |
+| 响应头:     | Content-Type:application/json;charset=utf-8   |
+| 响应状态码为: | `0`表示处理`成功`，非 0 表示**请求错误**或**系统异常** |
 
 ## III. 请求参数统一格式
 
 | Param  | 类型   | 是否必须 | 说明                                                      |
 | :----- | :----- | :------- | :-------------------------------------------------------- |
 | app_id | String | 必须     | 商户唯一标识                                              |
-| data   | String | 可选     | 加密之后的字符串；客户的RSA私钥加密，具体加密信息见各接口 `请求参数数据结构` |
+| data   | String | 可选     | `json格式数据`加密之后的字符串；客户的RSA私钥加密，具体加密信息见各接口 `请求参数数据结构` |
+
+```curl
+curl -X GET \
+--url 'https://openapi.chainup.com/api/mpc/wallet/open_coin?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data=SWYYr-LBVAmaS0eq8n-CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov-7hsRsVmOhyPqC-JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8-BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht-n_ZcBdxIDt975dbOFUiH-oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ-6cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb-5g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI'
+```
 
 
 ## IV. 响应参数统一格式
 
 | Param | 类型   | 是否必须 | 说明                                                      |
 | :---- | :----- | :------- | :-------------------------------------------------------- |
-| data  | String | 必须     | 加密之后的字符串；Custody的RSA私钥加密，具体加密信息见 `响应结果data解密后格式` |
+| data  | String | 必须     | `json格式数据`加密之后的字符串；Custody的RSA私钥加密，具体加密信息见 `响应结果data解密后格式` |
+
+```json
+{
+    "data": "ItMK-uGEuHC-d8RsrEM-LxKZzy-osF5JMsBAjioLTzU-YnACZm_ryS7ilW8MMpjBWpxx_DYE5T5w9G8pAy-X-Fxb8mJafpdRLDLi0U2i2tjDGWgaVd0bmmb2-1meSuyS-ggdsN2R9rZtK6SSbBlTG32I4fMhL0WrppREfnRF7IdzRYVveA1j0ZYKHYGZbu_aT4lft9KxJqTJfFyxAvV96iQ-WcWNe4aygyTueSM_HbRrvaozakCytpJi2R8jnHDyV_Y7KiF6Ucd_kV9eqvqlwGHyxPUJIrvtOhXF3No7flrvrEnLLjSxpiHPVgJwkIqPzG8ICB4ilVpJnKmqxZsJJw"
+}
+```
 
 
 ### 响应结果data解密后格式
+
+响应结果data解密后，原始`json数据`参数结果格式如下：
 
 | Param | 类型   | 是否必须 | 说明                                                   |
 | :---- | :----- | :------- | :----------------------------------------------------- |

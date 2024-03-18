@@ -234,7 +234,7 @@ Options:
 启动**Co-Signer** ，推荐使用shell脚本启动（避免密码泄露到终端）
 
 ```sh
-#!/bin/bash -e
+#!/bin/bash
 
 project_path=$(
     cd $(dirname $0)
@@ -261,7 +261,248 @@ echo ""
 echo ${STR_PASSWORD} | nohup ${project_path}/co-signer -server >>nohup.out 2>&1 &
 ```
 
-## III. 添加**Co-Signer** 服务器白名单
+## III. **Co-Signer** 快捷部署脚本
+
+Custody也提供了更为便捷的部署方式，使用脚本一键式生成配置信息、以及运行环境
+
+### **install.sh**
+
+执行`install.sh`脚本，按照提示步骤，导入运行Co-Signer的必要信息和配置
+
+```sh
+#!/bin/bash
+
+WORK_DIR=$(
+              cd $(dirname $0)
+              pwd
+          )
+echo "work dir: ${WORK_DIR}"
+
+echo ""
+echo "install.sh will clean startup.sh、conf/config.yaml、conf/keystore.json, continue [Y/N(default)]?"
+read CLEAN_CONF
+case $CLEAN_CONF in
+(Y | y)
+  CONF_DIR="${WORK_DIR}/conf"
+  mkdir -p $CONF_DIR
+  > ./conf/config.yaml
+  > ./startup.sh
+  echo {} > ./conf/keystore.json
+  ;;
+(*)
+  echo "exit!!!"
+  exit 0
+  ;;
+esac
+
+echo ""
+APP_ID=""
+echo "App id can find in https://custody.chainup.com/mpc/center/api."
+echo "Please enter app id:"
+read APP_ID
+
+echo ""
+echo "Please input custom withdraw transaction callback url(skip by enter):"
+read WITHDRAW_CALLBACK_URL
+
+echo ""
+echo "Please input custom withdraw transaction callback url(skip by enter):"
+read WEB3_CALLBACK_URL
+
+CONF_TMPL=$(cat <<- EOF
+## Main Configuration Information
+main:
+    ## [Required] Co-signer service IP address
+    tcp: "0.0.0.0:28888"
+    ## [Required] Encrypted storage file used by v1.1.x version
+    keystore_file: "conf/keystore.json"
+
+## Custody System
+custody_service:
+    ## [Required] app_id, obtained after creating a merchant
+    app_id: "${APP_ID}"
+    ## [Required] api domain address, see interface documentation
+    domain: "https://openapi.chainup.com/"
+    ## [Optional] Request and response language, supporting zh_CN and en_US
+    language: "en_US"
+
+## Client System
+custom_service:
+    ## [Optional] Withdrawal callback client system address for signature confirmation before signing, details see: https://custodydocs-zh.chainup.com/api-references/mpc-apis/co-signer/callback/withdraw, mandatory sign verification when not configured
+    withdraw_callback_url: "${WITHDRAW_CALLBACK_URL}"
+    ## [Optional] Web3 transaction callback client system address for signature confirmation before signing, details see: https://custodydocs-zh.chainup.com/api-references/mpc-apis/co-signer/callback/web3, mandatory sign verification when not configured
+    web3_callback_url: "${WEB3_CALLBACK_URL}"
+EOF
+)
+
+STARTUP_TMPL=$(cat <<- EOF
+#!/bin/bash  \
+
+project_path=\$(
+    cd \$(dirname \$0)
+    pwd
+)
+
+STR_PASSWORD=""
+echo -n "Please enter your password:"
+stty -echo
+read STR_PASSWORD
+stty echo
+
+
+if [ ! -n "\$STR_PASSWORD" ]; then
+    echo "Password cannot be null"
+    exit 1
+fi
+
+echo ""
+echo "Startup Program..."
+echo ""
+
+# start
+echo \${STR_PASSWORD} | nohup \${project_path}/co-signer -server >>nohup.out 2>&1 &
+
+EOF
+)
+
+PASSWORD=""
+echo ""
+echo "Please enter your password:"
+stty -echo
+read PASSWORD
+stty echo
+RESULT=$(echo ${PASSWORD} | ./co-signer -rsa-gen)
+echo $RESULT
+STATUS=$?
+if [ "$STATUS" != 0 ];then
+  exit $STATUS
+fi
+echo "rsa key pair create success, you can find rsa public key in conf/keystore.json"
+
+echo ""
+echo "ChainUp RSA public key can find in https://custody.chainup.com/mpc/center/api"
+echo "Please input ChinaUp RSA public key:"
+read CHAINUP_PUBLIC_KEY
+RESULT=$(echo ${PASSWORD} | ./co-signer -custody-pub-import ${CHAINUP_PUBLIC_KEY})
+echo $RESULT
+STATUS=$?
+if [ "$STATUS" != 0 ];then
+  exit $STATUS
+fi
+
+echo ""
+echo "Custom RSA public key, use for verify withdraw data. https://custodydocs-en.chainup.com/api-references/mpc-apis/co-signer/flow#automatic-signature-signature-sign-verification-method"
+echo "Please input Custom RSA public key for verify withdraw data:"
+read CUSTOM_PUBLIC_KEY
+if [ "CUSTOM_PUBLIC_KEY" != "" ];then
+  RESULT=$(echo ${PASSWORD} | ./co-signer -verify-sign-pub-import ${CUSTOM_PUBLIC_KEY})
+  echo $RESULT
+  STATUS=$?
+  if [ "$STATUS" != 0 ];then
+    exit $STATUS
+  fi
+fi
+
+## reset password
+PASSWORD=""
+echo ${CONF_TMPL} > ./conf/config.yaml
+
+cat>./conf/config.yaml<< EOF
+${CONF_TMPL}
+EOF
+
+cat>./startup.sh<< EOF
+${STARTUP_TMPL}
+EOF
+
+chmod u+x ./startup.sh
+echo ""
+echo "install success!!!!!"
+echo "Please start co-signer with startup.sh"
+```
+
+### **sgx-build.sh**
+
+使用SGX环境下的Co-Signer时
+
+执行`sgx-build.sh`脚本，按照提示步骤，安装SGX下运行Co-Signer的必要环境及相关配置
+
+```sh
+#!/bin/bash
+## sgx build command
+## run on ubuntu:20.04
+
+#! /bin/bash
+if command -v ego >/dev/null 2>&1; then
+  echo "ego already installed..."
+else
+  apt update
+  apt install -y sudo
+  sudo apt update
+
+  export DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC
+
+  apt-get -y install tzdata
+  sudo apt install -y vim git curl python3 net-tools cron wget
+  sudo apt install -y gcc make autoconf automake autotools-dev m4 pkg-config
+  sudo apt install -y libtool libboost-all-dev libzmq3-dev libminiupnpc-dev libssl-dev libevent-dev bsdmainutils build-essential
+  sudo apt install -y bsdmainutils build-essential
+  sudo apt-get install -y software-properties-common
+  sudo apt-get update
+  sudo wget -qO- https://download.01.org/intel-sgx/sgx_repo/ubuntu/intel-sgx-deb.key | sudo apt-key add
+  sudo add-apt-repository "deb [arch=amd64] https://download.01.org/intel-sgx/sgx_repo/ubuntu `lsb_release -cs` main"
+  sudo wget https://github.com/edgelesssys/ego/releases/download/v1.3.0/ego_1.3.0_amd64.deb
+  sudo apt install -y ./ego_1.3.0_amd64.deb build-essential libssl-dev
+fi
+
+WORK_DIR=$(
+              cd $(dirname $0)
+              pwd
+          )
+echo "work dir: ${WORK_DIR}"
+echo ""
+
+CO_SIGNER_BIN=""
+echo "Please input co-signer origin bin file name which download in https://github.com/ChainUp-Custody/mpc-co-signer/releases/:"
+read CO_SIGNER_BIN
+
+if [ ! -f "$CO_SIGNER_BIN" ]; then
+    echo "$CO_SIGNER_BIN not exist"
+    exit 1
+fi
+
+>./enclave.json
+cat>./enclave.json<< EOF
+ {
+     "exe": "${CO_SIGNER_BIN}",
+     "key": "private.pem",
+     "debug": false,
+     "heapSize": 61440,
+     "executableHeap": false,
+     "productID": 1,
+     "securityVersion": 1,
+     "mounts": [{"readOnly":false, "type":"hostfs", "source":"/etc/ssl/certs/", "target":"/etc/ssl/certs/"},{"readOnly":false, "type":"hostfs", "source":"${WORK_DIR}", "target":"${WORK_DIR}"}],
+     "env": [{"name":"HOME","fromHost":true},{"name":"PWD","value":"${WORK_DIR}"}],
+     "files": null
+ }
+EOF
+
+today=$(date "+%Y%m%d%H%M%S")
+CO_SIGNER_SGX_BIN="${CO_SIGNER_BIN}.${today}"
+
+export OE_SIMULATION=1
+ego sign ${CO_SIGNER_BIN}
+ego bundle ${CO_SIGNER_BIN} $CO_SIGNER_SGX_BIN
+chmod u+x $CO_SIGNER_SGX_BIN
+
+## need disable simulation end build
+unset OE_SIMULATION
+
+echo "Build ${CO_SIGNER_SGX_BIN} success!!!!!"
+echo "Please exec \`unset OE_SIMULATION\` disable simulation env"
+```
+
+## IV. 添加**Co-Signer** 服务器白名单
 
 ChainUp Custody需要访问**Co-Signer** 创建同权私钥、生成地址，故需要将**Co-Signer** 的启动端口对ChainUp Custody的服务器IP添加安全组或白名单，以下是Custody的IP：
 
