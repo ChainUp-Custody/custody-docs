@@ -6,7 +6,7 @@ Before system development, the workspace needs to complete the following prepara
 
 ## Create API
 
-The workspace creator should log in to the [ChainUp Console](https://custody.chainup.com/) System and create an API on the API Management page.
+The workspace owner should log in to the [ChainUp Console](https://custody.chainup.com/) System and create an API on the API Management page.
 
 <div className="w-full flex items-center justify-center">
     <img src="/images/apis/mpc-api1_en.png" width="600"/>
@@ -67,7 +67,7 @@ Co-Signer provides a callback handler, which is an optional component:
 ### Create Co-Signer Private Key Shares
 After configuring API and Co-Signer programs, create private key shares for Co-Signer in the app.
 
-The **workspace creator** can create Co-Signer private key shares on the MPC workspace **Security - Co-Signer** page. The created Co-Signer private key shares will be encrypted and synchronized to the Co-Signer server using the Co-Signer RSA public key configured by the client on the ChainUp platform.
+The **workspace owner** can create Co-Signer private key shares on the MPC workspace **Security - Co-Signer** page. The created Co-Signer private key shares will be encrypted and synchronized to the Co-Signer server using the Co-Signer RSA public key configured by the client on the ChainUp platform.
 
 <Warning>
 **Notes**
@@ -89,7 +89,7 @@ Login to the [ChainUp management](https://custody.chainup.com/) platform and cre
     <img src="/images/apis/mpc-auto-collect1_en.png" width="600"/>
 </div>
 
-* The `workspace creator` approves the signature in the app. Encrypt the set workspaces with the workspace's private key to ensure the correct address for auto sweep.
+* The `workspace owner` approves the signature in the app. Encrypt the set workspaces with the workspace's private key to ensure the correct address for auto sweep.
 <div className="w-full flex items-center justify-center">
     <img src="/images/apis/mpc-auto-collect2_en.png" width="200"/>
 </div>
