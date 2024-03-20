@@ -9,7 +9,8 @@ description: "指定钱包在app、web客户端的展示情况，不展示无法
     多个钱包id的字符串，英文逗号分割
 </ParamField>
 <ParamField query="app_show_status" type="string" required>
-    创建后app和web端是否展示该钱包，`1`展示, `2`不展示；默认不展示，展示后可以在app和web端进行充提币、web3交易等操作
+    创建后app和web端是否展示该钱包，`1`展示, `2`不展示；默认不展示。 
+    若设置为展示，钱包将显示在用户侧，包括App和PC端系统，并可以进行人工操作；若设置为不展示，钱包将不显示在用户侧，仅能通过OpenAPI进行操作。
 </ParamField>
 
 

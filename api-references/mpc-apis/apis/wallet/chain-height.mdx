@@ -1,19 +1,19 @@
 ---
-title: 获取主链最新块高
+title: 获取网络最新块高
 api: GET /api/mpc/chain_height
-description: "获取指定主链的区块最新块高"
+description: "获取指定网络的区块最新块高"
 ---
 
 #### 请求参数数据结构
 <ParamField query="base_symbol" type="string" required>
-    主链币种名称，币种唯一标识，例：`ETH`
+    网络币种名称，币种唯一标识，例：`ETH`
 </ParamField>
 
 
 
 #### 响应参数数据结构
 <Expandable title="object">
-    <ResponseField name="height" type="long">主链最新区块高度</ResponseField>
+    <ResponseField name="height" type="long">网络最新区块高度</ResponseField>
 </Expandable>
 
 

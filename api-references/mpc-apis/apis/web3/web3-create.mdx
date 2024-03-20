@@ -1,7 +1,7 @@
 ---
 title: 创建Web3交易
 api: POST /api/mpc/web3/trans/create
-description: "创建一笔Web3交易"
+description: "通过API创建一笔Web3交易"
 ---
 
 #### 请求参数数据结构
@@ -12,7 +12,7 @@ description: "创建一笔Web3交易"
    	转账唯一标识
 </ParamField>
 <ParamField query="main_chain_symbol" type="string" required>
-    主链币币名，币种唯一标识，例：`ETH`
+    网络原生代币币名，币种唯一标识，例：`ETH`
 </ParamField>
 <ParamField query="from" type="string">
     交易发起地址，钱包存在多地址时, 可指定交易地址, 不指定时默认使用钱包“常用地址“
@@ -21,7 +21,7 @@ description: "创建一笔Web3交易"
     交互合约
 </ParamField>
 <ParamField query="amount" type="string" required>
-   	交易金额，-1:表示无穷大, 该金额表示主链币使用金额, 如金额为1ETH, 传值为:1
+   	交易金额，-1:表示无穷大, 该金额表示网络原生代币使用金额, 如金额为1ETH, 传值为:1
 </ParamField>
 <ParamField query="gas_price" type="string" required>
     gas 矿工费，单位：Gwei
