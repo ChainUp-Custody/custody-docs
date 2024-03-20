@@ -26,6 +26,6 @@ title: Transfer (Withdrawal)
 | confirmations    | Integer | Yes      | Number of block confirmations，example：10                   |
 | status           | Integer | Yes      | transfer status: `1000` awaiting approval, `1100` Approved while awaiting signature, `1200` Payment in progress, `2000`Payment completed, `2100` Not Approved, `2200` Rejected, `2300` Transaction discarded, `2400`Payment failed |
 | transfer_source  | Integer | Yes      | transfer Type：`1`app, `2`openapi                            |
-| base_symbol      | String  | No       | The unique identifier of the main chain of the coin to be transferred, for example: ETH |
+| base_symbol      | String  | No       | The unique identifier of the netwo  rk of the coin to be transferred, for example: ETH |
 | contract_address | String  | No       | transfer coin's contract address                             |
 | tx_height        | Long   |Yes   | Block height at which the transaction is completed |

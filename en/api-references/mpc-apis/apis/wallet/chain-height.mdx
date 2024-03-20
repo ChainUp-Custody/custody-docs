@@ -1,19 +1,19 @@
 ---
 title: Get Latest Block Height
 api: GET /api/mpc/chain_height
-description: "Get the latest block height of the specified main chain."
+description: "Get the latest block height of the specified network."
 ---
 
 #### Request Parameters
 <ParamField query="base_symbol" type="string" required>
-    Main chain coins, Unique identifier for the coin, e.g.：`ETH`
+    Native tokens, Unique identifier for the coin, e.g.：`ETH`
 </ParamField>
 
 
 
 #### Response Data Parameters
 <Expandable title="object">
-    <ResponseField name="height" type="long">Latest block height of the main chain</ResponseField>
+    <ResponseField name="height" type="long">Latest block height of the network</ResponseField>
 </Expandable>
 
 

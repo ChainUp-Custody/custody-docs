@@ -6,7 +6,7 @@ description: "Create an address for a specified wallet and coin; the same wallet
 
 #### Request Parameters
 <ParamField query="sub_wallet_id" type="integer" required>
-    Sub wallet id
+    Wallet id
 </ParamField>
 <ParamField query="symbol" type="string" required>
     Unique identifier for the coin, e.g.：`USDTERC20`
@@ -18,7 +18,7 @@ description: "Create an address for a specified wallet and coin; the same wallet
 <Expandable title="object">
     <ResponseField name="address" type="string">Created address</ResponseField>
     <ResponseField name="addr_type" type="integer">Address type, 1: User address, 2: System address (including sweeping address, change address). `System addresses` **cannot** be assigned to users for use; change in UTXO transactions will be directed to the change address</ResponseField>
-    <ResponseField name="memo" type="string">Memo assigned for Memo types under the main chain</ResponseField>
+    <ResponseField name="memo" type="string">Memo assigned for Memo types under the network</ResponseField>
 </Expandable>
 
 

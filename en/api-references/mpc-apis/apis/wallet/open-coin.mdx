@@ -1,7 +1,7 @@
 ---
-title: "Get Supported Main Chains"
+title: "Get Supported Networks"
 api: "GET /api/mpc/wallet/open_coin"
-description: "Get the supported MPC main chain coins and the MPC main chain coins opened in ChainUp Custody."
+description: "Get the ChainUp Custody supported networks and the opened networks in MPC workspace."
 ---
 
 #### Request Parameters
@@ -23,7 +23,7 @@ description: "Get the supported MPC main chain coins and the MPC main chain coin
 
 #### Response Data Parameters
 <ResponseField name="open_main_chain" type="object[ ]">
-    Opened main chains in the workspace
+    Opened networks in the workspace
     <Expandable title="object">
         <ResponseField name="coin_net" type="string">Coin network, e.g.：`MATIC`</ResponseField>
         <ResponseField name="symbol" type="string">Unique identifier for the coin, e.g.：`MATIC1`</ResponseField>
@@ -32,13 +32,13 @@ description: "Get the supported MPC main chain coins and the MPC main chain coin
     </Expandable>
 </ResponseField>
 <ResponseField name="support_main_chain" type="object[ ]">
-    Supported main chains in MPC
+    Supported networks in MPC
     <Expandable title="object">
         <ResponseField name="coin_net" type="string">Coin network, e.g.：`ETH`</ResponseField>
         <ResponseField name="symbol" type="string">Unique identifier for the coin, e.g.：`ETH`</ResponseField>
         <ResponseField name="symbol_alias" type="string">Real name of the coin, e.g.：`ETH`</ResponseField>
         <ResponseField name="support_acceleration" type="bool">Indicates if acceleration is supported (true/false)</ResponseField>
-        <ResponseField name="if_open_chain" type="bool">Indicates if the main chain is opened (false/true)</ResponseField>
+        <ResponseField name="if_open_chain" type="bool">Indicates if the network is opened (false/true)</ResponseField>
     </Expandable>
 </ResponseField>
 
