@@ -18,7 +18,7 @@ description: "为指定的币种创建地址；同一钱包可创建多个币种
 <Expandable title="object">
     <ResponseField name="address" type="string">创建的地址</ResponseField>
     <ResponseField name="addr_type" type="integer">地址类型，1：用户地址，2：系统地址(包括归集地址、找零地址)。`系统地址`不可给分配给用户使用, UTXO交易的找零都会找零到找零地址</ResponseField>
-    <ResponseField name="memo" type="string">Memo网络下币种时分配</ResponseField>
+    <ResponseField name="memo" type="string">Memo类型网络，只会创建一个地址，其他的标注Memo。您需给用户分配Memo, 并根据充值交易的Memo判断是哪个用户的充值。请提示您的用户填写对应的Memo，才能充值成功。</ResponseField>
 </Expandable>
 
 

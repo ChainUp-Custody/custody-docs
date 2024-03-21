@@ -18,7 +18,7 @@ description: "Create an address for a specified coin; a single wallet can create
 <Expandable title="object">
     <ResponseField name="address" type="string">Created address</ResponseField>
     <ResponseField name="addr_type" type="integer">Address type, 1: User address, 2: System address (including sweeping address, change address). `System addresses` **cannot** be assigned to users for use; change in UTXO transactions will be directed to the change address</ResponseField>
-    <ResponseField name="memo" type="string">Memo assigned for Memo types under the network</ResponseField>
+    <ResponseField name="memo" type="string">For a Memo type network, only one address will be created, and the others will be marked as memo. You need to assign a Memo to the user, and determine the user deposit based on it. Please prompt your users to fill in the corresponding memo to successfully deposit.</ResponseField>
 </Expandable>
 
 
