@@ -1,12 +1,12 @@
 ---
 title: Get Transfer Records
 api: GET /api/mpc/billing/withdraw_list
-description: "Get all wallet transfer records under the workspace, and return up to 100 records"
+description: "Get all wallet transfer records under the workspace"
 ---
 
 #### Request Parameters
 <ParamField query="ids" type="string" required>
-    many `request_id` string, separated by commas
+    many `request_id` string, separated by commas, return up to 100 records.
 </ParamField>
 
 

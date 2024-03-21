@@ -1,12 +1,12 @@
 ---
 title: Sync Auto Sweeping Records
 api: GET /api/mpc/billing/sync_auto_collect_list
-description: "Retrieve up to 100 sweeping records for all wallets under a workspace."
+description: "Retrieve up to 100 sweeping records after a specific transaction ID for all wallets under the workspace"
 ---
 
 #### Request Parameters
 <ParamField query="max_id" type="string" required>
-    Starting ID for sweeping records
+    Starting ID for sweeping records, for example 100, the system will return all transaction information after 101 
 </ParamField>
 
 
