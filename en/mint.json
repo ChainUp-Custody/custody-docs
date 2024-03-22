@@ -62,7 +62,6 @@
       "pages": [
         "introduction/custody-solution/mpc-wallet",
         "introduction/custody-solution/joint-custody",
-        "introduction/custody-solution/compliance-custody",
         "introduction/custody-solution/wapi"
       ]
     },
@@ -84,7 +83,7 @@
       ]
     },
     {
-      "group": "MPC Wallet",
+      "group": "Self Custody (MPC Wallet)",
       "pages": [
         "quick-start/mpc-wallet/download-app",
         "quick-start/mpc-wallet/create-account",
@@ -102,6 +101,13 @@
             "quick-start/mpc-wallet/api-integration/api",
             "quick-start/mpc-wallet/api-integration/co-signer"
           ]
+        },
+        {
+          "group": "Compliance Services",
+          "pages": [
+            "quick-start/compliance-custody-mpc/open-mpc",
+            "quick-start/compliance-custody-mpc/strategy-mpc"
+          ]
         }
       ]
     },
@@ -111,21 +117,9 @@
         "quick-start/joint-custody/download-app",
         "quick-start/joint-custody/create-account",
         "quick-start/joint-custody/create-wallet",
-        "quick-start/joint-custody/api-integration"
-      ]
-    },
-    {
-      "group": "Compliance Services",
-      "pages": [
+        "quick-start/joint-custody/api-integration",
         {
-          "group": "For MPC Workspace",
-          "pages": [
-            "quick-start/compliance-custody-mpc/open-mpc",
-            "quick-start/compliance-custody-mpc/strategy-mpc"
-          ]
-        },
-        {
-          "group": "For Joint Custody ",
+          "group": "Compliance Services",
           "pages": [
             "quick-start/compliance-custody-joint/open-joint",
             "quick-start/compliance-custody-joint/strategy-joint"
@@ -136,12 +130,11 @@
     {
       "group": "Introduction to APIs",
       "pages": [
-        "api-references/intro/custody-apis",
-        "api-references/intro/custody-apis-intro"
+        "api-references/intro/custody-apis"
       ]
     },
     {
-      "group": "MPC Wallet APIs",
+      "group": "Self Custody (MPC Wallet)",
       "pages": [
         {
           "group": "Integration Guide",
@@ -243,7 +236,7 @@
       ]
     },
     {
-      "group": "ChainUp Custody V2 APIs",
+      "group": "Joint Custody",
       "pages": [
         "api-references/custody-apis/guide",
         "api-references/custody-apis/scheme",
@@ -333,7 +326,7 @@
       ]
     },
     {
-      "group": "Managing MPC System",
+      "group": "Self Custody (MPC Wallet)",
       "pages": [
         {
           "group": "Team Members",
@@ -397,7 +390,7 @@
       ]
     },
     {
-      "group": "Managing Joint Custody System",
+      "group": "Joint Custody",
       "pages": [
         {
           "group": "Transactions",
@@ -408,7 +401,7 @@
       ]
     },
  {
-      "group": "MPC Workspace User Guide",
+      "group": "Self Custody (MPC Wallet)",
       "pages": [
         {
           "group": "Account",
