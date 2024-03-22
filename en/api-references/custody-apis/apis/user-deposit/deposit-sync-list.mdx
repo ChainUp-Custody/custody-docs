@@ -1,22 +1,23 @@
 ---
 title: Synchronize Deposit Records
+description: "Get the deposit records after a specific transaction ID"
 ---
 
-`GET /api/v2/billing/syncDepositList`
+`GET/api/v2/billing/syncDepositList`
 
 #### Decrypted Request Parameters
 <ParamField query="time" type="long" required>
-    current timestamp
+    Current timestamp
 </ParamField>
 <ParamField query="charset" type="string" required>
-    encoding format, no special case, pass parameter UTF-8
+    Encoding format, no special case, pass parameter UTF-8
 </ParamField>
 <ParamField query="version" type="string" required>
-    interface version number, no special case, pass parameter v2
+    Interface version number, no special case, pass parameter v2
 </ParamField>
 
 <ParamField query="max_id" type="string" required>
-    returns 100 records greater than id
+    Returns 100 records after a specific transaction ID
 </ParamField>
 
 

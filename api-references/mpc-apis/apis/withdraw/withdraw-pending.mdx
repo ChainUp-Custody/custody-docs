@@ -1,5 +1,5 @@
 ---
-title: 转账加速
+title: 加速交易
 api: POST /api/mpc/billing/withdraw_pending
 description: "转账签名完成后，由于矿工费不足而长时间未上链的时候，可以重新指定更高额的矿工费用加速上链"
 ---
@@ -9,19 +9,19 @@ description: "转账签名完成后，由于矿工费不足而长时间未上链
     转账id
 </ParamField>
 <ParamField query="fee_rate" type="string">
-   	BTC类型系列，费率；注意：不要和其他系列参数一起传入
+   	UTXO网络类型费率；注意：不要和其他系列参数一起传入
 </ParamField>
 <ParamField query="size" type="string">
-   	BTC类型系列，字节大小；注意：不要和其他系列参数一起传入
+   	UTXO网络类型字节大小；注意：不要和其他系列参数一起传入
 </ParamField>
 <ParamField query="gas_price" type="string">
-    ETH类型系列，gas推荐单价；注意：不要和其他系列参数一起传入
+     EVM网络类型gas推荐单价；注意：不要和其他系列参数一起传入
 </ParamField>
 <ParamField query="gas_limit" type="string">
-   	ETH类型系列，gas限制；注意：不要和其他系列参数一起传入
+   	EVM网络类型gas限制；注意：不要和其他系列参数一起传入
 </ParamField>
 <ParamField query="fee" type="string">
-    其他系列，如DOT\TRX，使用fee；注意：不要和其他系列参数一起传入；`gas_limit除外，如ATOM`
+    其他系列，如DOT\TRX，使用fee；注意：不要和其他系列参数一起传入；
 </ParamField>
 
 

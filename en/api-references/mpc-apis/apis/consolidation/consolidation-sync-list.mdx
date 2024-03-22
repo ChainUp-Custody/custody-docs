@@ -1,12 +1,12 @@
 ---
 title: Sync Auto Sweeping Records
 api: GET /api/mpc/billing/sync_auto_collect_list
-description: "Retrieve up to 100 sweeping records for all wallets under a workspace."
+description: "Retrieve up to 100 sweeping records after a specific transaction ID for all wallets under the workspace"
 ---
 
 #### Request Parameters
 <ParamField query="max_id" type="string" required>
-    Starting ID for sweeping records
+    Starting ID for sweeping records, for example 100, the system will return all transaction information after 101 
 </ParamField>
 
 
@@ -18,7 +18,7 @@ description: "Retrieve up to 100 sweeping records for all wallets under a worksp
         <ResponseField name="sub_wallet_id" type="integer">wallet id</ResponseField>
         <ResponseField name="symbol" type="string">Unique identifier for the coin, used during consolidation, e.g.：`USDTERC20`</ResponseField>
         <ResponseField name="amount" type="string">Consolidation amount</ResponseField>
-        <ResponseField name="fee_symbol" type="string">Fee currency, e.g.：ETH</ResponseField>
+        <ResponseField name="fee_symbol" type="string">Fee coin, e.g.：ETH</ResponseField>
         <ResponseField name="fee" type="string">Fee amount, e.g.：0.00123</ResponseField>
         <ResponseField name="real_fee" type="string">Actual consumed fee, e.g.：0.00111</ResponseField>
         <ResponseField name="created_at" type="long">Creation timestamp</ResponseField>
@@ -29,8 +29,8 @@ description: "Retrieve up to 100 sweeping records for all wallets under a worksp
         <ResponseField name="confirmations" type="integer">Number of block confirmations, e.g.：10</ResponseField>
         <ResponseField name="status" type="integer">Consolidation status: 1000 Unapproved, 1100 Approved, Pending Signature, 1200 In Progress, 2000 Completed, 2100 Rejected, 2200 Rejected, 2201 System Rejected, 2202 Auto Cancelled, 2300 Transaction Discarded, 2400 Payment Failed</ResponseField>
         <ResponseField name="trans_type" type="integer">Consolidation type: 10. Consolidation Transaction, 11. Consolidation Gas Transaction</ResponseField>
-        <ResponseField name="base_symbol" type="string">Base currency unique identifier on the main chain, e.g.：ETH</ResponseField>
-        <ResponseField name="contract_address" type="string">Contract address for the consolidation currency</ResponseField>
+        <ResponseField name="base_symbol" type="string">Native token unique identifier on the network, e.g.：ETH</ResponseField>
+        <ResponseField name="contract_address" type="string">Contract address for the consolidation coin</ResponseField>
     </Expandable>
 </ResponseField>
 

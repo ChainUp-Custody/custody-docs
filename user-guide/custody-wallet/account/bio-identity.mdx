@@ -1,0 +1,58 @@
+---
+title: 生物识别
+---
+
+## I. 功能简介
+
+生物识别技术是一种身体特征识别技术，通过识别个人生物特征来验证身份。由于生物特征是独特的，难以伪造或复制，因此比传统的密码或PIN码更安全。Custody App支持用户开启生物识别进行免密支付或免密操作，只需使用自己的生物特征即可完成验证。这减少了密码或GA验证码输入的烦恼，使用户操作更加简单和顺畅。
+
+然而，虽然生物识别技术带来了许多便利，但也存在隐私和安全方面的考虑。请您综合考虑所有因素来决定是否开启Custody系统操作的生物识别。
+
+## II. 操作流程
+
+
+<Steps>
+<Step title="打开Custody APP">
+    如果尚未登录Custody APP，请先登录。
+</Step>
+<Step title="进入生物识别功能">
+    在Custody APP中，点击左上角的个人头像后点击【安全】模块。
+    <div className="w-full flex items-center justify-center">
+   <CardGroup cols={2}>
+    <img src="/images/custody-guide/personalcn.png" width="200"/>
+    <img src="/images/custody-guide/sercuity.png" width="200"/>
+</CardGroup>
+</div>
+</Step>
+
+<Step title="分场景开启生物识别">
+
+#### A. 免密操作
+
+生物识别功能替代GA和支付密码，通过调用您本地设备的面容或指纹，快速完成安全验证(例如支付，购买理财)。
+
+
+#### B. 免密支付
+
+生物识别功能替代GA或验证码，通过调用您本地设备的面容或指纹，快速完成安全验证(例如修改地址簿，审批)。
+
+</Step>
+</Steps>
+
+<warning>
+**风险提示**：  为了保障资金和账户的安全，ChainUp Custody提醒您:大额资产交易，请勿开启生物识别。公共设备，请勿开启生物识别。
+</warning>
+
+## III. 常见问题
+
+<Accordion title="为什么无法开启生物识别？">
+请注意以下情况可能会导致您的生物识别功能无法开启：
+1. 本地设备的生物识别功能没有授权给Custody App。
+2. 本地设备没有启用生物识别功能，应用无法读取到生物信息。
+</Accordion>
+
+<Accordion title="为什么生物识别失效或无法使用？">
+生物识别功能自动关闭或无法使用的情况：
+1. 本地设备的生物信息发生修改，例如添加新的面容或指纹。
+2. 本地设备的生物识别功能关闭或取消了授权。
+</Accordion>

@@ -1,7 +1,7 @@
 ---
 title: Estimated Gas Fee
 api: GET /api/mpc/billing/gas_estimate
-description: "Obtain the estimated miner fee required for transfer."
+description: "Obtain the current optimal gas(miner) fee required for transfer by the network (estimated data, for reference only) ."
 ---
 
 #### Request Parameters
@@ -28,19 +28,19 @@ description: "Obtain the estimated miner fee required for transfer."
 #### Response Data Parameters
 <Expandable title="object">
     <ResponseField name="fee_unit" type="string">Fee unit, e.g.：`Gwei`、`sat/b`</ResponseField>
-    <ResponseField name="fee_rate1" type="string">Fee rate tier 1 for BTC series</ResponseField>
-    <ResponseField name="fee_rate2" type="string">Fee rate tier 2 for BTC series</ResponseField>
-    <ResponseField name="fee_rate3" type="string">Fee rate tier 3 for BTC series</ResponseField>
-    <ResponseField name="size" type="long">Size in bytes for BTC series (parameter value cannot be modified)</ResponseField>
-<ResponseField name="fee_decimals" type="integer">BTC series, used for calculating the main coin's transaction fee. The formula is: `(fee_rate/10^fee_decimals)*size`</ResponseField>
-<ResponseField name="gas_limit" type="long">Gas limit for ETH series (also available for some other series like ATOM)</ResponseField>
-<ResponseField name="gas_price1" type="string">Gas recommended price tier 1 for ETH series</ResponseField>
-<ResponseField name="gas_price2" type="string">Gas recommended price tier 2 for ETH series</ResponseField>
-<ResponseField name="gas_price3" type="string">Gas recommended price tier 3 for ETH series</ResponseField>
-<ResponseField name="gas_decimals" type="integer">ETH series, used for calculating the main coin's transaction fee. The formula is: `(gas_price/10^gas_decimals)*gas_limit`</ResponseField>
+    <ResponseField name="fee_rate1" type="string">Fee rate tier 1 for UTXO-based blockchain</ResponseField>
+    <ResponseField name="fee_rate2" type="string">Fee rate tier 2 for UTXO-based blockchain</ResponseField>
+    <ResponseField name="fee_rate3" type="string">Fee rate tier 3 for UTXO-based blockchain</ResponseField>
+    <ResponseField name="size" type="long">Size in bytes for UTXO-based blockchain (parameter value cannot be modified)</ResponseField>
+<ResponseField name="fee_decimals" type="integer">UTXO-based blockchain, used for calculating the  native token's transaction fee. The formula is: `(fee_rate/10^fee_decimals)*size`</ResponseField>
+<ResponseField name="gas_limit" type="long">Gas limit for EVM-compatible blockchains (also available for some other series like ATOM)</ResponseField>
+<ResponseField name="gas_price1" type="string">Gas recommended price tier 1 for EVM-compatible blockchains</ResponseField>
+<ResponseField name="gas_price2" type="string">Gas recommended price tier 2 for EVM-compatible blockchains</ResponseField>
+<ResponseField name="gas_price3" type="string">Gas recommended price tier 3 for EVM-compatible blockchains</ResponseField>
+<ResponseField name="gas_decimals" type="integer">EVM-compatible blockchains, used for calculating the  native token's transaction fee. The formula is: `(gas_price/10^gas_decimals)*gas_limit`</ResponseField>
     <ResponseField name="fee" type="string">Fee for other series such as DOT and TRX, using the 'fee' field for transaction fees</ResponseField>
     <ResponseField name="fee_changeable" type="bool">For other series such as DOT and TRX, indicates whether the 'fee' parameter value can be changed. Set to true for modifiable and false for non-modifiable values</ResponseField>
-    <ResponseField name="trans_fee" type="integer">Reference transaction fee, unit is the base coin of the main chain</ResponseField>
+    <ResponseField name="trans_fee" type="integer">Reference transaction fee, unit is the native token of the network</ResponseField>
 </Expandable>
 
 

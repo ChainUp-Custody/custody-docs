@@ -1,7 +1,7 @@
 ---
-title: 转账预估矿工费
+title: 获取矿工费
 api: GET /api/mpc/billing/gas_estimate
-description: "预估转账需要的矿工费用"
+description: "获取网络当前最优转账交易所需的矿工费（预估数据，仅做参考）"
 ---
 
 #### 请求参数数据结构
@@ -28,19 +28,19 @@ description: "预估转账需要的矿工费用"
 #### 响应参数数据结构
 <Expandable title="object">
     <ResponseField name="fee_unit" type="string">矿工费单位，例：`Gwei`、`sat/b`</ResponseField>
-    <ResponseField name="fee_rate1" type="string">BTC类型系列，费率一档</ResponseField>
-    <ResponseField name="fee_rate2" type="string">BTC类型系列，费率二档</ResponseField>
-    <ResponseField name="fee_rate3" type="string">BTC类型系列，费率三档</ResponseField>
-    <ResponseField name="size" type="long">BTC类型系列，字节大小，该参数值不可修改</ResponseField>
-    <ResponseField name="fee_decimals" type="integer">BTC类型系列，用于计算主币矿工费，计算式：`(fee_rate/10^fee_decimals)*size`</ResponseField>
-    <ResponseField name="gas_limit" type="long">ETH类型系列（部分其他系列币种如ATOM也有此参数值），gas限制</ResponseField>
-    <ResponseField name="gas_price1" type="string">ETH类型系列，gas推荐单价一档</ResponseField>
-    <ResponseField name="gas_price2" type="string">ETH类型系列，gas推荐单价二档</ResponseField>
-    <ResponseField name="gas_price3" type="string">ETH类型系列，gas推荐单价三档</ResponseField>
-    <ResponseField name="gas_decimals" type="integer">ETH类型系列，用于计算主币矿工费，计算式：`(gas_price/10^gas_decimals)*gas_limit`</ResponseField>
+    <ResponseField name="fee_rate1" type="string">UTXO网络类型，费率一档</ResponseField>
+    <ResponseField name="fee_rate2" type="string">UTXO网络类型，费率二档</ResponseField>
+    <ResponseField name="fee_rate3" type="string">UTXO网络类型，费率三档</ResponseField>
+    <ResponseField name="size" type="long">UTXO网络类型，字节大小，该参数值不可修改</ResponseField>
+    <ResponseField name="fee_decimals" type="integer">UTXO网络类型，用于计算主币矿工费，计算式：`(fee_rate/10^fee_decimals)*size`</ResponseField>
+    <ResponseField name="gas_limit" type="long">EVM网络类型（部分其他系列币种如ATOM也有此参数值），gas限制</ResponseField>
+    <ResponseField name="gas_price1" type="string">EVM网络类型，gas推荐单价一档</ResponseField>
+    <ResponseField name="gas_price2" type="string">EVM网络类型，gas推荐单价二档</ResponseField>
+    <ResponseField name="gas_price3" type="string">EVM网络类型，gas推荐单价三档</ResponseField>
+    <ResponseField name="gas_decimals" type="integer">EVM网络类型，用于计算主币矿工费，计算式：`(gas_price/10^gas_decimals)*gas_limit`</ResponseField>
     <ResponseField name="fee" type="string">其他系列，如DOT\TRX，使用fee字段做矿工费</ResponseField>
     <ResponseField name="fee_changeable" type="bool">其他系列，如DOT\TRX，使用fee参数值是否可更改，`true`可修改，`false`不可修改</ResponseField>
-    <ResponseField name="trans_fee" type="integer">参考交易矿工费，单位是主链币</ResponseField>
+    <ResponseField name="trans_fee" type="integer">参考交易矿工费，单位是网络原生代币</ResponseField>
 </Expandable>
 
 

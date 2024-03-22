@@ -62,7 +62,6 @@
       "pages": [
         "introduction/custody-solution/mpc-wallet",
         "introduction/custody-solution/joint-custody",
-        "introduction/custody-solution/compliance-custody",
         "introduction/custody-solution/wapi"
       ]
     },
@@ -84,7 +83,7 @@
       ]
     },
     {
-      "group": "MPC钱包",
+      "group": "自托管（MPC钱包）",
       "pages": [
         "quick-start/mpc-wallet/download-app",
         "quick-start/mpc-wallet/create-account",
@@ -102,6 +101,13 @@
             "quick-start/mpc-wallet/api-integration/api",
             "quick-start/mpc-wallet/api-integration/co-signer"
           ]
+        },
+        {
+          "group": "合规服务",
+          "pages": [
+            "quick-start/compliance-custody-mpc/open-mpc",
+            "quick-start/compliance-custody-mpc/strategy-mpc"
+          ]
         }
       ]
     },
@@ -111,21 +117,9 @@
         "quick-start/joint-custody/download-app",
         "quick-start/joint-custody/create-account",
         "quick-start/joint-custody/create-wallet",
-        "quick-start/joint-custody/api-integration"
-      ]
-    },
-    {
-      "group": "合规托管",
-      "pages": [
+        "quick-start/joint-custody/api-integration",
         {
-          "group": "应用MPC工作站",
-          "pages": [
-            "quick-start/compliance-custody-mpc/open-mpc",
-            "quick-start/compliance-custody-mpc/strategy-mpc"
-          ]
-        },
-        {
-          "group": "应用统一托管",
+          "group": "合规服务",
           "pages": [
             "quick-start/compliance-custody-joint/open-joint",
             "quick-start/compliance-custody-joint/strategy-joint"
@@ -136,12 +130,11 @@
     {
       "group": "简介",
       "pages": [
-        "api-references/intro/custody-apis",
-        "api-references/intro/custody-apis-intro"
+        "api-references/intro/custody-apis"
       ]
     },
     {
-      "group": "MPC钱包APIs",
+      "group": "自托管（MPC钱包）",
       "pages": [
         {
           "group": "接入指引",
@@ -243,7 +236,7 @@
       ]
     },
     {
-      "group": "统一托管APIs",
+      "group": "统一托管",
       "pages": [
         "api-references/custody-apis/guide",
         "api-references/custody-apis/scheme",
@@ -333,7 +326,7 @@
       ]
     },
     {
-      "group": "管理MPC系统",
+      "group": "自托管（MPC钱包）",
       "pages": [
         {
           "group": "用户设置",
@@ -398,7 +391,7 @@
       ]
     },
     {
-      "group": "管理统一托管系统",
+      "group": "统一托管",
       "pages": [
         {
           "group": "账号交易",
@@ -409,7 +402,7 @@
       ]
     },
   {
-    "group": "MPC工作站操作指南",
+    "group": "自托管（MPC钱包）",
     "pages": [
       {
         "group": "账户安全",
@@ -511,6 +504,6 @@
   "suggestEdit":true,
   "raiseIssue":true,
   "thumbsRating":true
-}
+ }
 }
 

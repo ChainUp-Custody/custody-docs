@@ -1,7 +1,7 @@
 ---
 title: Modify the Wallet Display Status
 api: POST /api/mpc/sub_wallet/change_show_status
-description: "The display of the specified wallet in the App and web portal is essential for initiating transactions. If it is not displayed, transactions cannot be initiated in the app."
+description: " You can specify whether the wallet is displayed on the user side. If set to display, the wallet will be displayed on the user side, including the App and PC systems, and manual operations can be performed; if it is set to not display, the wallet will not be displayed on the user side and can only be operated via OpenAPI."
 ---
 
 #### Request Parameters
@@ -9,7 +9,7 @@ description: "The display of the specified wallet in the App and web portal is e
     A string of multiple wallet ids, separated by commas
 </ParamField>
 <ParamField query="app_show_status" type="string" required>
-    Whether the wallet be displayed in the app and web after creation? 1 for display, 2 for not display; default is not displayed, if displayed, users can perform deposit, withdrawal, web3 transactions, and other operations on the app and web platform
+    Whether the wallet be displayed in the app and web after creation: 1 for display, 2 for not display; default is not displayed, if displayed, users can perform deposit(receive), withdrawal(transfer), web3 transactions, and other operations on the app and web platform
 </ParamField>
 
 

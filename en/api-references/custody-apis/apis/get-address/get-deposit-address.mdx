@@ -1,6 +1,6 @@
 ---
 title: Address of the User-specified Coin
-description: "To obtain the user specified coin account address. If there is no address, the user is assigned an address, and the account should not be generated. The account is still generated on demand."
+description: "To obtain the user specified coin account address. If the user does not have an address, the system will automatically assign an address to the user."
 ---
 
 `POST /api/v2/account/getDepositAddress`
@@ -26,6 +26,7 @@ description: "To obtain the user specified coin account address. If there is no 
 
 
 #### Response Data Parameters
+
 <Expandable title="object">
     <ResponseField name="uid" type="integer">the unique identity of the user in the wallet service</ResponseField>
     <ResponseField name="address" type="string">the coin account address</ResponseField>

@@ -1,12 +1,12 @@
 ---
 title: 同步web3交易记录
 api: GET /api/mpc/web3/sync_trans_list
-description: "获取工作站下所有钱包web3交易记录，最多返回100条"
+description: "获取工作站下所有钱包特定交易ID之后的Web3交易记录"
 ---
 
 #### 请求参数数据结构
 <ParamField query="max_id" type="string" required>
-    Web3交易记录起始id
+    web3交易记录起始id，例100，系统将返回101后的所有交易信息
 </ParamField>
 
 
@@ -19,7 +19,7 @@ description: "获取工作站下所有钱包web3交易记录，最多返回100�
         <ResponseField name="sub_wallet_id" type="integer">钱包id</ResponseField>
         <ResponseField name="txid" type="string">交易hash</ResponseField>
         <ResponseField name="symbol" type="string">交易币种</ResponseField>
-        <ResponseField name="main_chain_symbol" type="string">主链币币名（唯一标识），例：`ETH`</ResponseField>
+        <ResponseField name="main_chain_symbol" type="string">网络原生代币币名（唯一标识），例：`ETH`</ResponseField>
         <ResponseField name="amount" type="string">交易金额。-1表示无穷大</ResponseField>
         <ResponseField name="fee_symbol" type="string">矿工费币种，例：ETH</ResponseField>
         <ResponseField name="fee" type="string">矿工费，例：0.00123</ResponseField>
