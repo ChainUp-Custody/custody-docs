@@ -1,95 +1,110 @@
 ---
-title: 交易信息
+title: 交易记录
 ---
 
 ## I. 功能简介
 
-在ChainUp Custody钱包中，您可以查看、筛选和导出您有权限的交易信息。您可以根据币种名称，NFT合集名称，合约地址，子钱包，币种网络对该主钱包的交易信息进行筛选搜索。
+交易记录模块用于显示所有的充值和提现记录，包括已经停止运营的币种。用户可以通过高级搜索和导出功能对交易记录进行筛选和导出。
 
 ## II. 操作流程
 
 <Steps>
-<Step title="查看交易信息">
-在**APP**，您可在指定子钱包的【资产】页面点击【历史账单】进行查看和筛选；或在【币种详情】查看该币种的交易信息。
-<div className="w-full flex items-center justify-center">
-    <CardGroup cols={3}>
-    <img src="/images/user-guide/record2cn.jpg" width="200"/>
-   <img src="/images/user-guide/record3cn.jpg" width="200"/>
-   <img src="/images/user-guide/record4cn.png" width="200"/>
-    </CardGroup>
-</div>
-在**Web 页面**，点击左侧菜单栏的“交易信息”模块，跳转至该功能页。
-<div className="w-full flex items-center justify-center">
-    <img src="/images/user-guide/record6cn.png" />
-</div>
-您只可以查看，选择，导出当前所选主钱包下您有权限的子钱包的交易信息。
+
+### 充值记录导出
+
+<Step title="选择需要导出的记录">
+打开交易记录页面，在充值记录部分选择需要导出的记录。
 </Step>
 
-<Step title="搜索交易信息">
-在当前**Web 页面**，您可以根据币种名称，NFT合集名称，合约地址，子钱包，币种网络对该主钱包的交易信息进行筛选搜索。您也可以点击高级搜索按钮，根据更多的搜索条件进行查询。
-<div className="w-full flex items-center justify-center">
-    <img src="/images/user-guide/record1cn.png" />
-</div>
+<Step title="点击导出按钮">
+点击导出按钮。
 </Step>
-<Step title="导出交易信息">
-在**Web 页面**，通过点击导出按钮，您可以下载所需的交易信息。
 
-<div className="w-full flex items-center justify-center">
-    <img src="/images/user-guide/record5cn.png" />
-</div>
+<Step title="下载充值记录">
+下载的充值记录包括以下字段：
 
-**下载的信息字段包括：**
+- 订单号/Order number
+- 充币数量/Number of coins charged
+- 币种/Currency
+- 转账地址/Transfer address
+- 收款地址/Receiving address
+- TXID
+- 时间/Time
+- 状态/Status
+- 备注/Remark
+</Step>
 
-- TXID/交易信息
+### 充值详情
 
-- Transfer ID/订单号
+<Step title="查看充值记录的详情">
+查看充值记录中的某一条记录的详情。
+</Step>
 
-- Event/交易类型
+<Step title="充值详情包括以下信息">
+充值详情包括以下信息：
 
-- Coin/币种名
+- 充币到账：充币到账所需要的区块确认数，未达到确认数时当前资产不上账。
+- 提币解锁：资产提币所需要的区块确认数，未达到确认数时当前资产不可提币。
+- 交易类型：区块链转账、联盟转账。当为联盟转账时，交易不上链（不收矿工费），TXID所属为联盟专享。
+</Step>
 
-- NFT Token Name/名称
+### 提币记录导出
 
-- Main Chain/主链名
+<Step title="选择需要导出的记录">
+打开交易记录页面，在提币记录部分选择需要导出的记录。
+</Step>
 
-- Amount/金额
+<Step title="点击导出按钮">
+点击导出按钮。
+</Step>
 
-- From/交易发起地址
+<Step title="下载提币记录">
+下载的提币记录包括以下字段：
 
-- To/交易接收地址
+- 订单号/Order number
+- 提币数量/Withdrawal quantity
+- 提币币种/Currency of withdrawal
+- 矿工费/Miner's fee
+- 矿工费币种/Currency of miner's fee
+- 分润手续费/Service charge for profit sharing
+- 分润手续费币种/Currency of profit sharing service charge
+- 交易方式/Trading method
+- 交易类型/Transaction Type
+- 提币用户/Cash withdrawing user
+- 提币时间/Withdrawal time
+- 状态/Status
+- 收款地址/Receiving address
+- TXID
+- 备注/Remark
+</Step>
 
-- Gas Fee/矿工费
+### 提币详情
 
-- Status/状态
+<Step title="查看提币记录的详情">
+查看提币记录中的某一条记录的详情。
+</Step>
 
-- Created Time/交易发起时间
+<Step title="提币详情包括以下信息">
+提币详情包括以下信息：
 
+- 交易方式：API提币、人工提币（由您的团队在Custody App或PC端发起的提币）。
 </Step>
 
 </Steps>
 
+**请注意，只有钱包创建者有权添加白名单地址。**
+
 ## III. 常见问题
 
-<Accordion title="我如何查看其他主钱包的交易信息？">
-您可点击页面顶部的MPC按钮，或是点击左侧主钱包切换按钮，切换其他主钱包后，再进入该主钱包的交易信息模块进行查看。
+<Accordion title="为什么无法执行充值和提现操作？">
+有可能是系统在某些时候（如区块链分叉、升级、系统维护等）会关闭相关操作，因此您无法执行。请等待系统开启后再操作。
 </Accordion>
 
-<Accordion title="我为什么无法查看，搜索某笔交易信息？">
-请确认以下几点：
-
-1. 您是否拥有该笔交易的权限：您需要拥有相关主钱包/子钱包的共管权限；
-2. 如果是转账交易，请确认这笔交易是否已创建订单号；
-3. 如果是收款交易，请确认该笔订单的TXID，以及Custody系统是否支持该币种；
-4. 如果您想查看Fil相关信息：抱歉，我们暂时不支持用户在MPC钱包Web平台查看Fil相关信息。
-
-如果仍然存在相关问题，请联系在线客服寻求帮助。
+<Accordion title="如何添加白名单地址？">
+只有钱包创建者有权添加白名单地址。请联系钱包创建者进行相关操作。
 </Accordion>
 
-<Accordion title="为什么部分交易信息看起来不完整？">
-可能的原因有：
-
-1. 系统无法全部解析合约调用类的交易信息字段；
-2. 部分字段和交易状态关联：比如只有上链成功的交易才会显示矿工费。
-
-您可联系在线客服寻求更多帮助。
+<Accordion title="如何解决提币到账延迟的问题？">
+如果提币到账延迟，请确认所需的区块确认数是否已达到要求。如果区块确认数未达到要求，您的资产可能暂时无法到账，需要等待确认数达到后再次检查。
 </Accordion>
+

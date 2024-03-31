@@ -4,84 +4,44 @@ title: 转账
 
 ## I. 功能简介
 
-在ChainUp Custody钱包中，您可以进行子钱包之间的转账操作。
+提现功能允许用户将数字资产从其钱包账户转出至外部地址。本手册仅对页面提现进行说明，API 提现请参考接口文档链接。
 
-为了确保资金安全和高效的审批，我们建议对有价值的币种或NFT添加转账策略。不同的角色对应的转账流程可能会有所不同。
+在企业钱包中，为了资金安全及高效审批，建议对有价值的币种添加出金策略，以确保资金的安全与合规。不同的钱包成员角色对应的转账流程可能会有所不同。
 
 ## II. 操作流程
 
 <Steps>
 <Step title="进入转账页面">
-    在**APP**，Token支持左滑快速转账，也可以点击进入币种详情转账。NFT只支持点击进入详情后进行转账。
-<div className="w-full flex items-center justify-center">
-    <CardGroup cols={2}>
-    <img src="/images/user-guide/transfer1cn.png" width="200"/>
-   <img src="/images/user-guide/transfer2cn.png" width="200"/>
-    </CardGroup>
-</div>
 
-    在**Web 页面**，您可以选择子钱包后进行转账。
-    <div className="w-full flex items-center justify-center">
-    <img src="/images/user-guide/transfer4cn.png" />
-</div>
 
 </Step>
 <Step title="填写并确认转账信息">
-    我们支持向其他已备份的子钱包进行转账。为了确保矿工费的准确性，矿工费将在签名时设置。
-    
-    **普通成员**只能发起转账
-    <div className="w-full flex items-center justify-center">
-    <CardGroup cols={2}>
-    <img src="/images/user-guide/transfer3cn.png" width="200"/>
-    <img src="/images/user-guide/transfer6cn.png" width="200"/>
-    </CardGroup>
-</div>
-    
+    输入并确认提现信息，包括提现数量、提现地址、手续费等。
+    **普通成员**只能发起转账    
     **审批成员**可以发起并审批转账订单。
- <div className="w-full flex items-center justify-center">
-    <CardGroup cols={3}>
-    <img src="/images/user-guide/transfer5cn.png" width="200"/>
-    <img src="/images/user-guide/transfer7cn.png" width="200"/>
- <img src="/images/user-guide/transfer8cn.png" width="200"/>
-    </CardGroup>
-</div>
+ </Step>
 
-    当订单满足审批规则后，**钱包创建者**可以进行下一步操作，即进行签名。
-</Step>
-
-
-<Step title="钱包创建者确认和签名">
-    钱包创建者需要设置矿工费（部分主链支持自定义矿工费，可以适当提高矿工费以加快交易处理速度），确认交易信息并进行签名。
-
-<div className="w-full flex items-center justify-center">
-    <CardGroup cols={3}>
-    <img src="/images/user-guide/transfer9cn.png" width="200"/>
-    <img src="/images/user-guide/transfer10cn.png" width="200"/>
- <img src="/images/user-guide/transfer11cn.png" width="200"/>
-    </CardGroup>
-</div>
+<Step title="审批流程">
+可在共管审批页面查看审批详情：全部，待我审批，待他人审批，审批完成，提币撤回。
 
 </Step>
-<Step title="等待签名和交易确认">
-    签名成功后，需等待区块链处理。如果处理时间过长，可以通过提高订单的矿工费来加速交易。
-    
-    一旦区块链确认，交易即完成。您可以在交易记录中查看交易详情。
-
- <div className="w-full flex items-center justify-center">
-    <CardGroup cols={2}>
-    <img src="/images/user-guide/transfer12cn.png" width="200"/>
-    <img src="/images/user-guide/transfer13cn.png" width="200"/>
-    </CardGroup>
-</div>
-
+<Step title="转账成功">
+转账成功后，资金将从钱包账户转出至指定的提现地址。若提现地址为联盟内地址，则采用联盟转账方式，不上链。
 </Step>
 </Steps>
 
 ## III. 常见问题
 
-<Accordion title="未备份的钱包可以发起转账吗？">
-不，为了资产安全，您需要完成私钥备份后才可进行转账。
+<Accordion title="提现后资金未到账怎么办？">
+如果提现后资金未到账，请按以下步骤操作：
+1. 确认提现地址是否正确；
+2. 检查区块链网络确认数是否已达到要求；
+3. 如果使用了出金策略，请检查审批状态是否通过；
+4. 如果以上步骤都正确，但资金仍未到账，请联系客户服务进行进一步处理。
 </Accordion>
-<Accordion title="如果我设置的矿工费不足，我可以在交易过程中增加吗？">
-如果交易处理时间过长，可以尝试提高订单的矿工费来加速交易。但请注意，一旦交易已被区块链确认，就无法更改矿工费。
+<Accordion title="如何添加出金策略？">
+请登录PC端钱包，在相应币种页面查找出金策略设置，根据提示进行操作。
+</Accordion>
+<Accordion title="如何查询提现记录？">
+用户可以在APP的币种页面中查询提现记录，也可以在PC端的提币记录中查看、筛选和导出。
 </Accordion>

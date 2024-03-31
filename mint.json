@@ -491,7 +491,52 @@
     ]
   }
 ]
-}
+},
+{
+  "group": "统一托管",
+  "pages": [
+    {
+      "group": "账户安全",
+      "pages": [
+        "user-guide/custody-wallet/account/password",
+        "user-guide/custody-wallet/account/bind-ga",
+        "user-guide/custody-wallet/account/bio-identity",
+        "user-guide/custody-wallet/account/kyc",
+        "user-guide/custody-wallet/account/cancel-account"
+      ]
+    },
+    {
+      "group": "配置钱包",
+      "pages": [
+        "user-guide/custody-wallet/wallet/create-wallet", 
+        "user-guide/custody-wallet/wallet/add-user"
+      ]
+    },
+    {
+      "group": "日常运营",
+      "pages": [
+        "user-guide/custody-wallet/operation/receive",
+        "user-guide/custody-wallet/operation/transfer",
+        "user-guide/custody-wallet/operation/record",
+        "user-guide/custody-wallet/operation/to-do"
+      ]
+    },
+    {
+      "group": "交易合规",
+      "pages": [
+        "user-guide/custody-wallet/kyt/setting",
+        "user-guide/custody-wallet/kyt/operate"
+      ]
+    },
+    {
+      "group": "安全策略",
+      "pages": [
+        "user-guide/custody-wallet/strategy/api",
+        "user-guide/custody-wallet/strategy/approval-flow"
+      ]
+    }
+  ] 
+ }
 ],
 
 "api": {
