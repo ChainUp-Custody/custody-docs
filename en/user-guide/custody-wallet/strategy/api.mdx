@@ -1,0 +1,35 @@
+---
+title: API Management
+---
+
+## I. Function Introduction
+
+The API management function allows wallet creators to view and operate API-related information. Through the API management page, you can enter API-related information and save and configure it to ensure secure API communication and transactions.
+
+## II. Operation Procedure
+
+<Steps>
+<Step title="API Information Input">
+Only the wallet creator has the authority to view and operate the API management page. On the API management page, you can enter the following API-related information:
+
+- **Trusted IP**: The IP address of the third-party server, which can communicate normally with the Custody server after being added, otherwise it cannot be used even if the API information is obtained.
+- **Callback Address**: Some businesses cannot provide real-time feedback results, and the address that actively notifies the third-party server of the processing results after subsequent processing is completed.
+- **Secondary Confirmation Address**: The withdrawal business secondary confirmation address, after the API initiates a withdrawal request, the system will request confirmation to this address, further enhancing the security of funds.
+
+![API Information Input](/images/user-guide/api_management_input.png)
+</Step>
+
+<Step title="Save Information">
+After entering, please save the API information to successfully create it. Currently, only one full-function authority API can be created.
+
+![Save Information](/images/user-guide/api_management_save.png)
+</Step>
+
+<Step title="API Detail Settings">
+Click on API details, set the developer's RSA public key, and obtain the system RSA public key. When filling in the developer's RSA public key, please fill in the relevant data within 【----begin----】 and 【----end----】.
+
+![API Detail Settings](/images/user-guide/api_management_detail.png)
+</Step>
+</Steps>
+
+

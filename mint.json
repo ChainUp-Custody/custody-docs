@@ -515,6 +515,7 @@
     {
       "group": "日常运营",
       "pages": [
+        "user-guide/custody-wallet/operation/coin",
         "user-guide/custody-wallet/operation/receive",
         "user-guide/custody-wallet/operation/transfer",
         "user-guide/custody-wallet/operation/record",
@@ -522,15 +523,9 @@
       ]
     },
     {
-      "group": "交易合规",
-      "pages": [
-        "user-guide/custody-wallet/kyt/setting",
-        "user-guide/custody-wallet/kyt/operate"
-      ]
-    },
-    {
       "group": "安全策略",
       "pages": [
+        "user-guide/custody-wallet/strategy/whitelist",
         "user-guide/custody-wallet/strategy/api",
         "user-guide/custody-wallet/strategy/approval-flow"
       ]

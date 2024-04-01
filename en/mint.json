@@ -490,7 +490,47 @@
       ]
     }
   ]
-  }
+  },
+{
+  "group": "Joint Custody",
+  "pages": [
+    {
+      "group": "Account",
+      "pages": [
+        "user-guide/custody-wallet/account/password",
+        "user-guide/custody-wallet/account/bind-ga",
+        "user-guide/custody-wallet/account/bio-identity",
+        "user-guide/custody-wallet/account/kyc",
+        "user-guide/custody-wallet/account/cancel-account"
+      ]
+    },
+    {
+      "group": "Wallet",
+      "pages": [
+        "user-guide/custody-wallet/wallet/create-wallet", 
+        "user-guide/custody-wallet/wallet/add-user"
+      ]
+    },
+    {
+      "group": "Operations",
+      "pages": [
+        "user-guide/custody-wallet/operation/coin",
+        "user-guide/custody-wallet/operation/receive",
+        "user-guide/custody-wallet/operation/transfer",
+        "user-guide/custody-wallet/operation/record",
+        "user-guide/custody-wallet/operation/to-do"
+      ]
+    },
+    {
+      "group": "Strategy",
+      "pages": [
+        "user-guide/custody-wallet/strategy/whitelist",
+        "user-guide/custody-wallet/strategy/api",
+        "user-guide/custody-wallet/strategy/approval-flow"
+      ]
+    }
+  ] 
+ }
   ],
   "api": {
     "baseUrl": "https://openapi.chainup.com",
