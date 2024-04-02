@@ -4,139 +4,98 @@ title: 出金策略
 
 ## I. 功能简介
 
-ChainUp Custody的策略引擎为您的托管钱包提供了强大的交易规则定制功能，用于精确管理和控制转出交易。这一灵活的系统允许您根据个性化需求定义一系列交易规则，确保资产的安全和有效流转。这些规则可以掌控特定资产的转账审批流程，明确可批准交易的用户。
-
-
-ChainUp Custody策略引擎会自动将您定义的转账策略应用于通过Web端或App端人工创建的所有转账交易。一旦成员发起了转账请求，相关的转账策略将根据您设定的规则由审批人采取相应操作：
-
-
-<Warning>
-**关键步骤和注意事项**
-
-我们强调正确实施转账策略的重要性。您的转账策略是资产保护的关键层，请您根据业务需求进行定制。
-
-托管钱包的管理员（钱包创建者）发起的交易不受转账策略管理。
-
-API发起的交易不受转账策略管理。
-</Warning>
-
+出金策略是ChainUp Custody钱包中的一个重要功能，用于管理和控制出金交易的审批流程和限制条件。通过出金策略，用户可以灵活地定义出金交易的审批动作、审批人员、审批人员达标数量以及提现额度等参数，以确保资金安全和合规性。
 
 ## II. 操作流程
 
-### 自定义您的转账策略
+### 1. 出金策略配置
 
 <Steps>
-<Step title="登录并打开转账策略">
-    登录Custody APP的托管钱包，打开【安全】-【转账策略】功能。
+<Step title="进入出金策略配置页面">
+    登录ChainUp Custody PC端，导航至出金策略配置页面。
 
-<div className="w-full flex items-center justify-center">
-<img src="/images/user-guide/safecn.png" width="200"/>
+   <div className="w-full flex items-center justify-center">
+    <img src="/images/custody-guide/str1cn.png" width="800"/>
+</div>
+</Step>
+
+<Step title="配置出金策略参数">
+ 
+    在出金策略配置页面，您可以进行以下参数的配置：
+
+    1. **审批动作**：定义出金的业务类型需要审核人员审批，可选的动作包括审批或不审批。
+    2. **审批人员**：指定出金审批的人员，最多可添加10个审批人员。
+    3. **审批人员达标数量**：用户可以自定义符合标准的审批人数，审批通过人数需大于50%的审批人员总数。
+    4. **提现额度**：提现数量根据币种行情价计算，若币种未获取到行情价则不限制提现数量。
+    5. **交易上链设置**：设置交易是否必须上链，可设定开关以控制交易的执行方式。
+  <div className="w-full flex items-center justify-center">
+    <img src="/images/custody-guide/str0.png" width="800"/>
 </div>
 
 </Step>
-<Step title="选择适用策略的MPC子钱包">
-   在转账策略中，选择您想要应用转账策略的MPC子钱包。
 
-<div className="w-full flex items-center justify-center">
-    <CardGroup cols={2}>
-        <img src="/images/user-guide/approval1cn.png" width="200"/>
-      <img src="/images/user-guide/approval2cn.png" width="200"/>
-        </CardGroup>
-</div>
-
+<Step title="保存配置">
+    配置完成后，请保存您的出金策略设置以确保生效。
 </Step>
-<Step title="添加并配置转账策略">
-在此步骤中，您可以定义转账策略的以下参数：
-
-1. **策略名称**：为您的策略命名，方便您以后查找和管理。
-2. **审批成员与审批阈值**：选择子钱包的团队成员作为审批成员，并设置审批阈值。
-3. **审批的币种**：选择需要审批的转账币种。
-
-<div className="w-full flex items-center justify-center">
-    <CardGroup cols={2}>
-        <img src="/images/user-guide/approval3cn.png" width="200"/>
-      <img src="/images/user-guide/approval4cn.png" width="200"/>
-        </CardGroup>
-</div>
-
-<Warning>
-**关键步骤和注意事项**
-
-一个MPC子钱包可以创建多条转账策略，但每种资产的转账策略必须唯一。
-
-若资产从未编辑过转账策略，则该资产的交易默认只需钱包管理员进行最后一步的签名确认。
-</Warning>
-
-</Step>
-
 </Steps>
 
-### 审批流程示例
+### 2. 人工提币策略
 
-<Tip>
-您可以通过查看 [运营待办的详情](/user-guide/mpc-wallet/operation/to-do) 或[交易信息的详情](/user-guide/mpc-wallet/operation/transfer)，高效便捷地了解当前审批进度。
-</Tip>
+#### 通过页面发起的提币订单（非API）
 
 <Steps>
-<Step title="发起转账">
-无论是普通成员、审批成员，还是钱包创建者，都可以通过登录Custody APP或PC端发起转账。
+<Step title="审批触发条件配置">
+    当前，人工提币订单将根据您配置的审批触发条件和币种审批策略进行风险控制。
 
-您需要选择转账的子钱包和币种，输入地址、数量、备注后确认转账，然后等待审批。
-
-在**APP**，Token支持左滑快速转账，也可以点击进入币种详情转账。NFT只支持点击进入详情后进行转账。
-<div className="w-full flex items-center justify-center">
-    <CardGroup cols={2}>
-    <img src="/images/user-guide/transfer1cn.png" width="200"/>
-   <img src="/images/user-guide/transfer2cn.png" width="200"/>
-    </CardGroup>
+   <div className="w-full flex items-center justify-center">
+    <img src="/images/custody-guide/str2cn.png" width="800"/>
 </div>
-
-    在**Web 页面**，您可以选择子钱包后进行转账。
-    <div className="w-full flex items-center justify-center">
-    <img src="/images/user-guide/transfer4cn.png" />
-</div>
-
-
 </Step>
 
-<Step title="审批成员进行审批">
+<Step title="提币价值阈值设置">
+    设置提币价值阈值（U），当提现订单价值等于或超过阈值时，将触发钱包成员审批流程。如果低于此阈值，将直接处理。
 
-该转账策略的审批成员将在“待办”中收到审批提示。审批成员可以进行审批操作。
+</Step>
+</Steps>
 
-如果发起转账的成员是审批成员，那么审批成员的审批状态默认已通过。
+### 3. API提币策略
 
-当订单满足审批规则后，需要钱包创建者进行授权签名处理。
+#### API提现订单处理
 
+<Steps>
+<Step title="审批策略设置">
+    API提现订单的审批策略：
+开启后： API 提现订单将会遵守审批策略；
 
+如关闭：系统将自动批准所有API提现订单， API 订单不会遵守审批策略。
  <div className="w-full flex items-center justify-center">
-    <CardGroup cols={3}>
-    <img src="/images/user-guide/transfer5cn.png" width="200"/>
-    <img src="/images/user-guide/transfer7cn.png" width="200"/>
- <img src="/images/user-guide/transfer8cn.png" width="200"/>
-    </CardGroup>
+    <img src="/images/custody-guide/str3cn.png" width="800"/>
 </div>
-
-
-<Tip>
-**同意交易：** 当交易达到审批阈值时，自动提交给钱包管理员进行签名确认，之后广播至区块链。
-
-**拒绝交易：** 当交易未达到审批阈值时，自动终止，确保未经授权的交
-</Tip>
-
 </Step>
 
-<Step title="钱包创建者进行签名">
-钱包创建者可以对转账申请进行最后的审批。如果不同意转账申请，可以直接取消交易；如果同意转账申请，可以进行签名操作。
-
-<div className="w-full flex items-center justify-center">
-    <CardGroup cols={3}>
-    <img src="/images/user-guide/transfer9cn.png" width="200"/>
-    <img src="/images/user-guide/transfer10cn.png" width="200"/>
- <img src="/images/user-guide/transfer11cn.png" width="200"/>
-    </CardGroup>
-</div>
+<Step title="提币价值阈值设置">
+    设置提币价值阈值（U），当提现订单价值等于或超过阈值时，将触发钱包成员审批流程。如果低于此阈值，将直接处理。
 
 </Step>
-
 </Steps>
 
+## IV. 常见问题
+
+<Accordion title="如何添加出金审批成员？">
+在出金策略配置页面，您可以直接添加出金审批成员。每个币种出金审批成员最多可添加10个。
+</Accordion>
+<Accordion title="提现数量是否受限制？">
+提现数量根据币种行情价计算，若币种未获取到行情价则不限制提现数量。
+</Accordion>
+<Accordion title="所有交易是否必须上链？">
+您可以通过交易上链设置来控制交易的执行方式。开启功能后，该钱包所有的交易都必须为链上交易并消耗矿工费。
+</Accordion>
+<Accordion title="如何配置人工提币策略中的提币价值阈值？">
+在人工提币策略配置页面，您可以设置提币价值阈值（U）。当提现订单价值等于或超过阈值时，将触发钱包成员审批流程。如果低于此阈值，将直接处理。
+</Accordion>
+<Accordion title="API提币策略是否支持审批？">
+请开启API提现订单的审批策略。 如果关闭，系统将自动批准所有API提现订单。
+</Accordion>
+<Accordion title="应用资产是指哪些币种？">
+所有币种均适用于出金策略的配置和管理。
+</Accordion>

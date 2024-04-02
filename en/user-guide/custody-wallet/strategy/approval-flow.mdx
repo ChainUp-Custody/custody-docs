@@ -1,0 +1,101 @@
+---
+title: Withdrawal Strategy
+---
+
+## I. Function Introduction
+
+The withdrawal strategy is an important feature in the ChainUp Custody wallet, used to manage and control the approval process and restrictions of withdrawal transactions. Through the withdrawal strategy, users can flexibly define parameters such as approval actions, approvers, the number of approvers required, and withdrawal limits to ensure fund security and compliance.
+
+## II. Operation Procedure
+
+### 1. Withdrawal Strategy Configuration
+
+<Steps>
+<Step title="Enter the Withdrawal Strategy Configuration Page">
+    Log in to ChainUp Custody PC, navigate to the withdrawal strategy configuration page.
+
+   <div className="w-full flex items-center justify-center">
+    <img src="/images/custody-guide/str1en.png" width="800"/>
+</div>
+</Step>
+
+<Step title="Configure Withdrawal Strategy Parameters">
+ 
+    On the withdrawal strategy configuration page, you can configure the following parameters:
+
+    1. **Approval Actions**: Define the business type of withdrawal that requires approver approval, the optional actions include approval or no approval.
+    2. **Approvers**: Specify the approvers for withdrawal approval, up to 10 approvers can be added.
+    3. **Number of Approvers Required**: Users can customize the number of approvers that meet the standard, the number of approvals must be more than 50% of the total number of approvers.
+    4. **Withdrawal Limit**: The withdrawal quantity is calculated based on the market price of the currency. If the market price of the currency is not obtained, the withdrawal quantity is not limited.
+    5. **Transaction On-Chain Setting**: Set whether the transaction must be on-chain, and a switch can be set to control the execution method of the transaction.
+  <div className="w-full flex items-center justify-center">
+    <img src="/images/custody-guide/str0.png" width="800"/>
+</div>
+
+</Step>
+
+<Step title="Save Configuration">
+    After the configuration is complete, please save your withdrawal strategy settings to ensure they take effect.
+</Step>
+</Steps>
+
+### 2. Manual Withdrawal Strategy
+
+#### Withdrawal orders initiated through the page (non-API)
+
+<Steps>
+<Step title="Approval Trigger Condition Configuration">
+    Currently, manual withdrawal orders will be risk-controlled according to your configured approval trigger conditions and currency approval strategy.
+
+   <div className="w-full flex items-center justify-center">
+    <img src="/images/custody-guide/str2en.png" width="800"/>
+</div>
+</Step>
+
+<Step title="Set Withdrawal Value Threshold">
+    Set the withdrawal value threshold (U), when the value of the withdrawal order equals or exceeds the threshold, the wallet member approval process will be triggered. If it is below this threshold, it will be processed directly.
+
+</Step>
+</Steps>
+
+### 3. API Withdrawal Strategy
+
+#### API withdrawal order processing
+
+<Steps>
+<Step title="Approval Strategy Setting">
+    The approval strategy for API withdrawal orders:
+When turned on: API withdrawal orders will comply with the approval strategy;
+
+If turned off: The system will automatically approve all API withdrawal orders, API orders will not comply with the approval strategy.
+ <div className="w-full flex items-center justify-center">
+    <img src="/images/custody-guide/str3en.png" width="800"/>
+</div>
+</Step>
+
+<Step title="Set Withdrawal Value Threshold">
+    Set the withdrawal value threshold (U), when the value of the withdrawal order equals or exceeds the threshold, the wallet member approval process will be triggered. If it is below this threshold, it will be processed directly.
+
+</Step>
+</Steps>
+
+## IV. Frequently Asked Questions
+
+<Accordion title="How to add withdrawal approval members?">
+On the withdrawal strategy configuration page, you can directly add withdrawal approval members. Up to 10 withdrawal approval members can be added for each currency.
+</Accordion>
+<Accordion title="Is the withdrawal quantity restricted?">
+The withdrawal quantity is calculated based on the market price of the currency. If the market price of the currency is not obtained, the withdrawal quantity is not limited.
+</Accordion>
+<Accordion title="Must all transactions be on-chain?">
+You can control the execution method of the transaction through the transaction on-chain setting. After the function is turned on, all transactions of this wallet must be on-chain transactions and consume miner fees.
+</Accordion>
+<Accordion title="How to configure the withdrawal value threshold in the manual withdrawal strategy?">
+On the manual withdrawal strategy configuration page, you can set the withdrawal value threshold (U). When the value of the withdrawal order equals or exceeds the threshold, the wallet member approval process will be triggered. If it is below this threshold, it will be processed directly.
+</Accordion>
+<Accordion title="Does the API withdrawal strategy support approval?">
+Please turn on the approval strategy for API withdrawal orders. If turned off, the system will automatically approve all API withdrawal orders.
+</Accordion>
+<Accordion title="What currencies does the application asset refer to?">
+All currencies are applicable to the configuration and management of the withdrawal strategy.
+</Accordion>

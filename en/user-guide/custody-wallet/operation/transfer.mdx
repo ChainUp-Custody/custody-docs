@@ -1,0 +1,82 @@
+---
+title: Withdraw
+---
+
+## I. Function Introduction
+
+The withdrawal function allows users to transfer digital assets from their wallet account to an external address. This guide only explains page withdrawals, for API withdrawals, please refer to the API documentation link.
+
+In the enterprise wallet, for the sake of fund security and efficient approval, it is recommended to add an outflow strategy for valuable coins to ensure the safety and compliance of funds. The transfer process may differ depending on the role of the wallet members.
+
+## II. Operation Procedure
+
+<Steps>
+<Step title="Select Wallet">
+<div className="w-full flex items-center justify-center">
+        <img src="/images/custody-guide/transfer1en.png" width="150"/>
+        <img src="/images/custody-guide/transfer5en.png" width="700"/>
+</div>
+
+</Step>
+<Step title="Fill in and Confirm Transfer Information">
+    Enter and confirm withdrawal information, including withdrawal amount, withdrawal address, fees, etc.
+
+    **Ordinary members** can only initiate transfers    
+
+    **Approval members** can initiate and approve transfer orders.
+
+<div className="w-full flex items-center justify-center">
+<CardGroup cols={3}>
+    <img src="/images/custody-guide/transfer2en.png" width="200"/>
+    <img src="/images/custody-guide/transfer3en.png" width="200"/>
+    <img src="/images/custody-guide/transfer4en.png" width="200"/>
+</CardGroup>
+</div>
+
+ <div className="w-full flex items-center justify-center">
+    <img src="/images/custody-guide/transfer6en.png" width="200"/>
+</div>
+
+ </Step>
+
+<Step title="Approval Process">
+You can view approval details on the joint management approval page: all, waiting for my approval, waiting for others' approval, approval completed, withdrawal retraction.
+
+**APP operation page**
+
+<div className="w-full flex items-center justify-center">
+<CardGroup cols={2}>
+    <img src="/images/custody-guide/transfer8en.png" width="200"/>
+    <img src="/images/custody-guide/transfer9en.png" width="200"/>
+</CardGroup>
+</div>
+
+
+**PC operation page**
+<div className="w-full flex items-center justify-center">
+    <img src="/images/custody-guide/transfer7en.png" width="800"/>
+</div>
+
+</Step>
+<Step title="Transfer Success">
+After a successful transfer, funds will be transferred from the wallet account to the specified withdrawal address.
+
+If the withdrawal address is within the alliance, the alliance transfer method will be used, and it will not be on-chain.
+</Step>
+</Steps>
+
+## III. Frequently Asked Questions
+
+<Accordion title="What to do if the funds have not arrived after withdrawal?">
+If the funds have not arrived after withdrawal, please follow these steps:
+1. Confirm that the withdrawal address is correct;
+2. Check whether the blockchain network confirmation number has met the requirements;
+3. If an outflow strategy was used, check whether the approval status has passed;
+4. If all of the above steps are correct, but the funds still have not arrived, please contact customer service for further processing.
+</Accordion>
+<Accordion title="How to add an outflow strategy?">
+Please log in to the PC wallet, find the outflow strategy setting on the corresponding coin page, and follow the prompts to operate.
+</Accordion>
+<Accordion title="How to check withdrawal records?">
+Users can check withdrawal records on the coin page in the APP, or view, filter, and export in the withdrawal records on the PC.
+</Accordion>

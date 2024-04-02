@@ -1,0 +1,68 @@
+---
+title: Deposits
+---
+
+## I. Function Introduction
+
+The deposit function allows you to transfer digital assets into your wallet account. 
+You can copy the coin's network address or share the address QR code for deposit. After a successful deposit, the funds will be displayed in the available balance and the coin page.
+
+<Note>
+The deposit address only accepts specified coins and networks. Sending other coins to this address will not be retrievable.
+</Note>
+
+## II. Operation Procedure
+
+<Steps>
+
+<Step title="Select Coin and Get Deposit Address">
+Open the wallet app, select the coin you need to deposit, and get the corresponding deposit address for the coin.
+
+**APP Operation**
+1. Choose wallet	
+2. Click on 【Deposit】, or directly select the coin; Shortcut: swipe left to select deposit, withdrawal, alliance transfer	
+3. Get the deposit address; the transfer coin can be confirmed through the contract address; for asset security, the receipt of funds needs to reach the block confirmation number before it can be used
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/custody-guide/deposit2en.png" width="200"/>
+        <img src="/images/custody-guide/deposit3en.png" width="200"/>
+    </CardGroup>
+</div>
+
+
+**PC Operation**
+<div className="w-full flex items-center justify-center">
+<img src="/images/custody-guide/deposit4en.png" width="600"/>
+</div>
+
+
+Deposit to account: The number of block confirmations required for the deposit to be credited. If the confirmation number is not reached, the current asset will not be credited.
+
+Unlock withdrawal: The number of block confirmations required for asset withdrawal. If the confirmation number is not reached, the current asset cannot be withdrawn.
+
+Refer to [confirmation number](help-center/manage-joint/account-transfer/confirmation).
+
+</Step>
+
+<Step title="Make a Deposit">
+Use a third-party wallet or trading platform to deposit to the acquired coin address.
+
+</Step>
+
+<Step title="System Monitors Transaction Information">
+The system will monitor the transaction information of the deposit address. Once funds are credited, the system will notify you of the successful deposit and credit the account.
+</Step>
+
+<Step title="Check Deposit Record">
+After a successful deposit, click on the coin, and view the deposit record in the deposit record/coin page. Refer to [Transaction Record](/user-guide/custody-wallet/operation/record).
+</Step>
+
+</Steps>
+
+## III. Frequently Asked Questions
+
+<Accordion title="What to do if the deposit is successful but the balance account is not credited?">
+- 1. To ensure the security of funds, the account needs to reach the confirmation number before it can be credited after deposit (you can check the confirmation number on the blockchain explorer); if it still has not been credited after reaching the confirmation number, you can contact customer service for processing.
+- 2. Due to the uniqueness of some coins (such as EOS), all the addresses you deposit to are the same, and the system uses memo to distinguish. For this type of coin deposit, you need to confirm whether the memo you entered is correct.
+</Accordion>

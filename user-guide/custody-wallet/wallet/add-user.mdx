@@ -1,5 +1,5 @@
 ---
-title: 添加托管共管钱包成员
+title: 添加共管钱包成员
 ---
 
 ## I. 功能简介
@@ -7,7 +7,7 @@ title: 添加托管共管钱包成员
 <Note>只有钱包管理员才可以添加/删除钱包成员。</Note>
 在托管钱包中，您可以添加新的用户，并为他们分配不同的角色。目前系统有三类角色：
 
-- **管理员** ：创建钱包的成员默认为钱包管理员，具有钱包所有权限；
+- **管理员/钱包创建者** ：创建钱包的成员默认为钱包管理员，具有钱包所有权限；
 - **审批成员** ：管理员将普通成员添加到审批策略后自动成为审批成员，具有发起收款、转账、审批等权限；
 - **普通成员** ：管理员添加到钱包的成员默认为普通成员；具有发起收款、转账等基础权限；
 
@@ -36,7 +36,7 @@ title: 添加托管共管钱包成员
 </div>
 <Tip>
 **邀请托管普通成员需注意：**
-当普通成员加入交易审批流后，该成员自动升级为审批员, 添加交易审批流可参考[安全策略](/user-guide/custody-wallet/strategy/transfer)。
+当普通成员加入交易审批流后，该成员自动升级为审批员, 添加交易审批流可参考[安全策略](/user-guide/custody-wallet/strategy/approval-flow)。
 </Tip>
 <div className="w-full flex items-center justify-center"> 
 <img src="/images/custody-guide/adduser2.png" width="500"/>
@@ -72,10 +72,9 @@ title: 添加托管共管钱包成员
      登录ChainUp Custody App，点击头像，打开个人账户设置，选择【通讯录】功能。
 
 <div className="w-full flex items-center justify-center"> 
-<CardGroup cols={3}>
+<CardGroup cols={2}>
 <img src="/images/custody-guide/personalcn.png" width="200"/>
 <img src="/images/user-guide/add6cn.jpg" width="200"/>
-<img src="/images/user-guide/add7cn.jpg" width="200"/>
 </CardGroup>
 </div>
 
