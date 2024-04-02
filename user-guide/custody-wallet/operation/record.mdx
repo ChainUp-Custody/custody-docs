@@ -8,12 +8,17 @@ title: 交易记录
 
 ## II. 操作流程
 
+
+
+### II.I 充值记录导出
+
 <Steps>
-
-### 充值记录导出
-
 <Step title="选择需要导出的记录">
-打开交易记录页面，在充值记录部分选择需要导出的记录。
+打开交易记录页面，在顶部查询并确认需要导出的记录。
+<div className="w-full flex items-center justify-center">
+<img src="/images/custody-guide/record1cn.png" width="600"/>
+</div>
+
 </Step>
 
 <Step title="点击导出按钮">
@@ -33,25 +38,34 @@ title: 交易记录
 - 状态/Status
 - 备注/Remark
 </Step>
+</Steps>
 
-### 充值详情
+### II.II 充值详情
 
+<Steps>
 <Step title="查看充值记录的详情">
 查看充值记录中的某一条记录的详情。
 </Step>
 
 <Step title="充值详情包括以下信息">
+<div className="w-full flex items-center justify-center">
+<img src="/images/custody-guide/record2cn.png" width="600"/>
+</div>
 充值详情包括以下信息：
 
 - 充币到账：充币到账所需要的区块确认数，未达到确认数时当前资产不上账。
 - 提币解锁：资产提币所需要的区块确认数，未达到确认数时当前资产不可提币。
 - 交易类型：区块链转账、联盟转账。当为联盟转账时，交易不上链（不收矿工费），TXID所属为联盟专享。
 </Step>
+</Steps>
 
-### 提币记录导出
-
+### II.III  提币记录导出
+<Steps>
 <Step title="选择需要导出的记录">
-打开交易记录页面，在提币记录部分选择需要导出的记录。
+打开提现记录页面，在顶部查询并确认需要导出的记录。
+<div className="w-full flex items-center justify-center">
+<img src="/images/custody-guide/record3cn.png" width="600"/>
+</div>
 </Step>
 
 <Step title="点击导出按钮">
@@ -77,14 +91,19 @@ title: 交易记录
 - TXID
 - 备注/Remark
 </Step>
+</Steps>
 
-### 提币详情
-
+### II.IV 提币详情
+<Steps>
 <Step title="查看提币记录的详情">
 查看提币记录中的某一条记录的详情。
 </Step>
 
 <Step title="提币详情包括以下信息">
+<div className="w-full flex items-center justify-center">
+<img src="/images/custody-guide/record4cn.png" width="600"/>
+</div>
+
 提币详情包括以下信息：
 
 - 交易方式：API提币、人工提币（由您的团队在Custody App或PC端发起的提币）。
@@ -95,7 +114,9 @@ title: 交易记录
 
 </Steps>
 
-**请注意，只有钱包创建者有权添加白名单地址。**
+<Tip>
+**只有钱包创建者有权添加地址至地址薄。**
+</Tip>
 
 ## III. 常见问题
 

@@ -4,9 +4,11 @@ title: 充值
 
 ## I. 功能简介
 
-充值功能允许用户将数字资产转入其钱包账户。用户可以复制币种区块链地址或分享地址二维码进行充值，成功充值后，资金将显示在可用余额以及币种页面中。
+充值功能允许您将数字资产转入其钱包账户。您可以复制币种区块链地址或分享地址二维码进行充值，成功充值后，资金将显示在可用余额以及币种页面中。
 
-请注意：充值地址仅接受指定币种和区块链，发送其他币种到此地址将无法找回。
+<Note>
+充值地址仅接受指定币种和区块链，发送其他币种到此地址将无法找回。
+</Note>
 
 ## II. 操作流程
 
@@ -20,27 +22,40 @@ title: 充值
 2. 点击【充币】，或者直接选择币种; 快捷键：左划选择充值，提币，联盟转账	
 3. 获取充值地址；可通过合约地址确认转账币种；为了资产安全，收款资金需要达到区块确认数后方可使用
 
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+        <img src="/images/custody-guide/deposit1cn.png" width="200"/>
+        <img src="/images/custody-guide/deposit2cn.png" width="200"/>
+        <img src="/images/custody-guide/deposit3cn.png" width="200"/>
+    </CardGroup>
+</div>
+
+
 **PC端操作**
+<div className="w-full flex items-center justify-center">
+<img src="/images/custody-guide/deposit4cn.png" width="600"/>
+</div>
 
 
 充币到账： 充币到账所需要的区块确认数,未达到确认数时当前资产不上账。
+
 提币解锁：资产提币所需要的区块确认数,未达到确认数时当前资产不可提币。
 
-可以参考文章了解区块确认数： help-center\manage-joint\account-transfer\confirmation
+可参考[确认数](help-center/manage-joint/account-transfer/confirmation)。
 
 </Step>
 
 <Step title="进行充值">
 通过三方钱包或交易平台，向获取的币种地址进行充币操作。
+
 </Step>
 
 <Step title="系统监控交易信息">
-系统会监控充值地址的交易信息，一旦有资金入账，系统将通知用户充币成功并进行上账操作。
+系统会监控充值地址的交易信息，一旦有资金入账，系统将通知您充币成功并进行上账操作。
 </Step>
 
 <Step title="查看充值记录">
-可以在成功充值后，点击该币种，在充值记录/币种页面中查看充值记录。
-详情可以参考文章： user-guide\custody-wallet\operation\record
+在成功充值后，点击该币种，在充值记录/币种页面中查看充值记录，可参考[交易记录](/user-guide/custody-wallet/operation/record)。
 </Step>
 
 </Steps>
@@ -48,7 +63,7 @@ title: 充值
 ## III. 常见问题
 
 <Accordion title="充币成功但余额账户未上账怎么办？">
-- 1、为确保资金安全，充币后账户需要达到确认数后才能上账（可以到区块链浏览器查询确认数）；若已达到确认数仍未上账，您可以联系客户处理。
-- 2、由于部分币种具有特殊性（如EOS），所有用户充币的地址都是同一个，系统内使用 memo 区分，对于该币种充币需要确认您输入的 memo 是否正确。
+- 1. 为确保资金安全，充币后账户需要达到确认数后才能上账（可以到区块链浏览器查询确认数）；若已达到确认数仍未上账，您可以联系客户处理。
+- 2. 由于部分币种具有特殊性（如EOS），所有您充币的地址都是同一个，系统内使用 memo 区分，对于该币种充币需要确认您输入的 memo 是否正确。
 </Accordion>
 
