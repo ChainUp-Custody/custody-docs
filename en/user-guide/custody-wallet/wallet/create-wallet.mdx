@@ -1,101 +1,88 @@
 ---
-title: Adding Co-managed Wallet Members
+title: Create and Manage Wallet
 ---
 
 ## I. Function Introduction
 
-<Note>Only the wallet administrator can add/delete wallet members.</Note>
-In the Custody Wallet, you can add new users and assign them different roles. Currently, the system has three types of roles:
+Designed specifically for enterprise users, it supports multiple members and multiple roles to collaborate in managing the wallet, and provides withdrawal strategies and approval functions. As the creator of the wallet, you will have the following permissions:
 
-- **Administrator/Wallet Creator**: The member who creates the wallet is the default wallet administrator and has all wallet permissions;
-- **Approval Members**: Administrators automatically become approval members after adding ordinary members to the approval strategy, and they have the authority to initiate receipts, transfers, approvals, etc.;
-- **Ordinary Members**: Members added to the wallet by the administrator are default ordinary members; they have basic permissions such as initiating receipts and transfers;
-
-
-<Tip>
-**To become a custody member, you must meet:**
-1. Have a ChainUp Custody account
-2. Need to complete KYC certification
-3. Bind and turn on Google Authenticator
-</Tip>
+- **Team Member Management**: Add wallet management team members on the PC end, assign team member duties. Co-managed members (approval and ordinary) can initiate or approve withdrawals in the APP, and view approval progress and fund flow records.
+- **Withdrawal Strategy Management**: Formulate withdrawal strategies for important currencies to ensure that withdrawal operations follow the approval process and ensure fund safety.
+- **API Withdrawal Address Management**: Manage API withdrawal addresses on the PC end and set withdrawal whitelist addresses.
 
 ## II. Operation Procedure
 
+### Create a Wallet
+
+Open the ChainUp Custody official website, download the [Custody App](https://custody.chainup.com/download/), or directly scan the QR code to download.
+   
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/quickstart/download2.png" width="150"/>
+</div>
+
 <Steps>
-<Step title="Select Custody Wallet">
-Log in to the Custody Wallet web page, select the custody wallet you want to manage, and click on the left navigation bar [Co-managed Wallet].
-<div className="w-full flex items-center justify-center"> 
-<img src="/images/custody-guide/adduser.png" width="500"/>
-</div>
-</Step>
 
-<Step title="Add members as ordinary custody members">
-Click on the left navigation bar [Co-managed Wallet], select users from your contact list, and add them as ordinary members of the custody wallet.
-<div className="w-full flex items-center justify-center"> 
-<img src="/images/custody-guide/adduser1.png" width="500"/>
-</div>
-<Tip>
-**Inviting ordinary custody members to note:**
-When ordinary members join the transaction approval flow, the member is automatically upgraded to an approver. Adding a transaction approval flow can refer to [Security Strategy](/user-guide/custody-wallet/strategy/transfer).
-</Tip>
-<div className="w-full flex items-center justify-center"> 
-<img src="/images/custody-guide/adduser2.png" width="500"/>
-</div>
-
-</Step>
-
-<Step title="If the user is not in your team (contact list), you can enter the account">
-    Enter the account registered with the Custody Wallet (mobile number/email).
-    <div className="w-full flex items-center justify-center"> 
-<img src="/images/user-guide/add4cn.jpg" width="200"/>
+<Step title="Complete KYC Certification">
+ In the Custody Wallet, click on the personal avatar in the upper left corner, select KYC certification, and enter the identity certification page.
+ KYC review is usually completed within a certain number of working days, the specific time may vary, please be patient.
+    <div className="w-full flex items-center justify-center">
+    <img src="/images/custody-guide/sercuity.png" width="200"/>
 </div>
 </Step>
 
 
-<Step title="Use the contact list function to manage all team members">
-You can add or delete team members, modify the remark name, and view the role details of the member in different wallets.
-   
-   
-    **Path One** 
-    
-    Open the ChainUp Custody PC platform in your browser, use the [Custody] APP, scan the QR code to log in using the [Scan Code] function on the homepage or cloud wallet, and click on the list page [Contact List].
+<Step title="Log in to the PC end">
+Open the browser and go to the link: custody.chainup.com, use the APP to scan the code to authorize login.
+</Step>
+
+<Step title="Create a Wallet">
+On the web end, click on the [+] in the upper right corner of the page to create a wallet. 
 
 <div className="w-full flex items-center justify-center"> 
+<img src="/images/custody-guide/createwallet.png" width="500"/>
+</div>
+</Step>
+
+<Note>
+If the default wallet configuration does not meet your needs, you can contact the business manager or send an email to custody@chainup.com for support.
+</Note>
+
+</Steps>
+
+### Manage Wallet
+
+<Steps>
+
+<Step title="Wallet Management Page">
+ In the Custody Wallet, click on the square mark in the upper right corner to enter the wallet management page. You can modify the name and display order of the wallet on this page.
+<div className="w-full flex items-center justify-center">
 <CardGroup cols={2}>
-<img src="/images/custody-guide/webadd1cn.png" width="500"/>
-<img src="/images/user-guide/webadd2cn.png" width="500"/>
+    <img src="/images/custody-guide/editwallet.png" width="500"/>
+    <img src="/images/custody-guide/editwallet2.png" width="500"/>
 </CardGroup>
 </div>
+</Step>
 
-     **Path Two** 
-     
-     Log in to the ChainUp Custody App, click on the avatar, open the personal account settings, and select the [Contact List] function.
-
+<Step title="Modify Wallet Remark Name">
+Please note that this modification only takes effect for you.
 <div className="w-full flex items-center justify-center"> 
-<CardGroup cols={3}>
-<img src="/images/custody-guide/personalcn.png" width="200"/>
-<img src="/images/user-guide/add6cn.jpg" width="200"/>
-<img src="/images/user-guide/add7cn.jpg" width="200"/>
-</CardGroup>
+    <img src="/images/custody-guide/editwallet3.png" width="500"/></div>
+</Step>
+
+<Step title="Switch Wallets in APP">
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+        <img src="/images/custody-guide/use1.png" width="200"/>
+        <img src="/images/custody-guide/use2.png" width="200"/>
+        <img src="/images/custody-guide/use3.png" width="200"/> 
+        </CardGroup>
 </div>
+
+Log in to the ChainUp Custody APP, select the Custody system, and click on the wallet in the bottom navigation bar.
+
+Display the wallet homepage, click to switch to the wallet selection page.
 
 </Step>
 </Steps>
 
-## III. Frequently Asked Questions
-
-<Accordion title="How to modify a user's role?">
-The administrator can modify the user's role in the wallet settings. Please note that only the creator of the wallet can modify user roles.
-</Accordion>
-
-<Accordion title="If I am not the creator of the wallet, can I add users?">
-Sorry, only the creator of the wallet can add users. If you are not the creator of the wallet, you cannot add new users.
-</Accordion>
-
-<Accordion title="Can I set multiple administrators in one wallet?">
-Sorry, each wallet can only have one administrator. The administrator is the user who creates the wallet, and they have all the permissions of the wallet.
-</Accordion>
-
-<Accordion title="If a user is deleted, can they be added again?">
-Yes, if a user is deleted, they can be added again. Please note that only the creator of the wallet can add users.
-</Accordion>
