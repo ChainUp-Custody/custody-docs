@@ -117,14 +117,7 @@
         "quick-start/joint-custody/download-app",
         "quick-start/joint-custody/create-account",
         "quick-start/joint-custody/create-wallet",
-        "quick-start/joint-custody/api-integration",
-        {
-          "group": "Compliance Services",
-          "pages": [
-            "quick-start/compliance-custody-joint/open-joint",
-            "quick-start/compliance-custody-joint/strategy-joint"
-          ]
-        }
+        "quick-start/joint-custody/api-integration"
       ]
     },
     {
