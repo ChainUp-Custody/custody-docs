@@ -1,5 +1,5 @@
 ---
-title: MPC Workspace Transactions
+title: MPC Transactions
 ---
 
 ##  Overview
@@ -52,25 +52,33 @@ In the pending state of the transaction, rejecting the signature and canceling t
 ##  Deposit Status
 
 <div className="w-full flex items-center justify-center">
-    <img src="/images/help-center/depositen.png" width="600"/>
+    <img src="/images/help-center/depositen.jpg" width="600"/>
 </div>
 
-**1. Unconfirmed Status**
+**1. Unconfirmed Status (1000)**
 
-When another address transfers digital currency to your MPC wallet address, the initial status is "Unconfirmed." After the transaction reaches the confirmation count, the status changes to "Confirmed."
+When other addresses transfer to your MPC wallet address, the initial status is "Unconfirmed". After the transaction reaches the required number of confirmations, the status will change to "Confirmed".
 
-**2. KYT Verification Pending Status**
+**2. Pending KYT Verification Status (1010)**
 
-If the deposit address and currency are configured with KYT (Know Your Transaction), the deposit transaction enters the "KYT Verification Pending" status. The wallet generates a KYT verification order and submits it to the KYT service provider for verification. Manual processing may be required at this stage, with the status being "KYT Manual Processing."
+If the deposit address and coin have KYT (Know Your Transaction) enabled and configured, the deposit transaction will enter the "KYT Verification" status. The wallet generates a KYT verification order and submits it to the KYT service provider for verification. Manual processing may be required at this stage, at which point the status is "KYT Manual Processing".
 
-**3. KYT Manual Processing Status**
+**3. Pending KYT Manual Processing Status (1020)**
 
-If the risk level returned by the KYT service provider requires manual processing, the deposit status is "KYT Manual Processing." After manual processing is completed, it moves on to the next stage.
+If the KYT service provider returns a risk level that requires manual processing, the deposit status will be "KYT Manual Processing". Once manual processing is completed, it moves to the next phase.
 
-**4. Confirmed Status**
+**4. Transaction Retrace Status (1800)**
 
-If KYT is not configured, KYT verification passes, or KYT manual processing is completed, and the funds have been credited, the deposit status is "Completed." This concludes the deposit transaction.
+Once the transaction is confirmed on the blockchain and KYT processing is completed, the system will retrace the transaction to ensure that the assets reach the block confirmation number required for the deposit to be credited.
 
-**5. Failed/Exception Status**
+**5. Withdrawal Unlock Status (1900)**
 
-If the transaction order is exceptional, such as a mainnet rollback, the transaction ends in a "Failed/Exception" status.
+After the transaction reaches the block confirmation number required for the deposit to be credited, the system will confirm whether the transaction assets have reached the block confirmation number required for withdrawal.
+
+**6. Transaction Completed (2000)**
+
+Once the transaction assets reach the blockchain confirmation number required for withdrawal, the transaction is completed, and the deposit process ends.
+
+**7. Failed/Abnormal Status (3000)**
+
+If the transaction order is abnormal, such as in special cases like a mainnet rollback, the transaction will end in a "Failed/Abnormal" final state.

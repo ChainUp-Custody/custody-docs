@@ -21,7 +21,7 @@ title: 收款通知
 | memo             | String | 否       | 到账地址memo                                                 |
 | txid             | String | 是       | 交易hash                                                     |
 | confirmations    | Integer | 是       | 区块确认数，例：10                                           |
-| status           | Integer | 是       | 收款状态: 1000 未确认，1100 区块已确认，待KYT验证, 2000 已完成（上账已完成），3000 异常 |
+| status           | Integer | 是       | 收款状态: 1000 未确认，1010 待KYT验证，1020 待KYT人工处理，1800 交易回溯，1900 提币解锁，2000 已完成（上账已完成），3000 异常 |
 | base_symbol      | String | 否       | 收款币种主链唯一标识，例：ETH                                |
 | contract_address | String | 否       | 收款币种合约地址                                             |
 | tx_height        | Long | 是       | 交易完成的区块高度                                             |
