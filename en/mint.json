@@ -354,25 +354,13 @@
           ]
         },
         {
-          "group": "Auto Sweep Function",
-          "pages": [
-            {
-              "group": "Sweep ERC-20 Tokens",
-              "pages": [
-                "help-center/manage-mpc/consolidation/contact/about",
-                "help-center/manage-mpc/consolidation/contact/rules",
-                "help-center/manage-mpc/consolidation/contact/execute"
-              ]
-            },
-            {
-              "group": "Sweep All Coins",
-              "pages": [
+          "group": "Auto Sweep",
+          "pages":  
+              [
                 "help-center/manage-mpc/consolidation/co-signer/about",
                 "help-center/manage-mpc/consolidation/co-signer/rules",
                 "help-center/manage-mpc/consolidation/co-signer/execute"
               ]
-            }
-          ]
         },
         {
           "group": "Strategy Engine",
@@ -447,24 +435,13 @@
           ]
         } ,
         {
-          "group": "Auto Sweep Function",
+          "group": "Auto Sweep",
           "pages":
-          [
-            {
-              "group": "Sweep ERC-20 Tokens",
-              "pages":[
-                "user-guide/mpc-wallet/consolidate/contact/rules",
-                "user-guide/mpc-wallet/consolidate/contact/execute"
-              ]
-            },
-            {
-              "group": "Sweep All Coins",
-              "pages":[
+              [
                 "user-guide/mpc-wallet/consolidate/co-signer/rules",
                 "user-guide/mpc-wallet/consolidate/co-signer/execute"
               ]
-            }
-          ]
+          
     },
     {
       "group": "Strategy Engine",
