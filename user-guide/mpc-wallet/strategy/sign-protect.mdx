@@ -1,0 +1,52 @@
+---
+title: 签名保护
+---
+
+## I. 功能简介
+
+欢迎使用ChainUp Custody，我们为您的MPC系统提供了强大的签名保护功能，旨在对拥有相同权重私钥的用户（如管理员）的交易行为进行有效的风险控制。
+
+通过开启这一功能，除了工作站创建者外，其他私钥持有者的交易签名操作将受到严格的控制。
+
+
+## II. 控制场景
+无审批流的交易： 非创建者的私钥持有者将无法自行发起并签署**未经审批流程**的交易。
+有审批流的交易： 对于已存在审批流程的交易，其他私钥持有者将不能签署由**自己发起并审批**的交易。
+
+这一策略的主要优势在于增强了内部控制，有效防范了可能出现的风险行为。ChainUp Custody致力于为您的数字资产提供安全可靠的管理解决方案，让您放心专注于您的业务发展。
+
+## II. 操作流程
+<Tip>
+只有工作站创建者才可操作。
+</Tip>
+
+<Steps> 
+<Step title="登录并打开签名保护"> 
+登录Custody APP的MPC系统，导航到 【安全】-【签名保护】 功能。
+<div className="w-full flex items-center justify-center">
+  <img src="/images/user-guide/safecn.png" width="200"/>
+</div>
+
+</Step> 
+<Step title="选择适用策略的工作站"> 
+在签名保护功能中，选择你想应用签名保护的MPC工作站。 
+<div className="w-full flex items-center justify-center">
+<img src="/images/user-guide/workspacelist.jpeg" width="200"/>
+</div>
+
+</Step> 
+
+<Step title="配置签名保护"> 
+在这个步骤中，你可以决定是否启用或禁用这一控制功能。通过简单的操作，您即可灵活管理签名保护功能，以满足您对MPC系统安全性的个性化需求。
+ <div className="w-full flex items-center justify-center">
+  <img src="/images/user-guide/signprotect.jpeg" width="200"/>
+   </div>
+    
+<Warning> 
+**关键步骤与注意事项**
+定期检查并更新签名保护设置，以保持最高的安全性。
+</Warning>
+
+</Step> 
+
+</Steps>

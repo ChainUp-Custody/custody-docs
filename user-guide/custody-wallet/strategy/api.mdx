@@ -1,0 +1,47 @@
+---
+title: API管理
+---
+
+## I. 功能简介
+
+ChainUp Custody为用户提供了强大且易于集成的API工具，可以帮助您自动化工作流程、快速创建并配置钱包并接收有关钱包各类信息。无论是自动化钱包管理、交易流程，还是快速查看交易信息，都能通过API实现。
+
+<Warning>
+只有钱包创建者才可配置API信息，编辑修改信息需要通过GA验证。请参考[API接口文档](api-references/custody-apis/apis/description)，详细了解如何有效地对接API。
+</Warning>
+
+## II. 操作流程
+
+<Steps>
+
+<Step title="API管理页面">
+
+   <div className="w-full flex items-center justify-center">
+    <img src="/images/custody-guide/api1cn.png" width="800"/>
+</div>
+</Step>
+<Step title="API信息输入">
+    只有钱包创建者有API管理页面的查看和操作权限。在API管理页面，您可以输入以下API相关信息：
+
+    - **信任IP**：三方服务器的IP地址，添加后才可以跟Custody服务器进行正常通讯，否则即使拿到API信息也无法使用。
+    - **回调地址**：有些业务无法实时反馈结果，后续处理完成主动向三方服务器通知处理结果的地址。
+    - **二次确认地址**：提币业务二次确认地址，API发起提币请求后，系统会向该地址进行请求确认，进一步提升资金安全。
+  <div className="w-full flex items-center justify-center">
+    <img src="/images/custody-guide/api2cn.png" width="800"/>
+</div>
+
+</Step>
+
+<Step title="保存信息">
+    输入完成后，请保存API信息，创建成功。目前仅支持创建一个全功能权限的API。
+</Step>
+
+<Step title="API详情设置">
+    点击API详情，设置开发者RSA公钥并获取系统RSA公钥。
+    <div className="w-full flex items-center justify-center">
+    <img src="/images/custody-guide/api3cn.png" width="800"/>
+</div>
+
+</Step>
+
+</Steps>

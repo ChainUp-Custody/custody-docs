@@ -1,12 +1,12 @@
 ---
 title: 同步转账记录
 api: GET /api/mpc/billing/sync_withdraw_list
-description: "获取钱包下所有子钱包转账记录，最多返回100条"
+description: "获取工作站下所有钱包特定交易ID之后的转账记录"
 ---
 
 #### 请求参数数据结构
 <ParamField query="max_id" type="string" required>
-    转账记录起始id
+    转账记录起始id，例100，系统将返回101后的所有交易信息
 </ParamField>
 
 
@@ -16,7 +16,7 @@ description: "获取钱包下所有子钱包转账记录，最多返回100条"
     <Expandable title="object">
         <ResponseField name="id" type="integer">转账id</ResponseField>
         <ResponseField name="request_id" type="string">转账唯一标识</ResponseField>
-        <ResponseField name="sub_wallet_id" type="integer">子钱包id</ResponseField>
+        <ResponseField name="sub_wallet_id" type="integer">钱包id</ResponseField>
         <ResponseField name="symbol" type="string">币种唯一标识，转账时使用，例：`USDTERC20`</ResponseField>
         <ResponseField name="amount" type="string">转账金额</ResponseField>
         <ResponseField name="fee_symbol" type="string">矿工费币种，例：ETH</ResponseField>
@@ -31,7 +31,7 @@ description: "获取钱包下所有子钱包转账记录，最多返回100条"
         <ResponseField name="confirmations" type="integer">区块确认数，例：10</ResponseField>
         <ResponseField name="status" type="integer">转账状态: 1000 未审批, 1100 审批通过, 待签名，1200 支付中，2000 支付完成，2100 审批拒绝，2200 拒绝，2201 系统拒绝，2300 交易丢弃，2400 支付失败</ResponseField>
         <ResponseField name="withdraw_source" type="integer">转账类型： `1`app, `2`openapi, `3`web</ResponseField>
-        <ResponseField name="base_symbol" type="string">转账币种主链唯一标识，例：ETH</ResponseField>
+        <ResponseField name="base_symbol" type="string">转账币种网络唯一标识，例：ETH</ResponseField>
         <ResponseField name="contract_address" type="string">转账币种合约地址</ResponseField>
         <ResponseField name="tx_height" type="long">交易完成的区块高度</ResponseField>
     </Expandable>

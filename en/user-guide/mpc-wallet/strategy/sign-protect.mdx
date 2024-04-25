@@ -1,0 +1,54 @@
+---
+title: Signature Protection
+---
+
+## Function Introduction
+
+Welcome to using ChainUp Custody. We provide a robust signature protection feature for your MPC system, aiming to effectively control the transaction behaviors of users with equal-weight private keys (such as admins).
+
+By enabling this feature, the transaction signature operations of other private key holders, apart from the workspace owner, will be strictly controlled.
+
+
+## II. Control Scenarios
+**Transactions without approval flow**: Non-creator private key holders will not be able to independently initiate and sign **transactions without an approval process**.
+**Transactions with approval flow**: For transactions that already have an approval process, other private key holders will not be able to sign **transactions initiated and approved by themselves**.
+
+The main advantage of this strategy is to enhance internal control and effectively prevent potential risky behaviors. ChainUp Custody is committed to providing a safe and reliable management solution for your digital assets, letting you focus on your business development with peace of mind.
+
+## Operation Procedure
+<Tip>
+Only the workspace owner can operate this.
+</Tip>
+
+<Steps>
+<Step title="Login and Open Signature Protection">
+    Log in to the Custody APP's MPC system, navigate to the "Security" - "Signature Protection" function.
+
+<div className="w-full flex items-center justify-center">
+   <img src="/images/user-guide/safe.jpg" width="200"/>
+</div>
+
+</Step>
+<Step title="Choose the Workspace for the Policy">
+   In the signature protection function, choose the MPC workspace where you want to apply signature protection. 
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/workspacelist.jpg" width="200"/>
+</div>
+
+</Step>
+<Step title="Configure Signature Protection">
+In this step, you can decide whether to enable or disable this control function. Through simple operations, you can flexibly manage the signature protection function to meet your personalized needs for the security of the MPC system.
+
+<div className="w-full flex items-center justify-center">
+        <img src="/images/user-guide/signprotect.jpg" width="200"/>
+</div>
+<Warning>
+**Key Steps and Points to Note**
+
+Regularly review and update signature protection settings to maintain the highest level of security.
+</Warning>
+
+</Step>
+
+</Steps>

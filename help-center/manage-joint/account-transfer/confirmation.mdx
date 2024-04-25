@@ -1,0 +1,76 @@
+---
+title: 确认数
+---
+
+## I. 概述
+
+为进一步提升客户充币到账速度，ChainUp Custody 对已支持网络的确认数进行了调整。
+
+## II. 获取确认数
+
+
+客户可通过以下三种方式获取网络最新确认数：
+
+1.控制台（APP/WEB）对应币种的充币详情页；
+
+2.OpenAPI接口获取：GET `/api/v2/user/getCoinList`；
+
+3.当前页面查看，具体如下表
+
+
+
+|网络|充币到账确认数	|提币解锁确认数 |
+|----|---------|--------|
+|Bitcoin	          | 1	        |2|
+|Ethereum	          | 6	        |32|
+|Solana	              | 200	        |200|
+|BNB Smart Chain	  | 15	        |15|
+|BNB Chain	          | 1	        |30|
+|Ripple	              | 1	        |6|
+|Cardano	          | 30	        |30|
+|Avalanche (C-Chain)|	12	        |20|
+|Dogecoin	          | 6	        |50|
+|Polkadot	          | 3	        |30|
+|TRON	              | 20	        |20|
+|Polygon	          | 64	        |128|
+|Bitcoin Cash	      | 2	        |6|
+|Litecoin	          | 3	        |6|
+|Filecoin	          | 60	        |90|
+|Filecoin EVM       |	60	        |90|
+|Cosmos	              | 10	        |15|
+|Ethereum Classic	  | 70	        |150|
+|Hedera	              | 1	        |10|
+|Stellar	          | 1	        |6|
+|Optimism	          | 64	        |128|
+|VeChain	          | 12	        |30|
+|Monero	              | 6	        |6|
+|Fantom	              | 1	        |6|
+|Arbitrum One       |	64	        |128|
+|BASE	              | 64	        |128|
+|Wizarre Scroll	      | 64	        |128|
+|Algorand	          | 1	        |30|
+|Tezos	              | 4	        |8|
+|EOS	              | 360	        |360|
+|eCash	              | 32	        |64|
+|NEO N3	              | 3	        |5|
+|Terra Classic	      | 1	        |6|
+|Zcash	              | 6	        |6|
+|Zilliqa	          | 1	        |30|
+|Kusama	              | 3	        |6|
+|Qtum	              | 16	        |24|
+|Dash	              | 2	        |6|
+|EthereumPoW	      | 6	        |6|
+|HECO	              | 6	        |30|
+|Chia	              | 10	        |16|
+|Spacemesh	          | 1	        |2|
+|IOST	              | 15	        |80|
+|Ontology	          | 3	        |41|
+
+
+<Note>
+1.充币到账确认数：充币到账所需要的区块确认数，未达到确认数时当前资产不上账；
+
+2.提币解锁确认数：资产提币所需要的区块确认数，未达到确认数时当前资产不可提币；
+
+3.代币的确认数请参照对应网络。
+</Note>

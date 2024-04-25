@@ -1,44 +1,62 @@
 ---
-title: MPC Wallet Transfer Strategy
+title: MPC Workspace Strategy Engine
 ---
 
-##  Overview
-ChainUp Custody's policy engine provides powerful transaction rule customization for your MPC wallet, allowing precise management and control of outgoing transactions. This flexible system allows you to define a series of transaction rules based on personalized requirements, ensuring the safe and efficient circulation of assets. These rules can govern the approval process for the transfer of specific assets, specifying users authorized to approve transactions.
+## I. Overview
+ChainUp Custody's strategy engine provides your MPC workspace with a powerful transaction rule customization feature, used for precise management and control of outgoing transactions. This flexible system allows you to define a series of transaction rules according to personalized needs, ensuring the security and effective circulation of assets. These rules can control the transfer approval process of specific assets, clearly defining users who can approve transactions.
 
-The ChainUp Custody policy engine automatically applies the transfer policies you define to all transfer transactions created manually through the web or app. Once a member initiates a transfer request, the relevant transfer policy will be applied by the approver based on the rules you have set:
+The ChainUp Custody strategy engine includes the following features: transfer strategy, miner fee strategy, and signature protection.
 
-**Approve Transaction:** When a transaction reaches the approval threshold, it is automatically submitted to the wallet administrator for signature confirmation and then broadcast to the blockchain.
+### I.I Transfer Strategy
 
-**Reject Transaction:** When a transaction does not reach the approval threshold, it is automatically terminated, ensuring unauthorized transactions cannot proceed.
+The system will automatically apply your defined transfer strategy to all transfer transactions manually created through the Web or App. Once a member initiates a transfer request, the related transfer strategy will take the corresponding action according to the rules you set:
 
-<Warning>
-**Key Steps and Considerations**
+**Approve Transaction:** When the transaction reaches the approval threshold, it is automatically submitted to the admin or creator for signature confirmation, then broadcasted to the blockchain.
 
-Implementing transfer policies correctly is crucial. Your transfer policies are a critical layer of asset protection, so customize them according to your business needs.
+**Reject Transaction:** When the transaction does not reach the approval threshold, it is automatically terminated to ensure unauthorized transactions cannot continue.
 
-Transactions initiated by MPC wallet administrators (wallet creators) are not governed by transfer policies.
+You can define the following parameters for the transfer strategy:
 
-Transactions initiated via API are not governed by transfer policies.
-</Warning>
+**Strategy Name:** Name the transfer strategy for easy identification.
 
-##  Who Can Manage the Policy Engine?
+**Approval Flow:** Set the approver and approval threshold to ensure the transfer goes through the proper approval process.
 
-Currently, only MPC wallet administrators (wallet creators) have the authority to modify transfer policies. The functionality to edit and view transfer policies is available only on the Custody App.
-
-##  Creating Transfer Policies
-
-You can define the following parameters for transfer policies:
-
-**Policy Name:** Name the transfer policy for easy identification.
-
-**Approval Flow:** Set up approvers and approval thresholds to ensure transfers go through the appropriate approval process.
-
-**Risk Control Assets:** Select multiple currencies and NFTs to specify the range of assets protected by the policy.
+**Risk Control Assets:** Multiple selections of coins and NFTs are allowed, clarifying the range of assets protected by the strategy.
 
 <Warning>
 **Key Steps and Considerations**
 
-A single MPC wallet can create multiple transfer policies, but each asset's transfer policy must be unique.
+We emphasize the importance of correctly implementing the transfer strategy. Your transfer strategy is a key layer of asset protection, please customize it according to your business needs.
 
-If an asset has never had a transfer policy edited, transactions for that asset will default to requiring only the wallet administrator's final signature confirmation.
+An MPC wallet can create multiple transfer strategies, but the transfer strategy for each asset must be unique.
+
+If an asset has never edited a transfer strategy, the transaction of the asset defaults to only require the workspace owner's final signature confirmation.
+
+Transactions initiated by API are not managed by the transfer strategy.
 </Warning>
+
+### I.II Miner Fee Strategy
+
+The system will automatically apply your defined miner fee strategy to each manual customization of the miner fee to prevent misoperations or malicious operations that lead to overpayment of miner fees.
+
+<Tip>
+Workspace owners can set different miner fee strategies for their workspaces. For specific operations, please refer to [Miner Fee Strategy](/user-guide/mpc-wallet/strategy/gas-fee-strategy).
+</Tip>
+
+### I.III Signature Protection
+
+You can choose whether to enable signature protection. If you enable it, the signature operations of other equal rights private key holders will be restricted.
+
+In transactions without an approval flow, non-creator private key holders will not be able to initiate and sign transactions that have not gone through the approval process.
+
+For transactions with an approval flow, other private key holders cannot sign transactions that they initiated and approved.
+
+<Tip>
+Workspace owners can enable or disable signature protection for their workspaces. For specific operations, please refer to [Signature Protection](/user-guide/mpc-wallet/strategy/sign-protect).
+</Tip>
+
+## II. Who can manage the strategy engine?
+
+Currently, only the MPC workspace owner has the authority to manage the strategy engine. All editing and viewing functions of the strategy engine are only provided on the Custody App.
+
+

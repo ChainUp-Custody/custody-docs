@@ -4,7 +4,7 @@ title: Transfer
 
 ##  Function Introduction
 
-In the ChainUp Custody wallet, you can perform transfer operations between sub-wallets.
+In the ChainUp Custody system, You can transfer to internal wallet and an external addres.
 
 To ensure fund security and efficient approval, we recommend adding a transfer strategy for valuable currencies or NFTs. The transfer process may differ according to different roles.
 
@@ -23,14 +23,16 @@ To ensure fund security and efficient approval, we recommend adding a transfer s
 
 
 
-    On the **Web Page**, you can select the sub-wallet for transfer.
+    On the **Web Page**, you can select the wallet for transfer.
     <div className="w-full flex items-center justify-center">
     <img src="/images/user-guide/transfer4.png" />
 </div>
 
 </Step>
 <Step title="Fill in and Confirm Transfer Information">
-    We support transfers to other backed-up sub-wallets. To ensure the accuracy of the miner's fee, the fee will be set at the time of signing.
+Please note that if you choose an internal wallet to transfer, the wallet must complete a private key backup.
+
+To ensure the accuracy of the miner's fee, the fee will be set at the time of signing.
     
     **Ordinary members** can only initiate transfers
     <div className="w-full flex items-center justify-center">
@@ -48,12 +50,12 @@ To ensure fund security and efficient approval, we recommend adding a transfer s
     </CardGroup>
 </div>
 
-    When the order meets the approval rules, the **wallet creator** can proceed to the next step, i.e., signing.
+    When the order meets the approval rules, the **Workspace Owner or admin** can proceed to the next step, i.e., signing.
 </Step>
 
 
-<Step title="Wallet Creator Confirms and Signs">
-    The wallet creator needs to set the miner's fee (some main chains support custom miner fees, you can appropriately increase the miner's fee to speed up transaction processing), confirm the transaction information, and sign.
+<Step title="Workspace Owner or Admin Confirms and Signs">
+    The workspace owner or admin needs to set the miner's fee (some main chains support custom miner fees, you can appropriately increase the miner's fee to speed up transaction processing), confirm the transaction information, and sign.
 
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={3}>
@@ -82,7 +84,7 @@ To ensure fund security and efficient approval, we recommend adding a transfer s
 
 ##  Frequently Asked Questions
 
-<Accordion title="Can an Unbacked Wallet Initiate Transfers?">
+<Accordion title="Can an Unbacked Workspace Initiate Transfers?">
 No, for asset security reasons, you need to complete a private key backup before initiating transfers.
 </Accordion>
 <Accordion title="If the miner's fee I set is insufficient, can I increase it during the transaction?">

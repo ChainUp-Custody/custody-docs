@@ -1,0 +1,85 @@
+---
+title: 转账（提币）
+---
+
+## I. 功能简介
+
+提现功能允许用户将数字资产从其钱包账户转出至外部地址。本手册仅对页面提现进行说明，API 提现请参考接口文档链接。
+
+在企业钱包中，为了资金安全及高效审批，建议对有价值的币种添加出金策略，以确保资金的安全与合规。不同的钱包成员角色对应的转账流程可能会有所不同。
+
+## II. 操作流程
+
+<Steps>
+<Step title="选择钱包">
+<div className="w-full flex items-center justify-center">
+        <img src="/images/custody-guide/transfer1cn.png" width="150"/>
+        <img src="/images/custody-guide/transfer5cn.png" width="700"/>
+</div>
+
+</Step>
+<Step title="填写并确认转账信息">
+    输入并确认提现信息，包括提现数量、提现地址、手续费等。
+
+    **普通成员**只能发起转账    
+
+    **审批成员**可以发起并审批转账订单。
+
+
+**APP 端操作页面**
+<div className="w-full flex items-center justify-center">
+<CardGroup cols={3}>
+    <img src="/images/custody-guide/transfer2cn.png" width="200"/>
+    <img src="/images/custody-guide/transfer3cn.png" width="200"/>
+    <img src="/images/custody-guide/transfer4cn.png" width="200"/>
+</CardGroup>
+</div>
+
+**PC端操作页面**
+ <div className="w-full flex items-center justify-center">
+    <img src="/images/custody-guide/transfer6cn.png" width="600"/>
+</div>
+
+ </Step>
+
+<Step title="审批流程">
+可在共管审批页面查看审批详情：全部，待我审批，待他人审批，审批完成，提币撤回。
+
+**APP端操作页面**
+
+<div className="w-full flex items-center justify-center">
+<CardGroup cols={2}>
+    <img src="/images/custody-guide/transfer8cn.png" width="200"/>
+    <img src="/images/custody-guide/transfer9cn.png" width="200"/>
+</CardGroup>
+</div>
+
+
+**PC端操作页面**
+<div className="w-full flex items-center justify-center">
+    <img src="/images/custody-guide/transfer7cn.png" width="800"/>
+</div>
+
+</Step>
+<Step title="转账成功">
+转账成功后，资金将从钱包账户转出至指定的提现地址。
+
+若提现地址为联盟内地址，则采用联盟转账方式，不上链。
+</Step>
+</Steps>
+
+## III. 常见问题
+
+<Accordion title="提现后资金未到账怎么办？">
+如果提现后资金未到账，请按以下步骤操作：
+1. 确认提现地址是否正确；
+2. 检查区块链网络确认数是否已达到要求；
+3. 如果使用了出金策略，请检查审批状态是否通过；
+4. 如果以上步骤都正确，但资金仍未到账，请联系客户服务进行进一步处理。
+</Accordion>
+<Accordion title="如何添加出金策略？">
+请登录PC端钱包，在相应币种页面查找出金策略设置，根据提示进行操作。
+</Accordion>
+<Accordion title="如何查询提现记录？">
+用户可以在APP的币种页面中查询提现记录，也可以在PC端的提币记录中查看、筛选和导出。
+</Accordion>

@@ -1,5 +1,5 @@
 ---
-title: Configure Auto Sweeping Rules
+title: Configuring Auto Sweeping Rules
 ---
 <Tip> 
 It is strongly recommended not to configure the same asset strategy for both the Sweep ERC-20 Tokens feature and the Sweep All Coins feature simultaneously. If an error occurs, the system will execute the sweeping operation configured earliest based on the time of your operation.
@@ -11,7 +11,7 @@ After the user completes the configuration of the auto sweeping rules, the Custo
 <Note> 
 ### Preconditions for Using the Function
 
-Please ensure that the main wallet has not expired. The expiration situation will cause all wallet-related business functions to be unusable.
+Please ensure that the workspace has not expired. The expiration situation will cause all wallet-related business functions to be unusable.
 
 Ensure that the API and Co-Signer configuration has been completed to ensure the normal operation of the API, so that the sweeping function can be smoothly executed.
 
@@ -40,11 +40,11 @@ Use the Custody App to scan the provided QR code and use the local private key f
     </CardGroup>
 </div>
 <Tip>
-After the co-management member creates the configuration, the wallet creator will receive a to-do task and need to sign to confirm, and the configuration can take effect.
+After the co-management member creates the configuration, the workspace owner will receive a to-do task and need to sign to confirm, and the configuration can take effect.
 </Tip>
 </Step>
 <Step title="Decide the Applied Scope">
-   Decide which sub-wallets' assets will be swept.
+   Decide which wallets' assets will be swept.
 
    <div className="w-full flex items-center justify-center">
     <img src="/images/appliedscopeen.png" width="600"/>
@@ -54,7 +54,7 @@ After the co-management member creates the configuration, the wallet creator wil
    Please note:
    The omnibus wallet and gas station can be included from the appkied scope of auto sweeping.
 
-   If your sub-wallet has multiple addresses that need to be swept, all address assets of the wallet will belong to the scope of sweeping application.
+   If your wallets has multiple addresses that need to be swept, all address assets of the wallet will belong to the scope of sweeping application.
    </Tip>
 
 </Step>
@@ -72,7 +72,7 @@ After the co-management member creates the configuration, the wallet creator wil
 
 </Step>
 <Step title="Configure Auto Fueling Strategy">
-The auto fueling strategy will decide under what circumstances the gas station will supplement miner fees to the sub-wallet to support auto sweep feature.
+The auto fueling strategy will decide under what circumstances the gas station will supplement miner fees to the wallets to support auto sweep feature.
 <div className="w-full flex items-center justify-center">
   <img src="/images/help-center/configcosign3.png" width="600"/>
 </div>
@@ -121,5 +121,5 @@ ETH (Ethereum), BNB (Binance Smart Chain), TRX (TRON), DOT (Polkadot)
 </Accordion>
 
 <Accordion title="What types of wallets does the Sweep All Coins feature support?">
-The Sweep All Coins feature supports all types of MPC sub-wallets.
+The Sweep All Coins feature supports all types of MPC wallets.
 </Accordion>

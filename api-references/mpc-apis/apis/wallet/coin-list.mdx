@@ -1,7 +1,7 @@
 ---
 title: 获取MPC币种详情
 api: GET /api/mpc/coin_list
-description: "获取ChainUp Custody支持的MPC主链币及代币"
+description: "获取ChainUp Custody MPC支持的网络及代币"
 ---
 
 #### 请求参数数据结构
@@ -15,10 +15,10 @@ description: "获取ChainUp Custody支持的MPC主链币及代币"
     币种唯一标识，转账时使用，例：`USDTERC20`
 </ParamField>
 <ParamField query="base_symbol" type="string">
-    主链币种名称，币种唯一标识，转账时使用，例：`ETH`
+    网络币种名称，币种唯一标识，转账时使用，例：`ETH`
 </ParamField>
 <ParamField query="open_chain" type="bool">
-    主链开通币种，默认获取全部，`true`获取开通币种，`false`获取未开通币种
+    网络开通币种，默认获取全部，`true`获取开通币种，`false`获取未开通币种
 </ParamField>
 
 
@@ -35,17 +35,17 @@ description: "获取ChainUp Custody支持的MPC主链币及代币"
         <ResponseField name="address_link" type="string">区块浏览器地址查询链接前缀</ResponseField>
         <ResponseField name="txid_link" type="string">区块浏览器交易查询链接前缀</ResponseField>
         <ResponseField name="icon" type="string">币种图标</ResponseField>
-        <ResponseField name="if_open_chain" type="bool">是否开通主链, `false`未开通，`true`已开通</ResponseField>
+        <ResponseField name="if_open_chain" type="bool">是否开通网络, `false`未开通，`true`已开通</ResponseField>
         <ResponseField name="real_symbol" type="string">币种真实币名</ResponseField>
         <ResponseField name="support_memo" type="string">是否支持memo，`0`不支持，`1`支持</ResponseField>
-        <ResponseField name="support_token" type="string">是否支持token币，`0`不支持，`1`支持；主链币有值，代币为空</ResponseField>
+        <ResponseField name="support_token" type="string">是否支持token币，`0`不支持，`1`支持；网络原生代币值，代币为空</ResponseField>
         <ResponseField name="coin_net" type="string">币种网络</ResponseField>
         <ResponseField name="symbol" type="string">币种唯一标识，例：`MATIC1`</ResponseField>
         <ResponseField name="symbol_alias" type="string">币种别名</ResponseField>
         <ResponseField name="support_acceleration" type="bool">币种是否支持加速，`ture`支持，`false`不支持</ResponseField>
         <ResponseField name="support_multi_addr" type="bool">币种是否支持多地址，`ture`支持，`false`不支持</ResponseField>
-        <ResponseField name="merge_address_symbol" type="string">合并地址主链币，币种唯一标识</ResponseField>
-        <ResponseField name="coin_type" type="integer">所属主链币类型，`0` 账户类型, `1` utxo类型主链, `2` Memo类型</ResponseField>
+        <ResponseField name="merge_address_symbol" type="string">合并地址网络币，币种唯一标识</ResponseField>
+        <ResponseField name="coin_type" type="integer">所属网络币类型，`0` 账户类型, `1` utxo类型网络, `2` Memo类型</ResponseField>
     </Expandable>
 </ResponseField>
 

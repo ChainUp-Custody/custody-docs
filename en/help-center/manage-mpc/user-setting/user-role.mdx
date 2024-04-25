@@ -1,87 +1,70 @@
 ---
-title: MPC Wallet Member Roles
+title: MPC User Roles
 ---
 
-##  Overview
+## I. Overview
+To ensure the safety of data related to the MPC system and compliance with the company's financial approval system, thus safeguarding company funds, we believe that setting roles with different permissions is crucial for the MPC workspace. In setting workspace roles, ChainUp Custody aims to balance the safety of funds and data with approval requirements, striving to find the best balance between security, compliance with approval processes, and user-friendliness. Taking these factors into account, the roles in the Custody MPC workspace are divided into three categories: workspace owner, admin, and wallet ordinary member.
 
-To ensure the security of wallet-related data and compliance with the company's financial approval system, as well as to safeguard the security of company funds, setting roles with different permissions is crucial for the wallet. In setting wallet roles, ChainUp Custody aims to find the best balance between security, compliance with approval processes, and user-friendliness.
-Taking into account these factors, Custody MPC wallet roles are divided into three categories: Wallet Administrator, Approver, and Ordinary Member.
-
-##  Role Descriptions
-
-### Wallet Administrator
-An administrator is the only user with full permissions for the MPC wallet. The creator of each main wallet is automatically the wallet administrator, with the highest management permissions for all sub-wallets under the main wallet. Each wallet has only one administrator.
+## II. Role Introduction
+Workspace Owner
+The workspace owner is the only full-permission user of the MPC workspace. They hold the highest management authority for all wallets under the workspace, and each workspace only has one creator.
 
 #### Recommended Responsibilities
-* Create sub-wallets
+* Create wallets
 * Create new receiving addresses
-* Add wallet members
+* Add workspace members
 * Modify member permissions
 * Initiate and sign transactions
 * Manage transaction approval policies
-* Use the web3 sub-wallet to link DApps
-* Manage FIL multi-signature wallets
+* Use web3 wallet to link Dapp
+* Manage FIL multisig wallets
 * Manage FIL nodes
 * Authorize sweeping contracts 
 * Configure Co-Signer
 * Create KYT
 * Handle KYT risks
-* Approve members
+* Manage strategy engine
 
 
-### Approval Memeber (Approver)
-Approvers can approve transactions based on triggered transfer policies, and they also have the permissions of ordinary members.
-
-#### Recommended Responsibilities
+### Admin
+**Recommended Responsibilities**
 * Initiate transactions
 * View bills
 * View wallet information
-* Handle transaction approvals
+* Sign and accelerate transactions
 * Handle KYT risks
-* Configure auto sweep rules for sweep ERC-20 tokens feature
-* Configure auto sweep rules for sweep all coins feature
+* Configure contract auto sweep rules
+* Configure Co-Signer auto sweep rules
 
-<Tip>
-Wallet administrators can edit transfer policies through the "Security-Transfer Policy" of the Custody App, including adding members to the approval flow, and members added to the approval flow will automatically become approvers. Refer to [Transfer Policy](/help-center/manage-mpc/strategy/transfer) for the specific process.
-</Tip>
-
-### Ordinary Member
-Ordinary members can initiate transactions, access allocated wallets, and query related information.
-
-#### Recommended Responsibilities
+### Wallet Ordinary Member
+**Recommended Responsibilities**
 * Initiate transactions
 * View bills
 * View wallet information
 * Handle KYT risks
-* Configure auto sweep rules for sweep ERC-20 tokens feature
-* Configure auto sweep rules for sweep all coins feature
+* Configure contract auto sweep rules
+* Configure Co-Signer auto sweep rules
 
-<Tip>
-Wallet administrators can add associated users under the account through the "Team Members" function in the Custody App. In the Custody App's "Security-Team Management," team members can be added as Ordinary members of the MPC sub-wallet. Refer to [Adding a New Wallet User](/help-center/manage-mpc/user-setting/add-user) for the specific process.
-</Tip>
+## III. Role Function Access Table
 
-
-##  Role Function Access Table
-
-| Wallet Role | Wallet Administrator | Approver | Ordinary Member |
+| Workspace Role | Workspace Owner | Admin | Ordinary Member |
 | ------- | ------- | ------- | ------- |
-| Create Sub-Wallet | √ | × | × |
-| Create New Address | √ | × | × |
-| Manage Sub-Wallet Members | √ | × | × |
-| Initiate Transactions | √ | √ | √ |
-| Private Key Signing | √ | × | × |
-| View Bills | √ | √ | √ |
-| View Wallet Information | √ | √ | √ |
-| Edit Transfer Policies | √ | × | × |
-| Approve Transactions | √ | √ | × |
-| Connect to DApp | √ | × | × |
-| Manage FIL Multi-Signature Wallet | √ | × | × |
-| Manage FIL Nodes | √ | × | × |
-| Configure Auto Sweep Rules For Sweep ERC-20 Tokens Feature | √ | √ | √ |
-| Sweeping Contract Authorization | √ | × | × |
-| Manual Sweep ERC-20 Tokens | √ | × | × |
-| Create KYT Policies | √ | × | × |
-| Handle KYT Risks | √ | √ | √ |
-| Decide Omnibus Wallets and Gas Stations | √ | × | × |
-| Configure Auto Sweep Rules For Sweep All Coins Feature  | √ | √ | √ |
-
+| Create Wallet |√ |×|×|
+| Create New Address |√ |×|×|
+| Manage Workspace Members |√ |×|×|
+| Initiate Transaction | √|√|√|
+| Private Key Signature | √|√|×|
+| View Bills | √|√|√|
+| View Wallet Information | √|√|√|
+| Edit Transfer Strategy | √|×|×|
+| Become Approver |√|√|√|
+| Connect Dapp | √|×|×|
+| Manage FIL Multisig Wallet |√|×|×|
+| Manage FIL Node |√|×|×|
+| Configure Contract Auto Sweep Rules | √|√|√|
+| Contract Collection Authorization | √|×|×|
+| Manual Contract Collection |√ |×|×|
+| Create KYT Strategy | √|×|×|
+| Handle KYT Risks | √|√|√|
+| Decide Co-SIgner Collection Wallet and Auto-Fueling Strategy | √|×|×|
+| Configure Co-SIgner Auto Sweep Rules |√ |√|√|

@@ -1,7 +1,7 @@
 ---
-title: Get MPC Coin Details
+title: Get MPC Workspace Coin Details
 api: GET /api/mpc/coin_list
-description: "Get the details of MPC wallet main chain coins and tokens supported by ChainUp Custody"
+description: "Get the details of MPC workspace's native tokens, and tokens supported"
 ---
 
 #### Request Parameters
@@ -15,10 +15,10 @@ description: "Get the details of MPC wallet main chain coins and tokens supporte
     Unique identifier for the coin, used for transfers, e.g.：`USDTERC20`
 </ParamField>
 <ParamField query="base_symbol" type="string">
-    Main chain coins, Unique identifier for the coin, used for transfers, e.g.：`ETH`
+    Native tokens, Unique identifier for the coin, used for transfers, e.g.：`ETH`
 </ParamField>
 <ParamField query="open_chain" type="bool">
-    Main chain coin, default to getting all, `true` to get opened coins, `false` to get unopened coins
+    Native token, default to getting all, `true` to get opened coins, `false` to get unopened coins
 </ParamField>
 
 
@@ -28,24 +28,24 @@ description: "Get the details of MPC wallet main chain coins and tokens supporte
     <Expandable title="object">
         <ResponseField name="address_regex" type="string">Address regex pattern, e.g.：`.*`</ResponseField>
         <ResponseField name="address_tag_regex" type="string">Address tag regex pattern</ResponseField>
-        <ResponseField name="base_symbol" type="string">Unique identifier of the base coin of the main chain, e.g.：`MATIC1`</ResponseField>
-        <ResponseField name="contract_address" type="string">Contract address supported by MPC main chain</ResponseField>
+        <ResponseField name="base_symbol" type="string">Unique identifier of the native token of the network, e.g.：`MATIC1`</ResponseField>
+        <ResponseField name="contract_address" type="string">Contract address supported by MPC network</ResponseField>
         <ResponseField name="decimals" type="integer">Coin precision</ResponseField>
         <ResponseField name="deposit_confirmation" type="integer">Number of confirmations for deposits</ResponseField>
         <ResponseField name="address_link" type="string">Prefix for the block explorer address query link.</ResponseField>
         <ResponseField name="txid_link" type="string">Prefix for the block explorer address query link.</ResponseField>
         <ResponseField name="icon" type="string">Coin icon</ResponseField>
-        <ResponseField name="if_open_chain" type="bool">Indicates if the main chain is open (false/true)</ResponseField>
+        <ResponseField name="if_open_chain" type="bool">Indicates if the network is open (false/true)</ResponseField>
         <ResponseField name="real_symbol" type="string">Name of the coin on the blockchain</ResponseField>
         <ResponseField name="support_memo" type="string">Indicates if memo is supported (0:not supported, 1:supported)</ResponseField>
-        <ResponseField name="support_token" type="string">Indicates if token coins are supported (0:not supported, 1:supported for main chain coins, empty for tokens)</ResponseField>
+        <ResponseField name="support_token" type="string">Indicates if token coins are supported (0:not supported, 1:supported for native tokens, empty for tokens)</ResponseField>
         <ResponseField name="coin_net" type="string">Coin network</ResponseField>
         <ResponseField name="symbol" type="string">Unique identifier for the coin, e.g.：`MATIC1`</ResponseField>
         <ResponseField name="symbol_alias" type="string">Real name of the coin</ResponseField>
         <ResponseField name="support_acceleration" type="bool">Indicates if acceleration is supported (false/true)</ResponseField>
         <ResponseField name="support_multi_addr" type="bool">Support for multiple addresses, `true`: supported, `false`: not supported</ResponseField>
-        <ResponseField name="merge_address_symbol" type="string">Merged address main chain coin, Unique identifier for the coin</ResponseField>
-       <ResponseField name="coin_type" type="integer">Belongs to the main chain coin type, `0` for account type, `1` for utxo-type main chain, `2` for Memo type</ResponseField>
+        <ResponseField name="merge_address_symbol" type="string">Merged address Native token, Unique identifier for the coin</ResponseField>
+       <ResponseField name="coin_type" type="integer">Belongs to the native token type, `0` for account type, `1` for utxo-type network, `2` for Memo type</ResponseField>
     </Expandable>
 </ResponseField>
 

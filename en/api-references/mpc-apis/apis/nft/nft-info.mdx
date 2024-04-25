@@ -6,7 +6,7 @@ description: "Retrieve NFT data such as images and names."
 
 #### Request Parameters
 <ParamField query="base_symbol" type="long" required>
-    Main chain coins, Unique identifier for the coin, e.g.：`ETH`
+    Native Token of the Networks, Unique identifier for the coin, e.g.：`ETH`
 </ParamField>
 <ParamField query="contract_address" type="string" required>
     NFT contract address
@@ -18,7 +18,7 @@ description: "Retrieve NFT data such as images and names."
 
 
 #### Response Data Parameters
-<ResponseField name="base_symbol" type="string">Main chain coins, Unique identifier for the coin, e.g.：`ETH`</ResponseField>
+<ResponseField name="base_symbol" type="string">Native Token of the Networks, Unique identifier for the coin, e.g.：`ETH`</ResponseField>
 <ResponseField name="contract_address" type="string">NFT contract address</ResponseField>
 <ResponseField name="token_id" type="string">NFT token ID</ResponseField>
 <ResponseField name="nft_name" type="string">NFT name, when absent, use "# + tokenId", e.g.: #1000001</ResponseField>

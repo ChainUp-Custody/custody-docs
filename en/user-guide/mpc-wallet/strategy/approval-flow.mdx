@@ -1,44 +1,43 @@
 ---
-title: Custom Strategy Engine
+title: Strategy Engine 
 ---
 
-##  Function Introduction
+## Function Introduction
 
-ChainUp Custody's strategy engine provides a powerful tool for customizing transaction rules for your MPC wallet, enabling precise management and control over outgoing transactions. This flexible system allows you to define a series of transaction rules based on your individual needs, ensuring the security and efficient circulation of assets. These rules can control the approval process for specific asset transfers and specify users who can approve transactions.
+ChainUp Custody's strategy engine provides a powerful transaction rule customization function for your MPC system, used for precise management and control of outgoing transactions. This flexible system allows you to define a series of transaction rules according to personalized needs, ensuring the security and effective circulation of assets. These rules can control the transfer approval process of specific assets and clarify the users who can approve transactions.
 
-ChainUp Custody's strategy engine will automatically apply your defined transfer strategy to all transfer transactions manually created through the Web or App. Once a member initiates a transfer request, the relevant transfer strategy will be followed by the approver according to the rules you set:
+ChainUp Custody's strategy engine will automatically apply your defined transfer strategy to all transfer transactions manually created through the Web or App. Once a member initiates a transfer request, the relevant transfer strategy will be acted upon by the approver according to the rules you set:
 
 <Warning>
 **Key Steps and Points to Note**
 
-We emphasize the importance of correctly implementing transfer strategies. Your transfer strategy is a key layer of asset protection, so please customize it according to your business needs.
+We emphasize the importance of correctly implementing transfer policies. Your transfer strategy is a key layer of asset protection; please customize it according to your business needs.
 
-Transactions initiated by the administrator (wallet creator) of the MPC wallet are not subject to transfer strategy management.
+Transactions initiated by the MPC workspace owner are not managed by the transfer strategy.
 
-Transactions initiated via API are not subject to transfer strategy management.
+Transactions initiated via API are not managed by the transfer strategy.
 </Warning>
 
-
-##  Operation Procedure
+## Operation Procedure
 
 ### Customize Your Transfer Strategy
 
 <Steps>
-<Step title="Log in and Open Transfer Strategy">
-    Log into the Custody APP's MPC wallet, open 【Security】-【Transfer Strategy】 feature.
+<Step title="Login and Open Transfer Strategy">
+    Log in to the Custody APP's MPC system, open the "Security" - "Transfer Strategy" function.
 
 <div className="w-full flex items-center justify-center">
         <img src="/images/user-guide/safe.jpg" width="200"/>
 </div>
 
 </Step>
-<Step title="Select the MPC Sub-Wallet for the Strategy">
-   In the transfer strategy, select the MPC sub-wallet you want to apply the transfer strategy to.
+<Step title="Choose the Wallet for the Strategy">
+   In the transfer strategy, choose the MPC wallet you want to apply the transfer strategy to.
 
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
         <img src="/images/user-guide/str1.png" width="200"/>
-      <img src="/images/user-guide/str2.png" width="200"/>
+        <img src="/images/user-guide/str2.png" width="200"/>
         </CardGroup>
 </div>
 
@@ -46,22 +45,20 @@ Transactions initiated via API are not subject to transfer strategy management.
 <Step title="Add and Configure Transfer Strategy">
 In this step, you can define the following parameters of the transfer strategy:
 
-1. **Strategy Name**: Name your strategy for easy future search and management.
-2. **Approving Members and Approval Threshold**: Select team members of the sub-wallet as approving members and set an approval threshold.
-3. **Coin for Approval**: Select the coin to be approved for transfer.
-
+1. **Strategy Name**: Name your strategy for easy search and management in the future.
+2. **Approvers and Approval Threshold**: Select the wallet's team members as approval members and set the approval threshold.
+3. **Coin for Approval**: Choose the transfer coin that needs approval.
 
 <div className="w-full flex items-center justify-center">
         <img src="/images/strategy.png" width="200"/>
 </div>
 
-
 <Warning>
 **Key Steps and Points to Note**
 
-An MPC sub-wallet can create multiple transfer strategies, but each asset's transfer strategy must be unique.
+A wallet can create multiple transfer policies, but each asset's transfer Strategy must be unique.
 
-If an asset has never edited its transfer strategy, then the asset's transactions default to requiring only the wallet administrator's final signature confirmation.
+If an asset has never edited a transfer Strategy, the asset's transaction defaults to requiring the workspace owner for the final signature confirmation.
 </Warning>
 
 </Step>
@@ -71,12 +68,16 @@ If an asset has never edited its transfer strategy, then the asset's transaction
 ### Approval Process Example
 
 <Tip>
-You can quickly view [To-Do details](/user-guide/mpc-wallet/operation/to-do) or [Transaction details](/user-guide/mpc-wallet/operation/transfer) to efficiently understand the progress of approval.
+You can efficiently and conveniently understand the current approval progress by viewing the [details of the workflow](/user-guide/mpc-wallet/operation/to-do) or [details of the transaction information](/user-guide/mpc-wallet/operation/transfer).
 </Tip>
 
 <Steps>
-<Step title="Enter the Transfer Page">
-    In the **APP**, Tokens support quick transfers by swiping left, or you can click to enter the coin details for transfer. NFTs only support transfers after clicking to enter details.
+<Step title="Initiate Transfer">
+Whether it's a ordinary member, approval member, or workspace owner, they can initiate a transfer by logging into the Custody APP or PC version.
+
+You need to select the wallet and coin for the transfer, enter the address, quantity, and remarks after confirming the transfer, and then wait for approval.
+
+In the **APP**, Tokens support quick transfer by swiping left, or you can click to enter the token details for transfer. NFT only supports clicking to enter details for transfer.
 <div className="w-full flex items-center justify-center">
 
     <CardGroup cols={2}>
@@ -84,25 +85,32 @@ You can quickly view [To-Do details](/user-guide/mpc-wallet/operation/to-do) or 
    <img src="/images/user-guide/transfer2.jpg" width="200"/>
     </CardGroup>
 </div>
-
-    On the **Web Page**, you can select the sub-wallet for transfer.
+On the **Web Page**, you can select the wallet for transfer.
     <div className="w-full flex items-center justify-center">
     <img src="/images/user-guide/transfer4.jpg" />
 </div>
 
 </Step>
 <Step title="Fill in and Confirm Transfer Information">
-    We support transfers to other backed-up sub-wallets. To ensure the accuracy of the miner's fee, the fee will be set at the time of signing.
-    
-    **Ordinary members** can only initiate transfers
+  **Ordinary members** can only initiate transfers
+
     <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
     <img src="/images/user-guide/transfer3.jpg" width="200"/>
     <img src="/images/user-guide/transfer6.jpg" width="200"/>
     </CardGroup>
 </div>
-    
-    **Approving members** can initiate and approve transfer orders.
+
+</Step>
+
+<Step title="Approval Members Approve">
+
+The approval members of this transfer Strategy will receive approval prompts in "To Do". Approval members can perform approval operations.
+
+If the member initiating the transfer is an approval member, then the approval member's approval status is defaulted as passed.
+
+When the order meets the approval rules, it requires the workspace owner or admin to handle the authorization signature.
+
  <div className="w-full flex items-center justify-center">
     <CardGroup cols={3}>
     <img src="/images/user-guide/transfer5.png" width="200"/>
@@ -111,26 +119,17 @@ You can quickly view [To-Do details](/user-guide/mpc-wallet/operation/to-do) or 
     </CardGroup>
 </div>
 
-    When the order meets the approval rules, the **wallet creator** can proceed to the next step, i.e., signing.
-</Step>
+<Tip>
+**Agree to the transaction:** When the transaction reaches the approval threshold, it is automatically submitted to the workspace owner or admin for signature confirmation, then broadcast to the blockchain.
 
-
-<Step title="Wallet Creator Confirms and Signs">
-    The wallet creator needs to set the miner's fee (some main chains support custom miner fees, you can appropriately increase the miner's fee to speed up transaction processing), confirm the transaction information, and sign.
-
-<div className="w-full flex items-center justify-center">
-    <CardGroup cols={3}>
-    <img src="/images/user-guide/transfer9.jpg" width="200"/>
-    <img src="/images/user-guide/transfer10.jpg" width="200"/>
- <img src="/images/user-guide/transfer11.jpg" width="200"/>
-    </CardGroup>
-</div>
+**Reject the transaction:** When the transaction does not reach the approval threshold, it is automatically terminated to ensure unauthorized transactions are stopped.
+</Tip>
 
 </Step>
-<Step title="Wait for Signature and Transaction Confirmation">
-    After the signature is successful, you need to wait for the blockchain to process. If the processing time is too long, you can speed up the transaction by increasing the miner's fee for the order.
-    
-    Once the blockchain confirms, the transaction is complete. You can view the transaction details in the transaction record.
+
+<Step title="Transaction Signature">
+The workspace owner can give the final approval to the transfer request. If they disagree with the transfer request, they can directly cancel the transaction; if they agree with the transfer request, they can perform a signature operation.
+
 
  <div className="w-full flex items-center justify-center">
     <CardGroup cols={3}>
@@ -141,9 +140,7 @@ You can quickly view [To-Do details](/user-guide/mpc-wallet/operation/to-do) or 
 </div>
 
 </Step>
+
 </Steps>
-
-
-
 
 

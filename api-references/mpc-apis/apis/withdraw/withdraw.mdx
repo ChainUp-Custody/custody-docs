@@ -1,7 +1,7 @@
 ---
 title: 转账
 api: POST /api/mpc/billing/withdraw
-description: "发起一笔转账交易"
+description: "通过API发起转账交易"
 ---
 
 <Note>
@@ -10,7 +10,7 @@ description: "发起一笔转账交易"
 
 #### 请求参数数据结构
 <ParamField query="sub_wallet_id" type="integer" required>
-    子钱包id
+    钱包id
 </ParamField>
 <ParamField query="symbol" type="string" required>
     币种唯一标识，例：`USDTERC20`

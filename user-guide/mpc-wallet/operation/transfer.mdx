@@ -4,7 +4,7 @@ title: 转账
 
 ## I. 功能简介
 
-在ChainUp Custody钱包中，您可以进行子钱包之间的转账操作。
+在ChainUp Custody钱包中，您可以选择内部钱包和外部地址进行转账操作。
 
 为了确保资金安全和高效的审批，我们建议对有价值的币种或NFT添加转账策略。不同的角色对应的转账流程可能会有所不同。
 
@@ -20,14 +20,14 @@ title: 转账
     </CardGroup>
 </div>
 
-    在**Web 页面**，您可以选择子钱包后进行转账。
+    在**Web 页面**，您可以选择钱包后进行转账。
     <div className="w-full flex items-center justify-center">
     <img src="/images/user-guide/transfer4cn.png" />
 </div>
 
 </Step>
 <Step title="填写并确认转账信息">
-    我们支持向其他已备份的子钱包进行转账。为了确保矿工费的准确性，矿工费将在签名时设置。
+    您可以选择钱包，或输入特定地址进行转账，请注意，若您选择内部钱包转账，该钱包必须完成私钥备份。
     
     **普通成员**只能发起转账
     <div className="w-full flex items-center justify-center">
@@ -46,12 +46,12 @@ title: 转账
     </CardGroup>
 </div>
 
-    当订单满足审批规则后，**钱包创建者**可以进行下一步操作，即进行签名。
+    当订单满足审批规则后，**工作站创建者或管理员**可以进行下一步操作，即进行签名。
 </Step>
 
 
-<Step title="钱包创建者确认和签名">
-    钱包创建者需要设置矿工费（部分主链支持自定义矿工费，可以适当提高矿工费以加快交易处理速度），确认交易信息并进行签名。
+<Step title="工作站创建者确认和签名">
+    工作站创建者需要设置矿工费（部分主链支持自定义矿工费，可以适当提高矿工费以加快交易处理速度），确认交易信息并进行签名。
 
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={3}>
@@ -79,7 +79,7 @@ title: 转账
 
 ## III. 常见问题
 
-<Accordion title="未备份的钱包可以发起转账吗？">
+<Accordion title="未备份私钥的工作站可以发起转账吗？">
 不，为了资产安全，您需要完成私钥备份后才可进行转账。
 </Accordion>
 <Accordion title="如果我设置的矿工费不足，我可以在交易过程中增加吗？">

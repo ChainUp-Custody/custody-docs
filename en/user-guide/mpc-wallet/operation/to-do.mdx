@@ -1,72 +1,91 @@
 ---
-title: Operational To-Do
+title: Workflow
 ---
 
-##  Function Introduction
+## Function Introduction
 
-In the ChainUp Custody wallet, you can view and handle to-do tasks related to your account. The type of to-do tasks you have will depend on your account role in the selected main wallet.
+You can view and handle pending tasks related to your account. The type of your pending tasks will depend on your account role in the selected workspace.
 
-##  Operation Procedure
+## Operation Procedure
 
-<Steps>
-<Step title="View To-Do Information">
-In the **APP**, you can enter the [To-Do] page through the bottom navigation to view and handle all wallet to-do information you manage.
+### Workflow: To-Do
+
+#### Viewing To-Do Information
+
+In the **APP**, you can enter the "Workflow" page through the bottom navigation, select the "To-Do" module, and view and handle all the workspace to-do information you need to process.
+
 <div className="w-full flex items-center justify-center">
-    <CardGroup cols={3}>
-    <img src="/images/user-guide/todo1.png" width="200"/>
-    <img src="/images/user-guide/todo2.png" width="200"/>
-    <img src="/images/user-guide/todo3.png" width="200"/>
-    </CardGroup>
+    <img src="/images/user-guide/todoappen.jpg" width="200"/>
 </div>
 
 <Tip>
-You can select the wallet by clicking on the upper right of the [To-Do] page.
+You can select the wallet from the top right corner of the "To-Do" page.
 </Tip>
 
-On the **Web Page**, click on the "Operational To-Do" module in the left menu bar to jump to the function page.
+On the **Web page**, click on the "Workflow" module in the left menu bar to jump to the function page.
 <div className="w-full flex items-center justify-center">
-    <img src="/images/user-guide/todo4.png" />
+    <img src="/images/user-guide/todoweben.jpeg" width="600"/>
 </div>
+
 <Tip>
-You can only view, select, and operate the to-do tasks associated with your account under the currently selected main wallet.
+You can only view, select, and operate the pending tasks associated with your account under the currently selected workspace.
 </Tip>
 
-</Step>
-<Step title="Handle Operational To-Do">
-The type of to-do tasks you can operate depends on your account role in the selected main wallet.
+#### Handling Operational To-Do
+The type of to-do items you can operate depends on your account role in the selected workspace.
 
-**Approval members** can carry out transaction approval, agree or refuse transactions, confirm or cancel the collection and gas wallet configuration.
+**Approval members** can approve transactions, agree or refuse transactions, confirm or cancel collection and gas station configuration.
 
-**Wallet creators** can carry out transaction cancellation, transaction signature, transaction acceleration, etc.
+**Workspace owners and admins** can cancel transactions, sign transactions, accelerate transactions, etc.
 
-<div className="w-full flex items-center justify-center">
-    <img src="/images/user-guide/todo5.png" />
-</div>
+**Admins** can also receive equal-rights private keys in this module.
+
 
 
 <Warning>
 Please note the following two points:
-1. When operating on the MPC wallet platform, transaction approval requires GA verification.
-2. For any operation that requires a private key signature, you can use the ChainUp Custody App with a locally backed-up private key to scan the QR code.
+1. When operating on the MPC system platform, transaction approval needs to go through GA verification.
+2. For any operation that requires a private key signature, you can use the ChainUp Custody App with locally backed up private keys to scan the QR code.
 </Warning>
-</Step>
-</Steps>
 
-##  Frequently Asked Questions
 
-<Accordion title="How do I view the operational to-do of other main wallets?">
-You can click the MPC button at the top of the page, or click the main wallet switch button on the left, and after switching to another main wallet, you can enter the operational to-do module of that main wallet to view.
+
+### Workflow: Done
+
+#### Viewing Done Information
+
+You can enter the "Workflow" page in the App or Web system, select the "Done" module, and view the task records you have processed in the past.
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/doneappen.jpg" width="150"/>
+    <img src="/images/user-guide/doneweben.jpg" width="650"/>
+</div>
+
+<Tip>
+For transaction-type done tasks, such as transaction approvals and signatures you have processed, you can click on "Done" to view the latest status of the corresponding transaction.
+</Tip>
+
+
+
+## Frequently Asked Questions
+
+<Accordion title="How can I view the workflow of other workspaces?">
+You can click the MPC button at the top of the page, or click the workspace switch button on the left. After switching to other workspaces, you can enter the operational to-do module of that workspace to view.
 </Accordion>
 
-<Accordion title="Why can't I complete tasks waiting for signature and acceleration by scanning the QR code of the to-do?">
+<Accordion title="As a admin, can I recover and backup the private key myself?">
+Admin cannot recover the private key. You need to contact the workspace owner to resend the private key.
+</Accordion>
+
+
+<Accordion title="Why can't I complete the tasks waiting for signature and acceleration by scanning the QR code of the to-do item?">
 Please confirm the following points:
-1. You are the creator of the main wallet;
-2. The device you are using has completed the local backup of the private key;
+1. You are the creator of the workspace;
+2. The device you are using has backed up the local private key;
 3. The QR code has not expired.
 
-If you still can't perform the scanning operation, please contact online customer service for help.
+If you still cannot perform the scanning operation, please contact online customer service for help.
 </Accordion>
 
-<Accordion title="Why can't I view Fil-related to-do tasks?">
-Sorry, we temporarily do not support users to perform Fil-related to-do operations on the MPC wallet Web platform. You can view and handle Fil-related to-do tasks through the Custody APP.
+<Accordion title="Why can't I view the pending tasks related to Fil?">
+Sorry, we currently do not support users to perform Fil-related pending operations on the MPC PC platform. You can view and handle Fil-related pending tasks through the Custody APP.
 </Accordion>

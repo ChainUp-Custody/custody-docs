@@ -11,7 +11,7 @@ title: Receiving (Deposit)
 | side             | String  | Yes      | Notification type: Receive notification: `deposit`, Transfer notification: `withdraw`, Web3 transaction notification: `web3-trans` |
 | notify_time      | String  | Yes      | Notification time，example：2022-11-02 11:04:05              |
 | id               | String  | Yes      | receiving id                                                 |
-| sub_wallet_id    | String  | Yes      | Sub wallet id                                                |
+| sub_wallet_id    | String  | Yes      | wallet id                                                |
 | symbol           | String  | Yes      | The unique identifier of the coin, example: USDTERC20        |
 | amount           | String  | Yes      | receiving amount                                             |
 | created_at       | String    | Yes      | Created time timestamp, example: 2006-01-02 15:04:05         |
@@ -22,7 +22,7 @@ title: Receiving (Deposit)
 | txid             | String  | Yes      | Transaction hash                                             |
 | confirmations    | Integer | Yes      | Number of block confirmations，example：10                   |
 | status           | Integer | Yes      | receiving status: `1000` unconfirmed, `1100` confirmed (transaction block confirmed), `2000` completed (shown at account), `3000` abnormal |
-| base_symbol      | String  | No       | The unique identifier of the main chain of the coin to be received, example：ETH |
+| base_symbol      | String  | No       | The unique identifier of the network of the coin to be received, example：ETH |
 | contract_address | String  | No       | received coin's contract address                             |
 | tx_height        | Long   |Yes   | Block height at which the transaction is completed |
 

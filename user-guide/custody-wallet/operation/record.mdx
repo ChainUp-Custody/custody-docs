@@ -1,0 +1,134 @@
+---
+title: 交易记录
+---
+
+## I. 功能简介
+
+交易记录模块用于显示所有的充值和提现记录，包括已经停止运营的币种。用户可以通过高级搜索和导出功能对交易记录进行筛选和导出。
+
+## II. 操作流程
+
+
+
+### II.I 充值记录导出
+
+<Steps>
+<Step title="选择需要导出的记录">
+打开交易记录页面，在顶部查询并确认需要导出的记录。
+<div className="w-full flex items-center justify-center">
+<img src="/images/custody-guide/record1cn.png" width="600"/>
+</div>
+
+</Step>
+
+<Step title="点击导出按钮">
+点击导出按钮。
+</Step>
+
+<Step title="下载充值记录">
+下载的充值记录包括以下字段：
+
+- 订单号/Order number
+- 充币数量/Number of coins charged
+- 币种/Currency
+- 转账地址/Transfer address
+- 收款地址/Receiving address
+- TXID
+- 时间/Time
+- 状态/Status
+- 备注/Remark
+</Step>
+</Steps>
+
+### II.II 充值详情
+
+<Steps>
+<Step title="查看充值记录的详情">
+查看充值记录中的某一条记录的详情。
+</Step>
+
+<Step title="充值详情包括以下信息">
+<div className="w-full flex items-center justify-center">
+<img src="/images/custody-guide/record2cn.png" width="600"/>
+</div>
+充值详情包括以下信息：
+
+- 充币到账：充币到账所需要的区块确认数，未达到确认数时当前资产不上账。
+- 提币解锁：资产提币所需要的区块确认数，未达到确认数时当前资产不可提币。
+- 交易类型：区块链转账、联盟转账。当为联盟转账时，交易不上链（不收矿工费），TXID所属为联盟专享。
+</Step>
+</Steps>
+
+### II.III  提币记录导出
+<Steps>
+<Step title="选择需要导出的记录">
+打开提现记录页面，在顶部查询并确认需要导出的记录。
+<div className="w-full flex items-center justify-center">
+<img src="/images/custody-guide/record3cn.png" width="600"/>
+</div>
+</Step>
+
+<Step title="点击导出按钮">
+点击导出按钮。
+</Step>
+
+<Step title="下载提币记录">
+下载的提币记录包括以下字段：
+
+- 订单号/Order number
+- 提币数量/Withdrawal quantity
+- 提币币种/Currency of withdrawal
+- 矿工费/Miner's fee
+- 矿工费币种/Currency of miner's fee
+- 分润手续费/Service charge for profit sharing
+- 分润手续费币种/Currency of profit sharing service charge
+- 交易方式/Trading method
+- 交易类型/Transaction Type
+- 提币用户/Cash withdrawing user
+- 提币时间/Withdrawal time
+- 状态/Status
+- 收款地址/Receiving address
+- TXID
+- 备注/Remark
+</Step>
+</Steps>
+
+### II.IV 提币详情
+<Steps>
+<Step title="查看提币记录的详情">
+查看提币记录中的某一条记录的详情。
+</Step>
+
+<Step title="提币详情包括以下信息">
+<div className="w-full flex items-center justify-center">
+<img src="/images/custody-guide/record4cn.png" width="600"/>
+</div>
+
+提币详情包括以下信息：
+
+- 交易方式：API提币、人工提币（由您的团队在Custody App或PC端发起的提币）。
+- 交易类型： 联盟转账、链上转账
+- 用户： 发起这笔提币交易的用户
+
+</Step>
+
+</Steps>
+
+<Tip>
+**只有钱包创建者有权添加地址至地址薄。**
+</Tip>
+
+## III. 常见问题
+
+<Accordion title="为什么无法执行充值和提现操作？">
+有可能是系统在某些时候（如区块链分叉、升级、系统维护等）会关闭相关操作，因此您无法执行。请等待系统开启后再操作。
+</Accordion>
+
+<Accordion title="如何添加白名单地址？">
+只有钱包创建者有权添加白名单地址。请联系钱包创建者进行相关操作。
+</Accordion>
+
+<Accordion title="如何解决提币到账延迟的问题？">
+如果提币到账延迟，请确认所需的区块确认数是否已达到要求。如果区块确认数未达到要求，您的资产可能暂时无法到账，需要等待确认数达到后再次检查。
+</Accordion>
+

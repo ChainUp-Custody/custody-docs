@@ -1,22 +1,23 @@
 ---
 title: Synchronize Deposit Records
+description: "Get the deposit records after a specific transaction ID"
 ---
 
-`GET /api/v2/billing/syncDepositList`
+`GET/api/v2/billing/syncDepositList`
 
 #### Decrypted Request Parameters
 <ParamField query="time" type="long" required>
-    current timestamp
+    Current timestamp
 </ParamField>
 <ParamField query="charset" type="string" required>
-    encoding format, no special case, pass parameter UTF-8
+    Encoding format, no special case, pass parameter UTF-8
 </ParamField>
 <ParamField query="version" type="string" required>
-    interface version number, no special case, pass parameter v2
+    Interface version number, no special case, pass parameter v2
 </ParamField>
 
 <ParamField query="max_id" type="string" required>
-    returns 100 records greater than id
+    Returns 100 records after a specific transaction ID
 </ParamField>
 
 
@@ -33,7 +34,7 @@ title: Synchronize Deposit Records
         <ResponseField name="confirmations" type="integer">number of blockchain confirmations</ResponseField>
         <ResponseField name="address_from" type="string">deposit source address</ResponseField>
         <ResponseField name="address_to" type="string">depositing account address</ResponseField>
-        <ResponseField name="status" type="integer">0 to be confirmed, 1 success, 2 failed, 4 pending KYT verification, 5 pending manual review (KYT risk level too high), 6 Pending manual review (KYT Deposit Circuit Breaker)</ResponseField>
+        <ResponseField name="status" type="integer">0 to be confirmed, 1 success, 2 failed, 4 pending KYT verification, 5 pending manual review (KYT risk level too high), 6 Pending manual review (KYT Deposit Circuit Breaker),  7 Transferred In</ResponseField>
     </Expandable>
 </ResponseField>
 

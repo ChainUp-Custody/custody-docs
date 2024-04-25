@@ -1,22 +1,22 @@
 ---
-title: Create Sub-Wallet
+title: Create wallet
 api: POST /api/mpc/sub_wallet/create
-description: "Pass in the specified sub-wallet name to create a new sub-wallet for the main wallet"
+description: "Pass in the specified wallet name to create a new wallet for the MPC workspace"
 ---
 
 #### Request Parameters
 <ParamField query="sub_wallet_name" type="string" required>
-    Name of sub-wallet, up to 50 characters. No duplicate names., e.g.：mpc mining pool
+    Name of wallet, up to 50 characters. No duplicate names., e.g.：mpc mining pool
 </ParamField>
 <ParamField query="app_show_status" type="string">
-    Type of sub-wallet. 1: Asset sub-wallet, 2: web3 sub-wallet (if not specified, the default sub-wallet type is web3)
+    Whether the wallet be displayed in the app and web after creation? 1 for display, 2 for not display; default is not displayed, if displayed, users can perform deposit, withdrawal, web3 transactions, and other operations on the app and web platform
 </ParamField>
 
 
 
 #### Response Data Parameters
 <Expandable title="object">
-    <ResponseField name="sub_wallet_id" type="integer">Sub wallet id</ResponseField>
+    <ResponseField name="sub_wallet_id" type="integer">Wallet id</ResponseField>
 </Expandable>
 
 

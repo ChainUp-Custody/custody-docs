@@ -1,23 +1,22 @@
 ---
-title: Managing MPC Wallet
+title: Managing MPC Workspace
 ---
+## I. Function Introduction
 
-##  Function Introduction
+The Manage MPC Workspace feature allows users to manage workspaces and wallets. Users can switch to select the workspace they want to manage, edit the alias of the workspace, view the asset details of the wallet, and switch to select the wallet they want to manage.
 
-The MPC Wallet Management feature allows users to manage main wallets and sub-wallets. Users can switch to select the main wallet they want to manage, edit the remark of the main wallet, view the asset details of the sub-wallet, and switch to select the sub-wallet they want to manage.
+## II. Operation Procedure
 
-##  Operation Procedure
-
-### Managing Main Wallet
+### Managing Workspace
 
 <Steps>
-<Step title="Select Main Wallet to Manage">
-You can switch to select the main wallet you want to manage based on the type of wallet creation.
+<Step title="Select Workspace To Manage">
+You can switch to select the workspace you want to manage based on the workspace's creation type.
 
-- Created by me: You are the creator/private key holder of the main wallet
-- Managed by me: You have co-management member permissions (approval member or ordinary member) in any sub-wallet of the main wallet
+- Created: You are the creator of the workspace
+- Co-managed: You have co-management member permissions (Admin or Regular Member)
 
-**ChainUp Custody MPC APP** operation page
+**ChainUp Custody MPC APP** Operation Page
 
  <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
@@ -27,7 +26,8 @@ You can switch to select the main wallet you want to manage based on the type of
  </div>
 
 
-**ChainUp Custody MPC Web** operation page
+**ChainUp Custody MPC Web** Operation Page
+
 
 <div className="w-full flex items-center justify-center">
 <img src="/images/user-guide/manage3.png" width="600"/>
@@ -35,11 +35,11 @@ You can switch to select the main wallet you want to manage based on the type of
 
 </Step>
 
-<Step title="Main Wallet Edit Page">
-Click on the edit wallet function in the upper right corner, and you will enter the main wallet edit page.
-You can edit the remark and orders for all accessible main wallets under your account.
+<Step title="Workspace Edit Page">
+Click on the edit function in the top right corner, and you will enter the workspace edit page.
+You can edit the alias and order of all accessible workspaces under your account.
 
-**ChainUp Custody MPC APP** operation page
+**ChainUp Custody MPC APP** Operation Page
 
  <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
@@ -48,69 +48,67 @@ You can edit the remark and orders for all accessible main wallets under your ac
     </CardGroup>
  </div>
 
-
-**ChainUp Custody MPC Web** operation page
-
- <div className="w-full flex items-center justify-center">
+**ChainUp Custody MPC Web** Operation Page
+<div className="w-full flex items-center justify-center">
         <img src="/images/user-guide/manage6.png" width="600"/>
  </div>
  <div className="w-full flex items-center justify-center">
 <img src="/images/user-guide/manage7.png" width="600"/>
 </div>
+<Note>Please note, this alias is only effective for you.</Note>
+
 </Step>
 </Steps>
 
 
 
-### Managing Sub-Wallet
+### Managing Wallet
 
 <Steps>
-<Step title="Select Sub-Wallet to Manage">
-After selecting a main wallet, the system will default to select a sub-wallet for you based on your account's usage habits and the asset ranking of the sub-wallets you manage.
+<Step title="Select Wallet To Manage">
+After selecting a workspace, the system will default to select a wallet for you based on your account's usage habits and the ranking of the wallet assets you manage.
 
-You can view the asset details of this sub-wallet. At the same time, you can click the switch button to search and select the sub-wallet you want to manage.
+You can view the asset details of this wallet. Also, you can click the switch button to search and select the wallet you want to manage.
 
-<Note>Please note, you can only switch to select the sub-wallet under the currently selected main wallet that you have permission to.</Note>
+<Note>Please note, you can only switch to select the wallet you have permissions for.</Note>
 
 <div className="w-full flex items-center justify-center">
 <img src="/images/user-guide/websub.png" width="600"/>
 </div>
 </Step>
 
-<Step title="Sub-Wallet Edit Page">
-You can enter the sub-wallet edit page for management through the APP.
-Then you can edit remark and orders for the sub-wallets you manage.
-
+<Step title="Wallet Edit Page">
+You can manage by entering the wallet edit page through the APP.
  <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
         <img src="/images/user-guide/manage9.png" width="200"/>
         <img src="/images/user-guide/manage10.png" width="200"/>
     </CardGroup>
  </div>
+</Step>
 
-<Note>Please note, this remark only takes effect for you.</Note>
+<Step title="Wallet Order and Edit Alias">
+You can edit the alias for the wallet you manage.
+<Note>Please note, this alias is only effective for you.</Note>
 </Step>
 
 </Steps>
 
-##  Frequently Asked Questions
+## III. Frequently Asked Questions
 
-<Accordion title="Why can't I select a certain main wallet?">
-We do not support users to select wallets in the following states for related operations: wallets where the private key is being created. Please wait in the App for the private key of this wallet to be successfully created.
+<Accordion title="Why can't I select or edit a certain workspace">
+We do not support users to select and perform related operations for workspaces in the following states: workspaces where the private key is being created. Please wait for the private key creation of this workspace to succeed in the App.
 </Accordion>
 
-<Accordion title="Why can't I edit a certain main wallet?">
-Sorry, we currently do not support users to edit the wallet remark for wallets where the private key is being created. Please try again after waiting in the App for the private key of this wallet to be successfully created.
+<Accordion title="How to switch to visit other workspaces">
+You can click the MPC button at the top to return to the homepage: select other workspaces. When you have entered the feature management page of a certain workspace, you can return to the homepage by clicking the workspace switch button in the upper left corner.
 </Accordion>
 
-<Accordion title="How do I switch to access other main wallets?">
-You can click the MPC button at the top to return to the home page: select the main wallet. When you have entered the function management page of a certain main wallet, you can return to the home page: select the main wallet by clicking the main wallet switch button in the upper left corner.
+<Accordion title="How to obtain permissions for other workspaces/wallets">
+In the workspace you created, you will be granted full management permissions for all wallets under this workspace. For the workspace you co-manage, your permissions will be determined by the creator of the workspace.
 </Accordion>
 
-<Accordion title="How do I get permissions for other main wallets/sub-wallets?">
-For the main wallet you created, you will have all management permissions for all sub-wallets under this main wallet. For the main wallet you co-manage, your permissions will be determined by the creator of that main wallet.
+<Accordion title="Can I edit the wallet's approval strategy on the MPC web version">
+Sorry, we currently do not support users to manage transfer strategies on the MPC web version. Please go to the [Security] - [Transfer Strategy] in the App for related operations.
 </Accordion>
 
-<Accordion title="As a wallet creator, can I edit the approval strategy for each sub-wallet on the MPC wallet platform?">
-Sorry, we currently do not support users to manage team members and transfer strategies under different wallets on the MPC wallet platform. If you still cannot receive payments, please contact online customer service for help.
-</Accordion>

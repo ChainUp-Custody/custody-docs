@@ -1,12 +1,12 @@
 ---
 title: Sync Web3 Transaction Records
 api: GET /api/mpc/web3/sync_trans_list
-description: "Get all Web3 transaction records under a wallet, maximum of 100 records."
+description: "Get all Web3 transaction records under a wallet"
 ---
 
 #### Request Parameters
 <ParamField query="max_id" type="string" required>
-    Starting ID of Web3 transactions
+    Starting ID of Web3 transactions, for example 100, the system will return all transaction information after 101, with a maximum of 100 records.
 </ParamField>
 
 
@@ -16,12 +16,12 @@ description: "Get all Web3 transaction records under a wallet, maximum of 100 re
     <Expandable title="object">
         <ResponseField name="id" type="integer">Web3 transaction ID</ResponseField>
         <ResponseField name="request_id" type="string">Unique identifier for the transaction</ResponseField>
-        <ResponseField name="sub_wallet_id" type="integer">Sub wallet id</ResponseField>
+        <ResponseField name="sub_wallet_id" type="integer">Wallet id</ResponseField>
         <ResponseField name="txid" type="string">Transaction hash</ResponseField>
         <ResponseField name="symbol" type="string">Transaction coin</ResponseField>
-        <ResponseField name="main_chain_symbol" type="string">Main chain coin symbol (unique identifier), e.g.：`ETH`</ResponseField>
+        <ResponseField name="main_chain_symbol" type="string">Native token symbol (unique identifier), e.g.：`ETH`</ResponseField>
         <ResponseField name="amount" type="string">Transaction amount. -1 indicates infinite</ResponseField>
-        <ResponseField name="fee_symbol" type="string">Fee currency, e.g.：ETH</ResponseField>
+        <ResponseField name="fee_symbol" type="string">Fee coin, e.g.：ETH</ResponseField>
         <ResponseField name="fee" type="string">Fee, e.g.：0.00123</ResponseField>
         <ResponseField name="real_fee" type="string">Actual fee consumed, e.g.：0.00111</ResponseField>
         <ResponseField name="created_at" type="long">Creation timestamp</ResponseField>

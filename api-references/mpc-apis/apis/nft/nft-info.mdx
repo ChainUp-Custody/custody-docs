@@ -6,7 +6,7 @@ description: "获取NFT图片，名称等数据"
 
 #### 请求参数数据结构
 <ParamField query="base_symbol" type="long" required>
-    主链币种名称，币种唯一标识，例：`ETH`
+    区块链网络的原生代币种名称，币种唯一标识，例：`ETH`
 </ParamField>
 <ParamField query="contract_address" type="string" required>
     NFT币种合约地址
@@ -18,7 +18,7 @@ description: "获取NFT图片，名称等数据"
 
 
 #### 响应参数数据结构
-<ResponseField name="base_symbol" type="string">主链币种名称，币种唯一标识，例：`ETH`</ResponseField>
+<ResponseField name="base_symbol" type="string">区块链网络的原生代币种名称，币种唯一标识，例：`ETH`</ResponseField>
 <ResponseField name="contract_address" type="string">NFT币种合约地址</ResponseField>
 <ResponseField name="token_id" type="string">NFT token id</ResponseField>
 <ResponseField name="nft_name" type="string">NFT 名称, 不存在时, 使用 "# + tokenId", 如: #1000001</ResponseField>

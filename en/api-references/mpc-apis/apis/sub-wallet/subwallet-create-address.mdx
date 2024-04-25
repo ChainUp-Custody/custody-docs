@@ -1,12 +1,12 @@
 ---
-title: Create Sub-Wallet Address
+title: Create Wallet Address
 api: POST /api/mpc/sub_wallet/create/address
-description: "Create an address for a specified sub-wallet and coin; the same sub-wallet can have multiple addresses, and Memo types may create multiple memos."
+description: "Create an address for a specified coin; a single wallet can create multiple coin addresses, and multiple Memos will be created for the Memo type."
 ---
 
 #### Request Parameters
 <ParamField query="sub_wallet_id" type="integer" required>
-    Sub wallet id
+    Wallet id
 </ParamField>
 <ParamField query="symbol" type="string" required>
     Unique identifier for the coin, e.g.：`USDTERC20`
@@ -18,7 +18,7 @@ description: "Create an address for a specified sub-wallet and coin; the same su
 <Expandable title="object">
     <ResponseField name="address" type="string">Created address</ResponseField>
     <ResponseField name="addr_type" type="integer">Address type, 1: User address, 2: System address (including sweeping address, change address). `System addresses` **cannot** be assigned to users for use; change in UTXO transactions will be directed to the change address</ResponseField>
-    <ResponseField name="memo" type="string">Memo assigned for Memo types under the main chain</ResponseField>
+    <ResponseField name="memo" type="string">For a Memo type network, only one address will be created, and the others will be marked as memo. You need to assign a Memo to the user, and determine the user deposit based on it. Please prompt your users to fill in the corresponding memo to successfully deposit.</ResponseField>
 </Expandable>
 
 

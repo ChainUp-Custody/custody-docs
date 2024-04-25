@@ -1,8 +1,10 @@
 ---
 title: Sweeping Miner Fees 
-description: "The coin of account type needs to be swept after deposit. UTXO has no miner fees for auto sweeping."
+description: "The coin of account type needs to be swept after deposit. "
 ---
-
+<Note>
+UTXO-base has no miner fees for auto sweeping.
+</Note>
 `GET /api/v2/billing/syncMinerFeeList`
 
 #### Decrypted Request Parameters
@@ -32,7 +34,7 @@ description: "The coin of account type needs to be swept after deposit. UTXO has
         <ResponseField name="updated_at" type="long">Revision time</ResponseField>
         <ResponseField name="txid" type="string">Blockchain transaction ID</ResponseField>
         <ResponseField name="confirmations" type="integer">Number of blockchain confirmations</ResponseField>
-        <ResponseField name="status" type="integer">0 to be confirmed, 1 success, 2 failed, 4 pending KYT verification, 5 pending manual review (KYT risk level too high), 6 Pending manual review (KYT Deposit Circuit Breaker)</ResponseField>
+        <ResponseField name="status" type="integer">0 to be confirmed, 1 success, 2 failed, 4 pending KYT verification, 5 pending manual review (KYT risk level too high), 6 Pending manual review (KYT Deposit Circuit Breaker), 7 Transferred In</ResponseField>
         <ResponseField name="address_from" type="string">depositing to account address</ResponseField>
         <ResponseField name="address_to" type="string">depositing sending address</ResponseField>
         <ResponseField name="txid_type" type="string">0 chain transaction, 1 union transfer transaction</ResponseField>

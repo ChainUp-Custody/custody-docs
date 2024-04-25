@@ -1,12 +1,12 @@
 ---
 title: Synchronize Transfer Records
 api: GET /api/mpc/billing/sync_withdraw_list
-description: "Get all sub-wallet transfer records under the main wallet, and return up to 100 records"
+description: "Get the transfer records after a specific transaction ID for all wallets under the workspace "
 ---
 
 #### Request Parameters
 <ParamField query="max_id" type="string" required>
-    transfer record initial id
+    transfer record initial id, for example 100, the system will return all transaction information after 101.
 </ParamField>
 
 
@@ -16,7 +16,7 @@ description: "Get all sub-wallet transfer records under the main wallet, and ret
     <Expandable title="object">
         <ResponseField name="id" type="integer">transfer id</ResponseField>
             <ResponseField name="request_id" type="string">The unique identifier for transferring coins</ResponseField>
-            <ResponseField name="sub_wallet_id" type="integer">Sub wallet id</ResponseField>
+            <ResponseField name="sub_wallet_id" type="integer">Wallet id</ResponseField>
             <ResponseField name="symbol" type="string">Unique identifier for the coin, used for transfers, e.g.：`USDTERC20`</ResponseField>
             <ResponseField name="amount" type="string">transfer amount</ResponseField>
             <ResponseField name="fee_symbol" type="string">gas fee coins, e.g.：ETH</ResponseField>
@@ -31,7 +31,7 @@ description: "Get all sub-wallet transfer records under the main wallet, and ret
             <ResponseField name="confirmations" type="integer">Number of block confirmations, e.g.：10</ResponseField>
             <ResponseField name="status" type="integer">transfer status: `1000` awaiting approval, `1100` Approved while awaiting signature, `1200` Payment in progress, `2000`Payment completed, `2100` Not Approved, `2200` Rejected, `2300` Transaction discarded, `2400`Payment failed</ResponseField>
             <ResponseField name="withdraw_source" type="integer">transfer Type： `1`app, `2`openapi, `3`web</ResponseField>
-            <ResponseField name="base_symbol" type="string">The unique identifier of the main chain of the coin to be transferred, e.g.：ETH</ResponseField>
+            <ResponseField name="base_symbol" type="string">The unique identifier of the network of the coin to be transferred, e.g.：ETH</ResponseField>
             <ResponseField name="contract_address" type="string">transfer coin's contract address</ResponseField>
             <ResponseField name="tx_height" type="long">Block height at which the transaction is completed</ResponseField>
 </Expandable>
