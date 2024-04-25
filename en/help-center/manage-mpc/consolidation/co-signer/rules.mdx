@@ -1,125 +1,105 @@
 ---
-title: Configure Auto Sweeping Rules
+title: Configure Auto Sweep Rules
 ---
 
-##  Overview
 
-After users configure auto sweeping rules, the Custody system will execute corresponding sweeping operations based on the defined auto sweeping or auto fueling strategy. This will result in the assets on wallets/addresses within the  appliied scope of sweeping being uniformly transferred to the preset omnibus wallet address. In cases where the wallet to be swepy (withdrawal address) lacks mining fees, the gas station will recharge the wallet's mainnet coin according to the set auto fueling strategy.
+## I. Overview
 
-<Tip>
-It is strongly recommended not to configure the same asset strategy for both the Sweep ERC-20 Tokens feature and the Sweep All Coins feature simultaneously. If an error occurs, the system will execute the sweeping operation configured earliest based on the time of your operation.
-</Tip>
+Upon configuring auto-sweep rules, the Custody system executes corresponding sweeping operations based on the specified sweeping strategy. This results in the assets on wallets/addresses within the sweeping scope being uniformly transferred to the designated sweeping wallet address. In cases where the wallet (withdrawal address) being swept lacks gas fees, the Gas Station will recharge the wallet's network native tokens according to the set refueling strategy.
 
-###  Prerequisites for Using the Feature
+### Prerequisites for Using the Feature
 
-Please ensure that the main wallet has not expired, as expiration will render all wallet-related business functions unusable.
+Please ensure that the workstation is not expired, as expiration will render all wallet-related business functions unusable.
 
-Ensure that API and Co-Signer have been configured to ensure the normal operation of the API, enabling the smooth execution of Co-Signer's sweeping function.
+Ensure that API and Co-Signer configurations are completed to ensure the normal operation of the API, thereby enabling the auto-sweep function to execute smoothly.
 
-Upgrade the App version to **6.4.5** or above.
+Please upgrade the App version to **6.4.5** or higher.
 
-##  Configure Auto Sweeping Rules
+## II. Configuring Auto Sweep Rules
 
-The rules involves four dimensions:
+Auto sweep encompasses four dimensions:
 
-1. Configure Omnibus Wallet and Gas Station
-2. Determine the Applied Scope for auto sweeping
-3. Configure Auto Sweeping Strategy
-4. Configure Auto Fueling Strategy
+1. Configuring Omnibus Wallet and Gas Station
+2. Determining the Sweeping Scope
+3. Configuring Sweeping Strategy
 
-###  Step One: Configure Omnibus Wallet and Gas Station
+### Step 1: Configuring Omnibus Wallet and Gas Station
 
-#### What is a Omnibus Wallet
+#### What is an Omnibus Wallet?
 
-A Omnibus wallet is responsible for sweep assets dispersed in other different wallets to its address.
+An Omnibus Wallet is responsible for consolidating assets scattered across different wallets into its address.
 
-#### What is a Gas Station
+#### What is a Gas Station?
 
-A gas station is responsible for replenishing mining fees to the corresponding wallet. When the application wallet fails to initiate the auto sweeping transfer due to a lack of mining fees, the gas station will provide the necessary mining fee support.
+A Gas Station is a service responsible for replenishing gas fees for corresponding wallets. When an application wallet fails to initiate a sweeping transfer due to insufficient gas fees, the Gas Station provides necessary gas fee support.
 
-#### **Operating Steps**
+#### **Operation Steps**
+
 <Steps>
-<Step title="Open Auto Sweep Feature">
-    Use the "Auto Sweep - Sweep All Coins" feature on the Custody Web portal by scanning the QR code with the Custody App.
+<Step title="Open Auto Sweep Function">
+Use the Custody App to scan the QR code and configure via the "Auto Sweep" feature.
 </Step>
 <Step title="Confirm Configuration">
-    Use the Custody App to scan the provided QR code and sign with local key fragments to confirm the configuration of the omnibus wallet and gas station.
+Use the Custody App to scan the provided QR code and sign with local private key fragments to confirm the configuration of the Omnibus Wallet and Gas Station.
 </Step>
+
 </Steps>
 
 <Warning>
-**Key Steps and Considerations**
+**Key Steps and Notes**
 
-In this step, co-managers can choose the sub-wallets under the main wallet and initiate the corresponding configuration. It's worth noting that the omnibus wallet and gas station can be the same.
+In this step, co-managers can select wallets under the workstation and initiate corresponding configurations. It is important to note that the Omnibus Wallet and Gas Station can be the same.
 
-Ensure to check if the selected omnibus wallet and gas station are available. The auto sweep and auto fueling functions will only work when they are in an available state. If you find that the selected omnibus wallet or gas station is disabled, make timely modifications to ensure the normal operation of the system.
+Ensure that the selected Omnibus Wallet and Gas Station are available. Sweeping and refueling functions can only operate when they are in an available state. If the selected Omnibus Wallet or Gas Station is found to be deactivated, promptly make modifications to ensure the system's normal operation.
 
-If your omnibus wallet and gas station have multiple addresses for the same asset, only commonly used addresses can be used as the sweeping destination address or refueling withdrawal address. After configuration, you can view the details of the specific commonly used addresses.
+If your Omnibus Wallet and Gas Station have multiple addresses for the same asset, only the commonly used addresses can be used as sweeping destination addresses or refueling withdrawal addresses. After configuration, you can view detailed information on the commonly used addresses.
+
 </Warning>
 
-###  Step Two: Determine the Scope of Auto Sweep Application
-
-![Co-Signer Collection](images/help-center/configcosign1.png)
+### Step 2: Determining the Sweeping Scope
 
 <Warning>
-**Key Steps and Considerations**
+**Key Steps and Notes**
 
-Decide which sub-wallets' assets will be swept. Note that the omnibus wallet and gas station will be automatically excluded from the applied scope for sweeping.
+Determine which wallets' assets will be swept. Note that the Omnibus Wallet and Gas Station will automatically be excluded from the sweeping scope.
 
-Co-managers can decide the applied scope based on the sub-wallet's type: `All Sub-Wallets`, `All API-Created Sub-Wallets`, `Single Wallet`.
+Co-managers can decide the sweeping scope based on wallet types: `All Wallets`, `All API-Created Wallets`, `Single Wallet`.
 
-If your sub-wallet has multiple addresses with assets to be swept, all assets of the wallet's addresses will be within the applied scope.
+If your wallet has multiple addresses with assets that need to be swept, all assets of the wallet's addresses will be included in the sweeping scope.
 
 </Warning>
 
-###  Step Three: Configure Auto Sweeping Strategy
+### Step 3: Configuring Sweeping Strategy
 
-Configuring the auto sweeping strategy is a crucial step, involving deciding which currencies will be swept, the threshold to trigger sweeping, and other related conditions.
+To simplify usage, the system automatically generates sweeping strategies for all applicable currencies under the workstation. Users can directly apply these strategies without manual intervention. They can also flexibly adjust strategy values to meet their needs. If users do not wish to sweep certain currencies, simply deactivate the corresponding strategies.
 
-![Co-Signer Collection](images/help-center/configcosign2.png)
 
 <Warning>
-**Key Steps and Considerations**
+**Key Steps and Notes**
 
-Decide which currencies will be swept, the sweeping threshold, and other conditions: In this step, co-managers need to carefully consider the currencies to be swept, set the sweeping threshold, and determine other relevant conditions.
+All sweeping orders will adhere to default refueling strategy: If a wallet fails to initiate a sweeping transfer due to insufficient gas fees, the Gas Station will be responsible for replenishing the gas fees for the corresponding wallet. The replenishment amount will be determined based on the estimated gas fee of the sweeping order itself.
 
-Batch create and manage strategies: Co-managers can batch create strategies for multiple coin , with newly created strategies being enabled by default. After successful creation, auto sweeping strategies can be edited, deleted, and closed in batches.
+All sweeping and refueling orders will adhere to default refueling strategy: All sweeping and refueling orders will follow Custody system's default acceleration strategy to expedite sweeping completion.
 
-Define when the gas station will replenish the gas fee to the sub-wallet to support sweeping: Co-managers need to clearly define under what conditions auto sweeping orders and auto fueling orders will be created to ensure the normal progress of sweeping while consuming a reasonable range of gas fees.
-
-Special considerations for sweeping the main coin: when sweeping the main coin, be sure to fill in the threshold and supplementary quantity of the auto sweep strategy and gas replenishment strategy carefully. It is recommended to set the sweeping threshold higher than the supplementary quantity to ensure that the required gas fee will not cause operational issues due to sweeping.
-
-Comply with Custody system's default acceleration strategy: All auto sweeping orders will comply with Custody system's default acceleration strategy to expedite the sweeping process.
 </Warning>
 
+## III. Other Features
 
+**Notification**
 
-###  Step Four: Configure Auto Fueling Strategy
-The auto fueling strategy will determine under what conditions the gas station will replenish the gas fee to the sub-wallet to support sweeping.
+If your sweeping business lacks the required network native token gas fees, the Custody system will send notification emails to ensure you are promptly informed and can take necessary actions. Once the system detects that the sweeping business lacks the required network native token gas fees, reminder emails will be sent to the set notification email address.
 
-![Co-Signer Collection](images/help-center/configcosign3.png)
+**Signature Encryption**
 
-<Warning>
-**Key Steps and Considerations**
-
-Co-managers can create strategies on the main chain coin level, i.e., when the token lacks the gas fee required for sweeping, the gas station needs to replenish how much of the main chain coin.
-
-Newly created auto fueling strategies are enabled by default. After successful creation, refueling strategies can be edited, deleted, and closed in batches.
-
-Comply with Custody system's default acceleration strategy: All auto fueling orders will comply with Custody system's default acceleration strategy to expedite the auto fueling process.
-</Warning>
-
-##  Other Feature: Notification Messages
-
-If your wallets lacks the required gas fee main chain coin for sweeping, the Custody system will send you notification emails to ensure that you are informed in a timely manner and can take necessary actions. Once the system detects that the auto sweep business lacks the required gas fee main chain coin, it will send a reminder email to the set notification mailbox.
+To ensure the security of the sweeping process, signing encryption of the Omnibus Wallet's address is required. This step is performed for new network support or modifications to the sweeping wallet. Administrators and creators should sign and encrypt all new sweeping destination addresses to maintain the security of the asset sweeping process.
 
 <Warning>
 
-**Key Steps and Considerations**
+**Key Steps and Notes**
 
-Co-managers can set up to 5 different notification mailboxes in the system.
+Co-managers can set up to 5 different notification email addresses in the system.
 
-Editing and modifying the mailbox require GA verification.
+Editing and modifying email addresses require GA verification.
+
 </Warning>
-
 
