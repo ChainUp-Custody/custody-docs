@@ -10,6 +10,8 @@ title: Co-Signer部署
 **内存：64GB**
 
 **硬盘：256GB**
+
+**OS：Ubuntu-20.04**
 </Tip>
 
 ## II. **Co-Signer** 部署流程
@@ -298,7 +300,7 @@ esac
 echo ""
 APP_ID=""
 echo "App id can find in https://custody.chainup.com/mpc/center/api."
-echo "Please enter app id:"
+echo "Please enter app id: (e.g. 6866b043a013680ea91be7e6fdcd2af4)"
 read APP_ID
 
 echo ""
@@ -306,7 +308,7 @@ echo "Please input custom withdraw transaction callback url(skip by enter):"
 read WITHDRAW_CALLBACK_URL
 
 echo ""
-echo "Please input custom withdraw transaction callback url(skip by enter):"
+echo "Please input custom web3 transaction callback url(skip by enter):"
 read WEB3_CALLBACK_URL
 
 CONF_TMPL=$(cat <<- EOF

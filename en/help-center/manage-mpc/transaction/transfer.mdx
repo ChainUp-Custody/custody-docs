@@ -1,5 +1,5 @@
 ---
-title: MPC Workspace Transactions
+title: MPC Transactions
 ---
 
 ##  Overview
@@ -18,59 +18,78 @@ When digital currency is transferred to your address from another address, this 
 
 ##  Withdrawal Status
 <div className="w-full flex items-center justify-center">
-    <img src="/images/help-center/withdrawen1.png" width="600"/>
+    <img src="/images/help-center/withdraw-en.jpg" width="600"/>
 </div>
 
-**1. KYT Verification Pending Status**
+**1. KYT Verification In Progress (1010)**
 
 After initiating a withdrawal, if you have opened and configured withdrawal addresses and KYT (Know Your Transaction) for the currency, the withdrawal enters the "KYT Verification Pending" status. The MPC Workspace generates a KYT verification order to verify the KYT risk/service timeout of the withdrawal transaction. After manual confirmation, it enters the withdrawal approval stage.
 
-**2. Withdrawal Approval Process**
+**2.KYT Verification Rejected (2101)**
+
+If a wallet member chooses to reject the transaction during KYT verification, the process terminates, and the transaction is in the KYT verification rejected status.
+
+
+**3.Withdrawal Approval Process (1000)**
 
 If withdrawal wallets and currencies are configured with approval policies, it enters the withdrawal approval process. After reaching the approval threshold set in the approval process, the withdrawal approval process ends, and it enters the signature process. If there is no approval configuration, it directly enters the unapproved state.
 
-**3. Signature Process**
+**4.Transaction Approval Rejected (2100)**
 
-All MPC Workspaces go through the signature process. In this process, the private key holder signs the transaction using the local private key fragment in conjunction with the server's private key fragment. The status is "Awaiting Signature," and rejection of the signature ends the withdrawal with a "Rejected" status, while approval proceeds to the broadcast transaction process.
+If the withdrawal wallet and cryptocurrency have approval policies configured, it will enter the withdrawal approval process. If the transaction does not meet the approval threshold set in the approval process, the approval is rejected, and the process ends.
 
-**4. Broadcast Transaction Process**
+
+
+**5.Signing Process (1100)**
+
+All MPC wallets go through the signing process. In this process, the private key holder signs the transaction using local private key shards in conjunction with server private key shards. If the status is "Pending Signature" and the signature broadcast is rejected, it enters the "Rejected (2100)" state, ending the process, or if the signature is successful, it proceeds to the transaction broadcasting process.
+
+**6. Broadcast Transaction Process (1200)**
 
 After signing is completed, the wallet starts broadcasting the transaction, and the order status becomes "Payment in Progress." It waits for the blockchain to process the transaction.
 
-**5. Payment Completed Status**
+**7. Payment Completed Status (2000)**
 
 When the transaction is successfully confirmed on the blockchain, the withdrawal is completed, and the status becomes "Payment Completed." The withdrawal ends.
 
-**6. Transaction Failed Status**
+**8. Transaction Failed Status (2400)**
 
-If the blockchain transaction fails, the status is "Transaction Failed," and the funds for this withdrawal are returned to the address, but gas fees consumed will not be refunded.
+If the blockchain transaction fails, the status is "Transaction Failed," and the funds for this withdrawal will not be consumed, but gas fees for broadcasting to the chain has been consumed and will not be refunded.
 
-**7. Transaction Lost Status**
+**9. Transaction Lost (2300)**
 
-In the pending state of the transaction, rejecting the signature and canceling the payment results in a "Transaction Lost" status, ending the withdrawal.
+When a transaction is pending blockchain processing, certain actions can replace the transaction nonce, resulting in the original transaction order being discarded. While in pending status, re-signing to cancel the payment will result in the status "Transaction Lost," ending this withdrawal.
 
 ##  Deposit Status
 
 <div className="w-full flex items-center justify-center">
-    <img src="/images/help-center/depositen.png" width="600"/>
+    <img src="/images/help-center/depositen.jpg" width="600"/>
 </div>
 
-**1. Unconfirmed Status**
+**1. Unconfirmed Status (1000)**
 
-When another address transfers digital currency to your MPC wallet address, the initial status is "Unconfirmed." After the transaction reaches the confirmation count, the status changes to "Confirmed."
+When other addresses transfer to your MPC wallet address, the initial status is "Unconfirmed". After the transaction reaches the required number of confirmations, the status will change to "Confirmed".
 
-**2. KYT Verification Pending Status**
+**2. Pending KYT Verification Status (1010)**
 
-If the deposit address and currency are configured with KYT (Know Your Transaction), the deposit transaction enters the "KYT Verification Pending" status. The wallet generates a KYT verification order and submits it to the KYT service provider for verification. Manual processing may be required at this stage, with the status being "KYT Manual Processing."
+If the deposit address and coin have KYT (Know Your Transaction) enabled and configured, the deposit transaction will enter the "KYT Verification" status. The wallet generates a KYT verification order and submits it to the KYT service provider for verification. Manual processing may be required at this stage, at which point the status is "KYT Manual Processing".
 
-**3. KYT Manual Processing Status**
+**3. Pending KYT Manual Processing Status (1020)**
 
-If the risk level returned by the KYT service provider requires manual processing, the deposit status is "KYT Manual Processing." After manual processing is completed, it moves on to the next stage.
+If the KYT service provider returns a risk level that requires manual processing, the deposit status will be "KYT Manual Processing". Once manual processing is completed, it moves to the next phase.
 
-**4. Confirmed Status**
+**4. Pending Traceability Status (1800)**
 
-If KYT is not configured, KYT verification passes, or KYT manual processing is completed, and the funds have been credited, the deposit status is "Completed." This concludes the deposit transaction.
+The transaction has been confirmed on the blockchain and KYT processing is complete. The system will retrace the transaction to ensure that the assets reach the required number of block confirmations for the deposit to be credited.
 
-**5. Failed/Exception Status**
+**5. Verifying Traceability Status (1900)**
 
-If the transaction order is exceptional, such as a mainnet rollback, the transaction ends in a "Failed/Exception" status.
+The transaction has completed traceability, and the system is currently verifying the processed transaction. The Custody system recommends crediting users at this stage.
+
+**6. Transaction Completed (2000)**
+
+Once the transaction assets reach the blockchain confirmation number required for withdrawal, the transaction is completed, and the deposit process ends.
+
+**7. Failed/Abnormal Status (3000)**
+
+If the transaction order is abnormal, such as in special cases like a mainnet rollback, the transaction will end in a "Failed/Abnormal" final state.

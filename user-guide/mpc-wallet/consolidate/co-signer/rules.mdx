@@ -29,7 +29,7 @@ title: 配置自动归集规则
 
 <Step title="确认钱包配置">
 归集钱包和加油站可以选择同一个;
-使用Custody App扫描提供的二维码，利用本地私钥片段签名确认归集钱包和加油站的配置。
+使用Custody App扫描提供的二维码，利用本地私钥分片签名确认归集钱包和加油站的配置。
  <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
         <img src="/images/user-guide/ruleco2cn.png" width="350"/>
@@ -50,9 +50,10 @@ title: 配置自动归集规则
 
    <Warning>
    **重要提示**
-若您的子钱包拥有多条需归集资产的地址，则钱包所有地址资产都将属于归集应用范围。
 
-加油出金地址的资产将不会进行归集。
+   归集钱包和加油站可以包含在归集应用范围内。
+
+   若您的子钱包拥有多条需归集资产的地址，则钱包所有地址资产都将属于归集应用范围。
    </Warning>
 
 </Step>
@@ -73,11 +74,17 @@ title: 配置自动归集规则
 若钱包由于缺少矿工费导致无法成功发起归集转账，加油站将负责补充矿工费至对应钱包。补充金额将根据归集订单本身的预估而定。
 </Tips>
 
- </Step>
+</Step>
+<Step title="配置加油策略">
+加油策略将决定加油站在什么情况下将矿工费补充至子钱包来支持归集。
+<div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/co-signer-collect5_cn.PNG" width="600"/>
+</div>
+ <Tip>
+共管成员可以创建主链币维度的策略，即当归集币种缺乏归集所需的矿工费时，加油站需要将主链币补充到多少。
 
- <Step title="资金归集管理">
-提供更全面的资产管理视图，您能够直接查看当前应用范围内各币种的具体地址余额，包括多个地址的综合情况。使您能够更轻松地进行手动归集操作。
-
+新创建的加油策略默认开启，创建成功后，可以对加油策略进行相关的编辑、删除和关闭操作，支持批量处理。
+</Tip>
 
  </Step> 
  
@@ -131,6 +138,6 @@ Polkadot
 
 </Accordion>
 
-<Accordion title="哪类MPC钱包支持自动归集功能？">
+<Accordion title="哪类MPC钱包支持全币种归集功能？">
 ChainUp Custody支持所有类型的MPC子钱包进行自动归集。
 </Accordion>

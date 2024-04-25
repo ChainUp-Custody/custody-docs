@@ -29,8 +29,8 @@ description: "Get the transfer records after a specific transaction ID for all w
             <ResponseField name="memo" type="string">to account address memo</ResponseField>
             <ResponseField name="txid" type="string">Transaction hash</ResponseField>
             <ResponseField name="confirmations" type="integer">Number of block confirmations, e.g.：10</ResponseField>
-            <ResponseField name="status" type="integer">transfer status: `1000` awaiting approval, `1100` Approved while awaiting signature, `1200` Payment in progress, `2000`Payment completed, `2100` Not Approved, `2200` Rejected, `2300` Transaction discarded, `2400`Payment failed</ResponseField>
-            <ResponseField name="withdraw_source" type="integer">transfer Type： `1`app, `2`openapi, `3`web</ResponseField>
+            <ResponseField name="status" type="integer">Transfer status: `1000` Awaiting approval, `1010` KYT Verification In Progress, `1100` Approved while awaiting signature, `1200` Payment in progress, `2000` Payment completed, `2100` Not Approved, `2101` KYT Verification Rejected, `2200` Rejected, `2300` Transaction discarded, `2400`Payment failed</ResponseField>
+            <ResponseField name="withdraw_source" type="integer">Transfer Type： `1`app, `2`openapi, `3`web</ResponseField>
             <ResponseField name="base_symbol" type="string">The unique identifier of the network of the coin to be transferred, e.g.：ETH</ResponseField>
             <ResponseField name="contract_address" type="string">transfer coin's contract address</ResponseField>
             <ResponseField name="tx_height" type="long">Block height at which the transaction is completed</ResponseField>
