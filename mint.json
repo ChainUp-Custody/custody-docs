@@ -133,6 +133,7 @@
           "group": "接入指引",
           "pages": [
             "api-references/mpc-apis/guide/overview",
+            "api-references/mpc-apis/guide/create",
             "api-references/mpc-apis/guide/create-account",
             "api-references/mpc-apis/guide/function-set",
             "api-references/mpc-apis/guide/test-flow"
@@ -372,6 +373,23 @@
     },
     {
       "group": "统一托管",
+      "pages": [
+        {
+          "group": "账号交易",
+          "pages": [
+            "help-center/manage-joint/account-transfer/confirmation"
+          ]
+        },
+        {
+          "group": "XX交易",
+          "pages": [
+            "help-center/manage-joint/ACCOUNTX/confirmation1"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "duli托管",
       "pages": [
         {
           "group": "账号交易",
