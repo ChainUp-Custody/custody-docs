@@ -1,62 +1,108 @@
 ---
-title: MPC Workspace Strategy Engine
+title: Wallet Strategy Engine 
 ---
 
-## I. Overview
-ChainUp Custody's strategy engine provides your MPC workspace with a powerful transaction rule customization feature, used for precise management and control of outgoing transactions. This flexible system allows you to define a series of transaction rules according to personalized needs, ensuring the security and effective circulation of assets. These rules can control the transfer approval process of specific assets, clearly defining users who can approve transactions.
+## I. Introduction
+ChainUp Custody's wallet strategy engine enables customers to easily establish a robust and personalized risk control strategy. It allows for the effortless configuration and management of strategies based on business needs. By collaborating with your team, it facilitates governance of the security environment, mitigates human errors, prevents collusion by internal and external parties, and fulfills internal risk control requirements.
 
-The ChainUp Custody strategy engine includes the following features: transfer strategy, miner fee strategy, and signature protection.
+The wallet strategy engine of ChainUp Custody controls the core risk scenarios under the wallet, comprising two types of strategies: basic strategy and advanced strategy. Once the approval strategy is set, any transfer and approval will be enforced according to the rules, eliminating the possibility of bypassing or tampering.
 
-### I.I Transfer Strategy
 
-The system will automatically apply your defined transfer strategy to all transfer transactions manually created through the Web or App. Once a member initiates a transfer request, the related transfer strategy will take the corresponding action according to the rules you set:
+<div className="w-full flex items-center justify-center">
+    <img src="/en/images/help-center/strategy-engine1en.PNG" width="800"/>
+</div>
 
-**Approve Transaction:** When the transaction reaches the approval threshold, it is automatically submitted to the admin or creator for signature confirmation, then broadcasted to the blockchain.
 
-**Reject Transaction:** When the transaction does not reach the approval threshold, it is automatically terminated to ensure unauthorized transactions cannot continue.
+
+
+
+##  I.I Basic Strategy
+
+The basic strategy is the initial internal control solution for wallets. In the absence of advanced strategies, it serves as a fallback for all risk scenarios, ensuring that all critical operations are always subject to approval control by the basic strategy. This eliminates human errors and guards against collusion by internal and external parties.
+
+If users have not configured any advanced strategies, all risk scenarios (such as transfer transactions, strategy management, etc.) will be controlled by the basic strategy.
+
+
+ 
+<Note>
+The current control scenarios of the basic strategy include: transfer transactions, basic strategy management, and advanced strategy management.
+
+
+ 
+</Note>
+
+### You can define the following parameters for the basic strayegy:
+ 
+**The triggered actions by the strategy ：**
+
+* Orders that match the basic policy require approval through the user-defined approval process to be granted.
+
+
+
+**Explanation of Approval Nodes
+
+
+**Explanation of Approval Nodes**
+
+
+
+| Approval Node Type | Node Approvers | Number of Nodes | Number of Approvers |
+| ------- | ------- |------- |------ |
+| Approval | All Wallet Members | 9 nodes, reorderable | 20 people |
+| Approval and Sign | Members with Wallet Private Key Permissions, including Creators, Administrators | 1 node, final node, not reorderable | 20 people |
+
+<Warning>
+We emphasize the importance of correctly configuring the basic strategy. Since the basic strategy is the final line of defense for all risk control scenarios in the wallet, please choose your basic strategy approver carefully and avoid frequent modifications.
+
+
+ </Warning>
+
+##  I.II 高级策略
+ 
+The advanced strategy allows users to easily configure control policies for each wallet, including transfer transaction control policies, transaction type configuration, approval roles, and approval workflows. Once the policy is established, no operation will be executed without approval, thereby protecting digital assets from internal threats.
+
+
+ <Note>
+The current control scenario of the advanced strategy is limited to transfer transactions.
+
+ 
+</Note>
+
+  
 
 You can define the following parameters for the transfer strategy:
-
+ 
 **Strategy Name:** Name the transfer strategy for easy identification.
+ 
+**Strategy Trigger Conditions:**
+ 
+* Transaction Source: Specific wallet members or API.
 
-**Approval Flow:** Set the approver and approval threshold to ensure the transfer goes through the proper approval process.
+* Transaction Assets: Specific currencies and NFTs, clearly defining the scope of assets protected by the strategy.
 
-**Risk Control Assets:** Multiple selections of coins and NFTs are allowed, clarifying the range of assets protected by the strategy.
+Transfer Limit: Quantity or value of assets.
+ 
+**Strategy Trigger Actions:**
+ 
+* Option 1: Transactions that match the strategy require approval. By setting the approver and approval threshold, ensure that transfers undergo the appropriate approval process.
+ 
+**Explanation of Approval Nodes**
+
+| Approval Node Type | Node Approvers | Number of Nodes | Number of Approvers |
+| ------- | ------- |------- |------ |
+| Approval | All Wallet Members | 9 nodes, reorderable | 20 people |
+| Approval and Sign | Members with Wallet Private Key Permissions, including Creators, Administrators | 1 node, final node, not reorderable | 20 people |
+
+
+ 
+* Option 2: Orders that match this strategy will be automatically rejected, allowing for restrictions on specific transfer initiations to prevent internal malfeasance.
 
 <Warning>
 **Key Steps and Considerations**
 
-We emphasize the importance of correctly implementing the transfer strategy. Your transfer strategy is a key layer of asset protection, please customize it according to your business needs.
+We emphasize the importance of correctly implementing transfer strategies. Your transfer strategy is a crucial layer of asset protection, so please customize it according to your business needs.
 
-An MPC wallet can create multiple transfer strategies, but the transfer strategy for each asset must be unique.
+The same MPC wallet can create multiple advanced strategies. By adjusting the order of advanced strategies, you can determine the priority of strategy hits. Once a rule with higher priority is hit, other rules after this priority will no longer be checked.
 
-If an asset has never edited a transfer strategy, the transaction of the asset defaults to only require the workspace owner's final signature confirmation.
-
-Transactions initiated by API are not managed by the transfer strategy.
+You can include API Co-signers in the approval process to automate large-scale approval operations.
 </Warning>
-
-### I.II Miner Fee Strategy
-
-The system will automatically apply your defined miner fee strategy to each manual customization of the miner fee to prevent misoperations or malicious operations that lead to overpayment of miner fees.
-
-<Tip>
-Workspace owners can set different miner fee strategies for their workspaces. For specific operations, please refer to [Miner Fee Strategy](/user-guide/mpc-wallet/strategy/gas-fee-strategy).
-</Tip>
-
-### I.III Signature Protection
-
-You can choose whether to enable signature protection. If you enable it, the signature operations of other equal rights private key holders will be restricted.
-
-In transactions without an approval flow, non-creator private key holders will not be able to initiate and sign transactions that have not gone through the approval process.
-
-For transactions with an approval flow, other private key holders cannot sign transactions that they initiated and approved.
-
-<Tip>
-Workspace owners can enable or disable signature protection for their workspaces. For specific operations, please refer to [Signature Protection](/user-guide/mpc-wallet/strategy/sign-protect).
-</Tip>
-
-## II. Who can manage the strategy engine?
-
-Currently, only the MPC workspace owner has the authority to manage the strategy engine. All editing and viewing functions of the strategy engine are only provided on the Custody App.
-
-

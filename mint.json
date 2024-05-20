@@ -363,7 +363,7 @@
               ]
         },
         {
-          "group": "交易策略引擎",
+          "group": "策略引擎",
           "pages": [
             "help-center/manage-mpc/strategy/transfer"
           ]
@@ -442,8 +442,9 @@
             ]
   },
   {
-    "group": "交易策略引擎",
+    "group": "策略引擎",
     "pages":[
+      "user-guide/mpc-wallet/strategy/approval-flow2",
       "user-guide/mpc-wallet/strategy/approval-flow",
       "user-guide/mpc-wallet/strategy/gas-fee-stratefy",
       "user-guide/mpc-wallet/strategy/sign-protect"
