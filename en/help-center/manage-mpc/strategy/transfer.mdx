@@ -2,7 +2,7 @@
 title: Wallet Strategy Engine 
 ---
 
-## I. Introduction
+## Introduction
 ChainUp Custody's wallet strategy engine enables customers to easily establish a robust and personalized risk control strategy. It allows for the effortless configuration and management of strategies based on business needs. By collaborating with your team, it facilitates governance of the security environment, mitigates human errors, prevents collusion by internal and external parties, and fulfills internal risk control requirements.
 
 The wallet strategy engine of ChainUp Custody controls the core risk scenarios under the wallet, comprising two types of strategies: basic strategy and advanced strategy. Once the approval strategy is set, any transfer and approval will be enforced according to the rules, eliminating the possibility of bypassing or tampering.
@@ -16,7 +16,7 @@ The wallet strategy engine of ChainUp Custody controls the core risk scenarios u
 
 
 
-##  I.I Basic Strategy
+## Basic Strategy
 
 The basic strategy is the initial internal control solution for wallets. In the absence of advanced strategies, it serves as a fallback for all risk scenarios, ensuring that all critical operations are always subject to approval control by the basic strategy. This eliminates human errors and guards against collusion by internal and external parties.
 
@@ -35,11 +35,9 @@ The current control scenarios of the basic strategy include: transfer transactio
  
 **The triggered actions by the strategy ：**
 
-* Orders that match the basic policy require approval through the user-defined approval process to be granted.
+* Orders that match the basic strategy require approval through the user-defined approval process to be granted.
 
 
-
-**Explanation of Approval Nodes
 
 
 **Explanation of Approval Nodes**
@@ -57,7 +55,7 @@ We emphasize the importance of correctly configuring the basic strategy. Since t
 
  </Warning>
 
-##  I.II 高级策略
+##  I.II Advanced Strategy
  
 The advanced strategy allows users to easily configure control policies for each wallet, including transfer transaction control policies, transaction type configuration, approval roles, and approval workflows. Once the policy is established, no operation will be executed without approval, thereby protecting digital assets from internal threats.
 
@@ -70,7 +68,7 @@ The current control scenario of the advanced strategy is limited to transfer tra
 
   
 
-You can define the following parameters for the transfer strategy:
+You can define the following parameters for the advanced strategy:
  
 **Strategy Name:** Name the transfer strategy for easy identification.
  
@@ -80,7 +78,7 @@ You can define the following parameters for the transfer strategy:
 
 * Transaction Assets: Specific currencies and NFTs, clearly defining the scope of assets protected by the strategy.
 
-Transfer Limit: Quantity or value of assets.
+* Transfer Limit: Quantity or value of assets.
  
 **Strategy Trigger Actions:**
  

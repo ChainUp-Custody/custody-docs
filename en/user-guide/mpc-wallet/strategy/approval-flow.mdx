@@ -9,8 +9,10 @@ The strategy engine of ChainUp Custody provides robust support for your MPC syst
 
 
 <Warning>
-*Key Steps and Considerations*
+**Key Steps and Considerations**
+
 The scope of application of basic strategy includes transfers, editing basic strategy, and editing advanced strategy.
+
 If a wallet has never edited advanced strategies, all risk scenarios for the wallet are controlled by basic strategy.
 </Warning>
 
@@ -22,7 +24,7 @@ Viewing and Managing Basic Wallet Strategy
 <Step title="Log in and Open Transfer Strategy">
     Use the Custody APP to scan and log in to the MPC wallet web version, select the [Strategy Engine] module, and choose the wallet [Basic Strategy] module.
 <div className="w-full flex items-center justify-center">
-<img src="/images/user-guide/basicstrategy1.png" width="400"/>
+<img src="/images/user-guide/basicstrategy1.png" width="600"/>
 </div>
 </Step>
 <Step title="Manage Basic Strategy">
@@ -31,12 +33,12 @@ Viewing and Managing Basic Wallet Strategy
 **Critical Steps and Considerations**
 The default basic strategy for all MPC wallets requires creator approval. Users can add other wallet members for joint approval according to the organization's equity requirements.
 
-As the last line of defense for wallet security, the basic strategy cannot be deleted. Once modified, changes to the basic strategy will be applied to all risk control scenarios. If you need more dimensional control over wallet transactions, consider configuring advanced strategies.
+As the last line of defense for wallet security, the basic strategy cannot be deleted. Once modified, changes to the basic strategy will be applied to all risk control scenarios. If you need more dimensional control over wallet transactions, consider [configuring advanced strategies](/user-guide/mpc-wallet/strategy/approval-flow2).
 
 </Tip>
 <div className="w-full flex items-center justify-center">
 
-  <img src="/en/images/user-guide/basicstrategy.png" width="400"/>
+  <img src="/en/images/user-guide/basicstrategy.png" width="600"/>
    
 </div>
 </Step>
@@ -53,12 +55,13 @@ The approval and signing node is the final node and can include members with wal
 
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
-        <img src="/en/images/user-guide/selectapprover1.png" width="400"/>
-      <img src="/en/images/user-guide/selectapprover2.png" width="400"/>
+        <img src="/en/images/user-guide/selectapprover1.png" width="600"/>
+      <img src="/en/images/user-guide/selectapprover2.png" width="600"/>
         </CardGroup>
 </div>
 <Warning>
 **Critical Steps and Considerations**
+
 Each wallet can only have one basic strategy, which can be modified but not added or deleted.
 
 We emphasize the importance of correctly configuring the basic strategy. As it is the last line of defense in all risk control scenarios in the wallet, carefully select your basic strategy approvers and avoid frequent modifications.
@@ -69,8 +72,8 @@ We emphasize the importance of correctly configuring the basic strategy. As it i
     Any modifications to the basic strategy require approval from the current basic strategy to take effect. If you are an approver of the currently effective basic strategy, you can find the corresponding pending tasks in [Workflow] to process them.
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
-        <img src="/en/images/user-guide/confirmeditvasic2.png" width="400"/>
-      <img src="/en/images/user-guide/workflowpolicy.png" width="400"/>
+        <img src="/en/images/user-guide/confirmeditvasic2.png" width="600"/>
+      <img src="/en/images/user-guide/workflowpolicy.png" width="600"/>
         </CardGroup>
 </div>
 </Step>
