@@ -377,24 +377,8 @@
         {
           "group": "账号交易",
           "pages": [
-            "help-center/manage-joint/account-transfer/confirmation"
-          ]
-        },
-        {
-          "group": "XX交易",
-          "pages": [
-            "help-center/manage-joint/ACCOUNTX/confirmation1"
-          ]
-        }
-      ]
-    },
-    {
-      "group": "duli托管",
-      "pages": [
-        {
-          "group": "账号交易",
-          "pages": [
-            "help-center/manage-joint/account-transfer/confirmation"
+            "help-center/manage-joint/account-transfer/confirmation",
+            "help-center/manage-joint/account-transfer/transfer"
           ]
         }
       ]
