@@ -133,7 +133,6 @@
           "group": "接入指引",
           "pages": [
             "api-references/mpc-apis/guide/overview",
-            "api-references/mpc-apis/guide/create",
             "api-references/mpc-apis/guide/create-account",
             "api-references/mpc-apis/guide/function-set",
             "api-references/mpc-apis/guide/test-flow"
