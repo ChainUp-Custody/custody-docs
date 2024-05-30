@@ -1,146 +1,97 @@
 ---
-title: Strategy Engine 
+title:  Configure Basic Strategy
 ---
 
-## Function Introduction
+## Introduction
 
-ChainUp Custody's strategy engine provides a powerful transaction rule customization function for your MPC system, used for precise management and control of outgoing transactions. This flexible system allows you to define a series of transaction rules according to personalized needs, ensuring the security and effective circulation of assets. These rules can control the transfer approval process of specific assets and clarify the users who can approve transactions.
 
-ChainUp Custody's strategy engine will automatically apply your defined transfer strategy to all transfer transactions manually created through the Web or App. Once a member initiates a transfer request, the relevant transfer strategy will be acted upon by the approver according to the rules you set:
+The strategy engine of ChainUp Custody provides robust support for your MPC system, setting basic strategy for all your wallets without the need for advanced strategies, ensuring asset security. basic strategy serve as the crucial line of defense for wallets, controlling various risk scenarios, including but not limited to editing basic strategy, editing advanced strategies, and transfer transactions. This arrangement aims to safeguard asset security and facilitate effective circulation. Users can design wallet strategies and approval roles according to their needs to ensure that team structure and compliance requirements are fully reflected.
+
 
 <Warning>
-**Key Steps and Points to Note**
+**Key Steps and Considerations**
 
-We emphasize the importance of correctly implementing transfer policies. Your transfer strategy is a key layer of asset protection; please customize it according to your business needs.
+The scope of application of basic strategy includes transfers, editing basic strategy, and editing advanced strategy.
 
-Transactions initiated by the MPC workspace owner are not managed by the transfer strategy.
-
-Transactions initiated via API are not managed by the transfer strategy.
+If a wallet has never edited advanced strategies, all risk scenarios for the wallet are controlled by basic strategy.
 </Warning>
 
-## Operation Procedure
 
-### Customize Your Transfer Strategy
+## Operation Process
+Viewing and Managing Basic Wallet Strategy
 
 <Steps>
-<Step title="Login and Open Transfer Strategy">
-    Log in to the Custody APP's MPC system, open the "Security" - "Transfer Strategy" function.
-
+<Step title="Log in and Open Transfer Strategy">
+    Use the Custody APP to scan and log in to the MPC wallet web version, select the [Strategy Engine] module, and choose the wallet [Basic Strategy] module.
 <div className="w-full flex items-center justify-center">
-        <img src="/images/user-guide/safe.jpg" width="200"/>
+<img src="/images/user-guide/basicstrategy1.png" width="600"/>
 </div>
-
 </Step>
-<Step title="Choose the Wallet for the Strategy">
-   In the transfer strategy, choose the MPC wallet you want to apply the transfer strategy to.
+<Step title="Manage Basic Strategy">
+   Click the edit button to modify your basic strategy.
+<Tip>
+**Critical Steps and Considerations**
+The default basic strategy for all MPC wallets requires creator approval. Users can add other wallet members for joint approval according to the organization's equity requirements.
 
+As the last line of defense for wallet security, the basic strategy cannot be deleted. Once modified, changes to the basic strategy will be applied to all risk control scenarios. If you need more dimensional control over wallet transactions, consider [configuring advanced strategies](/user-guide/mpc-wallet/strategy/approval-flow2).
+
+</Tip>
 <div className="w-full flex items-center justify-center">
-    <CardGroup cols={2}>
-        <img src="/images/user-guide/str1.png" width="200"/>
-        <img src="/images/user-guide/str2.png" width="200"/>
-        </CardGroup>
-</div>
 
+  <img src="/en/images/user-guide/basicstrategy.png" width="600"/>
+   
+</div>
 </Step>
 <Step title="Add and Configure Transfer Strategy">
-In this step, you can define the following parameters of the transfer strategy:
+In this step, you can configure the following parameters for the basic strategy:
 
-1. **Strategy Name**: Name your strategy for easy search and management in the future.
-2. **Approvers and Approval Threshold**: Select the wallet's team members as approval members and set the approval threshold.
-3. **Coin for Approval**: Choose the transfer coin that needs approval.
+**Approval Members and Approval Threshold:**
+
+You can create a multi-level approval process, consisting of regular approval nodes and approval and signing nodes:
+
+Regular approval nodes can include all wallet members as approvers, with a maximum of 9 levels.
+
+The approval and signing node is the final node and can include members with wallet private key permissions, ensuring high-level members are involved in wallet governance.
 
 <div className="w-full flex items-center justify-center">
-        <img src="/images/strategy.png" width="200"/>
+    <CardGroup cols={2}>
+        <img src="/en/images/user-guide/selectapprover1.png" width="600"/>
+      <img src="/en/images/user-guide/selectapprover2.png" width="600"/>
+        </CardGroup>
 </div>
-
 <Warning>
-**Key Steps and Points to Note**
+**Critical Steps and Considerations**
 
-A wallet can create multiple transfer policies, but each asset's transfer Strategy must be unique.
+Each wallet can only have one basic strategy, which can be modified but not added or deleted.
 
-If an asset has never edited a transfer Strategy, the asset's transaction defaults to requiring the workspace owner for the final signature confirmation.
+We emphasize the importance of correctly configuring the basic strategy. As it is the last line of defense in all risk control scenarios in the wallet, carefully select your basic strategy approvers and avoid frequent modifications.
+
 </Warning>
-
 </Step>
-
-</Steps>
-
-### Approval Process Example
-
-<Tip>
-You can efficiently and conveniently understand the current approval progress by viewing the [details of the workflow](/user-guide/mpc-wallet/operation/to-do) or [details of the transaction information](/user-guide/mpc-wallet/operation/transfer).
-</Tip>
-
-<Steps>
-<Step title="Initiate Transfer">
-Whether it's a ordinary member, approval member, or workspace owner, they can initiate a transfer by logging into the Custody APP or PC version.
-
-You need to select the wallet and coin for the transfer, enter the address, quantity, and remarks after confirming the transfer, and then wait for approval.
-
-In the **APP**, Tokens support quick transfer by swiping left, or you can click to enter the token details for transfer. NFT only supports clicking to enter details for transfer.
+<Step title="Confirm Basic Strategy Modification">
+    Any modifications to the basic strategy require approval from the current basic strategy to take effect. If you are an approver of the currently effective basic strategy, you can find the corresponding pending tasks in [Workflow] to process them.
 <div className="w-full flex items-center justify-center">
-
     <CardGroup cols={2}>
-    <img src="/images/user-guide/transfer1.jpg" width="200"/>
-   <img src="/images/user-guide/transfer2.jpg" width="200"/>
-    </CardGroup>
+        <img src="/en/images/user-guide/confirmeditvasic2.png" width="600"/>
+      <img src="/en/images/user-guide/workflowpolicy.png" width="600"/>
+        </CardGroup>
 </div>
-On the **Web Page**, you can select the wallet for transfer.
-    <div className="w-full flex items-center justify-center">
-    <img src="/images/user-guide/transfer4.jpg" />
-</div>
-
 </Step>
-<Step title="Fill in and Confirm Transfer Information">
-  **Ordinary members** can only initiate transfers
-
-    <div className="w-full flex items-center justify-center">
-    <CardGroup cols={2}>
-    <img src="/images/user-guide/transfer3.jpg" width="200"/>
-    <img src="/images/user-guide/transfer6.jpg" width="200"/>
-    </CardGroup>
-</div>
-
-</Step>
-
-<Step title="Approval Members Approve">
-
-The approval members of this transfer Strategy will receive approval prompts in "To Do". Approval members can perform approval operations.
-
-If the member initiating the transfer is an approval member, then the approval member's approval status is defaulted as passed.
-
-When the order meets the approval rules, it requires the workspace owner or admin to handle the authorization signature.
-
- <div className="w-full flex items-center justify-center">
-    <CardGroup cols={3}>
-    <img src="/images/user-guide/transfer5.png" width="200"/>
-    <img src="/images/user-guide/transfer7.png" width="200"/>
- <img src="/images/user-guide/transfer8.png" width="200"/>
-    </CardGroup>
-</div>
-
-<Tip>
-**Agree to the transaction:** When the transaction reaches the approval threshold, it is automatically submitted to the workspace owner or admin for signature confirmation, then broadcast to the blockchain.
-
-**Reject the transaction:** When the transaction does not reach the approval threshold, it is automatically terminated to ensure unauthorized transactions are stopped.
-</Tip>
-
-</Step>
-
-<Step title="Transaction Signature">
-The workspace owner can give the final approval to the transfer request. If they disagree with the transfer request, they can directly cancel the transaction; if they agree with the transfer request, they can perform a signature operation.
-
-
- <div className="w-full flex items-center justify-center">
-    <CardGroup cols={3}>
-    <img src="/images/user-guide/his1.png" width="200"/>
-    <img src="/images/user-guide/his2.png" width="200"/>
-     <img src="/images/user-guide/his3.png" width="200"/>
-    </CardGroup>
-</div>
-
-</Step>
-
 </Steps>
 
-
+## FAQs
+<Accordion title="Why can't I edit the basic strategy">
+If a user has initiated an edit request for the basic strategy, other users will not be able to perform the same operation until the request is approved.
+</Accordion>
+<Accordion title="Why can't I delete the basic strategy">
+As the last line of defense for wallet security, the basic strategy cannot be deleted.
+</Accordion>
+<Accordion title="When will orders hit the basic strategy">
+If a wallet has never had advanced strategies edited, all risk control scenarios in that wallet are governed by the basic strategy.
+</Accordion>
+<Accordion title="How to obtain management permissions for basic strategy">
+All co-managing members of the wallet, including creators, administrators, and regular members, can view and edit the wallet's basic strategy.
+</Accordion>
+<Accordion title="How to view the history of basic strategy edits">
+You can click the operation records button in the upper right corner to view all the strategy edit records of the wallet.
+</Accordion>

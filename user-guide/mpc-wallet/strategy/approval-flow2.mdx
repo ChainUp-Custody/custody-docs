@@ -1,0 +1,125 @@
+---
+title: 配置基础策略
+---
+
+##  I. 功能简介
+
+
+ChainUp Custody的策略引擎为您的MPC系统提供了强大的支持，它为您的所有钱包设定了基础策略，无需设置高级策略即可确保资产安全。基础策略是钱包的关键防线，用于控制各种风险场景，包括但不限于编辑基础策略、编辑高级策略以及转账交易。这一安排旨在保障资产的安全性和有效流通。用户可根据需求设计钱包策略和审批角色，以确保团队结构和合规性要求的充分反映。
+
+
+<Warning>
+**关键步骤和注意事项**
+
+基础策略的应用范围包括转账，并且涵盖了基础策略编辑和高级策略编辑。
+
+如果钱包从未编辑过高级策略，则所有风险控制场景，包括交易和管理钱包策略等，都受到基础策略的控制。
+
+</Warning>
+
+
+## II. 操作流程
+
+查看并管理钱包的基础策略
+
+<Steps>
+<Step title="登录并打开转账策略">
+    使用 Custody APP扫码登陆MPC钱包Web端，选择【策略引擎】功能模块，选择钱包【基础策略】模块。
+
+<div className="w-full flex items-center justify-center">
+<img src="/images/user-guide/basicstrategy1.png" width="600"/>
+</div>
+
+</Step>
+<Step title="管理基础策略">
+   点击编辑按钮，修改您的基础策略
+
+<Tip>
+**关键步骤和注意事项**
+
+所有MPC钱包的默认基础策略为需要创建者审批通过。用户可以根据组织平权的要求，添加其他钱包成员共同审批。
+
+基础策略作为钱包安全的最后一道防线，无法被删除。一旦发生修改，基础策略的变更将同步应用于所有的风控场景。如果您需要对钱包交易进行更多维度的控制，请考虑[配置高级策略](/user-guide/mpc-wallet/strategy/approval-flow)。
+
+
+
+</Tip>
+<div className="w-full flex items-center justify-center">
+  
+      <img src="/images/user-guide/editbasicstrategy.png" width="600"/>
+       
+</div>
+
+</Step>
+<Step title="添加并配置转账策略">
+在此步骤中，您可以配置基础策略的以下参数：
+
+
+**审批成员与审批阈值：**
+
+* 您可以创建多层级审批流程，审批流程由常规审批节点和审批并签名节点组成：
+
+* 常规审批节点可以添加钱包所有成员为审批成员，最多可以创建9层，
+
+* 审批并签名节点为最终节点，可以添加拥有钱包私钥权限的成员，保证高级别成员参与到钱包治理中。
+
+
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/user-guide/selectapprover1.png" width="600"/>
+      <img src="/images/user-guide/selectapprover2.png" width="600"/>
+        </CardGroup>
+</div>
+
+
+
+<Warning>
+**关键步骤和注意事项**
+
+每个钱包只能拥有一条基础策略，只可以修改，不可新增或删除。
+
+我们强调了正确配置基础策略的重要性。由于基础策略是钱包中所有风险控制场景的最后一道防线，请慎重选择您的基础策略审批员，并避免频繁修改。
+
+
+
+</Warning>
+
+</Step>
+
+<Step title="确认基础策略修改">
+    任何对基础策略的修改都需经过当前基础策略的审批才能生效。若您是当前生效中的基础策略审批员，则可以在【工作流】找到对应的待办进行处理。
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/user-guide/confirmeditbasic2.png" width="600"/>
+      <img src="/images/user-guide/policyworkflow.png" width="600"/>
+        </CardGroup>
+</div>
+
+
+</Step>
+
+
+</Steps>
+
+III. 常见问题
+
+<Accordion title="为什么无法编辑基础策略">
+如果已有用户发起基础策略的编辑申请，在该申请审批完成之前，其他用户将无法进行重复操作。
+</Accordion>
+
+<Accordion title="为什么无法删除基础策略">
+基础策略作为钱包安全的最后一道防线
+</Accordion>
+
+<Accordion title="什么情况下订单将命中基础策略">
+若钱包从未编辑过高级策略，则该钱包所有风控场景都受到基础策略的控制。
+</Accordion>
+
+<Accordion title="如何获得基础策略的管理权限">
+钱包的所有共管成员，包括创建者，管理员，普通成员，都可以查看并编辑钱包的基础策略。
+</Accordion>
+
+<Accordion title="如何查看基础策略的历史编辑记录？">
+您可以点击右上角的操作记录按钮，查看该钱包所有的策略编辑记录。
+</Accordion>

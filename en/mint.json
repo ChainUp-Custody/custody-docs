@@ -447,6 +447,7 @@
       "group": "Strategy Engine",
       "pages":[
         "user-guide/mpc-wallet/strategy/approval-flow",
+        "user-guide/mpc-wallet/strategy/approval-flow2",
         "user-guide/mpc-wallet/strategy/gas-fee-stratefy",
         "user-guide/mpc-wallet/strategy/sign-protect"
       ]
