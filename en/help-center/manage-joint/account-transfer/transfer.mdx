@@ -1,0 +1,99 @@
+---
+title: Transaction Types and Status
+---
+
+## Overview
+
+A transaction refers to the process of transferring value from one address to another. Depending on the processing method and requirements, transactions can be divided into the following two main types:
+
+### 1. Blockchain Transactions
+
+Blockchain transactions refer to asset transfers conducted on the blockchain network. Specific types include:
+
+- **On-Chain Deposit**: Users deposit assets from an external address to an on-chain address allocated by the ChainUp Custody Full Custody platform.
+- **On-Chain Withdrawal**: Users withdraw assets from the ChainUp Custody Full Custody platform address to an external address.
+- **Consolidation**: To better manage and custody assets, assets are consolidated to ChainUp Custody Full Custody's custody address.
+
+Blockchain transactions rely on confirmations from the blockchain network, which may require a certain amount of time and fees. The status of a transaction can be divided into different stages, with each stage having corresponding statuses to detail the current situation and progress of the transaction.
+
+### 2. Alliance Transfers
+
+Alliance transfers are a fast and economical way to transfer, characterized by:
+
+- **Instant Arrival**: Since blockchain processing is not involved, alliance transfers can be completed within seconds.
+- **0 Fees**: Alliance transfers do not require blockchain network fees, thus reducing costs.
+
+Alliance transfers are merely changes at the ledger system level and do not involve actual blockchain transactions.
+
+<Tip>
+Applicable scenarios for alliance transfers:
+
+1. The transfer address needs to be an alliance address, and
+2. The mandatory on-chain function is not enabled.
+</Tip>
+
+## Blockchain Transactions
+
+### On-Chain Deposit
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/fullcustodytransfer1.png" width="600"/>
+</div>
+
+#### Status Description
+- **Pending Confirmation (0)**: The block is scanned, and the user’s deposit is detected, but the funds have not yet reached the system. The transaction status is displayed as unconfirmed. Once the transaction reaches the confirmation count, the status will change to "Confirmed".
+- **Success (1)**: The deposit funds have successfully reached the system and reached the confirmation count, updating the transaction status to confirmed. Users can then operate on these funds to withdraw.
+- **Failed (2)**: Anomalies such as network issues or system failures occurred during the deposit process, marking the transaction status as abnormal.
+- **Pending KYT Verification (4)**: The deposit transaction is awaiting "Know Your Transaction" (KYT) review, temporarily setting the transaction status to pending KYT review.
+- **Pending Manual Review (5)**: The deposit transaction is flagged as a potential risk by KYT and requires manual review. The transaction status is displayed as KYT abnormal risk pending manual review.
+- **Pending Manual Review (6)**: KYT review is completed, but the funds are not yet confirmed in the account. The transaction status is KYT confirmed pending credit. During system fuse, manual review may be required. 
+  - **KYT Fuse Mechanism**: If there are transactions exceeding a certain alert level that are not processed, subsequent deposit transactions to that address will automatically be set to manual review. For example, if the fuse mechanism alert level is set to high risk, and the user's deposit address has three transactions, the first transaction alert level is severe, and the second and third transactions are low, the address triggers the fuse mechanism, requiring manual processing for all three transactions. Once the severe transaction is processed and the fuse is lifted, the second and third transactions will be executed automatically based on their corresponding alert level handling.
+- **Transferred (7)**: The funds are confirmed but have not reached the specified confirmation count. Withdrawals are not possible during the confirmation process. The transaction status is pending confirmation, not withdrawable.
+
+### On-Chain Withdrawal
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/fullcustodytransfer2.png" width="600"/>
+</div>
+
+<Tip>
+Withdrawal Miner (Gas) Fees: When users withdraw to a non-alliance address, blockchain transactions incur miner (gas) fees.
+</Tip>
+
+#### Status Description
+
+- **Under Review (0)**: The user initiates a withdrawal request, and the transaction status is newly created, not yet reviewed or processed by any client or ChainUp Custody Full Custody.
+- **Payment in Process (1)**: If the client has configured an approval policy for the wallet and currency, it enters the withdrawal approval process, reviewed by team members. Once the approval process set in the approval workflow is passed, the withdrawal approval process ends and enters the ChainUp Custody Full Custody KYT process. If there is no approval configuration, it directly enters the ChainUp Custody Full Custody KYT process.
+- **Reject (2)**: If the withdrawal request does not pass the client's approval or risk control policy, the system will reject the request, changing the transaction status to approval rejected. If an anomaly occurs during the process, such as network issues or nonce mismatch, the transaction will be bounced back by the system, changing the status to approval rejected.
+- **Failure (4)**: If a payment failure occurs during the withdrawal process, possibly due to blockchain network issues or verification failures, the transaction status changes to payment failed.
+- **Success (5)**: The withdrawal operation is completed successfully, and the blockchain has processed the transaction.
+- **Canceled (6)**: If the wallet and currency have an approval process configured, and the initiator cancels the withdrawal request, the transaction status changes to canceled.
+- **Pending KYT Verification (7)**: The withdrawal request is submitted but not yet reviewed by ChainUp Custody Full Custody KYT. The system will await KYT verification to ensure the transaction complies with regulations and security standards.
+- **Manual Review (8)**: The withdrawal request is flagged as a potential risk and requires manual review. The transaction status is pending KYT manual review, needing ChainUp Custody Full Custody staff to comprehensively assess the transaction's risk situation.
+
+### Consolidation
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/fullcustodytransfer3.png" width="600"/>
+</div>
+
+<Tip>
+Consolidation Miner (Gas) Fees: After the user deposits funds to the allocated address, the system automatically transfers the user's address funds to the system address, incurring this transaction fee.
+</Tip>
+
+In a centralized custody system, different types of addresses (such as Account, UTXO, and addresses containing MEMO fields) have some differences in consolidation operations and costs:
+
+- **UTXO Type** (e.g., BTC) supports multiple inputs in a single transaction, and **Memo Type** (e.g., XRP) does not require additional consolidation operations and fees.
+- **Account Type** (e.g., ETH and ERC20 Token) requires each transaction to pay miner (gas) fees from the initiating account, so centralized custody platforms need to periodically consolidate funds.
+
+## Alliance Transfers
+
+The alliance refers to a group of clients using the Custody system's blockchain services. Clients within the alliance benefit from fast transfer speeds and zero fees when transferring to each other.
+
+<Tip>
+Requires the mandatory on-chain function not to be enabled.
+</Tip>
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/fullcustodytransfer4.png" width="600"/>
+</div>

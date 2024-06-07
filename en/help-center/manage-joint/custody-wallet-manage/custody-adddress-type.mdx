@@ -1,0 +1,63 @@
+---
+title: Address Formats and Merge
+---
+
+
+## Overview
+
+In blockchain systems, the specification and management of address formats are very important. To help you understand and use these addresses, this article will outline the three main types of addresses: UTXO type, account type, and Memo type, and introduce the address merge feature supported by ChainUp Custody for EVM-based addresses.
+
+## Address Formats
+
+The system supports address types including UTXO type, account type, and Memo type. UTXO type uses Legacy addresses, suitable for main chains like Bitcoin that adopt the UTXO model. Account type is suitable for account addresses of main chains such as ETH, BSC, HECO, etc., each address is a separate random private key without a derivation path. The Memo type ensures the uniqueness of the deposit address by including a Memo field when creating through the API, providing additional identification information.
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/addresstype.png" width="600"/>
+</div>
+
+### Account Type
+
+The addresses for ETH and most EVM-based main chains (such as ETH, BSC, HECO, etc.) are the same. For details, please refer to the article on address merge.
+
+### UTXO Type
+
+The system will generate Legacy addresses for UTXO. Legacy addresses use the original Bitcoin address format, starting with "1".
+
+### Memo Type
+
+Memo is a numeric string that ensures the uniqueness of the deposit address, paired with the deposit address and corresponding one-to-one.
+
+## Address Merge
+
+To simplify address management, reduce maintenance difficulties, deposit errors, and improve address management efficiency, Full Custody supports the address merge feature for EVM-based addresses. As the supported networks increase, the merged addresses will also increase. The currently supported protocols for address merge are as follows:
+
+### EVM Series
+
+- Avalanche (C-Chain)
+- Polygon (Matic)
+- Ethereum PoW
+- HECO
+- BNB Smart Chain
+- Fantom
+- Arbitrum One
+- Optimism
+- BASE
+- Wizarre Scroll
+- Ethereum
+- Merlin
+- Linea
+- Zksync
+
+When the merged EVM network is assigned to users, it is always one address, and the tokens share the same address as the network. ChainUp Custody will periodically add merged EVM networks. You can check the latest specific address merge information through the API.
+
+Through these supports, we aim to provide users with a more convenient and efficient address management experience, reducing potential issues and errors, ensuring system stability, and user satisfaction.
+
+### Address Merge Example
+
+ <div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+        <img src="/images/help-center/addresssample1.png" width="200"/>
+        <img src="/images/help-center/addresssample2.png" width="200"/>
+        <img src="/images/help-center/addresssample3.png" width="200"/>
+    </CardGroup>
+</div>

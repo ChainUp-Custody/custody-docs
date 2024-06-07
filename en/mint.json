@@ -83,7 +83,7 @@
       ]
     },
     {
-      "group": "Self Custody (MPC Wallet)",
+      "group": "MPC Self-Custody",
       "pages": [
         "quick-start/mpc-wallet/download-app",
         "quick-start/mpc-wallet/create-account",
@@ -112,7 +112,7 @@
       ]
     },
     {
-      "group": "Joint Custody",
+      "group": "Full Custody",
       "pages": [
         "quick-start/joint-custody/download-app",
         "quick-start/joint-custody/create-account",
@@ -127,7 +127,7 @@
       ]
     },
     {
-      "group": "Self Custody (MPC Wallet)",
+      "group": "MPC Self-Custody",
       "pages": [
         {
           "group": "Integration Guide",
@@ -229,7 +229,7 @@
       ]
     },
     {
-      "group": "Joint Custody",
+      "group": "Full Custody",
       "pages": [
         "api-references/custody-apis/guide",
         "api-references/custody-apis/scheme",
@@ -319,7 +319,7 @@
       ]
     },
     {
-      "group": "Self Custody (MPC Wallet)",
+      "group": "MPC Self-Custody",
       "pages": [
         {
           "group": "Team Members",
@@ -371,18 +371,32 @@
       ]
     },
     {
-      "group": "Joint Custody",
+      "group": "Full Custody",
       "pages": [
         {
           "group": "Transactions",
           "pages": [
-            "help-center/manage-joint/account-transfer/confirmation"
+            "help-center/manage-joint/account-transfer/confirmation",
+            "help-center/manage-joint/account-transfer/transfer"
+          ]
+        },
+        {
+          "group": "Wallet",
+          "pages": [
+            "help-center/manage-joint/custody-wallet-manage/custody-adddress-type",
+            "help-center/manage-joint/custody-wallet-manage/wallet"
+          ]
+        },
+        {
+          "group": "Team Management",
+          "pages": [
+            "help-center/manage-joint/custody-user-settings/role"
           ]
         }
       ]
     },
  {
-      "group": "Self Custody (MPC Wallet)",
+      "group": "MPC Self-Custody",
       "pages": [
         {
           "group": "Account",
@@ -463,7 +477,7 @@
   ]
   },
 {
-  "group": "Joint Custody",
+  "group": "Full Custody",
   "pages": [
     {
       "group": "Account",

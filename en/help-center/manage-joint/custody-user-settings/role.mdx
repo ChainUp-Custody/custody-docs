@@ -1,0 +1,47 @@
+---
+title: User Roles
+---
+
+## Overview
+
+To ensure the security of relevant data and comply with the company's financial approval system, safeguarding the company's funds, we believe it is crucial to set roles with different permissions for the Full Custody wallet. In setting workstation roles, ChainUp Custody aims to balance the security of funds and data with approval requirements, striving to find the best balance between security, compliance with approval processes, and user-friendliness. Based on these factors, the roles in the Full Custody wallet are divided into wallet creators and regular members. Regular members can be added by wallet creators to the withdrawal policy approval flow of specified wallets and currencies, serving as approvers to approve withdrawal requests for those currencies.
+
+## Role Descriptions
+
+### Enterprise Wallet Creator
+
+Wallet creators have full permissions for the wallet, responsible for managing and maintaining all related settings of the enterprise wallet. Their main duties and permissions include:
+
+- **Invite Members**: Creators can invite others to become regular members of the wallet.
+- **Manage Withdrawal Policies**: Creators can set and edit withdrawal policies, including transfer approval flows.
+- **Set API**: Creators have the authority to set and manage the API to facilitate automated operations.
+- **Approver**: Participate in the withdrawal policy approval flow to approve withdrawal requests for specific currencies.
+- **Operational Management**: View wallet assets, transaction records, initiate transfers, add addresses to the whitelist, and other financial operations.
+
+Through the "Security - Withdrawal Policy" function on the Custody PC dashboard, wallet creators can edit transfer policies. This policy includes the transfer approval flow, and all members added to the approval flow will automatically become approval members, responsible for approving withdrawal requests for the corresponding currencies.
+
+### Regular Members
+
+Regular members are users invited and added to the enterprise wallet by the wallet creator, with relatively limited permissions. Regular members mainly have the following functions:
+
+- **Approver**: Regular members can be designated as approvers, participating in the withdrawal policy approval flow to approve withdrawal requests for specific currencies.
+- **Co-Management**: View wallet assets, transaction records, initiate transfers, apply addresses to the whitelist, and other financial operations.
+
+## Role Function Access Table
+
+| Enterprise Wallet Role | Wallet Creator | Regular Member |
+|------------------------|----------------|----------------|
+| Create Wallet          | √              | ×              |
+| Add Wallet Members     | √              | ×              |
+| Create Withdrawal Policies | √          | ×              |
+| Manage Currencies      | √              | ×              |
+| View API               | √              | ×              |
+| Manage API             | √              | ×              |
+| Obtain Sub-Addresses   | √              | ×              |
+| Add to Whitelist       | √              | ×              |
+| Manage Address Book    | √              | ×              |
+| Set Approvers          | √              | ×              |
+| Become Approver        | √              | √              |
+| View Bills             | √              | √              |
+| View Wallet Information| √              | √              |
+| Initiate Transfers     | √              | √              |
