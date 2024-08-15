@@ -7,43 +7,51 @@ To ensure the safety of data related to the MPC system and compliance with the c
 
 ## II. Role Introduction
 Workspace Owner
-The workspace owner is the only full-permission user of the MPC workspace. They hold the highest management authority for all wallets under the workspace, and each workspace only has one creator.
+The workspace owner is the only full-permission user of the MPC workspace. They hold the highest management authority for all wallets under the workspace, and each workspace only has one owner.
 
 #### Recommended Responsibilities
-* Create wallets
-* Create new receiving addresses
-* Add workspace members
-* Modify member permissions
-* Initiate and sign transactions
-* Manage transaction approval policies
-* Use web3 wallet to link Dapp
-* Manage FIL multisig wallets
-* Manage FIL nodes
-* Authorize sweeping contracts 
-* Configure Co-Signer
+* Create Wallet
+* Create New Receiving Address
+* Add Workspace Member
+* Modify Member Permissions
+* Initiate and Sign Transactions
+* Use Dapp
+* Manage FIL Multisig Wallet
+* Manage FIL Node
+* Configure API and Co-Signer
 * Create KYT
-* Handle KYT risks
-* Manage strategy engine
+* Handle KYT Risks
+* Manage Workspace Strategy
+* Manage Wallet Strategy
 
 
 ### Admin
+
+An admin with an equal rights private key for the workspace has the authority to initiate receipts, transfers, and sign and expedite transactions for all wallets under the workspace.
+
 **Recommended Responsibilities**
-* Initiate transactions
-* View bills
-* View wallet information
-* Sign and accelerate transactions
-* Handle KYT risks
-* Configure contract auto sweep rules
-* Configure Co-Signer auto sweep rules
+* Initiate Transaction
+* View Billing
+* View Wallet Information
+* Sign and Accelerate Transactions
+* Use Dapp
+* Handle KYT Risks
+* Configure API
+* Configure Collection Strategy
+* Manage Workspace Strategy
+* Manage Wallet Strategy
 
 ### Wallet Ordinary Member
 **Recommended Responsibilities**
-* Initiate transactions
-* View bills
-* View wallet information
-* Handle KYT risks
-* Configure contract auto sweep rules
-* Configure Co-Signer auto sweep rules
+* Initiate Transaction
+* View Billing
+* View Wallet Information
+* Use Dapp
+* Handle KYT Risks
+* Configure API
+* Configure Collection Strategy
+* Manage Wallet Strategy
+
 
 ## III. Role Function Access Table
 
@@ -56,15 +64,13 @@ The workspace owner is the only full-permission user of the MPC workspace. They 
 | Private Key Signature | √|√|×|
 | View Bills | √|√|√|
 | View Wallet Information | √|√|√|
-| Edit Transfer Strategy | √|×|×|
+| Edit Wallet Strategy | √|√|√|
+| Edit Workspace Strategy | √|√|×|
 | Become Approver |√|√|√|
-| Connect Dapp | √|×|×|
+| Connect Dapp | √|√|√|
 | Manage FIL Multisig Wallet |√|×|×|
 | Manage FIL Node |√|×|×|
-| Configure Contract Auto Sweep Rules | √|√|√|
-| Contract Collection Authorization | √|×|×|
-| Manual Contract Collection |√ |×|×|
 | Create KYT Strategy | √|×|×|
 | Handle KYT Risks | √|√|√|
-| Decide Co-SIgner Collection Wallet and Auto-Fueling Strategy | √|×|×|
-| Configure Co-SIgner Auto Sweep Rules |√ |√|√|
+| Decide Omnibus Wallet and Gas Station | √|×|×|
+| Configure Auto Sweep Rules |√ |√|√|

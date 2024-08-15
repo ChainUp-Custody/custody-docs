@@ -3,10 +3,10 @@ title: 链接Dapp
 ---
 
 ## I. 功能简介
-随着对 Web3 可访问性和使用的需求不断增长，越来越多的用户希望直接使用 dApp 来管理他们的 NFT、获取奖励等。ChainUp Custody 的 Web3 钱包链接功能允许您的用户直接将其钱包地址连接到 Web3 应用程序 (dApp)，无需使用其他钱包或任何其他应用程序。
+随着对 Web3 可访问性和使用的需求不断增长，越来越多的用户希望直接使用 DApp 来管理他们的 NFT、获取奖励等。ChainUp Custody 的 Web3 钱包链接功能允许您的用户直接将其钱包地址连接到 Web3 应用程序 (DApp)，无需使用其他钱包或任何其他应用程序。
 
 <Note> 
-请确保您已开通相应主链的Web3类型钱包，否则将无法授权DApp使用。
+请确保您已创建或管理Web3钱包。
 
 若您的钱包不支持Dapp的主链，请联系客服团队进行开通。
 </Note>
@@ -18,12 +18,6 @@ title: 链接Dapp
 
     您可以直接选择Custody配置的DApp，也可以自己输入URL访问你想要访问的DApp。
 
-<div className="w-full flex items-center justify-center">
-    <CardGroup cols={2}>
-        <img src="/images/user-guide/dapp1cn.png" width="200"/>
-           <img src="/images/user-guide/dapp2cn.png" width="200"/>
-    </CardGroup>
-</div>
 
 
 </Step>
@@ -36,8 +30,8 @@ title: 链接Dapp
 
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
-        <img src="/images/user-guide/dapp3cn.png" width="200"/>
-           <img src="/images/user-guide/dapp4cn.png" width="200"/>
+        <img src="/images/user-guide/cnlogindapp.jpeg" width="200"/>
+           <img src="/images/user-guide/cnlinkdapp.jpeg" width="200"/>
     </CardGroup>
 </div>
 </Step>
@@ -45,17 +39,20 @@ title: 链接Dapp
 
 <Step title="授权钱包">
 <Tip> 
-不论是授权还是支付，均需要您签名、支付Gas费并广播上链。
+
+如果您是钱包的普通成员，由于未持有钱包私钥，可能无法授权部分Dapp，从而导致无法与其合约地址进行交互。请尝试更换Dapp，或联系工作站创建者成为工作站管理员以获取私钥权限。
+
+
 </Tip>
 
 使用非主链币交易时，DApp会发起授权申请，MPC钱包会弹出授权窗口。您可以查看授权信息，并编辑授权DApp合约的累计交易金额限额；
 
-主链币交易或者已经授权的交易会直接发起支付，MPC钱包会弹出支付窗口；
+您可以发起Web3交易，但请注意该交易将受到钱包策略引擎控制，需要经过审批或是直接被拒绝。
 <div className="w-full flex items-center justify-center">
-    <CardGroup cols={3}>
-        <img src="/images/user-guide/dapp5cn.png" width="200"/>
-     <img src="/images/user-guide/dapp6cn.png" width="200"/>
-      <img src="/images/user-guide/dapp7cn.png" width="200"/>
+    <CardGroup cols={2}>
+     <img src="/images/user-guide/cncreateweb3trans.jpeg" width="200"/>
+     <img src="/images/user-guide/cncreateweb3trans2.jpeg" width="200"/>
+      
     </CardGroup>
 </div>
 </Step>
@@ -69,10 +66,13 @@ title: 链接Dapp
 </Accordion>
 
 <Accordion title="web3交易支持MPC加速吗？">
-是的，web3交易支持MPC加速。如果交易10分钟未上链，您会收到交易加速待办。web3交易加速与提币加速操作一致。
+是的，web3交易支持加速功能。如果交易10分钟未上链，创建者或管理员会收到交易加速待办。web3交易加速与提币加速操作一致。
 </Accordion>
 
 <Accordion title="任何人都可以使用web3钱包链接DApp吗？">
-不，只有工作站创建者才可以使用web3钱包链接DApp。
+是的，您可以使用有权限的钱包链接DApp，但请注意，发起Web3交易需要被钱包策略控制。
 </Accordion>
 
+<Accordion title="我该如何控制Web3交易行为？">
+Web3交易受到对应钱包内部风控策略控制，您可以通过钱包策略引擎配置Web3交易高级策略，如果未配置任何Web3交易策略，将默认受到钱包基础策略控制。
+</Accordion>

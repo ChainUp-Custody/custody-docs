@@ -1,77 +1,70 @@
 ---
-title: Connect to DApp
+title: Link Dapp
 ---
 
-##  Function Introduction
-With the growing demand for Web3 accessibility and use, more and more users want to directly use DApps to manage their NFTs, earn rewards, etc. ChainUp Custody's Web3 wallet connection function allows your users to directly connect their wallet addresses to Web3 applications (DApps) without using any other wallets or any other applications.
+## I. Function Overview
+As the demand for Web3 accessibility and usage grows, more users wish to directly use DApps to manage their NFTs, earn rewards, etc. ChainUp Custody's Web3 wallet linking feature allows your users to directly connect their wallet addresses to Web3 applications (DApps) without using other wallets or any other applications.
 
 <Note> 
-Please ensure that you have opened the corresponding main chain's Web3 type wallet, otherwise you will not be able to authorize DApp use.
+Please ensure that you have created or managed a Web3 wallet.
 
-If your wallet does not support the main chain of Dapp, please contact the customer service team to open it.
+If your wallet does not support the main chain of the DApp, please contact the customer service team to activate it.
 </Note>
 
-##  Operation Procedure
+## II. Operation Process
 <Steps>
-<Step title="Enter the Discover Function">
-    Click on the "Discover" function module in the bottom navigation bar of the Custody APP.
+<Step title="Enter the Discover Module and Select DApp">
+    Click the "Discover" module on the bottom navigation bar of the Custody APP.
 
-    You can directly select the DApp configured by Custody, or you can enter the URL to visit the DApp you want to visit.
-
-<div className="w-full flex items-center justify-center">
-    <CardGroup cols={2}>
-        <img src="/images/user-guide/dapp1.png" width="200"/>
-           <img src="/images/user-guide/dapp2.png" width="200"/>
-    </CardGroup>
-</div>
-
-
+    You can directly select the DApp configured by Custody, or you can enter the URL to access the DApp you want to visit.
 </Step>
-
 
 <Step title="Log in to DApp">
-Among the various connection methods provided by DApp, please choose "MetaMask" connection, and after choosing, the MPC wallet will pop up the DApp connection dialog box.
+Among the various linking methods provided by the DApp, please select the "MetaMask" link. After selecting, the MPC wallet linking DApp popup will appear.
 
-You need to choose the main chain of the DApp connection, the RPC address, and your Web3 wallet
+You need to select the main chain of the DApp, the RPC address, and your Web3 wallet.
 
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
-        <img src="/images/user-guide/dapp3.png" width="200"/>
-           <img src="/images/user-guide/dapp4.png" width="200"/>
+        <img src="/images/user-guide/enlogindapp.jpeg" width="200"/>
+           <img src="/images/user-guide/enusedapp.jpeg" width="200"/>
     </CardGroup>
 </div>
 </Step>
-
 
 <Step title="Authorize Wallet">
 <Tip> 
-Whether it is authorization or payment, you need to sign, pay Gas fees, and broadcast on-chain.
+If you are an ordinary member of the wallet, you may not be able to authorize some DApps due to not holding the wallet private key, which may result in inability to interact with their contract addresses. Please try to change the DApp or contact the workstation creator to become a workstation administrator to obtain private key permissions.
 </Tip>
 
-When trading with non-main chain coins, DApp will initiate an authorization request, and the MPC wallet will pop up the authorization window. You can view the authorization information and edit the total transaction amount limit of the DApp contract;
+When using non-main chain currency transactions, the DApp will initiate an authorization request, and the MPC wallet will pop up the authorization window. You can view the authorization information and edit the cumulative transaction amount limit of the authorized DApp contract;
 
-The main chain coin transaction or already authorized transaction will directly initiate payment, and the MPC wallet will pop up the payment window;
+You can initiate a Web3 transaction, but please note that the transaction will be controlled by the wallet policy engine, requiring approval or being directly rejected.
 <div className="w-full flex items-center justify-center">
-    <CardGroup cols={3}>
-        <img src="/images/user-guide/dapp5.png" width="200"/>
-     <img src="/images/user-guide/dapp6.png" width="200"/>
-      <img src="/images/user-guide/dapp7.png" width="200"/>
+    <CardGroup cols={2}>
+     <img src="/images/user-guide/encreateweb3trans1.jpeg" width="200"/>
+     <img src="/images/user-guide/cncreateweb3trans2.jpeg" width="200"/>
     </CardGroup>
 </div>
 </Step>
 </Steps>
 
+## III. Frequently Asked Questions
 
-##  Frequently Asked Questions
-
-<Accordion title="Does the asset type wallet support linking web3 applications?">
-No, the asset type wallet does not support linking web3 applications. Therefore, before you need to use the web3 DApp, please create a web3 wallet first.
+<Accordion title="Does the asset-type wallet support linking to Web3 applications?">
+No, the asset-type wallet does not support linking to Web3 applications. Therefore, please create a Web3 wallet before you need to use a Web3 DApp.
 </Accordion>
 
-<Accordion title="Does web3 transaction support MPC acceleration?">
-Yes, web3 transactions support MPC acceleration. If the transaction is not on-chain for 10 minutes, you will receive a transaction acceleration to-do. The web3 transaction acceleration is consistent with the withdrawal acceleration operation.
+<Accordion title="Does Web3 trading support MPC acceleration?">
+Yes, Web3 trading supports the acceleration function. If the transaction is not on-chain within 10 minutes, the creator or administrator will receive a pending transaction acceleration. Web3 transaction acceleration is consistent with withdrawal acceleration operations.
 </Accordion>
 
-<Accordion title="Can anyone use the web3 wallet to link DApp?">
-No, only the Admin can use the web3 wallet to link DApp.
+<Accordion title="Can anyone use a Web3 wallet to link DApps?">
+Yes, you can use an authorized wallet to link DApps, but please note that initiating Web3 transactions needs to be controlled by wallet policies.
 </Accordion>
+
+<Accordion title="How can I control Web3 transaction behavior?">
+Web3 transactions are controlled by the corresponding wallet's internal risk control policies. You can configure advanced Web3 transaction strategies through the wallet policy engine. If no Web3 transaction strategy is configured, it will be controlled by the wallet's basic policy by default.
+</Accordion>
+```
+

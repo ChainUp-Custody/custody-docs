@@ -33,7 +33,7 @@ You can easily configure the API information for the MPC System on the Custody W
 
 An MPC Workspace can only configure one API. To ensure the functionality of the API, API configuration needs to be synchronized with Co-Signer configuration.
 
-Only the wallet creator can configure API information, and editing requires GA verification.
+All users in the workspace can manage the API functions. Any addition or modification of API information requires approval through the workspace strategy before it can take effect.
 
 Refer to the API documentation for detailed information on effective API integration: [API Documentation](/api-references/intro/custody-apis).
 
@@ -44,7 +44,12 @@ By configuring the API information for the MPC System, you will be able to use A
 
 In the Custody PC(Web) version, use the "**API Management**."
 
-Create or edit API information for the MPC System and then successfully modify it through GA verification.
+
+Create or edit API information in the MPC system and wait for the workspace strategy approval to complete.
+
+<Tip>
+Enabling or disabling the API does not require approval.
+</Tip>
 
 ###  Configuration Fields
 
@@ -72,4 +77,4 @@ The RSA public key of the client system, used for encrypting sensitive informati
 
 **Remarks**
 
-Provide additional configuration instructions or labels. This field is usually used to record additional information related to API configuration, making it easy for administrators and developers to understand special requirements or agreements associated with the configuration.
+Provide additional configuration instructions or labels. This field is usually used to record additional information related to API configuration, making it easy for admins and developers to understand special requirements or agreements associated with the configuration.

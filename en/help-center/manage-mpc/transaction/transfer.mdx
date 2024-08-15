@@ -78,11 +78,11 @@ If the deposit address and coin have KYT (Know Your Transaction) enabled and con
 
 If the KYT service provider returns a risk level that requires manual processing, the deposit status will be "KYT Manual Processing". Once manual processing is completed, it moves to the next phase.
 
-**4. Pending Traceability Status (1800)**
+**4. Transaction Retrace Status (1800)**
 
 The transaction has been confirmed on the blockchain and KYT processing is complete. The system will retrace the transaction to ensure that the assets reach the required number of block confirmations for the deposit to be credited.
 
-**5. Verifying Traceability Status (1900)**
+**5. Withdrawal Unlock Status (1900)**
 
 The transaction has completed traceability, and the system is currently verifying the processed transaction. The Custody system recommends crediting users at this stage.
 

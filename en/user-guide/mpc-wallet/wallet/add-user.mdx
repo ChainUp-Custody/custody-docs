@@ -9,12 +9,12 @@ Only the workspace owner can add/delete workspace members.
 </Note>
 
 In the MPC workspace, you can add new users and assign them different roles. The system currently has three types of roles:
-- **Workspace Owner**: The member who creates the workspace defaults as the creator (Owner), with the highest authority;
-- **Admin**: The creator can add members from the contact list to the workspace and assign them as admins. Admins have the authority to initiate receipts, transfers for all wallets under the workspace, and will have the workspace co-privilege private key to sign and speed up transfer transactions;
+- **Workspace Owner**: The member who creates the workspace defaults as the owner (Owner), with the highest authority;
+- **Admin**: The owner can add members from the contact list to the workspace and assign them as admins. Admins have the authority to initiate receipts, transfers for all wallets under the workspace, and will have the workspace co-privilege private key to sign and speed up transfer transactions;
 <Tip> 
 Currently, admins cannot sign for private key operation behaviors other than manual transfer signatures and speed up.
 </Tip>
-- **Ordinary Members**: Members added to the wallet by the creator default as ordinary members; they have basic permissions such as initiating receipts, transfers;
+- **Ordinary Members**: Members added to the wallet by the owner default as ordinary members; they have basic permissions such as initiating receipts, transfers;
 
 For specific member role descriptions, you can refer to [MPC User Role Introduction](/help-center/manage-mpc/user-setting/user-role)
 
@@ -58,7 +58,7 @@ For specific member role descriptions, you can refer to [MPC User Role Introduct
 
 <Tip>
 **Note when assigning the admin role:**
-The creator owns the locally backed-up workspace private key fragment and can obtain the RSA public key of the other party's account.
+The owner owns the locally backed-up workspace private key fragment and can obtain the RSA public key of the other party's account.
 </Tip>
 
 </Step>
@@ -68,7 +68,7 @@ The creator owns the locally backed-up workspace private key fragment and can ob
 ## III. Frequently Asked Questions
 
 <Accordion title="How can I change a user's role?">
-The creator can view the user's permission details in the workspace members and modify the user's role. Please note, if the member is part of an approval flow of a certain wallet, they will automatically have co-management authority of that wallet and it cannot be canceled.
+The owner can view the user's permission details in the workspace members and modify the user's role. Please note, if the member is part of an approval flow of a certain wallet, they will automatically have co-management authority of that wallet and it cannot be canceled.
 </Accordion>
 
 <Accordion title="Can I add users if I am not the workspace owner?">

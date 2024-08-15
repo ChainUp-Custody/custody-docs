@@ -1,0 +1,85 @@
+---
+title: Configure Workspace Strategy
+---
+
+
+##  I. Function Introduction
+
+Utilize the ChainUp Strategy Engine to configure risk management strategies for your workspace. Once configured, any core operations, such as viewing recovery phrases and managing APIs, require approval from designated approvers to execute.
+
+This feature not only protects your business from internal collusion but also streamlines operational processes. Users can customize workspace strategies based on organizational structure and business workflows to achieve effective internal control and collaborative management.
+
+<Warning>
+**Key Steps and Considerations**
+
+The control scenarios covered by current workspace strategies include: API management, viewing recovery phrases, and workspace policy editing. The system automatically assigns default workspace policies to all new workspaces, with creators initially designated as approvers for workspace policies.
+
+Only workspace members, such as workspace creators and administrators, have permission to edit workspace policies.
+</Warning>
+
+
+## II. Operational Workflow
+View and manage your workspace strategy
+
+
+<Steps>
+<Step title="Login and access the strategy engine.">
+Use the Custody app to scan and log in to the MPC wallet web platform. Then, select the "Strategy Engine - Workspace strategy" module.
+
+<div className="w-full flex items-center justify-center">
+<img src="/images/user-guide/strategydetail.png"/>
+</div>
+
+</Step>
+
+<Step title="Modify Strategy">
+In this step, you can configure the following parameters for the workspace strategy:
+
+
+**Approval Members and Approval Threshold:**
+
+You can select approvers from admin and owner, and set the minimum number of approvals required. All related operations will be confirmed by these approvers.
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/user-guide/editworkspaceapprover.png" width="400"/>
+      <img src="/images/user-guide/selectapprover.png" width="400"/>
+        </CardGroup>
+</div>
+
+
+<Warning>
+**Key Steps and Notes**
+
+- Each workspace can only have one workspace strategy, which can only be modified, not added or deleted.
+- Any modifications to the workspace policy require approval from the current workspace strategy to take effect.
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/wrokspcaeapprovingdetails.png" width="400"/>
+</div>
+
+</Warning>
+
+</Step>
+
+</Steps>
+
+
+
+##  III. Frequently Asked Questions
+
+<Accordion title="Why can't I edit the workspace strategy?">
+Only workspace admin and owner can view and edit workspace strategy. If a policy edit request has been initiated by another user, other users will not be able to perform the same operation until that request is approved.
+</Accordion>
+
+<Accordion title="Why can't I delete the workspace strategy?">
+As the last line of defense for workspace security, the policy cannot be deleted to ensure that critical workspace operations are controlled by the strategy engine.
+</Accordion>
+
+<Accordion title="How can I get management permissions for the workspace strategy?">
+Workspace members, including owner and admin, can view and edit the workspace strategy.
+</Accordion>
+
+<Accordion title="How can I view the historical approval records of the workspace strategy?">
+You can click the policy approval records button in the upper right corner to view all workspace policy edit records.
+</Accordion>

@@ -365,7 +365,8 @@
         {
           "group": "策略引擎",
           "pages": [
-            "help-center/manage-mpc/strategy/transfer"
+            "help-center/manage-mpc/strategy/transfer",
+            "help-center/manage-mpc/strategy/workspace"
           ]
         }
       ]
@@ -446,6 +447,7 @@
     "pages":[
       "user-guide/mpc-wallet/strategy/approval-flow2",
       "user-guide/mpc-wallet/strategy/approval-flow",
+      "user-guide/mpc-wallet/strategy/edit-workspace-strategy",
       "user-guide/mpc-wallet/strategy/gas-fee-stratefy",
       "user-guide/mpc-wallet/strategy/sign-protect"
     ]

@@ -21,8 +21,8 @@ If a wallet has never edited advanced strategies, all risk scenarios for the wal
 Viewing and Managing Basic Wallet Strategy
 
 <Steps>
-<Step title="Log in and Open Transfer Strategy">
-    Use the Custody APP to scan and log in to the MPC wallet web version, select the [Strategy Engine] module, and choose the wallet [Basic Strategy] module.
+<Step title="Log in and Open Strategy Engine">
+    Use the Custody APP to scan and log in to the MPC wallet web version, select the [Strategy Engine - Wallet Strategy] module, and choose the wallet [Basic Strategy] module.
 <div className="w-full flex items-center justify-center">
 <img src="/images/user-guide/basicstrategy1.png" width="600"/>
 </div>
@@ -31,7 +31,7 @@ Viewing and Managing Basic Wallet Strategy
    Click the edit button to modify your basic strategy.
 <Tip>
 **Critical Steps and Considerations**
-The default basic strategy for all MPC wallets requires creator approval. Users can add other wallet members for joint approval according to the organization's equity requirements.
+The default basic strategy for all MPC wallets requires owner approval. Users can add other wallet members for joint approval according to the organization's equity requirements.
 
 As the last line of defense for wallet security, the basic strategy cannot be deleted. Once modified, changes to the basic strategy will be applied to all risk control scenarios. If you need more dimensional control over wallet transactions, consider [configuring advanced strategies](/user-guide/mpc-wallet/strategy/approval-flow2).
 
@@ -84,14 +84,14 @@ We emphasize the importance of correctly configuring the basic strategy. As it i
 If a user has initiated an edit request for the basic strategy, other users will not be able to perform the same operation until the request is approved.
 </Accordion>
 <Accordion title="Why can't I delete the basic strategy">
-As the last line of defense for wallet security, the basic strategy cannot be deleted.
+The basic strategy, serving as the last line of defense for wallet security, cannot be deleted. This ensures that the wallet is always protected by the strategy engine's risk control measures, preventing internal risks.
 </Accordion>
 <Accordion title="When will orders hit the basic strategy">
 If a wallet has never had advanced strategies edited, all risk control scenarios in that wallet are governed by the basic strategy.
 </Accordion>
 <Accordion title="How to obtain management permissions for basic strategy">
-All co-managing members of the wallet, including creators, administrators, and regular members, can view and edit the wallet's basic strategy.
+All co-managing members of the wallet, including owners, admins, and regular members, can view and edit the wallet's basic strategy.
 </Accordion>
 <Accordion title="How to view the history of basic strategy edits">
-You can click the operation records button in the upper right corner to view all the strategy edit records of the wallet.
+You can click the approving records button in the upper right corner to view all the basic strategy edit records of the wallet.
 </Accordion>

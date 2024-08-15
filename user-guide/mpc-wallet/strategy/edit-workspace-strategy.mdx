@@ -1,0 +1,88 @@
+---
+title: 配置工作站策略
+---
+
+
+##  I. 功能简介
+
+使用ChainUp策略引擎为您的工作站配置风控管理策略。设置完成后，任何核心操作，例如查看助记词和管理API，都需要特定审批员的批准才能执行。
+
+此功能不仅能保护您的业务免受内部勾结，还能简化运营流程。用户可以根据组织的团队结构和业务流程定制工作站策略，实现有效的内部控制和共同管理。
+
+<Warning>
+**关键步骤和注意事项**
+
+当前工作站策略的控制场景包括：API管理、查看助记词、工作站策略编辑。系统会为所有新的工作站创建默认的工作站策略，默认情况下创建者为工作站策略的审批员。
+
+只有工作站成员，例如工作站创建者和管理员，才可以编辑工作站策略。
+</Warning>
+
+## II. 操作流程
+
+查看并管理你的工作站策略
+
+
+<Steps>
+<Step title="登录并访问策略引擎">
+    使用 Custody APP扫码登陆MPC钱包Web端，选择【策略引擎-工作站策略】功能模块。
+
+<div className="w-full flex items-center justify-center">
+<img src="/images/user-guide/cnworkspacestrategy.png" width="400"/>
+</div>
+
+</Step>
+
+<Step title="编辑策略">
+在此步骤中，您可以配置工作站策略的以下参数：
+
+
+**审批成员与审批阈值：**
+
+您可以选择从管理员和创建者中选择审批员，并设置最低审批通过人数，相关操作都将由这些审批员确认通过。
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/user-guide/cneditworkspacestrategy.png" width="400"/>
+      <img src="/images/user-guide/cnselectapprover.png" width="400"/>
+        </CardGroup>
+</div>
+
+<Warning>
+**关键步骤和注意事项**
+* 每个工作站只能拥有一条工作站策略，只可以修改，不可新增或删除。
+
+* 任何对工作站策略的修改都需经过当前工作站策略的审批才能生效。
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/cnworspaceapprovingdetails.png" width="400"/>
+</div>
+
+</Warning>
+
+</Step>
+
+</Steps>
+
+
+
+
+##  III. 常见问题
+
+<Accordion title="为什么无法编辑工作站策略">
+只有工作站管理员和创建者才可以查看和编辑工作站策略。
+如果已有用户发起策略的编辑申请，在该申请审批完成之前，其他用户将无法进行重复操作。
+</Accordion>
+
+<Accordion title="为什么无法删除工作站策略">
+策略作为工作站安全的最后一道防线，为了确保工作站的重要操作受到策略引擎控制，该策略无法被删除。
+</Accordion>
+
+
+<Accordion title="如何获得工作站策略的管理权限">
+工作站成员，包括创建者，管理员，都可以查看并编辑工作站策略。
+</Accordion>
+
+<Accordion title="如何查看工作站策略的历史审批记录？">
+您可以点击右上角的策略审批记录按钮，查看该工作站所有的工作站策略编辑记录。
+</Accordion>
+

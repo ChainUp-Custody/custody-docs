@@ -365,7 +365,9 @@
         {
           "group": "Strategy Engine",
           "pages": [
-            "help-center/manage-mpc/strategy/transfer"
+            "help-center/manage-mpc/strategy/transfer",
+            "help-center/manage-mpc/strategy/workspcae"
+    
           ]
         }
       ]
@@ -448,6 +450,7 @@
       "pages":[
         "user-guide/mpc-wallet/strategy/approval-flow",
         "user-guide/mpc-wallet/strategy/approval-flow2",
+        "user-guide/mpc-wallet/strategy/edit-workspace-strategy",
         "user-guide/mpc-wallet/strategy/gas-fee-stratefy",
         "user-guide/mpc-wallet/strategy/sign-protect"
       ]

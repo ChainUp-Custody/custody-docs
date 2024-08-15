@@ -20,7 +20,7 @@ The wallet strategy engine of ChainUp Custody controls the core risk scenarios u
 
 The basic strategy is the initial internal control solution for wallets. In the absence of advanced strategies, it serves as a fallback for all risk scenarios, ensuring that all critical operations are always subject to approval control by the basic strategy. This eliminates human errors and guards against collusion by internal and external parties.
 
-If users have not configured any advanced strategies, all risk scenarios (such as transfer transactions, strategy management, etc.) will be controlled by the basic strategy.
+If users have not configured any advanced strategies, all risk scenarios (such as transfer transactions, Web3 Transactions, Whitlist management, strategy management, etc.) will be controlled by the basic strategy.
 
 
  
@@ -47,7 +47,7 @@ The current control scenarios of the basic strategy include: transfer transactio
 | Approval Node Type | Node Approvers | Number of Nodes | Number of Approvers |
 | ------- | ------- |------- |------ |
 | Approval | All Wallet Members | 9 nodes, reorderable | 20 people |
-| Approval and Sign | Members with Wallet Private Key Permissions, including Creators, Administrators | 1 node, final node, not reorderable | 20 people |
+| Approval and Sign | Members with Wallet Private Key Permissions, including owners, admins | 1 node, final node, not reorderable | 20 people |
 
 <Warning>
 We emphasize the importance of correctly configuring the basic strategy. Since the basic strategy is the final line of defense for all risk control scenarios in the wallet, please choose your basic strategy approver carefully and avoid frequent modifications.
@@ -57,18 +57,18 @@ We emphasize the importance of correctly configuring the basic strategy. Since t
 
 ## Advanced Strategy
  
-The advanced strategy allows users to easily configure control policies for each wallet, including transfer transaction control policies, transaction type configuration, approval roles, and approval workflows. Once the policy is established, no operation will be executed without approval, thereby protecting digital assets from internal threats.
+The advanced strategy allows users to easily configure control policies for each wallet, including transfer transaction control strategiess, transaction type configuration, approval roles, and approval workflows. Once the policy is established, no operation will be executed without approval, thereby protecting digital assets from internal threats.
 
 
  <Note>
-The current control scenario of the advanced strategy is limited to transfer transactions.
+The current control scenario of the advanced strategy is limited to transfer transactions and Web3 Transactions.
 
  
 </Note>
 
   
 
-You can define the following parameters for the advanced strategy:
+You can define the following parameters for the Transfer Transactions Advanced Strategy:
  
 **Strategy Name:** Name the transfer strategy for easy identification.
  
@@ -79,6 +79,20 @@ You can define the following parameters for the advanced strategy:
 * Transaction Assets: Specific currencies and NFTs, clearly defining the scope of assets protected by the strategy.
 
 * Transfer Limit: Quantity or value of assets.
+
+
+You can define the following parameters for the Web3 Transactions Advanced Strategy:
+
+**Strategy Name:** Name the transfer strategy for easy identification.
+ 
+**Strategy Trigger Conditions:**
+ 
+* Transaction Source: Specific wallet members or API.
+
+* Transaction Contract: Specific or any contract address.
+
+
+
  
 **Strategy Trigger Actions:**
  
@@ -89,7 +103,7 @@ You can define the following parameters for the advanced strategy:
 | Approval Node Type | Node Approvers | Number of Nodes | Number of Approvers |
 | ------- | ------- |------- |------ |
 | Approval | All Wallet Members | 9 nodes, reorderable | 20 people |
-| Approval and Sign | Members with Wallet Private Key Permissions, including Creators, Administrators | 1 node, final node, not reorderable | 20 people |
+| Approval and Sign | Members with Wallet Private Key Permissions, including owners, admins | 1 node, final node, not reorderable | 20 people |
 
 
  
@@ -98,7 +112,8 @@ You can define the following parameters for the advanced strategy:
 <Warning>
 **Key Steps and Considerations**
 
-We emphasize the importance of correctly implementing transfer strategies. Your transfer strategy is a crucial layer of asset protection, so please customize it according to your business needs.
+
+We emphasize the importance of correctly configuring wallet strategies and their respective priorities. Your wallet strategy is a critical layer for asset protection, so please customize it according to your business needs.
 
 The same MPC wallet can create multiple advanced strategies. By adjusting the order of advanced strategies, you can determine the priority of strategy hits. Once a rule with higher priority is hit, other rules after this priority will no longer be checked.
 

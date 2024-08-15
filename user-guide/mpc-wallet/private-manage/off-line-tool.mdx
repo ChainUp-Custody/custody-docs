@@ -4,7 +4,7 @@ title: 私钥离线恢复
 
 ## I. 功能简介
 
-ChainUp Custody是一个去中心化的企业级钱包，不存储客户的私钥。如果您需要恢复您在MPC工作站中创建的私钥，您可以下载并使用ChainUp Custody的离线私钥恢复工具。在离线环境中使用此工具，可以恢复所有MPC工作站的完整私钥。私钥恢复成功后，您可以将其导入到其他硬件或软件钱包中，以完全控制您的数字资产。
+ChainUp Custody是一个去中心化的企业级钱包，不存储客户的私钥。如果您需要恢复您在MPC钱包中创建的私钥，您可以下载并使用ChainUp Custody的离线私钥恢复工具。在离线环境中使用此工具，可以恢复所有MPC钱包的完整私钥。私钥恢复成功后，您可以将其导入到其他硬件或软件钱包中，以完全控制您的数字资产。
 
 ## II. 操作流程
 
@@ -12,19 +12,32 @@ ChainUp Custody是一个去中心化的企业级钱包，不存储客户的私�
 
 <Steps>
 <Step title="在APP中获取所有私钥分片助记词">
- 在您的APP **安全**功能中 选择【私钥管理】，通过【查看助记词】来获取您的MPC工作站的三片私钥分片的助记词。
-<div className="w-full flex items-center justify-center">
+ 在您的APP **安全**功能中 选择【私钥管理】，通过【查看助记词】来获取您的MPC钱包的私钥分片的助记词。
+<Note>
+* 只有工作站创建者和管理员可以申请查看创建或共管的工作站私钥分片助记词。
+
+* 用户可以通过申请查看助记词来实现以下目的：
+
+1. 手动备份私钥分片；
+2. 与离线私钥恢复工具配合，恢复完整的工作站私钥。
+
+请注意，申请查看助记词需要经过工作站策略审批。一旦审批通过，您将有24小时的时间来查看信息。
+
+
+</Note>
+
+ <div className="w-full flex items-center justify-center">
     <CardGroup cols={4}>
-    <img src="/images/user-guide/safecn.png" width="200"/>
-    <img src="/images/user-guide/off1cn.png" width="200"/>
-    <img src="/images/user-guide/off2cn.png" width="200"/>
-    <img src="/images/user-guide/off3cn.png" width="200"/>
+    <img src="/images/user-guide/privatekeyapplycn.jpeg" width="200"/>
+    <img src="/images/user-guide/confirmkeyappleycn.jpeg"width="200"/>
+    <img src="/images/user-guide/selectkeycn.jpeg" width="200"/>
+    <img src="/images/user-guide/sendkeyapplycn.jpeg" width="200"/>
     </CardGroup>
 </div>
 
 </Step>
-<Step title="获取工作站信息文档">
-    获取您的MPC工作站的信息文档。
+<Step title="获取钱包信息文档">
+    获取您的MPC钱包的钱包信息文档。
     <div className="w-full flex items-center justify-center">
     <img src="/images/user-guide/off4cn.png" width="600"/>
 </div>
