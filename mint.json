@@ -83,7 +83,7 @@
       ]
     },
     {
-      "group": "自托管（MPC钱包）",
+      "group": "MPC自托管",
       "pages": [
         "quick-start/mpc-wallet/download-app",
         "quick-start/mpc-wallet/create-account",
@@ -112,7 +112,7 @@
       ]
     },
     {
-      "group": "统一托管",
+      "group": "全托管",
       "pages": [
         "quick-start/joint-custody/download-app",
         "quick-start/joint-custody/create-account",
@@ -127,7 +127,7 @@
       ]
     },
     {
-      "group": "自托管（MPC钱包）",
+      "group": "MPC自托管",
       "pages": [
         {
           "group": "接入指引",
@@ -229,7 +229,7 @@
       ]
     },
     {
-      "group": "统一托管",
+      "group": "全托管",
       "pages": [
         "api-references/custody-apis/guide",
         "api-references/custody-apis/scheme",
@@ -319,7 +319,7 @@
       ]
     },
     {
-      "group": "自托管（MPC钱包）",
+      "group": "MPC自托管",
       "pages": [
         {
           "group": "用户设置",
@@ -372,18 +372,32 @@
       ]
     },
     {
-      "group": "统一托管",
+      "group": "全托管",
       "pages": [
         {
           "group": "账号交易",
           "pages": [
-            "help-center/manage-joint/account-transfer/confirmation"
+            "help-center/manage-joint/account-transfer/confirmation",
+            "help-center/manage-joint/account-transfer/transfer"
+          ]
+        },
+        {
+          "group": "钱包配置",
+          "pages": [
+            "help-center/manage-joint/custody-wallet-manage/custody-adddress-type",
+            "help-center/manage-joint/custody-wallet-manage/wallet"
+          ]
+        },
+        {
+          "group": "团队管理",
+          "pages": [
+            "help-center/manage-joint/custody-user-settings/role"
           ]
         }
       ]
     },
   {
-    "group": "自托管（MPC钱包）",
+    "group": "MPC自托管",
     "pages": [
       {
         "group": "账户安全",
@@ -463,7 +477,7 @@
 ]
 },
 {
-  "group": "统一托管",
+  "group": "全托管",
   "pages": [
     {
       "group": "账户安全",

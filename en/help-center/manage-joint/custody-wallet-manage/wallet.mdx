@@ -1,0 +1,35 @@
+---
+title: Wallet Structure
+---
+## Overview
+
+ChainUp Custody's Full Custody system provides a flexible and secure account architecture designed to meet the needs of different types of users and business lines, including individual users and enterprise wallets. This architecture allows users to create and manage various types of wallets, each supporting multiple currencies, thus offering high flexibility and scalability.
+
+## Business Logic
+
+In the ChainUp Custody account architecture, a user account can create one personal wallet and multiple enterprise wallets. Each wallet can support multiple digital assets, thus meeting the asset management needs in different scenarios.
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/walletstructure.png" width="600"/>
+</div>
+
+
+
+### Personal Wallet:
+
+- **Function**: Personal wallets are designed for managing individual assets and do not support API functionality. This means that individual users cannot perform automated transaction operations via API.
+
+
+- **Features**:
+  - **Alliance Transfers**: Personal wallets support alliance transfers with enterprise wallets, and these transfers do not incur fees. This enables convenient fund movement between personal and enterprise assets.
+  - **Security Management**: Personal wallets provide a high level of security to ensure that personal assets are well protected.
+
+### Enterprise Wallet:
+
+- **Function**: Enterprise wallets not only support team management and various enterprise-level functions but also allow transactions and management via API. This enables enterprises to achieve automated operations, improving efficiency and management levels.
+
+
+- **Features**:
+  - **Team Management**: Enterprise wallets allow multiple team members to jointly manage the wallet, providing permission allocation and role management functions, ensuring the security of enterprise assets and orderly management.
+  - **KYT (Know Your Transaction)**: Enterprise wallets integrate KYT functionality to monitor and analyze transactions, helping enterprises comply with anti-money laundering regulations and reduce risks.
+  - **API Support**: Through API, enterprise wallets can automate the allocation of currency addresses to end-users, perform transactions, check balances, and more. This provides enterprises with an efficient asset management solution.
