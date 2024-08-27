@@ -1,0 +1,123 @@
+---
+title: 合约收款与转账
+---
+
+
+
+## I. 功能简介
+
+在ChainUp Custody提供的智能合约平台，您可以链接第三方钱包，为您所管理的合约接收资产或手动发起转账交易。
+
+
+## II. 合约收款
+
+<Steps>
+
+<Step title="选择网络并连接钱包">
+根据您的业务需求，选择您访问的合约网络，并链接您的第三方钱包。
+
+<Tip>
+1. 您可能需要安装第三方钱包的浏览器插件，才能在Web端调用钱包并访问合约。
+2. Custody支持的合约网络包括：
+   - Ethereum
+   - Binance Smart Chain
+   - TRON
+   - Huobi ECO Chain
+3. 不同的网络合约支持的钱包范围不同，例如访问TRON合约时需要链接TronLink或OKX。
+</Tip>
+
+
+
+
+</Step>
+
+<Step title="选择合约">
+查看合约列表，选择想要访问的合约，点击进入【资产管理】页面。
+
+<Tip>
+您仅可访问连接钱包地址为签名者的合约信息。
+</Tip>
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+    <img src="/images/user-guide/startcreatecontractcn.png" width="400"/>
+    <img src="/images/user-guide/selectwalletcn.jpeg" width="400"/>
+    <img src="/images/user-guide/contractlistcn.jpeg" width="400"/>
+    </CardGroup>
+</div>
+
+</Step>
+
+<Step title="合约收款">
+选择【收款】按钮，获取合约收款地址。
+
+<Tip>
+合约地址可以接收网络下所有关联币种，发送其他币种到此地址将无法找回。
+</Tip>
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+    <img src="/images/user-guide/assetmanage1cn.jpeg" width="400"/>
+    <img src="/images/user-guide/receive1cn.jpeg" width="400"/>
+    </CardGroup>
+</div>
+</Step>
+
+</Steps>
+
+
+## III. 合约转账
+
+<Steps>
+
+<Step title="选择转账资产">
+选择希望转账的合约资产，发起一笔合约转账交易提案。
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/contracttransfer1cn.jpeg" width="400"/>
+</div>
+</Step>
+
+<Step title="确认转账信息并签名">
+使用链接的第三方钱包地址签名并支付提案矿工费。
+
+<Tip>
+1. 合约转账提案需要经过合约签名者审批确认，达到合约多签阈值后提案才可生效。
+2. 您可以在操作记录中查看提案的创建记录。
+3. 您可以在【交易记录】中查看已成功发起的转账提案。
+</Tip>
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/contracttransfer2cn.jpeg" width="400"/>
+</div>
+
+</Step>
+
+</Steps>
+
+
+
+## IV. 常见问题
+
+<Accordion title="为什么我无法发起转账提案？">
+请确认以下几点：
+
+1. 您是否成功链接了第三方钱包；
+2. 您链接的钱包是否是合约的签名人；
+3. 您的合约是否已成功添加了转账免投票地址；
+4. 您的合约是否有足够的转账资金；
+5. 您是否为提案交易支付了足够的矿工费。
+
+如果您仍然无法创建合约提案，请联系在线客服寻求帮助。
+</Accordion>
+
+
+
+<Accordion title="为什么我无法查看到合约收款记录?">
+以下因素可能导致无法查看到收款记录，需要等待一段时间：
+1. 系统还未成功记录该笔收款；
+2. 系统无法解析TXID；
+3. Custody系统暂不支持收款币种。
+如果您仍然无法在平台查看到收款记录，请联系在线客服寻求帮助。
+</Accordion>
+

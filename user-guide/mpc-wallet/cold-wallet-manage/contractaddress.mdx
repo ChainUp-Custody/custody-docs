@@ -1,0 +1,95 @@
+---
+title: 合约地址管理
+---
+
+
+## I. 功能简介
+
+用户可以查看当前与MPC热钱包关联的所有温/冷钱包合约地址信息，并获取对应合约的转账免投票地址。
+
+
+## II. 操作流程 
+
+<Steps>
+
+<Step title="新建资金调度规则">
+   访问MPC钱包Web端，选择【冷钱包】-【合约地址】，点击新增按钮。
+
+ <div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/contractlist1cn.png" width="400"/>
+</div>
+
+
+</Step>
+
+<Step title="编辑地址内容">
+   选择合约网络并填写温钱包和冷钱包合约地址。
+
+   <Note>
+   Note：支持批量添加同一网络的合约地址，请从【智能合约平台】获取查看创建的合约地址信息并填写。
+   </Note>
+
+ <div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/contractlist1cn.png" width="400"/>
+</div>
+
+
+</Step>
+
+<Step title="提交申请">
+   当您完善信息后，验证GA后即可提交申请，该申请需要经过工作站策略审批通过后才可生效。  
+   您可以通过【审批记录】查看您提交申请的审批进度。
+
+ <div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+    <img src="/images/user-guide/contractlist2cn.png" width="400"/>
+    <img src="/images/user-guide/contractlist3cn.png" width="400"/>
+    </CardGroup>
+</div>
+</Step>
+
+<Step title="审批调度策略">
+   如果您是工作站策略的审批员，您可以通过App或Web端的【工作流】模块实时查看待办任务并进行审批。
+
+ <div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/contractlist4cn.png" width="400"/>
+</div>
+
+</Step>
+
+<Step title="获取并为温合约添加转账免投票地址">
+   审批通过后，您将在【合约地址】列表查看合约地址信息并获取该合约对应的转账免投票地址。
+
+   <Note>
+   转账免投票地址由Custody自动为每个工作站分配。为了实现自动化转账，您需要为温合约添加转账免投票地址，该地址发起的合约转账交易无需经过签名者同意即可成功。
+   </Note>
+
+ <div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/contractlist1cn.png" width="400"/>
+</div>
+
+
+</Step>
+
+</Steps>
+
+
+
+
+## III. 常见问题
+
+<Accordion title="我该添加哪些合约的地址？">
+   为了实现冷钱包方案的正常运转，请访问【智能合约平台】，获取您团队创建的温钱包合约和冷钱包合约地址，加入合约地址列表。
+</Accordion>
+
+<Accordion title="如何更换转账免投票地址？">
+   当前转账免投票地址由Custody系统自动生成并分配给每个工作站，如需要更换，请联系Custody客服团队。
+</Accordion>
+
+<Accordion title="我如何保证资金调度策略顺利运行？">
+1. 成功添加所有网络的钱包合约地址。  
+2. 配置对应的温转热、热转温、温转冷策略。  
+3. 为每个温合约添加转账免投票地址并保证地址拥有足够的矿工费。  
+4. 为温钱包、冷钱包合约添加白名单地址。
+</Accordion>
+

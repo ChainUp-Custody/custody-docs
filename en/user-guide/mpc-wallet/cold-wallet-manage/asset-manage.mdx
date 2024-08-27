@@ -1,0 +1,137 @@
+---
+title: Asset Management
+---
+
+
+## Function Overview
+
+The cold wallet function of the ChainUp Custody MPC Wallet provides users with comprehensive fund management and scheduling capabilities, including:
+
+1. View Fund Details: Users can view the fund details of the current hot wallet, warm wallet, and cold wallet, including the asset distribution and balance of each wallet.
+2. Modify Hot Wallet: Users can modify the configuration of the hot wallet according to actual needs to adapt to different fund scheduling strategies.
+3. Manually Initiate Asset Flowing Tasks: Users can manually initiate asset flowing tasks, such as warm-to-hot, warm-to-cold, hot-to-warm, etc., to achieve flexible fund scheduling and management.
+
+These functions help users achieve a balance between cold and hot storage, ensuring asset security and efficient operation.
+
+<Note>
+Typically, the cold wallet solution needs to be used in conjunction with the API and aggregation function. The Custody system recommends that you complete the following operations before using the cold wallet function:
+1. Enable API Co-Signer
+2. Configure the aggregation wallet and gas station
+3. Edit and enable the aggregation strategy
+</Note>
+
+## Operation Process
+
+<Steps>
+
+<Step title="Configure Hot Storage Wallet">
+Log in to the Custody Web end and visit the [Cold Wallet] function. When using it for the first time, please first confirm whether the configuration of the [Auto Sweep] - [Omnibus Wallet and Gas Station] has been completed. The system will default to selecting the aggregation wallet as the hot wallet and select one of the wallets under the workspace. The commonly used address of this wallet will be used to store your assets and interact with the warm wallet and cold wallet, achieving distributed storage of assets and automated flow of funds.
+
+<Note>
+The Custody system recommends that exchange customers choose the aggregation wallet as the hot storage wallet.
+</Note>
+
+
+
+</Step>
+
+<Step title="View Asset Information">
+You can view all asset address information related to the current cold wallet solution, including total assets, hot wallet balance, warm wallet balance, and cold wallet balance.
+
+<Note>
+A self-operating cold wallet solution requires the user to have corresponding hot, warm, and cold wallet addresses for all asset networks. If you do not see the corresponding data, please handle it as soon as possible to avoid affecting the normal storage and scheduling of funds:
+1. No hot wallet address: Confirm whether the hot storage wallet has successfully followed the currency.
+2. No warm/cold wallet address: Please [create a contract](/user-guide/smart-contract-platform/create-contract), and then add the address according to the [contract address](/user-guide/mpc-wallet/cold-wallet-manage/contractaddress).
+</Note>
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/coldwalletasseten.png" width="400"/>
+</div>
+
+</Step>
+
+<Step title="Manually Initiate Asset Flowing">
+Users can manually initiate asset flowing tasks according to actual needs.
+
+1. Choose the method: including hot-to-warm, warm-to-hot, warm-to-cold.
+2. Initiate the transaction.
+
+<div className="w-full flex items-center justify-center">
+   <img src="/images/user-guide/manualassetflow1en.png" width="400"/>
+
+</div>
+
+<Note>
+Please note that warm-to-hot and warm-to-cold transactions require the warm wallet contract to meet the following requirements:
+1. The warm wallet contract has configured the [Vote-Free Address]().
+2. The Vote-Free Address of the warm wallet contract has enough main coins as the transfer gas fee.
+</Note>
+
+</Step>
+
+</Steps>
+
+### Manually Initiate Asset Flowing
+Users can manually initiate asset flowing tasks according to actual needs.
+
+1. Choose the method: including hot-to-warm, warm-to-hot, warm-to-cold.
+2. Initiate the transaction.
+
+<Steps>
+<Step title="Choose asset flowing token">
+   Visit the MPC wallet web interface, go to [Cold Wallet] - [Asset Management], and view all the currently available assets that can be scheduled.
+
+<div className="w-full flex items-center justify-center">
+   <img src="/images/user-guide/manualassetflow1en.png" width="400"/>
+
+</div>
+
+
+
+</Step>
+
+<Step title="Initiate Asset Flowing Order">
+  Select the asset to be transferred, choose the method, and manually initiate the scheduling order.
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+    <img src="/images/user-guide/manualassetflow2en.png" width="400"/>
+    <img src="/images/user-guide/manualassetflow3en.png" width="400"/>
+    </CardGroup>
+</div>
+
+
+<Note>
+Please note that warm-to-hot and warm-to-cold transactions require the warm wallet contract to meet the following requirements:
+1. The warm wallet contract has configured the [Vote-Free Address](/user-guide/smart-contract-platform/manage-vore-free).
+2. The Vote-Free Address of the warm wallet contract has enough main coins as the transfer gas fee.
+</Note>
+
+
+</Step>
+</Steps>
+
+
+
+## Frequently Asked Questions
+
+<Accordion title="How Should I Choose a Hot Storage Wallet?">
+The Custody system will default to setting the aggregation wallet of the workspace as the hot wallet. If you want to modify it, please choose the wallet responsible for daily trading deposits and withdrawals according to your daily business needs, or a wallet that centrally manages all asset storage under the workspace, and configure it as an aggregation wallet on the [Automatic Aggregation] function page.
+</Accordion>
+
+<Accordion title="Why Did My Asset Flowing Fail?">
+Warm-to-hot failures may occur for the following reasons:
+1. The current warm wallet contract has not added the hot wallet address to the whitelist.
+2. The warm wallet contract has not configured the Vote-Free Address.
+3. The Vote-Free Address of the current warm wallet contract does not have enough main chain coins to pay for the transaction gas fee.
+
+Hot-to-warm failures may occur for the following reasons:
+1. The currently selected hot wallet has not generated a currency address.
+2. The current warm wallet contract has not added the hot wallet to the whitelist.
+3. The warm wallet contract has not configured the Vote-Free Address.
+
+Warm-to-cold failures may occur for the following reasons:
+1. The current warm wallet contract has not added the cold wallet address to the whitelist.
+2. The warm wallet contract has not configured the Vote-Free Address.
+3. The Vote-Free Address of the current warm wallet contract does not have enough main chain coins to pay for the transaction gas fee.
+</Accordion>

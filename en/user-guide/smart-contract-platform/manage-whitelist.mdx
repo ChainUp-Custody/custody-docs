@@ -1,0 +1,130 @@
+---
+title: Managing Warm/Cold Wallet Contract Whitelist
+---
+
+
+## Function Overview
+
+On the ChainUp Custody's smart contract platform, you can link third-party wallets to add or remove whitelist addresses for the contracts you manage.
+
+Since the contract platform only supports transactions initiated to whitelist addresses (transactions to other addresses will automatically fail), Custody recommends adding the addresses of contracts that require Asset Flow and the addresses of hot wallets to the whitelist to ensure smooth isolation and Asset Flow.
+
+<Tip>
+1. Adding a whitelist proposal requires approval and confirmation by the contract signers. The proposal will only take effect after reaching the contract's multisig threshold.
+2. You can view the proposal creation record in the operation logs.
+3. You can view successfully initiated whitelist proposals in the [Transaction Records].
+</Tip>
+
+
+
+## Adding Contract Whitelist
+
+<Steps>
+
+<Step title="Select Network and Connect Wallet">
+Choose the contract network you wish to access based on your business needs, and connect your third-party wallet.
+
+<Tip>
+1. You may need to install a browser extension for the third-party wallet to invoke the wallet and access the contract on the Web.
+2. Custody supports the following contract networks:
+   - Ethereum
+   - Binance Smart Chain
+   - TRON
+   - Huobi ECO Chain
+3. Different network contracts support different wallets. For example, accessing TRON contracts requires connecting to TronLink or OKX.
+</Tip>
+</Step>
+
+<Step title="Select Contract">
+View the contract list, select the contract you wish to access, and click to enter the [Whitelist] page.
+
+<Tip>
+You can only access contract information where the connected wallet address is a signer.
+</Tip>
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+    <img src="/images/user-guide/selectwalleten.jpeg" width="400"/>
+    <img src="/images/user-guide/contractlisten.jpeg" width="400"/>
+    </CardGroup>
+</div>
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/whitelistpage1en.jpeg" width="400"/>
+</div>
+
+
+
+</Step>
+
+<Step title="Add Whitelist">
+Click the "Add" button to initiate a proposal for adding a whitelist.
+
+<Tip>
+You can add multiple whitelist addresses at once and set notes for them.
+</Tip>
+
+
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/addwhitelist1en.jpeg" width="400"/>
+</div>
+
+</Step>
+
+<Step title="Confirm Proposal and Sign">
+Sign the proposal and pay the gas fees using the connected third-party wallet address.
+
+
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/addwhitelist2en.jpeg" width="400"/>
+</div>
+
+</Step>
+
+</Steps>
+
+
+
+## Deleting Whitelist
+
+<Steps>
+
+<Step title="Select Whitelist">
+Select the whitelist address you wish to delete and initiate a deletion proposal.
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/deletewhitelisten.jpeg" width="400"/>
+</div>
+
+</Step>
+
+<Step title="Confirm Proposal and Sign">
+Sign the proposal and pay the gas fees using the connected third-party wallet address.
+
+
+</Step>
+
+</Steps>
+
+<Tip>
+1. Contract transaction proposals require approval and confirmation by the contract signers. The proposal will only take effect after reaching the contract's multisig threshold.
+2. You can view the proposal creation record in the operation logs.
+3. You can view successfully initiated transaction proposals in the [Transaction Records].
+</Tip>
+
+
+## Frequently Asked Questions
+
+<Accordion title="Why Can't I Initiate an Add or Delete Proposal?">
+Please ensure the following:
+
+1. You have successfully connected the third-party wallet;
+2. The connected wallet is a signer of the contract;
+3. Your contract has sufficient transfer funds;
+4. You have paid enough gas fees for the proposal transaction.
+
+If you still cannot create a contract, please contact online customer support for assistance.
+</Accordion>
+

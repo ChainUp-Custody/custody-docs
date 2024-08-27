@@ -1,0 +1,76 @@
+---
+title: Contract Transactions
+---
+
+
+## Function Overview
+
+On ChainUp Custody’s smart contract platform, you can link third-party wallets to view and manage all transaction information of a contract, as well as review and approve pending proposals.
+
+
+## Operation Process
+
+<Steps>
+
+<Step title="Select Network and Connect Wallet">
+Based on your business needs, choose the network where you want to create a contract, and connect your third-party wallet.
+
+<Tip>
+1. You may need to install a browser extension for the third-party wallet to invoke the wallet on the Web.
+2. Custody supports the following contract networks:
+   - Ethereum
+   - Binance Smart Chain
+   - TRON
+   - Huobi ECO Chain
+3. Different network contracts support different wallets. For example, when creating a TRON contract, you need to connect to TronLink or OKX.
+</Tip>
+</Step>
+
+<Step title="View Contract Transactions">
+Select a contract and enter the [Transaction Records] page.
+
+<Note>
+Only transaction proposals that have been initiated and successfully on-chained will be displayed in the [Transaction Records].
+</Note>
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+    <img src="/images/user-guide/selectwalleten.jpeg" width="400"/>
+    <img src="/images/user-guide/contractlisten.jpeg" width="400"/>
+    <img src="/en/images/user-guide/contracttransaction1en.jpeg" width="400"/>
+    </CardGroup>
+</div>
+
+
+
+
+</Step>
+
+<Step title="Approve Proposal">
+Select the type of proposal under [Pending for My Approval], choose the proposal you wish to approve, and proceed with the signature confirmation.
+
+<Note>
+Approving and confirming a proposal requires on-chain broadcasting and gas fee confirmation. If you do not wish to approve a proposal, Custody currently does not support rejecting proposals—please refrain from taking any action.
+</Note>
+
+<div className="w-full flex items-center justify-center">
+
+    <img src="/en/images/user-guide/contracttransaction2ecn.jpeg" width="400"/>
+   
+</div>
+</Step>
+
+</Steps>
+
+
+## Frequently Asked Questions
+
+<Accordion title="Why Can’t I View a Specific Proposal for the Contract?">
+Please ensure the following:
+
+1. You are a signer of the contract;
+2. The proposal has been successfully created and completed on-chain broadcasting.
+
+If you still cannot view the contract proposal, please contact Custody's customer support team for assistance.
+</Accordion>
+

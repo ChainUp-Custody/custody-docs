@@ -1,0 +1,126 @@
+---
+title: Contract Receiving and Transfer Operation
+---
+
+
+## Function Overview
+
+On the ChainUp Custody's smart contract platform, you can link third-party wallets to receive assets or manually initiate transfer transactions for the contracts you manage.
+
+
+
+
+## Contract Receiving
+
+<Steps>
+
+<Step title="Select Network and Connect Wallet">
+Based on your business needs, choose the contract network you wish to access and connect your third-party wallet.
+
+<Tip>
+1. You may need to install a browser extension for the third-party wallet to invoke the wallet and access the contract on the Web.
+2. Custody supports the following contract networks:
+   - Ethereum
+   - Binance Smart Chain
+   - TRON
+   - Huobi ECO Chain
+3. Different network contracts support different wallets. For example, accessing TRON contracts requires connecting to TronLink or OKX.
+</Tip>
+</Step>
+
+<Step title="Select Contract">
+View the contract list, select the contract you wish to access, and click to enter the [Asset Management] page.
+
+<Tip>
+You can only access contract information where the connected wallet address is a signer.
+</Tip>
+
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+    <img src="/images/user-guide/startcreatecontracten.png" width="400"/>
+    <img src="/images/user-guide/selectwalleten.jpeg" width="400"/>
+    <img src="/images/user-guide/contractlisten.jpeg" width="400"/>
+    </CardGroup>
+</div>
+
+</Step>
+
+<Step title="Contract Receiving">
+Select the [Receive] button to obtain the contract receiving address.
+
+<Tip>
+The contract address can receive all associated cryptocurrencies under the network. Sending other cryptocurrencies to this address will result in irreversible loss.
+</Tip>
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+    <img src="/images/user-guide/assetmanage1en.jpeg" width="400"/>
+    <img src="/images/user-guide/receive1en.jpeg" width="400"/>
+    </CardGroup>
+</div>
+</Step>
+
+</Steps>
+
+
+
+
+## Contract Transfer
+
+<Steps>
+
+<Step title="Select Transfer Assets">
+Select the contract assets you wish to transfer and initiate a contract transfer transaction proposal.
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/contracttransfer1en.jpeg" width="400"/>
+</div>
+</Step>
+
+<Step title="Confirm Transfer Information and Sign">
+Sign the proposal and pay the gas fees using the connected third-party wallet address.
+
+<Tip>
+1. The contract transfer proposal requires approval and confirmation by the contract signers. The proposal will only take effect after reaching the contract's multisig threshold.
+2. You can view the proposal creation record in the operation logs.
+3. You can view successfully initiated transfer proposals in the [Transaction Records].
+</Tip>
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/contracttransfer2en.jpeg" width="400"/>
+</div>
+
+</Step>
+
+</Steps>
+
+
+## Frequently Asked Questions
+
+<Accordion title="Why Can't I Initiate a Transfer Proposal?">
+Please ensure the following:
+
+1. You have successfully connected the third-party wallet;
+2. The connected wallet is a signer of the contract;
+3. Your contract has successfully added a transfer-free address;
+4. Your contract has sufficient transfer funds;
+5. You have paid enough gas fees for the proposal transaction.
+
+If you still cannot create a contract proposal, please contact online customer support for assistance.
+</Accordion>
+
+
+
+<Accordion title="Why Can't I View the Contract Receiving Records?">
+The following factors may cause you to be unable to view receiving records. Please wait for a while:
+
+1. The system has not yet successfully recorded the receipt;
+2. The system cannot parse the TXID;
+3. The Custody system does not currently support the receiving cryptocurrency.
+
+If you still cannot view the receiving records on the platform, please contact online customer support for assistance.
+</Accordion>
+
+
+

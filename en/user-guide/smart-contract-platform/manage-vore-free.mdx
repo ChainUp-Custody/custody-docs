@@ -1,0 +1,122 @@
+---
+title: Managing Vote Free Address
+---
+
+
+## Function Overview
+
+On the ChainUp Custody's smart contract platform, you can link third-party wallets to add or remove transfer-free addresses for your managed contracts.
+
+To enable automated transfers, you may need to add transfer-free addresses to the contract. Transactions initiated by these addresses do not require approval from signers to be successful.
+
+<Tip>
+1. Adding a transfer-free address proposal requires approval and confirmation by the contract signers. The proposal will only take effect after reaching the contract's multisig threshold.
+2. You can view the proposal creation record in the operation logs.
+3. You can view successfully initiated whitelist proposals in the [Transaction Records].
+</Tip>
+
+## Add A Transfer-Free Address
+
+### Obtaining Transfer-Free Address
+
+<Steps>
+<Step title="Log in to MPC Web">
+    Access the MPC wallet Web interface and select the [Cold Wallet] - [Contract Address] function.
+</Step>
+<Step title="Select Contract Network and Obtain Address">
+   Get the corresponding transfer-free address based on the contract network.
+
+<Tip>
+You need to create a funding allocation strategy for the relevant currency before the system can assign a transfer-free address to you.
+</Tip>
+
+</Step>
+
+</Steps>
+
+
+
+
+### Adding Transfer-Free Address
+
+<Steps>
+<Step title="Select Network and Connect Wallet">
+    Based on your business needs, choose the warm wallet contract network you wish to access and link your third-party wallet.
+<Tip>
+1. You may need to install a browser extension for the third-party wallet to invoke the wallet and access the contract on the Web.
+2. Custody supports the following contract networks:
+   - Ethereum
+   - Binance Smart Chain
+   - TRON
+   - Huobi ECO Chain
+3. Different network contracts support different wallets. For example, accessing TRON contracts requires connecting to TronLink or OKX.
+4. Only warm wallet contracts need to add transfer-free addresses.
+</Tip>
+
+
+</Step>
+<Step title="Select Contract">
+    View the contract list, select the contract you wish to access, and click to enter the [Transfer-Free Whitelist] page.
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+    <img src="/images/user-guide/startcreatecontracten.png" width="400"/>
+    <img src="/images/user-guide/selectwalleten.jpeg" width="400"/>
+    <img src="/images/user-guide/contractlisten.jpeg" width="400"/>
+    </CardGroup>
+</div>
+
+
+<Tip>
+You can only access contract information where the connected wallet address is a signer.
+</Tip>
+
+</Step>
+
+
+<Step title="Add Transfer-Free Address">
+    Click the "Add" button to initiate a proposal for adding a transfer-free address.
+    Sign the proposal and pay the gas fees using the connected third-party wallet address.
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+    <img src="/images/user-guide/votrfree1en.jpeg" width="400"/>
+    <img src="/images/user-guide/vorefree2en.jpeg" width="400"/>
+    <img src="/images/user-guide/votefree3en.jpeg" width="400"/>
+    </CardGroup>
+</div>
+
+
+</Step>
+</Steps>
+
+
+
+## III. Removing Transfer-Free Address
+<Steps>
+<Step title="Select Transfer-Free Address">
+   Select the transfer-free address you wish to delete and initiate a deletion proposal.
+
+
+
+</Step>
+<Step title="Confirm Proposal and Sign">
+ Sign the proposal and pay the gas fees using the connected third-party wallet address.
+
+</Step>
+
+</Steps>
+
+
+
+##  Frequently Asked Questions
+
+<Accordion title="Why Can't I Manage Transfer-Free Addresses?">
+1. You have successfully connected the third-party wallet;
+2. The connected wallet is a signer of the contract;
+3. Your contract has sufficient transfer assets;
+4. You have paid enough gas fees for the proposal.
+
+If you still cannot create a contract proposal, please contact online customer support for assistance.
+</Accordion>
+

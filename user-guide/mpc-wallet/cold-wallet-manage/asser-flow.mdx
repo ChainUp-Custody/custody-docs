@@ -1,0 +1,83 @@
+---
+title: 资金调度策略
+---
+
+
+## I. 功能简介
+
+用户可以查看当前工作站已生效的冷钱包方案的所有资金调度策略，并根据实际业务需求进行，新增，修改或删除。
+<Warning>
+只有工作站管理员和创建者可以编辑资金调度策略。
+</Warning>
+
+
+## II. 操作流程
+
+### 创建新策略
+
+<Steps>
+<Step title="新建资金调度规则">
+    访问MPC钱包Web端，选择【冷钱包】-【资金策略】，点击新增按钮。
+    <div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/policylist1cn.png" width="400"/>
+</div>
+</Step>
+<Step title="编辑策略内容">
+    选择策略币种，选择需要开启的调度策略并填写对应的参数。
+   具体策略介绍请参考 [MPC钱包：冷钱包管理](/help-center/manage-mpc/Coldwallet/managwallet)。
+   <div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+    <img src="/images/user-guide/policylist2cn.png" width="400"/>
+    <img src="/images/user-guide/policylist3cn.png" width="400"/>
+    <img src="/images/user-guide/policylist4cn.png" width="400"/>
+    </CardGroup>
+</div>
+</Step>
+</Steps>
+
+
+### 删除策略
+
+<Steps>
+<Step title="查看资金调度规则">
+   访问MPC钱包Web端，选择【冷钱包】-【资金策略】，查看当前生效的所有资金调度策略。
+
+</Step>
+
+<Step title="提交删除申请">
+    选择策略币种，选择需要开启的调度策略并填写对应的参数。
+   具体策略介绍请参考 [MPC钱包：冷钱包管理](/help-center/manage-mpc/Coldwallet/managwallet)。
+   选择想要删除的策略，验证GA后即可生效。
+</Step>
+</Steps>
+
+
+
+
+
+### 查看调度记录
+
+选择当前生效策略，进入策略详情，点击详情按钮，查看该策略发起的资金调度详情。
+
+<div className="w-full flex items-center justify-center">
+   <img src="/images/user-guide/assetflowlistcn.png" width="400"/>
+</div>
+
+
+
+
+
+
+
+## III. 常见问题
+
+<Accordion title="什么情况下我的资金调度策略会出现异常？">
+以下因素可能造成资金调度策略无法运行：
+1. 工作站没有配置归集钱包。
+2. 归集钱包（热钱包）没有关注并生成对应的币种地址。
+3. 温冷钱包合约没有添加对应的白名单地址。
+4. 温钱包没有添加转账免投票地址。
+5. 转账免投票地址缺乏足够的交易矿工费。
+</Accordion>
+
+

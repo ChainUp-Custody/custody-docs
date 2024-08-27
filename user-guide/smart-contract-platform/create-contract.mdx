@@ -1,0 +1,103 @@
+---
+title: 创建温/冷钱包合约
+---
+
+### I. 功能简介
+
+在ChainUp Custody提供的智能合约平台，您可以链接第三方钱包，创建不同网络的温钱包或冷钱包合约。
+
+---
+
+## II. 操作流程
+
+<Steps>
+
+<Step title="选择网络并连接钱包">
+根据您的业务需求，选择您想要创建合约的网络，并链接您的第三方钱包。
+
+<Tip>
+1. 您可能需要安装第三方钱包的浏览器插件，才能在Web端调用钱包。
+2. Custody支持的合约网络包括：
+   - Ethereum
+   - Binance Smart Chain
+   - TRON
+   - Huobi ECO Chain
+3. 创建不同的网络合约可选择的第三方钱包范围不同，例如创建TRON合约时只可链接TronLink或OKX。
+</Tip>
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+    <img src="/images/user-guide/startcreatecontractcn.png" width="400"/>
+    <img src="/images/user-guide/selectwalletcn.jpeg" width="400"/>
+    <img src="/images/user-guide/contractlistcn.jpeg" width="400"/>
+    </CardGroup>
+</div>
+
+
+
+
+
+</Step>
+
+<Step title="编辑合约内容">
+您可以编辑新合约的以下参数：
+1. 合约名称
+2. 合约成员信息：共管合约的签名者地址与签名者备注
+3. 多签阈值：任何合约交易（包括合约配置修改）需要确认的签名者人数
+
+<Note>
+由于任何合约签名人将默认同意并签署其所发起的提案。若要实现共同管理，请为每个合约添加2位及以上的签名人，并将多签阈值设定为大于等于2，以提高交易安全性。
+</Note>
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/designcontractcn.jpeg" width="400"/>
+</div>
+
+</Step>
+
+<Step title="发起合约交易">
+确认提案的信息，使用链接的第三方钱包地址进行签名并支付矿工费。
+
+
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/createcontractsigncn.jpeg" width="400"/>
+</div>
+
+
+</Step>
+
+<Step title="执行">
+发起提案后，等待创建合约的结果。
+
+<Tip>
+1. 如果您不是合约的签名人，创建成功后也无法查看或管理合约。
+2. 您可以在操作记录中查看提案的创建记录。
+</Tip>
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/waitingcreatiioncn.jpeg" width="400"/>
+</div>
+
+
+
+</Step>
+
+</Steps>
+
+---
+
+## III. 常见问题
+
+<Accordion title="为什么我无法创建合约？">
+请确认以下几点：
+
+1. 您是否成功链接了第三方钱包；
+2. 您是否为创建合约的交易支付了足够的矿工费。
+
+如果您仍然无法创建合约，请联系Custody客服团队寻求帮助。
+</Accordion>
+
+---
+
+

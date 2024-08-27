@@ -1,0 +1,88 @@
+---
+title: Asset Flow strategy
+---
+
+
+
+## Function Overview
+
+Users can view all active Asset Flow strategies for the cold wallet solution in the current workspace and create, modify, or delete them based on actual business needs.
+<Warning>
+Only workspace administrators and creators can edit Asset Flow strategies.
+</Warning>
+
+## Operation Process
+
+### Create a New Strategy
+
+<Steps>
+
+<Step title="Create a New Asset Flow Strategy">
+   Access the MPC Wallet Web portal, select [Cold Wallet] - [Asset Strategy], and click the "Add" button.
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/contractpolicy1en.png" width="400"/>
+</div>
+
+</Step>
+
+<Step title="Edit Strategy Content">
+   Choose the strategy's currency, select the Asset Flow strategy to be activated, and fill in the corresponding parameters.
+   For detailed strategy descriptions, please refer to [MPC Wallet: Cold Wallet Management](/help-center/manage-mpc/coldwallet/managecoldwallet).
+   <div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+    <img src="/images/user-guide/contractpolicy2en.png" width="400"/>
+    <img src="/images/user-guide/contractpolicy3en.png" width="400"/>
+    <img src="/images/user-guide/contractpolicy4en.png" width="400"/>
+    </CardGroup>
+</div>
+
+
+
+</Step>
+
+</Steps>
+
+### Delete a Strategy
+
+<Steps>
+
+<Step title="View Asset Flow Strategies">
+   Access the MPC Wallet Web portal, select [Cold Wallet] - [Asset Strategy], and view all active Asset Flow strategies.
+</Step>
+
+<Step title="Submit Deletion Request">
+   Select the strategy you wish to delete, verify with GA, and it will take effect.
+</Step>
+
+</Steps>
+
+### View Flow Records
+
+<Steps>
+
+<Step title="Select Strategy">
+   Access the MPC Wallet Web portal, select [Cold Wallet] - [Asset Strategy], and view all active Asset Flow strategies.
+</Step>
+
+<Step title="View Records">
+   Select the active strategy, enter the strategy details, and click the "Details" button to view the Asset Flow details initiated by that strategy.
+</Step>
+
+</Steps>
+
+
+## Frequently Asked Questions
+
+<Accordion title="Under What Circumstances Might My Asset Flow Strategy Fail?">
+The following factors may cause the Asset Flow strategy to fail:
+1. The workspace has not configured the aggregation wallet.
+2. The aggregation wallet (hot wallet) has not followed and generated the corresponding currency address.
+3. The warm/cold wallet contract has not added the corresponding whitelist address.
+4. The warm wallet has not added the Vote-Free Address.
+5. The Vote-Free Address lacks sufficient transaction gas fees.
+</Accordion>
+
+
+
+
+

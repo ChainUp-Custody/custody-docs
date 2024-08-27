@@ -1,0 +1,116 @@
+---
+title: 资产管理
+---
+
+
+## I. 功能简介
+
+ChainUp Custody MPC钱包的冷钱包功能为用户提供了全面的资金管理和调度能力，具体功能包括：
+1. 查看资金详情：用户可以查看当前热钱包、温钱包、冷钱包的资金详情，包括各钱包的资产分布和余额情况。
+2. 修改热钱包：用户可以根据实际需求修改热钱包的配置，以适应不同的资金调度策略。
+3. 手动发起资金调度任务：用户可以手动发起资金调度任务，如温转热、温转冷、热转温等，实现资金的灵活调度和管理。
+
+这些功能帮助用户实现资金冷热存储的平衡，确保资产安全与高效运作。
+<Note>
+通常，冷钱包方案需要配合API和归集功能共同使用。Custody系统建议您先完成以下操作再使用冷钱包功能
+1.开通API Co-Signer
+2.配置归集钱包和加油站
+3.编辑并开启归集策略
+
+</Note>
+
+## II. 操作流程
+
+<Steps>
+<Step title="配置热存储钱包">
+登录Custody Web端，访问【冷钱包】功能。初次使用时，请先确定是否已完成【自动归集】-【归集钱包和加油站】的配置，系统将默认选择归集钱包作为热钱包选择工作站下的某一钱包，该钱包的常用地址将用于存储您的资产，并与温钱包和冷钱包进行交互，实现资产的分布式存储与资金的自动化流转。
+
+<Note>
+Custody系统建议交易所客户选择归集钱包作为热存储钱包。
+</Note>
+
+<div className="w-full flex items-center justify-center">
+    <img src="/en/images/user-guide/coldwalletassetcn.png" width="200"/>
+</div>
+
+</Step>
+
+<Step title="查看资产信息">
+您可以查看当前冷钱包方案相关的所有资产地址信息，包括总资产、热钱包余额、温钱包余额和冷钱包余额。
+
+<Note>
+一套自运转的冷钱包解决方案要求用户对所有资产网络都拥有对应的热、温、冷钱包地址。如果未看到对应数据，请尽快处理，以免影响资金的正常存储和调度：
+1. 无热钱包地址：确认热存储钱包是否成功关注币种。
+2. 无温/冷钱包地址：请[创建合约](/user-guide/smart-contract-platform/create-contract)，再根据[合约地址](/user-guide/mpc-wallet/cold-wallet-manage/contractaddress)添加地址。
+</Note>
+
+</Step>
+</Steps>
+
+### 手动调度资金
+
+用户可以根据实际需求手动发起资金调度订单。
+
+1. 选择调度方式：包括热转温、温转热、温转冷。
+2. 发起交易。
+
+<Steps>
+<Step title="选择需调度的币种">
+   访问MPC钱包Web端，查看【冷钱包】-【资金管理】，查看当前所有可调度的资产币种。
+
+<div className="w-full flex items-center justify-center">
+   <img src="/images/user-guide/manualflow1cn.png" width="400"/>
+
+</div>
+
+
+
+</Step>
+
+<Step title="手动发起调度">
+   选择需调度币种，选择调度方式，手动发起调度订单。
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+    <img src="/images/user-guide/manualflow2cn.png" width="400"/>
+    <img src="/images/user-guide/manualflow3cn.png" width="400"/>
+    </CardGroup>
+</div>
+
+
+<Note>
+请注意，温转热和温转冷交易要求温钱包合约满足以下要求：
+1. 温钱包合约已配置了[转账免投票地址](/user-guide/smart-contract-platform/manage-vore-free)。
+2. 温钱包合约的转账免投票地址拥有足够的主币作为转账矿工费。
+</Note>
+
+
+</Step>
+</Steps>
+
+
+
+## III. 常见问题
+
+<Accordion title="我应该如何选择热存储钱包？">
+Custody系统会默认将工作站的归集钱包设置为热钱包，
+如果您想修改，请根据您的日常业务需求选择负责日常交易出入金的钱包，或统一管理工作站下所有资产存储的钱包，并在【自动归集】功能页面配置为归集钱包。
+</Accordion>
+
+<Accordion title="为什么我的资金调度发起失败？">
+温转热失败可能有以下原因：
+1. 当前温钱包合约没有将热钱包地址加入白名单。
+2. 温钱包合约没有配置转账免投票地址。
+3.当前温钱包合约的转账免投票地址没有足够的主链币用于支付交易矿工费。
+
+热转温失败可能有以下原因：
+1. 当前选择的热钱包没有生成币种地址。
+2. 当前温钱包合约没有将热钱包加入白名单。
+3. 温钱包合约没有配置转账免投票地址。
+
+温转冷失败可能有以下原因：
+1. 当前温钱包合约没有将冷钱包地址加入白名单。
+2. 温钱包合约没有配置转账免投票地址。
+3.当前温钱包合约的转账免投票地址没有足够的主链币用于支付交易矿工费。
+
+</Accordion>

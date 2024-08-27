@@ -1,0 +1,79 @@
+---
+title: Cold Wallet Solution Configuration Process
+---
+
+<Steps>
+
+<Step title="Creating Warm and Cold Wallet Contracts">
+Log in to the [Smart Contract Platform], select the asset network you want to manage, and connect your third-party wallet to initiate the contract creation transaction.
+<Note>
+Refer to [Create Contract](/user-guide/smart-contract-platform/create-Contract) for the contract creation process.
+
+
+</Note>
+If you're a co-manager of the cold wallet, add your third-party wallet address as a contract signatory.
+You'll need to pay a miner fee through the connected wallet to create the contract.
+Different network contracts might require different wallets. For instance, a TRON wallet contract can only be created using TronLink.
+The created network contract can receive all token assets within that network.
+</Step>
+
+<Step title="Selecting a Hot Storage Wallet">
+Log in to the MPC Wallet Web Interface, and choose the Cold Wallet feature. The system will automatically select the collection wallet as the hot storage wallet. The frequently used addresses of the collection wallet will serve as hot wallet addresses, coordinating with other wallet contracts to manage asset storage separation and asset flow.
+
+<Note>
+If the workspace hasn’t selected a collection wallet, please configure it first in Auto Sweep. For more information, see [Asset Management](/user-guide/mpc-wallet/cold-wallet-manage/asset-manage).
+</Note>
+</Step>
+
+<Step title="Adding Contract Address Information">
+Add the successfully created smart contract addresses to the MPC Wallet's contract address list. The assets at these addresses will be managed and scheduled together with the selected MPC hot wallet address.
+Access the MPC Wallet Web Interface, select Cold Wallet > Contract Address, and click Add.
+Choose the contract network and input the successfully created hot wallet and cold wallet contract addresses.
+Verify with GA and submit the add request. This request will only become effective after approval in accordance with the workspace strategy.
+<Note>
+For detailed instructions on the add process, see [Contract Address](/user-guide/mpc-wallet/cold-wallet-manage/contractaddress).
+</Note>
+</Step>
+
+<Step title="Adding Smart Contract Whitelist">
+For security, set strict whitelist addresses for the hot/cold wallets. Wallet contracts can only transfer to whitelist addresses, preventing transfers to non-whitelist addresses.
+
+For warm wallet contracts: Custody recommends adding cold contract and hot wallet addresses to the whitelist to ensure smooth storage and transfer of funds between hot and cold wallets.
+For cold wallet contracts: Custody recommends adding hot contract and hot wallet addresses to the whitelist to ensure smooth storage and transfer of funds between warm and hot wallets.
+
+1. og in to the Smart Contract Platform, select the network and contract to manage.
+2. Use the Whitelist feature to propose adding a new address. See Whitelist for the detailed add process.
+3. Wait for the proposal to be approved.
+
+<Note>
+Only contract signatories can manage contract information and initiate related proposals. Proposal publication and approval must be broadcast on-chain, incurring a miner fee. For more details on initiating proposals, refer to [Whitelist](/user-guide/smart-contract-platform/manage-whitelist).
+</Note>
+</Step>
+
+<Step title="Adding Vote-Free Transfer Addresses">
+
+To automate transfers, you can add vote-free transfer addresses. Transfers initiated by these addresses within the contract will not require signatory approval. Use vote-free addresses alongside cold wallet strategies to automate fund management.
+1. Log in to the MPC Wallet Web Interface, go to Cold Wallet > Contract Address, and retrieve the system-assigned vote-free transfer addresses for different networks.
+2. Log in to the Smart Contract Platform, select the corresponding network’s hot wallet contract, enter the contract, and propose adding the vote-free transfer address.
+3. Wait for the proposal to be approved.
+
+
+<Note>
+Only contract signatories can manage contract information and initiate related proposals. Proposal publication and approval must be broadcast on-chain, incurring a miner fee. For more information on initiating proposals, see [Vote-Free Transfer](/user-guide/smart-contract-platform/manage-vore-free).
+</Note>
+</Step>
+
+<Step title="Configuring Asset Flow Strategies">
+
+To automate transfers, configure the relevant asset flow strategies. The system will monitor the assets of the wallet and contract addresses according to predefined rules.
+1. Go to the MPC Wallet Web Interface, select Cold Wallet > Asset Flow Strategy, and click Add.
+2. Choose the strategy currency, select the scheduling strategy, and fill in the appropriate parameters.
+
+<Note>
+Only the workspace owner and admins can edit asset flow strategies. For more information on editing fund scheduling strategies, please refer to [Asset Flow Strategy](/user-guide/mpc-wallet/cold-wallet-manage/asser-flow).
+</Note>
+</Step>
+
+</Steps>
+
+

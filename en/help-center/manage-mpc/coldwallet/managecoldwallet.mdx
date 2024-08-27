@@ -1,0 +1,98 @@
+---
+title: Manage Cold Wallet
+---
+
+## Overview
+
+
+
+The MPC Wallet Web Interface provides configuration and operation features for asset hot storage, allowing online viewing and analysis through a data dashboard. Combined with the smart contract platform [link], it facilitates cold storage isolation and automated asset scheduling. The MPC cold wallet functionalities include:
+
+- Asset Management: Comprehensive management and monitoring of assets in the cold wallet.
+- Multi-Signature Addresses: Setup and management of multi-signature addresses to ensure transaction security.
+- Funding Strategies: Configuration and adjustment of fund scheduling strategies to optimize asset allocation.
+- Alert Notifications: Real-time alerts and notifications to promptly address potential risks.
+- Scheduling Management: Automated management of asset scheduling to enhance operational efficiency.
+
+Through these features, the MPC wallet offers users a secure, efficient, and flexible asset management solution.
+
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/coldoperateen.jpeg" width="1000"/>
+</div>
+
+
+
+
+## Introduction
+
+### Asset Management 
+
+The MPC Wallet Web Interface provides a visual data dashboard, allowing users to quickly understand the current asset distribution within the MPC wallet. Users can manually adjust fund scheduling according to their needs to achieve a balance between hot and cold storage.
+
+
+
+### Contract Address
+1. View and edit the addresses of hot wallet contracts and cold wallet contracts associated with different networks in the MPC wallet.
+
+
+<Note>
+Editing the addresses of hot and cold wallet contracts requires approval from the workspace strategy.
+
+
+</Note>
+
+2. View the system-assigned vote-free transfer addresses
+
+Please review the addresses and configure them within the corresponding hot wallet contracts. Vote-free transfer addresses will automatically initiate transactions for hot-to-warm, warm-to-hot, and warm-to-cold transfers according to the fund scheduling strategy. This ensures that funds are distributed proportionally and meets the daily transaction needs of the hot wallet.
+
+
+
+
+<Note>
+The configuration is considered successful only after a signatory of the hot wallet logs into the smart contract platform, initiates a proposal to configure the vote-free transfer addresses, and the proposal is approved.
+
+
+</Note>
+
+
+### Assets Strategy
+1. View and manage the strategies for the MPC cold wallet solution
+
+
+
+Strategy Type | Strategy Purpose | Trigger Frequency|
+------- | ------- | ------- |
+Hot to Warm |Transfer funds to less frequently connected warm wallets to enhance asset security.|10 minutes/interval| 
+Warm to Hot|Quickly respond to hot wallet liquidity demands to ensure business continuity.| 10 minutes/interval|
+Warm to Cold | Maximize the security of long-term stored funds.|One Time/Day|
+
+
+
+
+
+2. Understand the current asset flowing status of the wallet
+
+
+
+
+
+### Alert Notifications
+
+
+The MPC Wallet Web Interface also supports event monitoring and alert functionalities to ensure users can respond promptly to critical events:
+
+1. Address Asset Balance Monitoring: The system continuously monitors the asset quantity in the wallet. If an address balance falls below the configured parameter, the system will trigger an alert and send a notification to the designated email address.
+
+2. Task Status Monitoring: The system monitors the status of tasks such as hot-to-warm, warm-to-cold, and warm-to-hot transfers, and reports the status to the client.
+
+These monitoring and alert features help users manage and protect their assets more effectively, ensuring the security of their funds.
+
+
+
+
+
+### Assets Flow Management
+The MPC Wallet Web Interface also supports viewing and filtering transaction details for scheduling tasks across all networks, ensuring that users can comprehensively understand and manage their scheduling tasks.
+
+

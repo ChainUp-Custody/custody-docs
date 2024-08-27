@@ -1,0 +1,103 @@
+---
+title: Creating Warm/Cold Wallet Contracts
+---
+
+
+
+## Function Overview
+
+On the ChainUp Custody's smart contract platform, you can link third-party wallets and create warm or cold wallet contracts across different networks.
+
+
+
+## Operation Process
+
+<Steps>
+
+<Step title="Select Network and Connect Wallet">
+Choose the network on which you want to create a contract based on your business needs, and connect your third-party wallet.
+
+<Tip>
+1. You may need to install a browser extension for the third-party wallet to invoke the wallet on the Web.
+2. Custody supports the following contract networks:
+   - Ethereum
+   - Binance Smart Chain
+   - TRON
+   - Huobi ECO Chain
+3. Different network contracts support different wallets. For example, creating a TRON contract requires connecting to TronLink or OKX.
+</Tip>
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+    <img src="/images/user-guide/startcreatecontracten.png" width="400"/>
+    <img src="/images/user-guide/selectwalleten.jpeg" width="400"/>
+    <img src="/images/user-guide/contractlisten.jpeg" width="400"/>
+    </CardGroup>
+</div>
+
+
+
+
+
+</Step>
+
+<Step title="Edit Contract Content">
+You can edit the following parameters for the new contract:
+1. Contract Name
+2. Contract Members: Signer addresses and signer notes for the multisig contract
+3. Multisig Threshold: The number of signers required to confirm any contract transaction (including contract configuration modifications)
+
+<Note>
+Since any contract signer will default to agree and sign the proposal they initiate, to achieve joint management, add 2 or more signers for each contract and set the multisig threshold to 2 or higher to enhance transaction security.
+</Note>
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/designcontracten.jpeg" width="400"/>
+</div>
+
+
+</Step>
+
+<Step title="Initiate Contract Transaction">
+Confirm the proposal information, sign using the connected third-party wallet address, and pay the gas fees.
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/createcontractsignen.jpeg" width="400"/>
+</div>
+
+
+</Step>
+
+<Step title="Execute">
+After initiating the proposal, wait for the contract creation results.
+
+<Tip>
+1. If you are not a signer of the contract, you will not be able to view or manage the contract after its creation.
+2. You can view the proposal creation record in the operation logs.
+</Tip>
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/waitingcreatiionen.jpeg" width="400"/>
+</div>
+
+
+
+
+</Step>
+
+</Steps>
+
+
+
+
+## Frequently Asked Questions
+
+<Accordion title="Why Can't I Create a Contract?">
+Please ensure the following:
+
+1. You have successfully connected the third-party wallet.
+2. You have paid sufficient gas fees for the contract creation transaction.
+
+If you still cannot create a contract, please contact the Custody customer service team for assistance.
+</Accordion>
+

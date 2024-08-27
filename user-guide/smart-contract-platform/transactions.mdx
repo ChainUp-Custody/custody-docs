@@ -1,0 +1,74 @@
+---
+title: 合约交易记录
+---
+
+
+## I. 功能简介
+
+在ChainUp Custody提供的智能合约平台，您可以链接第三方钱包，查看并管理合约的所有交易信息，了解并审批未完成的提案。
+
+
+## II. 操作流程
+
+<Steps>
+
+<Step title="选择网络并连接钱包">
+根据您的业务需求，选择您想要创建合约的网络，并链接您的第三方钱包。
+<Tip>
+1. 您可能需要安装第三方钱包的浏览器插件，才能在Web端调用钱包。
+2. Custody支持的合约网络包括：
+   - Ethereum
+   - Binance Smart Chain
+   - TRON
+   - Huobi ECO Chain
+3. 不同的网络合约支持的钱包范围不同，例如创建TRON合约时需要链接TronLink或OKX。
+</Tip>
+
+
+
+
+</Step>
+
+<Step title="查看合约交易">
+选择合约，并进入【交易记录】页面。
+<Note>
+只有已经发起并成功上链的交易提案才可以展示在【交易记录】里。
+</Note>
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+    <img src="/images/user-guide/selectwalletcn.jpeg" width="400"/>
+    <img src="/images/user-guide/contractlistcn.jpeg" width="400"/>
+    <img src="/images/user-guide/contracttransactions1cn.jpeg" width="400"/>
+    </CardGroup>
+</div>
+</Step>
+
+<Step title="审批提案">
+选择【待我确认】的提案类型，选择希望通过的提案，进行签名确认。
+<Note>
+审批并确认提案需上链广播并确认矿工费。
+如果您不希望通过某提案，目前Custody系统不支持拒绝提案操作，请勿进行任何操作。
+</Note>
+
+<div className="w-full flex items-center justify-center">
+
+    <img src="/images/user-guide/contracttransaction2cn.jpeg" width="400"/>
+</div>
+</Step>
+
+</Steps>
+
+
+
+## III. 常见问题
+
+<Accordion title="为什么我无法查看合约的某笔提案？">
+请确认以下几点：
+
+1. 您是否为合约的签名人；
+2. 该笔合约是否已经成功创建并完成链上广播。
+
+如果您仍然无法查看合约提案，请联系Custody客服团队寻求帮助。
+</Accordion>
+

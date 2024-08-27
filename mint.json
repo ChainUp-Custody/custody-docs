@@ -360,6 +360,8 @@
                 "help-center/manage-mpc/consolidation/co-signer/about",
                 "help-center/manage-mpc/consolidation/co-signer/rules",
                 "help-center/manage-mpc/consolidation/co-signer/execute"
+               
+        
               ]
         },
         {
@@ -367,6 +369,16 @@
           "pages": [
             "help-center/manage-mpc/strategy/transfer",
             "help-center/manage-mpc/strategy/workspace"
+          ]
+        },
+        {
+          "group": "冷钱包方案",
+          "pages": [
+            "help-center/manage-mpc/Coldwallet/coldwalletsolution",
+            "help-center/manage-mpc/Coldwallet/smartcontractplatform",
+            "help-center/manage-mpc/Coldwallet/managwallet",
+            "help-center/manage-mpc/Coldwallet/allsteps"
+            
           ]
         }
       ]
@@ -473,8 +485,57 @@
       "user-guide/mpc-wallet/web3/fil-node",
       "user-guide/mpc-wallet/web3/dapp"
     ]
+  },
+  {
+    "group": "冷钱包管理",
+    "pages":[
+      "user-guide/mpc-wallet/cold-wallet-manage/asser-flow",
+      "user-guide/mpc-wallet/cold-wallet-manage/asset-manage",
+      "user-guide/mpc-wallet/cold-wallet-manage/cold-alert",
+      "user-guide/mpc-wallet/cold-wallet-manage/contractaddress"
+    ]
   }
 ]
+},
+{
+  "group": "智能合约平台",
+  "pages": [
+    {
+      "group": "合约管理",
+      "pages": [
+        "user-guide/smart-contract-platform/create-contract"
+      ]
+    },
+    {
+      "group": "合约成员",
+      "pages": [
+        "user-guide/smart-contract-platform/manage-memebers"
+      ]
+    },
+    {
+      "group": "合约白名单",
+      "pages": [
+       
+        "user-guide/smart-contract-platform/manage-whitelist"
+      ]
+    },
+    {
+      "group": "转账免投票",
+      "pages": [
+  
+        "user-guide/smart-contract-platform/manage-vore-free"
+      ]
+    },
+    {
+      "group": "合约交易",
+      "pages": [
+      
+        "user-guide/smart-contract-platform/receive-trans",
+        "user-guide/smart-contract-platform/transactions"
+        
+      ]
+    }
+  ] 
 },
 {
   "group": "全托管",

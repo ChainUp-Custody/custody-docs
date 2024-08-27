@@ -369,6 +369,17 @@
             "help-center/manage-mpc/strategy/workspcae"
     
           ]
+        },
+        {
+          "group": "Cold Wallet",
+          "pages": [
+            "help-center/manage-mpc/coldwallet/coldwalletsolution",
+            "help-center/manage-mpc/coldwallet/smartcontractsystem",
+            "help-center/manage-mpc/coldwallet/managecoldwallet",
+            "help-center/manage-mpc/coldwallet/allsteps"
+            
+    
+          ]
         }
       ]
     },
@@ -476,9 +487,59 @@
         "user-guide/mpc-wallet/web3/fil-node",
         "user-guide/mpc-wallet/web3/dapp"
       ]
+    },
+    {
+      "group": "Cold Wallet Management",
+      "pages":[
+        "user-guide/mpc-wallet/cold-wallet-manage/asser-flow",
+        "user-guide/mpc-wallet/cold-wallet-manage/asset-manage",
+        "user-guide/mpc-wallet/cold-wallet-manage/cold-alert",
+        "user-guide/mpc-wallet/cold-wallet-manage/contractaddress"
+      ]
     }
   ]
-  },
+},
+{
+  "group": "Smart Contract Platform",
+  "pages": [
+    {
+      "group": "Contract Management",
+      "pages": [
+        "user-guide/smart-contract-platform/create-contract"
+      ]
+    },
+    {
+      "group": "Contract Member",
+      "pages": [
+        "user-guide/smart-contract-platform/manage-memebers"
+      ]
+    },
+    {
+      "group": "Contract Whitelist",
+      "pages": [
+       
+        "user-guide/smart-contract-platform/manage-whitelist"
+      ]
+    },
+    {
+      "group": "Vote-Free",
+      "pages": [
+  
+        "user-guide/smart-contract-platform/manage-vore-free"
+      ]
+    },
+    {
+      "group": "Contract Transaction",
+      "pages": [
+      
+        "user-guide/smart-contract-platform/receive-trans",
+        "user-guide/smart-contract-platform/transactions"
+        
+      ]
+    }
+  ] 
+
+},
 {
   "group": "Full Custody",
   "pages": [

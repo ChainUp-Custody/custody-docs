@@ -1,0 +1,125 @@
+---
+title: 管理温钱包转账免投票地址
+---
+
+## I. 功能简介
+
+在ChainUp Custody提供的智能合约平台，您可以链接第三方钱包，为您管理的合约添加或删除转账免投票。
+
+为了实现自动化转账，您可以需要为合约添加转账免投票地址，该地址发起的合约转账交易无需经过签名者同意即可成功。
+
+
+<Tip>
+1. 新增转账免投票地址提案需要经过合约签名者进行审批确认，达到合约多签阈值后提案才可生效。
+2. 您可以在操作记录中查看提案的创建记录。
+3. 您可以在【交易记录】查看已成功发起的白名单提案。
+</Tip>
+
+## II. 添加转账免投票地址
+
+### 获取转账免投票地址
+
+<Steps>
+<Step title="登陆MPC Web端">
+    访问MPC钱包 Web端，选择【冷钱包】-【合约地址】功能
+</Step>
+<Step title="选择合约对应网络，获取地址">
+    根据合约的网络，获取对应的转账免投票地址
+
+<Tip>
+您需要先创建相关币种的资金调度策略后，系统才可为您分配转账免投票地址。
+
+</Tip>
+
+</Step>
+
+</Steps>
+
+
+
+
+### 发起新增转账免投票地址提案
+
+<Steps>
+<Step title="选择网络并连接钱包">
+    根据您的业务需求，选择您访问的温钱包合约网络，并链接您的第三方钱包。
+<Tip>
+1. 您可能需要安装第三方钱包的浏览器插件，才能在Web端调用钱包并访问合约。
+2. Custody支持的合约网络包括：
+   - Ethereum
+   - Binance Smart Chain
+   - TRON
+   - Huobi ECO Chain
+3. 不同的网络合约支持的钱包范围不同，例如访问TRON合约时需要链接TronLink或OKX。
+4. 只有温钱包合约才需要添加转账免投票地址。
+</Tip>
+
+
+
+
+
+</Step>
+<Step title="选择合约">
+    查看合约列表，选择想要访问的合约，点击进入【转账免投票】页面
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+    <img src="/images/user-guide/startcreatecontractcn.png" width="400"/>
+    <img src="/images/user-guide/selectwalletcn.jpeg" width="400"/>
+    <img src="/images/user-guide/contractlistcn.jpeg" width="400"/>
+    </CardGroup>
+</div>
+
+
+<Tip>
+您仅可访问连接钱包地址为签名者的合约信息。
+</Tip>
+
+</Step>
+<Step title="新增转账免投票地址">
+    点击新增按钮，发起新增转账免投票地址提案。使用链接的第三方钱包地址签名并支付提案矿工费。
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+    <img src="/images/user-guide/votrfree1cn.jpeg" width="400"/>
+    <img src="/images/user-guide/vorefree2cn.jpeg" width="400"/>
+    <img src="/images/user-guide/votefree3cn.jpeg" width="400"/>
+    </CardGroup>
+</div>
+
+
+
+
+</Step>
+</Steps>
+
+
+
+## III. 删除转账免投票地址
+<Steps>
+<Step title="选择转账免投票地址">
+   选择希望删除的转账免投票地址，发起一笔删除提案。
+
+</Step>
+<Step title="确认提案信息并签名">
+ 使用链接的第三方钱包地址签名并支付提案矿工费。
+
+</Step>
+
+</Steps>
+
+
+
+##  III. 常见问题
+
+<Accordion title="为什么我无法管理转账免投票地址？">
+请确认以下几点：
+
+1. 您是否成功链接了第三方钱包；
+2. 您链接的钱包是否是合约的签名人；
+3. 您的合约是否有足够的转账资金；
+4. 您是否为提案交易支付了足够的矿工费。
+
+如果您仍然无法创建合约提案，请联系在线客服寻求帮助。
+</Accordion>
+

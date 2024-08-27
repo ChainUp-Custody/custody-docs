@@ -1,0 +1,98 @@
+---
+title: Contract Address Management
+---
+
+
+
+## Introduction
+
+Users can view all the warm and cold wallet contract addresses linked to the MPC hot wallet and retrieve the corresponding Vote-Free Address for each contract.
+
+
+## Operating Process
+
+
+
+<Steps>
+
+<Step title="Create New Fund Scheduling Rule">
+   Access the MPC Wallet Web portal, select [Cold Wallet] - [Contract Address], and click the Add button.
+ <div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/contractlist1en.png" width="400"/>
+</div>
+
+
+</Step>
+
+<Step title="Edit Address Details">
+   Select the contract network and fill in the warm wallet and cold wallet contract addresses.
+
+   <Note>
+   Note: Supports batch adding of contract addresses on the same network. Please retrieve the created contract address information from the [Smart Contract Platform] and fill it in.
+   </Note>
+
+  <div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/contractlist2en.png" width="400"/>
+</div>
+
+
+</Step>
+
+<Step title="Submit Application">
+   After completing the information, verify GA, and you can submit the application. This application needs to be approved by the workspace strategy before it takes effect.  
+   You can check the approval progress of your submitted application in [Approval Records].
+
+ <div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/contractlist3en.png" width="400"/> 
+</div>
+
+</Step>
+
+<Step title="Approve Scheduling Strategy">
+   If you are a workspace strategy approver, you can view pending tasks and approve them in real-time through the [Workflow] module on the App or Web portal.
+
+ <div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/contractlist4en.png" width="400"/>
+</div>
+
+</Step>
+
+<Step title="Obtain and Add Vote-Free Address to Warm Contract">
+   After approval, you will be able to view the contract address information and obtain the corresponding vote-free address for the contract in the [Contract Address] list.
+
+   <Note>
+   The vote-free address is automatically assigned by Custody to each workspace. To achieve automated transfers, you need to add the vote-free address to the warm contract. Transactions initiated by this address will be successfully completed without the consent of the signers.
+   </Note>
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/contractlist1en.png" width="400"/>
+</div>
+
+
+</Step>
+
+</Steps>
+
+
+
+
+## Frequently Asked Questions
+
+<Accordion title="Which contract addresses should I add?">
+   To ensure the normal operation of the cold wallet solution, please visit the [Smart Contract Platform] to obtain the warm wallet and cold wallet contract addresses created by your team and add them to the contract address list.
+</Accordion>
+
+<Accordion title="How do I change the vote-free address?">
+   The current vote-free address is automatically generated and assigned to each workspace by the Custody system. If you need to change it, please contact the Custody customer support team.
+</Accordion>
+
+<Accordion title="How can I ensure the smooth operation of the fund scheduling strategy?">
+1. Successfully add wallet contract addresses for all networks.  
+2. Configure the corresponding warm-to-hot, hot-to-warm, and warm-to-cold strategies.  
+3. Add a vote-free address for each warm contract and ensure the address has sufficient gas fees.  
+4. Add whitelist addresses to the warm wallet and cold wallet contracts.
+</Accordion>
+
+
+
+
