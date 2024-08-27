@@ -29,6 +29,8 @@ openssl rsa -in rsa_private_key.pem -pubout -out rsa_public_key_2048.pem
 openssl pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform pem -nocrypt -out private_pkcs8.pem
 ```
 
+Noted：`rsa_public_key_2048.pem` is public key file，`private_pkcs8.pem` is private key file.
+
 ## Interface Rules
 
 | Transmission Method: | https (temporary use of http in the testing environment)                           |

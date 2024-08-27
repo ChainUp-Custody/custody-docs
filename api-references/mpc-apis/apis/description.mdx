@@ -28,6 +28,8 @@ openssl rsa -in rsa_private_key.pem -pubout -out rsa_public_key_2048.pem
 openssl pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform pem -nocrypt -out private_pkcs8.pem
 ```
 
+其中：`rsa_public_key_2048.pem`为公钥文件，`private_pkcs8.pem`为私钥文件
+
 ## II. 接口规则
 
 | 传输方式:     | https(测试环境暂时使用 http)                           |
