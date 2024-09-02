@@ -4,7 +4,7 @@ title: 签名者和多签阈值管理
 
 ## I. 功能简介
 
-在ChainUp Custody提供的智能合约平台，您可以链接第三方钱包，为您管理的合约添加或删除合约成员并且修改多签阈值。
+在ChainUp Custody提供的[智能合约平台](http://cold.chainup.com)，您可以链接第三方钱包，为您管理的合约添加或删除合约成员并且修改多签阈值。
 
 为了保障合约资金安全，Custody建议您为合约添加多个签名者并将多签阈值的数额设置大于一，保证所有合约提案都能够经过多人审批确认，防止误操作或内部作恶。
 
@@ -13,7 +13,7 @@ title: 签名者和多签阈值管理
 1. 合约初始的签名人和多签阈值在创建合约时配置。
 2. 修改签名人和多签阅知需要经过合约当前签名者进行审批确认，达到当前多签阈值后提案才可更新。
 2. 您可以在操作记录中查看提案的创建记录。
-3. 您可以在【交易记录】查看已成功发起的提案。
+3. 您可以在[交易记录](/user-guide/smart-contract-platform/transactions)查看已成功发起的提案。
 </Tip>
 
 
@@ -23,7 +23,7 @@ title: 签名者和多签阈值管理
 <Steps>
 
 <Step title="选择网络并连接钱包">
-根据您的业务需求，选择您访问的合约网络，并链接您的第三方钱包。
+访问[智能合约平台](http://cold.chainup.com)，根据您的业务需求，选择您访问的合约网络，并链接您的第三方钱包。
 <Tip>
 1. 您可能需要安装第三方钱包的浏览器插件，才能在Web端调用钱包并访问合约。
 2. Custody支持的合约网络包括：
@@ -50,6 +50,9 @@ title: 签名者和多签阈值管理
 查看合约列表，选择想要访问的合约，点击进入【成员管理】页面
 <Tip>
 您仅可访问连接钱包地址为签名者的合约信息。
+
+为了确保安全，合约需要达到一定的确认数后才能显示在平台上。如果您未查询到合约信息，请稍等片刻后再刷新列表。
+
 </Tip>
 
 <div className="w-full flex items-center justify-center">
@@ -66,6 +69,12 @@ title: 签名者和多签阈值管理
     <img src="/images/user-guide/editcontractmember2cn.jpeg" width="400"/>
     </CardGroup>
 </div>
+
+<Warning>
+我们强烈建议您为合约添加多个签名者，并将多签阈值设置为大于1，以确保多个成员共同签署提案交易。这有助于防止误操作和内部恶意行为。
+</Warning>
+
+
 </Step>
 <Step title="确认提案并签名">
 使用链接的第三方钱包地址签名并支付提案矿工费。
@@ -74,6 +83,10 @@ title: 签名者和多签阈值管理
 <div className="w-full flex items-center justify-center">
     <img src="/images/user-guide/editcontractmember3cn.jpeg" width="400"/>
 </div>
+
+
+
+
 </Step>
 </Steps>
 
@@ -96,6 +109,11 @@ title: 签名者和多签阈值管理
     <img src="/images/user-guide/editthreshold3cn.jpeg" width="400"/>
 </div>  
 
+<Warning>
+我们强烈建议将合约的多签阈值设置为大于1，以确保多个成员共同签署提案交易。这可以有效防止误操作和内部恶意行为。
+</Warning>
+
+
 </Step>
 
 </Steps>
@@ -103,6 +121,18 @@ title: 签名者和多签阈值管理
 
 
 ## IV. 常见问题
+
+<Accordion title="合约签名者的权限范围？">
+合约签名者作为合约的共管成员，可以发起以下合约提案：
+
+* 合约转账
+* 修改签名人或多签阈值
+* 修改转账免投票地址（仅限温钱包）
+* 修改白名单地址
+
+请注意，所有合约提案需要经过其他签名人的确认和审批，达到多签阈值后方可生效。
+</Accordion>
+
 
 <Accordion title="为什么我无法发起新增或删除合约成员提案？">
 请确认以下几点：

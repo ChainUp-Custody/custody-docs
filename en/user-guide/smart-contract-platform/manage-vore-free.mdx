@@ -5,14 +5,14 @@ title: Managing Vote Free Address
 
 ## Function Overview
 
-On the ChainUp Custody's smart contract platform, you can link third-party wallets to add or remove transfer-free addresses for your managed contracts.
+On the ChainUp Custody's [smart contract platform](http://cold.chainup.com), you can link third-party wallets to add or remove transfer-free addresses for your managed contracts.
 
 To enable automated transfers, you may need to add transfer-free addresses to the contract. Transactions initiated by these addresses do not require approval from signers to be successful.
 
 <Tip>
 1. Adding a transfer-free address proposal requires approval and confirmation by the contract signers. The proposal will only take effect after reaching the contract's multisig threshold.
 2. You can view the proposal creation record in the operation logs.
-3. You can view successfully initiated whitelist proposals in the [Transaction Records].
+3. You can view successfully initiated whitelist proposals in the [Transaction Records](/user-guide/smart-contract-platform/transactions).
 </Tip>
 
 ## Add A Transfer-Free Address
@@ -21,13 +21,13 @@ To enable automated transfers, you may need to add transfer-free addresses to th
 
 <Steps>
 <Step title="Log in to MPC Web">
-    Access the MPC wallet Web interface and select the [Cold Wallet] - [Contract Address] function.
+Visit [Smaet Contract Platform](http://cold.chainup.com)，access the MPC wallet Web interface and select the [Cold Wallet] - [Contract Address] function.
 </Step>
 <Step title="Select Contract Network and Obtain Address">
    Get the corresponding transfer-free address based on the contract network.
 
 <Tip>
-You need to create a funding allocation strategy for the relevant currency before the system can assign a transfer-free address to you.
+Please create a fund flowing strategy for the relevant currency, then obtain the transfer exemption address and add it to the warm wallet contract on the corresponding network.
 </Tip>
 
 </Step>
@@ -80,9 +80,9 @@ You can only access contract information where the connected wallet address is a
 
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={3}>
-    <img src="/images/user-guide/votrfree1en.jpeg" width="400"/>
+    <img src="/images/user-guide/vorefree1en.jpeg" width="400"/>
     <img src="/images/user-guide/vorefree2en.jpeg" width="400"/>
-    <img src="/images/user-guide/votefree3en.jpeg" width="400"/>
+    <img src="/images/user-guide/vorefree3en.jpeg" width="400"/>
     </CardGroup>
 </div>
 
@@ -110,6 +110,21 @@ You can only access contract information where the connected wallet address is a
 
 
 ##  Frequently Asked Questions
+
+<Accordion title="What is Vote-Free Address？">
+The vote free address is a tool used for automated fund dispatch, automatically generated and assigned by the Custody system. This address will automatically initiate warm-to-hot and warm-to-cold transactions according to the funding dispatch strategy, which will take effect without requiring approval from warm wallet signers.
+
+Please first create a fund flowing strategy for the relevant currency, then obtain the vote free address, and add it to the warm wallet contract on the corresponding network.
+
+If you cannot obtain the vote free address in the MPC wallet, please contact online customer support for assistance.
+</Accordion>
+
+<Accordion title="How to Manage Vote Free Addresses?">
+
+**Regularly Replenish Address Balance**：Vote Free addresses automatically handle auto flowing transactions and cover transaction fees according to your strategy. Make sure to regularly check and add funds to these addresses to ensure smooth and uninterrupted automation of your cold wallet funds.
+
+</Accordion>
+
 
 <Accordion title="Why Can't I Manage Transfer-Free Addresses?">
 1. You have successfully connected the third-party wallet;

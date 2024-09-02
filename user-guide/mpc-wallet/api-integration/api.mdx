@@ -18,6 +18,7 @@ ChainUp Custody为用户提供了强大且易于集成的API工具，可以帮�
 </div>
 
 
+
 <Warning>
 **重要提示**
 一个MPC工作站仅能配置一个API。为确保API功能生效，API配置需要与Co-Signer配置同步进行。只有钱包创建者才可配置API信息，编辑修改信息需要通过GA验证。请参考[API文档](/api-references/intro/custody-apis)，详细了解如何有效地对接API。
@@ -27,16 +28,28 @@ ChainUp Custody为用户提供了强大且易于集成的API工具，可以帮�
 
 
 <Step title="API字段填写">
-请填写API信息并提交新增API申请，等待工作站策略审批员审批通过后，API才可生效。
+请填写以下API信息并提交新增API申请，等待工作站策略审批员审批通过后，API才可生效。
+
+
+* **绑定IP地址：** 指定API接口监听的IP地址，只允许特定IP范围的请求。
+
+* **交易状态通知地址：** 用于接收交易状态通知的URL地址。
+
+* **Co-Signer接口地址：** 指定Co-Signer服务的API接口地址，确保正常的Co-Signer服务调用。
+
+* **Co-Signer RSA公钥：** 用于加密和解密相关数据。确保正确的RSA公钥有助于维护通信的安全性。
+
+* **客户系统RSA公钥：** 用于加密敏感信息并确保只有客户系统能够解密。提供正确的RSA公钥有助于保护通信过程中的数据安全。
+
+* **备注：** 记录与API配置相关的附加信息，方便管理员和开发者理解配置的特殊要求或约定。
+
 <div className="w-full flex items-center justify-center">
     <img src="/images/user-guide/api2cn.png"/>
 </div>
 
-<note>
-**字段描述** ：
-**绑定IP地址**：只允许特定IP范围的请求。每个API最多绑定10个IP地址，多个IP之间使用半角逗号分隔
-**备注**：提供额外的配置说明或标记。此字段通常用于记录与API配置相关的附加信息，方便管理员和开发者理解配置的特殊要求或约定。
-</note>
+<Tip> 
+想要了解工作站策略，请访问 [策略引擎-工作站策略](/help-center/manage-mpc/strategy/workspace)。
+</Tip>
 
 </Step>
 
@@ -45,6 +58,9 @@ ChainUp Custody为用户提供了强大且易于集成的API工具，可以帮�
 <div className="w-full flex items-center justify-center">
     <img src="/images/user-guide/api4cn.png"/>
 </div>
+
+
+
 
 </Step>
 </Steps>

@@ -5,14 +5,14 @@ title: Managing Warm/Cold Wallet Contract Whitelist
 
 ## Function Overview
 
-On the ChainUp Custody's smart contract platform, you can link third-party wallets to add or remove whitelist addresses for the contracts you manage.
+On the ChainUp Custody's [smart contract platform](http://cold.chainup.com), you can link third-party wallets to add or remove whitelist addresses for the contracts you manage.
 
 Since the contract platform only supports transactions initiated to whitelist addresses (transactions to other addresses will automatically fail), Custody recommends adding the addresses of contracts that require Asset Flow and the addresses of hot wallets to the whitelist to ensure smooth isolation and Asset Flow.
 
 <Tip>
 1. Adding a whitelist proposal requires approval and confirmation by the contract signers. The proposal will only take effect after reaching the contract's multisig threshold.
 2. You can view the proposal creation record in the operation logs.
-3. You can view successfully initiated whitelist proposals in the [Transaction Records].
+3. You can view successfully initiated whitelist proposals in the [Transaction Records](/user-guide/smart-contract-platform/transactions).
 </Tip>
 
 
@@ -22,7 +22,7 @@ Since the contract platform only supports transactions initiated to whitelist ad
 <Steps>
 
 <Step title="Select Network and Connect Wallet">
-Choose the contract network you wish to access based on your business needs, and connect your third-party wallet.
+Visit [Smaet Contract Platform](http://cold.chainup.com)，choose the contract network you wish to access based on your business needs, and connect your third-party wallet.
 
 <Tip>
 1. You may need to install a browser extension for the third-party wallet to invoke the wallet and access the contract on the Web.
@@ -108,14 +108,26 @@ Sign the proposal and pay the gas fees using the connected third-party wallet ad
 
 </Steps>
 
-<Tip>
-1. Contract transaction proposals require approval and confirmation by the contract signers. The proposal will only take effect after reaching the contract's multisig threshold.
-2. You can view the proposal creation record in the operation logs.
-3. You can view successfully initiated transaction proposals in the [Transaction Records].
-</Tip>
+
 
 
 ## Frequently Asked Questions
+
+<Accordion title="Why do I need to add a whitelist for the contract?">
+For security reasons, the platform requires that warm and cold wallets can only make transfers to addresses on the whitelist. Make sure to add these addresses to ensure smooth fund transfers between different wallets.
+
+</Accordion>
+
+<Accordion title="What addresses should I add to the contract whitelist？">
+
+**For the Warm Wallet Contract*：Add hot and cold wallet addresses from the same network.
+
+**For the Cold Wallet Contract**：Add hot and warm wallet addresses from the same network.
+
+</Accordion>
+
+
+
 
 <Accordion title="Why Can't I Initiate an Add or Delete Proposal?">
 Please ensure the following:

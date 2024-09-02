@@ -28,23 +28,38 @@ Each MPC workspace can only configure one API. To ensure the effectiveness of th
 
 <Step title="API Field Filling">
 Please fill in the API information and submit a new API request. The API will only become effective after approval from the workspace strategy approver.
+
+* **IP Address:** Specifies the IP address that the API interface listens to, allowing requests only from a specific IP range.
+
+* **Notification Address:** The URL address used to receive transaction status notifications.
+
+* **Co-Signer Interface Address:** Specifies the API interface address of the Co-Signer service, ensuring the normal invocation of the Co-Signer service.
+
+* **Co-Signer RSA Public Key:** Used for encrypting and decrypting related data. Ensuring the correct RSA public key helps maintain communication security.
+
+* **Client System RSA Public Key:** Used to encrypt sensitive information and ensure that only the client system can decrypt it. Providing the correct RSA public key helps protect data security during communication.
+
+* **Remarks:** Records additional information related to API configuration, facilitating the understanding of special requirements or agreements by administrators and developers.
+
 <div className="w-full flex items-center justify-center">
     <img src="/images/user-guide/api2.png"/>
 </div>
 
-<note>
-**Field Description**:
-**Bind IP Address**: Only allows requests from a specific IP range. Each API can bind up to 10 IP addresses, separated by commas.
-**Remarks**: Provides additional configuration instructions or markers. This field is usually used to record additional information related to the API configuration, making it easier for admins and developers to understand the special requirements or agreements of the configuration.
-</note>
+<Tip> 
+If you want to know more about Workspace Strategy，please visit [Strategy Engine - Workspace Strategy](/help-center/manage-mpc/strategy/workspcae)。
+</Tip>
 
 </Step>
 
 <Step title="Modify or enable API">
 Modifying the API requires approval from the workspace strategy approver, whereas disabling or enabling the API does not require approval.
+
 <div className="w-full flex items-center justify-center">
-    <img src="/images/user-guide/api4cn.png"/>
+    <img src="/images/user-guide/api4.png"/>
 </div>
+
+
+
 
 </Step>
 </Steps>
