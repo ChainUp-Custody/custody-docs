@@ -5,7 +5,14 @@ title: 资金调度策略
 
 ## I. 功能简介
 
-用户可以查看当前工作站已生效的冷钱包方案的所有资金调度策略，并根据实际业务需求进行，新增，修改或删除。
+用户可以查看当前工作站已生效的冷钱包方案下的所有资金调度策略，并根据实际业务需求进行新增、修改或删除操作。
+
+资金调度策略将帮助您在热、温、冷钱包之间维持资金存储比例的动态平衡，以满足资金安全和合规监管的需求。一般而言，热钱包适用于日常交易和加密货币交易所交易，并为新手用户提供便利。虽然热钱包提供了快速交易和多设备访问的便利，但安全性较低，容易受到网络攻击。
+
+相比之下，冷钱包适合长期安全存储大量加密资产。因此，我们建议您将少量资金存储于热钱包以用于日常运营，而将大部分资金存储于冷钱包，以分散风险并确保安全。
+
+
+
 <Warning>
 只有工作站管理员和创建者可以编辑资金调度策略。
 </Warning>
@@ -19,7 +26,7 @@ title: 资金调度策略
 <Step title="新建资金调度规则">
     访问MPC钱包Web端，选择【冷钱包】-【资金策略】，点击新增按钮。
     <div className="w-full flex items-center justify-center">
-    <img src="/images/user-guide/policylist1cn.png" width="400"/>
+    <img src="/images/user-guide/policylist1cn.png" width="800"/>
 </div>
 </Step>
 <Step title="编辑策略内容">
@@ -27,16 +34,29 @@ title: 资金调度策略
    具体策略介绍请参考 [MPC钱包：冷钱包管理](/help-center/manage-mpc/Coldwallet/managwallet)。
    <div className="w-full flex items-center justify-center">
     <CardGroup cols={3}>
-    <img src="/images/user-guide/policylist2cn.png" width="400"/>
-    <img src="/images/user-guide/policylist3cn.png" width="400"/>
-    <img src="/images/user-guide/policylist4cn.png" width="400"/>
+    <img src="/images/user-guide/policylist2cn.png" width="600"/>
+    <img src="/images/user-guide/policylist3cn.png" width="600"/>
+    <img src="/images/user-guide/policylist4cn.png" width="600"/>
     </CardGroup>
 </div>
+
+* **热转温：** 明确热钱包资金在不同情况下的最大风险敞口。用户可以设定热钱包最高资产占比和总资产统计规则（实时数据或均值），决定热钱包的存储规则。同时，通过配置最小转温资金，防止频繁的小额资产转移。
+
+* **温转热：** 将温钱包中的资金转移到热钱包，以补充日常运营所需的资金，提高资金利用率。用户可以根据转账均值数额决定需要转移的金额，并通过配置最小转温资金，避免频繁的小额资产转移。
+
+* **温转冷：** 将温钱包中的额外资产转移到冷钱包以进行安全存储。用户可以设定温钱包最高资产占比和总资产统计规则（实时数据或均值），决定温钱包的存储规则。同时，通过配置最小转温资金，防止频繁的小额资产转移。
+
+<Note>
+请注意，在合约中预先配置转账免投票地址后，合约对应网络下的币种的策略才会生效。
+
+</Note>
+
+
 </Step>
 </Steps>
 
 
-### 删除策略
+### 修改策略
 
 <Steps>
 <Step title="查看资金调度规则">
@@ -44,10 +64,8 @@ title: 资金调度策略
 
 </Step>
 
-<Step title="提交删除申请">
-    选择策略币种，选择需要开启的调度策略并填写对应的参数。
-   具体策略介绍请参考 [MPC钱包：冷钱包管理](/help-center/manage-mpc/Coldwallet/managwallet)。
-   选择想要删除的策略，验证GA后即可生效。
+<Step title="提交申请">
+    选择策略币种，选择需要关闭的调度策略，或修改对应的参数。验证GA后即可生效。
 </Step>
 </Steps>
 
@@ -60,7 +78,7 @@ title: 资金调度策略
 选择当前生效策略，进入策略详情，点击详情按钮，查看该策略发起的资金调度详情。
 
 <div className="w-full flex items-center justify-center">
-   <img src="/images/user-guide/assetflowlistcn.png" width="400"/>
+   <img src="/images/user-guide/assetflowlistcn.png" width="800"/>
 </div>
 
 

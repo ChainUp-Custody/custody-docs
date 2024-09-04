@@ -6,9 +6,13 @@ title: Asset Flow strategy
 
 ## Function Overview
 
-Users can view all active Asset Flow strategies for the cold wallet solution in the current workspace and create, modify, or delete them based on actual business needs.
+Users can view all active asset flow strategies under the current workspace's cold wallet plan and make adjustments—such as adding, modifying, or deleting strategies—according to their business needs.
+
+Asset flow strategies help maintain a dynamic balance of funds between hot, warm, and cold wallets, ensuring both security and regulatory compliance. Typically, hot wallets are best for daily transactions and trading on cryptocurrency exchanges, especially for beginners. While hot wallets offer the convenience of quick transactions and multi-device access, they are less secure and more susceptible to online threats.
+
+On the other hand, cold wallets are more suitable for long-term, secure storage of large amounts of cryptocurrency. Therefore, it's recommended to keep a small portion of funds in hot wallets for day-to-day operations and store the majority in cold wallets to mitigate risks and enhance security.
 <Warning>
-Only workspace administrators and creators can edit Asset Flow strategies.
+Only workspace admins and owner can edit Asset Flow Strategies.
 </Warning>
 
 ## Operation Process
@@ -20,8 +24,10 @@ Only workspace administrators and creators can edit Asset Flow strategies.
 <Step title="Create a New Asset Flow Strategy">
    Access the MPC Wallet Web portal, select [Cold Wallet] - [Asset Strategy], and click the "Add" button.
 <div className="w-full flex items-center justify-center">
-    <img src="/images/user-guide/contractpolicy1en.png" width="400"/>
+    <img src="/images/user-guide/contractpolicy1en.png" width="800"/>
 </div>
+
+
 
 </Step>
 
@@ -30,19 +36,32 @@ Only workspace administrators and creators can edit Asset Flow strategies.
    For detailed strategy descriptions, please refer to [MPC Wallet: Cold Wallet Management](/help-center/manage-mpc/coldwallet/managecoldwallet).
    <div className="w-full flex items-center justify-center">
     <CardGroup cols={3}>
-    <img src="/images/user-guide/contractpolicy2en.png" width="400"/>
-    <img src="/images/user-guide/contractpolicy3en.png" width="400"/>
-    <img src="/images/user-guide/contractpolicy4en.png" width="400"/>
+    <img src="/images/user-guide/contractpolicy2en.png" width="600"/>
+    <img src="/images/user-guide/contractpolicy3en.png" width="600"/>
+    <img src="/images/user-guide/contractpolicy4en.png" width="600"/>
     </CardGroup>
 </div>
 
+* **Hot to Warm：** Define the maximum risk exposure of funds in the hot wallet under various conditions. Users can set the maximum asset percentage for the hot wallet and choose how total assets are tracked (either real-time data or averages) to establish the storage rules. Also, configure a minimum transfer amount to the warm wallet to avoid frequent small transfers.
 
+* **Warm to Hot：** Move funds from the warm wallet to the hot wallet to ensure enough liquidity for daily operations and improve fund utilization. Users can determine the transfer amount based on average transaction values and set a minimum transfer amount to prevent frequent small transfers.
+
+* **Warm to Cold：** Transfer surplus assets from the warm wallet to the cold wallet for secure long-term storage. Users can set the maximum asset percentage for the warm wallet and choose how total assets are tracked (either real-time data or averages) to establish the storage rules. Additionally, configure a minimum transfer amount to the warm wallet to avoid frequent small transfers.
+
+
+
+
+
+<Note>
+Please note that after pre-configuring the vote free address in the contract, the strategies for the currency on the corresponding network will take effect.
+
+</Note>
 
 </Step>
 
 </Steps>
 
-### Delete a Strategy
+### Change the Strategy
 
 <Steps>
 
@@ -50,8 +69,10 @@ Only workspace administrators and creators can edit Asset Flow strategies.
    Access the MPC Wallet Web portal, select [Cold Wallet] - [Asset Strategy], and view all active Asset Flow strategies.
 </Step>
 
-<Step title="Submit Deletion Request">
-   Select the strategy you wish to delete, verify with GA, and it will take effect.
+<Step title="Submit Request">
+   Select the strategy currency, choose the asset flow strategy to be closed or modify the corresponding parameters. It will take effect after validating GA.
+
+
 </Step>
 
 </Steps>
@@ -66,6 +87,14 @@ Only workspace administrators and creators can edit Asset Flow strategies.
 
 <Step title="View Records">
    Select the active strategy, enter the strategy details, and click the "Details" button to view the Asset Flow details initiated by that strategy.
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/manualassetflow5en.png" width="800"/>
+</div>
+
+
+
+
 </Step>
 
 </Steps>

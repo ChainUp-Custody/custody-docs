@@ -5,7 +5,7 @@ title: 监控预警
 
 ## I. 功能简介
 
-Custody系统支持对以下场景进行监控：
+Custody系统支持对冷钱包功能的以下运营场景进行监控：
 
 ### 1. 余额监控
 转账免投票地址发起的合约提案交易无需签名人同意即可自动通过，由于交易需要转账免投票地址支付矿工费，所以需要保持一定的主币额度，如果主币数量不足就会导致交易发起失败，影响资产自动化调度。Custody系统根据用户配置的合约网络，监控温钱包的转账免投票地址的余额，如果余额低于阈值，则报警。
@@ -17,11 +17,11 @@ Custody系统支持对以下场景进行监控：
 Custody系统会监控热转温和温转热任务的状态，并通知用户关键事件。
 
 关键事件包括：
-冷钱包系统任务发起通知：系统自动发起热转温，温转冷，温转热任务
-冷钱包系统任务异常通知：任务长时间未完成
-冷钱包系统任务发起失败通知：热钱包余额+温钱包余额＜转账中的金额
-冷钱包系统任务失败通知：链上矿工费不足失败、交易打回
-冷钱包系统任务成功通知：系统自动调度任务成功完成
+* **冷钱包系统任务发起通知：** 系统自动发起热转温，温转冷，温转热任务
+* **冷钱包系统任务异常通知：** 任务长时间未完成
+* **冷钱包系统任务发起失败通知：** 热钱包余额+温钱包余额＜转账中的金额
+* **冷钱包系统任务失败通知：** 链上矿工费不足失败、交易打回
+* **冷钱包系统任务成功通知：** 系统自动调度任务成功完成
 
 
 ## II. 操作流程
@@ -35,8 +35,8 @@ Custody系统会监控热转温和温转热任务的状态，并通知用户关�
 
  <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
-    <img src="/images/user-guide/alert0cn.png" width="400"/>
-    <img src="/images/user-guide/alert2cn.png" width="400"/>
+    <img src="/images/user-guide/alert0cn.png" width="600"/>
+    <img src="/images/user-guide/alert2cn.png" width="600"/>
     </CardGroup>
 </div>
 
@@ -45,7 +45,7 @@ Custody系统会监控热转温和温转热任务的状态，并通知用户关�
 1.选择希望监控的转账免投票地址网络。
 2.编辑监控阈值：默认显示系统预设的值，用户可自定义，精度4位。
  <div className="w-full flex items-center justify-center">
-    <img src="/images/user-guide/alert1cn.png" width="400"/>
+    <img src="/images/user-guide/alert1cn.png" width="800"/>
 </div>
 
 </Step>

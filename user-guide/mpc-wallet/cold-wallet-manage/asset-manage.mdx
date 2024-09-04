@@ -6,16 +6,23 @@ title: 资产管理
 ## I. 功能简介
 
 ChainUp Custody MPC钱包的冷钱包功能为用户提供了全面的资金管理和调度能力，具体功能包括：
-1. 查看资金详情：用户可以查看当前热钱包、温钱包、冷钱包的资金详情，包括各钱包的资产分布和余额情况。
-2. 修改热钱包：用户可以根据实际需求修改热钱包的配置，以适应不同的资金调度策略。
-3. 手动发起资金调度任务：用户可以手动发起资金调度任务，如温转热、温转冷、热转温等，实现资金的灵活调度和管理。
+1. 查看资金详情：用户可以查看当前热钱包、温钱包、冷钱包的资金分布详情。
+
+<Tip> 
+系统默认将归集钱包设为热钱包。如果您想修改热钱包，请访问【自动归集】功能进行更改。
+</Tip>
+
+2. 手动发起资金调度任务：用户可以手动发起资金调度任务，如温转热、温转冷、热转温等，实现资金的灵活调度和管理。
 
 这些功能帮助用户实现资金冷热存储的平衡，确保资产安全与高效运作。
 <Note>
-通常，冷钱包方案需要配合API和归集功能共同使用。Custody系统建议您先完成以下操作再使用冷钱包功能
-1.开通API Co-Signer
-2.配置归集钱包和加油站
-3.编辑并开启归集策略
+通常，冷钱包方案需要配合API和归集功能共同使用。Custody系统建议您先完成以下操作再使用冷钱包功能:
+
+* 1.开通[API Co-Signer](/user-guide/mpc-wallet/api-integration/co-signer)
+
+* 2.配置[归集钱包和加油站](/user-guide/mpc-wallet/consolidate/co-signer/rules)
+
+* 3.编辑并开启[归集策略](/user-guide/mpc-wallet/consolidate/co-signer/rules)
 
 </Note>
 
@@ -30,7 +37,7 @@ Custody系统建议交易所客户选择归集钱包作为热存储钱包。
 </Note>
 
 <div className="w-full flex items-center justify-center">
-    <img src="/en/images/user-guide/coldwalletassetcn.png" width="200"/>
+    <img src="/en/images/user-guide/coldwalletassetcn.png" width="800"/>
 </div>
 
 </Step>
@@ -51,7 +58,13 @@ Custody系统建议交易所客户选择归集钱包作为热存储钱包。
 
 用户可以根据实际需求手动发起资金调度订单。
 
+<Note>
+通常，用户可以通过配置[资金策略](/user-guide/mpc-wallet/cold-wallet-manage/asser-flow)实现自动化的资金调度，但如果有紧急和实际的需求，用户也可以通过手动发起调度订单，转移不同钱包之间的资产。
+
+</Note>
+
 1. 选择调度方式：包括热转温、温转热、温转冷。
+
 2. 发起交易。
 
 <Steps>
@@ -59,7 +72,7 @@ Custody系统建议交易所客户选择归集钱包作为热存储钱包。
    访问MPC钱包Web端，查看【冷钱包】-【资金管理】，查看当前所有可调度的资产币种。
 
 <div className="w-full flex items-center justify-center">
-   <img src="/images/user-guide/manualflow1cn.png" width="400"/>
+   <img src="/images/user-guide/manualflow1cn.png" width="800"/>
 
 </div>
 
@@ -72,8 +85,8 @@ Custody系统建议交易所客户选择归集钱包作为热存储钱包。
 
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
-    <img src="/images/user-guide/manualflow2cn.png" width="400"/>
-    <img src="/images/user-guide/manualflow3cn.png" width="400"/>
+    <img src="/images/user-guide/manualflow2cn.png" width="600"/>
+    <img src="/images/user-guide/manualflow3cn.png" width="600"/>
     </CardGroup>
 </div>
 
@@ -101,7 +114,7 @@ Custody系统会默认将工作站的归集钱包设置为热钱包，
 温转热失败可能有以下原因：
 1. 当前温钱包合约没有将热钱包地址加入白名单。
 2. 温钱包合约没有配置转账免投票地址。
-3.当前温钱包合约的转账免投票地址没有足够的主链币用于支付交易矿工费。
+3. 当前温钱包合约的转账免投票地址没有足够的主链币用于支付交易矿工费。
 
 热转温失败可能有以下原因：
 1. 当前选择的热钱包没有生成币种地址。

@@ -8,16 +8,20 @@ title: Asset Management
 The cold wallet function of the ChainUp Custody MPC Wallet provides users with comprehensive fund management and scheduling capabilities, including:
 
 1. View Fund Details: Users can view the fund details of the current hot wallet, warm wallet, and cold wallet, including the asset distribution and balance of each wallet.
-2. Modify Hot Wallet: Users can modify the configuration of the hot wallet according to actual needs to adapt to different fund scheduling strategies.
-3. Manually Initiate Asset Flowing Tasks: Users can manually initiate asset flowing tasks, such as warm-to-hot, warm-to-cold, hot-to-warm, etc., to achieve flexible fund scheduling and management.
+
+<Tip> 
+The system defaults to setting the Omnibus wallet as a hot wallet. If you want to modify the hot wallet, please visit the [Auto Sweep](/user-guide/mpc-wallet/consolidate/co-signer/rules) feature to make changes.
+</Tip>
+
+2. Manually Initiate Asset Flowing Tasks: Users can manually initiate asset flowing tasks, such as warm-to-hot, warm-to-cold, hot-to-warm, etc., to achieve flexible fund scheduling and management.
 
 These functions help users achieve a balance between cold and hot storage, ensuring asset security and efficient operation.
 
 <Note>
 Typically, the cold wallet solution needs to be used in conjunction with the API and aggregation function. The Custody system recommends that you complete the following operations before using the cold wallet function:
-1. Enable API Co-Signer
-2. Configure the aggregation wallet and gas station
-3. Edit and enable the aggregation strategy
+1. Enable [API Co-Signer](/user-guide/mpc-wallet/api-integration/co-signer)
+2. Configure the [omnibus wallet and gas station](/user-guide/mpc-wallet/consolidate/co-signer/rules)
+3. Edit and enable the [auto sweeping strategy](/user-guide/mpc-wallet/consolidate/co-signer/rules)
 </Note>
 
 ## Operation Process
@@ -52,18 +56,21 @@ A self-operating cold wallet solution requires the user to have corresponding ho
 
 <Step title="Manually Initiate Asset Flowing">
 Users can manually initiate asset flowing tasks according to actual needs.
+<Note>
+Typically, users can automate transfer fund by setting up [asset flow strategy](/user-guide/mpc-wallet/cold-wallet-manage/asser-flow). However, if there's an urgent or specific need, users can manually create dispatch orders to transfer assets between different wallets.
+</Note>
 
 1. Choose the method: including hot-to-warm, warm-to-hot, warm-to-cold.
 2. Initiate the transaction.
 
 <div className="w-full flex items-center justify-center">
-   <img src="/images/user-guide/manualassetflow1en.png" width="400"/>
+   <img src="/images/user-guide/manualassetflow1en.png" width="800"/>
 
 </div>
 
 <Note>
 Please note that warm-to-hot and warm-to-cold transactions require the warm wallet contract to meet the following requirements:
-1. The warm wallet contract has configured the [Vote-Free Address]().
+1. The warm wallet contract has configured the [Vote-Free Address](/user-guide/smart-contract-platform/manage-vore-free).
 2. The Vote-Free Address of the warm wallet contract has enough main coins as the transfer gas fee.
 </Note>
 
@@ -82,7 +89,7 @@ Users can manually initiate asset flowing tasks according to actual needs.
    Visit the MPC wallet web interface, go to [Cold Wallet] - [Asset Management], and view all the currently available assets that can be scheduled.
 
 <div className="w-full flex items-center justify-center">
-   <img src="/images/user-guide/manualassetflow1en.png" width="400"/>
+   <img src="/images/user-guide/manualassetflow1en.png" width="800"/>
 
 </div>
 
@@ -95,8 +102,8 @@ Users can manually initiate asset flowing tasks according to actual needs.
 
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
-    <img src="/images/user-guide/manualassetflow2en.png" width="400"/>
-    <img src="/images/user-guide/manualassetflow3en.png" width="400"/>
+    <img src="/images/user-guide/manualassetflow2en.png" width="600"/>
+    <img src="/images/user-guide/manualassetflow3en.png" width="600"/>
     </CardGroup>
 </div>
 
