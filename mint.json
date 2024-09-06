@@ -198,6 +198,17 @@
               "pages": [
                 "api-references/mpc-apis/apis/nft/nft-info"
               ]
+            },
+            {
+              "group": "Babylon",
+              "pages": [
+                "api-references/mpc-apis/apis/babylon/stake",
+                "api-references/mpc-apis/apis/babylon/unstake",
+                "api-references/mpc-apis/apis/babylon/unbond",
+                "api-references/mpc-apis/apis/babylon/stake-list",
+                "api-references/mpc-apis/apis/babylon/stake-details",
+                "api-references/mpc-apis/apis/babylon/stake-details-by-req-id"
+              ]
             }
           ]
         },
@@ -338,7 +349,6 @@
             "help-center/manage-mpc/my-wallet/off-line-tool"
           ]
         },
-
         {
           "group": "钱包交易",
           "pages": [
@@ -357,12 +367,10 @@
         {
           "group": "自动归集",
           "pages": [
-                "help-center/manage-mpc/consolidation/co-signer/about",
-                "help-center/manage-mpc/consolidation/co-signer/rules",
-                "help-center/manage-mpc/consolidation/co-signer/execute"
-               
-        
-              ]
+            "help-center/manage-mpc/consolidation/co-signer/about",
+            "help-center/manage-mpc/consolidation/co-signer/rules",
+            "help-center/manage-mpc/consolidation/co-signer/execute"
+          ]
         },
         {
           "group": "策略引擎",
@@ -378,7 +386,6 @@
             "help-center/manage-mpc/Coldwallet/smartcontractplatform",
             "help-center/manage-mpc/Coldwallet/managwallet",
             "help-center/manage-mpc/Coldwallet/allsteps"
-            
           ]
         }
       ]
@@ -408,187 +415,182 @@
         }
       ]
     },
-  {
-    "group": "MPC自托管",
-    "pages": [
-      {
-        "group": "账户安全",
-        "pages": [
-          "user-guide/mpc-wallet/account/password",
-          "user-guide/mpc-wallet/account/bind-ga",
-          "user-guide/mpc-wallet/account/bio-identity",
-          "user-guide/mpc-wallet/account/kyc",
-          "user-guide/mpc-wallet/account/cancel-account"
-        ]
-      },
-      {
-        "group": "配置工作站",
-        "pages": [
-          "user-guide/mpc-wallet/wallet/create-wallet", 
-          "user-guide/mpc-wallet/wallet/manage-wallet",
-          "user-guide/mpc-wallet/wallet/add-user",
-          "user-guide/mpc-wallet/wallet/become-admin"
-        ]
-      },
-      {
-        "group": "私钥管理",
-        "pages": [
-          "user-guide/mpc-wallet/private-manage/private-backup",
-          "user-guide/mpc-wallet/private-manage/private-recover",
-          "user-guide/mpc-wallet/private-manage/off-line-tool"
-        ]
-      },
-      {
-        "group": "日常运营",
-        "pages": [
-          "user-guide/mpc-wallet/operation/receive",
-          "user-guide/mpc-wallet/operation/transfer",
-          "user-guide/mpc-wallet/operation/record",
-          "user-guide/mpc-wallet/operation/to-do"
-        ]
-      },
-      {
-        "group": "交易合规",
-        "pages": [
-          "user-guide/mpc-wallet/kyt/setting",
-          "user-guide/mpc-wallet/kyt/operate"
-        ]
-      },
-      {
-        "group": "API管理",
-        "pages": [
-          "user-guide/mpc-wallet/api-integration/api",
-          "user-guide/mpc-wallet/api-integration/co-signer"
-        ]
-      } ,
-      {
-        "group": "自动归集",
-        "pages":[
-              "user-guide/mpc-wallet/consolidate/co-signer/rules",
-              "user-guide/mpc-wallet/consolidate/co-signer/execute"
-            ]
-  },
-  {
-    "group": "策略引擎",
-    "pages":[
-      "user-guide/mpc-wallet/strategy/approval-flow2",
-      "user-guide/mpc-wallet/strategy/approval-flow",
-      "user-guide/mpc-wallet/strategy/edit-workspace-strategy",
-      "user-guide/mpc-wallet/strategy/gas-fee-stratefy",
-      "user-guide/mpc-wallet/strategy/sign-protect"
-    ]
-  },
-  {
-    "group": "Web3访问",
-    "pages":[
-      "user-guide/mpc-wallet/web3/fil-multi-sign",
-      "user-guide/mpc-wallet/web3/fil-node",
-      "user-guide/mpc-wallet/web3/dapp"
-    ]
-  },
-  {
-    "group": "冷钱包管理",
-    "pages":[
-      "user-guide/mpc-wallet/cold-wallet-manage/asser-flow",
-      "user-guide/mpc-wallet/cold-wallet-manage/asset-manage",
-      "user-guide/mpc-wallet/cold-wallet-manage/cold-alert",
-      "user-guide/mpc-wallet/cold-wallet-manage/contractaddress"
-    ]
-  }
-]
-},
-{
-  "group": "智能合约平台",
-  "pages": [
     {
-      "group": "合约管理",
+      "group": "MPC自托管",
       "pages": [
-        "user-guide/smart-contract-platform/create-contract"
+        {
+          "group": "账户安全",
+          "pages": [
+            "user-guide/mpc-wallet/account/password",
+            "user-guide/mpc-wallet/account/bind-ga",
+            "user-guide/mpc-wallet/account/bio-identity",
+            "user-guide/mpc-wallet/account/kyc",
+            "user-guide/mpc-wallet/account/cancel-account"
+          ]
+        },
+        {
+          "group": "配置工作站",
+          "pages": [
+            "user-guide/mpc-wallet/wallet/create-wallet",
+            "user-guide/mpc-wallet/wallet/manage-wallet",
+            "user-guide/mpc-wallet/wallet/add-user",
+            "user-guide/mpc-wallet/wallet/become-admin"
+          ]
+        },
+        {
+          "group": "私钥管理",
+          "pages": [
+            "user-guide/mpc-wallet/private-manage/private-backup",
+            "user-guide/mpc-wallet/private-manage/private-recover",
+            "user-guide/mpc-wallet/private-manage/off-line-tool"
+          ]
+        },
+        {
+          "group": "日常运营",
+          "pages": [
+            "user-guide/mpc-wallet/operation/receive",
+            "user-guide/mpc-wallet/operation/transfer",
+            "user-guide/mpc-wallet/operation/record",
+            "user-guide/mpc-wallet/operation/to-do"
+          ]
+        },
+        {
+          "group": "交易合规",
+          "pages": [
+            "user-guide/mpc-wallet/kyt/setting",
+            "user-guide/mpc-wallet/kyt/operate"
+          ]
+        },
+        {
+          "group": "API管理",
+          "pages": [
+            "user-guide/mpc-wallet/api-integration/api",
+            "user-guide/mpc-wallet/api-integration/co-signer"
+          ]
+        },
+        {
+          "group": "自动归集",
+          "pages": [
+            "user-guide/mpc-wallet/consolidate/co-signer/rules",
+            "user-guide/mpc-wallet/consolidate/co-signer/execute"
+          ]
+        },
+        {
+          "group": "策略引擎",
+          "pages": [
+            "user-guide/mpc-wallet/strategy/approval-flow2",
+            "user-guide/mpc-wallet/strategy/approval-flow",
+            "user-guide/mpc-wallet/strategy/edit-workspace-strategy",
+            "user-guide/mpc-wallet/strategy/gas-fee-stratefy",
+            "user-guide/mpc-wallet/strategy/sign-protect"
+          ]
+        },
+        {
+          "group": "Web3访问",
+          "pages": [
+            "user-guide/mpc-wallet/web3/fil-multi-sign",
+            "user-guide/mpc-wallet/web3/fil-node",
+            "user-guide/mpc-wallet/web3/dapp"
+          ]
+        },
+        {
+          "group": "冷钱包管理",
+          "pages": [
+            "user-guide/mpc-wallet/cold-wallet-manage/asser-flow",
+            "user-guide/mpc-wallet/cold-wallet-manage/asset-manage",
+            "user-guide/mpc-wallet/cold-wallet-manage/cold-alert",
+            "user-guide/mpc-wallet/cold-wallet-manage/contractaddress"
+          ]
+        }
       ]
     },
     {
-      "group": "合约成员",
+      "group": "智能合约平台",
       "pages": [
-        "user-guide/smart-contract-platform/manage-memebers"
+        {
+          "group": "合约管理",
+          "pages": [
+            "user-guide/smart-contract-platform/create-contract"
+          ]
+        },
+        {
+          "group": "合约成员",
+          "pages": [
+            "user-guide/smart-contract-platform/manage-memebers"
+          ]
+        },
+        {
+          "group": "合约白名单",
+          "pages": [
+            "user-guide/smart-contract-platform/manage-whitelist"
+          ]
+        },
+        {
+          "group": "转账免投票",
+          "pages": [
+            "user-guide/smart-contract-platform/manage-vore-free"
+          ]
+        },
+        {
+          "group": "合约交易",
+          "pages": [
+            "user-guide/smart-contract-platform/receive-trans",
+            "user-guide/smart-contract-platform/transactions"
+          ]
+        }
       ]
     },
     {
-      "group": "合约白名单",
+      "group": "全托管",
       "pages": [
-       
-        "user-guide/smart-contract-platform/manage-whitelist"
-      ]
-    },
-    {
-      "group": "转账免投票",
-      "pages": [
-  
-        "user-guide/smart-contract-platform/manage-vore-free"
-      ]
-    },
-    {
-      "group": "合约交易",
-      "pages": [
-      
-        "user-guide/smart-contract-platform/receive-trans",
-        "user-guide/smart-contract-platform/transactions"
-        
+        {
+          "group": "账户安全",
+          "pages": [
+            "user-guide/custody-wallet/account/password",
+            "user-guide/custody-wallet/account/bind-ga",
+            "user-guide/custody-wallet/account/bio-identity",
+            "user-guide/custody-wallet/account/kyc",
+            "user-guide/custody-wallet/account/cancel-account"
+          ]
+        },
+        {
+          "group": "配置钱包",
+          "pages": [
+            "user-guide/custody-wallet/wallet/create-wallet",
+            "user-guide/custody-wallet/wallet/add-user"
+          ]
+        },
+        {
+          "group": "日常运营",
+          "pages": [
+            "user-guide/custody-wallet/operation/coin",
+            "user-guide/custody-wallet/operation/receive",
+            "user-guide/custody-wallet/operation/transfer",
+            "user-guide/custody-wallet/operation/record",
+            "user-guide/custody-wallet/operation/to-do"
+          ]
+        },
+        {
+          "group": "安全策略",
+          "pages": [
+            "user-guide/custody-wallet/strategy/whitelist",
+            "user-guide/custody-wallet/strategy/api",
+            "user-guide/custody-wallet/strategy/approval-flow"
+          ]
+        }
       ]
     }
-  ] 
-},
-{
-  "group": "全托管",
-  "pages": [
-    {
-      "group": "账户安全",
-      "pages": [
-        "user-guide/custody-wallet/account/password",
-        "user-guide/custody-wallet/account/bind-ga",
-        "user-guide/custody-wallet/account/bio-identity",
-        "user-guide/custody-wallet/account/kyc",
-        "user-guide/custody-wallet/account/cancel-account"
-      ]
-    },
-    {
-      "group": "配置钱包",
-      "pages": [
-        "user-guide/custody-wallet/wallet/create-wallet", 
-        "user-guide/custody-wallet/wallet/add-user"
-      ]
-    },
-    {
-      "group": "日常运营",
-      "pages": [
-        "user-guide/custody-wallet/operation/coin",
-        "user-guide/custody-wallet/operation/receive",
-        "user-guide/custody-wallet/operation/transfer",
-        "user-guide/custody-wallet/operation/record",
-        "user-guide/custody-wallet/operation/to-do"
-      ]
-    },
-    {
-      "group": "安全策略",
-      "pages": [
-        "user-guide/custody-wallet/strategy/whitelist",
-        "user-guide/custody-wallet/strategy/api",
-        "user-guide/custody-wallet/strategy/approval-flow"
-      ]
+  ],
+  "api": {
+    "baseUrl": "https://openapi.chainup.com",
+    "playground": {
+      "mode": "simple"
     }
-  ] 
- }
-],
-
-"api": {
-  "baseUrl": "https://openapi.chainup.com",
-  "playground": {
-    "mode": "simple"
+  },
+  "feedback": {
+    "suggestEdit": true,
+    "raiseIssue": true,
+    "thumbsRating": true
   }
-},
-"feedback":{
-  "suggestEdit":true,
-  "raiseIssue":true,
-  "thumbsRating":true
- }
 }
 

@@ -1,0 +1,130 @@
+---
+title: Get stake record details
+api: GET /api/mpc/babylon/details
+description: "Get the stake records of the specified stake_id set"
+---
+
+#### Request Parameters
+<ParamField query="ids" type="string" required>
+    many `stake_id` string, separated by commas, return up to 100 records.
+</ParamField>
+
+
+#### Response Data Parameters
+<ResponseField type="object[ ]">
+    <Expandable title="object">
+        <ResponseField name="id" type="integer">Platform stake_id</ResponseField>
+        <ResponseField name="symbol" type="string">Unique identifier for the coin, e.g.: `BTC`</ResponseField>
+        <ResponseField name="sub_wallet_id" type="integer">Wallet ID</ResponseField>
+        <ResponseField name="updated_at" type="long">Modified timestamp</ResponseField>
+        <ResponseField name="request_id" type="string">The unique identifier for stake</ResponseField>
+        <ResponseField name="fp_key" type="string">Finality Provider</ResponseField>
+        <ResponseField name="status" type="integer">Stake status: 0 Staking, 1000 Stake tx confirmed but confirmation < stake lock number, 2000 Stake successful, 2100 Funds locked but stake failed, 3000 Unbonding, 3100 Unbond tx confirmed but confirmation < unbond lock number, 4000 Stake withdrawable, 4100 Unbond Withdrawable, 4200 Unstaking, 4300 Unbond unstaking, 5000 Stake done, 5100 Stake cancel</ResponseField>
+        <ResponseField name="unbond" type="object">
+            Unbond Info
+            <Expandable title="object">
+                <ResponseField name="address_from" type="string">Address from</ResponseField>
+                <ResponseField name="address_to" type="string">Address to</ResponseField>
+                <ResponseField name="fee" type="string">Mining fee, e.g.：0.00123</ResponseField>
+                <ResponseField name="amount" type="string">Amount</ResponseField>
+                <ResponseField name="created_at" type="long">Creation time timestamp</ResponseField>
+                <ResponseField name="txid" type="string">Transaction hash</ResponseField>
+                <ResponseField name="tx_height" type="long">Block height at which the transaction is completed</ResponseField>
+                <ResponseField name="tx_type" type="integer">1 Stake 2 Unbond 3 Unstake 4 Unbound unstake </ResponseField>
+                <ResponseField name="lock_number" type="integer">Unbond period (block height)</ResponseField>
+                <ResponseField name="remark" type="string">Remark</ResponseField>
+           </Expandable>
+        </ResponseField>
+        <ResponseField name="unstake" type="object">
+            Unstake Info
+            <Expandable title="object">
+                <ResponseField name="address_from" type="string">Address from</ResponseField>
+                <ResponseField name="address_to" type="string">Address to</ResponseField>
+                <ResponseField name="fee" type="string">Mining fee, e.g.：0.00123</ResponseField>
+                <ResponseField name="amount" type="string">Amount</ResponseField>
+                <ResponseField name="created_at" type="long">Creation time timestamp</ResponseField>
+                <ResponseField name="txid" type="string">Transaction hash</ResponseField>
+                <ResponseField name="tx_height" type="long">Block height at which the transaction is completed</ResponseField>
+                <ResponseField name="tx_type" type="integer">1 Stake 2 Unbond 3 Unstake 4 Unbound unstake </ResponseField>
+                <ResponseField name="remark" type="string">Remark</ResponseField>
+           </Expandable>
+        </ResponseField>
+        <ResponseField name="stake" type="object">
+            Stake Info
+            <Expandable title="object">
+                <ResponseField name="address_from" type="string">Address from</ResponseField>
+                <ResponseField name="address_to" type="string">Address to</ResponseField>
+                <ResponseField name="fee" type="string">Mining fee, e.g.：0.00123</ResponseField>
+                <ResponseField name="amount" type="string">Amount</ResponseField>
+                <ResponseField name="created_at" type="long">Creation time timestamp</ResponseField>
+                <ResponseField name="txid" type="string">Transaction hash</ResponseField>
+                <ResponseField name="tx_height" type="long">Block height at which the transaction is completed</ResponseField>
+                <ResponseField name="tx_type" type="integer">1 Stake 2 Unbond 3 Unstake 4 Unbound unstake </ResponseField>
+                <ResponseField name="lock_number" type="integer">Staking period (block height)</ResponseField>
+                <ResponseField name="remark" type="string">Remark</ResponseField>
+           </Expandable>
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+
+
+
+<RequestExample>
+  ```curl cURL
+  curl -X GET \
+  --url 'https://openapi.chainup.com/api/mpc/babylon/stake_list?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data=SWYYr-LBVAmaS0eq8n-CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov-7hsRsVmOhyPqC-JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8-BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht-n_ZcBdxIDt975dbOFUiH-oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ-6cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb-5g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI'
+  ```
+</RequestExample>
+
+
+
+<ResponseExample>
+```json
+[
+    {
+        "id":242,
+        "symbol":"BTC",
+        "sub_wallet_id":123,
+        "updated_at":1672318660000,
+        "status":2000,
+        "request_id":"57fdc296-1e14-47fa-a99d-5e86f8e51008",
+        "fp_key": "f4940b238dcd00535fde6d413cc3602c4033c10f251c7e818dcd00535fd",
+        "unbond": {
+            "address_from": "bc1q6w6npwrat234y0q5kquhfdu6e20musrrkh5l6s",
+            "address_to": "3AeVvpuREtqHwzRhTUsRgJErM8ryuRNVSb",
+            "fee": "0.00035089",
+            "amount": "2.56008894",
+            "created_at": 1551429063111,
+            "txid": "2fee8ffdd73c985ef50bcba4e1585cd5014dd319ffbfa29be9870e3689daf3e4",
+            "tx_height": 851328,
+            "tx_type": 2,
+            "lock_number": 891628,
+            "remark": "unbond"
+        },
+        "unstake": {
+            "address_from": "bc1qt8q4ppk9lv5n0zkud9huv74mvg9d5vmmezjpex",
+            "address_to": "12gcDrYgdf5tQEQHWj6VJCq1UaX9a4MeHW",
+            "fee": "0.00079223",
+            "amount": "2.36008894",
+            "created_at": 1556429063111,
+            "txid": "93bc40741a1062a2f89792b4e05b515df8a0b747490d05755478fa4b422df4d6",
+            "tx_height": 851628,
+            "tx_type": 3,
+            "remark": "unstake"
+        },
+        "stake": {
+            "address_from": "3AeVvpuREtqHwzRhTUsRgJErM8ryuRNVSb",
+            "address_to": "bc1qth4sz80fzxjcj9zdjzr5pt67warvda4zv4u5xs",
+            "fee": "0.00035089",
+            "amount": "2.36008894",
+            "created_at": 1551429063111,
+            "txid": "04a32c8640fcd6b0b23cacf14d4c0d9ec37e2395a7f3e63b46cd65f0b43a6e38",
+            "tx_height": 844831,
+            "tx_type": 1,
+            "lock_number": 891628,
+            "remark": "stake"
+        }
+    }
+]
+```
+</ResponseExample>
