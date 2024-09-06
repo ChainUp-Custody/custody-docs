@@ -57,15 +57,16 @@ The configuration is considered successful only after a signatory of the hot wal
 
 
 ### Assets Strategy
+
 1. View and manage the strategies for the MPC cold wallet solution
 
 
 
 Strategy Type | Strategy Purpose | Trigger Frequency|
 ------- | ------- | ------- |
-Hot to Warm |Transfer funds to less frequently connected warm wallets to enhance asset security.|10 minutes/interval| 
+Hot to Warm |Transfer funds to less frequently connected warm wallets to enhance asset security.|10 minutes/interval (After funds are transferred from warm to hot, the interval before the next warm-to-hot transfer is triggered is 60 minutes.)| 
 Warm to Hot|Quickly respond to hot wallet liquidity demands to ensure business continuity.| 10 minutes/interval|
-Warm to Cold | Maximize the security of long-term stored funds.|One Time/Day|
+Warm to Cold | Maximize the security of long-term stored funds.|10 minutes/interval|
 
 
 
@@ -74,6 +75,9 @@ Warm to Cold | Maximize the security of long-term stored funds.|One Time/Day|
 2. Understand the current asset flowing status of the wallet
 
 
+<Tip> 
+Please visit [Asset Flow strategy](/user-guide/mpc-wallet/cold-wallet-manage/asser-flow) to see more details。
+</Tip>
 
 
 
