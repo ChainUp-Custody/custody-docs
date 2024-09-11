@@ -6,7 +6,7 @@ title: Transfer
 
 In the ChainUp Custody system, You can transfer to internal wallet and an external addres.
 
-To ensure fund security and efficient approval, we recommend adding a transfer strategy for valuable currencies or NFTs. The transfer process may differ according to different roles.
+To ensure fund security and efficient approval, we recommend adding a [transfer strategy](/user-guide/mpc-wallet/strategy/approval-flow2) for valuable currencies or NFTs. 
 
 ##  Operation Procedure
 
@@ -34,7 +34,6 @@ Please note that if you choose an internal wallet to transfer, the wallet must c
 
 To ensure the accuracy of the miner's fee, the fee will be set at the time of signing.
     
-    **Ordinary members** can only initiate transfers
     <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
     <img src="/images/user-guide/transfer3.jpg" width="200"/>
@@ -42,7 +41,12 @@ To ensure the accuracy of the miner's fee, the fee will be set at the time of si
     </CardGroup>
 </div>
     
-    **Approving members** can initiate and approve transfer orders.
+
+    
+The transaction will follow the current [wallet transfer strategy](/user-guide/mpc-wallet/strategy/approval-flow2) and enter the corresponding approval flow. The designated approvers can either approve or reject the transaction order.
+
+If the transfer information triggers any rejection conditions within the wallet stretegy, the order cannot be created.
+
  <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
     <img src="/images/user-guide/transfer5.png" width="200"/>
@@ -50,22 +54,18 @@ To ensure the accuracy of the miner's fee, the fee will be set at the time of si
     </CardGroup>
 </div>
 
-    When the order meets the approval rules, the **Workspace Owner or admin** can proceed to the next step, i.e., signing.
-</Step>
-
-
-<Step title="Workspace Owner or Admin Confirms and Signs">
-    The workspace owner or admin needs to set the miner's fee (some main chains support custom miner fees, you can appropriately increase the miner's fee to speed up transaction processing), confirm the transaction information, and sign.
-
+<Note>
+Approve and Sign Node: If an approver's consent action exactly meets the node threshold, the approver will be responsible for setting the gas fee for the transaction and providing the final, authentic signature.
 <div className="w-full flex items-center justify-center">
-    <CardGroup cols={3}>
-    <img src="/images/user-guide/transfer9.jpg" width="200"/>
-    <img src="/images/user-guide/transfer10.jpg" width="200"/>
- <img src="/images/user-guide/transfer11.jpg" width="200"/>
-    </CardGroup>
+    <img src="/images/user-guide/approveandsignen.jpeg" width="200"/>
 </div>
+</Note>
 
 </Step>
+
+
+
+
 <Step title="Wait for Signature and Transaction Confirmation">
     After the signature is successful, you need to wait for the blockchain to process. If the processing time is too long, you can speed up the transaction by increasing the miner's fee for the order.
     

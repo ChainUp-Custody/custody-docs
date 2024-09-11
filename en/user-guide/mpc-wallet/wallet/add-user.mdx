@@ -10,9 +10,9 @@ Only the workspace owner can add/delete workspace members.
 
 In the MPC workspace, you can add new users and assign them different roles. The system currently has three types of roles:
 - **Workspace Owner**: The member who creates the workspace defaults as the owner (Owner), with the highest authority;
-- **Admin**: The owner can add members from the contact list to the workspace and assign them as admins. Admins have the authority to initiate receipts, transfers for all wallets under the workspace, and will have the workspace co-privilege private key to sign and speed up transfer transactions;
+- **Admin**: The owner can add members from the contact list to the workspace and assign them as admins. Admins hold an equal-weight private key for the workspace and can act as approvers for approval and signature operations. They are also authorized to initiate receipts, transfers, and transaction accelerations for all wallets under the workspace；
 <Tip> 
-Currently, admins cannot sign for private key operation behaviors other than manual transfer signatures and speed up.
+Please refer to the following article to understand how to [become an admin](/user-guide/mpc-wallet/wallet/become-admin).
 </Tip>
 - **Ordinary Members**: Members added to the wallet by the owner default as ordinary members; they have basic permissions such as initiating receipts, transfers;
 

@@ -6,13 +6,14 @@ title: 转账
 
 在ChainUp Custody钱包中，您可以选择内部钱包和外部地址进行转账操作。
 
-为了确保资金安全和高效的审批，我们建议对有价值的币种或NFT添加转账策略。不同的角色对应的转账流程可能会有所不同。
+为了确保资金安全和高效的审批，我们建议对有价值的币种或NFT添加[钱包高级策略](/user-guide/mpc-wallet/strategy/approval-flow)。
 
 ## II. 操作流程
 
+
 <Steps>
 <Step title="进入转账页面">
-    在**APP**，Token支持左滑快速转账，也可以点击进入币种详情转账。NFT只支持点击进入详情后进行转账。
+     在**APP**，Token支持左滑快速转账，也可以点击进入币种详情转账。NFT只支持点击进入详情后进行转账。
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
     <img src="/images/user-guide/transfer1cn.png" width="200"/>
@@ -21,23 +22,26 @@ title: 转账
 </div>
 
     在**Web 页面**，您可以选择钱包后进行转账。
-    <div className="w-full flex items-center justify-center">
+ <div className="w-full flex items-center justify-center">
     <img src="/images/user-guide/transfer4cn.png" />
 </div>
-
 </Step>
 <Step title="填写并确认转账信息">
-    您可以选择钱包，或输入特定地址进行转账，请注意，若您选择内部钱包转账，该钱包必须完成私钥备份。
+   您可以选择钱包，或输入特定地址进行转账，请注意，若您选择内部钱包转账，该钱包必须完成私钥备份。
     
-    **普通成员**只能发起转账
     <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
     <img src="/images/user-guide/transfer3cn.png" width="200"/>
     <img src="/images/user-guide/transfer6cn.png" width="200"/>
     </CardGroup>
 </div>
-    
-    **审批成员**可以发起并审批转账订单。
+
+
+    交易将根据当前的[钱包转账策略](/user-guide/mpc-wallet/strategy/approval-flow)命中相关审批流，对应的审批员可以同意或拒绝该笔交易订单。
+
+    如果转账信息命中了钱包策略中的拒绝触发条件，则无法创建订单。
+
+
  <div className="w-full flex items-center justify-center">
     <CardGroup cols={3}>
     <img src="/images/user-guide/transfer5cn.png" width="200"/>
@@ -46,24 +50,19 @@ title: 转账
     </CardGroup>
 </div>
 
-    当订单满足审批规则后，**工作站创建者或管理员**可以进行下一步操作，即进行签名。
-</Step>
 
-
-<Step title="工作站创建者确认和签名">
-    工作站创建者需要设置矿工费（部分主链支持自定义矿工费，可以适当提高矿工费以加快交易处理速度），确认交易信息并进行签名。
-
+<Note>
+审批并签名节点：如果某审批人的同意动作正好满足节点阈值，该审批人将负责为交易设置矿工费并对交易进行真实的签名。
 <div className="w-full flex items-center justify-center">
-    <CardGroup cols={3}>
-    <img src="/images/user-guide/transfer9cn.png" width="200"/>
-    <img src="/images/user-guide/transfer10cn.png" width="200"/>
- <img src="/images/user-guide/transfer11cn.png" width="200"/>
-    </CardGroup>
+    <img src="/images/user-guide/approveandsign.jpeg" width="200"/>
 </div>
+
+</Note>
+
 
 </Step>
 <Step title="等待签名和交易确认">
-    签名成功后，需等待区块链处理。如果处理时间过长，可以通过提高订单的矿工费来加速交易。
+    审批通过后，订单需等待区块链处理。如果处理时间过长，可以通过提高订单的矿工费来加速交易。
     
     一旦区块链确认，交易即完成。您可以在交易记录中查看交易详情。
 
@@ -73,9 +72,12 @@ title: 转账
     <img src="/images/user-guide/transfer13cn.png" width="200"/>
     </CardGroup>
 </div>
-
 </Step>
 </Steps>
+
+
+
+
 
 ## III. 常见问题
 
@@ -84,4 +86,13 @@ title: 转账
 </Accordion>
 <Accordion title="如果我设置的矿工费不足，我可以在交易过程中增加吗？">
 如果交易处理时间过长，可以尝试提高订单的矿工费来加速交易。但请注意，一旦交易已被区块链确认，就无法更改矿工费。
+</Accordion>
+<Accordion title="我可以取消某笔交易订单吗？">
+如果交易状态为“审批中”，您可以采取以下两种方式撤回订单：
+
+* 由交易发起人主动撤回。
+
+* 联系 Custody 客服团队协助撤回该笔订单。
+
+请注意，如果交易已经完成签名并上链，则无法取消订单。
 </Accordion>

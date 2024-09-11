@@ -4,17 +4,20 @@ title: 成为管理员
 
 ## I. 功能简介
 
-<Note>只有工作站创建者才可以添加/删除工作站成员。</Note>
-当工作站创建者将您添加至工作站并将您分配为管理员后，您将在获得所有工作站钱包的访问权限同时收到该工作站的同权私钥。
 
-<Tip> 
-当您成为管理员后，您可以访问工作站下所有的钱包，并有发起收款、转账等基础权限，以及交易订单的签名权限。
-
-目前，管理员暂时无法对除了手动转账签名和加速以外的私钥操作行为进行签名。
+当工作站创建者将您添加至工作站并将您分配为管理员后，您将在获得所有工作站钱包的操作权限同时收到该工作站的同权私钥。
 
 具体成员角色说明可以参考[MPC用户角色介绍](/help-center/manage-mpc/user-setting/user-role)
-</Tip>
 
+<Note>
+工作站创建者可以通过[工作站成员](/user-guide/mpc-wallet/wallet/add-user)添加/删除工作站成员。
+
+<div className="w-full flex items-center justify-center">
+        <img src="/images/user-guide/wmember.png" width="200"/>
+</div>
+
+
+</Note>
 
 
 
@@ -25,12 +28,18 @@ title: 成为管理员
    当您被添加为管理员后，您会收到接收管理员私钥的任务。
 
 <div className="w-full flex items-center justify-center">
-        <img src="/images/user-guide/privatekeyrightreceiving.jpeg" width="200"/>
+        <img src="/images/user-guide/keytodo.jpeg" width="200"/>
 </div>
 </Step>
 
 <Step title="接收私钥">
 请保持网络通畅，点击开始接收即可获得管理员私钥。
+
+<div className="w-full flex items-center justify-center">
+        <img src="/images/user-guide/privatekeyrightreceiving.jpeg" width="200"/>
+</div>
+
+
 </Step>
 
 </Steps>
@@ -41,11 +50,11 @@ title: 成为管理员
 <Accordion title="有哪些情况会导致我无法接收私钥？">
 以下情况可能导致接收私钥失败：
 
-历史RSA公私钥对丢失： 如果您的历史RSA公私钥对丢失，解密管理员私钥将失败。请尝试重新登录App，并联系创建者重新发送相关私钥。
+**历史RSA公私钥对丢失：** 如果您的历史RSA公私钥对丢失，解密管理员私钥将失败。请尝试重新登录App，并联系创建者重新发送相关私钥。
 
-网络异常： 连接问题或网络异常可能导致私钥传输失败。请确保您的网络连接正常，然后再次尝试。
+**网络异常：** 连接问题或网络异常可能导致私钥传输失败。请确保您的网络连接正常，然后再次尝试。
 
-创建者取消了您的管理员权限： 如果创建者取消了您的管理员权限，您将无法接收私钥。在这种情况下，建议与创建者联系以了解详细情况并解决问题。
+**创建者取消了您的管理员权限：** 如果创建者取消了您的管理员权限，您将无法接收私钥。在这种情况下，建议与创建者联系以了解详细情况并解决问题。
 
 请注意，这些是可能的原因之一，具体情况可能需要通过与工作站创建者进一步沟通来确认和解决。
 </Accordion>
