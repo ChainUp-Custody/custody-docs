@@ -4,14 +4,12 @@ title: Apply KYT Service
 
 ##  Function Introduction
 
-After completing your KYT service configuration, you can view and process transactions through the KYT service. 
+After completing the KYT (Know Your Transaction) configuration, the system will automatically process transaction orders that match the KYT rules based on your settings. You can view the transaction results through the KYT service. If certain transactions require manual approval, you can go to the task list to view and handle the relevant KYT tasks.
 
 <Warning>
-Please note:
+1.The system cannot actually prevent high-risk deposit funds from being broadcasted and recorded on the blockchain at the blockchain level. The platform will fulfill its notification obligations and require clients to understand and take appropriate actions based on the specific risk information provided by the KYT service provider.
 
-The system cannot actually prevent high-risk deposit funds from being broadcasted and credited from the external on the blockchain level. The platform will fulfill the obligation to notify, asking customers to understand and handle it according to the specific risk information provided by the KYT service provider.
-
-Please be sure to complete the KYT manual review operation in time. If a wallet has an unfinished KYT review task, the transaction behavior of this wallet will be restricted.
+2.Please ensure that KYT manual reviews are completed in a timely manner. If there are any pending KYT review tasks for a wallet, the transaction activities of that wallet will be restricted.
 </Warning>
 
 
@@ -61,13 +59,26 @@ You can view the KYT to-do items that need to be handled in To-Do.
 </Step>
 
 <Step title="KYT Status">
-KYT includes the following statuses:
 
-1. KYT Verification: This status includes two different situations:
-    - Your business has created a KYT order and submitted it to the KYT service provider for verification. At this time, you only need to wait for the KYT service provider to return the verification result;
-    - Your business has submitted the KYT service provider for verification, but the KYT service verification has timed out. At this time, a KYT verification timeout to-do item will be generated for you;
-2. KYT Manual Processing: If your auto sweeping processing method is configured as "Manual Processing", when the recharge order reaches your configured alarm level, the order status is KYT Manual Processing. You need to confirm and handle this to-do. If this to-do is not handled, to ensure the safety of funds, the currency of the wallet will be intercepted for withdrawal and auto sweeping.
-3. KYT Refusal: If your withdrawal processing method is configured as "Refuse Withdrawal", when the withdrawal order reaches your configured alarm level, the order will be directly refused to withdraw coins, and this status is the final state of the order;
+KYT (Know Your Transaction) includes the following statuses:
+
+**KYT Verification in Progress:**
+
+* Verification in Progress: Your business has created a KYT order and submitted it to the KYT service provider, and it is currently being verified. You need to wait for the service provider to return the verification result.
+
+
+* Verification Timeout: The KYT verification submitted by your business has timed out, and the system will generate a KYT verification timeout task.
+
+
+**KYT Manual Processing:**
+
+* If your configured receipt processing method is 'Manual Processing,' and the deposit order reaches your configured alert level, the order status will be KYT Manual Processing. You need to confirm and handle this task in the to-do list. If not handled, to ensure fund security, this token in the wallet will be intercepted from withdrawal and collection.
+
+**KYT Rejection:**
+
+* If your configured withdrawal processing method is 'Reject Withdrawal,' and the withdrawal order reaches your configured alert level, the order will be directly rejected. This status is the final state of the order.
+
+
 
 <div className="w-full flex items-center justify-center">
 <CardGroup cols={3}>
@@ -87,5 +98,6 @@ KYT includes the following statuses:
 ##  Frequently Asked Questions
 
 <Accordion title="How does KYT service handle risky transactions?">
-The KYT service will alert risky transactions and handle them according to your configuration. For example, if your sweeping processing method is configured as "Manual Processing", when the recharge order reaches your configured alarm level, the order status is KYT Manual Processing. You need to confirm and handle this to-do. If this to-do is not handled, to ensure the safety of funds, the currency of the wallet will be intercepted for withdrawal and auto sweeping.
+
+The KYT service will alert you to risky transactions and handle them according to your configuration. For example, if your configured receipt processing method is 'Manual Processing,' when a deposit order reaches the alert level you set, the order status will be shown as 'KYT Manual Processing.' You need to confirm and handle this pending task. If the task is not handled, to ensure fund security, the tokens associated with the unprocessed tasks will be unable to be transferred or collected.
 </Accordion>

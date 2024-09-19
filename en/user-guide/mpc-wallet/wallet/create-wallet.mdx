@@ -4,17 +4,24 @@ title: Creating MPC Workspace
 
 ## I. Function Introduction
 
-The MPC system is divided into two types: **Workspace** and **Wallet**. A workspace can create multiple wallets to meet diverse business requirements.
+An MPC system user can create multiple workstations, and each workspace can create multiple wallets. Each wallet supports multiple asset types, and each asset type can have one or more addresses.
+
+<Tip> 
+The number of workspaces and wallets you can create, as well as the range of supported networks, depends on the service package you have purchased. If you have additional needs, please contact the Custody support team for assistance.
+</Tip>
 
 ### Application Scenarios
 
-1. Workspace can be used for asset statistics for a particular business line;
+**A workspace can be viewed as a group entity**
 
-Wallets can be allocated to different users for tracking and managing each user's assets.
+The Owner can add [Admin](/user-guide/mpc-wallet/wallet/become-admin)，and modify the [workspace strategy](/user-guide/mpc-wallet/strategy/edit-workspace-strategy)according to their needs. For key operation scenarios such as API management and retrieving the workspace's mnemonic, strict risk control through strategies is required to ensure unified and secure management of the group’s operations.
 
-2. Workspace can be used for the company's total asset statistics;
 
-Wallets can be allocated to different business departments for tracking and managing each department's assets.
+
+**Wallets under the workspace are akin to different departments of the group, with assets managed independently.**
+
+Wallets are equivalent to the various departments within the group, where each department’s assets are managed independently. The Owner can [add member](/user-guide/mpc-wallet/wallet/add-user) to the wallet，and set [basic strategy](/user-guide/mpc-wallet/strategy/approval-flow2) and [advanced strategy](/user-guide/mpc-wallet/strategy/approval-flow) to ensure the security of fund transfers and efficient internal asset management under control.
+
 
 ## II. Operation Procedure
 
