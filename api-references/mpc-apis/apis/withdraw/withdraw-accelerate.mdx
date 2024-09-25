@@ -6,9 +6,9 @@ description: "对支付中的交易提高矿工费，并重新广播交易"
 
 #### 请求参数数据结构
 <ParamField query="withdraw_id" type="integer" required>
-    转账ID；babylon交易填入stake_id
+    转账ID；babylon交易支持stake_id
 </ParamField>
-<ParamField query="fee" type="string">
+<ParamField query="fee" type="string" required>
    	自定义矿工费，例：`0.021`
 </ParamField>
 
