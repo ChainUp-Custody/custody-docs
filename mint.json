@@ -166,7 +166,8 @@
               "pages": [
                 "api-references/mpc-apis/apis/withdraw/withdraw",
                 "api-references/mpc-apis/apis/withdraw/withdraw-list",
-                "api-references/mpc-apis/apis/withdraw/withdraw-sync-list"
+                "api-references/mpc-apis/apis/withdraw/withdraw-sync-list",
+                "api-references/mpc-apis/apis/withdraw/withdraw-accelerate"
               ]
             },
             {
