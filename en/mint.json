@@ -1,5 +1,5 @@
 {
-  "name": "ChainUp Custody",
+  "name": "CryptSafe",
   "logo": {
     "dark": "/logo/chainupcustody-logo.svg",
     "light": "/logo/chainupcustody-logo.svg"
@@ -17,7 +17,7 @@
   "topbarLinks": [
     {
       "name": "ZH-CN",
-      "url": "https://custodydocs-zh.chainup.com/introduction/overview/chainup-custody"
+      "url": "https://docs-en.cryptsafe.sg/introduction/overview/chainup-custody"
     }
   ],
   "modeToggle": {
@@ -26,7 +26,7 @@
   },
   "topbarCtaButton": {
     "name": "Official Website",
-    "url": "https://custody.chainup.com"
+    "url": "https://www.cryptsafe.sg"
   },
   "tabs": [
     {
@@ -58,11 +58,9 @@
       ]
     },
     {
-      "group": "Custody Solutions",
+      "group": "CryptSafe Solutions",
       "pages": [
-        "introduction/custody-solution/mpc-wallet",
-        "introduction/custody-solution/joint-custody",
-        "introduction/custody-solution/wapi"
+        "introduction/custody-solution/mpc-wallet"
       ]
     },
     {
@@ -112,15 +110,7 @@
       ]
     },
     {
-      "group": "Full Custody",
-      "pages": [
-        "quick-start/joint-custody/download-app",
-        "quick-start/joint-custody/create-account",
-        "quick-start/joint-custody/create-wallet",
-        "quick-start/joint-custody/api-integration"
-      ]
-    },
-    {
+      
       "group": "Introduction to APIs",
       "pages": [
         "api-references/intro/custody-apis"
@@ -241,90 +231,7 @@
       ]
     },
     {
-      "group": "Full Custody",
-      "pages": [
-        "api-references/custody-apis/guide",
-        "api-references/custody-apis/scheme",
-        "api-references/custody-apis/prepare",
-        "api-references/custody-apis/sdk",
-        {
-          "group": "API List",
-          "pages": [
-            "api-references/custody-apis/apis/description",
-            {
-              "group": "Get Address",
-              "pages": [
-                "api-references/custody-apis/apis/get-address/create-user",
-                "api-references/custody-apis/apis/get-address/register-email",
-                "api-references/custody-apis/apis/get-address/get-deposit-address",
-                "api-references/custody-apis/apis/get-address/get-address-info"
-              ]
-            },
-            {
-              "group": "Account Balance",
-              "pages": [
-                "api-references/custody-apis/apis/account-assets/user-info",
-                "api-references/custody-apis/apis/account-assets/coin-list",
-                "api-references/custody-apis/apis/account-assets/get-account",
-                "api-references/custody-apis/apis/account-assets/get-balance"
-              ]
-            },
-            {
-              "group": "User Deposit",
-              "pages": [
-                "api-references/custody-apis/apis/user-deposit/deposit-sync-list",
-                "api-references/custody-apis/apis/user-deposit/deposit-list",
-                "api-references/custody-apis/apis/user-deposit/deposit-notify",
-                "api-references/custody-apis/apis/user-deposit/minerfee-list"
-              ]
-            },
-            {
-              "group": "User Withdrawal",
-              "pages": [
-                "api-references/custody-apis/apis/user-withdraw/withdraw",
-                "api-references/custody-apis/apis/user-withdraw/withdraw-confirm",
-                "api-references/custody-apis/apis/user-withdraw/withdraw-notify",
-                "api-references/custody-apis/apis/user-withdraw/withdraw-sync-list",
-                "api-references/custody-apis/apis/user-withdraw/withdraw-list"
-              ]
-            },
-            {
-              "group": "Internal Transfer",
-              "pages": [
-                "api-references/custody-apis/apis/company-transfer/company-transfer",
-                "api-references/custody-apis/apis/company-transfer/company-transfer-check-sum",
-                "api-references/custody-apis/apis/company-transfer/company-transfer-list",
-                "api-references/custody-apis/apis/company-transfer/company-transfer-sync-list"
-              ]
-            }
-          ]
-        },
-        "api-references/custody-apis/err-code"
-      ]
-    },
-    {
-      "group": "ChainUp Custody WAPI",
-      "pages": [
-        "api-references/bass-apis/prepare",
-        "api-references/bass-apis/scheme",
-        "api-references/bass-apis/sdk",
-        {
-          "group": "API List",
-          "pages": [
-            "api-references/bass-apis/apis/description",
-            "api-references/bass-apis/apis/address-register",
-            "api-references/bass-apis/apis/address-available",
-            "api-references/bass-apis/apis/deposit-notify",
-            "api-references/bass-apis/apis/withdraw-consume",
-            "api-references/bass-apis/apis/withdraw-notify",
-            "api-references/bass-apis/apis/internal-notify",
-            "api-references/bass-apis/apis/withdraw-cancel"
-          ]
-        },
-        "api-references/bass-apis/err-code"
-      ]
-    },
-    {
+     
       "group": "Introduction",
       "pages": [
         "help-center/introduction/manage-custody"
@@ -392,31 +299,7 @@
       ]
     },
     {
-      "group": "Full Custody",
-      "pages": [
-        {
-          "group": "Transactions",
-          "pages": [
-            "help-center/manage-joint/account-transfer/confirmation",
-            "help-center/manage-joint/account-transfer/transfer"
-          ]
-        },
-        {
-          "group": "Wallet",
-          "pages": [
-            "help-center/manage-joint/custody-wallet-manage/custody-adddress-type",
-            "help-center/manage-joint/custody-wallet-manage/wallet"
-          ]
-        },
-        {
-          "group": "Team Management",
-          "pages": [
-            "help-center/manage-joint/custody-user-settings/role"
-          ]
-        }
-      ]
-    },
-    {
+ 
       "group": "MPC Self-Custody",
       "pages": [
         {
@@ -425,7 +308,6 @@
             "user-guide/mpc-wallet/account/password",
             "user-guide/mpc-wallet/account/bind-ga",
             "user-guide/mpc-wallet/account/bio-identity",
-            "user-guide/mpc-wallet/account/kyc",
             "user-guide/mpc-wallet/account/cancel-account"
           ]
         },
@@ -540,46 +422,7 @@
           ]
         }
       ]
-    },
-    {
-      "group": "Full Custody",
-      "pages": [
-        {
-          "group": "Account",
-          "pages": [
-            "user-guide/custody-wallet/account/password",
-            "user-guide/custody-wallet/account/bind-ga",
-            "user-guide/custody-wallet/account/bio-identity",
-            "user-guide/custody-wallet/account/kyc",
-            "user-guide/custody-wallet/account/cancel-account"
-          ]
-        },
-        {
-          "group": "Wallet",
-          "pages": [
-            "user-guide/custody-wallet/wallet/create-wallet",
-            "user-guide/custody-wallet/wallet/add-user"
-          ]
-        },
-        {
-          "group": "Operations",
-          "pages": [
-            "user-guide/custody-wallet/operation/coin",
-            "user-guide/custody-wallet/operation/receive",
-            "user-guide/custody-wallet/operation/transfer",
-            "user-guide/custody-wallet/operation/record",
-            "user-guide/custody-wallet/operation/to-do"
-          ]
-        },
-        {
-          "group": "Strategy",
-          "pages": [
-            "user-guide/custody-wallet/strategy/whitelist",
-            "user-guide/custody-wallet/strategy/api",
-            "user-guide/custody-wallet/strategy/approval-flow"
-          ]
-        }
-      ]
+   
     }
   ],
   "api": {

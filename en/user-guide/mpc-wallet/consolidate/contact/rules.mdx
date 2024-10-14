@@ -4,12 +4,12 @@ title: Configuring Auto Sweeping Rules
 
 ##  Function Introduction
 
-By creating smart contracts and auto sweeping rules through the Custody Web interface, you can ensure that the system will operate according to predefined rules during sweeping operation. Simultaneously, you can also authorize sweeping contract for wallets in the App, thus accurately determining which wallets have the right to sweep assets.
+By creating smart contracts and auto sweeping rules through the CryptSafe Web interface, you can ensure that the system will operate according to predefined rules during sweeping operation. Simultaneously, you can also authorize sweeping contract for wallets in the App, thus accurately determining which wallets have the right to sweep assets.
 
 <Warning>
 **Important Tips**
 
-- The ChainUp Custody platform only supports `Web3 wallets` for Sweep ERC-20 Tokens feature.
+- The CryptSafe platform only supports `Web3 wallets` for Sweep ERC-20 Tokens feature.
 - Each wallet and token that needs to be swept must be authorized in advance.
 - It is strongly recommended not to configure the same asset strategy for both the Sweep ERC-20 Tokens feature and the Sweep All Coins feature simultaneously. If an error occurs, the system will execute the sweeping operation configured earliest based on the time of your operation.
 
@@ -42,7 +42,7 @@ Configuring contract rules mainly includes the following **three steps**:
 </Step>
 
 <Step title="Sign and Publish">
-    The private key holder scans the code with the Custody App to sign and successfully publish the auto sweeping rules.
+    The private key holder scans the code with the CryptoSafe App to sign and successfully publish the auto sweeping rules.
    <div className="w-full flex items-center justify-center">
     <img src="/images/enerc203.png" />
 </div>
@@ -72,7 +72,7 @@ Configuring contract rules mainly includes the following **three steps**:
 
 <Steps>
 <Step title="Open Auto Sweep Function">
-In the Custody APP, go to 【Discover】-【Sweep Tokens】, click to select the workspace that has configured the sweeping contract for authorization.
+In the CryptoSafe App, go to 【Discover】-【Sweep Tokens】, click to select the workspace that has configured the sweeping contract for authorization.
 
 <div className="w-full flex items-center justify-center">
 <CardGroup cols={2}>
@@ -97,7 +97,7 @@ For wallets that do not need to be swept, just cancel the operation.
 ##  Frequently Asked Questions
 
 <Accordion title="What if I want to change the auto sweeping rules?">
-If you want to change the auto sweeping rules, you can modify them on the "【Auto Sweep】-【Sweep ERC-20 Tokens】" page of the Custody Web interface. Please note that the modified rules need to be reauthorized to take effect.
+If you want to change the auto sweeping rules, you can modify them on the "【Auto Sweep】-【Sweep ERC-20 Tokens】" page of the CryptSafe Web interface. Please note that the modified rules need to be reauthorized to take effect.
 </Accordion>
 
 <Accordion title="What types of assets does the Sweep ERC-20 Tokens feature support?">

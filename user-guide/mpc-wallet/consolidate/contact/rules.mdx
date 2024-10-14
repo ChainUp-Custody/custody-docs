@@ -4,12 +4,12 @@ title: 配置ERC-20代币归集规则
 
 ## I. 功能简介
 
-通过Custody Web端创建智能合约并配置归集规则，您可以确保系统在执行归集时，将按照预定的规则进行操作。同时，您也可以在App中为钱包处理归集合约授权，从而精确决定哪些钱包有权进行归集。
+通过CryptSafe Web端创建智能合约并配置归集规则，您可以确保系统在执行归集时，将按照预定的规则进行操作。同时，您也可以在App中为钱包处理归集合约授权，从而精确决定哪些钱包有权进行归集。
 
 <Warning>
 **重要提示**
 
-- ChainUp Custody平台仅支持`Web3钱包`进行合约归集。
+- CryptSafe平台仅支持`Web3钱包`进行合约归集。
 - 需要进行归集的每个钱包和代币都必须事先得到授权。
 - 强烈建议不要同时为相同资产配置ERC-20代币归集策略和全币种归集策略。如果这样操作，系统将根据您配置策略的时间，选择执行最早配置的归集策略。
 
@@ -48,7 +48,7 @@ title: 配置ERC-20代币归集规则
 </Step>
 
 <Step title="签名发布合约">
-    私钥持有者使用Custody App扫码签名，以成功发布自动归集规则。
+    私钥持有者使用CryptoSafe App扫码签名，以成功发布自动归集规则。
    <div className="w-full flex items-center justify-center">
     <img src="/images/user-guide/cnsignwalllet.png" />
 </div>  
@@ -81,7 +81,7 @@ title: 配置ERC-20代币归集规则
 
 <Steps>
 <Step title="MPC代币归集">
-Custody APP的【发现】-【代币归集】功能，点击选择已经配置了归集合约的工作站进行授权操作。
+CryptoSafe App的【发现】-【代币归集】功能，点击选择已经配置了归集合约的工作站进行授权操作。
 
 <div className="w-full flex items-center justify-center">
 <CardGroup cols={2}>
@@ -113,7 +113,7 @@ Custody APP的【发现】-【代币归集】功能，点击选择已经配置�
 ## III. 常见问题
 
 <Accordion title="如何修改归集规则？">
-如果您想更改已经设置的归集规则，您可以在Custody Web端的“归集管理”页面中进行修改。请注意，修改后的规则需要重新授权才能生效。
+如果您想更改已经设置的归集规则，您可以在CryptSafe Web端的“归集管理”页面中进行修改。请注意，修改后的规则需要重新授权才能生效。
 </Accordion>
 
 <Accordion title="ERC-20代币归集功能支持哪些资产类型？">

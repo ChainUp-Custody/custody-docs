@@ -172,7 +172,7 @@ Options:
         ## [Required] Encrypted storage file used by v1.1.x version
         keystore_file: "conf/keystore.json"
 
-    ## Custody System
+    ## CryptSafe system
     custody_service:
         ## [Required] app_id, obtained after creating a merchant
         app_id: ""
@@ -311,7 +311,7 @@ esac
 
 echo ""
 APP_ID=""
-echo "App id can find in https://custody.chainup.com/mpc/center/api."
+echo "App id can find in https://www.cryptsafe.sg/mpc/center/api."
 echo "Please enter app id: (e.g. 6866b043a013680ea91be7e6fdcd2af4)"
 read APP_ID
 
@@ -331,7 +331,7 @@ main:
     ## [Required] Encrypted storage file used by v1.1.x version
     keystore_file: "conf/keystore.json"
 
-## Custody System
+## CryptSafe system
 custody_service:
     ## [Required] app_id, obtained after creating a merchant
     app_id: "${APP_ID}"
@@ -394,7 +394,7 @@ fi
 echo "rsa key pair create success, you can find rsa public key in conf/keystore.json"
 
 echo ""
-echo "ChainUp RSA public key can find in https://custody.chainup.com/mpc/center/api"
+echo "ChainUp RSA public key can find in https://www.cryptsafe.sg/mpc/center/api"
 echo "Please input ChinaUp RSA public key:"
 read CHAINUP_PUBLIC_KEY
 RESULT=$(echo ${PASSWORD} | ./co-signer -custody-pub-import ${CHAINUP_PUBLIC_KEY})
@@ -519,7 +519,7 @@ echo "Please exec \`unset OE_SIMULATION\` disable simulation env"
 
 ## Add Co-Signer Server to the Whitelist
 
-ChainUp Custody needs access to the Co-Signer to create coequal private keys and generate addresses. Therefore, it's necessary to add the IP of the Co-Signer server to the security group or whitelist of the ChainUp Custody server. Below are the IP addresses for Custody:
+CryptSafe needs access to the Co-Signer to create coequal private keys and generate addresses. Therefore, it's necessary to add the IP of the Co-Signer server to the security group or whitelist of the CryptSafe server. Below are the IP addresses for Custody:
 
 1. Inbound: Allow access from the Custody server (IP: **54.254.7.206**) to the Co-Signer server on port **28888**. Note that port 28888 is the listening port for the Co-Signer program and can be customized.
 

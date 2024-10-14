@@ -6,6 +6,6 @@ A "Change Address" refers to a dedicated address used to receive the change or u
 
 For example, if you want to send 0.5 BTC, and you have a UTXO of 1 BTC, you can't split that UTXO directly, send 0.5 BTC, and keep the remaining 0.5 BTC in the same UTXO. Instead, the excess 0.5 BTC will be sent to a newly generated address, known as the change address. This helps ensure that the inputs and outputs of the transaction balance correctly, maintaining the accuracy of the ledger.
 
-In ChainUp Custody, change addresses are assigned by the system and remain immutable. Users cannot modify the label of the change address. Typically, for each sub-wallet's UTXO-series cryptocurrency, the first created address will automatically be designated as the change address. If this address has already been assigned, the first newly created address will be designated as the change address.
+In CryptSafe, change addresses are assigned by the system and remain immutable. Users cannot modify the label of the change address. Typically, for each sub-wallet's UTXO-series cryptocurrency, the first created address will automatically be designated as the change address. If this address has already been assigned, the first newly created address will be designated as the change address.
 
 When you send a transaction from your MPC wallet, the system will automatically select the necessary UTXOs and send the required amount to the receiving address. Any remaining balance will be sent to the newly generated change address in your wallet.

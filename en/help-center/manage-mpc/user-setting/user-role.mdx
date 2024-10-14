@@ -3,7 +3,7 @@ title: MPC User Roles
 ---
 
 ## I. Overview
-To ensure the safety of data related to the MPC system and compliance with the company's financial approval system, thus safeguarding company funds, we believe that setting roles with different permissions is crucial for the MPC workspace. In setting workspace roles, ChainUp Custody aims to balance the safety of funds and data with approval requirements, striving to find the best balance between security, compliance with approval processes, and user-friendliness. Taking these factors into account, the roles in the Custody MPC workspace are divided into three categories: workspace owner, admin, and wallet ordinary member.
+To ensure the safety of data related to the MPC system and compliance with the company's financial approval system, thus safeguarding company funds, we believe that setting roles with different permissions is crucial for the MPC workspace. In setting workspace roles, CryptSafe aims to balance the safety of funds and data with approval requirements, striving to find the best balance between security, compliance with approval processes, and user-friendliness. Taking these factors into account, the roles in the Custody MPC workspace are divided into three categories: workspace owner, admin, and wallet ordinary member.
 
 ## II. Role Introduction
 Workspace Owner
@@ -27,7 +27,7 @@ The workspace owner is the only full-permission user of the MPC workspace. They 
 
 ### Admin
 
-An admin with an equal rights private key for the workspace has the authority to initiate receipts, transfers, and sign and expedite transactions for all wallets under the workspace.
+An admin with an equal rights private key for the workspace has the authority to access all wallets under the workspace.
 
 **Recommended Responsibilities**
 * Initiate Transaction
@@ -52,6 +52,10 @@ An admin with an equal rights private key for the workspace has the authority to
 * Configure Collection Strategy
 * Manage Wallet Strategy
 
+
+<Tip>
+In the MPC system, any role can become a wallet approver, responsible for approving core wallet operation requests. The workspace owner can edit both basic and advanced wallet strategies via the "Strategy Engine" in CryptoSafe Web, including the transfer approval workflow. Members added to the approval workflow will automatically become approvers. For detailed instructions, refer to [Wallet Strategy Engine](/help-center/manage-mpc/strategy/transfer).
+</Tip>
 
 ## III. Role Function Access Table
 

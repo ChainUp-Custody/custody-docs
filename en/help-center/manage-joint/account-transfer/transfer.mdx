@@ -10,9 +10,9 @@ A transaction refers to the process of transferring value from one address to an
 
 Blockchain transactions refer to asset transfers conducted on the blockchain network. Specific types include:
 
-- **On-Chain Deposit**: Users deposit assets from an external address to an on-chain address allocated by the ChainUp Custody Full Custody platform.
-- **On-Chain Withdrawal**: Users withdraw assets from the ChainUp Custody Full Custody platform address to an external address.
-- **Consolidation**: To better manage and custody assets, assets are consolidated to ChainUp Custody Full Custody's custody address.
+- **On-Chain Deposit**: Users deposit assets from an external address to an on-chain address allocated by the CryptSafe Full CryptoSafe platform.
+- **On-Chain Withdrawal**: Users withdraw assets from the CryptSafe Full CryptoSafe platform address to an external address.
+- **Consolidation**: To better manage and custody assets, assets are consolidated to CryptSafe Full Custody's CryptoSafe address.
 
 Blockchain transactions rely on confirmations from the blockchain network, which may require a certain amount of time and fees. The status of a transaction can be divided into different stages, with each stage having corresponding statuses to detail the current situation and progress of the transaction.
 
@@ -62,14 +62,14 @@ Withdrawal Miner (Gas) Fees: When users withdraw to a non-alliance address, bloc
 
 #### Status Description
 
-- **Under Review (0)**: The user initiates a withdrawal request, and the transaction status is newly created, not yet reviewed or processed by any client or ChainUp Custody Full Custody.
-- **Payment in Process (1)**: If the client has configured an approval policy for the wallet and currency, it enters the withdrawal approval process, reviewed by team members. Once the approval process set in the approval workflow is passed, the withdrawal approval process ends and enters the ChainUp Custody Full Custody KYT process. If there is no approval configuration, it directly enters the ChainUp Custody Full Custody KYT process.
+- **Under Review (0)**: The user initiates a withdrawal request, and the transaction status is newly created, not yet reviewed or processed by any client or CryptSafe Full Custody.
+- **Payment in Process (1)**: If the client has configured an approval policy for the wallet and currency, it enters the withdrawal approval process, reviewed by team members. Once the approval process set in the approval workflow is passed, the withdrawal approval process ends and enters the CryptSafe Full Custody KYT process. If there is no approval configuration, it directly enters the CryptSafe Full Custody KYT process.
 - **Reject (2)**: If the withdrawal request does not pass the client's approval or risk control policy, the system will reject the request, changing the transaction status to approval rejected. If an anomaly occurs during the process, such as network issues or nonce mismatch, the transaction will be bounced back by the system, changing the status to approval rejected.
 - **Failure (4)**: If a payment failure occurs during the withdrawal process, possibly due to blockchain network issues or verification failures, the transaction status changes to payment failed.
 - **Success (5)**: The withdrawal operation is completed successfully, and the blockchain has processed the transaction.
 - **Canceled (6)**: If the wallet and currency have an approval process configured, and the initiator cancels the withdrawal request, the transaction status changes to canceled.
-- **Pending KYT Verification (7)**: The withdrawal request is submitted but not yet reviewed by ChainUp Custody Full Custody KYT. The system will await KYT verification to ensure the transaction complies with regulations and security standards.
-- **Manual Review (8)**: The withdrawal request is flagged as a potential risk and requires manual review. The transaction status is pending KYT manual review, needing ChainUp Custody Full Custody staff to comprehensively assess the transaction's risk situation.
+- **Pending KYT Verification (7)**: The withdrawal request is submitted but not yet reviewed by CryptSafe Full Custody KYT. The system will await KYT verification to ensure the transaction complies with regulations and security standards.
+- **Manual Review (8)**: The withdrawal request is flagged as a potential risk and requires manual review. The transaction status is pending KYT manual review, needing CryptSafe Full Custody staff to comprehensively assess the transaction's risk situation.
 
 ### Consolidation
 
@@ -81,14 +81,14 @@ Withdrawal Miner (Gas) Fees: When users withdraw to a non-alliance address, bloc
 Consolidation Miner (Gas) Fees: After the user deposits funds to the allocated address, the system automatically transfers the user's address funds to the system address, incurring this transaction fee.
 </Tip>
 
-In a centralized custody system, different types of addresses (such as Account, UTXO, and addresses containing MEMO fields) have some differences in consolidation operations and costs:
+In a centralized CryptSafe system, different types of addresses (such as Account, UTXO, and addresses containing MEMO fields) have some differences in consolidation operations and costs:
 
 - **UTXO Type** (e.g., BTC) supports multiple inputs in a single transaction, and **Memo Type** (e.g., XRP) does not require additional consolidation operations and fees.
-- **Account Type** (e.g., ETH and ERC20 Token) requires each transaction to pay miner (gas) fees from the initiating account, so centralized custody platforms need to periodically consolidate funds.
+- **Account Type** (e.g., ETH and ERC20 Token) requires each transaction to pay miner (gas) fees from the initiating account, so centralized CryptoSafe platforms need to periodically consolidate funds.
 
 ## Alliance Transfers
 
-The alliance refers to a group of clients using the Custody system's blockchain services. Clients within the alliance benefit from fast transfer speeds and zero fees when transferring to each other.
+The alliance refers to a group of clients using the CryptSafe system's blockchain services. Clients within the alliance benefit from fast transfer speeds and zero fees when transferring to each other.
 
 <Tip>
 Requires the mandatory on-chain function not to be enabled.

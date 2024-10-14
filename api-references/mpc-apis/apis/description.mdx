@@ -7,11 +7,11 @@ title: 统一说明
 | 生产环境域名 (https://openapi.chainup.com/) | 不支持测试环境  |
 | :---------------------------- | ------------------------------------------------- |
 | app_id:                       | 请创建钱包后获取                                  |
-| rsa_wallet_pub:               | Custody系统公钥；请创建钱包后从Custody系统获取    |
+| rsa_wallet_pub:               | CryptSafe系统公钥；请创建钱包后从CryptSafe系统获取    |
 | rsa_third_prv:                | 客户私钥；自主生成、保存                          |
-| rsa_third_pub:                | 客户公钥；自主生成；请创建钱包后配置到Custody系统 |
+| rsa_third_pub:                | 客户公钥；自主生成；请创建钱包后配置到CryptSafe系统 |
 | rsa_co_signer_pri:            | Co-Signer私钥；使用Co-Signer生成，或自主生成、保存    |
-| rsa_co_signer_pub:            | Co-Signer公钥；使用Co-Signer生成，或自主生成；请创建钱包后配置到Custody系统 |
+| rsa_co_signer_pub:            | Co-Signer公钥；使用Co-Signer生成，或自主生成；请创建钱包后配置到CryptSafe系统 |
 
 
 ### RSA公私钥格式
@@ -57,7 +57,7 @@ curl -X GET \
 
 | Param | 类型   | 是否必须 | 说明                                                      |
 | :---- | :----- | :------- | :-------------------------------------------------------- |
-| data  | String | 必须     | `json格式的数据`加密之后的字符串；Custody的RSA私钥加密，具体加密信息见 `响应结果data解密后格式` |
+| data  | String | 必须     | `json格式的数据`加密之后的字符串；CryptoSafe的RSA私钥加密，具体加密信息见 `响应结果data解密后格式` |
 
 ```json
 {
