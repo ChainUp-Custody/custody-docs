@@ -118,8 +118,8 @@ Usage: co-signer [-hv] [-server] [-rsa-gen] [-recover-seed mnemonic] [-rsa-pri-i
 -pub-import]
 
 Options:
-    -CryptoSafe-pub-import string
-            import CryptoSafe public key
+    -CryptSafe-pub-import string
+            import CryptSafe public key
     -h this is help
     -keystore-gen
             Used to merge files (including seed.dat, rsaPri.pem, etc.) to generate a new keystore.json file
@@ -143,7 +143,7 @@ Options:
 4. -rsa-gen                   工具模式：输入启动密码，生成加密的私钥和未加密的公钥，生成至keystore.json文件中
 5. -rsa-pri-import            工具模式：输入启动密码，导入现有的rsa私钥，生成加密后的rsa私钥文件（仅导入私钥），生成至keystore.json文件中
 6. -verify-sign-pub-import    导入校验客户签名(sign)使用的公钥，生成至keystore.json文件中；导入后co-signer会校验提现和web3客户签名(sign)，sign生成方式详见API文档
-7. -CryptoSafe-pub-import        工具模式：输入启动密码，导入CryptoSafe的公钥，生成至keystore.json文件中
+7. -CryptSafe-pub-import        工具模式：输入启动密码，导入CryptSafe的公钥，生成至keystore.json文件中
 8. -keystore-gen              工具模式：用于将v1.0.x版本的seed.dat，rsaPri.pem，rsaPub.pem等文件统一导入至keystore.json文件
 ```
 
@@ -168,7 +168,7 @@ Options:
             keystore_file: "conf/keystore.json"
 
         ## CryptSafe系统
-        CryptoSafe_service:
+        CryptSafe_service:
             ## 【必填】app_id，创建商户后获取
             app_id: ""
             ## 【必填】api域名地址，见接口文档
@@ -193,7 +193,7 @@ Options:
 
         执行如上命令后，按提示输入**Co-Signer** 启动密码。执行成功后conf目录下生成\更新文件：keystore.json
 
-        私钥为请求CryptoSafe服务时加密请求参数使用，私钥对应公钥需配置到CryptoSafe, CryptoSafe使用该公钥解密**Co-Signer** 请求数据
+        私钥为请求CryptSafe服务时加密请求参数使用，私钥对应公钥需配置到CryptSafe, CryptSafe使用该公钥解密**Co-Signer** 请求数据
 
 
 
@@ -204,17 +204,17 @@ Options:
 
         执行如上命令后，按提示输入**Co-Signer** 启动密码。执行成功后conf目录下生成\更新文件：keystore.json
 
-        私钥为请求CryptoSafe服务时加密请求参数使用，私钥对应公钥需配置到CryptoSafe, CryptoSafe使用该公钥解密**Co-Signer** 请求数据
+        私钥为请求CryptSafe服务时加密请求参数使用，私钥对应公钥需配置到CryptSafe, CryptSafe使用该公钥解密**Co-Signer** 请求数据
 
     </Step>
-    <Step title="Co-Signer 配置CryptoSafe公钥">
+    <Step title="Co-Signer 配置CryptSafe公钥">
         ```sh
-        ./co-signer -CryptoSafe-pub-import 'CryptoSafe RSA Public key'
+        ./co-signer -CryptSafe-pub-import 'CryptSafe RSA Public key'
         ```
 
         执行如上命令后，按提示输入**Co-Signer** 启动密码。执行成功后conf目录下生成\更新文件：keystore.json
 
-        该公钥由CryptoSafe提供，**Co-Signer** 使用该公钥解密CryptoSafe服务的返回数据
+        该公钥由CryptSafe提供，**Co-Signer** 使用该公钥解密CryptSafe服务的返回数据
 
     </Step>
     <Step title="【可选】Co-Signer 配置不回调客户系统时校验签名(sign)所使用的公钥">
@@ -265,7 +265,7 @@ echo ${STR_PASSWORD} | nohup ${project_path}/co-signer -server >>nohup.out 2>&1 
 
 ## III. **Co-Signer** 快捷部署脚本
 
-CryptoSafe也提供了更为便捷的部署方式，使用脚本一键式生成配置信息、以及运行环境
+CryptSafe也提供了更为便捷的部署方式，使用脚本一键式生成配置信息、以及运行环境
 
 ### **install.sh**
 
@@ -320,7 +320,7 @@ main:
     keystore_file: "conf/keystore.json"
 
 ## CryptSafe system
-CryptoSafe_service:
+CryptSafe_service:
     ## [Required] app_id, obtained after creating a merchant
     app_id: "${APP_ID}"
     ## [Required] api domain address, see interface documentation
@@ -506,8 +506,8 @@ echo "Please exec \`unset OE_SIMULATION\` disable simulation env"
 
 ## IV. 添加**Co-Signer** 服务器白名单
 
-CryptSafe需要访问**Co-Signer** 创建同权私钥、生成地址，故需要将**Co-Signer** 的启动端口对CryptSafe的服务器IP添加安全组或白名单，以下是CryptoSafe的IP：
+CryptSafe需要访问**Co-Signer** 创建同权私钥、生成地址，故需要将**Co-Signer** 的启动端口对CryptSafe的服务器IP添加安全组或白名单，以下是CryptSafe的IP：
 
-1. 入网：**Co-Signer** 服务器开通CryptoSafe服务器(IP: **54.254.7.206**)访问**28888端口**权限，注意28888端口为**Co-Signer** 程序监听端口，**可自定义**。
+1. 入网：**Co-Signer** 服务器开通CryptSafe服务器(IP: **54.254.7.206**)访问**28888端口**权限，注意28888端口为**Co-Signer** 程序监听端口，**可自定义**。
 
-2. 出网：**Co-Signer** 服务器需访问CryptoSafe服务器，需开通访问**54.251.87.91:433**权限。
+2. 出网：**Co-Signer** 服务器需访问CryptSafe服务器，需开通访问**54.251.87.91:433**权限。

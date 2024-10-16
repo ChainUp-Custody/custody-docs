@@ -6,14 +6,14 @@ Before system development, the workspace needs to complete the following prepara
 
 ## Create API
 
-The workspace owner should log in to the [CryptoSafe Web Platform](https://www.cryptsafe.sg/) and create an API on the API Management page.
+The workspace owner should log in to the [CryptSafe Web Platform](https://www.cryptsafe.sg/) and create an API on the API Management page.
 
 <div className="w-full flex items-center justify-center">
     <img src="/images/apis/api1en.png" width="600"/>
 </div>
 
 ### About RSA Public Key
-To ensure secure data transmission, CryptoSafe uses the `RSA-2048` **PKCS#8** key format for asymmetric encryption of API request and response data. The public key is used to decrypt request data and needs to be uploaded to ChainUp, while the private key is used to encrypt data and is configured by the client on the corresponding server and securely stored.
+To ensure secure data transmission, CryptSafe uses the `RSA-2048` **PKCS#8** key format for asymmetric encryption of API request and response data. The public key is used to decrypt request data and needs to be uploaded to ChainUp, while the private key is used to encrypt data and is configured by the client on the corresponding server and securely stored.
 
 ### Explanation of RSA Public-Private Key Pairs
 First pair of RSA public-private keys: After creating the API, CryptSafe will generate a default pair. The `RSA public key` will be provided to the developer for `decrypting response parameters`.

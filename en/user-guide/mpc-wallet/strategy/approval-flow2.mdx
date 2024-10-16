@@ -25,23 +25,26 @@ View and manage your advanced strategies
 
 <Steps>
 <Step title="Log in and Access the Advanced Strategies List">
-    Use the CryptoSafe App to scan and log in to the MPC wallet web version, open the [Policy Engine], and select the [Advanced Strategy] module for the wallet.
+    Use the CryptSafe App to scan and log in to the MPC wallet web version, open the [Policy Engine], and select the [Advanced Strategy] module for the wallet.
+
 <div className="w-full flex items-center justify-center">
-<img src="/images/user-guide/advancedstrategy1.png" width="600"/>
+    <CardGroup cols={2}>
+        <img src="/images/user-guide/advancelist1en.png" width="600"/>
+      <img src="/images/user-guide/advancelist2en.png" width="600"/>
+        </CardGroup>
 </div>
+
 </Step>
 <Step title="Manage Advanced Strategies">
    Select the advanced policy you want to edit, then perform edit or delete operations. You can also adjust the priority of Advanced Strategies by clicking the arrows on the list page.
 Additionally, you can click the add policy button to add more controls to your wallet.
 
-<div className="w-full flex items-center justify-center">
- <img src="/images/user-guide/editadvanced.png" width="600"/>
-</div>
+
 </Step>
 
 <Step title="Edit Strategy Details">
 <Step title="Add and Configure Transfer Strategies">
-**If you choose to edit Advanced Strategy - Transfer Transactions, you can configure the following parameters:
+* If you choose to edit Advanced Strategy - Transfer Transactions, you can configure the following parameters:
 
 **Strategy Trigger Conditions:**
 
@@ -51,17 +54,21 @@ Additionally, you can click the add policy button to add more controls to your w
 
 * Transfer limit: The amount of the transaction in cryptocurrency or its value in USD
 
+<div className="w-full flex items-center justify-center">
+<img src="/images/user-guide/advancetransfer1en.png" width="600"/>
+</div>
 
+* If you choose to edit Advanced Strategy - Web3 Transactions, you can configure the following parameters:
 
-**If you choose to edit Advanced Strategy - Web3 Transactions, you can configure the following parameters:
-
-** Strategy Trigger Conditions: **
+**Strategy Trigger Conditions:**
 
 * Initiator
 
 * Contract Address: Controls the contract transaction address that needs interaction
 
-
+<div className="w-full flex items-center justify-center">
+<img src="/images/user-guide/advanceweb31en.png" width="600"/>
+</div>
 
 **All types of advanced strategies have the same trigger action editing capabilities：**
 
@@ -78,15 +85,15 @@ The approval and signing node is the final node and can include members with wal
 
 <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
-        <img src="/images/user-guide/selectapprover1.png" width="600"/>
-      <img src="/images/user-guide/selectapprover2.png" width="600"/>
+        <img src="/images/user-guide/apiapproveren.png" width="600"/>
+      <img src="/images/user-guide/apiapproveren.png" width="600"/>
         </CardGroup>
 </div>
 
 **Option 2: Orders hitting the strategy cannot be initiated, and the system directly rejects them**
 
 <div className="w-full flex items-center justify-center">
-<img src="/images/user-guide/rejectadvanced.jpeg" width="600"/>
+<img src="/images/user-guide/rejecten.png" width="600"/>
 </div>
 <Warning>
 **Critical Steps and Considerations**
@@ -99,13 +106,10 @@ If a wallet has never had advanced strategies edited, all its risk control scena
 </Step>
 
 </Step>
-<Step title="Confirm Advanced Policy Modifications">
+<Step title="Confirm Advanced Startegy Modifications">
     Any additions, deletions, or modifications to Advanced Strategies require approval from the current basic strategy to take effect. If you are an approver of the currently effective basic strategy, you can find the corresponding pending tasks in [Workflow] to process them.
 <div className="w-full flex items-center justify-center">
-    <CardGroup cols={2}>
-        <img src="/images/user-guide/confirmeditbasic1.png" width="600"/>
-      <img src="/images/user-guide/workflowpolicy.png" width="600"/>
-        </CardGroup>
+    <img src="/images/user-guide/checkadvanceen.png" width="600"/>
 </div>
 </Step>
 </Steps>
