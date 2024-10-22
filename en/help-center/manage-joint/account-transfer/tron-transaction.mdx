@@ -1,0 +1,31 @@
+---
+title: TRON Transaction Mechanism
+---
+
+## Introduction
+The TRON Network employs a unique fee model, differing from blockchains like Ethereum. Instead of using a fixed gas fee, it completes transactions through two resources: bandwidth and energy.
+* Transferring TRX or TRC-10 tokens consumes bandwidth.
+* Transferring TRC-20 tokens or executing contracts consumes both bandwidth and energy.
+These resources can be obtained by staking TRX. However, for full custody wallets, users need to burn TRX to acquire resources, increasing the transaction costs.
+
+## Unique Mechanism
+To reduce client transaction costs, the Custody system has introduced an automatic delegation feature. For full custody users, the wallets they manage will by default use TRON transaction resources provided by the system. Users do not need to burn TRX; they only need to pay a small service fee to complete transactions.
+
+## Scope of Application
+The Custody platform provides resource delegation for TRON transactions on all wallets (enterprise wallets and cloud wallets). Users do not need to burn TRX as gas fees.
+
+<Note>
+**For Inactive Address**
+
+In the TRON network, an address that has received TRX is considered an active address and supports the use of delegated resources. If an address is not yet activated, the first transaction must consume TRX to pay the miner's fee. To optimize the experience, the Custody system will automatically provide TRX for inactive addresses to complete activation. Subsequently, all transactions from that address will enjoy resource delegation services, reducing transaction costs.
+
+</Note>
+
+## Billing Rules
+- **Using Delegated Resources: ** ransaction fees are fully supported by system resources. Custody will charge a small TRX service fee as the withdrawal miner's fee based on the amount of resources consumed, which will be automatically deducted from the user's account. At this time, the on-chain displayed miner's fee will be 0 TRX.
+
+<Tip>
+The delegation fee for each transaction is approximately half of the historical fees.
+</Tip>
+
+- **Not Using Delegated Resources:** If the transaction is not covered by delegated resources, the system will default to consuming TRX from the user's account as the withdrawal miner's fee, and the on-chain displayed miner's fee will be equivalent to the withdrawal miner's fee.

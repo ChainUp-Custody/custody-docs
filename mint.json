@@ -398,7 +398,8 @@
           "group": "账号交易",
           "pages": [
             "help-center/manage-joint/account-transfer/confirmation",
-            "help-center/manage-joint/account-transfer/transfer"
+            "help-center/manage-joint/account-transfer/transfer",
+            "help-center/manage-joint/account-transfer/tron-transaction"
           ]
         },
         {
