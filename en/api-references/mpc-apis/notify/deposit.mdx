@@ -21,7 +21,7 @@ title: Receiving (Deposit)
 | memo             | String  | No       | to account address memo，example：123321                     |
 | txid             | String  | Yes      | Transaction hash                                             |
 | confirmations    | Integer | Yes      | Number of block confirmations，example：10                   |
-| status           | Integer | Yes      | Receiving status: `1000` Unconfirmed, `1010` Pending KYT Verification, `1020` Pending KYT Manual Processing, `1800` Transaction Retrace, `1900` Withdrawal Unlock, `2000` Completed (Credited Completed), `3000` Abnormal. |
+| status           | Integer | Yes      | Receiving status: `1000` Unconfirmed, `1010` Pending KYT Verification, `1020` Pending KYT Manual Processing, `1800` Transaction Retrace, `1900` Withdrawal Unlock, `2000` Completed (Credited Completed), `3000` Abnormal. [Details refer to](/help-center/manage-mpc/transaction/transfer#iii) |
 | base_symbol      | String  | No       | The unique identifier of the network of the coin to be received, example：ETH |
 | contract_address | String  | No       | received coin's contract address                             |
 | tx_height        | Long   |Yes   | Block height at which the transaction is completed |

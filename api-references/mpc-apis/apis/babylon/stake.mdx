@@ -10,6 +10,8 @@ description: "质押锁定BTC"
 </ParamField>
 <ParamField query="lock_number" type="integer" required>
     质押周期（块高）
+
+    如果需要测试未到期赎回，需要按照babylon官方要求填写 lock_number跟amount；如果需要测试到期提现，可以将lock_number 设置小点，金额至少需要>当前矿工费 + 最小提币金额
 </ParamField>
 <ParamField query="symbol" type="string" required>
     币种唯一标识，例：`BTC`
