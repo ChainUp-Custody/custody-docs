@@ -62,6 +62,16 @@ Documentation is the interface that the wallet service provides to third-party a
 
 The interface providers in the following documents are referred to as **wallet services**，and the interface callers are referred to as **third-party applications**. When the third-party application requests the wallet service, it encrypts the request parameters through the RSA algorithm and decrypts the response data after receiving the wallet service
 
+<div className="w-full flex items-center justify-center">
+    <img src="/images/apis/cusotdy-prepare_en.png" width="600"/>
+</div>
+
+ChainUp Custody needs access to the **third-party applications** for second confirmation. Therefore, it's necessary to add the IP to the security group or whitelist of the ChainUp Custody server. Below are the IP addresses for Custody:
+
+1. Inbound: Allow access from the Custody server (IP: **54.254.7.206**) to the **third-party applications**.
+
+2. Outbound: The **third-party applications** server needs to access the Custody server, so grant permission to access **54.251.87.91:433**.
+
 ## Interface rules
 
 | Transfer mode:               | https(HTTP is temporarily used in the test environment)      |

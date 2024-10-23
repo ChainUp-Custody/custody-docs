@@ -25,7 +25,7 @@ description: "Get all wallet receiving records under the workspace"
         <ResponseField name="memo" type="string">receiving address memo</ResponseField>
         <ResponseField name="txid" type="string">Transaction hash</ResponseField>
         <ResponseField name="confirmations" type="integer">Number of block confirmations, e.g.：10</ResponseField>
-        <ResponseField name="status" type="integer">Receiving status: `1000` Unconfirmed, `1010` Pending KYT Verification, `1020` Pending KYT Manual Processing, `1800` Transaction Retrace, `1900` Withdrawal Unlock, `2000` Completed (Credited Completed), `3000` Abnormal.</ResponseField>
+        <ResponseField name="status" type="integer">Receiving status: `1000` Unconfirmed, `1010` Pending KYT Verification, `1020` Pending KYT Manual Processing, `1800` Transaction Retrace, `1900` Withdrawal Unlock, `2000` Completed (Credited Completed), `3000` Abnormal. [Details refer to](/help-center/manage-mpc/transaction/transfer#iii)</ResponseField>
         <ResponseField name="deposit_type" type="integer">Deposit Type, 1: Regular coin deposit, 2: NFT deposit</ResponseField>
         <ResponseField name="token_id" type="string">TokenId for NFT deposit, this value is not empty when: `deposit_type=2`</ResponseField>
         <ResponseField name="base_symbol" type="string">The unique identifier of the network of the coin to be received, e.g.：ETH</ResponseField>

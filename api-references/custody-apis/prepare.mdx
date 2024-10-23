@@ -66,6 +66,11 @@ openssl pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform pem -nocrypt -
     <img src="/images/apis/cusotdy-prepare_cn.png" width="600"/>
 </div>
 
+ChainUp Custody需要回调访问**第三方应用** 进行二次确认，故需要将ChainUp Custody的服务器IP添加安全组或白名单，以下是Custody的IP：
+
+1. 入网：**第三方应用** 服务器开通Custody服务器(IP: **54.254.7.206**)访问权限。
+
+2. 出网：**第三方应用** 服务器需访问Custody服务器，需开通访问**54.251.87.91:433**权限。
 
 ## IV. 接口规则
 
