@@ -10,6 +10,8 @@ description: "Stake BTC"
 </ParamField>
 <ParamField query="lock_number" type="integer" required>
     Staking period (block height)
+
+    If you need to test the Unbond, you need to fill in the lock_number and amount according to the official requirements of **babylon**; if you need to test the Unstake, you can set the lock_number smaller, and [the amount > the current mining fee + the minimum withdrawal amount]
 </ParamField>
 <ParamField query="symbol" type="string" required>
     Unique identifier for the coin, e.g.: `BTC`
