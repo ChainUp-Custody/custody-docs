@@ -36,7 +36,8 @@ description: "如果提现地址为联盟内部地址，则不会上链；否则
 
 #### 响应参数数据结构
 <Expandable title="object">
-    <ResponseField name="status" type="string">0 风控审核中，1 支付中，2 审核拒绝，4 失败，5 成功， 6 已撤销，7 待KYT验证， 8 待人工审核(KYT风险等级过高)</ResponseField>
+    <ResponseField name="id" type="integer">提现ID</ResponseField>
+    <ResponseField name="status" type="integer">0 风控审核中，1 支付中，2 审核拒绝，4 失败，5 成功， 6 已撤销，7 待KYT验证， 8 待人工审核(KYT风险等级过高)。[详细请参考](/help-center/manage-joint/account-transfer/transfer#ii)</ResponseField>
 </Expandable>
 
 

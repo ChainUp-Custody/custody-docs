@@ -32,7 +32,7 @@ description: "账户类型的币种充值后需要进行归集，UTXO无归集�
         <ResponseField name="updated_at" type="long">修改时间</ResponseField>
         <ResponseField name="txid" type="string">区块链交易ID</ResponseField>
         <ResponseField name="confirmations" type="integer">区块链确认数</ResponseField>
-        <ResponseField name="status" type="integer">0 待确认，1 成功，2 失败，4 待KYT验证，5 待人工审核(KYT风险等级过高)，6 待人工审核(KYT充值熔断)，7 已转入</ResponseField>
+        <ResponseField name="status" type="integer">0 待确认，1 成功，2 失败，4 待KYT验证，5 待人工审核(KYT风险等级过高)，6 待人工审核(KYT充值熔断)，7 已转入。[详细请参考](/help-center/manage-joint/account-transfer/transfer#ii)</ResponseField>
         <ResponseField name="address_from" type="string">归集发送地址</ResponseField>
         <ResponseField name="address_to" type="string">归集到帐地址</ResponseField>
         <ResponseField name="txid_type" type="string">0 链上交易，1 联盟转账交易</ResponseField>
