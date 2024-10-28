@@ -41,14 +41,25 @@ Applicable scenarios for alliance transfers:
 </div>
 
 #### Status Description
-- **Pending Confirmation (0)**: The block is scanned, and the user’s deposit is detected, but the funds have not yet reached the system. The transaction status is displayed as unconfirmed. Once the transaction reaches the confirmation count, the status will change to "Confirmed".
-- **Success (1)**: The deposit funds have successfully reached the system and reached the confirmation count, updating the transaction status to confirmed. Users can then operate on these funds to withdraw.
-- **Failed (2)**: Anomalies such as network issues or system failures occurred during the deposit process, marking the transaction status as abnormal.
-- **Pending KYT Verification (4)**: The deposit transaction is awaiting "Know Your Transaction" (KYT) review, temporarily setting the transaction status to pending KYT review.
-- **Pending Manual Review (5)**: The deposit transaction is flagged as a potential risk by KYT and requires manual review. The transaction status is displayed as KYT abnormal risk pending manual review.
-- **Pending Manual Review (6)**: KYT review is completed, but the funds are not yet confirmed in the account. The transaction status is KYT confirmed pending credit. During system fuse, manual review may be required. 
-  - **KYT Fuse Mechanism**: If there are transactions exceeding a certain alert level that are not processed, subsequent deposit transactions to that address will automatically be set to manual review. For example, if the fuse mechanism alert level is set to high risk, and the user's deposit address has three transactions, the first transaction alert level is severe, and the second and third transactions are low, the address triggers the fuse mechanism, requiring manual processing for all three transactions. Once the severe transaction is processed and the fuse is lifted, the second and third transactions will be executed automatically based on their corresponding alert level handling.
-- **Transferred (7)**: The funds are confirmed but have not reached the specified confirmation count. Withdrawals are not possible during the confirmation process. The transaction status is pending confirmation, not withdrawable.
+- **To be confirmed (0):** Scanning the blockchain, a deposit transaction from the user is detected, but funds have not yet completed the processing flow.
+- **Success (1):** The deposit order has been processed successfully, with funds credited and transaction status updated as successful; the user can withdraw these funds at any time.
+- **Failed (2):** An issue occurred during the deposit process, such as a network problem or system malfunction, and the transaction status is marked as abnormal.
+- **Pending KYT verification (4):** Based on KYT policies, the deposit transaction is pending KYT service review.
+
+- **Pending manual review (KYT risk level too high) (5):** Based on KYT policies, the deposit transaction requires manual review due to a high KYT risk level. The transaction status shows as pending manual review for KYT risk.
+
+- **Pending manual review (KYT Deposit Circuit Breaker) (6):** The transaction triggered the system’s KYT circuit breaker mechanism, requiring manual review.
+<Note>
+**KYT Circuit Breaker Mechanism**
+
+If an address has transactions above a certain alert level that remain unprocessed, all subsequent deposit transactions to that address will be automatically set for manual review. For example, if the circuit breaker alert level is set to high risk and a user’s deposit address has three transactions—one at critical alert level and two at low alert level—the circuit breaker will activate, requiring manual processing of all three transactions. Once the critical alert level transaction is resolved and the circuit breaker is lifted, the other transactions will proceed automatically based on their respective alert levels. 
+</Note>
+
+- **Transferred In (7):** Funds have been confirmed as transferred to the wallet but have not reached the required number of confirmations for withdrawal.
+<Tip> 
+Learn more about the [Confirmation](/help-center/manage-joint/account-transfer/confirmation) for different networks.
+</Tip>
+
 
 ### On-Chain Withdrawal
 
@@ -62,14 +73,18 @@ Withdrawal Miner (Gas) Fees: When users withdraw to a non-alliance address, bloc
 
 #### Status Description
 
-- **Under Review (0)**: The user initiates a withdrawal request, and the transaction status is newly created, not yet reviewed or processed by any client or ChainUp Custody Full Custody.
-- **Payment in Process (1)**: If the client has configured an approval policy for the wallet and currency, it enters the withdrawal approval process, reviewed by team members. Once the approval process set in the approval workflow is passed, the withdrawal approval process ends and enters the ChainUp Custody Full Custody KYT process. If there is no approval configuration, it directly enters the ChainUp Custody Full Custody KYT process.
-- **Reject (2)**: If the withdrawal request does not pass the client's approval or risk control policy, the system will reject the request, changing the transaction status to approval rejected. If an anomaly occurs during the process, such as network issues or nonce mismatch, the transaction will be bounced back by the system, changing the status to approval rejected.
-- **Failure (4)**: If a payment failure occurs during the withdrawal process, possibly due to blockchain network issues or verification failures, the transaction status changes to payment failed.
-- **Success (5)**: The withdrawal operation is completed successfully, and the blockchain has processed the transaction.
-- **Canceled (6)**: If the wallet and currency have an approval process configured, and the initiator cancels the withdrawal request, the transaction status changes to canceled.
-- **Pending KYT Verification (7)**: The withdrawal request is submitted but not yet reviewed by ChainUp Custody Full Custody KYT. The system will await KYT verification to ensure the transaction complies with regulations and security standards.
-- **Manual Review (8)**: The withdrawal request is flagged as a potential risk and requires manual review. The transaction status is pending KYT manual review, needing ChainUp Custody Full Custody staff to comprehensively assess the transaction's risk situation.
+- **Under review by risk control (0)**: The user has initiated a withdrawal request, and the transaction is now pending internal risk control and ChainUp Custody system review.
+- **In payment (1)**: The transaction has completed all confirmation steps (including transaction strategy approval, KYT verification, and system review) and has been successfully signed and broadcasted, awaiting blockchain confirmation.
+- **Audit rejection (2)**: This transaction has been terminated and marked as "Audit Rejection" for one of the following reasons:
+
+1.The order did not pass approval or triggered a risk control policy, resulting in a system rejection of the withdrawal request;
+
+2.An abnormality occurred in the transaction, such as network issues or nonce mismatch, leading the system to revoke the transaction.
+- **Failed (4)**: If the transaction fails due to blockchain network issues or verification failure during the withdrawal process, the status will update to "Failed."
+- **Success (5)**: The blockchain has processed the transaction, and the withdrawal is successful.
+- **Cancelled (6)**: The initiator of the withdrawal has canceled the transaction order, terminating the process and setting the status to "Cancelled."
+- **Pending KYT verification (7)**: The withdrawal request has been submitted but is awaiting review from ChainUp Custody’s internal KYT or wallet-enabled KYT services to ensure compliance and security standards.
+- **Pending manual review (KYT risk level too high) (8)**: The withdrawal request has been flagged as a potential risk and requires manual review based on KYT policies. The transaction status is pending KYT manual review.
 
 ### Consolidation
 
