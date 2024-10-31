@@ -4,8 +4,6 @@ api: POST /{custom-url}
 ---
 
 **Co-Signer**签名前回调客户系统确认提现是否正常。
-* 返回`FALSE`:Co-Signer将忽略交易不进行签名;
-* 返回`SUCESS`:Co-Signer对交易进行签名。 
 
 `Content-Type application/json;charset=UTF-8`
 
@@ -49,5 +47,5 @@ api: POST /{custom-url}
 ####  回调响应参数格式
 
 返回字符串：
-* `SUCCESS`表示成功
-* `FAILURE`表示失败
+* `SUCCESS`表示成功: Co-Signer对交易进行签名；
+* `FAILURE`表示失败: Co-Signer将忽略交易不进行签名。
