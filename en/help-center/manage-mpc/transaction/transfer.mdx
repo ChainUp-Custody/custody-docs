@@ -53,6 +53,10 @@ After signing is completed, the wallet starts broadcasting the transaction, and 
 
 When the transaction is successfully confirmed on the blockchain, the withdrawal is completed, and the status becomes "Payment Completed." The withdrawal ends.
 
+**7. User Canceled Status (2200)**
+
+The initiator canceled the transaction order, terminating the process.
+
 **8. Transaction Failed Status (2400)**
 
 If the blockchain transaction fails, the status is "Transaction Failed," and the funds for this withdrawal will not be consumed, but gas fees for broadcasting to the chain has been consumed and will not be refunded.
@@ -64,7 +68,7 @@ When a transaction is pending blockchain processing, certain actions can replace
 ##  Deposit Status
 
 <div className="w-full flex items-center justify-center">
-    <img src="/images/help-center/depositen.jpg" width="600"/>
+    <img src="/images/help-center/depositen-new.png" width="600"/>
 </div>
 
 **1. Unconfirmed Status (1000)**
@@ -79,11 +83,11 @@ If the deposit address and coin have KYT (Know Your Transaction) enabled and con
 
 If the KYT service provider returns a risk level that requires manual processing, the deposit status will be "KYT Manual Processing". Once manual processing is completed, it moves to the next phase.
 
-**4. Transaction Retrace Status (1800)**
+**4. Pending Traceability / Ensuring Transaction Security (1800)**
 
 The transaction has been confirmed on the blockchain and KYT processing is complete. The system will retrace the transaction to ensure that the assets reach the required number of block confirmations for the deposit to be credited.
 
-**5. Withdrawal Unlock Status (1900)**
+**5. Pending Traceability Verification / Traceability Successful, Pending System Verification (1900)**
 
 The transaction has completed traceability, and the system is currently verifying the processed transaction. The CryptSafe system recommends crediting users at this stage.
 
