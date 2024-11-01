@@ -39,21 +39,39 @@ openssl pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform pem -nocrypt -
 
 The developer prepares the following information：
 
-1. Generate a pair of public and private keys and provide the public key to the platform;
 
-2. IP of third-party application server;
+1. Generate a pair of public and private keys.
 
-3. deposit and withdrawal callback notification address;
+2. IP address of the third-party application server.
 
-4. Reconfirm the address for withdrawal;
+3. Recharge and withdrawal callback notification URL.
 
-5. Whether to enable the automatic auto sweep function. After the function is enabled, the system will automatically transfer the user’s deposit funds to the omnibus wallet.
+4. Withdrawal secondary confirmation URL.
 
-Contact relevant personnel of the platform to provide the above five types of information. The platform prepares an asset management account for you and provides you with the following information:
 
-1. Unique identification of the merchant：`app_id`；
+Once you are ready, please visit the Custody Web Portal - Cloud System, select your wallet, and navigate to the **API Management** feature. Fill in the required information according to the system's instructions and create your API.
 
-2. The wallet public key：`rsa_wallet_pub`.
+<Note>
+Only the wallet creator can edit the API information.
+</Note>
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/apis/setting-API-1en.png" width="600"/>
+</div>
+
+Once created successfully, you will receive the **unique identifier for the merchant: app_id**.
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/apis/setting-API-2en.jpeg" width="600"/>
+</div>
+
+After successfully creating the API, please visit the API details to enter the developer's public key information and complete the API configuration.
+
+<CardGroup cols={2}>
+             <img src="/images/apis/setting-API-3en.jpeg" width="600"/>
+            <img src="/images/apis/setting-API-4en.jpeg" width="600"/>
+        </CardGroup>
+
 
 
 ## Interface Process
