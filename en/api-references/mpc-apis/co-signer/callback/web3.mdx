@@ -4,9 +4,7 @@ api: POST /{custom-url}
 ---
 
 
-**Co-Signer** calls back to the client system to confirm whether the withdrawal is normal before signing.
-* Return `FALSE`: Co-Signer will ignore the transaction and not sign;
-* Return `SUCESS`: Co-Signer signs the transaction.
+**Co-Signer** calls back to the client system to confirm whether the web3 transaction is normal before signing.
 
 `Content-Type application/json;charset=UTF-8`
 
@@ -55,5 +53,5 @@ api: POST /{custom-url}
 ####  Callback Response Parameters
 
 Return string：
-* `SUCCESS` means SUCCESS
-* `FAILURE` means FAILURE
+* `SUCCESS` means SUCCESS: Co-Signer signs the transaction.
+* `FAILURE` means FAILURE: Co-Signer will ignore the transaction and not sign.
