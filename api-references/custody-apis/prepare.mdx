@@ -7,9 +7,9 @@ title: 开发前准备
 
 ### 两对公私钥作用（API方式）
 
-- **第一对公私钥**： 开发者在开通资管账号时，需提前生成一对公私钥，其中公钥（rsa_third_pub）提供给平台B，私钥自己保管，私钥为第三方应用调用钱包服务的唯一凭证，请勿透露给任何人。第三方在请求钱包服务时，通过私钥来加密请求参数，平台接受到请求时，通过提供的公钥（rsa_third_pub）来解密请求数据。
+- **第一对公私钥**： 开发者在开通开发者账号时，需提前生成一对公私钥，其中公钥（rsa_third_pub）提供给平台B，私钥自己保管，私钥为第三方应用调用钱包服务的唯一凭证，请勿透露给任何人。第三方在请求钱包服务时，通过私钥来加密请求参数，平台接受到请求时，通过提供的公钥（rsa_third_pub）来解密请求数据。
 
-- **第二对公私钥**： 开发者开通资管账号后，平台会提供钱包公钥（rsa_wallet_pub）给开发者，第三方应用在接受到钱包的响应数据或异步通知时，需要通过公钥来进行解密。
+- **第二对公私钥**： 开发者开通开发者账号后，平台会提供钱包公钥（rsa_wallet_pub）给开发者，第三方应用在接受到钱包的响应数据或异步通知时，需要通过公钥来进行解密。
 
 ### 为什么需要进行提现二次确认（API方式）
 
@@ -35,11 +35,11 @@ openssl pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform pem -nocrypt -
 ```
 
 
-## II. 资管账号准备
+## II. 开发者账号准备
 
-开发者准备如下信息：
+请开发者预先准备如下信息：
 
-1. 生成一对公私钥，将公钥提供给平台；
+1. 生成一对公私钥；
 
 2. 第三方应用服务器IP；
 
@@ -47,13 +47,31 @@ openssl pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform pem -nocrypt -
 
 4. 提现二次确认地址；
 
-5. 是否开启自动归集功能，开启后，系统会自动将用户充值资金划转到商户归集账户。
 
-联系平台相关人员，提供上述五类信息。平台为您准备资管账号，提供到您这边包括以下信息：
+准备完成后，请访问Custody Web端-云端系统，选择钱包，进入【API管理】功能，根据系统要求填写信息并创建API。
 
-1. 商户的唯一标识：app_id；
+<Note>
+只有钱包创建者才可编辑API信息
+</Note>
 
-2. 钱包公钥：rsa_wallet_pub。
+<div className="w-full flex items-center justify-center">
+    <img src="/images/apis/setting-API-1cn.png" width="600"/>
+</div>
+
+创建成功后，您将获得**商户的唯一标识：app_id**。
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/apis/setting-API-2cn.jpeg" width="600"/>
+</div>
+
+API创建成功后，请访问API信息详情，录入您准备的开发者公钥信息，完成API的配置。
+
+<CardGroup cols={2}>
+             <img src="/images/apis/setting-API-3cn.jpeg" width="600"/>
+            <img src="/images/apis/setting-API-4cn.jpeg" width="600"/>
+        </CardGroup>
+
+
 
 
 ## III. 接口交互过程
