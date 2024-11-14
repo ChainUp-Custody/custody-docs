@@ -1,0 +1,117 @@
+---
+title: TRON自动代理工具
+---
+
+## I. 概述
+Tron 区块链采用独特的费用模型，与以太坊等区块链不同。它不使用固定的 Gas 费，而是通过带宽和能量两种资源完成交易。
+- 转账 TRX 和 TRC-10 代币时需要消耗带宽。
+- 转账 TRC-20 代币或执行合约时，则消耗带宽和能量。
+
+**若钱包没有交易所需资源，需通过直接燃烧地址的 TRX，或通过加油站补充 TRX，以支持波场网络的交易活动。**
+
+## II. 工具介绍
+直接燃烧 TRX 支付矿工费成本较高。为帮助客户节省交易费用并降低运营成本，Custody 系统推出了自动代理工具。支持工作站下的所有地址根据交易需求适时获取TRON交易资源，无需消耗 TRX，仅需支付少量服务费即可完成交易。
+
+我们以转账TRC20 USDT为例，通过Custody的⾃动代理机制，钱包⾃动获取⾜够能量可以抵扣转账⼿续费，⼀笔USDT转帐在不使⽤能量的情况下⼤概需要13.4TRX的⼿续费，⽽使⽤了能量后，只需⽀付少量代理服务费（TRX）即可，费⽤将⼤⼤降低。
+
+
+## III. 操作说明
+
+**一.访问TRON自动代理功能**
+
+登录 MPC 工作站，进入 [更多] - [工具箱]，访问 TRON 自动代理工具。
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/help-center/trontool1cn.png" width="600"/>
+        <img src="/images/help-center/trontool2cn.png" width="600"/>
+    </CardGroup>
+</div>
+
+
+您也可以在自动归集功能的详情页，或是在波场网络币种的转账页，发现TRON自动代理的功能入口。
+
+<Tip> 
+使用 TRON 自动代理工具前，请先配置加油站钱包。
+</Tip>
+
+**二.完成代理服务扣费授权**
+
+发起代理服务费的自动扣费申请，允许Custody的授权地址结算并自动从您的钱包地址扣除代理服务费用。
+
+<Note>
+授权服务扣费需要加油站钱包的策略进行审批。授权扣费的审批通过后，系统将自动开启全工作站的TRON交易资源自动代理。如授权失败，可能是加油站的TRX余额不足以支付授权交易的手续费，请检查加油站TRX余额是否充足后重新发起授权申请。
+</Note>
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+        <img src="/images/help-center/tronshouquan1cn.png" width="200"/>
+        <img src="/images/help-center/tronshouquan2cn.png" width="200"/>
+        <img src="/images/help-center/tronshouquan3cn.png" width="200"/>
+    </CardGroup>
+</div>
+
+
+
+
+
+
+
+**三. 系统自动代理并定期结算代理服务费**
+
+
+Custody系统将根据实际消耗的资源情况，定期结算代理服务费，并自动从加油站发起扣费交易。
+
+<div className="w-full flex items-center justify-center">
+<img src="/images/help-center/tronfeecn.jpeg" width="400"/>
+</div>
+
+
+<Note>
+若加油站余额不足以支付代理服务费，系统不会立即停止自动代理功能。未支付的费用将会在下次加油站余额充足时延期扣除。但请注意，如果欠费金额过高且未及时补充，系统可能会暂停自动代理服务。
+</Note>
+
+
+
+
+
+
+## IV. 计费规则
+* 使用代理资源： 系统将根据交易实际消耗的资源数量，折算对应的TRX价值，乘以一定比例后，收取记为该笔交易的提币矿工费，Custody会定期统计用户待支付的服务费数量，并发起代理服务费交易，将费用从用户的加油站出金地址扣除。
+
+<Warning>
+Custody使用的比例不是固定的，将根据实际情况定期调整。
+</Warning>
+
+
+* 未使用代理资源： 如果交易未被代理资源覆盖，系统将默认消耗用户钱包内的 TRX 作为提币矿工费，该部分费用由区块链收取。
+
+## V.常见问题
+
+<Accordion title="如何了解订单实际消耗的交易资源">
+请访问区块链浏览器，通过查询交易的TXID，了解交易消耗的资源数量。
+</Accordion>
+
+<Accordion title="如何计算代理资源折合的TRX价值？">
+您可以通过以下公式进行简单的换算：
+
+1 TRX = 1000 带宽 
+13.5TRX = 64285 能量 
+
+</Accordion>
+
+
+<Accordion title="为什么有的波场交易没有使用代理资源？">
+在以下特殊情况下，某些交易可能⽆法被代理，需要燃烧用户自己的TRX支付矿工费：
+
+* 地址未激活（没有TRX充值记录），第⼀笔交易需消耗TRX。
+
+* 由于处于交易⾼峰期，Custody系统的资源不⾜，可能需直接消耗钱包地址的TRX。
+
+</Accordion>
+
+<Accordion title="如何了解工作站的代理服务消费情况">
+* 如果您想了解代理服务费的**结算记录**，您可以访问交易信息或通过Web3 API接口查询交易记录中的代理服务费信息。
+* 若您想查看代理服务费的**总消费记录**，您可以联系Custody客服团队获取相关信息。
+* 若您想了解代理服务费的**欠费情况**，请联系Custody客服团队获取详细信息。如果您欠费超过一定数额，Custody团队将会主动联系您，若未及时补充，系统将自动停止代理服务。
+</Accordion>

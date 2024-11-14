@@ -354,7 +354,9 @@
           "group": "钱包交易",
           "pages": [
             "help-center/manage-mpc/transaction/transfer",
-            "help-center/manage-mpc/transaction/BRC-20"
+            "help-center/manage-mpc/transaction/BRC-20",
+            "help-center/manage-mpc/transaction/Tron-Transaction"
+        
           ]
         },
         {

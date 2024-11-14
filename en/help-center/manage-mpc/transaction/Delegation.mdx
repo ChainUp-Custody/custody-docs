@@ -1,0 +1,119 @@
+---
+title: TRON Automated Delegation
+---
+
+## Introduction
+The TRON blockchain employs a unique fee model, different from blockchains like Ethereum. It does not use a fixed Gas fee but instead utilizes two resources—bandwidth and energy—for transactions.
+- Transferring TRX and TRC-10 tokens consumes bandwidth.
+- Transferring TRC-20 tokens or executing contracts consumes both bandwidth and energy.
+
+**If the wallet does not have the required resources for the transaction, TRX must be directly burned from the address or replenished through the fueling station to support TRON network transactions.**
+
+## Delegation Tool
+Directly burning TRX to pay miner fees can be costly. To help clients save on transaction fees and reduce operational costs, the Custody system has launched an automatic delegation tool. This tool allows all addresses under the workstation to acquire TRON transaction resources as needed for transactions, without consuming TRX. Clients only need to pay a small service fee to complete the transaction.
+
+Taking the TRC20 USDT transfer as an example, through Custody's automatic delegation mechanism, the wallet automatically receive sufficient energy to offset the transfer fee. A USDT transfer without using energy requires approximately 13.4 TRX in fees, while using energy only requires a small delegation service fee (TRX), significantly reducing costs.
+
+
+## III. Operation
+
+**Accessing the TRON Automated Delegation Tool**
+
+
+Log in to the MPC workspace, go to [More] - [Toolbox], and access the tool.
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/help-center/trontool1en.png" width="600"/>
+        <img src="/images/help-center/trontool2en.png" width="600"/>
+    </CardGroup>
+</div>
+
+
+You can also find the entry to the TRON Auto Delegation tool on the details page of the auto-aggregation feature or on the transfer page for TRON network tokens.
+
+<Tip> 
+Please configure the gas station wallet first before using the tool.
+</Tip>
+
+**Activing Transfer Permission**
+
+Allow Custody's authorized address to settle and automatically deduct Delegation Service Fee from your wallet.
+
+<Note>
+Activating transfer permission requires approval through the gas station wallet's strategy. Once permission is activated, the system will automatically delegate TRON transaction resources for all addresses in the workspace, helping users reduce transaction costs. The delegation service fee will be periodically settled and deducted.
+</Note>
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+        <img src="/images/help-center/tronshouquan1en.png" width="200"/>
+        <img src="/images/help-center/tronshouquan2en.png" width="200"/>
+        <img src="/images/help-center/tronshouquan4en.png" width="200"/>
+    </CardGroup>
+</div>
+
+
+
+
+
+
+
+**The system automatically delegates resources and settles service fees**
+
+
+The Custody system will regularly settle the delegation service fees based on the actual resources consumed and automatically initiate fee deduction transactions from the gas station.
+
+<div className="w-full flex items-center justify-center">
+<img src="/images/help-center/tronfeeen.jpeg" width="400"/>
+</div>
+
+
+<Note>
+If the gas station balance is insufficient to cover the delegation service fees, the system will not immediately stop the automatic delegation feature. The unpaid fees will be deferred and deducted once the gas station balance is replenished. However, please note that if the outstanding amount remains too high and is not addressed in a timely manner, the system may suspend the automatic delegation service.
+</Note>
+
+
+
+
+
+
+## Billing Rules
+* Using Delegated Resources: The system will calculate the corresponding TRX value based on the actual resources consumed by the transaction, multiply it by a certain percentage, and charge it as the withdrawal miner fee for that transaction. Custody will regularly calculate the pending service fees for users and initiate a  delegated service fee transaction, deducting the fee from the gas station.
+
+<Warning>
+The percentage used by Custody to calculate the withdrawal miner fee is not fixed and will be periodically adjusted based on the actual circumstances.
+</Warning>
+
+
+* Not Using Delegated Resources: If the transaction is not covered by delegated resources, the system will default to consuming TRX from the user’s wallet as the withdrawal miner’s fee, and the on-chain displayed miner’s fee will be equivalent to the withdrawal miner’s fee.
+
+## Frequently Asked Questions
+
+<Accordion title="How to understand the actual transaction resources consumed by an order?">
+You can visit the blockchain explorer and query the transaction’s TXID to view the resources consumed by the transaction.
+</Accordion>
+
+<Accordion title="How to calculate the TRX value equivalent of the delegated resources?">
+You can use the following simple conversion formula:
+
+1 TRX = 1000 Bandwidth
+
+13.5 TRX = 64285 Energy
+
+</Accordion>
+
+
+<Accordion title="Why are some TRON transactions not using delegated resources?">
+In the following special cases, some transactions may not be able to be delegated:
+
+* The address is not activated (no TRX transaction record), the first transaction will require TRX consumption.
+
+* Due to peak transaction periods, Custody's system resources may be insufficient, and TRX may need to be directly consumed from the wallet address.
+
+</Accordion>
+
+<Accordion title="How to check the service consumption of the workspace?">
+* If you want to check the settlement records of the delegation service fee, you can access the transaction details or query the delegation service fee information in the transaction records via the Web3 API.
+* If you want to view the total consumption records of the delegation service fee, you can contact the Custody customer support team for the relevant information.
+* If you want to check the outstanding balance of the delegation service fee, please contact the Custody customer support team for detailed information. If your outstanding balance exceeds a certain amount, the Custody team will contact you. If the balance is not replenished in time, the system will automatically suspend the delegation service.
+</Accordion>

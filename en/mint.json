@@ -354,7 +354,8 @@
           "group": "Transactions",
           "pages": [
             "help-center/manage-mpc/transaction/transfer",
-            "help-center/manage-mpc/transaction/BRC-20"
+            "help-center/manage-mpc/transaction/BRC-20",
+            "help-center/manage-mpc/transaction/Delegation"
           ]
         },
         {
