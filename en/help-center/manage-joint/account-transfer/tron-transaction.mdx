@@ -22,27 +22,44 @@ In the TRON network, an address that has received TRX is considered an active ad
 </Note>
 
 ## Billing Rules
-- **Using Delegated Resources:** The system will calculate the corresponding TRX value based on the actual resources consumed by the transaction, multiply it by **a certain percentage**, and charge it as the withdrawal miner fee for that transaction. This fee will be collected by Custody.
+### **Using Delegated Resources** 
 
-<Warning>
-The percentage used by Custody to calculate the withdrawal miner fee is not fixed and will be periodically adjusted based on the actual circumstances.
-</Warning>
+The system will calculate the corresponding TRX value based on the actual resources consumed by the transaction, multiply it by **a certain percentage**, and charge it as the withdrawal miner fee for that transaction. This fee will be collected by Custody.
 
-- **Not Using Delegated Resources:** If the transaction is not covered by delegated resources, the system will default to consuming TRX from the user's account as the withdrawal miner's fee, and the on-chain displayed miner's fee will be equivalent to the withdrawal miner's fee.
+**Withdrawal Miner Fee = [Energy consumed by the transaction * Energy price + Bandwidth consumed by the transaction * Bandwidth price] * Custody service fee rate**
+
+Energy price: 1 Energy = 0.00021 TRX
+
+Bandwidth price: 1 Bandwidth = 0.001 TRX
+
+<Note> 
+The prices of energy and bandwidth are set by the TRON network.
+</Note>
+
+Custody service rate: A dynamic percentage, always less than 100%, which will be adjusted periodically based on actual conditions.
+
+For example, if the user transfers USDT and consumes 65,000 energy and 300 bandwidth:
+
+Resource consumption value of the transaction:
+
+Energy consumption: 65,000 Energy × 0.00021 = 13.65 TRX
+
+Bandwidth consumption: 300 Bandwidth × 0.001 = 0.3 TRX
+
+**Total resource consumption value** = 13.65 + 0.3 = 13.95 TRX
+
+Custody service rate: 80%, meaning Custody will only charge 80% of the transaction's resource cost.
+
+**Withdrawal Miner Fee** = 13.95 × 80% = 11.16 TRX, which is lower than directly burning TRX to pay for miner fees, resulting in reduced transaction costs.
+
+
+
+### **Not Using Delegated Resources**
+
+If the transaction is not covered by delegated resources, the system will default to consuming TRX from the user's account as the withdrawal miner's fee, and the on-chain displayed miner's fee will be equivalent to the withdrawal miner's fee.
 
 ## Frequently Asked Questions
 
 <Accordion title="How to Check the Actual Consumption of Resources for a Transaction order">
 You can visit the blockchain explorer and query the transaction's TXID to view the resources consumed by the transaction.
-</Accordion>
-
-<Accordion title="How to Calculate the TRX Value of  delegated Resources?">
-
-You can use the following simple conversion formula:
-
-1 TRX = 1000 Bandwidth
-
-13.5 TRX = 64285 Energy
-
-
 </Accordion>

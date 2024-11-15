@@ -12,8 +12,9 @@ The TRON blockchain employs a unique fee model, different from blockchains like 
 ## Delegation Tool
 Directly burning TRX to pay miner fees can be costly. To help clients save on transaction fees and reduce operational costs, the Custody system has launched an automatic delegation tool. This tool allows all addresses under the workstation to acquire TRON transaction resources as needed for transactions, without consuming TRX. Clients only need to pay a small service fee to complete the transaction.
 
-Taking the TRC20 USDT transfer as an example, through Custody's automatic delegation mechanism, the wallet automatically receive sufficient energy to offset the transfer fee. A USDT transfer without using energy requires approximately 13.4 TRX in fees, while using energy only requires a small delegation service fee (TRX), significantly reducing costs.
+**Cost Savings:** After using the automatic delegation mechanism, the system will automatically provide the required energy for the wallet, eliminating the need for users to use TRX to pay miner fees. Typically, the delegation fee is cheaper than directly using TRX.
 
+**One-Step Operation:** Once you active permission and enable the feature, every transaction will be fully covered with resources, ensuring that no TRX is consumed during the transaction process and reducing operational complexity.
 
 ## III. Operation
 
@@ -36,7 +37,7 @@ You can also find the entry to the TRON Auto Delegation tool on the details page
 Please configure the gas station wallet first before using the tool.
 </Tip>
 
-**Activing Transfer Permission**
+**Activing Transfer Permission to Enable Delegation Feature**
 
 Allow Custody's authorized address to settle and automatically deduct Delegation Service Fee from your wallet.
 
@@ -64,7 +65,7 @@ Activating transfer permission requires approval through the gas station wallet'
 The Custody system will regularly settle the delegation service fees based on the actual resources consumed and automatically initiate fee deduction transactions from the gas station.
 
 <div className="w-full flex items-center justify-center">
-<img src="/images/help-center/tronfeeen.jpeg" width="400"/>
+<img src="/images/help-center/tronfeeen.jpeg" width="200"/>
 </div>
 
 
@@ -78,14 +79,40 @@ If the gas station balance is insufficient to cover the delegation service fees,
 
 
 ## Billing Rules
-* Using Delegated Resources: The system will calculate the corresponding TRX value based on the actual resources consumed by the transaction, multiply it by a certain percentage, and charge it as the withdrawal miner fee for that transaction. Custody will regularly calculate the pending service fees for users and initiate a  delegated service fee transaction, deducting the fee from the gas station.
+### Using Delegated Resources
 
-<Warning>
-The percentage used by Custody to calculate the withdrawal miner fee is not fixed and will be periodically adjusted based on the actual circumstances.
-</Warning>
+The system will calculate the delegation service fee based on the actual resources consumed by the transaction. Custody will regularly track the amount of service fees pending payment and initiate a transaction to deduct the fee from the user's authorized wallet address.
+
+**Delegation Service Fee = [Energy consumed by transaction * Energy price + Bandwidth consumed by transaction * Bandwidth price] * Custody service rate**
+
+Energy price: 1 Energy = 0.00021 TRX
+
+Bandwidth price: 1 Bandwidth = 0.001 TRX
+
+<Note> 
+The prices of energy and bandwidth are set by the TRON network.
+</Note>
+
+Custody service rate: A dynamic percentage, always less than 100%, which will be adjusted periodically based on actual conditions.
+
+For example, if the user transfers USDT and consumes 65,000 energy and 300 bandwidth:
+
+Resource consumption value of the transaction:
+
+Energy consumption: 65,000 Energy × 0.00021 = 13.65 TRX
+
+Bandwidth consumption: 300 Bandwidth × 0.001 = 0.3 TRX
+
+**Total resource consumption value** = 13.65 + 0.3 = 13.95 TRX
+
+Custody service rate: 80%, meaning Custody will only charge 80% of the transaction's resource cost.
+
+**Delegation service fee for the transaction** = 13.95 × 80% = 11.16 TRX, which is lower than directly burning TRX to pay for miner fees, resulting in reduced transaction costs.
 
 
-* Not Using Delegated Resources: If the transaction is not covered by delegated resources, the system will default to consuming TRX from the user’s wallet as the withdrawal miner’s fee, and the on-chain displayed miner’s fee will be equivalent to the withdrawal miner’s fee.
+### Not Using Delegated Resources
+
+If the transaction is not covered by delegated resources, the system will default to consuming TRX from the user’s wallet as the withdrawal miner’s fee, and the on-chain displayed miner’s fee will be equivalent to the withdrawal miner’s fee.
 
 ## Frequently Asked Questions
 
@@ -93,14 +120,6 @@ The percentage used by Custody to calculate the withdrawal miner fee is not fixe
 You can visit the blockchain explorer and query the transaction’s TXID to view the resources consumed by the transaction.
 </Accordion>
 
-<Accordion title="How to calculate the TRX value equivalent of the delegated resources?">
-You can use the following simple conversion formula:
-
-1 TRX = 1000 Bandwidth
-
-13.5 TRX = 64285 Energy
-
-</Accordion>
 
 
 <Accordion title="Why are some TRON transactions not using delegated resources?">
