@@ -11,25 +11,25 @@ description: "Retrieve transaction records of tron resource purchases for all wa
 
 
 
-#### Response Data Parameters
+#### Response Parameters
 <ResponseField type="object[ ]">
     <Expandable title="object">
-        <ResponseField name="id" type="integer">Purchase Resource Transaction ID</ResponseField>
-        <ResponseField name="request_id" type="string">Unique identifier for the transaction</ResponseField>
-        <ResponseField name="receive_address" type="integer">Resource acceptance address</ResponseField>
+        <ResponseField name="id" type="integer">Resource purchase transaction ID</ResponseField>
+        <ResponseField name="request_id" type="string">Unique transaction identifier</ResponseField>
+        <ResponseField name="receive_address" type="integer">Resource receiving address</ResponseField>
         <ResponseField name="service_charge_rate" type="string">Service fee rate</ResponseField>
-        <ResponseField name="service_charge" type="string">Service fee unit TRX</ResponseField>
-        <ResponseField name="contract_address" type="string">The contract address is used to estimate miner fees</ResponseField>
-        <ResponseField name="address_to" type="string">Transfer to account address for estimating miner fees</ResponseField>
-        <ResponseField name="resource_type" type="string">Purchase resource type 0: Energy and bandwidth 1: Energy</ResponseField>
-        <ResponseField name="buy_type" type="string">Purchase resource method 0: System estimation 1: Specify quantity</ResponseField>
-        <ResponseField name="net_num" type="string">Number of proxy bandwidths</ResponseField>
-        <ResponseField name="energy_num" type="long">Number of proxy bandwidths</ResponseField>
-        <ResponseField name="net_txid" type="long">Bandwidth proxy transaction txid</ResponseField>
-        <ResponseField name="energy_txid" type="string">Bandwidth proxy transaction txid</ResponseField>
+        <ResponseField name="service_charge" type="string">Service fee in TRX</ResponseField>
+        <ResponseField name="contract_address" type="string">Contract address for estimating miner fees</ResponseField>
+        <ResponseField name="address_to" type="string">Transfer destination address for estimating miner fees</ResponseField>
+        <ResponseField name="resource_type" type="string">Resource purchase type: 0 for Energy and Bandwidth, 1 for Energy</ResponseField>
+        <ResponseField name="buy_type" type="string">Resource purchase method: 0 for System Estimate, 1 for Specified Amount</ResponseField>
+        <ResponseField name="net_num" type="string">Bandwidth amount for delegation</ResponseField>
+        <ResponseField name="energy_num" type="long">Energy amount for delegation</ResponseField>
+        <ResponseField name="net_txid" type="long">Bandwidth delegation transaction txid</ResponseField>
+        <ResponseField name="energy_txid" type="string">Energy delegation transaction txid</ResponseField>
         <ResponseField name="net_price" type="string">Bandwidth price</ResponseField>
         <ResponseField name="energy_price" type="string">Energy price</ResponseField>
-        <ResponseField name="status" type="integer">Status 0: Order creation successful. 1: Proxy resource successful. 2: Proxy resource failed</ResponseField>
+        <ResponseField name="status" type="integer">Status: 0 for order creation success, 1 for resource delegation success, 2 for resource delegation failure</ResponseField>
     </Expandable>
 </ResponseField>
 

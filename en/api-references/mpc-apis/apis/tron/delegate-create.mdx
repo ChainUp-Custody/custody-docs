@@ -1,38 +1,38 @@
 ---
-title: Purchase Tron Resource Trading
+title: Purchase TRON Network Transaction Resources
 api: POST /api/mpc/tron/delegate
-description: "Purchase Tron resources through API"
+description: "Purchase TRON resources via API without burning TRX to complete the transaction."
 ---
 
 #### Request Parameters
 <ParamField query="request_id" type="string" required>
-    The unique identifier for transferring coins
+     Unique business identifier. 
 </ParamField>
 <ParamField query="resource_type" type="integer" >
-    Purchase resource type 0: Energy and bandwidth 1: Energy not specified defaults to 0
+    Resource type to purchase: 0 for Energy and Bandwidth, 1 for Energy. Defaults to 0 if not specified. 
 </ParamField>
 <ParamField query="buy_type" type="integer">
-    Method of purchasing resources 0: System estimation 1: Specify quantity not specified, default is 0
+    Resource purchase method: 0 for System Estimate, 1 for Specified Quantity. Defaults to 0 if not specified. 
 </ParamField>
 <ParamField query="net_num" type="integer" >
-    Number of bandwidths
+    Bandwidth Amount.
 </ParamField>
 <ParamField query="energy_num" type="integer" >
-    Quantity of energy
+   Energy Amount.
 </ParamField>
 <ParamField query="address_from" type="string" required>
-    Address for receiving resources
+    The address that will receive the resources
 </ParamField>
 <ParamField query="address_to" type="string">
-    Transfer to account address for estimating miner fees
+    The transfer address for estimating miner fees.
 </ParamField>
 <ParamField query="contract_address" type="string">
-    The contract address is used to estimate miner fees
+    Contract address for estimating miner fees.
 </ParamField>
 
 
 
-#### Response Data Parameters
+#### Response Parameters
 <Expandable title="object">
     <ResponseField name="trans_id" type="integer">Purchase Resource Transaction ID</ResponseField>
 </Expandable>

@@ -1,33 +1,33 @@
 ---
-title: 购买tron资源交易
+title: 购买TRON网络交易资源
 api: POST /api/mpc/tron/delegate
-description: "通过API购买tron资源"
+description: "通过API购买TRON交易资源，无需燃烧TRX即可完成交易。"
 ---
 
 #### 请求参数数据结构
 <ParamField query="request_id" type="string" required>
-    业务唯一标识
+    业务唯一标识。
 </ParamField>
 <ParamField query="resource_type" type="integer" >
-    购买资源类型 0:能量与带宽 1:能量 不指定默认为0
+    购买资源类型 0:能量与带宽 1:能量 不指定默认为0。
 </ParamField>
 <ParamField query="buy_type" type="integer">
-    购买资源方式 0:系统预估 1:指定数量 不指定默认为0
+    购买资源方式 0:系统预估 1:指定数量 不指定默认为0。
 </ParamField>
 <ParamField query="net_num" type="integer" >
-    带宽数量
+    带宽数量。
 </ParamField>
 <ParamField query="energy_num" type="integer" >
-    能量数量
+    能量数量。
 </ParamField>
 <ParamField query="address_from" type="string" required>
-    接收资源的地址
+    接收资源的地址。
 </ParamField>
 <ParamField query="address_to" type="string">
-    转账到账地址 用于预估矿工费
+    转账到账地址，用于预估矿工费。
 </ParamField>
 <ParamField query="contract_address" type="string">
-    合约地址 用于预估矿工费
+    合约地址，用于预估矿工费。
 </ParamField>
 
 
