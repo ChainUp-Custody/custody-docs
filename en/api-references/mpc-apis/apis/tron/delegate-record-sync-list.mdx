@@ -1,0 +1,70 @@
+---
+title: Synchronize Tron purchasing resource transaction records
+api: GET /api/mpc/tron/delegate/sync_trans_list
+description: "Obtain Tron purchase resource transaction records for all wallet specific transaction IDs under the workstation"
+---
+
+#### Request Parameters
+<ParamField query="max_id" type="string" required>
+    Tron purchase resource transaction record starting ID, for example 100, the system will return all transaction information after 101
+</ParamField>
+
+
+
+#### Response Data Parameters
+<ResponseField type="object[ ]">
+    <Expandable title="object">
+        <ResponseField name="id" type="integer">Purchase Resource Transaction ID</ResponseField>
+        <ResponseField name="request_id" type="string">Unique identifier for the transaction</ResponseField>
+        <ResponseField name="receive_address" type="integer">Resource acceptance address</ResponseField>
+        <ResponseField name="service_charge_rate" type="string">Service fee rate</ResponseField>
+        <ResponseField name="service_charge" type="string">Service fee unit TRX</ResponseField>
+        <ResponseField name="contract_address" type="string">The contract address is used to estimate miner fees</ResponseField>
+        <ResponseField name="address_to" type="string">Transfer to account address for estimating miner fees</ResponseField>
+        <ResponseField name="resource_type" type="string">Purchase resource type 0: Energy and bandwidth 1: Energy</ResponseField>
+        <ResponseField name="buy_type" type="string">Purchase resource method 0: System estimation 1: Specify quantity</ResponseField>
+        <ResponseField name="net_num" type="string">Number of proxy bandwidths</ResponseField>
+        <ResponseField name="energy_num" type="long">Number of proxy bandwidths</ResponseField>
+        <ResponseField name="net_txid" type="long">Bandwidth proxy transaction txid</ResponseField>
+        <ResponseField name="energy_txid" type="string">Bandwidth proxy transaction txid</ResponseField>
+        <ResponseField name="net_price" type="string">Bandwidth price</ResponseField>
+        <ResponseField name="energy_price" type="string">Energy price</ResponseField>
+        <ResponseField name="status" type="integer">Status 0: Order creation successful. 1: Proxy resource successful. 2: Proxy resource failed</ResponseField>
+    </Expandable>
+</ResponseField>
+
+
+
+<RequestExample>
+    ```curl cURL
+    curl -X GET \
+    --url 'https://openapi.chainup.com/api/mpc/tron/delegate/sync_trans_list?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data=SWYYr-LBVAmaS0eq8n-CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov-7hsRsVmOhyPqC-JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8-BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht-n_ZcBdxIDt975dbOFUiH-oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ-6cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb-5g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI'
+    ```
+</RequestExample>
+
+
+
+<ResponseExample>
+    ```json
+    [
+    {
+        "id": 1,
+        "request_id": "12345678",
+        "receive_address": "TXxtczsXf1EYgWEbwSxwC85iMfdv6CGNRa",
+        "service_charge_rate": "0.5",
+        "service_charge": "3.492925",
+        "contract_address": "TED4rvM5VAG8kzKULTb7GXXY6ph9aTwjt3",
+        "address_to": "TAqVGtBTkBfPwhgFKuWNqoMmApq87aumrU",
+        "resource_type": 0,
+        "buy_type": 0,
+        "net_num": 500,
+        "energy_num": 30885,
+        "net_txid": "1181fe4ea5915f940ac3cae3a5cde79037a35a4d768d52bc308654b89463fc63",
+        "energy_txid": "ab603f62e385ad70cfffd46ad1b160946a45600154f1420369d92749bb4f42dc",
+        "net_price": "0.001",
+        "energy_price": "0.00021",
+        "status": 1
+    }
+    ]
+    ```
+</ResponseExample>

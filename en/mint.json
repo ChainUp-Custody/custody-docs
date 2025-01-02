@@ -210,6 +210,14 @@
                 "api-references/mpc-apis/apis/babylon/stake-details",
                 "api-references/mpc-apis/apis/babylon/stake-details-by-req-id"
               ]
+            },
+            {
+              "group": "Tron Resource Proxy",
+              "pages": [
+                "api-references/mpc-apis/apis/tron/delegate-create",
+                "api-references/mpc-apis/apis/tron/delegate-record-list",
+                "api-references/mpc-apis/apis/tron/delegate-record-sync-list"
+              ]
             }
           ]
         },
