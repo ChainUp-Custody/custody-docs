@@ -1,0 +1,57 @@
+---
+title: 购买tron资源交易
+api: POST /api/mpc/tron/delegate
+description: "通过API购买tron资源"
+---
+
+#### 请求参数数据结构
+<ParamField query="request_id" type="string" required>
+    业务唯一标识
+</ParamField>
+<ParamField query="resource_type" type="integer" >
+    购买资源类型 0:能量与带宽 1:能量 不指定默认为0
+</ParamField>
+<ParamField query="buy_type" type="integer">
+    购买资源方式 0:系统预估 1:指定数量 不指定默认为0
+</ParamField>
+<ParamField query="net_num" type="integer" >
+    带宽数量
+</ParamField>
+<ParamField query="energy_num" type="integer" >
+    能量数量
+</ParamField>
+<ParamField query="address_from" type="string" required>
+    接收资源的地址
+</ParamField>
+<ParamField query="address_to" type="string">
+    转账到账地址 用于预估矿工费
+</ParamField>
+<ParamField query="contract_address" type="string">
+    合约地址 用于预估矿工费
+</ParamField>
+
+
+
+#### 响应参数数据结构
+<Expandable title="object">
+    <ResponseField name="trans_id" type="integer">购买资源交易ID</ResponseField>
+</Expandable>
+
+
+
+<RequestExample>
+    ```curl cURL
+    curl -X POST \
+    --url 'https://openapi.chainup.com/api/mpc/mpc/tron/delegate?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data=SWYYr-LBVAmaS0eq8n-CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov-7hsRsVmOhyPqC-JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8-BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht-n_ZcBdxIDt975dbOFUiH-oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ-6cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb-5g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI'
+    ```
+</RequestExample>
+
+
+
+<ResponseExample>
+    ```json
+    {
+        "trans_id": 198012
+    }
+    ```
+</ResponseExample>
