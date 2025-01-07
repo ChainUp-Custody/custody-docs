@@ -10,7 +10,7 @@ The TRON blockchain employs a unique fee model, different from blockchains like 
 **If the wallet does not have the required resources for the transaction, TRX must be directly burned from the address or replenished through the fueling station to support TRON network transactions.**
 
 ## Delegation Tool
-Directly burning TRX to pay miner fees can be costly. To help clients save on transaction fees and reduce operational costs, the Custody system has launched an automatic delegation tool. This tool allows all addresses under the workstation to acquire TRON transaction resources as needed for transactions, without consuming TRX. Clients only need to pay a small service fee to complete the transaction.
+Directly burning TRX to pay miner fees can be costly. To help clients save on transaction fees and reduce operational costs, the Custody system has launched an automatic delegation tool. This tool allows all addresses under the wrokspace to acquire TRON transaction resources as needed for transactions, without consuming TRX. Clients only need to pay a small service fee to complete the transaction.
 
 **Cost Savings:** After using the automatic delegation mechanism, the system will automatically provide the required energy for the wallet, eliminating the need for users to use TRX to pay miner fees. Typically, the delegation fee is cheaper than directly using TRX.
 
@@ -42,7 +42,7 @@ Please configure the gas station wallet first before using the tool.
 Allow Custody's authorized address to settle and automatically deduct Delegation Service Fee from your wallet.
 
 <Note>
-Activating transfer permission requires approval through the gas station wallet's strategy. Once permission is activated, the system will automatically delegate TRON transaction resources for all addresses in the workspace, helping users reduce transaction costs. The delegation service fee will be periodically settled and deducted.
+Activating transfer permission requires approval through the selected wallet's strategy. Once permission is activated, the system will automatically delegate TRON transaction resources for all addresses in the wrokspace, helping users reduce transaction costs. The delegation service fee will be periodically settled and deducted.
 </Note>
 
 <div className="w-full flex items-center justify-center">
@@ -62,7 +62,7 @@ Activating transfer permission requires approval through the gas station wallet'
 **The system automatically delegates resources and settles service fees**
 
 
-The Custody system will regularly settle the delegation service fees based on the actual resources consumed and automatically initiate fee deduction transactions from the gas station.
+The Custody system will regularly settle the delegation service fees based on the actual resources consumed and automatically initiate fee deduction transactions from the authorized wallet.
 
 <div className="w-full flex items-center justify-center">
 <img src="/images/help-center/tronfeeen.jpeg" width="200"/>
@@ -114,6 +114,39 @@ Custody service rate: 80%, meaning Custody will only charge 80% of the transacti
 
 If the transaction is not covered by delegated resources, the system will default to consuming TRX from the user’s wallet as the withdrawal miner’s fee, and the on-chain displayed miner’s fee will be equivalent to the withdrawal miner’s fee.
 
+
+## Tool Management
+
+After authorization, users can view the following information for authorized wallets through the wrokspace: 
+
+1. **Available Balance**：Displays the real-time remaining funds in the wallet.  
+2. **Pending Service Fees**：Shows the outstanding delegation service fees for the current wrokspace.
+3. **Savings Achieved**：Tracks the total TRON transaction costs saved by the tool for the wrokspace.
+
+
+Users can analyze the transaction history and utilize the built-in calculator to estimate potential future delegation service fees. Based on the estimated results, users can pre-fund the authorized wallet to ensure sufficient balance, preventing settlement failures due to insufficient funds and ensuring uninterrupted functionality.
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/calautronen.png" width="400"/>
+</div>
+
+Users can review detailed consumption and settlement records to gain a comprehensive understanding of the delegation service fees and resource consumption for each TRON transaction. This allows for easy reconciliation with settlement records, ensuring accurate and transparent account management.
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/trondetailen1.png" width="400"/>
+</div>
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/trondetailen2.png" width="400"/>
+</div>
+
+
+
+
+
+
+
+
 ## Frequently Asked Questions
 
 <Accordion title="How to understand the actual transaction resources consumed by an order?">
@@ -129,12 +162,6 @@ In the following special cases, some transactions may not be able to be delegate
 
 * Due to peak transaction periods, Custody's system resources may be insufficient, and TRX may need to be directly consumed from the wallet address.
 
-</Accordion>
-
-<Accordion title="How to check the service consumption of the workspace?">
-* If you want to check the settlement records of the delegation service fee, you can access the transaction details or query the delegation service fee information in the transaction records via the Web3 API.
-* If you want to view the total consumption records of the delegation service fee, you can contact the Custody customer support team for the relevant information.
-* If you want to check the outstanding balance of the delegation service fee, please contact the Custody customer support team for detailed information. If your outstanding balance exceeds a certain amount, the Custody team will contact you. If the balance is not replenished in time, the system will automatically suspend the delegation service.
 </Accordion>
 
 <Accordion title="How does the system charge and settle delegation service fees?">
