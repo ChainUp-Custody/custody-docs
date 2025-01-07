@@ -1,0 +1,17 @@
+---
+title: Tron购买资源交易通知
+---
+
+#### 请求参数数据结构
+
+| Param            | 类型   | 是否必须 | 说明                                                         |
+| :--------------- | :----- | :------- | :----------------------------------------------------------- |
+| charset            | String | 是       | 编码格式，无特殊情况，传参数`utf-8`                          |
+| side               | String | 是       | 通知类型， 收款通知：`deposit`， 转账通知： `withdraw`，Web3交易通知：`web3-trans`，Tron资源购买交易通知：`tron-delegate-trans`  |
+| notify_time        | String | 是       | 通知时间，例：2022-11-02 11:04:05                            |
+| id                 | String | 是       | 资源购买交易id                                                       |
+| request_id         | String | 是       | 唯一标识                                                 |
+| address_from       | String | 是       | 资源接收地址                                                     |
+| address_to         | String | 是       | 转账地址                                                     |
+| contract_address   | String | 是       | 合约地址                                                     |
+| status             | Integer | 是       | 交易状态 状态 0创建订单成功1代理资源成功2代理资源失败                                                     |

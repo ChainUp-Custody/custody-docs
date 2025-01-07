@@ -227,7 +227,8 @@
             "api-references/mpc-apis/notify/description",
             "api-references/mpc-apis/notify/deposit",
             "api-references/mpc-apis/notify/withdraw",
-            "api-references/mpc-apis/notify/web3"
+            "api-references/mpc-apis/notify/web3",
+            "api-references/mpc-apis/notify/tron"
           ]
         },
         {

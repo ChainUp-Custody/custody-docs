@@ -1,0 +1,17 @@
+---
+title: Purchasing Tron resources transaction
+---
+
+#### Decrypted Request Parameters
+
+| Param            | Type   | Request | Description                                                         |
+| :--------------- | :----- | :------- | :----------------------------------------------------------- |
+| charset            | String | Yes       | Character encoding format. Use `utf-8` unless specified otherwise. |
+| side               | String | Yes       | Notification type: Receive notification: `deposit`, Transfer notification: `withdraw`, Web3 transaction notification: `web3-trans` ，Purchasing Tron resources transaction notification：`tron-delegate-trans`  |
+| notify_time        | String | Yes       | Notification time in the format: "YYYY-MM-DD HH:mm:ss"                            |
+| id                 | String | Yes       | id                                                       |
+| request_id         | String | Yes       | Unique identifier                                                |
+| address_from       | String | Yes       | Sender address                                                       |
+| address_to         | String | Yes       | Recipient address                                                     |
+| contract_address   | String | Yes       | Contract address                                                     |
+| status             | Integer | Yes       | Status: 0 for order creation success, 1 for resource delegation success, 2 for resource delegation failure                                                    |
