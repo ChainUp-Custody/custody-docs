@@ -364,6 +364,7 @@
           "pages": [
             "help-center/manage-mpc/transaction/transfer",
             "help-center/manage-mpc/transaction/BRC-20"
+          ]
         },
         {
           "group": "Web3",
