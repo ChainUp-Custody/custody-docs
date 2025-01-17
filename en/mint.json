@@ -391,6 +391,15 @@
           ]
         },
         {
+          "group": "Tron Resource Delegation",
+          "pages": [
+            "help-center/manage-mpc/Tron-delegation/resource-from-custody",
+            "help-center/manage-mpc/Tron-delegation/resource-from-client",
+            "help-center/manage-mpc/Tron-delegation/resource-monitor"
+      
+          ]
+        },
+        {
           "group": "Cold Wallet",
           "pages": [
             "help-center/manage-mpc/coldwallet/coldwalletsolution",

@@ -363,8 +363,7 @@
           "group": "钱包交易",
           "pages": [
             "help-center/manage-mpc/transaction/transfer",
-            "help-center/manage-mpc/transaction/BRC-20",
-            "help-center/manage-mpc/transaction/Tron-Transaction"
+            "help-center/manage-mpc/transaction/BRC-20"
         
           ]
         },
@@ -389,6 +388,15 @@
           "pages": [
             "help-center/manage-mpc/strategy/transfer",
             "help-center/manage-mpc/strategy/workspace"
+          ]
+        },
+        {
+          "group": "Tron资源代理",
+          "pages": [
+            "help-center/manage-mpc/Tron-delegation/resource-from-custody",
+            "help-center/manage-mpc/Tron-delegation/resource-from-client",
+            "help-center/manage-mpc/Tron-delegation/resource-monitor"
+      
           ]
         },
         {
@@ -554,6 +562,7 @@
       ]
     },
     {
+      
       "group": "全托管",
       "pages": [
         {
@@ -590,25 +599,6 @@
             "user-guide/custody-wallet/strategy/api",
             "user-guide/custody-wallet/strategy/approval-flow"
 
-          ]
-        }
-      ]
-    },
-    {
-      "group": "TRON资源租赁服务",
-      "pages": [
-        {
-          "group": "服务介绍",
-          "pages": [
-            "user-guide/Tron-delegation/resources-platform"
-          ]
-        },
-        {
-          "group": "解决方案",
-          "pages": [
-            "user-guide/Tron-delegation/resource-from-custody",
-            "user-guide/Tron-delegation/resource-from-client",
-            "user-guide/Tron-delegation/resource-monitor"
           ]
         }
       ]

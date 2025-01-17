@@ -1,0 +1,73 @@
+---
+title: TRON Resource Delegation：Use Your Energy
+---
+  
+## Introduction
+The TRON blockchain employs a unique fee model, different from blockchains like Ethereum. It does not use a fixed Gas fee but instead utilizes two resources—bandwidth and energy—for transactions.
+- Transferring TRX and TRC-10 tokens consumes bandwidth.
+- Transferring TRC-20 tokens or executing contracts consumes both bandwidth and energy.
+  
+
+Burning TRX directly to pay for miner fees can be costly. To help clients save on transaction fees and reduce operational costs, Custody offers a unique solution **if you have sufficient resources** obtained through staking TRX. Simply provide a resource address, and the system will automatically monitor MPC workstation transactions, intelligently delegating resources to the relevant addresses. This significantly reduces operational costs while ensuring efficient and smooth transaction execution.
+  
+  
+**One-Stop Operation:** As long as the provided address has sufficient resources, Custody will automatically allocate these resources to every TRON transaction within the workstation. No additional TRX will be consumed, making the entire transaction process simple and efficient. This significantly reduces operational complexity, allowing you to focus on business development while effortlessly achieving efficient transactions.
+  <Tip> 
+  This solution is only available to MPC custody soultion.
+  </Tip>
+  
+## How to enable delegation 
+  
+  ### 1. Customer Contacts Platform to Activate Service
+
+Please contact the Custody team and inform them that you wish to use an external resource address for delegation to the MPC workstation.
+  
+**Prepare the following information in advance:**
+
+* Your merchant name
+
+* MPC workstation ID
+
+* Your resource address
+
+* Type of resources you wish to delegate
+
+Transaction scenarios/range of addresses you wish to delegate
+
+  ### 2. Customer Authorizes the Platform
+  
+Follow the tutorial provided by Custody to grant the platform resource delegation authorization.
+  
+  
+  ### 3. Platform Configures the Delegation Feature
+ Custody will configure the functionality based on the information and delegation requirements you provide.
+  
+  Once the configuration is complete, access MPC Web Platform - Tools - TRON Automatic Delegation, and click the "Manual Delegation" button. If the functionality page displays the following prompt, it means the service has been successfully activated, and the system is automatically delegating your staked resources to meet transaction needs.
+  
+  <div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/userresourceen.jpeg" width="600"/>
+</div>
+  
+  
+## Frequently Asked Questions
+  
+ <Accordion title="How to understand the actual transaction resources consumed by an order?">
+You can visit the blockchain explorer and query the transaction’s TXID to view the resources consumed by the transaction.
+</Accordion>
+
+
+
+<Accordion title="Why are some TRON transactions not using delegated resources?">
+In the following special cases, some transactions may not be able to be delegated:
+
+* The address is not activated (no TRX transaction record), the first transaction will require TRX consumption.
+
+* Due to peak transaction periods, Custody's system resources may be insufficient, and TRX may need to be directly consumed from the wallet address.
+
+</Accordion>
+  
+  
+  <Accordion title="How does the system charge and settle delegation service fees?">
+  As this solution is fully customized based on your specific requirements, offering high levels of personalization and flexibility, there is no standardized pricing. The Custody system will assess the complexity of your particular needs, communicate with you, and determine a detailed pricing plan accordingly.
+  </Accordion>
+  

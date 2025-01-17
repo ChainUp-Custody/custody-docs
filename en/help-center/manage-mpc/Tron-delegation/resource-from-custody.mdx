@@ -1,0 +1,196 @@
+---
+title: TRON Automated Delegation
+---
+
+## Introduction
+The TRON blockchain employs a unique fee model, different from blockchains like Ethereum. It does not use a fixed Gas fee but instead utilizes two resources—bandwidth and energy—for transactions.
+- Transferring TRX and TRC-10 tokens consumes bandwidth.
+- Transferring TRC-20 tokens or executing contracts consumes both bandwidth and energy.
+
+**If the wallet does not have the required resources for the transaction, TRX must be directly burned from the address or replenished through the fueling station to support TRON network transactions.**
+
+## Delegation Tool
+Directly burning TRX to pay miner fees can be costly. To help clients save on transaction fees and reduce operational costs, the Custody system has launched an automatic delegation tool. This tool allows all addresses under the wrokspace to acquire TRON transaction resources as needed for transactions, without consuming TRX. Clients only need to pay a small service fee to complete the transaction.
+
+**Cost Savings:** After using the automatic delegation mechanism, the system will automatically provide the required energy for the wallet, eliminating the need for users to use TRX to pay miner fees. Typically, the delegation fee is cheaper than directly using TRX.
+
+**One-Step Operation:** Once you active permission and enable the feature, every transaction will be fully covered with resources, ensuring that no TRX is consumed during the transaction process and reducing operational complexity.
+
+## III. Operation
+
+**Accessing the TRON Automated Delegation Tool**
+
+
+Log in to the MPC workspace, go to [More] - [Toolbox], and access the tool.
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/help-center/trontool1en.png" width="600"/>
+        <img src="/images/help-center/trontool2en.png" width="600"/>
+    </CardGroup>
+</div>
+
+
+
+
+
+
+You can also find the entry to the TRON Auto Delegation tool on the details page of the auto-sweeping feature or on the transfer page for TRON network tokens.
+
+
+
+<Tip> 
+You can choose any Web3 wallet under the workstation as the authorized wallet.
+</Tip>
+
+
+**Activing Transfer Permission to Enable Delegation Feature**
+
+Allow Custody's authorized address to settle and automatically deduct Delegation Service Fee from your wallet.
+
+<Note>
+Activating transfer permission requires approval through the selected wallet's strategy. Once permission is activated, the system will automatically delegate TRON transaction resources for all addresses in the wrokspace, helping users reduce transaction costs. The delegation service fee will be periodically settled and deducted.
+</Note>
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={3}>
+        <img src="/images/help-center/tronshouquan1en.png" width="200"/>
+        <img src="/images/help-center/tronshouquan2en.png" width="200"/>
+        <img src="/images/help-center/tronshouquan4en.png" width="200"/>
+    </CardGroup>
+</div>
+
+
+
+**
+Contact Custody to Select Delegation Address Range
+
+After completing the authorization, please contact the Custody team and specify the type of address you wish to delegate:
+
+Delegate MPC Workstation: The system will automatically monitor all TRON transactions (transfers, aggregation, Web3) on the addresses and execute resource delegation and recovery according to the strategy, helping you maximize transaction resource savings.
+
+Delegate External Address: The team will configure the delegation service based on the external addresses you provide. Custody will monitor TRON transaction activities on your addresses, estimate the required resources, and delegate the necessary resources.
+
+<Tip> 
+
+Custody now supports providing TRON resource delegation for external addresses, covering both transfer and auto sweep scenarios.
+
+</Tip>
+
+
+
+
+
+**The system automatically delegates resources and settles service fees**
+
+
+The Custody system will regularly settle the delegation service fees based on the actual resources consumed and automatically initiate fee deduction transactions from the authorized wallet.
+
+<div className="w-full flex items-center justify-center">
+<img src="/images/help-center/tronfeeen.jpeg" width="200"/>
+</div>
+
+
+<Note>
+If the authorized wallet balance is insufficient to cover the delegation service fees, the system will not immediately stop the automatic delegation feature. The unpaid fees will be deferred and deducted once the wallet balance is replenished. However, please note that if the outstanding amount remains too high and is not addressed in a timely manner, the system may suspend the automatic delegation service.
+</Note>
+
+
+
+
+
+
+## Billing Rules
+### Using Delegated Resources
+
+The system will calculate the delegation service fee based on the actual resources consumed by the transaction. Custody will regularly track the amount of service fees pending payment and initiate a transaction to deduct the fee from the user's authorized wallet address.
+
+**Delegation Service Fee = [Energy consumed by transaction * Energy price + Bandwidth consumed by transaction * Bandwidth price] * Custody service rate**
+
+Energy price: 1 Energy = 0.00021 TRX
+
+Bandwidth price: 1 Bandwidth = 0.001 TRX
+
+<Note> 
+The prices of energy and bandwidth are set by the TRON network.
+</Note>
+
+Custody service rate: A dynamic percentage, always less than 100%, which will be adjusted periodically based on actual conditions.
+
+For example, if the user transfers USDT and consumes 65,000 energy and 300 bandwidth:
+
+Resource consumption value of the transaction:
+
+Energy consumption: 65,000 Energy × 0.00021 = 13.65 TRX
+
+Bandwidth consumption: 300 Bandwidth × 0.001 = 0.3 TRX
+
+**Total resource consumption value** = 13.65 + 0.3 = 13.95 TRX
+
+Custody service rate: 80%, meaning Custody will only charge 80% of the transaction's resource cost.
+
+**Delegation service fee for the transaction** = 13.95 × 80% = 11.16 TRX, which is lower than directly burning TRX to pay for miner fees, resulting in reduced transaction costs.
+
+
+### Not Using Delegated Resources
+
+If the transaction is not covered by delegated resources, the system will default to consuming TRX from the user’s wallet as the withdrawal miner’s fee, and the on-chain displayed miner’s fee will be equivalent to the withdrawal miner’s fee.
+
+
+## Tool Management
+
+After authorization, users can view the following information for authorized wallets through the wrokspace: 
+
+1. **Available Balance**：Displays the real-time remaining funds in the wallet.  
+2. **Pending Service Fees**：Shows the outstanding delegation service fees for the current wrokspace.
+3. **Savings Achieved**：Tracks the total TRON transaction costs saved by the tool for the wrokspace.
+
+
+Users can analyze the transaction history and utilize the built-in calculator to estimate potential future delegation service fees. Based on the estimated results, users can pre-fund the authorized wallet to ensure sufficient balance, preventing settlement failures due to insufficient funds and ensuring uninterrupted functionality.
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/calautronen.png" width="400"/>
+</div>
+
+Users can review detailed consumption and settlement records to gain a comprehensive understanding of the delegation service fees and resource consumption for each TRON transaction. This allows for easy reconciliation with settlement records, ensuring accurate and transparent account management.
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/trondetailen1.png" width="400"/>
+</div>
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/help-center/trondetailen2.png" width="400"/>
+</div>
+
+
+
+
+
+
+
+
+## Frequently Asked Questions
+
+<Accordion title="How to understand the actual transaction resources consumed by an order?">
+You can visit the blockchain explorer and query the transaction’s TXID to view the resources consumed by the transaction.
+</Accordion>
+
+
+
+<Accordion title="Why are some TRON transactions not using delegated resources?">
+In the following special cases, some transactions may not be able to be delegated:
+
+* The address is not activated (no TRX transaction record), the first transaction will require TRX consumption.
+
+* Due to peak transaction periods, Custody's system resources may be insufficient, and TRX may need to be directly consumed from the wallet address.
+
+</Accordion>
+
+<Accordion title="How does the system charge and settle delegation service fees?">
+
+The Custody system calculates the consumption data for the previous day at 0:00 (UTC+8) based on actual resource usage and real-time pricing, and settles the related fees from your authorized wallet at 17:00 (UTC+8) daily.
+</Accordion>
+
+<Accordion title="What will happen if the workspace fails to pay the delegation service fees on time?">
+If the balance in the authorized wallet is insufficient to cover the delegatation service fees, the system settlement will fail. As a result, certain TRON transaction functions on the workspace will be automatically disabled, and these functions will be restored only once the settlement is successfully completed.
+</Accordion>
