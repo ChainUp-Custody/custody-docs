@@ -23,12 +23,21 @@ title: Co-Signer部署
 
 1. 运行程序下载   
 
-  文件地址: https://github.com/ChainUp-Custody/mpc-co-signer/releases,  选择co-signer-linux-(version) 版本，该版本Linux可直接运行
+  文件地址: https://github.com/ChainUp-Custody/mpc-co-signer/releases,  选择co-signer-linux-(version)-static版本，该版本Linux可直接运行
+
+  <Warning>
+  以版本**v1.3.1**为例，请在实际使用时替换相关版本
+
+  </Warning>
+
+```sh
+wget https://github.com/ChainUp-Custody/mpc-co-signer/releases/download/v1.3.1/co-signer-linux-v1.3.1-static
+```
 
 2. 修改程序可执行权限
 
 ```sh
-chmod +x co-signer-(version)
+chmod +x co-signer-linux-v1.3.1-static
 ```
 
 - **SGX版本**
@@ -50,19 +59,33 @@ chmod +x co-signer-(version)
     </Step>
 
     <Step title="创建工作目录">
+         <Warning>
+        以目录/data/co-signer/为例，请在实际使用时替换相关目录
+
+        </Warning>
+
         ```sh
-        mkdir -p <work path/>
+        mkdir -p /data/co-signer/
         ```
     </Step>
 
     <Step title="切换到工作目录">
         ```sh
-        cd <work path/>
+        cd /data/co-signer/
         ```
     </Step>
 
     <Step title="下载程序">
+        <Warning>
+        以版本**v1.3.1**为例，请在实际使用时替换相关版本
+
+        </Warning>
+
         文件地址: https://github.com/ChainUp-Custody/mpc-co-signer/releases,  选择co-signer-linux-(version) 版本，请按照后续步骤使用ego进行编译打包
+
+        ```sh
+        wget https://github.com/ChainUp-Custody/mpc-co-signer/releases/download/v1.3.1/co-signer-linux-v1.3.1
+        ```
 
         注意：**v1.1.0**版本后支持SGX
     </Step>
@@ -71,16 +94,17 @@ chmod +x co-signer-(version)
         <Warning>
         **重要提示**
 
-        1. 配置文件中exe的值：co-signer-sgx, 如果修改了可执行程序名称，exe的值需修改为自定义名称
+        1. 配置文件中exe的值：co-signer-linux-v1.3.1（示例）, 如果修改了可执行程序名称，exe的值需修改为自定义名称
 
-        2. 配置文件规定**Co-Signer** 只能在目录/data/co-signer/下运行, 如需自定义运行目录, 请将配置中的**所有的** /data/co-signer/修改为自定义目录
+        2. 配置文件规定**Co-Signer** 只能在目录/data/co-signer/（示例）下运行, 如需自定义运行目录, 请将配置中的**所有的** /data/co-signer/修改为自定义目录
 
         3. 堆内存，**heapSize**配置建议配置为：60G (61440)
 
         </Warning>
-        ```json
+        ```sh
+        cat>./enclave.json<< EOF
         {
-            "exe": "mpc-co-signer",
+            "exe": "co-signer-linux-v1.3.1",
             "key": "private.pem",
             "debug": false,
             "heapSize": 61440,
@@ -91,14 +115,20 @@ chmod +x co-signer-(version)
             "env": [{"name":"HOME","fromHost":true},{"name":"PWD","value":"/data/co-signer/"}],
             "files": null
         }
+        EOF
         ```
     </Step>
 
     <Step title="重新sign并打包后得到可运行sgx运行程序">
+        <Warning>
+        以版本**v1.3.1**为例，请在实际使用时替换相关版本
+
+        </Warning>
+
         ```sh
         ego sign
 
-        ego bundle co-signer-sgx-(version)
+        ego bundle co-signer-linux-v1.3.1
         ```
     </Step>
 
@@ -263,7 +293,7 @@ echo ""
 echo ${STR_PASSWORD} | nohup ${project_path}/co-signer -server >>nohup.out 2>&1 &
 ```
 
-## III. **Co-Signer** 快捷部署脚本
+## III. **Co-Signer** 快捷部署脚本（推荐）
 
 Custody也提供了更为便捷的部署方式，使用脚本一键式生成配置信息、以及运行环境
 

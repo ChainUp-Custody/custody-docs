@@ -22,12 +22,22 @@ title: Co-Signer Deployment
 
 1. Run the program to download
 
-  File address: [https://github.com/ChainUp-Custody/mpc-co-signer/releases](https://github.com/ChainUp-Custody/mpc-co-signer/releases), select co-signer-linux-(version) version, this version can run directly on Linux.
+  File address: [https://github.com/ChainUp-Custody/mpc-co-signer/releases](https://github.com/ChainUp-Custody/mpc-co-signer/releases), select co-signer-linux-(version)-static version, this version can run directly on Linux.
+
+
+  <Warning>
+  Take version **v1.3.1** as an example. Please replace the relevant version when actually using it.
+
+  </Warning>
+
+```sh
+wget https://github.com/ChainUp-Custody/mpc-co-signer/releases/download/v1.3.1/co-signer-linux-v1.3.1-static
+```
 
 2. Modify the program's executable permissions
 
 ```sh
-chmod +x co-signer-(version)
+chmod +x co-signer-linux-v1.3.1-static
 ```
 
 - **SGX Version**
@@ -49,19 +59,33 @@ chmod +x co-signer-(version)
     </Step>
 
 <Step title="Create a working directory">
+    <Warning>
+    Take the directory /data/co-signer/ as an example. Please replace the relevant working directory in actual use.
+
+    </Warning>
+
     ```sh
-    mkdir -p <work path/>
+    mkdir -p /data/co-signer/
     ```
 </Step>
 
 <Step title="Switch to the working directory">
     ```sh
-    cd <work path/>
+    cd /data/co-signer/
     ```
 </Step>
 
 <Step title="Download the program">
+    <Warning>
+      Take version **v1.3.1** as an example. Please replace the relevant version when actually using it.
+
+      </Warning>
+
     File address: [https://github.com/ChainUp-Custody/mpc-co-signer/releases](https://github.com/ChainUp-Custody/mpc-co-signer/releases), select version co-signer-linux-(version), please follow the subsequent steps to compile and package using ego.
+
+    ```sh
+    wget https://github.com/ChainUp-Custody/mpc-co-signer/releases/download/v1.3.1/co-signer-linux-v1.3.1
+    ```
 
     Note: Support for SGX is available after **v1.1.0**.
 </Step>
@@ -71,17 +95,18 @@ chmod +x co-signer-(version)
 <Warning>
     **Important Note**
 
-    1. The value of `exe` in the configuration file: co-signer-sgx. If the executable program name is modified, the value of `exe` needs to be changed to the custom name.
+    1. The value of `exe` in the configuration file: co-signer-linux-v1.3.1 (example). If the executable program name is modified, the value of `exe` needs to be changed to the custom name.
 
-    2. The configuration file specifies that Co-Signer can only run under the directory /data/co-signer/. If you need to customize the running directory, please modify **all** occurrences of /data/co-signer/ in the configuration to the custom directory.
+    2. The configuration file specifies that Co-Signer can only run under the directory /data/co-signer/ (example). If you need to customize the running directory, please modify **all** occurrences of /data/co-signer/ in the configuration to the custom directory.
 
     3. Heap memory, **heapSize** configuration is recommended to be set to: 60G (61440).
 </Warning>
 
 
- ```json
+        ```sh
+        cat>./enclave.json<< EOF
         {
-            "exe": "mpc-co-signer",
+            "exe": "co-signer-linux-v1.3.1",
             "key": "private.pem",
             "debug": false,
             "heapSize": 61440,
@@ -92,14 +117,20 @@ chmod +x co-signer-(version)
             "env": [{"name":"HOME","fromHost":true},{"name":"PWD","value":"/data/co-signer/"}],
             "files": null
         }
-     ```
+        EOF
+        ```
 </Step>
 
 <Step title="Re-sign and package to obtain a runnable SGX executable program">
+      <Warning>
+      Take version **v1.3.1** as an example. Please replace the relevant version when actually using it.
+
+      </Warning>
+
     ```sh
     ego sign
 
-    ego bundle co-signer-sgx-(version)
+    ego bundle co-signer-linux-v1.3.1
     ```
 </Step>
 
@@ -275,7 +306,7 @@ echo ""
 echo ${STR_PASSWORD} | nohup ${project_path}/co-signer -server >>nohup.out 2>&1 &
 ```
 
-## **Co-Signer** Quick Deploy Script
+## **Co-Signer** Quick Deploy Script (Recommend)
 
 Custody also provides a more convenient deployment method, using scripts to generate configuration information and operating environments with one click
 
