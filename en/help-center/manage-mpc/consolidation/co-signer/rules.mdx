@@ -27,7 +27,7 @@ Auto sweep encompasses four dimensions:
 
 #### What is an Omnibus Wallet?
 
-An Omnibus Wallet is responsible for consolidating assets scattered across different wallets into its address.
+An Omnibus Wallet is responsible for receiving assets scattered across different wallets into its address.
 
 #### What is a Gas Station?
 
@@ -36,11 +36,11 @@ A Gas Station is a service responsible for replenishing gas fees for correspondi
 #### **Operation Steps**
 
 <Steps>
-<Step title="Open Auto Sweep Function">
-Use the Custody App to scan the QR code and configure via the "Auto Sweep" feature.
+<Step title="Configuring Omnibus Wallet and Gas Station">
+Scan the app QR code to log in to the Custody Web interface, use the 'Auto Sweep' function, select the omnibus wallet and gas station, and submit the configuration request.
 </Step>
-<Step title="Confirm Configuration">
-Use the Custody App to scan the provided QR code and sign with local private key fragments to confirm the configuration of the Omnibus Wallet and Gas Station.
+<Step title="Determining the Configuration">
+The configuration of the omnibus wallet and gas station requires approval through [Workspace Strategy](/help-center/manage-mpc/strategy/workspcae).
 </Step>
 
 </Steps>
@@ -48,11 +48,11 @@ Use the Custody App to scan the provided QR code and sign with local private key
 <Warning>
 **Key Steps and Notes**
 
-In this step, co-managers can select wallets under the workspace and initiate corresponding configurations. It is important to note that the Omnibus Wallet and Gas Station can be the same.
+In this step, co-managers can select wallets under the workspace and initiate corresponding configurations. It is important to note that the Omnibus Wallet and Gas Station can‘t be the same.
 
 Ensure that the selected Omnibus Wallet and Gas Station are available. Sweeping and refueling functions can only operate when they are in an available state. If the selected Omnibus Wallet or Gas Station is found to be deactivated, promptly make modifications to ensure the system's normal operation.
 
-If your Omnibus Wallet and Gas Station have multiple addresses for the same asset, only the commonly used addresses can be used as sweeping destination addresses or refueling withdrawal addresses. After configuration, you can view detailed information on the commonly used addresses.
+o ensure the security of asset sweeping, both the omnibus wallet and the gas station need to be encrypted with private keys. This may result in longer approval and signing processes.
 
 </Warning>
 

@@ -35,5 +35,6 @@ mintlify dev --port 3333
 ```
 cd en 
 
-mintlify dev --port 4444
+
+
 ```

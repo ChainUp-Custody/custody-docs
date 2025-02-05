@@ -20,7 +20,7 @@ title: 配置自动归集规则
 ## II. 操作流程
 
 <Warning>
-需要完成100%配置后，归集策略才可执行。
+需要完成100%配置后，归集功能才可执行。
 </Warning>
 
 <Steps>
@@ -33,16 +33,19 @@ title: 配置自动归集规则
 </Step>
 
 <Step title="确认钱包配置">
-归集钱包和加油站可以选择同一个;
-使用Custody App扫描提供的二维码，利用本地私钥分片签名确认归集钱包和加油站的配置。
+<Warning>
+请勿将同一个钱包同时设置为归集钱包和加油站。
+</Warning>
+
+提交配置申请后，需要经过[工作站策略审批](/user-guide/mpc-wallet/strategy/edit-workspace-strategy)。审批通过后，归集策略将自动创建并启用归集功能。
  <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
         <img src="/images/user-guide/ruleco2cn.png" width="350"/>
-        <img src="/images/user-guide/ruleco3cn.png" width="350"/>
+        <img src="/images/user-guide/autosweepapprovalcn.png" width="350"/>
     </CardGroup>
 </div>
 <Tip>
-共管成员创建配置后，工作站创建者会收到一条待办任务，需要签名确认，配置才可生效。
+若您的工作站并没有开启[TRON自动代理功能](/help-center/manage-mpc/Tron-delegation/resource-from-custody)，在提交归集配置时，系统默认会同步开启代理功能来帮助您节约TRON网络的归集成本。
 </Tip>
 </Step>
 <Step title="决定归集应用范围">
@@ -59,6 +62,8 @@ title: 配置自动归集规则
    归集钱包和加油站可以包含在归集应用范围内。
 
    若您的钱包拥有多条需归集资产的地址，则钱包所有地址资产都将属于归集应用范围。
+
+
    </Warning>
 
 </Step>
@@ -75,10 +80,13 @@ title: 配置自动归集规则
 
   4. 矿工费不足
 
-  归集钱包的归集到账地址列表可以查看每条地址的情况，管理员和创建者可以一键处理未生成地址，未加密地址的情况。
+您可以访问归集到账地址列表和加油地址列表，查看每条地址的加密状态。管理员和创建者可以一键处理未生成地址和未加密地址的情况。
 
  <div className="w-full flex items-center justify-center">
-    <img src="/images/user-guide/fullcoinrulescn.png" width="600"/>
+    <CardGroup cols={2}>
+        <img src="/images/user-guide/guijidaozhangcn.png" width="350"/>
+        <img src="/images/user-guide/jiayouchujincn.png" width="350"/>
+    </CardGroup>
 </div>
 
 <Tips>

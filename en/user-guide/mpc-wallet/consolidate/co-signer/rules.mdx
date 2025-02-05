@@ -19,7 +19,7 @@ Please upgrade the App version to **6.4.5** or higher.
 ## II. Operation Procedure
 
 <Warning>
-The sweeping strategy can only be executed after it is 100% configured.
+The sweeping function can only be executed after it is 100% configured.
 </Warning>
 
 <Steps>
@@ -33,19 +33,21 @@ The sweeping strategy can only be executed after it is 100% configured.
 </Step>
 
 <Step title="Confirming Wallet Configuration">
-The Omnibus Wallet and Gas Station can be the same;
+<Warning>
+Do not set the same wallet as both the omnibus wallet and gas station at the same time.
+</Warning>
+After submitting the configuration request, it needs to go through the [workspace strategy approval](/user-guide/mpc-wallet/strategy/edit-workspace-strategy). Once approved, the sweeping strategy will be automatically created and the sweeping feature will be enabled.
 
-Use the Custody App to scan the provided QR code and sign with local private key shares to confirm the configuration of the Omnibus Wallet and Gas Station.
  <div className="w-full flex items-center justify-center">
     <CardGroup cols={2}>
         <img src="/images/user-guide/omnibus1.png" width="350"/>
-        <img src="/images/user-guide/omnibus2.png" width="350"/>
+        <img src="/images/user-guide/autosweepapprovalen.png" width="350"/>
     </CardGroup>
 </div>
 
 
 <Tip>
-After the configuration is created by co-managers, the workspace owner will receive a pending task that requires signature confirmation before the configuration can take effect.
+If your workspace has not enabled the [TRON Automatic Delegation Feature](/help-center/manage-mpc/Tron-delegation/resource-from-custody), the system will automatically enable the delegation feature when you submit the sweeping configuration to help you save on the TRON network sweeping costs.
 </Tip>
 </Step>
 <Step title="Determining the Sweeping Scope">
@@ -79,10 +81,13 @@ Decide which wallets' assets will be swept.
 
   4. Insufficient gas fees
 
-  The Omnibus Wallet's list of sweeping destination addresses can be viewed for each address's status. admins and owners can handle situations where addresses are not generated or encrypted with a single click.
+  You can access the list of Auto Sweep Destination Address and Refueling Withdrawal Address to check the encryption status of each address. Both admins and creators can handle addresses that are not generated or not encrypted with a single click.
 
- <div className="w-full flex items-center justify-center">
-  <img src="/images/user-guide/fullcoinrulesen.png" width="600"/>
+  <div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/user-guide/guijidaozhangen.png" width="350"/>
+        <img src="/images/user-guide/jiayouchujinen.png" width="350"/>
+    </CardGroup>
 </div>
 
 
