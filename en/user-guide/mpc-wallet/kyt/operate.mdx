@@ -60,7 +60,7 @@ You can view the KYT to-do items that need to be handled in To-Do.
 
 <Step title="KYT Status">
 
-KYT (Know Your Transaction) includes the following statuses:
+KYT（Know Your Transaction）包含以下几种状态：
 
 **KYT Verification in Progress:**
 
@@ -69,15 +69,30 @@ KYT (Know Your Transaction) includes the following statuses:
 
 * Verification Timeout: The KYT verification submitted by your business has timed out, and the system will generate a KYT verification timeout task.
 
-
 **KYT Manual Processing:**
 
-* If your configured receipt processing method is 'Manual Processing,' and the deposit order reaches your configured alert level, the order status will be KYT Manual Processing. You need to confirm and handle this task in the to-do list. If not handled, to ensure fund security, this token in the wallet will be intercepted from withdrawal and collection.
+* If your transaction order times out, or if the KYT risk level of the transaction order requires manual review, any member of the wallet can process the KYT result for that transaction. If your configured payment handling method is 'manual processing,' and no action is taken, assets corresponding to the pending KYT processing will not be transferable or swept.
 
-**KYT Rejection:**
+*Manual Review for Receive Order*
 
-* If your configured withdrawal processing method is 'Reject Withdrawal,' and the withdrawal order reaches your configured alert level, the order will be directly rejected. This status is the final state of the order.
+* Confirm the Fund: The transaction amount will be recorded as an asset change, the payment transaction status will be updated to 'successful,' and both auto sweeping and transfer operations will be enabled.
 
+* Return the Fund: A refund request is initiated, and the user can select the return address and amount. Once the refund is successful, the payment status will be updated to 'Refunded.'
+
+*Manual Review for Transfer Order*
+
+* Allow Transfer: Transfer is allowed, and the transaction proceeds to the next step.
+
+* Reject Transfer: Transfer is not allowed, and the process is terminated.
+
+
+**Reject Transfer:**
+
+* If the KYT risk level strategy for a transfer order is set to "Reject Transfer," the system will automatically terminate the transfer process when the order matches this risk level.
+
+*Allow Transfer：**
+
+* If the KYT risk level strategy for a transfer order is set to "Allow Transfer," the order will automatically proceed to the next step when it matches this risk level.
 
 
 <div className="w-full flex items-center justify-center">
@@ -97,7 +112,24 @@ KYT (Know Your Transaction) includes the following statuses:
 
 ##  Frequently Asked Questions
 
-<Accordion title="How does KYT service handle risky transactions?">
+<Accordion title="Which members can process KYT tasks?">
+If a transaction order requires manual KYT processing, all members of the wallet associated with the order can perform the operation.
+</Accordion>
 
-The KYT service will alert you to risky transactions and handle them according to your configuration. For example, if your configured receipt processing method is 'Manual Processing,' when a deposit order reaches the alert level you set, the order status will be shown as 'KYT Manual Processing.' You need to confirm and handle this pending task. If the task is not handled, to ensure fund security, the tokens associated with the unprocessed tasks will be unable to be transferred or swept.
+<Accordion title="If the receive order fails to retrieve the KYT risk level, how should I proceed?">
+
+If the KYT service provider is unable to determine the risk level of the receive order, you can choose one of the following actions:
+
+* Re-verify the KYT result;
+* Set a custom risk level and proceed with the transaction;
+* Return the funds to the original source.
+</Accordion>
+
+<Accordion title="If the transfer order fails to retrieve the KYT risk level, how should I proceed?">
+
+If the KYT service provider is unable to determine the risk level of the transfer order, you can choose one of the following actions:
+
+* Re-verify the KYT result;
+* Manually approve the transfer;
+* Manually reject the transfer.
 </Accordion>
