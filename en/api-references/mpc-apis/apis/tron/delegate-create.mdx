@@ -8,17 +8,13 @@ description: "Purchase TRON resources via API without burning TRX to complete th
 <ParamField query="request_id" type="string" required>
      Unique business identifier. 
 </ParamField>
-<ParamField query="resource_type" type="integer" >
-    Resource type to purchase: 0 for Energy and Bandwidth, 1 for Energy. Defaults to 0 if not specified.(Currently, only energy agents are supported.)
-</ParamField>
 <ParamField query="buy_type" type="integer">
-    Resource purchase method: 0 for System Estimate, 1 for Specified Quantity. Defaults to 0 if not specified. (Currently, only a specified quantity is supported.)
+    Resource purchase method: 0 for System Estimate, 1 for Specified Quantity. Defaults to 0 if not specified.
 </ParamField>
 <ParamField query="service_charge_type" type="string" required>
     Resource purchase cycle:
     10010 - 10 minutes,
     20001 - 1 hour,
-    20002 - 2 hours,
     30001 - 1 day,
     30030 - 30 days
 </ParamField>

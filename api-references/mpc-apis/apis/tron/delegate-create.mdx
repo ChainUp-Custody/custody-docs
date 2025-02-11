@@ -8,14 +8,11 @@ description: "通过API购买TRON交易资源，无需燃烧TRX即可完成交�
 <ParamField query="request_id" type="string" required>
     业务唯一标识。
 </ParamField>
-<ParamField query="resource_type" type="integer" >
-    购买资源类型 0:能量与带宽 1:能量 不指定默认为0。(目前只支持能量代理)
-</ParamField>
 <ParamField query="buy_type" type="integer">
-    购买资源方式 0:系统预估 1:指定数量 不指定默认为0。(目前只支持指定数量)
+    购买资源方式 0:系统预估 1:指定数量 不指定默认为0。
 </ParamField>
 <ParamField query="service_charge_type" type="string" required>
-    购买资源周期 10010 10分钟 ,20001 1小时,20002 2小时, 30001 1天, 30030 30天
+    购买资源周期 10010 10分钟 ,20001 1小时, 30001 1天, 30030 30天
 </ParamField>
 <ParamField query="net_num" type="integer" >
     带宽数量。
