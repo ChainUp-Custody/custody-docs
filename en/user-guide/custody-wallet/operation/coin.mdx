@@ -2,11 +2,11 @@
 title: Coin Management
 ---
 
-## I. Function Introduction
+## Function Introduction
 
 The Coin Management module is used to display the native tokens used by the mainnet supported by the system and the native tokens (including other coins) that you have already activated. It also provides the feature to manage the activated coins. you can view the operational information of the coin, including whether the coin is enabled, whether it supports deposits and withdrawals, and perform related operations.
 
-## II. Operation Procedure
+## Operation Procedure
 
 <Steps>
 
@@ -42,8 +42,30 @@ Click the "View Supported Coins" button to view all coins currently supported by
 
 </Steps>
 
-## III. Frequently Asked Questions
+## Coin Listing
+
+If the token you need is not available in the system's currency list, you can submit a coin listing request via the manual listing function. Once approved, you will be able to follow the currency and perform deposit and withdrawal operations.
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/coin-listing-en.png" width="600"/>
+</div>
+
+<Note>
+1. Manually added tokens will be enabled by default and support deposit and withdrawal functions.
+
+2. The deposit confirmation count and withdrawal confirmation count for the token will be consistent with the mainchain coin.
+
+3. The exchange rate for the newly added token will be zero.
+</Note>
+
+
+
+## Frequently Asked Questions
 
 <Accordion title="Why can't I enable, deposit, or withdraw operations in coin operational information?">
 The system will close related operations at certain times (such as during network forks, upgrades, system maintenance, etc.), so you may not be able to perform operations like enabling, depositing, and withdrawing. In this case, you need to wait for the system to be enabled again before performing the corresponding operations.
+</Accordion>
+
+<Accordion title="How can I check the result of the manual coin listing review? ">
+ After submitting the manual coin listing request, the system will conduct a manual review. The review result will be notified to you via email or SMS.
 </Accordion>
