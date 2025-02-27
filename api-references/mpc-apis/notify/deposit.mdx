@@ -21,8 +21,9 @@ title: 收款通知
 | memo             | String | 否       | 到账地址memo                                                 |
 | txid             | String | 是       | 交易hash                                                     |
 | confirmations    | Integer | 是       | 区块确认数，例：10                                           |
-| status           | Integer | 是       | 收款状态包含以下几种：1000未确认，1010待KYT验证，1020待KYT人工处理，1800待溯源（保证交易安全），1900待验证溯源（溯源完成，等待系统验证），2000已完成，3000异常。[详细请参考](/help-center/manage-mpc/transaction/transfer#iii) |
+| status           | Integer | 是       | 收款状态包含以下几种：1000未确认，1010待KYT验证，1020待KYT人工处理，1800待溯源（保证交易安全），1900待验证溯源（溯源完成，等待系统验证），2000已完成，3000异常，4000资金退回。[详细请参考](/help-center/manage-mpc/transaction/transfer#iii) |
 | base_symbol      | String | 否       | 收款币种主链唯一标识，例：ETH                                |
 | contract_address | String | 否       | 收款币种合约地址                                             |
-| tx_height        | Long | 是       | 交易完成的区块高度                                             |
+| tx_height        | Long | 是         | 交易完成的区块高度                                             |
+| refund_amount    | String | 是       | 资金退回金额                                            |
 
