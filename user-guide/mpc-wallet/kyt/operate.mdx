@@ -73,18 +73,25 @@ KYT（Know Your Transaction）包含以下几种状态：
 
 * 如果您的交易订单超时，或是交易订单对应的KYT风险等级对应的策略为人工审核，钱包的任一成员可以处理该笔交易的KYT结果，您配置的收款处理方式为“人工处理”，如果未处理，为了保障资金安全，存在待KYT处理的资产地址，对应资产将无法转账或归集。
 
-*收款交易审核操作*
+**收款交易审核操作**
 
-* 确认通过：该笔交易金额会计入资产变动，收款交易状态变为成功，并支持执行归集和转账操作。
+* 允许入账：该笔交易金额会计入资产变动，收款交易状态变为成功，并支持执行归集和转账操作。
 
 * 资金退回：发起资金退回申请，用户可选择退回地址和金额，退回成功后，收款状态更新为已退回。
 
-*转账交易审核操作*
 
-* 允许转账：允许转账，交易进入下一步流程。
+<div className="w-full flex items-center justify-center">
+<CardGroup cols={5}>
+    <img src="/images/user-guide/returnfund1-cn.jpeg" width="200"/> 
+    <img src="/images/user-guide/returnfund2-cn.jpeg" width="200"/>
+    <img src="/images/user-guide/returnfund3-cn.jpeg" width="200"/>
+    <img src="/images/user-guide/returnfund4-cn.jpeg" width="200"/>
+    <img src="/images/user-guide/returnfund5-cn.jpeg" width="200"/>
+</CardGroup>
+</div>
 
-* 拒绝转账：不允许发起转账交易，流程终止。
 
+**转账交易审核操作**
 
 **拒绝转账：**
 
@@ -94,13 +101,12 @@ KYT（Know Your Transaction）包含以下几种状态：
 
 * 如果转账订单的KYT风险等级策略设置为“允许转账”，当订单匹配该风险等级时，订单将自动进入下一环节。
 
+**人工审核：**
+
+* 如果转账订单的KYT风险等级策略设置为“人工审核”，当订单匹配该风险等级时，由钱包成员决定是否允许转账。
 
 <div className="w-full flex items-center justify-center">
-<CardGroup cols={3}>
-    <img src="/images/user-guide/okyt9cn.png" width="200"/> 
-    <img src="/images/user-guide/okyt10cn.png" width="200"/>
-      <img src="/images/user-guide/okyt6cn.png" width="200"/>
-</CardGroup>
+    <img src="/images/user-guide/kyttransfer-cn.png" width="400"/>
 </div>
 
 
