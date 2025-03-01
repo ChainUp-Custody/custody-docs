@@ -71,31 +71,68 @@ KYT（Know Your Transaction）包含以下几种状态：
 
 **KYT人工处理：**
 
-* 如果您配置的收款处理方式为“人工处理”，且充值订单达到您配置的报警级别，订单状态将为 KYT 人工处理。您需要在待办列表中确认处理此任务。如果未处理，为了保障资金安全，该钱包的该币种将会被拦截出金和归集。
+* 如果您的交易订单超时，或是交易订单对应的KYT风险等级对应的策略为人工审核，钱包的任一成员可以处理该笔交易的KYT结果，您配置的收款处理方式为“人工处理”，如果未处理，为了保障资金安全，存在待KYT处理的资产地址，对应资产将无法转账或归集。
 
+**收款交易审核操作**
 
-**KYT拒绝：**
+* 允许入账：该笔交易金额会计入资产变动，收款交易状态变为成功，并支持执行归集和转账操作。
 
-* 如果您配置的提现处理方式为“拒绝提现”，且提现订单达到您配置的报警级别，该订单将会被直接拒绝提币，此状态为订单的终态。
+* 资金退回：发起资金退回申请，用户可选择退回地址和金额，退回成功后，收款状态更新为已退回。
+
 
 <div className="w-full flex items-center justify-center">
-<CardGroup cols={3}>
-    <img src="/images/user-guide/okyt9cn.png" width="200"/> 
-    <img src="/images/user-guide/okyt10cn.png" width="200"/>
-      <img src="/images/user-guide/okyt6cn.png" width="200"/>
+<CardGroup cols={5}>
+    <img src="/images/user-guide/returnfund1-cn.jpeg" width="200"/> 
+    <img src="/images/user-guide/returnfund2-cn.jpeg" width="200"/>
+    <img src="/images/user-guide/returnfund3-cn.jpeg" width="200"/>
+    <img src="/images/user-guide/returnfund4-cn.jpeg" width="200"/>
+    <img src="/images/user-guide/returnfund5-cn.jpeg" width="200"/>
 </CardGroup>
 </div>
 
-<warning>
-**注意：** 在KYT验证中状态，您可以选择继续验证或者确认通过。选择继续验证则会继续等待KYT服务商的验证结果，选择确认通过您可以自行查询处理结果并选择对应的结果，本次将不会等待KYT服务商返回结果。
-</warning>
+
+**转账交易审核操作**
+
+**拒绝转账：**
+
+* 如果转账订单的KYT风险等级策略设置为“拒绝转账”，当订单匹配该风险等级时，系统将自动终止该笔转账订单的流程。
+
+**允许转账：**
+
+* 如果转账订单的KYT风险等级策略设置为“允许转账”，当订单匹配该风险等级时，订单将自动进入下一环节。
+
+**人工审核：**
+
+* 如果转账订单的KYT风险等级策略设置为“人工审核”，当订单匹配该风险等级时，由钱包成员决定是否允许转账。
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/kyttransfer-cn.png" width="400"/>
+</div>
+
+
 </Step>
 </Steps>
 
 
 ## III. 常见问题
 
-<Accordion title="KYT服务如何处理风险交易？">
+<Accordion title="哪些成员可以处理KYT任务？">
+若某笔交易订单需人工处理KYT任务，则该订单所属钱包的所有成员均可进行操作。
+</Accordion>
 
-KYT服务会对风险交易进行报警，并根据您的配置进行相应处理。例如，如果您配置的收款处理方式为“人工处理”，当充值订单达到您设置的报警级别时，订单状态将显示为“KYT人工处理”。您需要确认并处理此待办任务。如果未处理此待办，为保障资金安全，未处理待办的交易币种将无法转账或归集。
+<Accordion title="若收款交易无法获取KYT风险等级，我该怎么处理？">
+
+若KYT服务商无法判断收款订单的风险等级，您可以选择以下操作：
+* 重新验证KYT结果；
+* 自定义风险等级并将该笔资金入账；
+* 直接将资金原路退回。
+</Accordion>
+
+<Accordion title="若转账交易无法获取KYT风险等级，我该怎么处理？">
+
+若KYT服务商无法判断转账订单的风险等级，您可以选择以下操作：
+
+* 重新验证KYT结果；
+* 人工同意该笔转账；
+* 人工拒绝该笔转账。
 </Accordion>
