@@ -1,0 +1,112 @@
+---
+title: 在Custody平台购买TRON资源
+---
+  
+## I. TRON资源作用
+Tron 区块链采用独特的费用模型，与以太坊等区块链不同。它不使用固定的 Gas 费，而是通过带宽和能量两种资源完成交易。
+若钱包没有交易所需资源，用户需冻结TRX获取资源，通过直接燃烧地址的 TRX获取资源，以支持波场网络的交易活动。
+
+
+  
+## II. 平台介绍
+质押和直接直接燃烧TRX支付矿工费的成本较高。为了帮助客户节省交易费用并降低运营成本，Custody平台提供了资源交易功能，客户可以通过API直接购买TRON资源，实现能量秒到账，直接节省手续费。
+  
+**高效：** API租赁资源，流程快捷方便，不限制笔数，不限制时间，实时获取能量，Tron 波场用户必备省钱专家。
+
+**专业：** Custody提供24小时专属客服服务，以及专业技术团队支持，来为所有类型的外部客户提供值得信赖的租赁服务。
+
+**经济：** Custody宗旨是为每位波场交易者尽力降低波场交易费用，购买量越大，优惠力度越大。
+
+  
+**一站式操作：** 只要您提供的地址拥有足够的资源，Custody将自动将这些资源覆盖到工作站上的每一笔波场交易。无需再消耗任何TRX，整个交易过程简便高效，操作复杂性大幅降低，助您专注于业务发展，轻松实现高效交易。
+  
+  <Tip> 
+  只有MPC托管客户才可以采用这种方案。
+  </Tip>
+  
+## III. 接入流程
+  
+  ### 一.创建MPC工作站
+
+请参考以下链接下载 Custody App，并使用手机号或邮箱注册 Custody 账号。完成注册后，您可以访问 MPC 系统，创建一个工作站。
+
+[下载 Custody App]()
+
+[创建MPC工作站]()
+
+<Note>
+对于非托管客户，您的 MPC 工作站采用特殊的续费模式。请联系 Custody 客服团队，并提供您的 MPC 工作站名称（ID），同时告知您是因购买 TRON 资源而创建的工作站。客服团队将为您的工作站调整配置和使用期限。
+</Note>
+
+
+
+
+注册账号请参考：
+
+
+  
+  ### 二.客户授权平台
+  
+请向 MPC 工作站下的 Web3 钱包**充值至少 101 个 TRX**，发起自动代理授权申请。
+
+<Note>
+在不修改策略引擎的前提下，工作站创建者可以直接发起申请，并使用私钥签名完成授权。
+</Note>
+  
+  途径一：登录 MPC 工作站，进入 [更多] - [工具箱]，访问 TRON 自动代理工具。
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/help-center/trontoolcn1.png" width="600"/>
+        <img src="/images/help-center/trontoolcn2.png" width="600"/>
+    </CardGroup>
+</div>
+
+
+途径二： 登陆Custody App，访问MPC钱包系统，进入 [发现] 模块，访问 TRON 自动代理工具。
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/help-center/apptroncn1.jpeg" width="200"/>
+        <img src="/images/help-center/apptroncn2.jpeg" width="200"/>
+    </CardGroup>
+</div>。
+  
+ 具体流程可以参考[TRON自动代理](/help-center/manage-mpc/Tron-delegation/resource-from-custody)。
+  
+  ### 三.联系Custody完成费用配置
+  
+  
+  授权完成后，访问 MPC钱包 - 工具 - TRON自动代理，点击手动代理按钮。如果功能页面显示以下提示，说明授权成功，请联系Custody团队完成资源价格费率配置。
+
+  <Tip> 
+授权完成后，访问 MPC钱包 → 工具 → TRON自动代理，点击 手动代理 按钮。
+如果功能页面显示以下提示，则说明授权成功。请联系 Custody 团队完成资源价格费率配置。
+</Tip>
+  
+  <div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/nochargecn.jpeg" width="600"/>
+</div>
+  
+  
+## VI.常见问题
+  
+  <Accordion title="如何了解订单实际消耗的交易资源">
+  请访问区块链浏览器，通过查询交易的TXID，了解交易消耗的资源数量。
+  </Accordion>
+  
+  
+  <Accordion title="为什么有的波场交易没有使用代理资源？">
+  在以下特殊情况下，某些交易可能⽆法被代理，需要燃烧用户自己的TRX支付矿工费：
+  
+  - 地址未激活（没有TRX充值记录），第⼀笔交易需消耗TRX。
+  
+  - 由于处于交易⾼峰期，如果质押地址资源不⾜，可能需直接消耗钱包地址的TRX。
+  
+  </Accordion>
+  
+  
+  <Accordion title="系统如何收取该方案费用？">
+  由于该类方案的配置完全根据您的需求定制，具有高度个性化和灵活性，因此没有统一的收费标准。Custody系统将根据您的具体需求复杂性，与您沟通并确定详细的收费方案。
+  </Accordion>
+  
