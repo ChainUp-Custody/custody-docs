@@ -25,12 +25,13 @@ description: "获取工作站下所有钱包特定ID的收款记录"
         <ResponseField name="memo" type="string">到账地址memo</ResponseField>
         <ResponseField name="txid" type="string">交易hash</ResponseField>
         <ResponseField name="confirmations" type="integer">区块确认数，例：10</ResponseField>
-        <ResponseField name="status" type="integer">收款状态包含以下几种：1000未确认，1010待KYT验证，1020待KYT人工处理，1800待溯源（保证交易安全），1900待验证溯源（溯源完成，等待系统验证），2000已完成，3000异常。[详细请参考](/help-center/manage-mpc/transaction/transfer#iii)</ResponseField>
+        <ResponseField name="status" type="integer">收款状态包含以下几种：1000未确认，1010待KYT验证，1020待KYT人工处理，1800待溯源（保证交易安全），1900待验证溯源（溯源完成，等待系统验证），2000已完成，3000异常, 4000资金退回。[详细请参考](/help-center/manage-mpc/transaction/transfer#iii)</ResponseField>
         <ResponseField name="deposit_type" type="integer">充值类型，1: 普通币种充值, 2：NFT充值</ResponseField>
         <ResponseField name="token_id" type="string">NFT充值的tokenId, 当: `deposit_type=2`时, 该值不为空</ResponseField>
         <ResponseField name="base_symbol" type="string">转账币种网络唯一标识，例：ETH</ResponseField>
         <ResponseField name="contract_address" type="string">转账币种合约地址</ResponseField>
         <ResponseField name="tx_height" type="long">交易完成的区块高度</ResponseField>
+        <ResponseField name="refund_amount" type="string">资金退回金额</ResponseField>
     </Expandable>
 </ResponseField>
 
@@ -63,7 +64,8 @@ description: "获取工作站下所有钱包特定ID的收款记录"
         "base_symbol":"ETH",
         "id":43,
         "status":2000,
-        "tx_height":3120013
+        "tx_height":3120013,
+        "refund_amount":"0"
     },
     {
         "symbol":"ETH",
@@ -80,7 +82,8 @@ description: "获取工作站下所有钱包特定ID的收款记录"
         "base_symbol":"ETH",
         "id":45,
         "status":2000,
-        "tx_height":13238654
+        "tx_height":13238654,
+        "refund_amount":"0"
     }
 ]
 ```

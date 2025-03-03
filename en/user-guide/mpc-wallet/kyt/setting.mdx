@@ -111,7 +111,22 @@ Note: Only one of the minimum verification amount and minimum verification quant
 
 </Step>
 <Step title="Configure Alarm Levels">
-    Configure different KYT alarm levels for the handling of deposits and withdrawals. The handling methods for receipts are: "Manual Review" and "Allow Entry"; the handling methods for withdrawals are: "Allow Withdrawal" and "Refuse Withdrawal".
+    Configure different KYT alarm levels for the handling of deposits and withdrawals.
+**Deposit Handling Methods:**
+
+Allow Deposit (Sweeping): The transaction amount will be accounted as a change in assets and supports both sweeping and transfer operations.
+
+Manual Review: The transaction needs to undergo manual review, allowing the user to revalidate the KYT results and choose to either accept the funds or return them.
+
+**Transfer Handling Methods:**
+
+Allow Transfer: The transaction can be initiated as usual.
+
+Reject Transfer: The transaction will be directly rejected and cannot be initiated.
+
+Manual Review: The transaction requires manual review, allowing the user to choose to either proceed with the transfer order or cancel it.
+
+
 <div className="w-full flex items-center justify-center">
     <img src="/images/user-guide/kyt10.png" width="600"/>
 </div>

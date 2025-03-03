@@ -73,34 +73,43 @@ KYT（Know Your Transaction）包含以下几种状态：
 
 * If your transaction order times out, or if the KYT risk level of the transaction order requires manual review, any member of the wallet can process the KYT result for that transaction. If your configured payment handling method is 'manual processing,' and no action is taken, assets corresponding to the pending KYT processing will not be transferable or swept.
 
-*Manual Review for Receive Order*
+**KYT Manual Review：**
 
-* Confirm the Fund: The transaction amount will be recorded as an asset change, the payment transaction status will be updated to 'successful,' and both auto sweeping and transfer operations will be enabled.
+* If your transaction order times out, or if the KYT risk level of the transaction order requires manual review, any member of the wallet can process the KYT result for that transaction. If the configured payment processing method is "Manual Review" and no action is taken, to ensure the safety of funds, any asset addresses awaiting KYT processing will not be allowed to transfer or sweep.
+**Deposit Transaction Review Operation**
 
-* Return the Fund: A refund request is initiated, and the user can select the return address and amount. Once the refund is successful, the payment status will be updated to 'Refunded.'
+* Allow Deposit: The transaction amount will be accounted as an asset change, and the payment transaction status will be marked as successful, allowing for collection and transfer operations.
 
-*Manual Review for Transfer Order*
-
-* Allow Transfer: Transfer is allowed, and the transaction proceeds to the next step.
-
-* Reject Transfer: Transfer is not allowed, and the process is terminated.
-
-
-**Reject Transfer:**
-
-* If the KYT risk level strategy for a transfer order is set to "Reject Transfer," the system will automatically terminate the transfer process when the order matches this risk level.
-
-*Allow Transfer：**
-
-* If the KYT risk level strategy for a transfer order is set to "Allow Transfer," the order will automatically proceed to the next step when it matches this risk level.
+* Return Fund: Initiate a refund request, where the user can select the return address and amount. Once the refund is successful, the status will be updated to "Refunded."
 
 
 <div className="w-full flex items-center justify-center">
-<CardGroup cols={3}>
-    <img src="/images/user-guide/okyt9.png" width="200"/> 
-    <img src="/images/user-guide/okyt10.png" width="200"/>
-    <img src="/images/user-guide/okyt6.png" width="200"/>
+<CardGroup cols={5}>
+    <img src="/images/user-guide/returnfund1-en.jpeg" width="200"/> 
+    <img src="/images/user-guide/returnfund2-en.jpeg" width="200"/>
+    <img src="/images/user-guide/returnfund3-en.jpeg" width="200"/>
+    <img src="/images/user-guide/returnfund4-en.jpeg" width="200"/>
+    <img src="/images/user-guide/returnfund5-en.jpeg" width="200"/>
 </CardGroup>
+</div>
+
+
+**Transfer Transaction Review Actions**
+
+**Reject Transfer：**
+
+* If the transfer order's KYT risk level policy is set to "Reject Transfer," the system will automatically terminate the transfer order process when the order matches this risk level.
+
+**Allow Transfer: **
+
+* If the transfer order's KYT risk level policy is set to "Allow Transfer," the order will automatically proceed to the next stage when it matches this risk level.
+
+**Manual Review：**
+
+* If the transfer order's KYT risk level policy is set to "Manual Review," the wallet member will decide whether to allow the transfer when the order matches this risk level.
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/kyttransfer-en.png" width="400"/>
 </div>
 
 <warning>
