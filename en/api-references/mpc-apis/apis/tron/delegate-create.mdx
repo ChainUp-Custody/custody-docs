@@ -3,13 +3,19 @@ title: Purchase TRON Network Transaction Resources
 api: POST /api/mpc/tron/delegate
 description: "Purchase TRON resources via API without burning TRX to complete the transaction."
 ---
+<Warning>
+    If you have not registered a custody wallet, please complete the access instructions first
+    1.Register an account (api-references/mpc-apis/guide/create-account)
+    2.Create API (api-references/mpc-apis/guide/function-set)
+</Warning>
+
 
 #### Request Parameters
 <ParamField query="request_id" type="string" required>
      Unique business identifier. 
 </ParamField>
 <ParamField query="buy_type" type="integer">
-    Resource purchase method: 0 for System Estimate, 1 for Specified Quantity. Defaults to 0 if not specified.
+    Resource purchase method: 0 for System Estimate, 1 for Specified Quantity. Defaults to 0 if not specified.(Choosing 0 system estimate requires filling in address_to and contract_address)
 </ParamField>
 <ParamField query="service_charge_type" type="string" required>
     Resource purchase cycle:
@@ -19,16 +25,16 @@ description: "Purchase TRON resources via API without burning TRX to complete th
 </ParamField>
 
 <ParamField query="energy_num" type="integer" >
-   Energy Amount.
+   Energy Amount.(Select 1. The specified quantity needs to be filled in)
 </ParamField>
 <ParamField query="address_from" type="string" required>
     The address that will receive the resources
 </ParamField>
 <ParamField query="address_to" type="string">
-    The transfer address for estimating miner fees.
+    The transfer address for estimating miner fees.(Select 0. System estimate needs to be filled in)
 </ParamField>
 <ParamField query="contract_address" type="string">
-    Contract address for estimating miner fees.
+    Contract address for estimating miner fees.(Select 0. System estimate needs to be filled in)
 </ParamField>
 
 

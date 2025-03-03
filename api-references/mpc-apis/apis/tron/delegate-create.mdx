@@ -3,28 +3,33 @@ title: 购买TRON网络交易资源
 api: POST /api/mpc/tron/delegate
 description: "通过API购买TRON交易资源，无需燃烧TRX即可完成交易。"
 ---
+<Warning>
+    如果没有注册custody钱包请先完成接入指引
+    1.注册账号 (api-references/mpc-apis/guide/create-account)
+    2.创建API (api-references/mpc-apis/guide/function-set)
+</Warning>
 
 #### 请求参数数据结构
 <ParamField query="request_id" type="string" required>
     业务唯一标识。
 </ParamField>
 <ParamField query="buy_type" type="integer">
-    购买资源方式 0:系统预估 1:指定数量 不指定默认为0。
+    购买资源方式 0:系统预估 1:指定数量 不指定默认为0。(选择0系统预估需要填写address_to和contract_address)
 </ParamField>
 <ParamField query="service_charge_type" type="string" required>
     购买资源周期 10010 10分钟 ,20001 1小时, 30001 1天
 </ParamField>
 <ParamField query="energy_num" type="integer" >
-    能量数量。
+    能量数量。(选择1指定数量需要填写)
 </ParamField>
 <ParamField query="address_from" type="string" required>
     接收资源的地址。
 </ParamField>
 <ParamField query="address_to" type="string">
-    转账到账地址，用于预估矿工费。
+    转账到账地址，用于预估矿工费。(选择0系统预估需要填写)
 </ParamField>
 <ParamField query="contract_address" type="string">
-    合约地址，用于预估矿工费。
+    合约地址，用于预估矿工费。(选择0系统预估需要填写)
 </ParamField>
 
 
