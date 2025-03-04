@@ -212,8 +212,9 @@
               ]
             },
             {
-              "group": "Tron Resource Proxy",
+              "group": "Tron Resource",
               "pages": [
+                "api-references/mpc-apis/apis/tron/resource-shopping-guide",
                 "api-references/mpc-apis/apis/tron/delegate-create",
                 "api-references/mpc-apis/apis/tron/delegate-record-list",
                 "api-references/mpc-apis/apis/tron/delegate-record-sync-list"

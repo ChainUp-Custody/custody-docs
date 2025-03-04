@@ -1,0 +1,115 @@
+---
+title: Purchase TRON resources on the Custody platform.
+---
+  
+## Energy Resource in TRON
+The TRON blockchain uses a unique fee model, differing from blockchains like Ethereum. Instead of fixed gas fees, transactions are executed using two resources: Bandwidth and Energy.
+
+If a wallet lacks the necessary resources for a transaction, users must either freeze TRX to obtain resources or directly burn TRX from their address to support transactions on the TRON network.
+
+
+
+
+
+
+
+
+
+  
+## Introduction
+Staking or directly burning TRX to pay for miner fees can be costly. To help clients reduce transaction fees and lower operational costs, the Custody platform offers a resource trading feature. Clients can purchase TRON resources directly via API, ensuring instant Energy allocation and immediate fee savings.
+  
+**Efficient：** The API resource leasing service offers a fast and convenient process with no transaction or time limits. Instantly obtain Energy in real time—an essential cost-saving solution for Tron users.
+
+**Professional：** Custody provides 24/7 dedicated customer support and professional technical assistance, ensuring a reliable leasing service for all types of external clients.
+
+**Economy：** Custody aims to minimize TRON transaction costs for every trader—The more you buy, the greater the discount.
+
+
+  
+## Configuration
+
+### 1. Create an MPC Workspace
+
+Download the Custody App from the link below and register a Custody account using your phone number or email. Once registered, you can access the MPC system and create a workspace.
+
+
+
+[Download Custody App](https://custody.chainup.com/login)
+
+[Create MPC Workspace](/user-guide/mpc-wallet/wallet/create-wallet)
+
+<Note>
+For non-custodial clients, your MPC workspace follows a special subscription model. Please contact the Custody support team and provide your MPC workspace name (ID), specifying that the workspace was created for purchasing TRON resources. The support team will adjust your workspace configuration and usage period accordingly.
+</Note>
+
+
+  
+  ### Client Authorization to the Platform
+  
+Deposit at least **101 TRX** into the Web3 wallet under your MPC workspace and initiate an automatic delegation authorization request.
+
+
+<Note>
+Without modifying the strategy engine, the workspace owner can directly initiate and approve the authorization.
+</Note>
+  
+Log in to the MPC workspace, go to [More] - [Toolbox], and access the tool.
+
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/help-center/trontool1en.png" width="600"/>
+        <img src="/images/help-center/trontool2en.png" width="600"/>
+    </CardGroup>
+</div>
+
+Or log in to the Custody app, access the MPC wallet system, navigate to the [Discover] module, and access the tool.
+<div className="w-full flex items-center justify-center">
+    <CardGroup cols={2}>
+        <img src="/images/help-center/apptronen1.jpeg" width="200"/>
+        <img src="/images/help-center/apptronen2.jpeg" width="200"/>
+    </CardGroup>
+</div>
+  
+You can refer to [TRON Auto Delegation](/help-center/manage-mpc/Tron-delegation/resource-from-custody) for the detailed process and follow the guide to complete the authorization.
+  
+  ### 3. Contact Custody to Complete Fee Configuration
+  
+  
+After the authorization is completed, go to MPC Workspace - Tools - TRON Auto Delegation. If the tool status shows Waiting for System Configuration, it means the authorization was successful. Please contact the Custody team to complete the resource pricing configuration.
+
+<Tip> 
+Since the price of resources is dynamically adjusted based on your usage and duration, with a high degree of personalization and flexibility, there is no standard pricing. The Custody system will communicate with you to determine the discounted rate based on your needs. 
+</Tip>
+  
+### 4. Complete API Configuration
+
+Currently, Custody only supports purchasing resources through the API. Please go to MPC Workspace - Developer - API Management to complete the API configuration.
+
+For the detailed process, you can refer to [API Management](/user-guide/mpc-wallet/api-integration/api)。
+
+<Note>
+ Please note that for special clients who only call the API without performing transactions in the workspace (such as those using the API to purchase TRON resources), it is not necessary to deploy API Co-Signer.
+</Note>
+
+  ### 5. Call Custody API to Purchase TRON Resources
+
+  To purchase resources, refer to the API document:：[Purchase TRON Transaction Resources](/api-references/mpc-apis/apis/tron/delegate-create)
+
+  To get the purchase records, refer to the API document: [Get Resource Purchase Records](/api-references/mpc-apis/apis/tron/delegate-record-list)
+
+  To synchronize purchase records, refer to the API document: [Synchronize Resource Purchase Records](/api-references/mpc-apis/apis/tron/delegate-record-sync-list)
+
+
+
+## Frequently Asked Questions
+  
+<Accordion title="How to understand the actual transaction resources consumed by an order?">
+You can visit the blockchain explorer and query the transaction’s TXID to view the resources consumed by the transaction.
+</Accordion>
+
+  
+<Accordion title="How does the system charge and settle delegation service fees?">
+The Custody system calculates the consumption data for the previous day at 0:00 (UTC+8) based on actual resource usage and real-time pricing, and settles the related fees from your authorized wallet at 17:00 (UTC+8) daily.
+</Accordion>
+  

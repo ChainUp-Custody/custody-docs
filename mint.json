@@ -214,6 +214,7 @@
             {
               "group": "Tron资源代理",
               "pages": [
+                "api-references/mpc-apis/apis/tron/resource-shopping-guide",
                 "api-references/mpc-apis/apis/tron/delegate-create",
                 "api-references/mpc-apis/apis/tron/delegate-record-list",
                 "api-references/mpc-apis/apis/tron/delegate-record-sync-list"
