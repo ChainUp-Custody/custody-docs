@@ -15,6 +15,9 @@ Before making a purchase, please refer to [Purchase TRON Network Transaction Res
 <ParamField query="buy_type" type="integer">
     Resource purchase method: 0 for System Estimate, 1 for Specified Quantity. Defaults to 0 if not specified.(Choosing 0 system estimate requires filling in address_to and contract_address)
 </ParamField>
+<ParamField query="resource_type" type="integer" >
+    Resource type to purchase: 0 for Energy and Bandwidth, 1 for Energy. Defaults to 1 if not specified.
+</ParamField>
 <ParamField query="service_charge_type" type="string" required>
     Resource purchase cycle:
     10010 - 10 minutes,
