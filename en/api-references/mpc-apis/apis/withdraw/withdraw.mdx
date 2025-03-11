@@ -33,6 +33,9 @@ The system will default to using the **current optimal miner fee** for signing t
 <ParamField query="remark" type="string">
     transfer remarks
 </ParamField>
+<ParamField query="outputs" type="string">
+    BTC withdrawal details to multiple addresses, note that sum(params.outputs.amount) must equal params.amount; params.outputs.address_to needs to include params.address_to
+</ParamField>
 <ParamField query="sign" type="string">
    	RSA private key signature. Parameters involved in the signature: "request_id", "sub_wallet_id", "symbol", "address_to", "amount", "memo". For signature rules, refer to [`Co-Signer Transaction Signature Verification`](/api-references/mpc-apis/co-signer/sign-verify)
 </ParamField>
