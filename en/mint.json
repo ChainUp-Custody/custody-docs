@@ -217,13 +217,14 @@
                 "api-references/mpc-apis/apis/tron/resource-shopping-guide",
                 "api-references/mpc-apis/apis/tron/delegate-create",
                 "api-references/mpc-apis/apis/tron/delegate-record-list",
-                "api-references/mpc-apis/apis/tron/delegate-record-sync-list"
+                "api-references/mpc-apis/apis/tron/delegate-record-sync-list",
+                "api-references/mpc-apis/apis/tron/tron-notify"
               ]
             }
           ]
         },
         {
-          "group": "Transaction Notification",
+          "group": "Transaction Callback Notification",
           "pages": [
             "api-references/mpc-apis/notify/description",
             "api-references/mpc-apis/notify/deposit",

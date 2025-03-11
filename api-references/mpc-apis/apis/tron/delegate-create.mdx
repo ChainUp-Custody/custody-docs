@@ -1,6 +1,8 @@
 ---
 title: 购买TRON网络交易资源
+
 api: POST /api/mpc/tron/delegate
+
 description: "通过API购买TRON交易资源，无需燃烧TRX即可完成交易。"
 ---
 <Tip> 
@@ -16,12 +18,34 @@ description: "通过API购买TRON交易资源，无需燃烧TRX即可完成交�
 </ParamField>
 <ParamField query="resource_type" type="integer" >
     购买资源类型 0:能量与带宽 1:能量 不指定默认为1。
+ <Note> 
+若选择购买带宽，请注意以下事项：
+1.最小购买数量为 300。
+
+2.每笔带宽购买订单将固定产生 560 的附加费用，用于支付系统发起代理和回收所需的带宽成本。例如，若请求购买 600 的带宽量，则该笔购买订单的带宽数量为 600 + 560 = 1160。
+</Note>
 </ParamField>
 <ParamField query="service_charge_type" type="string" required>
     购买资源周期 10010 10分钟 ,20001 1小时, 30001 1天
 </ParamField>
 <ParamField query="energy_num" type="integer" >
-    能量数量。(选择1指定数量需要填写，指定数量时最小支持10000)
+    能量数量,
+<Note> 
+1. 若buy_type=1，请输入具体的能量数量，最小值为10,000。
+
+2. 若buy_type≠1，则该数量由系统自动提供。
+</Note>
+    最小购买数量为10,000。
+</ParamField>
+<ParamField query="net_num" type="integer" >
+    带宽数量,
+    <Note> 
+1. 若buy_type=1，请输入具体的带宽数量，最小值为300。
+
+2. 若buy_type≠1，则该数量由系统自动提供。
+
+3. 请注意每笔带宽购买订单将固定产生 560 的附加费用，用于支付系统发起代理和回收所需的带宽成本。例如，若输入购买 600 的带宽量，则该笔购买订单的带宽数量为 600 + 560 = 1160。
+</Note> 
 </ParamField>
 <ParamField query="address_from" type="string" required>
     接收资源的地址。

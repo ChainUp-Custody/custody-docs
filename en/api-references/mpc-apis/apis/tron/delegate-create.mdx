@@ -1,6 +1,8 @@
 ---
 title: Purchase TRON Network Transaction Resources
+
 api: POST /api/mpc/tron/delegate
+
 description: "Purchase TRON resources via API without burning TRX to complete the transaction."
 ---
 <Tip> 
@@ -17,6 +19,13 @@ Before making a purchase, please refer to [Purchase TRON Network Transaction Res
 </ParamField>
 <ParamField query="resource_type" type="integer" >
     Resource type to purchase: 0 for Energy and Bandwidth, 1 for Energy. Defaults to 1 if not specified.
+ <Note> 
+If you choose to purchase bandwidth, please note the following:
+
+1. The minimum purchase quantity is 300.
+
+2. Each bandwidth purchase order will incur a fixed additional fee of 560, which is used to cover the bandwidth cost required for system-initiated proxy and recovery. For example, if you request to purchase 600 units of bandwidth, the total bandwidth for this purchase order will be 600 + 560 = 1160.
+</Note>
 </ParamField>
 <ParamField query="service_charge_type" type="string" required>
     Resource purchase cycle:
@@ -26,7 +35,22 @@ Before making a purchase, please refer to [Purchase TRON Network Transaction Res
 </ParamField>
 
 <ParamField query="energy_num" type="integer" >
-   Energy Amount.(Select 1. The specified quantity needs to be filled in, When for Specified Quantity, the minimum supported is 10,000)
+   Energy Amount
+   <Note> 
+1. If buy_type=1, please enter the specific amount of energy, with a minimum value of 10,000.
+
+2. If buy_type≠1, the quantity will be automatically provided by the system.
+</Note>
+</ParamField>
+<ParamField query="net_num" type="integer" >
+ Bandwidth Amount
+ <Note> 
+1. If buy_type=1, please enter the specific bandwidth amount, with a minimum value of 300. 
+
+2. If buy_type≠1, the quantity will be automatically provided by the system.
+
+3. Please note that each bandwidth purchase order will incur a fixed additional fee of 560 to cover the bandwidth cost for system-initiated proxy and recovery processes. For example, if you enter a purchase amount of 600 bandwidth, the total bandwidth for the order will be 600 + 560 = 1160.
+  </Note> 
 </ParamField>
 <ParamField query="address_from" type="string" required>
     The address that will receive the resources
