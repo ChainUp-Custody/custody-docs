@@ -37,6 +37,7 @@ description: "通过API发起转账交易"
     BTC 往多个地址提现明细，注意sum(params.outputs.amount) 需要=params.amount; params.outputs.address_to 需要包含 params.address_to
     <Note>
         示例:
+        ```json
         {
             "request_id": "A22212121AVD",
             "sub_wallet_id": 1000725,
@@ -48,6 +49,7 @@ description: "通过API发起转账交易"
             "size": "",
             "outputs": "[{\"address_to\":\"mrvehyJnRs15HBqAVioCFnAnjALfnoai9v\", \"amount\":\"0.2\"},{\"address_to\":\"mvurRS9mTLgytyhP4VozGxaxteTcLj9MAC\", \"amount\":\"0.11\"},{\"address_to\":\"mvurRS9mTLgytyhP4VozGxaxteTcLj9MAC\", \"amount\":\"0.2\"}]"
         }
+        ```
     </Note>
 
 </ParamField>
