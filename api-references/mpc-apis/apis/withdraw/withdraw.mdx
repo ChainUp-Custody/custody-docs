@@ -35,6 +35,21 @@ description: "通过API发起转账交易"
 </ParamField>
 <ParamField query="outputs" type="string">
     BTC 往多个地址提现明细，注意sum(params.outputs.amount) 需要=params.amount; params.outputs.address_to 需要包含 params.address_to
+    <Note>
+        示例:
+        {
+            "request_id": "A22212121AVD",
+            "sub_wallet_id": 1000725,
+            "symbol": "BTC",
+            "address_to": "mrvehyJnRs15HBqAVioCFnAnjALfnoai9v",
+            "memo": "",
+            "amount": "0.51",
+            "fee_rate": "",
+            "size": "",
+            "outputs": "[{\"address_to\":\"mrvehyJnRs15HBqAVioCFnAnjALfnoai9v\", \"amount\":\"0.2\"},{\"address_to\":\"mvurRS9mTLgytyhP4VozGxaxteTcLj9MAC\", \"amount\":\"0.11\"},{\"address_to\":\"mvurRS9mTLgytyhP4VozGxaxteTcLj9MAC\", \"amount\":\"0.2\"}]"
+        }
+    </Note>
+
 </ParamField>
 <ParamField query="sign" type="string">
    	使用RSA私钥签名, 参与签名的参数: "request_id", "sub_wallet_id", "symbol", "address_to", "amount", "memo"。签名规则详见[Co-Signer交易签名验证](/api-references/mpc-apis/co-signer/sign-verify)
