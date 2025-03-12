@@ -14,7 +14,29 @@ description: "通过API购买TRON交易资源，无需燃烧TRX即可完成交�
     业务唯一标识。
 </ParamField>
 <ParamField query="buy_type" type="integer">
-    购买资源方式 0:系统预估 1:指定数量 不指定默认为0。(选择0系统预估需要填写address_to和contract_address)
+    购买资源方式 0:系统预估-完整代理 ，1:指定数量 ，2:系统预估-补充代理，不指定默认为0。
+<Note> 
+**所有方式均遵守最小购买值限制：**
+
+* 带宽的最小购买数量为 300
+* 能量的最小购买数量为 10,000
+
+**1. 系统预估-完整代理 (buy_type=0)**
+* 需填写 address_to 和 contract_address。
+* 系统将自动预估当前交易所需的全部资源数量加上一定浮动值。若用户请求为一笔 USDT 转账代理能量，系统预估所需能量为 64,285，则购买数量为 64,285 + 115=64,400，以保证交易顺利完成。
+* 注意事项：系统预估值可能受到波场网络波动影响，若因预估不足导致交易失败，请切换购买方式为 指定数量 (buy_type=1)。
+
+**2. 系统预估-补充代理 (buy_type=2)**
+* 需填写 address_to 和 contract_address。
+* 该方式只对能量的购买数量产生影响（带宽的购买 buy_type=2 和 buy_type=0 的预估方式一致）。
+* 系统将结合当前地址的能量余额，自动预估交易所需补充的剩余能量数量，并加上一定浮动值以保证交易成功。若用户请求为一笔 USDT 转账代理能量，系统预估所需能量为 64,285，当前地址已有 10,000 能量，则购买数量为 64,285 - 10,000 + 115=54,400，以保证交易顺利完成。
+* 注意事项：系统预估值可能受到波场网络波动影响，若因预估不足导致交易失败，请切换购买方式为 指定数量 (buy_type=1)。
+
+**3. 指定数量 (buy_type=1)**
+* 用户可自定义购买的资源数量。
+
+</Note>
+
 </ParamField>
 <ParamField query="resource_type" type="integer" >
     购买资源类型 0:能量与带宽 1:能量 不指定默认为1。
@@ -27,35 +49,45 @@ description: "通过API购买TRON交易资源，无需燃烧TRX即可完成交�
 </Note>
 </ParamField>
 <ParamField query="service_charge_type" type="string" required>
-    购买资源周期 10010 10分钟 ,20001 1小时, 30001 1天
+    购买资源周期 10010：10分钟 ,20001 ：1小时, 30001 ：1天
 </ParamField>
 <ParamField query="energy_num" type="integer" >
     能量数量,
 <Note> 
-1. 若buy_type=1，请输入具体的能量数量，最小值为10,000。
+1. 若 buy_type=1，请输入具体的能量数量，最小值为 10,000。
 
-2. 若buy_type≠1，则该数量由系统自动提供。
+2. 若 buy_type=0，该数量为系统预估的完成单笔交易所需的全部资源数，加上一定的浮动值，以确保交易顺利完成。
+
+3. 若 buy_type=2，该数量为系统结合地址可用资源数，预估的完成单笔交易所需的补充数量，加上一定的浮动值，以确保交易顺利完成。
+
 </Note>
 
 </ParamField>
 <ParamField query="net_num" type="integer" >
     带宽数量,
     <Note> 
-1. 若buy_type=1，请输入具体的带宽数量，最小值为300。
+1.若 buy_type=1，请输入具体的带宽数量，最小值为 300。
 
-2. 若buy_type≠1，则该数量由系统自动提供。
+2.请注意每笔带宽购买订单将固定产生 560 的附加费用，用于支付系统发起代理和回收所需的带宽成本。例如，若输入购买 600 的带宽量，则该笔购买订单的带宽数量为 600 + 560 = 1,160。
 
-3. 请注意每笔带宽购买订单将固定产生 560 的附加费用，用于支付系统发起代理和回收所需的带宽成本。例如，若输入购买 600 的带宽量，则该笔购买订单的带宽数量为 600 + 560 = 1160。
+3.若 buy_type=0或2，该数量为系统预估的完成单笔交易所需的全部资源数，加上 560 的附加费用。例如，若系统预估交易需要 350 带宽，则购买数量为 350 + 560 = 910。
+ 
 </Note> 
 </ParamField>
 <ParamField query="address_from" type="string" required>
     接收资源的地址。
 </ParamField>
 <ParamField query="address_to" type="string">
-    转账到账地址，用于预估矿工费。(选择0系统预估需要填写)
+    转账到账地址，用于预估矿工费。
+ <Note> 
+选择buy_type=0或2时需要填写。
+ </Note> 
 </ParamField>
 <ParamField query="contract_address" type="string">
-    合约地址，用于预估矿工费。(选择0系统预估需要填写)
+    合约地址，用于预估矿工费。
+ <Note> 
+选择buy_type=0或2时需要填写。
+ </Note> 
 </ParamField>
 
 

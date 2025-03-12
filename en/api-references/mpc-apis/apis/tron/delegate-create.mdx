@@ -15,16 +15,30 @@ Before making a purchase, please refer to [Purchase TRON Network Transaction Res
      Unique business identifier. 
 </ParamField>
 <ParamField query="buy_type" type="integer">
-    Resource purchase method: 0 for System Estimate, 1 for Specified Quantity. Defaults to 0 if not specified.(Choosing 0 system estimate requires filling in address_to and contract_address)
+    Resource purchase type 0: Energy and bandwidth, 1: Energy, default is 1 if not specified.
 </ParamField>
 <ParamField query="resource_type" type="integer" >
-    Resource type to purchase: 0 for Energy and Bandwidth, 1 for Energy. Defaults to 1 if not specified.
+   Resource purchase method 0: System estimation - full delegation, 1: Specified quantity, 2: System estimation - supplementary delegation, default is 0 if not specified.
  <Note> 
-If you choose to purchase bandwidth, please note the following:
+**All methods comply with minimum purchase value limits:**
 
-1. The minimum purchase quantity is 300.
+* Minimum bandwidth purchase quantity: 300
+* Minimum energy purchase quantity: 10,000
 
-2. Each bandwidth purchase order will incur a fixed additional fee of 560, which is used to cover the bandwidth cost required for system-initiated proxy and recovery. For example, if you request to purchase 600 units of bandwidth, the total bandwidth for this purchase order will be 600 + 560 = 1160.
+**1. System Estimation - Full delegation (buy_type=0)**
+* Required fields: address_to and contract_address.
+* he system will automatically estimate the total resources needed for the current transaction plus a certain buffer. For example, if the user requests an energy proxy for a USDT transfer and the system estimates the required energy to be 64,285, the purchase amount will be 64,285 + 115 = 64,400 to ensure the transaction is successfully completed.
+* Note: The system estimation may be affected by Tron network fluctuations. If the transaction fails due to insufficient estimation, please switch to the Specified Quantity (buy_type=1) method.
+
+**2. System estimation - supplementary delegation (buy_type=2)**
+* Required fields: address_to and contract_address.
+* This method only affects energy purchase quantities (bandwidth purchase estimation for buy_type=2 is the same as buy_type=0).
+* The system will calculate the remaining energy required based on the current address balance and slightly supplement it to ensure successful transactions. For example, if the user requests an energy proxy for a USDT transfer and the system estimates the required energy to be 64,285 while the current address has 10,000 energy, the purchase amount will be 64,285 - 10,000 + 115 = 54,400 to ensure smooth completion.
+* Note: The system estimation may be affected by Tron network fluctuations. If the transaction fails due to insufficient estimation, please switch to the Specified Quantity (buy_type=1) method.
+
+**3. Specified quantity (buy_type=1)**
+* Users can customize the resource purchase quantity.
+
 </Note>
 </ParamField>
 <ParamField query="service_charge_type" type="string" required>
@@ -56,10 +70,16 @@ If you choose to purchase bandwidth, please note the following:
     The address that will receive the resources
 </ParamField>
 <ParamField query="address_to" type="string">
-    The transfer address for estimating miner fees.(Select 0. System estimate needs to be filled in)
+    The transfer address for estimating miner fees.
+<Note> 
+Required when selecting **buy_type=0** or **buy_type=2**.
+ </Note> 
 </ParamField>
 <ParamField query="contract_address" type="string">
-    Contract address for estimating miner fees.(Select 0. System estimate needs to be filled in)
+    Contract address for estimating miner fees.
+ <Note> 
+Required when selecting **buy_type=0** or **buy_type=2**.
+ </Note> 
 </ParamField>
 
 
