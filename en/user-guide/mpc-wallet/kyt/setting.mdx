@@ -159,6 +159,23 @@ Manual Review: The transaction requires manual review, allowing the user to choo
 3. KYT Rejection: If your configured withdrawal processing method is "Refuse Withdrawal", at this time the withdrawal order reaches your configured alarm level, then the order will be directly refused to withdraw, and this status is the final state of the order;
 </warning>
 
+### Enable the circuit breaker mechanism.
+If you wish to enhance KYT risk transaction management, you may enable the circuit breaker mechanism.
+
+
+The circuit breaker mechanism is a global risk management function that takes precedence over alert-level processing. When enabled, transaction orders will be handled according to the circuit breaker mechanism before any other processes are applied.
+- The first transaction's alert level is [Severe]
+- The second transaction's alert level is [Low]
+- The third transaction's alert level is [Unknown]
+At this stage, the user's address activates the circuit breaker mechanism, requiring all three transactions to undergo review in accordance with the circuit breaker's protocols. Once the [Severe] level transaction is processed and the circuit breaker is lifted, the second and third transactions will proceed based on their respective alert levels.
+
+<div className="w-full flex items-center justify-center">
+    <img src="/images/user-guide/mpcrongduanen.png" width="800"/>
+</div>
+
+
+
+
 ##  Frequently Asked Questions
 
 <Accordion title="Why do I need to configure KYT services?">
