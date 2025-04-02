@@ -78,9 +78,9 @@ When other addresses transfer to your MPC wallet address, the initial status is 
 
 If the deposit address and coin have KYT (Know Your Transaction) enabled and configured, the deposit transaction will enter the "KYT Verification" status. The wallet generates a KYT verification order and submits it to the KYT service provider for verification. Manual processing may be required at this stage, at which point the status is "KYT Manual Processing".
 
-**3. Pending KYT Manual Processing Status (1020)**
+**3. Pending KYT Manual Review Status (1020 or 1030)**
 
-If the KYT service provider returns a risk level that requires manual processing, the deposit status will be "KYT Manual Processing". Once manual processing is completed, it moves to the next phase.
+If the risk level returned by the KYT provider meets the strategy criteria requiring manual transaction review (1020) or if the deposit triggers the circuit breaker mechanism (1030), the deposit status will be marked as 'KYT Manual Review.' Once the manual review is completed, the transaction will proceed to the next stage.
 
 **4. Pending Traceability / Ensuring Transaction Security (1800)**
 
