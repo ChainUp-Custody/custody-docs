@@ -24,7 +24,7 @@ title: Transfer Asynchronous Notification
 | memo             | String  | No       | to account address memo，example：123321                     |
 | txid             | String  | Yes      | Transaction hash                                             |
 | confirmations    | Integer | Yes      | Number of block confirmations，example：10                   |
-| status           | Integer | Yes      | Transfer status: `1000` Awaiting approval, `1010` KYT Verification In Progress, `1100` Approved while awaiting signature, `1200` Payment in progress, `2000` Payment completed, `2100` Not Approved, `2101` KYT Verification Rejected, `2200` Rejected, `2300` Transaction discarded, `2400`Payment failed. [Details refer to](/help-center/manage-mpc/transaction/transfer#ii) |
+| status           | Integer | Yes      | Transfer status: `1000` Awaiting approval, `1010` KYT Verification In Progress, `1100` Approved while awaiting signature, `1020` Pending KYT Manual Review, `1200` Payment in progress, `2000` Payment completed, `2100` Not Approved, `2101` KYT Verification Rejected, `2200` Rejected, `2300` Transaction discarded, `2400`Payment failed. [Details refer to](/help-center/manage-mpc/transaction/transfer#ii)|
 | transfer_source  | Integer | Yes      | Transfer Type：`1`app, `2`openapi                            |
 | base_symbol      | String  | No       | The unique identifier of the netwo  rk of the coin to be transferred, for example: ETH |
 | contract_address | String  | No       | Transfer coin's contract address                             |

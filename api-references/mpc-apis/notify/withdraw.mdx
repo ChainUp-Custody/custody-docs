@@ -24,7 +24,7 @@ title: 转账异步回调通知
 | memo             | String | 否       | 到账地址memo                                                 |
 | txid             | String | 是       | 交易hash                                                     |
 | confirmations    | Integer | 是       | 区块确认数，例：10                                           |
-| status           | Integer | 是       | 转账状态: 1000 未审批, 1010 KYT验证中状态, 1100 审批通过\待签名, 1200 支付中, 2000 支付完成, 2100 审批拒绝, 2101 KYT验证拒绝, 2200 拒绝, 2201 系统拒绝, 2300 交易丢弃, 2400 支付失败。[详细请参考](/help-center/manage-mpc/transaction/transfer#ii) |
+| status           | Integer | 是       | 转账状态: 1000 未审批，1010 KYT验证中状态，1020 待KYT人工处理，1100 审批通过\待签名, 1200 支付中，2000 支付完成，2100 审批拒绝，2101 KYT验证拒绝，2200 拒绝, 2201 系统拒绝，2300 交易丢弃，2400 支付失败。[详细请参考](/help-center/manage-mpc/transaction/transfer#ii) |
 | withdraw_source  | String | 是       | 转账类型： `1`app, `2`openapi, `3`web                           |
 | base_symbol      | String | 否       | 转账币种主链唯一标识，例：ETH                                |
 | contract_address | String | 否       | 转账币种合约地址                                             |
