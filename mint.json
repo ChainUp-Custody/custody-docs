@@ -248,7 +248,8 @@
             "api-references/mpc-apis/co-signer/deploy"
           ]
         },
-        "api-references/mpc-apis/err-code"
+        "api-references/mpc-apis/err-code",
+        "api-references/mpc-apis/sdk"
       ]
     },
     {
