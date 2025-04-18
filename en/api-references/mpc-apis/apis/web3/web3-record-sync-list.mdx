@@ -34,6 +34,7 @@ description: "Get all Web3 transaction records under a wallet"
         <ResponseField name="status" type="integer">Transaction status: 1100 Pending Signature, 1200 Payment Processing, 2000 Payment Complete, 2100 Approval Rejected, 2200 Rejected, 2300 Transaction Discarded, 2400 Payment Failed</ResponseField>
         <ResponseField name="trans_source" type="integer">Transaction type： `1`app, `2`openapi</ResponseField>
         <ResponseField name="tx_height" type="long">Block height at which the transaction is completed</ResponseField>
+        <ResponseField name="trans_type" type="integer">Transaction type: `21`trx operate, `22`trx authorize, `23`trx authorize transfer, `24`trx active account</ResponseField>
     </Expandable>
 </ResponseField>
 
@@ -71,7 +72,8 @@ description: "Get all Web3 transaction records under a wallet"
         "interactive_contract":"0xe012F3957226894B1a2a44b3ef5070417a069dC2",
         "status":2400,
         "trans_source":2,
-        "tx_height":3120013
+        "tx_height":3120013,
+        "trans_type": 21
     },
     {
         "id":436,
@@ -93,7 +95,8 @@ description: "Get all Web3 transaction records under a wallet"
         "interactive_contract":"0x0AabA82E4ba9c2Fdf80B9F8E1AcE885f092B64F0",
         "status":2400,
         "trans_source":2,
-        "tx_height":3120113
+        "tx_height":3120113,
+        "trans_type": 21
     }
 ]
 ```
