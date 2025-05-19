@@ -147,7 +147,8 @@
               "pages": [
                 "api-references/mpc-apis/apis/wallet/open-coin",
                 "api-references/mpc-apis/apis/wallet/coin-list",
-                "api-references/mpc-apis/apis/wallet/chain-height"
+                "api-references/mpc-apis/apis/wallet/chain-height",
+                "api-references/mpc-apis/apis/wallet/minner-fee"
               ]
             },
             {

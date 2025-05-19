@@ -1,0 +1,58 @@
+---
+title: "Estimated Mining Fee For Transfer"
+api: "GET /v2/chain/minerfee"
+description: "Estimated mining fee for current currency transfer"
+---
+
+#### 请求参数数据结构
+<ParamField query="time" type="long" required>
+    Current timestamp, e.g.: `1600128590`
+</ParamField>
+<ParamField query="charset" type="string" required>
+    Encoding format, typically `utf-8`
+</ParamField>
+<ParamField query="version" type="string" required>
+    Version format, typically `v2`
+</ParamField>
+<ParamField query="symbol" type="string" required>
+    Unique identifier for the coin, used for transfers, e.g.：`USDTERC20`
+</ParamField>
+
+#### 响应参数数据结构
+<ResponseField type="object[ ]">
+    <Expandable title="object">
+        <ResponseField name="feeSymbol" type="string">Fee currency, e.g. BSC</ResponseField>
+        <ResponseField name="symbol" type="string">Unique identifier for the coin, e.g.：`USETERC20`</ResponseField>
+        <ResponseField name="fee" type="string">Fee, e.g. `0.00001`</ResponseField>
+        <ResponseField name="type" type="integer">Type, `0` main chain currency transfer, `1` token transfer</ResponseField>
+        <ResponseField name="ifCollection" type="bool">Whether the currency supports collect, `true` supports it, `false` does not support it</ResponseField>
+    </Expandable>
+</ResponseField>
+
+<RequestExample>
+    ```curl cURL
+    curl -X GET \
+    --url 'https://openapi.chainup.com//v2/chain/minerfee?app_id=ea30b0bf1881a02690e7203bf855cb9f&data=dca-L22ng-RrqDkT-O1WNDR0L3kJKC6jc4rGLfC6L1nBM5A8JSv-Z74Ao5JL4HtDgU5oveunbVSPoHnnubCuPJM4MRqmKRpLGm-9M9AmpKP8AQT7XqdLR1YVKb0Rz8RYiy-Qsf_lYFunLWAcNhqAaWXC2rsN1KPVKmufwtbWlFI-ZTFbp_bYsibKAU8mC4F5tMRmMWhitysBG-VFZIni4joWAZLcGctdY9zhVZC0THqSwP27F0iaCR4Q5af5pz5iiirCsslGg0tIp15qoqcMZVN_hIav94MBcuL0I2o_Of3ut7XagG5AXGNWyFaQdfwQLM04Lt6KexOv4WyyplC4rg=='
+    ```
+</RequestExample>
+
+<ResponseExample>
+    ```json
+    [
+    {
+        "feeSymbol":"ETH",
+        "symbol":"ETH",
+        "fee":"0.000255378",
+        "ifCollection":true,
+        "type":0
+    },
+    {
+        "feeSymbol":"ETH",
+        "symbol":"ETH Token",
+        "fee":"0.00037216",
+        "ifCollection":true,
+        "type":1
+    }
+    ]
+    ```
+</ResponseExample>
