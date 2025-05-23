@@ -430,7 +430,7 @@ echo ""
 echo "Custom RSA public key, use for verify withdraw data. https://custodydocs-en.chainup.com/api-references/mpc-apis/co-signer/flow#automatic-signature-signature-sign-verification-method"
 echo "Please input Custom RSA public key for verify withdraw data:"
 read CUSTOM_PUBLIC_KEY
-if [ "CUSTOM_PUBLIC_KEY" != "" ];then
+if [ "$CUSTOM_PUBLIC_KEY" != "" ];then
   RESULT=$(echo ${PASSWORD} | ./co-signer -verify-sign-pub-import ${CUSTOM_PUBLIC_KEY})
   echo $RESULT
   STATUS=$?
