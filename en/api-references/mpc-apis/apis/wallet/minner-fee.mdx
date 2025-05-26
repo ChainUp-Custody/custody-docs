@@ -1,7 +1,7 @@
 ---
 title: "Estimated Mining Fee For Transfer"
 api: "GET /v2/chain/minerfee"
-description: "Estimated mining fee for current currency transfer"
+description: "Estimated mining fee for current coin transfer"
 ---
 
 #### 请求参数数据结构
@@ -21,11 +21,11 @@ description: "Estimated mining fee for current currency transfer"
 #### 响应参数数据结构
 <ResponseField type="object[ ]">
     <Expandable title="object">
-        <ResponseField name="feeSymbol" type="string">Fee currency, e.g. BSC</ResponseField>
+        <ResponseField name="feeSymbol" type="string">Fee coin, e.g. BSC</ResponseField>
         <ResponseField name="symbol" type="string">Unique identifier for the coin, e.g.：`USETERC20`</ResponseField>
         <ResponseField name="fee" type="string">Fee, e.g. `0.00001`</ResponseField>
-        <ResponseField name="type" type="integer">Type, `0` main chain currency transfer, `1` token transfer</ResponseField>
-        <ResponseField name="ifCollection" type="bool">Whether the currency supports collect, `true` supports it, `false` does not support it</ResponseField>
+        <ResponseField name="type" type="integer">Type, `0` main chain coin transfer, `1` token transfer</ResponseField>
+        <ResponseField name="ifCollection" type="bool">Whether the coin supports receive, `true` supports it, `false` does not support it</ResponseField>
     </Expandable>
 </ResponseField>
 

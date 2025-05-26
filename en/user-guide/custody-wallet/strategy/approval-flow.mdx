@@ -26,7 +26,7 @@ The withdrawal strategy is an important feature in the ChainUp Custody wallet, u
     1. **Approval Actions**: Define the business type of withdrawal that requires approver approval, the optional actions include approval or no approval.
     2. **Approvers**: Specify the approvers for withdrawal approval, up to 10 approvers can be added.
     3. **Number of Approvers Required**: Users can customize the number of approvers that meet the standard, the number of approvals must be more than 50% of the total number of approvers.
-    4. **Withdrawal Limit**: The withdrawal quantity is calculated based on the market price of the currency. If the market price of the currency is not obtained, the withdrawal quantity is not limited.
+    4. **Withdrawal Limit**: The withdrawal quantity is calculated based on the market price of the coin. If the market price of the coin is not obtained, the withdrawal quantity is not limited.
     5. **Transaction On-Chain Setting**: Set whether the transaction must be on-chain, and a switch can be set to control the execution method of the transaction.
   <div className="w-full flex items-center justify-center">
     <img src="/images/custody-guide/str0.png" width="800"/>
@@ -45,7 +45,7 @@ The withdrawal strategy is an important feature in the ChainUp Custody wallet, u
 
 <Steps>
 <Step title="Approval Trigger Condition Configuration">
-    Currently, manual withdrawal orders will be risk-controlled according to your configured approval trigger conditions and currency approval strategy.
+    Currently, manual withdrawal orders will be risk-controlled according to your configured approval trigger conditions and coin approval strategy.
 
    <div className="w-full flex items-center justify-center">
     <img src="/images/custody-guide/str2en.png" width="800"/>
@@ -82,10 +82,10 @@ If turned off: The system will automatically approve all API withdrawal orders, 
 ## IV. Frequently Asked Questions
 
 <Accordion title="How to add withdrawal approval members?">
-On the withdrawal strategy configuration page, you can directly add withdrawal approval members. Up to 10 withdrawal approval members can be added for each currency.
+On the withdrawal strategy configuration page, you can directly add withdrawal approval members. Up to 10 withdrawal approval members can be added for each coin.
 </Accordion>
 <Accordion title="Is the withdrawal quantity restricted?">
-The withdrawal quantity is calculated based on the market price of the currency. If the market price of the currency is not obtained, the withdrawal quantity is not limited.
+The withdrawal quantity is calculated based on the market price of the coin. If the market price of the coin is not obtained, the withdrawal quantity is not limited.
 </Accordion>
 <Accordion title="Must all transactions be on-chain?">
 You can control the execution method of the transaction through the transaction on-chain setting. After the function is turned on, all transactions of this wallet must be on-chain transactions and consume miner fees.

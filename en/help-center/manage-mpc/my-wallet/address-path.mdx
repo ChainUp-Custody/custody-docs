@@ -9,7 +9,7 @@ MPC Wallet addresses follow the Bip-44 standard, where the path structure includ
 Here are the details:
 
 - The first level, purpose, is always set to 44';
-- The second level, coin_type, specifically refers to the cryptocurrency;
+- The second level, coin_type, specifically refers to the crypto coin;
 - The third level of the tree is the account, allowing users to logically subdivide the wallet into separate sub-accounts for accounting or organizational purposes;
 - The fourth level is change, and the wallet has two subtrees, one for receiving addresses and another for creating change addresses. This level uses regular derivation, allowing the export of extended public keys in an insecure environment;
 - The available addresses are derived from HD wallets as the child level of the fourth level, i.e., the fifth level address_index.
