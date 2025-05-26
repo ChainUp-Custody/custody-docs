@@ -15,3 +15,11 @@ Co-Signer为交易提供更安全的双重验证功能。
 * 参数拼接后，转小写然后使用MD5加密，如加密前参数为`address_to=0x5edc9177997bf6b4db559a5c184051858b3b3704&amount=1.0001`，MD5加密后为`c10c47a46b616526e739985ce1c7f15d`
 
 * 对MD5数据使用`SHA256算法`进行RSA签名，然后进行`BASE64编码`，得到最终的签名数据
+
+#### 验证签名密钥
+ <div className="w-full flex items-center justify-left">
+    <CardGroup cols={5}>
+    <img src="/images/custody-guide/co_signer_show_rsa.png" width="1000"/>
+    
+    </CardGroup>
+</div>

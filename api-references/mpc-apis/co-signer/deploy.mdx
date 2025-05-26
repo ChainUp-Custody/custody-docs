@@ -20,27 +20,31 @@ title: Co-Signer部署
 ### 获取**Co-Signer**
 
 - **普通版本**
+<Steps>
+    <Step title="运行程序下载"   >
 
-1. 运行程序下载   
+    文件地址: https://github.com/ChainUp-Custody/mpc-co-signer/releases,  选择co-signer-linux-(version)-static版本，该版本Linux可直接运行
 
-  文件地址: https://github.com/ChainUp-Custody/mpc-co-signer/releases,  选择co-signer-linux-(version)-static版本，该版本Linux可直接运行
+    <Warning>
+    以版本**v1.3.1**为例，请在实际使用时替换相关版本
 
-  <Warning>
-  以版本**v1.3.1**为例，请在实际使用时替换相关版本
+    </Warning>
 
-  </Warning>
+    ```sh
+    wget https://github.com/ChainUp-Custody/mpc-co-signer/releases/download/v1.3.1/co-signer-linux-v1.3.1-static
+    ```
+    </Step>
 
-```sh
-wget https://github.com/ChainUp-Custody/mpc-co-signer/releases/download/v1.3.1/co-signer-linux-v1.3.1-static
-```
+    <Step title="修改程序可执行权限">
 
-2. 修改程序可执行权限
+    ```sh
+    chmod +x co-signer-linux-v1.3.1-static
+    mv co-signer-linux-v1.3.1-static co-signer
+    ```
+    </Step>
+</Steps>
 
-```sh
-chmod +x co-signer-linux-v1.3.1-static
-```
-
-- **SGX版本**
+- **SGX版本(步骤1-7)**
 <Steps>
 
     <Step title="购买微软云sgx服务器">
@@ -129,6 +133,7 @@ chmod +x co-signer-linux-v1.3.1-static
         ego sign
 
         ego bundle co-signer-linux-v1.3.1
+        mv co-signer-linux-v1.3.1-bundle co-signer
         ```
     </Step>
 
@@ -157,6 +162,7 @@ Options:
             recover seed by mnemonic, use '-' between each word
     -rsa-gen
             generate rsa pem by tools
+    -show-rsa string
     -rsa-pri-import string
             import current rsa private key
     -server
@@ -172,13 +178,14 @@ Options:
 3. -conf                      启动co-signer时指定配置文件, 默认为：./conf/config.yaml
 4. -rsa-gen                   工具模式：输入启动密码，生成加密的私钥和未加密的公钥，生成至keystore.json文件中
 5. -rsa-pri-import            工具模式：输入启动密码，导入现有的rsa私钥，生成加密后的rsa私钥文件（仅导入私钥），生成至keystore.json文件中
-6. -verify-sign-pub-import    导入校验客户签名(sign)使用的公钥，生成至keystore.json文件中；导入后co-signer会校验提现和web3客户签名(sign)，sign生成方式详见API文档
+6. -verify-sign-pub-import    工具模式：导入校验客户签名(sign)使用的公钥，生成至keystore.json文件中；导入后co-signer会校验提现和web3客户签名(sign)，sign生成方式详见API文档
 7. -custody-pub-import        工具模式：输入启动密码，导入custody的公钥，生成至keystore.json文件中
 8. -keystore-gen              工具模式：用于将v1.0.x版本的seed.dat，rsaPri.pem，rsaPub.pem等文件统一导入至keystore.json文件
+9. -show-rsa                  工具模式：显示所用到的RSA公钥
 ```
 
 
-**添加配置并启动Co-Signer**
+**手动配置并启动Co-Signer**
 
 <Steps>
 
@@ -258,6 +265,20 @@ Options:
         导入后**Co-Signer** 会校验提现和web3交易签名(sign)，sign生成方式详见Co-Signer交易签名
 
     </Step>
+
+    <Step title="查看配置后的RSA公钥信息">
+        ```sh
+        ./co-signer -show-rsa
+        ```
+        [提现验证签名（左图）](/api-references/mpc-apis/apis/withdraw/withdraw#param-sign)
+          & [API 管理（右图）](/user-guide/mpc-wallet/api-integration/api)
+       <div className="w-full flex items-center justify-left">
+            <CardGroup cols={5}>
+            <img src="/images/custody-guide/co_signer_show_rsa.png" width="1000"/>
+            
+            </CardGroup>
+        </div>
+    </Step>
 </Steps>
 
 
@@ -303,160 +324,173 @@ Custody也提供了更为便捷的部署方式，使用脚本一键式生成配�
 
 ### **install.sh**
 
-执行`install.sh`脚本，按照提示步骤，导入运行Co-Signer的必要信息和配置
+<Steps>
 
-```sh
-#!/bin/bash
+    <Step title="按照提示步骤，导入运行Co-Signer的必要信息和配置">
+         [提现验证签名（左图）](/api-references/mpc-apis/apis/withdraw/withdraw#param-sign)
+          & [API 管理（右图）](/user-guide/mpc-wallet/api-integration/api)
+        <div className="w-full flex items-center justify-left">
+            <CardGroup cols={5}>
+            <img src="/images/custody-guide/co_signer_install.png" width="1000"/>
+            
+            </CardGroup>
+        </div>
+    </Step>
+    <Step title="执行`install.sh`脚本">
 
-WORK_DIR=$(
-              cd $(dirname $0)
-              pwd
-          )
-echo "work dir: ${WORK_DIR}"
+    ```sh
+    #!/bin/bash
 
-echo ""
-echo "install.sh will clean startup.sh、conf/config.yaml、conf/keystore.json, continue [Y/N(default)]?"
-read CLEAN_CONF
-case $CLEAN_CONF in
-(Y | y)
-  CONF_DIR="${WORK_DIR}/conf"
-  mkdir -p $CONF_DIR
-  > ./conf/config.yaml
-  > ./startup.sh
-  echo {} > ./conf/keystore.json
-  ;;
-(*)
-  echo "exit!!!"
-  exit 0
-  ;;
-esac
+    WORK_DIR=$(
+                cd $(dirname $0)
+                pwd
+            )
+    echo "work dir: ${WORK_DIR}"
 
-echo ""
-APP_ID=""
-echo "App id can find in https://custody.chainup.com/mpc/center/api."
-echo "Please enter app id: (e.g. 6866b043a013680ea91be7e6fdcd2af4)"
-read APP_ID
+    echo ""
+    echo "install.sh will clean startup.sh、conf/config.yaml、conf/keystore.json, continue [Y/N(default)]?"
+    read CLEAN_CONF
+    case $CLEAN_CONF in
+    (Y | y)
+    CONF_DIR="${WORK_DIR}/conf"
+    mkdir -p $CONF_DIR
+    > ./conf/config.yaml
+    > ./startup.sh
+    echo {} > ./conf/keystore.json
+    ;;
+    (*)
+    echo "exit!!!"
+    exit 0
+    ;;
+    esac
 
-echo ""
-echo "Please input custom withdraw transaction callback url(skip by enter):"
-read WITHDRAW_CALLBACK_URL
+    echo ""
+    APP_ID=""
+    echo "App id can find in https://custody.chainup.com/mpc/center/api."
+    echo "Please enter app id: (e.g. 6866b043a013680ea91be7e6fdcd2af4)"
+    read APP_ID
 
-echo ""
-echo "Please input custom web3 transaction callback url(skip by enter):"
-read WEB3_CALLBACK_URL
+    echo ""
+    echo "Please input custom withdraw transaction callback url(skip by enter):"
+    read WITHDRAW_CALLBACK_URL
 
-CONF_TMPL=$(cat <<- EOF
-## Main Configuration Information
-main:
-    ## [Required] Co-signer service IP address
-    tcp: "0.0.0.0:28888"
-    ## [Required] Encrypted storage file used by v1.1.x version
-    keystore_file: "conf/keystore.json"
+    echo ""
+    echo "Please input custom web3 transaction callback url(skip by enter):"
+    read WEB3_CALLBACK_URL
 
-## Custody System
-custody_service:
-    ## [Required] app_id, obtained after creating a merchant
-    app_id: "${APP_ID}"
-    ## [Required] api domain address, see interface documentation
-    domain: "https://openapi.chainup.com/"
-    ## [Optional] Request and response language, supporting zh_CN and en_US
-    language: "en_US"
+    CONF_TMPL=$(cat <<- EOF
+    ## Main Configuration Information
+    main:
+        ## [Required] Co-signer service IP address
+        tcp: "0.0.0.0:28888"
+        ## [Required] Encrypted storage file used by v1.1.x version
+        keystore_file: "conf/keystore.json"
 
-## Client System
-custom_service:
-    ## [Optional] Withdrawal callback client system address for signature confirmation before signing, details see: https://custodydocs-zh.chainup.com/api-references/mpc-apis/co-signer/callback/withdraw, mandatory sign verification when not configured
-    withdraw_callback_url: "${WITHDRAW_CALLBACK_URL}"
-    ## [Optional] Web3 transaction callback client system address for signature confirmation before signing, details see: https://custodydocs-zh.chainup.com/api-references/mpc-apis/co-signer/callback/web3, mandatory sign verification when not configured
-    web3_callback_url: "${WEB3_CALLBACK_URL}"
-EOF
-)
+    ## Custody System
+    custody_service:
+        ## [Required] app_id, obtained after creating a merchant
+        app_id: "${APP_ID}"
+        ## [Required] api domain address, see interface documentation
+        domain: "https://openapi.chainup.com/"
+        ## [Optional] Request and response language, supporting zh_CN and en_US
+        language: "en_US"
 
-STARTUP_TMPL=$(cat <<- EOF
-#!/bin/bash  \
+    ## Client System
+    custom_service:
+        ## [Optional] Withdrawal callback client system address for signature confirmation before signing, details see: https://custodydocs-zh.chainup.com/api-references/mpc-apis/co-signer/callback/withdraw, mandatory sign verification when not configured
+        withdraw_callback_url: "${WITHDRAW_CALLBACK_URL}"
+        ## [Optional] Web3 transaction callback client system address for signature confirmation before signing, details see: https://custodydocs-zh.chainup.com/api-references/mpc-apis/co-signer/callback/web3, mandatory sign verification when not configured
+        web3_callback_url: "${WEB3_CALLBACK_URL}"
+    EOF
+    )
 
-project_path=\$(
-    cd \$(dirname \$0)
-    pwd
-)
+    STARTUP_TMPL=$(cat <<- EOF
+    #!/bin/bash  \
 
-STR_PASSWORD=""
-echo -n "Please enter your password:"
-stty -echo
-read STR_PASSWORD
-stty echo
+    project_path=\$(
+        cd \$(dirname \$0)
+        pwd
+    )
+
+    STR_PASSWORD=""
+    echo -n "Please enter your password:"
+    stty -echo
+    read STR_PASSWORD
+    stty echo
 
 
-if [ ! -n "\$STR_PASSWORD" ]; then
-    echo "Password cannot be null"
-    exit 1
-fi
+    if [ ! -n "\$STR_PASSWORD" ]; then
+        echo "Password cannot be null"
+        exit 1
+    fi
 
-echo ""
-echo "Startup Program..."
-echo ""
+    echo ""
+    echo "Startup Program..."
+    echo ""
 
-# start
-echo \${STR_PASSWORD} | nohup \${project_path}/co-signer -server >>nohup.out 2>&1 &
+    # start
+    echo \${STR_PASSWORD} | nohup \${project_path}/co-signer -server >>nohup.out 2>&1 &
 
-EOF
-)
+    EOF
+    )
 
-PASSWORD=""
-echo ""
-echo "Please enter your password:"
-stty -echo
-read PASSWORD
-stty echo
-RESULT=$(echo ${PASSWORD} | ./co-signer -rsa-gen)
-echo $RESULT
-STATUS=$?
-if [ "$STATUS" != 0 ];then
-  exit $STATUS
-fi
-echo "rsa key pair create success, you can find rsa public key in conf/keystore.json"
-
-echo ""
-echo "ChainUp RSA public key can find in https://custody.chainup.com/mpc/center/api"
-echo "Please input ChinaUp RSA public key:"
-read CHAINUP_PUBLIC_KEY
-RESULT=$(echo ${PASSWORD} | ./co-signer -custody-pub-import ${CHAINUP_PUBLIC_KEY})
-echo $RESULT
-STATUS=$?
-if [ "$STATUS" != 0 ];then
-  exit $STATUS
-fi
-
-echo ""
-echo "Custom RSA public key, use for verify withdraw data. https://custodydocs-en.chainup.com/api-references/mpc-apis/co-signer/flow#automatic-signature-signature-sign-verification-method"
-echo "Please input Custom RSA public key for verify withdraw data:"
-read CUSTOM_PUBLIC_KEY
-if [ "$CUSTOM_PUBLIC_KEY" != "" ];then
-  RESULT=$(echo ${PASSWORD} | ./co-signer -verify-sign-pub-import ${CUSTOM_PUBLIC_KEY})
-  echo $RESULT
-  STATUS=$?
-  if [ "$STATUS" != 0 ];then
+    PASSWORD=""
+    echo ""
+    echo "Please enter your password:"
+    stty -echo
+    read PASSWORD
+    stty echo
+    RESULT=$(echo ${PASSWORD} | ./co-signer -rsa-gen)
+    echo $RESULT
+    STATUS=$?
+    if [ "$STATUS" != 0 ];then
     exit $STATUS
-  fi
-fi
+    fi
+    echo "rsa key pair create success, you can find rsa public key in conf/keystore.json"
 
-## reset password
-PASSWORD=""
-echo ${CONF_TMPL} > ./conf/config.yaml
+    echo ""
+    echo "ChainUp RSA public key can find in https://custody.chainup.com/mpc/center/api"
+    echo "Please input ChinaUp RSA public key:"
+    read CHAINUP_PUBLIC_KEY
+    RESULT=$(echo ${PASSWORD} | ./co-signer -custody-pub-import ${CHAINUP_PUBLIC_KEY})
+    echo $RESULT
+    STATUS=$?
+    if [ "$STATUS" != 0 ];then
+    exit $STATUS
+    fi
 
-cat>./conf/config.yaml<< EOF
-${CONF_TMPL}
-EOF
+    echo ""
+    echo "Custom RSA public key, use for verify withdraw data. https://custodydocs-en.chainup.com/api-references/mpc-apis/co-signer/flow#automatic-signature-signature-sign-verification-method"
+    echo "Please input Custom RSA public key for verify withdraw data:"
+    read CUSTOM_PUBLIC_KEY
+    if [ "$CUSTOM_PUBLIC_KEY" != "" ];then
+    RESULT=$(echo ${PASSWORD} | ./co-signer -verify-sign-pub-import ${CUSTOM_PUBLIC_KEY})
+    echo $RESULT
+    STATUS=$?
+    if [ "$STATUS" != 0 ];then
+        exit $STATUS
+    fi
+    fi
 
-cat>./startup.sh<< EOF
-${STARTUP_TMPL}
-EOF
+    ## reset password
+    PASSWORD=""
+    echo ${CONF_TMPL} > ./conf/config.yaml
 
-chmod u+x ./startup.sh
-echo ""
-echo "install success!!!!!"
-echo "Please start co-signer with startup.sh"
-```
+    cat>./conf/config.yaml<< EOF
+    ${CONF_TMPL}
+    EOF
 
+    cat>./startup.sh<< EOF
+    ${STARTUP_TMPL}
+    EOF
+
+    chmod u+x ./startup.sh
+    echo ""
+    echo "install success!!!!!"
+    echo "Please start co-signer with startup.sh"
+    ```
+    </Step>
+</Steps>
 ### **sgx-build.sh**
 
 使用SGX环境下的Co-Signer时

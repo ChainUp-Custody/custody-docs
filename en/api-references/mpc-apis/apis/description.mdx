@@ -85,3 +85,24 @@ In traditional base64 encoding, there are two symbols, + and /, which will be di
 
 RSA encryption and decryption use `segmented encryption`.
 </Warning>
+
+<Steps>
+    <Step title="Warning">
+
+    The values of the request parameter data and the response field data are both encrypted with RSA and then encrypted with **base64urlsafe**, See [SDK](/api-references/mpc-apis/sdk)
+
+   <Warning>
+    In traditional base64 encoding, there are two symbols, + and /, which will be directly escaped by the URL. Therefore, if you want to transmit these encoded strings via URL, you need to do traditional base64 encoding first, and then replace + and / with - _ respectively. On the receiving end, do the opposite decoding action.
+
+    RSA encryption and decryption use `segmented encryption`.
+    </Warning>
+    </Step>
+    <Step title="RSA Public Key Example">
+        <div className="w-full flex items-center justify-left">
+            <CardGroup cols={5}>
+            <img src="/images/custody-guide/api_rsa.png" width="1000"/>
+            
+            </CardGroup>
+        </div>
+    </Step>
+</Steps>
