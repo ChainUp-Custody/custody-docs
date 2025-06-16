@@ -60,9 +60,7 @@
     {
       "group": "Custody Solutions",
       "pages": [
-        "introduction/custody-solution/mpc-wallet",
-        "introduction/custody-solution/joint-custody",
-        "introduction/custody-solution/wapi"
+        "introduction/custody-solution/mpc-wallet"
       ]
     },
     {
@@ -112,15 +110,7 @@
       ]
     },
     {
-      "group": "Full Custody",
-      "pages": [
-        "quick-start/joint-custody/download-app",
-        "quick-start/joint-custody/create-account",
-        "quick-start/joint-custody/create-wallet",
-        "quick-start/joint-custody/api-integration"
-      ]
-    },
-    {
+
       "group": "Introduction to APIs",
       "pages": [
         "api-references/intro/custody-apis"
@@ -253,90 +243,7 @@
       ]
     },
     {
-      "group": "Full Custody",
-      "pages": [
-        "api-references/custody-apis/guide",
-        "api-references/custody-apis/scheme",
-        "api-references/custody-apis/prepare",
-        "api-references/custody-apis/sdk",
-        {
-          "group": "API List",
-          "pages": [
-            "api-references/custody-apis/apis/description",
-            {
-              "group": "Get Address",
-              "pages": [
-                "api-references/custody-apis/apis/get-address/create-user",
-                "api-references/custody-apis/apis/get-address/register-email",
-                "api-references/custody-apis/apis/get-address/get-deposit-address",
-                "api-references/custody-apis/apis/get-address/get-address-info"
-              ]
-            },
-            {
-              "group": "Account Balance",
-              "pages": [
-                "api-references/custody-apis/apis/account-assets/user-info",
-                "api-references/custody-apis/apis/account-assets/coin-list",
-                "api-references/custody-apis/apis/account-assets/get-account",
-                "api-references/custody-apis/apis/account-assets/get-balance"
-              ]
-            },
-            {
-              "group": "User Deposit",
-              "pages": [
-                "api-references/custody-apis/apis/user-deposit/deposit-sync-list",
-                "api-references/custody-apis/apis/user-deposit/deposit-list",
-                "api-references/custody-apis/apis/user-deposit/deposit-notify",
-                "api-references/custody-apis/apis/user-deposit/minerfee-list"
-              ]
-            },
-            {
-              "group": "User Withdrawal",
-              "pages": [
-                "api-references/custody-apis/apis/user-withdraw/withdraw",
-                "api-references/custody-apis/apis/user-withdraw/withdraw-confirm",
-                "api-references/custody-apis/apis/user-withdraw/withdraw-notify",
-                "api-references/custody-apis/apis/user-withdraw/withdraw-sync-list",
-                "api-references/custody-apis/apis/user-withdraw/withdraw-list"
-              ]
-            },
-            {
-              "group": "Internal Transfer",
-              "pages": [
-                "api-references/custody-apis/apis/company-transfer/company-transfer",
-                "api-references/custody-apis/apis/company-transfer/company-transfer-check-sum",
-                "api-references/custody-apis/apis/company-transfer/company-transfer-list",
-                "api-references/custody-apis/apis/company-transfer/company-transfer-sync-list"
-              ]
-            }
-          ]
-        },
-        "api-references/custody-apis/err-code"
-      ]
-    },
-    {
-      "group": "ChainUp Custody WAPI",
-      "pages": [
-        "api-references/bass-apis/prepare",
-        "api-references/bass-apis/scheme",
-        "api-references/bass-apis/sdk",
-        {
-          "group": "API List",
-          "pages": [
-            "api-references/bass-apis/apis/description",
-            "api-references/bass-apis/apis/address-register",
-            "api-references/bass-apis/apis/address-available",
-            "api-references/bass-apis/apis/deposit-notify",
-            "api-references/bass-apis/apis/withdraw-consume",
-            "api-references/bass-apis/apis/withdraw-notify",
-            "api-references/bass-apis/apis/internal-notify",
-            "api-references/bass-apis/apis/withdraw-cancel"
-          ]
-        },
-        "api-references/bass-apis/err-code"
-      ]
-    },
-    {
+     
       "group": "Introduction",
       "pages": [
         "help-center/introduction/manage-custody"

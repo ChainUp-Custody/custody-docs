@@ -60,9 +60,7 @@
     {
       "group": "产品介绍",
       "pages": [
-        "introduction/custody-solution/mpc-wallet",
-        "introduction/custody-solution/joint-custody",
-        "introduction/custody-solution/wapi"
+        "introduction/custody-solution/mpc-wallet"
       ]
     },
     {
@@ -109,15 +107,6 @@
             "quick-start/compliance-custody-mpc/strategy-mpc"
           ]
         }
-      ]
-    },
-    {
-      "group": "全托管",
-      "pages": [
-        "quick-start/joint-custody/download-app",
-        "quick-start/joint-custody/create-account",
-        "quick-start/joint-custody/create-wallet",
-        "quick-start/joint-custody/api-integration"
       ]
     },
     {
@@ -252,90 +241,7 @@
         "api-references/mpc-apis/err-code",
         "api-references/mpc-apis/sdk"
       ]
-    },
-    {
-      "group": "全托管",
-      "pages": [
-        "api-references/custody-apis/guide",
-        "api-references/custody-apis/scheme",
-        "api-references/custody-apis/prepare",
-        "api-references/custody-apis/sdk",
-        {
-          "group": "API接口",
-          "pages": [
-            "api-references/custody-apis/apis/description",
-            {
-              "group": "获取地址",
-              "pages": [
-                "api-references/custody-apis/apis/get-address/create-user",
-                "api-references/custody-apis/apis/get-address/register-email",
-                "api-references/custody-apis/apis/get-address/get-deposit-address",
-                "api-references/custody-apis/apis/get-address/get-address-info"
-              ]
-            },
-            {
-              "group": "账户资产",
-              "pages": [
-                "api-references/custody-apis/apis/account-assets/user-info",
-                "api-references/custody-apis/apis/account-assets/coin-list",
-                "api-references/custody-apis/apis/account-assets/get-account",
-                "api-references/custody-apis/apis/account-assets/get-balance"
-              ]
-            },
-            {
-              "group": "用户充值",
-              "pages": [
-                "api-references/custody-apis/apis/user-deposit/deposit-sync-list",
-                "api-references/custody-apis/apis/user-deposit/deposit-list",
-                "api-references/custody-apis/apis/user-deposit/deposit-notify",
-                "api-references/custody-apis/apis/user-deposit/minerfee-list"
-              ]
-            },
-            {
-              "group": "用户提现",
-              "pages": [
-                "api-references/custody-apis/apis/user-withdraw/withdraw",
-                "api-references/custody-apis/apis/user-withdraw/withdraw-confirm",
-                "api-references/custody-apis/apis/user-withdraw/withdraw-notify",
-                "api-references/custody-apis/apis/user-withdraw/withdraw-sync-list",
-                "api-references/custody-apis/apis/user-withdraw/withdraw-list"
-              ]
-            },
-            {
-              "group": "商户转账",
-              "pages": [
-                "api-references/custody-apis/apis/company-transfer/company-transfer",
-                "api-references/custody-apis/apis/company-transfer/company-transfer-check-sum",
-                "api-references/custody-apis/apis/company-transfer/company-transfer-list",
-                "api-references/custody-apis/apis/company-transfer/company-transfer-sync-list"
-              ]
-            }
-          ]
-        },
-        "api-references/custody-apis/err-code"
-      ]
-    },
-    {
-      "group": "ChainUp Custody WAPI",
-      "pages": [
-        "api-references/bass-apis/prepare",
-        "api-references/bass-apis/scheme",
-        "api-references/bass-apis/sdk",
-        {
-          "group": "API文档",
-          "pages": [
-            "api-references/bass-apis/apis/description",
-            "api-references/bass-apis/apis/address-register",
-            "api-references/bass-apis/apis/address-available",
-            "api-references/bass-apis/apis/deposit-notify",
-            "api-references/bass-apis/apis/withdraw-consume",
-            "api-references/bass-apis/apis/withdraw-notify",
-            "api-references/bass-apis/apis/internal-notify",
-            "api-references/bass-apis/apis/withdraw-cancel"
-          ]
-        },
-        "api-references/bass-apis/err-code"
-      ]
+   
     },
     {
       "group": "简介",
@@ -410,32 +316,6 @@
             "help-center/manage-mpc/Coldwallet/smartcontractplatform",
             "help-center/manage-mpc/Coldwallet/managwallet",
             "help-center/manage-mpc/Coldwallet/allsteps"
-          ]
-        }
-      ]
-    },
-    {
-      "group": "全托管",
-      "pages": [
-        {
-          "group": "账号交易",
-          "pages": [
-            "help-center/manage-joint/account-transfer/confirmation",
-            "help-center/manage-joint/account-transfer/transfer",
-            "help-center/manage-joint/account-transfer/tron-transaction"
-          ]
-        },
-        {
-          "group": "钱包配置",
-          "pages": [
-            "help-center/manage-joint/custody-wallet-manage/custody-adddress-type",
-            "help-center/manage-joint/custody-wallet-manage/wallet"
-          ]
-        },
-        {
-          "group": "团队管理",
-          "pages": [
-            "help-center/manage-joint/custody-user-settings/role"
           ]
         }
       ]
