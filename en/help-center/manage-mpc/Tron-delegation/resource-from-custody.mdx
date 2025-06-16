@@ -51,7 +51,7 @@ You can choose any Web3 wallet under the workstation as the authorized wallet.
 
 **Activing Transfer Permission to Enable Delegation Feature**
 
-Allow Custody's authorized address to settle and automatically deduct Delegation Service Fee from your wallet.
+Allow Keysecure's authorized address to settle and automatically deduct Delegation Service Fee from your wallet.
 
 <Note>
 Activating transfer permission requires approval through the selected wallet's strategy. Once permission is activated, the system will automatically delegate TRON transaction resources for all addresses in the wrokspace, helping users reduce transaction costs. The delegation service fee will be periodically settled and deducted.
@@ -68,17 +68,17 @@ Activating transfer permission requires approval through the selected wallet's s
 
 
 **
-Contact Custody to Select Delegation Address Range
+Contact Keysecure to Select Delegation Address Range
 
-After completing the authorization, please contact the Custody team and specify the type of address you wish to delegate:
+After completing the authorization, please contact the Keysecure team and specify the type of address you wish to delegate:
 
 Delegate MPC Workstation: The system will automatically monitor all TRON transactions (transfers, aggregation, Web3) on the addresses and execute resource delegation and recovery according to the strategy, helping you maximize transaction resource savings.
 
-Delegate External Address: The team will configure the delegation service based on the external addresses you provide. Custody will monitor TRON transaction activities on your addresses, estimate the required resources, and delegate the necessary resources.
+Delegate External Address: The team will configure the delegation service based on the external addresses you provide. Keysecure will monitor TRON transaction activities on your addresses, estimate the required resources, and delegate the necessary resources.
 
 <Tip> 
 
-Custody now supports providing TRON resource delegation for external addresses, covering both transfer and auto sweep scenarios.
+Keysecure now supports providing TRON resource delegation for external addresses, covering both transfer and auto sweep scenarios.
 
 </Tip>
 
@@ -108,7 +108,7 @@ If the authorized wallet balance is insufficient to cover the delegation service
 ## Billing Rules
 ### Using Delegated Resources
 
-The system will calculate the delegation service fee based on the actual resources consumed by the transaction. Custody will regularly track the amount of service fees pending payment and initiate a transaction to deduct the fee from the user's authorized wallet address.
+The system will calculate the delegation service fee based on the actual resources consumed by the transaction. Keysecure will regularly track the amount of service fees pending payment and initiate a transaction to deduct the fee from the user's authorized wallet address.
 
 **Delegation Service Fee = [Energy consumed by transaction * Energy price + Bandwidth consumed by transaction * Bandwidth price] * Keysecure service rate**
 
@@ -132,7 +132,7 @@ Bandwidth consumption: 300 Bandwidth × 0.001 = 0.3 TRX
 
 **Total resource consumption value** = 13.65 + 0.3 = 13.95 TRX
 
-Keysecure service rate: 80%, meaning Custody will only charge 80% of the transaction's resource cost.
+Keysecure service rate: 80%, meaning Keysecure will only charge 80% of the transaction's resource cost.
 
 **Delegation service fee for the transaction** = 13.95 × 80% = 11.16 TRX, which is lower than directly burning TRX to pay for miner fees, resulting in reduced transaction costs.
 
@@ -187,7 +187,7 @@ In the following special cases, some transactions may not be able to be delegate
 
 * The address is not activated (no TRX transaction record), the first transaction will require TRX consumption.
 
-* Due to peak transaction periods, Custody's system resources may be insufficient, and TRX may need to be directly consumed from the wallet address.
+* Due to peak transaction periods, Keysecure's system resources may be insufficient, and TRX may need to be directly consumed from the wallet address.
 
 </Accordion>
 

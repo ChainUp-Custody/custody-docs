@@ -5,7 +5,7 @@ title: BRC-20 Transactions
 
 BRC20 is an experimental standard for issuing fungible tokens on the Bitcoin network. Unlike ERC20, the main difference lies in the fact that the Bitcoin network does not support smart contracts. Instead, tokens are deployed, minted, and transferred by setting inscriptions in JSON data format using the Ordinals protocol.
 
-BRC-20 aims to establish a new standard for creating interchangeable tokens using the Bitcoin base layer. This document will elaborate on the basic concepts of BRC-20 transactions in Custody's MPC wallet, covering principles and use cases of receiving and transferring tokens.
+BRC-20 aims to establish a new standard for creating interchangeable tokens using the Bitcoin base layer. This document will elaborate on the basic concepts of BRC-20 transactions in Keysecure's MPC wallet, covering principles and use cases of receiving and transferring tokens.
 
 For more information on BRC-20, refer to the GitBook: [Layer1 Foundation](https://layer1.gitbook.io/layer1-foundation/foundation/purpose)
 
@@ -34,9 +34,9 @@ The BRC-20 protocol mandates that all inscriptions must be committed before tran
 
 ### Transferring BRC-20
 
-Based on the analysis of enterprise users and observations of operational behaviors, Custody believes that allowing most customers to manage their transferable and **available balances** themselves is complex and challenging. The core requirement of users is to be able to transact without understanding the transfer logic of BRC-20 tokens and to be able to transfer out all BRC-20 balances in their wallet at any time.
+Based on the analysis of enterprise users and observations of operational behaviors, Keysecure believes that allowing most customers to manage their transferable and **available balances** themselves is complex and challenging. The core requirement of users is to be able to transact without understanding the transfer logic of BRC-20 tokens and to be able to transfer out all BRC-20 balances in their wallet at any time.
 
-To minimize transmission blocks and reduce user operational processes, the BRC-20 transfer function of Custody's MPC wallet is **divided into the following two categories:**
+To minimize transmission blocks and reduce user operational processes, the BRC-20 transfer function of Keysecure's MPC wallet is **divided into the following two categories:**
 
 #### Transferring Inscription
 

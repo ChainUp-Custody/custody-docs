@@ -1,10 +1,10 @@
 {
   "name": "Keysecure",
   "logo": {
-    "dark": "/logo/Keysecure custody-logo.svg",
-    "light": "/logo/Keysecure custody-logo.svg"
+    "dark": "/logo/KeySecure_light.svg",
+    "light": "/logo/KeySecure_light.svg"
   },
-  "favicon": "/logo/Keysecure custody.svg",
+  "favicon": "/logo/Frame 2970.svg",
   "colors": {
     "primary": "#2662FF",
     "light": "#2662FF",
@@ -26,7 +26,7 @@
   },
   "topbarCtaButton": {
     "name": "官网",
-    "url": "https://custody.Keysecure .com/zh-CN"
+    "url": "https://keysecure.io/zh-CN"
   },
   "tabs": [
     {
