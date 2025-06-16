@@ -10,7 +10,7 @@ The TRON blockchain employs a unique fee model, different from blockchains like 
 **If the wallet does not have the required resources for the transaction, TRX must be directly burned from the address or replenished through the fueling station to support TRON network transactions.**
 
 ## Delegation Tool
-Directly burning TRX to pay miner fees can be costly. To help clients save on transaction fees and reduce operational costs, the Custody system has launched an automatic delegation tool. This tool allows all addresses under the wrokspace to acquire TRON transaction resources as needed for transactions, without consuming TRX. Clients only need to pay a small service fee to complete the transaction.
+Directly burning TRX to pay miner fees can be costly. To help clients save on transaction fees and reduce operational costs, the Keysecure System has launched an automatic delegation tool. This tool allows all addresses under the wrokspace to acquire TRON transaction resources as needed for transactions, without consuming TRX. Clients only need to pay a small service fee to complete the transaction.
 
 **Cost Savings:** After using the automatic delegation mechanism, the system will automatically provide the required energy for the wallet, eliminating the need for users to use TRX to pay miner fees. Typically, the delegation fee is cheaper than directly using TRX.
 
@@ -62,7 +62,7 @@ Activating transfer permission requires approval through the selected wallet's s
 **The system automatically delegates resources and settles service fees**
 
 
-The Custody system will regularly settle the delegation service fees based on the actual resources consumed and automatically initiate fee deduction transactions from the authorized wallet.
+The Keysecure System will regularly settle the delegation service fees based on the actual resources consumed and automatically initiate fee deduction transactions from the authorized wallet.
 
 <div className="w-full flex items-center justify-center">
 <img src="/images/help-center/tronfeeen.jpeg" width="200"/>
@@ -83,7 +83,7 @@ If the authorized wallet balance is insufficient to cover the delegation service
 
 The system will calculate the delegation service fee based on the actual resources consumed by the transaction. Custody will regularly track the amount of service fees pending payment and initiate a transaction to deduct the fee from the user's authorized wallet address.
 
-**Delegation Service Fee = [Energy consumed by transaction * Energy price + Bandwidth consumed by transaction * Bandwidth price] * Custody service rate**
+**Delegation Service Fee = [Energy consumed by transaction * Energy price + Bandwidth consumed by transaction * Bandwidth price] * Keysecure service rate**
 
 Energy price: 1 Energy = 0.00021 TRX
 
@@ -93,7 +93,7 @@ Bandwidth price: 1 Bandwidth = 0.001 TRX
 The prices of energy and bandwidth are set by the TRON network.
 </Note>
 
-Custody service rate: A dynamic percentage, always less than 100%, which will be adjusted periodically based on actual conditions.
+Keysecure service rate: A dynamic percentage, always less than 100%, which will be adjusted periodically based on actual conditions.
 
 For example, if the user transfers USDT and consumes 65,000 energy and 300 bandwidth:
 
@@ -105,7 +105,7 @@ Bandwidth consumption: 300 Bandwidth × 0.001 = 0.3 TRX
 
 **Total resource consumption value** = 13.65 + 0.3 = 13.95 TRX
 
-Custody service rate: 80%, meaning Custody will only charge 80% of the transaction's resource cost.
+Keysecure service rate: 80%, meaning Custody will only charge 80% of the transaction's resource cost.
 
 **Delegation service fee for the transaction** = 13.95 × 80% = 11.16 TRX, which is lower than directly burning TRX to pay for miner fees, resulting in reduced transaction costs.
 
@@ -166,7 +166,7 @@ In the following special cases, some transactions may not be able to be delegate
 
 <Accordion title="How does the system charge and settle delegation service fees?">
 
-The Custody system calculates the consumption data for the previous day at 0:00 (UTC+8) based on actual resource usage and real-time pricing, and settles the related fees from your authorized wallet at 17:00 (UTC+8) daily.
+The Keysecure System calculates the consumption data for the previous day at 0:00 (UTC+8) based on actual resource usage and real-time pricing, and settles the related fees from your authorized wallet at 17:00 (UTC+8) daily.
 </Accordion>
 
 <Accordion title="What will happen if the workspace fails to pay the delegation service fees on time?">

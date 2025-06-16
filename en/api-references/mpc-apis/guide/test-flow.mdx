@@ -2,7 +2,7 @@
 title: Integration Testing
 ---
 
-To facilitate clients in quickly and conveniently integrating the system, ChainUp has outlined the core processes based on past client integration experiences, focusing on the integration solutions for [**Get Receiving(Deposit) Address**] , [**User Receiving(Deposit)**] and [**User Transfer (Withdrawal)**]. The details are as follows:
+To facilitate clients in quickly and conveniently integrating the system, Keysecure  has outlined the core processes based on past client integration experiences, focusing on the integration solutions for [**Get Receiving(Deposit) Address**] , [**User Receiving(Deposit)**] and [**User Transfer (Withdrawal)**]. The details are as follows:
 
 ## Get Receiving Address
 
@@ -10,7 +10,7 @@ To facilitate clients in quickly and conveniently integrating the system, ChainU
 
 - Create a coin address for the wallet `/api/mpc/sub_wallet/create/address`
 
-- ChainUp callbacks Co-Signer for signing, and Co-Signer collaborates with ChainUp node to complete the signing
+- Keysecure  callbacks Co-Signer for signing, and Co-Signer collaborates with Keysecure  node to complete the signing
 
 - Successfully signed, return the address created for the coin
 
@@ -30,7 +30,7 @@ Addresses support two types: system addresses and user addresses. The `system ad
 
 - Users deposits assets to the assigned address.
 
-- ChainUp monitors the blockchain address for incoming transactions. After detecting a deposit, ChainUp notifies the client's business system of the receiving notification (the client's system actively retrieves `/api/mpc/billing/sync_deposit_list`).
+- Keysecure  monitors the blockchain address for incoming transactions. After detecting a deposit, Keysecure  notifies the client's business system of the receiving notification (the client's system actively retrieves `/api/mpc/billing/sync_deposit_list`).
 
 - The client obtains the current block height of the corresponding blockchain for the coin (`/api/mpc/chain_height`).
 
@@ -46,17 +46,17 @@ Addresses support two types: system addresses and user addresses. The `system ad
 
 - Users initiate a transfer in the client system.
 
-- After the client system approves the Transfer, it initiates a Transfer request to the ChainUp system via API `/api/mpc/billing/withdraw`.
+- After the client system approves the Transfer, it initiates a Transfer request to the Keysecure  system via API `/api/mpc/billing/withdraw`.
 
-- Co-Signer periodically retrieves withdrawal transactions. If Co-Signer has configured a callback program, it confirms with the client's business system. If Co-Signer has configured signature verification, it verifies the signature and collaborates with the ChainUp node to sign.
+- Co-Signer periodically retrieves withdrawal transactions. If Co-Signer has configured a callback program, it confirms with the client's business system. If Co-Signer has configured signature verification, it verifies the signature and collaborates with the Keysecure  node to sign.
 
-- Once signed, ChainUp broadcasts the transaction to the blockchain and monitors its status.
+- Once signed, Keysecure  broadcasts the transaction to the blockchain and monitors its status.
 
 <Tip>
 Supported blockchains for acceleration can be obtained through the API `/api/mpc/wallet/open_coin`.
 </Tip>
 
-- After blockchain confirmation, ChainUp notifies the client's business system of the transfer notification (the client's system actively retrieves `/api/mpc/billing/sync_withdraw_list`).
+- After blockchain confirmation, Keysecure  notifies the client's business system of the transfer notification (the client's system actively retrieves `/api/mpc/billing/sync_withdraw_list`).
 
 - The client system updates the order status.
 

@@ -5,16 +5,16 @@ title: Monitor and Warn
 
 ## Feature Overview
 
-The Custody system supports monitoring the following operational scenarios for cold wallet functions:
+The Keysecure System supports monitoring the following operational scenarios for cold wallet functions:
 
 1. Balance Monitoring
-Proposal transactions initiated by vote-free addresses do not require signer approval and are automatically passed. Since these transactions require the vote-free address to pay gas fees, it is necessary to maintain a certain amount of the native crypto coin. Insufficient native coin balance will cause transaction failure, affecting the automated scheduling of assets. The Custody system monitors the balance of vote-free addresses on the warm wallet based on the user's configured contract network. If the balance falls below the threshold, an alert is triggered.
+Proposal transactions initiated by vote-free addresses do not require signer approval and are automatically passed. Since these transactions require the vote-free address to pay gas fees, it is necessary to maintain a certain amount of the native crypto coin. Insufficient native coin balance will cause transaction failure, affecting the automated scheduling of assets. The Keysecure System monitors the balance of vote-free addresses on the warm wallet based on the user's configured contract network. If the balance falls below the threshold, an alert is triggered.
 <Tip> 
 If users want to enable balance monitoring, they need to configure the monitoring scope and threshold according to their requirements.
 </Tip>
 
 ## Asset Transfer Task Monitoring
-The Custody system monitors the status of warm-to-hot and hot-to-warm transfer tasks and notifies users of key events.
+The Keysecure System monitors the status of warm-to-hot and hot-to-warm transfer tasks and notifies users of key events.
 
 Key events include:
 * **Cold Wallet System Task Initiation Notification:** The system automatically initiates warm-to-hot, warm-to-cold, and hot-to-warm transfer tasks.

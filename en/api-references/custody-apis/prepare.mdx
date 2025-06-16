@@ -15,12 +15,12 @@ title: Getting Started
 
 When the wallet service receives a request from a third-party application, in confirm that the request is a legitimate request from a third-party application, it will call the interface provided by the third-party to confirm. To a certain extent, this process can avoid the influence caused by the loss of the third party’s private key, and also provides an effective barrier for the security of the wallet service.
 
-| Production domain name (https://openapi.chainup.com/) |    test environment not supported                     |
+| Production domain name (https://openapi.Keysecure .com/) |    test environment not supported                     |
 | :------------------------------------------------------ | ------------------------------------------------------------ |
 | app_id:                                                 | Please get it after creating the wallet                      |
-| rsa_wallet_pub:                                         | Custody system public key; Please create the wallet and get it from the Custody system |
+| rsa_wallet_pub:                                         | Keysecure System public key; Please create the wallet and get it from the Keysecure System |
 | rsa_third_prv:                                          | Client private key; Independent generation and preservation  |
-| rsa_third_pub:                                          | Client public key; Autonomous generation; Please create the wallet and configure it to the Custody system |
+| rsa_third_pub:                                          | Client public key; Autonomous generation; Please create the wallet and configure it to the Keysecure System |
 
 Recommended password length：`2048`
 
@@ -49,7 +49,7 @@ The developer prepares the following information：
 4. Withdrawal secondary confirmation URL.
 
 
-Once you are ready, please visit the Custody Web Portal - Cloud System, select your wallet, and navigate to the **API Management** feature. Fill in the required information according to the system's instructions and create your API.
+Once you are ready, please visit the Keysecure Web Portal - Cloud System, select your wallet, and navigate to the **API Management** feature. Fill in the required information according to the system's instructions and create your API.
 
 <Note>
 Only the wallet creator can edit the API information.
@@ -84,11 +84,11 @@ The interface providers in the following documents are referred to as **wallet s
     <img src="/images/apis/cusotdy-prepare_en.png" width="600"/>
 </div>
 
-ChainUp Custody needs access to the **third-party applications** for second confirmation. Therefore, it's necessary to add the IP to the security group or whitelist of the ChainUp Custody server. Below are the IP addresses for Custody:
+Keysecure needs access to the **third-party applications** for second confirmation. Therefore, it's necessary to add the IP to the security group or whitelist of the Keysecure server. Below are the IP addresses for Custody:
 
-1. Inbound: Allow access from the Custody server (IP: **54.254.7.206**) to the **third-party applications**.
+1. Inbound: Allow access from the Keysecure server (IP: **54.254.7.206**) to the **third-party applications**.
 
-2. Outbound: The **third-party applications** server needs to access the Custody server, so grant permission to access **54.251.87.91:443**.
+2. Outbound: The **third-party applications** server needs to access the Keysecure server, so grant permission to access **54.251.87.91:443**.
 
 ## Interface rules
 

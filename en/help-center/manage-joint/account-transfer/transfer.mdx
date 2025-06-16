@@ -10,9 +10,9 @@ A transaction refers to the process of transferring value from one address to an
 
 Blockchain transactions refer to asset transfers conducted on the blockchain network. Specific types include:
 
-- **On-Chain Deposit**: Users deposit assets from an external address to an on-chain address allocated by the ChainUp Custody Full Custody platform.
-- **On-Chain Withdrawal**: Users withdraw assets from the ChainUp Custody Full Custody platform address to an external address.
-- **Consolidation**: To better manage and custody assets, assets are consolidated to ChainUp Custody Full Custody's custody address.
+- **On-Chain Deposit**: Users deposit assets from an external address to an on-chain address allocated by the Keysecure Full Custody platform.
+- **On-Chain Withdrawal**: Users withdraw assets from the Keysecure Full Custody platform address to an external address.
+- **Consolidation**: To better manage and custody assets, assets are consolidated to Keysecure Full Custody's Keysecure address.
 
 Blockchain transactions rely on confirmations from the blockchain network, which may require a certain amount of time and fees. The status of a transaction can be divided into different stages, with each stage having corresponding statuses to detail the current situation and progress of the transaction.
 
@@ -73,7 +73,7 @@ Withdrawal Miner (Gas) Fees: When users withdraw to a non-alliance address, bloc
 
 #### Status Description
 
-- **Under review by risk control (0)**: The user has initiated a withdrawal request, and the transaction is now pending internal risk control and ChainUp Custody system review.
+- **Under review by risk control (0)**: The user has initiated a withdrawal request, and the transaction is now pending internal risk control and Keysecure system review.
 - **In payment (1)**: The transaction has completed all confirmation steps (including transaction strategy approval, KYT verification, and system review) and has been successfully signed and broadcasted, awaiting blockchain confirmation.
 - **Audit rejection (2)**: This transaction has been terminated and marked as "Audit Rejection" for one of the following reasons:
 
@@ -83,7 +83,7 @@ Withdrawal Miner (Gas) Fees: When users withdraw to a non-alliance address, bloc
 - **Failed (4)**: If the transaction fails due to blockchain network issues or verification failure during the withdrawal process, the status will update to "Failed."
 - **Success (5)**: The blockchain has processed the transaction, and the withdrawal is successful.
 - **Cancelled (6)**: The initiator of the withdrawal has canceled the transaction order, terminating the process and setting the status to "Cancelled."
-- **Pending KYT verification (7)**: The withdrawal request has been submitted but is awaiting review from ChainUp Custody’s internal KYT or wallet-enabled KYT services to ensure compliance and security standards.
+- **Pending KYT verification (7)**: The withdrawal request has been submitted but is awaiting review from Keysecure’s internal KYT or wallet-enabled KYT services to ensure compliance and security standards.
 - **Pending manual review (KYT risk level too high) (8)**: The withdrawal request has been flagged as a potential risk and requires manual review based on KYT policies. The transaction status is pending KYT manual review.
 
 ### Consolidation
@@ -96,14 +96,14 @@ Withdrawal Miner (Gas) Fees: When users withdraw to a non-alliance address, bloc
 Consolidation Miner (Gas) Fees: After the user deposits funds to the allocated address, the system automatically transfers the user's address funds to the system address, incurring this transaction fee.
 </Tip>
 
-In a centralized custody system, different types of addresses (such as Account, UTXO, and addresses containing MEMO fields) have some differences in consolidation operations and costs:
+In a centralized Keysecure System, different types of addresses (such as Account, UTXO, and addresses containing MEMO fields) have some differences in consolidation operations and costs:
 
 - **UTXO Type** (e.g., BTC) supports multiple inputs in a single transaction, and **Memo Type** (e.g., XRP) does not require additional consolidation operations and fees.
 - **Account Type** (e.g., ETH and ERC20 Token) requires each transaction to pay miner (gas) fees from the initiating account, so centralized custody platforms need to periodically consolidate funds.
 
 ## Alliance Transfers
 
-The alliance refers to a group of clients using the Custody system's blockchain services. Clients within the alliance benefit from fast transfer speeds and zero fees when transferring to each other.
+The alliance refers to a group of clients using the Keysecure System's blockchain services. Clients within the alliance benefit from fast transfer speeds and zero fees when transferring to each other.
 
 <Tip>
 Requires the mandatory on-chain function not to be enabled.

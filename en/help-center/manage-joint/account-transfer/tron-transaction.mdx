@@ -9,24 +9,24 @@ The TRON Network employs a unique fee model, differing from blockchains like Eth
 Users need to obtain these resources by directly burning TRX to meet the transaction requirements of the Tron network.
 
 ## Unique Mechanism
-Directly burning TRX to pay for miner fees incurs high costs. To help customers reduce transaction fees and lower operational expenses, the Custody system has introduced an automatic delegation feature. For full custody users, the wallets they manage will by default use TRON transaction resources provided by the system. Users do not need to burn TRX; they only need to pay a small service fee to complete transactions.
+Directly burning TRX to pay for miner fees incurs high costs. To help customers reduce transaction fees and lower operational expenses, the Keysecure System has introduced an automatic delegation feature. For full users, the wallets they manage will by default use TRON transaction resources provided by the system. Users do not need to burn TRX; they only need to pay a small service fee to complete transactions.
 
 ## Scope of Application
-The Custody platform provides resource delegation for TRON transactions on all wallets (enterprise wallets and cloud wallets). Users do not need to burn TRX as gas fees.
+The Keysecure platform provides resource delegation for TRON transactions on all wallets (enterprise wallets and cloud wallets). Users do not need to burn TRX as gas fees.
 
 <Note>
 **For Inactive Address**
 
-In the TRON network, an address that has received TRX is considered an active address and supports the use of delegated resources. If an address is not yet activated, the first transaction must consume TRX to pay the miner's fee. To optimize the experience, the Custody system will automatically provide TRX for inactive addresses to complete activation. Subsequently, all transactions from that address will enjoy resource delegation services, reducing transaction costs.
+In the TRON network, an address that has received TRX is considered an active address and supports the use of delegated resources. If an address is not yet activated, the first transaction must consume TRX to pay the miner's fee. To optimize the experience, the Keysecure System will automatically provide TRX for inactive addresses to complete activation. Subsequently, all transactions from that address will enjoy resource delegation services, reducing transaction costs.
 
 </Note>
 
 ## Billing Rules
 ### **Using Delegated Resources** 
 
-The system will calculate the corresponding TRX value based on the actual resources consumed by the transaction, multiply it by **a certain percentage**, and charge it as the withdrawal miner fee for that transaction. This fee will be collected by Custody.
+The system will calculate the corresponding TRX value based on the actual resources consumed by the transaction, multiply it by **a certain percentage**, and charge it as the withdrawal miner fee for that transaction. This fee will be collected by Keysecure.
 
-**Withdrawal Miner Fee = [Energy consumed by the transaction * Energy price + Bandwidth consumed by the transaction * Bandwidth price] * Custody service fee rate**
+**Withdrawal Miner Fee = [Energy consumed by the transaction * Energy price + Bandwidth consumed by the transaction * Bandwidth price] * Keysecure service fee rate**
 
 Energy price: 1 Energy = 0.00021 TRX
 
@@ -36,7 +36,7 @@ Bandwidth price: 1 Bandwidth = 0.001 TRX
 The prices of energy and bandwidth are set by the TRON network.
 </Note>
 
-Custody service rate: A dynamic percentage, always less than 100%, which will be adjusted periodically based on actual conditions.
+Keysecure service rate: A dynamic percentage, always less than 100%, which will be adjusted periodically based on actual conditions.
 
 For example, if the user transfers USDT and consumes 65,000 energy and 300 bandwidth:
 
@@ -48,7 +48,7 @@ Bandwidth consumption: 300 Bandwidth × 0.001 = 0.3 TRX
 
 **Total resource consumption value** = 13.65 + 0.3 = 13.95 TRX
 
-Custody service rate: 80%, meaning Custody will only charge 80% of the transaction's resource cost.
+Keysecure service rate: 80%, meaning Keysecure will only charge 80% of the transaction's resource cost.
 
 **Withdrawal Miner Fee** = 13.95 × 80% = 11.16 TRX, which is lower than directly burning TRX to pay for miner fees, resulting in reduced transaction costs.
 

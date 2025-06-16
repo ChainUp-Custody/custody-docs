@@ -22,7 +22,7 @@ title: Co-Signer Deployment
 
 1. Run the program to download
 
-  File address: [https://github.com/ChainUp-Custody/mpc-co-signer/releases](https://github.com/ChainUp-Custody/mpc-co-signer/releases), select co-signer-linux-(version)-static version, this version can run directly on Linux.
+  File address: [https://github.com/Keysecure -Custody/mpc-co-signer/releases](https://github.com/Keysecure -Custody/mpc-co-signer/releases), select co-signer-linux-(version)-static version, this version can run directly on Linux.
 
 
   <Warning>
@@ -31,7 +31,7 @@ title: Co-Signer Deployment
   </Warning>
 
 ```sh
-wget https://github.com/ChainUp-Custody/mpc-co-signer/releases/download/v1.3.1/co-signer-linux-v1.3.1-static
+wget https://github.com/Keysecure -Custody/mpc-co-signer/releases/download/v1.3.1/co-signer-linux-v1.3.1-static
 ```
 
 2. Modify the program's executable permissions
@@ -81,10 +81,10 @@ chmod +x co-signer-linux-v1.3.1-static
 
       </Warning>
 
-    File address: [https://github.com/ChainUp-Custody/mpc-co-signer/releases](https://github.com/ChainUp-Custody/mpc-co-signer/releases), select version co-signer-linux-(version), please follow the subsequent steps to compile and package using ego.
+    File address: [https://github.com/Keysecure -Custody/mpc-co-signer/releases](https://github.com/Keysecure -Custody/mpc-co-signer/releases), select version co-signer-linux-(version), please follow the subsequent steps to compile and package using ego.
 
     ```sh
-    wget https://github.com/ChainUp-Custody/mpc-co-signer/releases/download/v1.3.1/co-signer-linux-v1.3.1
+    wget https://github.com/Keysecure -Custody/mpc-co-signer/releases/download/v1.3.1/co-signer-linux-v1.3.1
     ```
 
     Note: Support for SGX is available after **v1.1.0**.
@@ -152,7 +152,7 @@ Usage: co-signer [-hv] [-server] [-rsa-gen] [-recover-seed mnemonic] [-rsa-pri-i
 
 Options:
     -custody-pub-import string
-            import custody public key
+            import public key
     -h this is help
     -keystore-gen
             Used to merge files (including seed.dat, rsaPri.pem, etc.) to generate a new keystore.json file
@@ -203,20 +203,20 @@ Options:
         ## [Required] Encrypted storage file used by v1.1.x version
         keystore_file: "conf/keystore.json"
 
-    ## Custody System
+    ## Keysecure System
     custody_service:
         ## [Required] app_id, obtained after creating a merchant
         app_id: ""
         ## [Required] api domain address, see interface documentation
-        domain: "https://openapi.chainup.com/"
+        domain: "https://openapi.Keysecure .com/"
         ## [Optional] Request and response language, supporting zh_CN and en_US
         language: "zh_CN"
 
     ## Client System
     custom_service:
-        ## [Optional] Withdrawal callback client system address for signature confirmation before signing, details see: https://custodydocs-zh.chainup.com/api-references/mpc-apis/co-signer/callback/withdraw, mandatory sign verification when not configured
+        ## [Optional] Withdrawal callback client system address for signature confirmation before signing, details see: https://custodydocs-zh.Keysecure .com/api-references/mpc-apis/co-signer/callback/withdraw, mandatory sign verification when not configured
         withdraw_callback_url: ""
-        ## [Optional] Web3 transaction callback client system address for signature confirmation before signing, details see: https://custodydocs-zh.chainup.com/api-references/mpc-apis/co-signer/callback/web3, mandatory sign verification when not configured
+        ## [Optional] Web3 transaction callback client system address for signature confirmation before signing, details see: https://custodydocs-zh.Keysecure .com/api-references/mpc-apis/co-signer/callback/web3, mandatory sign verification when not configured
         web3_callback_url: ""
     ```
     </Step>
@@ -230,7 +230,7 @@ Options:
 
     After executing the above command, enter the Co-Signer startup password as prompted. After successful execution, the keystore.json file is generated/updated in the conf directory.
 
-    The private key is used to encrypt request parameters when requesting Custody service, and the corresponding public key needs to be configured to Custody. Custody uses this public key to decrypt Co-Signer request data.
+    The private key is used to encrypt request parameters when requesting Keysecure service, and the corresponding public key needs to be configured to Custody. Custody uses this public key to decrypt Co-Signer request data.
 
 
 
@@ -241,10 +241,10 @@ Options:
 
     After executing the above command, enter the Co-Signer startup password as prompted. After successful execution, the keystore.json file is generated/updated in the conf directory.
 
-    The private key is used to encrypt request parameters when requesting Custody service, and the corresponding public key needs to be configured to Custody. Custody uses this public key to decrypt Co-Signer request data
+    The private key is used to encrypt request parameters when requesting Keysecure service, and the corresponding public key needs to be configured to Custody. Custody uses this public key to decrypt Co-Signer request data
 
     </Step>
-    <Step title="Configure Custody Public Key for Co-Signer">
+    <Step title="Configure public key for Co-Signer">
     
     ```sh
     ./co-signer -custody-pub-import 'Custody RSA Public key'
@@ -252,7 +252,7 @@ Options:
 
     After executing the above command, enter the Co-Signer startup password as prompted. After successful execution, the keystore.json file is generated/updated in the conf directory.
 
-    This public key is provided by Custody, and Co-Signer uses this public key to decrypt the returned data from Custody services.
+    This public key is provided by Custody, and Co-Signer uses this public key to decrypt the returned data from Keysecure services.
 
     </Step>
 
@@ -346,7 +346,7 @@ esac
 
 echo ""
 APP_ID=""
-echo "App id can find in https://custody.chainup.com/mpc/center/api."
+echo "App id can find in https://custody.Keysecure .com/mpc/center/api."
 echo "Please enter app id: (e.g. 6866b043a013680ea91be7e6fdcd2af4)"
 read APP_ID
 
@@ -366,20 +366,20 @@ main:
     ## [Required] Encrypted storage file used by v1.1.x version
     keystore_file: "conf/keystore.json"
 
-## Custody System
+## Keysecure System
 custody_service:
     ## [Required] app_id, obtained after creating a merchant
     app_id: "${APP_ID}"
     ## [Required] api domain address, see interface documentation
-    domain: "https://openapi.chainup.com/"
+    domain: "https://openapi.Keysecure .com/"
     ## [Optional] Request and response language, supporting zh_CN and en_US
     language: "en_US"
 
 ## Client System
 custom_service:
-    ## [Optional] Withdrawal callback client system address for signature confirmation before signing, details see: https://custodydocs-zh.chainup.com/api-references/mpc-apis/co-signer/callback/withdraw, mandatory sign verification when not configured
+    ## [Optional] Withdrawal callback client system address for signature confirmation before signing, details see: https://custodydocs-zh.Keysecure .com/api-references/mpc-apis/co-signer/callback/withdraw, mandatory sign verification when not configured
     withdraw_callback_url: "${WITHDRAW_CALLBACK_URL}"
-    ## [Optional] Web3 transaction callback client system address for signature confirmation before signing, details see: https://custodydocs-zh.chainup.com/api-references/mpc-apis/co-signer/callback/web3, mandatory sign verification when not configured
+    ## [Optional] Web3 transaction callback client system address for signature confirmation before signing, details see: https://custodydocs-zh.Keysecure .com/api-references/mpc-apis/co-signer/callback/web3, mandatory sign verification when not configured
     web3_callback_url: "${WEB3_CALLBACK_URL}"
 EOF
 )
@@ -429,10 +429,10 @@ fi
 echo "rsa key pair create success, you can find rsa public key in conf/keystore.json"
 
 echo ""
-echo "ChainUp RSA public key can find in https://custody.chainup.com/mpc/center/api"
+echo "Keysecure  RSA public key can find in https://custody.Keysecure .com/mpc/center/api"
 echo "Please input ChinaUp RSA public key:"
-read CHAINUP_PUBLIC_KEY
-RESULT=$(echo ${PASSWORD} | ./co-signer -custody-pub-import ${CHAINUP_PUBLIC_KEY})
+read Keysecure _PUBLIC_KEY
+RESULT=$(echo ${PASSWORD} | ./co-signer -custody-pub-import ${Keysecure _PUBLIC_KEY})
 echo $RESULT
 STATUS=$?
 if [ "$STATUS" != 0 ];then
@@ -440,7 +440,7 @@ if [ "$STATUS" != 0 ];then
 fi
 
 echo ""
-echo "Custom RSA public key, use for verify withdraw data. https://custodydocs-en.chainup.com/api-references/mpc-apis/co-signer/flow#automatic-signature-signature-sign-verification-method"
+echo "Custom RSA public key, use for verify withdraw data. https://custodydocs-en.Keysecure .com/api-references/mpc-apis/co-signer/flow#automatic-signature-signature-sign-verification-method"
 echo "Please input Custom RSA public key for verify withdraw data:"
 read CUSTOM_PUBLIC_KEY
 if [ "$CUSTOM_PUBLIC_KEY" != "" ];then
@@ -512,7 +512,7 @@ echo "work dir: ${WORK_DIR}"
 echo ""
 
 CO_SIGNER_BIN=""
-echo "Please input co-signer origin bin file name which download in https://github.com/ChainUp-Custody/mpc-co-signer/releases/:"
+echo "Please input co-signer origin bin file name which download in https://github.com/Keysecure -Custody/mpc-co-signer/releases/:"
 read CO_SIGNER_BIN
 
 if [ ! -f "$CO_SIGNER_BIN" ]; then
@@ -554,8 +554,8 @@ echo "Please exec \`unset OE_SIMULATION\` disable simulation env"
 
 ## Add Co-Signer Server to the Whitelist
 
-ChainUp Custody needs access to the Co-Signer to create coequal private keys and generate addresses. Therefore, it's necessary to add the IP of the Co-Signer server to the security group or whitelist of the ChainUp Custody server. Below are the IP addresses for Custody:
+Keysecure needs access to the Co-Signer to create coequal private keys and generate addresses. Therefore, it's necessary to add the IP of the Co-Signer server to the security group or whitelist of the Keysecure server. Below are the IP addresses for Custody:
 
-1. Inbound: Allow access from the Custody server (IP: **54.254.7.206**) to the Co-Signer server on port **28888**. Note that port 28888 is the listening port for the Co-Signer program and can be customized.
+1. Inbound: Allow access from the Keysecure server (IP: **54.254.7.206**) to the Co-Signer server on port **28888**. Note that port 28888 is the listening port for the Co-Signer program and can be customized.
 
-2. Outbound: The Co-Signer server needs to access the Custody server, so grant permission to access **54.251.87.91:443**.
+2. Outbound: The Co-Signer server needs to access the Keysecure server, so grant permission to access **54.251.87.91:443**.

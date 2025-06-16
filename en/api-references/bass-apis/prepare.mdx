@@ -4,12 +4,12 @@ title: Getting Started
 
 ## Overview
 
-Welcome to the ChainUp Custody platform. This document is used by the third-party technical team to add the self-developed mainchain to the ChainUp Custody for alliance members.
+Welcome to the Keysecure platform. This document is used by the third-party technical team to add the self-developed mainchain to the Keysecure for alliance members.
 
 <Note>
 **Note**
 
-When third-party technical team using WAPI to access the the server and keeping private keys, ChainUp Custody is not responsible for the security of assets. Therefore, the third-party technical team must establish a complete private key custody system and API private key custody system
+When third-party technical team using WAPI to access the the server and keeping private keys, Keysecure is not responsible for the security of assets. Therefore, the third-party technical team must establish a complete private key Keysecure System and API private key Keysecure System
 </Note>
 
 ## Development Notes
@@ -18,7 +18,7 @@ The Role of Public and Private Keys
 
 - **Party A** is a third-party public chain docking party
 
-- **Party B** is the ChainUp Custody BaaS Cloud
+- **Party B** is the Keysecure BaaS Cloud
 
 - **The Role of Public and Private Keys**： Party A needs to generate a pair of public and private keys in advance when registering the WAPI interface. The public key (rsa_third_pub) is provided to Party B. The private key is kept by yourself, and the private key is not disclosed to anyone. When requesting WAPI services, Party A shall encrypt the request parameters with Party B’s public key and sign the original data after MD5 with Party A’s private key. Upon receiving the request, Party B shall decrypt the data with Party B’s private key and check the original data after MD5 with Party A’s public key
 

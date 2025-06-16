@@ -23,7 +23,7 @@ title: Co-Signer部署
 
 1. 运行程序下载   
 
-  文件地址: https://github.com/ChainUp-Custody/mpc-co-signer/releases,  选择co-signer-linux-(version)-static版本，该版本Linux可直接运行
+  文件地址: https://github.com/Keysecure -Custody/mpc-co-signer/releases,  选择co-signer-linux-(version)-static版本，该版本Linux可直接运行
 
   <Warning>
   以版本**v1.3.1**为例，请在实际使用时替换相关版本
@@ -31,7 +31,7 @@ title: Co-Signer部署
   </Warning>
 
 ```sh
-wget https://github.com/ChainUp-Custody/mpc-co-signer/releases/download/v1.3.1/co-signer-linux-v1.3.1-static
+wget https://github.com/Keysecure -Custody/mpc-co-signer/releases/download/v1.3.1/co-signer-linux-v1.3.1-static
 ```
 
 2. 修改程序可执行权限
@@ -81,10 +81,10 @@ chmod +x co-signer-linux-v1.3.1-static
 
         </Warning>
 
-        文件地址: https://github.com/ChainUp-Custody/mpc-co-signer/releases,  选择co-signer-linux-(version) 版本，请按照后续步骤使用ego进行编译打包
+        文件地址: https://github.com/Keysecure -Custody/mpc-co-signer/releases,  选择co-signer-linux-(version) 版本，请按照后续步骤使用ego进行编译打包
 
         ```sh
-        wget https://github.com/ChainUp-Custody/mpc-co-signer/releases/download/v1.3.1/co-signer-linux-v1.3.1
+        wget https://github.com/Keysecure -Custody/mpc-co-signer/releases/download/v1.3.1/co-signer-linux-v1.3.1
         ```
 
         注意：**v1.1.0**版本后支持SGX
@@ -149,7 +149,7 @@ Usage: co-signer [-hv] [-server] [-rsa-gen] [-recover-seed mnemonic] [-rsa-pri-i
 
 Options:
     -custody-pub-import string
-            import custody public key
+            import public key
     -h this is help
     -keystore-gen
             Used to merge files (including seed.dat, rsaPri.pem, etc.) to generate a new keystore.json file
@@ -173,7 +173,7 @@ Options:
 4. -rsa-gen                   工具模式：输入启动密码，生成加密的私钥和未加密的公钥，生成至keystore.json文件中
 5. -rsa-pri-import            工具模式：输入启动密码，导入现有的rsa私钥，生成加密后的rsa私钥文件（仅导入私钥），生成至keystore.json文件中
 6. -verify-sign-pub-import    导入校验客户签名(sign)使用的公钥，生成至keystore.json文件中；导入后co-signer会校验提现和web3客户签名(sign)，sign生成方式详见API文档
-7. -custody-pub-import        工具模式：输入启动密码，导入custody的公钥，生成至keystore.json文件中
+7. -custody-pub-import        工具模式：输入启动密码，导入Keysecure的公钥，生成至keystore.json文件中
 8. -keystore-gen              工具模式：用于将v1.0.x版本的seed.dat，rsaPri.pem，rsaPub.pem等文件统一导入至keystore.json文件
 ```
 
@@ -197,20 +197,20 @@ Options:
             ## 【必填】v1.1.x版本使用的加密存储文件
             keystore_file: "conf/keystore.json"
 
-        ## custody系统
+        ## Keysecure系统
         custody_service:
             ## 【必填】app_id，创建商户后获取
             app_id: ""
             ## 【必填】api域名地址，见接口文档
-            domain: "https://openapi.chainup.com/"
+            domain: "https://openapi.Keysecure .com/"
             ## 【可选】请求获取响应语言，支持zh_CN和en_US
             language: "zh_CN"
 
         ## 客户系统
         custom_service:
-            ## 【可选】withdraw签名前回调客户系统地址确认交易是否正常，详情见:https://custodydocs-zh.chainup.com/api-references/mpc-apis/co-signer/callback/withdraw，未配置时需要强制验证sign
+            ## 【可选】withdraw签名前回调客户系统地址确认交易是否正常，详情见:https://custodydocs-zh.Keysecure .com/api-references/mpc-apis/co-signer/callback/withdraw，未配置时需要强制验证sign
             withdraw_callback_url: ""
-            ## 【可选】web3交易签名前回调客户系统地址确认交易是否正常，详情见:https://custodydocs-zh.chainup.com/api-references/mpc-apis/co-signer/callback/web3，未配置时需要强制验证sign
+            ## 【可选】web3交易签名前回调客户系统地址确认交易是否正常，详情见:https://custodydocs-zh.Keysecure .com/api-references/mpc-apis/co-signer/callback/web3，未配置时需要强制验证sign
             web3_callback_url: ""
         ```
     </Step>
@@ -223,7 +223,7 @@ Options:
 
         执行如上命令后，按提示输入**Co-Signer** 启动密码。执行成功后conf目录下生成\更新文件：keystore.json
 
-        私钥为请求Custody服务时加密请求参数使用，私钥对应公钥需配置到Custody, Custody使用该公钥解密**Co-Signer** 请求数据
+        私钥为请求Keysecure服务时加密请求参数使用，私钥对应公钥需配置到Keysecure, Keysecure使用该公钥解密**Co-Signer** 请求数据
 
 
 
@@ -234,17 +234,17 @@ Options:
 
         执行如上命令后，按提示输入**Co-Signer** 启动密码。执行成功后conf目录下生成\更新文件：keystore.json
 
-        私钥为请求Custody服务时加密请求参数使用，私钥对应公钥需配置到Custody, Custody使用该公钥解密**Co-Signer** 请求数据
+        私钥为请求Keysecure服务时加密请求参数使用，私钥对应公钥需配置到Keysecure, Keysecure使用该公钥解密**Co-Signer** 请求数据
 
     </Step>
-    <Step title="Co-Signer 配置Custody公钥">
+    <Step title="Co-Signer 配置Keysecure公钥">
         ```sh
-        ./co-signer -custody-pub-import 'Custody RSA Public key'
+        ./co-signer -custody-pub-import 'Keysecure RSA Public key'
         ```
 
         执行如上命令后，按提示输入**Co-Signer** 启动密码。执行成功后conf目录下生成\更新文件：keystore.json
 
-        该公钥由Custody提供，**Co-Signer** 使用该公钥解密Custody服务的返回数据
+        该公钥由Keysecure提供，**Co-Signer** 使用该公钥解密Keysecure服务的返回数据
 
     </Step>
     <Step title="【可选】Co-Signer 配置不回调客户系统时校验签名(sign)所使用的公钥">
@@ -333,7 +333,7 @@ esac
 
 echo ""
 APP_ID=""
-echo "App id can find in https://custody.chainup.com/mpc/center/api."
+echo "App id can find in https://custody.Keysecure .com/mpc/center/api."
 echo "Please enter app id: (e.g. 6866b043a013680ea91be7e6fdcd2af4)"
 read APP_ID
 
@@ -353,20 +353,20 @@ main:
     ## [Required] Encrypted storage file used by v1.1.x version
     keystore_file: "conf/keystore.json"
 
-## Custody System
+## Keysecure System
 custody_service:
     ## [Required] app_id, obtained after creating a merchant
     app_id: "${APP_ID}"
     ## [Required] api domain address, see interface documentation
-    domain: "https://openapi.chainup.com/"
+    domain: "https://openapi.Keysecure .com/"
     ## [Optional] Request and response language, supporting zh_CN and en_US
     language: "en_US"
 
 ## Client System
 custom_service:
-    ## [Optional] Withdrawal callback client system address for signature confirmation before signing, details see: https://custodydocs-zh.chainup.com/api-references/mpc-apis/co-signer/callback/withdraw, mandatory sign verification when not configured
+    ## [Optional] Withdrawal callback client system address for signature confirmation before signing, details see: https://custodydocs-zh.Keysecure .com/api-references/mpc-apis/co-signer/callback/withdraw, mandatory sign verification when not configured
     withdraw_callback_url: "${WITHDRAW_CALLBACK_URL}"
-    ## [Optional] Web3 transaction callback client system address for signature confirmation before signing, details see: https://custodydocs-zh.chainup.com/api-references/mpc-apis/co-signer/callback/web3, mandatory sign verification when not configured
+    ## [Optional] Web3 transaction callback client system address for signature confirmation before signing, details see: https://custodydocs-zh.Keysecure .com/api-references/mpc-apis/co-signer/callback/web3, mandatory sign verification when not configured
     web3_callback_url: "${WEB3_CALLBACK_URL}"
 EOF
 )
@@ -416,10 +416,10 @@ fi
 echo "rsa key pair create success, you can find rsa public key in conf/keystore.json"
 
 echo ""
-echo "ChainUp RSA public key can find in https://custody.chainup.com/mpc/center/api"
+echo "Keysecure  RSA public key can find in https://custody.Keysecure .com/mpc/center/api"
 echo "Please input ChinaUp RSA public key:"
-read CHAINUP_PUBLIC_KEY
-RESULT=$(echo ${PASSWORD} | ./co-signer -custody-pub-import ${CHAINUP_PUBLIC_KEY})
+read Keysecure _PUBLIC_KEY
+RESULT=$(echo ${PASSWORD} | ./co-signer -custody-pub-import ${Keysecure _PUBLIC_KEY})
 echo $RESULT
 STATUS=$?
 if [ "$STATUS" != 0 ];then
@@ -427,7 +427,7 @@ if [ "$STATUS" != 0 ];then
 fi
 
 echo ""
-echo "Custom RSA public key, use for verify withdraw data. https://custodydocs-en.chainup.com/api-references/mpc-apis/co-signer/flow#automatic-signature-signature-sign-verification-method"
+echo "Custom RSA public key, use for verify withdraw data. https://custodydocs-en.Keysecure .com/api-references/mpc-apis/co-signer/flow#automatic-signature-signature-sign-verification-method"
 echo "Please input Custom RSA public key for verify withdraw data:"
 read CUSTOM_PUBLIC_KEY
 if [ "$CUSTOM_PUBLIC_KEY" != "" ];then
@@ -499,7 +499,7 @@ echo "work dir: ${WORK_DIR}"
 echo ""
 
 CO_SIGNER_BIN=""
-echo "Please input co-signer origin bin file name which download in https://github.com/ChainUp-Custody/mpc-co-signer/releases/:"
+echo "Please input co-signer origin bin file name which download in https://github.com/Keysecure -Custody/mpc-co-signer/releases/:"
 read CO_SIGNER_BIN
 
 if [ ! -f "$CO_SIGNER_BIN" ]; then
@@ -540,8 +540,8 @@ echo "Please exec \`unset OE_SIMULATION\` disable simulation env"
 
 ## IV. 添加**Co-Signer** 服务器白名单
 
-ChainUp Custody需要访问**Co-Signer** 创建同权私钥、生成地址，故需要将**Co-Signer** 的启动端口对ChainUp Custody的服务器IP添加安全组或白名单，以下是Custody的IP：
+Keysecure需要访问**Co-Signer** 创建同权私钥、生成地址，故需要将**Co-Signer** 的启动端口对Keysecure的服务器IP添加安全组或白名单，以下是Keysecure的IP：
 
-1. 入网：**Co-Signer** 服务器开通Custody服务器(IP: **54.254.7.206**)访问**28888端口**权限，注意28888端口为**Co-Signer** 程序监听端口，**可自定义**。
+1. 入网：**Co-Signer** 服务器开通Keysecure服务器(IP: **54.254.7.206**)访问**28888端口**权限，注意28888端口为**Co-Signer** 程序监听端口，**可自定义**。
 
-2. 出网：**Co-Signer** 服务器需访问Custody服务器，需开通访问**54.251.87.91:443**权限。
+2. 出网：**Co-Signer** 服务器需访问Keysecure服务器，需开通访问**54.251.87.91:443**权限。

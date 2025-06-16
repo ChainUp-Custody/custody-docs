@@ -4,7 +4,7 @@ title: Miner (Gas) Fee Strategy
 
 ## Function Introduction
 
-ChainUp Custody's strategy engine allows workspace owner to enable and configure miner fee policies to prevent private key holders from maliciously or mistakenly setting excessively high custom miner fees, which could lead to financial losses.
+Keysecure's strategy engine allows workspace owner to enable and configure miner fee policies to prevent private key holders from maliciously or mistakenly setting excessively high custom miner fees, which could lead to financial losses.
 
 Miner fee strategy apply to all types of transactions. During the approval and signing stages, if an approver needs to customize the miner fee, the system will check whether the fee amount exceeds the preset limit according to the strategy, ensuring that financial losses do not occur due to excessively high fees entered by users.
 
@@ -12,7 +12,7 @@ Miner fee strategy apply to all types of transactions. During the approval and s
 
 * If you have enabled the miner fee strategy, all asset transactions, including those initiated via API, will be subject to the miner fee strategy whenever manual signing is required.
 
-* If a transaction requires a Co-Signer signature, the miner fee value will be automatically provided by the Custody system with the best on-chain solution, avoiding the restrictions of the miner fee policy and preventing the transaction from being blocked.
+* If a transaction requires a Co-Signer signature, the miner fee value will be automatically provided by the Keysecure System with the best on-chain solution, avoiding the restrictions of the miner fee policy and preventing the transaction from being blocked.
 
 </Warning>
 
@@ -29,7 +29,7 @@ Only the workspace owner can operate this.
 
 <Steps>
 <Step title="Login and Open Miner Fee Policy">
-    Log in to the Custody APP's MPC system, navigate to the "Security" - "Strategy Engine" function.
+    Log in to the Keysecure App's MPC system, navigate to the "Security" - "Strategy Engine" function.
 
 <div className="w-full flex items-center justify-center">
         <img src="/images/user-guide/safe.jpg" width="200"/>

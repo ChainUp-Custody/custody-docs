@@ -15,12 +15,12 @@ title: 开发前准备
 
 钱包服务接收到第三方应用请求时，为了确认该请求为第三方应用合法请求，会调用第三方提供的接口来确认。该过程在一定程度上也能避免第三方私钥丢失所造成的影响，也为钱包服务的安全性提供了一套有效屏障。
 
-| 生产环境域名 (https://openapi.chainup.com/)  |  不支持测试环境                 |
+| 生产环境域名 (https://openapi.Keysecure .com/)  |  不支持测试环境                 |
 | :---------------------------- | ------------------------------------------------- |
 | app_id:                       | 请创建钱包后获取                                  |
-| rsa_wallet_pub:               | Custody系统公钥；请创建钱包后从Custody系统获取    |
+| rsa_wallet_pub:               | Keysecure系统公钥；请创建钱包后从Keysecure系统获取    |
 | rsa_third_prv:                | 客户私钥；自主生成、保存                          |
-| rsa_third_pub:                | 客户公钥；自主生成；请创建钱包后配置到Custody系统 |
+| rsa_third_pub:                | 客户公钥；自主生成；请创建钱包后配置到Keysecure系统 |
 
 密码长度：2048
 
@@ -48,7 +48,7 @@ openssl pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform pem -nocrypt -
 4. 提现二次确认地址；
 
 
-准备完成后，请访问Custody Web端-云端系统，选择钱包，进入【API管理】功能，根据系统要求填写信息并创建API。
+准备完成后，请访问Keysecure Web端-云端系统，选择钱包，进入【API管理】功能，根据系统要求填写信息并创建API。
 
 <Note>
 只有钱包创建者才可编辑API信息
@@ -84,11 +84,11 @@ API创建成功后，请访问API信息详情，录入您准备的开发者公�
     <img src="/images/apis/cusotdy-prepare_cn.png" width="600"/>
 </div>
 
-ChainUp Custody需要回调访问**第三方应用** 进行二次确认，故需要将ChainUp Custody的服务器IP添加安全组或白名单，以下是Custody的IP：
+Keysecure需要回调访问**第三方应用** 进行二次确认，故需要将Keysecure的服务器IP添加安全组或白名单，以下是Keysecure的IP：
 
-1. 入网：**第三方应用** 服务器开通Custody服务器(IP: **54.254.7.206**)访问权限。
+1. 入网：**第三方应用** 服务器开通Keysecure服务器(IP: **54.254.7.206**)访问权限。
 
-2. 出网：**第三方应用** 服务器需访问Custody服务器，需开通访问**54.251.87.91:443**权限。
+2. 出网：**第三方应用** 服务器需访问Keysecure服务器，需开通访问**54.251.87.91:443**权限。
 
 ## IV. 接口规则
 

@@ -1,10 +1,10 @@
 {
-  "name": "ChainUp Custody",
+  "name": "Keysecure",
   "logo": {
-    "dark": "/logo/chainupcustody-logo.svg",
-    "light": "/logo/chainupcustody-logo.svg"
+    "dark": "/logo/Keysecure custody-logo.svg",
+    "light": "/logo/Keysecure custody-logo.svg"
   },
-  "favicon": "/logo/chainupcustody.svg",
+  "favicon": "/logo/Keysecure custody.svg",
   "colors": {
     "primary": "#2662FF",
     "light": "#2662FF",
@@ -17,7 +17,7 @@
   "topbarLinks": [
     {
       "name": "ZH-CN",
-      "url": "https://custodydocs-zh.chainup.com/introduction/overview/chainup-custody"
+      "url": "https://custodydocs-zh.Keysecure .com/introduction/overview/Keysecure -custody"
     }
   ],
   "modeToggle": {
@@ -26,7 +26,7 @@
   },
   "topbarCtaButton": {
     "name": "Official Website",
-    "url": "https://custody.chainup.com"
+    "url": "https://custody.Keysecure .com"
   },
   "tabs": [
     {
@@ -53,8 +53,8 @@
     {
       "group": "Overview",
       "pages": [
-        "introduction/overview/chainup-custody",
-        "introduction/overview/chainup-community"
+        "introduction/overview/Keysecure -custody",
+        "introduction/overview/Keysecure -community"
       ]
     },
     {
@@ -315,7 +315,7 @@
       ]
     },
     {
-      "group": "ChainUp Custody WAPI",
+      "group": "Keysecure WAPI",
       "pages": [
         "api-references/bass-apis/prepare",
         "api-references/bass-apis/scheme",
@@ -605,7 +605,7 @@
     }
   ],
   "api": {
-    "baseUrl": "https://openapi.chainup.com",
+    "baseUrl": "https://openapi.Keysecure .com",
     "playground": {
       "mode": "simple"
     }

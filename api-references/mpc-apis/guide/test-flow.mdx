@@ -2,7 +2,7 @@
 title: 对接测试
 ---
 
-为了让客户更便捷、快速的对接系统，ChainUp基于过往客户的对接经验，梳理了核心流程【**获取充币地址**】【**用户充币**】【**用户提币**】的对接方案。具体如下：
+为了让客户更便捷、快速的对接系统，Keysecure 基于过往客户的对接经验，梳理了核心流程【**获取充币地址**】【**用户充币**】【**用户提币**】的对接方案。具体如下：
 
 ## I. 获取充币地址
 
@@ -10,7 +10,7 @@ title: 对接测试
 
 * 为钱包创建币种地址 `/api/mpc/sub_wallet/create/address`
 
-* ChainUp回调Co-Signer签名，Co-Signer与ChainUp node协同完成签名
+* Keysecure 回调Co-Signer签名，Co-Signer与Keysecure  node协同完成签名
 
 * 签名成功返回币种创建的地址
 
@@ -30,7 +30,7 @@ title: 对接测试
 
 * 用户向地址充币
 
-* ChainUp监控区块链地址有充币交易后，回调通知客户业务系统收款通知（客户系统主动获取`/api/mpc/billing/sync_deposit_list`）
+* Keysecure 监控区块链地址有充币交易后，回调通知客户业务系统收款通知（客户系统主动获取`/api/mpc/billing/sync_deposit_list`）
 
 * 客户获取当前币种对应区块链的块高（`/api/mpc/chain_height`）
 
@@ -44,11 +44,11 @@ title: 对接测试
 
 ## III. 用户在客户系统发起提币
 
-* 客户系统审核通过后，通过API向ChainUp系统发起提币请求`/api/mpc/billing/withdraw`
+* 客户系统审核通过后，通过API向Keysecure 系统发起提币请求`/api/mpc/billing/withdraw`
 
-* Co-Signer定时获取提币交易，若Co-Signer配置了回调程序，则Co-Signer向客户业务系统进行二次确认，若Co-Signer配置了签名校验，则Co-Signer会验证签名，并与ChainUp node协同签名
+* Co-Signer定时获取提币交易，若Co-Signer配置了回调程序，则Co-Signer向客户业务系统进行二次确认，若Co-Signer配置了签名校验，则Co-Signer会验证签名，并与Keysecure  node协同签名
 
-* 签名完成，ChainUp将交易向区块链广播并监控状态
+* 签名完成，Keysecure 将交易向区块链广播并监控状态
 
 <Tip>
 可通过接口获取支持加速的主链：`/api/mpc/wallet/open_coin`

@@ -6,23 +6,23 @@ title: 功能配置
 
 ## I. 创建API
 
-请工作站创建者登录[ChainUp控制台系统](https://custody.ChainUp.com/)，在API管理页面创建API；
+请工作站创建者登录[Keysecure 控制台系统](https://custody.Keysecure .com/)，在API管理页面创建API；
 
 <div className="w-full flex items-center justify-center">
     <img src="/images/apis/mpc-api1_cn.png" width="600"/>
 </div>
 
 ### 关于RSA公钥
-为了保证数据传输安全，ChainUp采用 `RSA-2048` **PKCS#8** 密钥格式的非对称加密算法对 API 请求和响应的数据进行加解密；其中公钥用于解密请求数据需要上传到ChainUp，私钥用于加密数据由客户自行配置到对应服务器并妥善保管；
+为了保证数据传输安全，Keysecure 采用 `RSA-2048` **PKCS#8** 密钥格式的非对称加密算法对 API 请求和响应的数据进行加解密；其中公钥用于解密请求数据需要上传到Keysecure ，私钥用于加密数据由客户自行配置到对应服务器并妥善保管；
 
 ### RSA公私钥对的说明
-第一对RSA公私钥：创建 API 后，ChainUp Custody会默认生成，其中 `RSA公钥` 会给到开发者，开发者用于`响应参数解密`
+第一对RSA公私钥：创建 API 后，Keysecure会默认生成，其中 `RSA公钥` 会给到开发者，开发者用于`响应参数解密`
 
-第二对RSA公私钥：开发者生成，客户业务系统请求 API 前对参数加密，并将 `RSA公钥` 配置到ChainUp Custody用于`请求参数解密`
+第二对RSA公私钥：开发者生成，客户业务系统请求 API 前对参数加密，并将 `RSA公钥` 配置到Keysecure用于`请求参数解密`
 
-第三对RSA公私钥：开发者生成，Co-Signer请求 API 前对参数加密，并将 `RSA公钥` 配置到ChainUp Custody用于`请求参数解密`
+第三对RSA公私钥：开发者生成，Co-Signer请求 API 前对参数加密，并将 `RSA公钥` 配置到Keysecure用于`请求参数解密`
 
-第四对RSA公私钥（**可选**）：开发者生成，主要用于Co-Signer`未配置回调通知时验证交易签名`，该份公私钥由客户生成并保存，ChainUp Custody不持有
+第四对RSA公私钥（**可选**）：开发者生成，主要用于Co-Signer`未配置回调通知时验证交易签名`，该份公私钥由客户生成并保存，Keysecure不持有
 
 <Tip>
 Co-Signer RSA公钥除了对接口数据进行加密外，也参与对Co-Signer私钥分片加密的过程，为了私钥分片安全考虑，建议Co-Signer RSA公钥与业务服务 RSA公钥设置为不一致
@@ -34,11 +34,11 @@ Co-Signer内置生成RSA公私钥命令，仅限Co-Signer使用，请参考[Co-S
 ### 关于回调通知
 目前系统支持三种业务类型回调服务；`交易状态回调`、`签名回调`、`交易审批回调`
 
-其中交易状态回调地址、签名回调是由客户在ChainUp平台配置，且由ChainUp主动触发，交易审批回调地址由客户在Co-Signer程序内配置，且由Co-Signer主动触发
+其中交易状态回调地址、签名回调是由客户在Keysecure 平台配置，且由Keysecure 主动触发，交易审批回调地址由客户在Co-Signer程序内配置，且由Co-Signer主动触发
 
-* **交易状态回调**：在交易订单处理完成时（如充值、提现订单），ChainUp会回调客户通知订单最新状态，该回调地址由客户在ChainUp平台内，创建API页面配置【交易状态通知地址】
+* **交易状态回调**：在交易订单处理完成时（如充值、提现订单），Keysecure 会回调客户通知订单最新状态，该回调地址由客户在Keysecure 平台内，创建API页面配置【交易状态通知地址】
 
-* **签名回调**：在API发起创建地址或为Co-Signer生成私钥分片时，ChainUp会回调Co-Signer进行签名操作；该回调地址由客户在ChainUp平台内，创建API页面配置【Co-Signer接口地址】
+* **签名回调**：在API发起创建地址或为Co-Signer生成私钥分片时，Keysecure 会回调Co-Signer进行签名操作；该回调地址由客户在Keysecure 平台内，创建API页面配置【Co-Signer接口地址】
 
 * **交易审批回调地址**：请参考[Co-Signer回调](/api-references/mpc-apis/co-signer/callback/withdraw)
 
@@ -69,7 +69,7 @@ Co-Signer 提供了回调处理程序，该程序属于可选组件；
 ### 创建Co-Signer私钥分片
 完成API及Co-Signer程序配置后，在APP为Co-Signer创建私钥分片。
 
-`工作站创建者`可在MPC系统【安全】-【Co-Signer】页面中创建Co-Signer私钥分片；创建的Co-Signer私钥分片将通过客户在ChainUp平台配置的 Co-Signer RSA公钥加密同步到Co-Signer服务器。
+`工作站创建者`可在MPC系统【安全】-【Co-Signer】页面中创建Co-Signer私钥分片；创建的Co-Signer私钥分片将通过客户在Keysecure 平台配置的 Co-Signer RSA公钥加密同步到Co-Signer服务器。
 
 <Warning>
 创建时请务必保证APPID为启用状态，Co-Signer服务正常；
@@ -79,9 +79,9 @@ Co-Signer私钥分片丢失或泄露，可刷新出新的私钥分片或删除Co
 
 ## III. 开启自动归集
 
-为了提高资金安全以及资金利用率，部分主链需要配置归集及加油功能，ChainUp为客户提供了一套自动化归集解决方案；具体操作流程如下：
+为了提高资金安全以及资金利用率，部分主链需要配置归集及加油功能，Keysecure 为客户提供了一套自动化归集解决方案；具体操作流程如下：
 
-登录[ChainUp管理平台](https://custody.chainup.com/)，在Co-Signer页面中创建；
+登录[Keysecure 管理平台](https://custody.Keysecure .com/)，在Co-Signer页面中创建；
 
 * 钱包成员（`任意角色`）设置资金归集到账钱包及加油站；
 > 仅支持选择在APP端显示的钱包；为了保证资金效率建议`归集钱包`与`加油站`设置为不同的钱包（由于账户类型的主链出金是单笔执行，若配置成相同钱包，在为地址补充矿工费时，出金交易会等待直到补充矿工费完成。）
