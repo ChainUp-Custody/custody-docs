@@ -17,7 +17,7 @@
   "topbarLinks": [
     {
       "name": "ZH-CN",
-      "url": "https://custodydocs-zh.Keysecure .com/introduction/overview/Keysecure -custody"
+      "url": "https://http://docs-cn.keysecure.io/"
     }
   ],
   "modeToggle": {
@@ -53,8 +53,8 @@
     {
       "group": "Overview",
       "pages": [
-        "introduction/overview/Keysecure -custody",
-        "introduction/overview/Keysecure -community"
+        "introduction/overview/chainup-custody",
+        "introduction/overview/chainup-community"
       ]
     },
     {
@@ -605,7 +605,7 @@
     }
   ],
   "api": {
-    "baseUrl": "https://openapi.Keysecure .com",
+    "baseUrl": "https://openapi.custody.com",
     "playground": {
       "mode": "simple"
     }
