@@ -333,7 +333,7 @@ esac
 
 echo ""
 APP_ID=""
-echo "App id can find in https://custody.Keysecure .com/mpc/center/api."
+echo "App id can find in https://keysecure.iompc/center/api."
 echo "Please enter app id: (e.g. 6866b043a013680ea91be7e6fdcd2af4)"
 read APP_ID
 
@@ -416,7 +416,7 @@ fi
 echo "rsa key pair create success, you can find rsa public key in conf/keystore.json"
 
 echo ""
-echo "Keysecure  RSA public key can find in https://custody.Keysecure .com/mpc/center/api"
+echo "Keysecure  RSA public key can find in https://keysecure.iompc/center/api"
 echo "Please input ChinaUp RSA public key:"
 read Keysecure _PUBLIC_KEY
 RESULT=$(echo ${PASSWORD} | ./co-signer -custody-pub-import ${Keysecure _PUBLIC_KEY})
