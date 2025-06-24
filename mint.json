@@ -606,7 +606,8 @@
   }
   ],
   "api": {
-  "baseUrl": "https://openapi.chainup.com",
+  "baseUrl": "https://openapi.Keysecure.io/
+",
   "playground": {
   "mode": "simple"
   }
