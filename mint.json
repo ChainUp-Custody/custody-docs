@@ -606,8 +606,7 @@
   }
   ],
   "api": {
-  "baseUrl": "https://openapi.Keysecure.io/
-",
+  "baseUrl": "https://openapi.Keysecure.io/",
   "playground": {
   "mode": "simple"
   }
