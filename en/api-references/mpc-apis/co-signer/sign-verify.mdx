@@ -15,3 +15,11 @@ In addition to the Co-Signer callback mechanism, Clients can simultaneously pass
 * After concatenating the parameters, convert to lowercase and then use MD5 encryption. For example, if the parameters before encryption are `address_to=0x5edc9177997bf6b4db559a5c184051858b3b3704&amount=1.0001`, the MD5 encryption result is `c10c47a46b616526e739985ce1c7f15d`.
 
 * Use the `SHA256 algorithm` to sign the MD5 data with RSA, and then encode it with `BASE64` to obtain the final signature data.
+
+#### Setting Verify Public Key
+ <div className="w-full flex items-center justify-left">
+    <CardGroup cols={5}>
+    <img src="/images/custody-guide/co_signer_show_rsa.png" width="1000"/>
+    
+    </CardGroup>
+</div>
