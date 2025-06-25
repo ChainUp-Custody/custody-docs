@@ -1,10 +1,10 @@
 {
   "name": "Keysecure",
   "logo": {
-  "dark": "/logo/KeySecure_light.svg",
-  "light": "/logo/KeySecure_light.svg"
+  "dark": "/logo/KeySecure Logo - Original 1.svg",
+  "light": "/logo/KeySecure Logo - Original 1.svg"
   },
-  "favicon": "/logo/Frame 2970.svg",
+  "favicon": "/logo/KeySecure_ico.svg",
   "colors": {
   "primary": "#2662FF",
   "light": "#2662FF",
@@ -40,10 +40,6 @@
   {
   "name": "Help Center",
   "url": "help-center"
-  },
-  {
-  "name": "User Guide",
-  "url": "user-guide"
   }
   ],
   "primaryTab": {
