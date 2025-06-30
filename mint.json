@@ -27,21 +27,25 @@
   "topbarCtaButton": {
   "name": "官网",
   "url": "https://keysecure.io/zh-CN"
-  },
-  "tabs": [
-  {
-  "name": "快速入门",
-  "url": "quick-start"
-  },
-  {
-  "name": "API文档",
-  "url": "api-references"
-  },
-  {
-  "name": "帮助中心",
-  "url": "help-center"
-  }
-  ],
+},
+"tabs": [
+{
+"name": "快速入门",
+"url": "quick-start"
+},
+{
+"name": "API文档",
+"url": "api-references"
+},
+{
+"name": "帮助中心",
+"url": "help-center"
+},
+{
+"name": "操作指南",
+"url": "user-guide"
+}
+],
   "primaryTab": {
   "name": "介绍"
   },

@@ -27,21 +27,25 @@
   "topbarCtaButton": {
   "name": "Official Website",
   "url": "https://keysecure.io/"
-  },
-  "tabs": [
-  {
-  "name": "Get Started",
-  "url": "quick-start"
-  },
-  {
-  "name": "API",
-  "url": "api-references"
-  },
-  {
-  "name": "Help Center",
-  "url": "help-center"
-  }
-  ],
+},
+"tabs": [
+{
+"name": "Get Started",
+"url": "quick-start"
+},
+{
+"name": "API",
+"url": "api-references"
+},
+{
+"name": "Help Center",
+"url": "help-center"
+},
+{
+"name": "User Guide",
+"url": "user-guide"
+}
+],
   "primaryTab": {
   "name": "Introduction"
   },
