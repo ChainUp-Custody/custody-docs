@@ -177,7 +177,7 @@ Options:
 4. -rsa-gen:                         Tool mode: Input the startup password to generate an encrypted private key and an unencrypted public key, stored in the keystore.json file.
 5. -rsa-pri-import:                  Tool mode: Input the startup password to import an existing RSA private key, generate an encrypted RSA private key file (import only the private key), stored in the keystore.json file.
 6. -verify-sign-pub-import:          Import the public key used for verifying client signatures (sign). Stored in the keystore.json file. After import, Co-Signer will verify client signatures (sign) for withdrawals and web3 transactions. See the API documentation for sign generation details.
-7. -custody-pub-import:              Tool mode: Input the startup password to import Custody's public key, stored in the keystore.json file.
+7. -custody-pub-import:              Tool mode: Input the startup password to import system's public key, stored in the keystore.json file.
 8. -keystore-gen:                    Tool mode: Used to unify the import of files such as seed.dat, rsaPri.pem, rsaPub.pem from v1.0.x versions into the keystore.json file.
 
 ```
@@ -231,7 +231,7 @@ Options:
 
     After executing the above command, enter the Co-Signer startup password as prompted. After successful execution, the keystore.json file is generated/updated in the conf directory.
 
-    The private key is used to encrypt request parameters when requesting Keysecure service, and the corresponding public key needs to be configured to Custody. Custody uses this public key to decrypt Co-Signer request data.
+    The private key is used to encrypt request parameters when requesting Keysecure service, and the corresponding public key needs to be configured to system. System uses this public key to decrypt Co-Signer request data.
 
 
 
@@ -242,7 +242,7 @@ Options:
 
     After executing the above command, enter the Co-Signer startup password as prompted. After successful execution, the keystore.json file is generated/updated in the conf directory.
 
-    The private key is used to encrypt request parameters when requesting Keysecure service, and the corresponding public key needs to be configured to Custody. Custody uses this public key to decrypt Co-Signer request data
+    The private key is used to encrypt request parameters when requesting Keysecure service, and the corresponding public key needs to be configured to Keysecure. Keysecure uses this public key to decrypt Co-Signer request data
 
     </Step>
     <Step title="Configure public key for Co-Signer">
@@ -253,7 +253,7 @@ Options:
 
     After executing the above command, enter the Co-Signer startup password as prompted. After successful execution, the keystore.json file is generated/updated in the conf directory.
 
-    This public key is provided by Custody, and Co-Signer uses this public key to decrypt the returned data from Keysecure services.
+    This public key is provided by system, and Co-Signer uses this public key to decrypt the returned data from Keysecure services.
 
     </Step>
 
@@ -309,7 +309,7 @@ echo ${STR_PASSWORD} | nohup ${project_path}/co-signer -server >>nohup.out 2>&1 
 
 ## **Co-Signer** Quick Deploy Script (Recommend)
 
-Custody also provides a more convenient deployment method, using scripts to generate configuration information and operating environments with one click
+Keysecure also provides a more convenient deployment method, using scripts to generate configuration information and operating environments with one click
 
 <Tip>
 Please [Obtain Co-Signer](/api-references/mpc-apis/co-signer/deploy#obtain-co-signer) program first, and place the program and sh file in the same directory before performing script operations.
