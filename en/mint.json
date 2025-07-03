@@ -246,12 +246,14 @@
   },
   "api-references/mpc-apis/co-signer/sign-verify",
   "api-references/mpc-apis/co-signer/deploy"
-  ]
-  },
-  "api-references/mpc-apis/err-code"
-  ]
-  },
-  {
+]
+},
+"api-references/mpc-apis/err-code",
+"api-references/mpc-apis/sdk"
+]
+},
+{
+
   "group": "Full Custody",
   "pages": [
   "api-references/custody-apis/guide",
