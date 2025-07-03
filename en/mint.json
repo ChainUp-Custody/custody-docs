@@ -40,6 +40,10 @@
 {
 "name": "Help Center",
 "url": "help-center"
+},
+{
+"name": "User Guide",
+"url": "user-guide"
 }
 ],
   "primaryTab": {
@@ -428,7 +432,171 @@
   "group": "Team Management",
   "pages": [
   "help-center/manage-joint/custody-user-settings/role"
-  
+]
+}
+]
+},
+{
+"group": "MPC Self-Custody",
+"pages": [
+{
+"group": "Account",
+"pages": [
+"user-guide/mpc-wallet/account/password",
+"user-guide/mpc-wallet/account/bind-ga",
+"user-guide/mpc-wallet/account/bio-identity",
+"user-guide/mpc-wallet/account/kyc",
+"user-guide/mpc-wallet/account/cancel-account"
+]
+},
+{
+"group": "Workspace",
+"pages": [
+"user-guide/mpc-wallet/wallet/create-wallet",
+"user-guide/mpc-wallet/wallet/manage-wallet",
+"user-guide/mpc-wallet/wallet/add-user",
+"user-guide/mpc-wallet/wallet/become-admin"
+]
+},
+{
+"group": "Private Key",
+"pages": [
+"user-guide/mpc-wallet/private-manage/private-backup",
+"user-guide/mpc-wallet/private-manage/private-recover",
+"user-guide/mpc-wallet/private-manage/off-line-tool"
+]
+},
+{
+"group": "Operations",
+"pages": [
+"user-guide/mpc-wallet/operation/receive",
+"user-guide/mpc-wallet/operation/transfer",
+"user-guide/mpc-wallet/operation/record",
+"user-guide/mpc-wallet/operation/to-do"
+]
+},
+{
+"group": "Compliance Services",
+"pages": [
+"user-guide/mpc-wallet/kyt/setting",
+"user-guide/mpc-wallet/kyt/operate"
+]
+},
+{
+"group": "API Management",
+"pages": [
+"user-guide/mpc-wallet/api-integration/api",
+"user-guide/mpc-wallet/api-integration/co-signer"
+]
+},
+{
+"group": "Auto Sweep",
+"pages": [
+"user-guide/mpc-wallet/consolidate/co-signer/rules",
+"user-guide/mpc-wallet/consolidate/co-signer/execute"
+]
+},
+{
+"group": "Strategy Engine",
+"pages": [
+"user-guide/mpc-wallet/strategy/approval-flow",
+"user-guide/mpc-wallet/strategy/approval-flow2",
+"user-guide/mpc-wallet/strategy/edit-workspace-strategy",
+"user-guide/mpc-wallet/strategy/gas-fee-stratefy",
+"user-guide/mpc-wallet/strategy/sign-protect"
+]
+},
+{
+"group": "Web3 Access",
+"pages": [
+"user-guide/mpc-wallet/web3/fil-multi-sign",
+"user-guide/mpc-wallet/web3/fil-node",
+"user-guide/mpc-wallet/web3/dapp"
+]
+},
+{
+"group": "Cold Wallet Management",
+"pages": [
+"user-guide/mpc-wallet/cold-wallet-manage/asser-flow",
+"user-guide/mpc-wallet/cold-wallet-manage/asset-manage",
+"user-guide/mpc-wallet/cold-wallet-manage/cold-alert",
+"user-guide/mpc-wallet/cold-wallet-manage/contractaddress"
+]
+}
+]
+},
+{
+"group": "Smart Contract Platform",
+"pages": [
+{
+"group": "Contract Management",
+"pages": [
+"user-guide/smart-contract-platform/create-contract"
+]
+},
+{
+"group": "Contract Member",
+"pages": [
+"user-guide/smart-contract-platform/manage-memebers"
+]
+},
+{
+"group": "Contract Whitelist",
+"pages": [
+"user-guide/smart-contract-platform/manage-whitelist"
+]
+},
+{
+"group": "Vote-Free",
+"pages": [
+"user-guide/smart-contract-platform/manage-vore-free"
+]
+},
+{
+"group": "Contract Transaction",
+"pages": [
+"user-guide/smart-contract-platform/receive-trans",
+"user-guide/smart-contract-platform/transactions"
+]
+}
+]
+},
+{
+"group": "Full Custody",
+"pages": [
+{
+"group": "Account",
+"pages": [
+"user-guide/custody-wallet/account/password",
+"user-guide/custody-wallet/account/bind-ga",
+"user-guide/custody-wallet/account/bio-identity",
+"user-guide/custody-wallet/account/kyc",
+"user-guide/custody-wallet/account/cancel-account"
+]
+},
+{
+"group": "Wallet",
+"pages": [
+"user-guide/custody-wallet/wallet/create-wallet",
+"user-guide/custody-wallet/wallet/add-user"
+]
+},
+{
+"group": "Operations",
+"pages": [
+"user-guide/custody-wallet/operation/coin",
+"user-guide/custody-wallet/operation/receive",
+"user-guide/custody-wallet/operation/transfer",
+"user-guide/custody-wallet/operation/record",
+"user-guide/custody-wallet/operation/to-do"
+]
+},
+{
+"group": "Strategy",
+"pages": [
+"user-guide/custody-wallet/strategy/whitelist",
+"user-guide/custody-wallet/strategy/api",
+"user-guide/custody-wallet/strategy/approval-flow"
   ]
   }
   ]
