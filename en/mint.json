@@ -26,7 +26,7 @@
   },
   "topbarCtaButton": {
   "name": "Official Website",
-  "url": "https://keysecure.io/"
+  "url": "https://www.keysecure.io/"
 },
 "tabs": [
 {
@@ -605,7 +605,7 @@
   }
   ],
   "api": {
-  "baseUrl": "https://openapi.Keysecure.io/",
+  "baseUrl": "https://openapi.keysecure.io/",
   "playground": {
   "mode": "simple"
   }

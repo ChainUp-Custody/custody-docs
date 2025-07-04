@@ -23,7 +23,7 @@ title: Co-Signer部署
 
 1. 运行程序下载   
 
-  文件地址: https://github.com/Keysecure -Custody/mpc-co-signer/releases,  选择co-signer-linux-(version)-static版本，该版本Linux可直接运行
+  文件地址: https://github.com/Key-secure/mpc-co-signer/releases,  选择co-signer-linux-(version)-static版本，该版本Linux可直接运行
 
   <Warning>
   以版本**v1.3.1**为例，请在实际使用时替换相关版本
@@ -31,7 +31,7 @@ title: Co-Signer部署
   </Warning>
 
 ```sh
-wget https://github.com/Keysecure -Custody/mpc-co-signer/releases/download/v1.3.1/co-signer-linux-v1.3.1-static
+wget https://github.com/Key-secure/mpc-co-signer/releases/download/v1.3.1/co-signer-linux-v1.3.1-static
 ```
 
 2. 修改程序可执行权限
@@ -81,10 +81,10 @@ chmod +x co-signer-linux-v1.3.1-static
 
         </Warning>
 
-        文件地址: https://github.com/Keysecure -Custody/mpc-co-signer/releases,  选择co-signer-linux-(version) 版本，请按照后续步骤使用ego进行编译打包
+        文件地址: https://github.com/Key-secure/mpc-co-signer/releases,  选择co-signer-linux-(version) 版本，请按照后续步骤使用ego进行编译打包
 
         ```sh
-        wget https://github.com/Keysecure -Custody/mpc-co-signer/releases/download/v1.3.1/co-signer-linux-v1.3.1
+        wget https://github.com/Key-secure/mpc-co-signer/releases/download/v1.3.1/co-signer-linux-v1.3.1-static
         ```
 
         注意：**v1.1.0**版本后支持SGX
@@ -202,16 +202,16 @@ Options:
             ## 【必填】app_id，创建商户后获取
             app_id: ""
             ## 【必填】api域名地址，见接口文档
-            domain: "https://openapi.Keysecure.io/
+            domain: "https://openapi.keysecure.io/
 "
             ## 【可选】请求获取响应语言，支持zh_CN和en_US
             language: "zh_CN"
 
         ## 客户系统
         custom_service:
-            ## 【可选】withdraw签名前回调客户系统地址确认交易是否正常，详情见:https://custodydocs-zh.Keysecure .com/api-references/mpc-apis/co-signer/callback/withdraw，未配置时需要强制验证sign
+            ## 【可选】withdraw签名前回调客户系统地址确认交易是否正常，详情见: https://docs-cn.keysecure.io/api-references/mpc-apis/co-signer/callback/withdraw，未配置时需要强制验证sign
             withdraw_callback_url: ""
-            ## 【可选】web3交易签名前回调客户系统地址确认交易是否正常，详情见:https://custodydocs-zh.Keysecure .com/api-references/mpc-apis/co-signer/callback/web3，未配置时需要强制验证sign
+            ## 【可选】web3交易签名前回调客户系统地址确认交易是否正常，详情见: https://docs-cn.keysecure.io/api-references/mpc-apis/co-signer/callback/web3，未配置时需要强制验证sign
             web3_callback_url: ""
         ```
     </Step>
@@ -334,7 +334,7 @@ esac
 
 echo ""
 APP_ID=""
-echo "App id can find in https://keysecure.iompc/center/api."
+echo "App id can find in https://www.keysecure.io/mpc/center/api."
 echo "Please enter app id: (e.g. 6866b043a013680ea91be7e6fdcd2af4)"
 read APP_ID
 
@@ -359,16 +359,16 @@ custody_service:
     ## [Required] app_id, obtained after creating a merchant
     app_id: "${APP_ID}"
     ## [Required] api domain address, see interface documentation
-    domain: "https://openapi.Keysecure.io/
+    domain: "https://openapi.keysecure.io/
 "
     ## [Optional] Request and response language, supporting zh_CN and en_US
     language: "en_US"
 
 ## Client System
 custom_service:
-    ## [Optional] Withdrawal callback client system address for signature confirmation before signing, details see: https://custodydocs-zh.Keysecure .com/api-references/mpc-apis/co-signer/callback/withdraw, mandatory sign verification when not configured
+    ## [Optional] Withdrawal callback client system address for signature confirmation before signing, details see: https://docs-cn.keysecure.io/api-references/mpc-apis/co-signer/callback/withdraw, mandatory sign verification when not configured
     withdraw_callback_url: "${WITHDRAW_CALLBACK_URL}"
-    ## [Optional] Web3 transaction callback client system address for signature confirmation before signing, details see: https://custodydocs-zh.Keysecure .com/api-references/mpc-apis/co-signer/callback/web3, mandatory sign verification when not configured
+    ## [Optional] Web3 transaction callback client system address for signature confirmation before signing, details see: https://docs-cn.keysecure.io/api-references/mpc-apis/co-signer/callback/web3, mandatory sign verification when not configured
     web3_callback_url: "${WEB3_CALLBACK_URL}"
 EOF
 )
@@ -418,10 +418,10 @@ fi
 echo "rsa key pair create success, you can find rsa public key in conf/keystore.json"
 
 echo ""
-echo "Keysecure  RSA public key can find in https://keysecure.iompc/center/api"
-echo "Please input ChinaUp RSA public key:"
-read Keysecure _PUBLIC_KEY
-RESULT=$(echo ${PASSWORD} | ./co-signer -custody-pub-import ${Keysecure _PUBLIC_KEY})
+echo "Keysecure RSA public key can find in https://www.keysecure.io/mpc/center/api"
+echo "Please input Keysecure RSA public key:"
+read KEYSECURE_PUBLIC_KEY
+RESULT=$(echo ${PASSWORD} | ./co-signer -custody-pub-import ${KEYSECURE_PUBLIC_KEY})
 echo $RESULT
 STATUS=$?
 if [ "$STATUS" != 0 ];then
@@ -429,7 +429,7 @@ if [ "$STATUS" != 0 ];then
 fi
 
 echo ""
-echo "Custom RSA public key, use for verify withdraw data. https://custodydocs-en.Keysecure .com/api-references/mpc-apis/co-signer/flow#automatic-signature-signature-sign-verification-method"
+echo "Custom RSA public key, use for verify withdraw data. https://docs-en.keysecure.io/api-references/mpc-apis/co-signer/flow#automatic-signature-signature-sign-verification-method"
 echo "Please input Custom RSA public key for verify withdraw data:"
 read CUSTOM_PUBLIC_KEY
 if [ "$CUSTOM_PUBLIC_KEY" != "" ];then
@@ -501,7 +501,7 @@ echo "work dir: ${WORK_DIR}"
 echo ""
 
 CO_SIGNER_BIN=""
-echo "Please input co-signer origin bin file name which download in https://github.com/Keysecure -Custody/mpc-co-signer/releases/:"
+echo "Please input co-signer origin bin file name which download in https://github.com/Key-secure/mpc-co-signer/releases/:"
 read CO_SIGNER_BIN
 
 if [ ! -f "$CO_SIGNER_BIN" ]; then
