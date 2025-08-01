@@ -35,9 +35,11 @@ Noted：`rsa_public_key_2048.pem` is public key file，`private_pkcs8.pem` is pr
 
 | Transmission Method: | https (temporary use of http in the testing environment)                           |
 | :--------------------- | ------------------------------------------------------ |
-| Response Status Code: | `0` indicates processing `success`, non-0 indicates **request error** or **system exception** |
 | Request Address:     | Domain + Interface Address                                          |
-| Encryption Algorithm: | RSA                                                   |
+| Request Header:      | Content-Type:application/x-www-form-urlencoded        |
+| Encryption Algorithm: | RSA.    Ref: [https://en.wikipedia.org/wiki/RSA_(cryptosystem)](https://en.wikipedia.org/wiki/RSA_(cryptosystem))                                            |
+| Response Header:     | Content-Type:application/json;charset=utf-8   |
+| Response Status Code: | `0` indicates processing `success`, non-0 indicates **request error** or **system exception** |
 
 
 ## Common Request Parameters
