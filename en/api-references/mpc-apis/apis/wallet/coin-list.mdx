@@ -20,12 +20,19 @@ description: "Get the details of MPC workspace's native tokens, and tokens suppo
 <ParamField query="open_chain" type="bool">
     Native token, default to getting all, `true` to get opened coins, `false` to get unopened coins
 </ParamField>
+<ParamField query="max_id" type="integer">
+    The starting id of the currency, for example, 100, the system will return the currency after 101, for example: `100`. Note: If not passed, the default return is the latest 1500 currencies
+</ParamField>
+<ParamField query="limit" type="integer">
+    The number of currencies to be obtained each time. If not passed, the default value is 1500, for example: `100`
+</ParamField>
 
 
 
 #### Response Data Parameters
 <ResponseField type="object[ ]">
     <Expandable title="object">
+        <ResponseField name="id" type="string">id</ResponseField>
         <ResponseField name="address_regex" type="string">Address regex pattern, e.g.：`.*`</ResponseField>
         <ResponseField name="address_tag_regex" type="string">Address tag regex pattern</ResponseField>
         <ResponseField name="base_symbol" type="string">Unique identifier of the native token of the network, e.g.：`MATIC1`</ResponseField>
@@ -64,6 +71,7 @@ description: "Get the details of MPC workspace's native tokens, and tokens suppo
 ```json
 [
     {
+        "id":"12",
         "address_regex":".*",
         "address_tag_regex":"",
         "base_symbol":"BSC",
@@ -85,6 +93,7 @@ description: "Get the details of MPC workspace's native tokens, and tokens suppo
         "merge_address_symbol" : "ETH"
     },
     {
+        "id":"100",
         "address_regex":".*",
         "address_tag_regex":"",
         "base_symbol":"ETH",
