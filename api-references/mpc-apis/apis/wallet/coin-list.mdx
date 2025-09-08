@@ -20,12 +20,19 @@ description: "获取Keysecure MPC支持的网络及代币"
 <ParamField query="open_chain" type="bool">
     网络开通币种，默认获取全部，`true`获取开通币种，`false`获取未开通币种
 </ParamField>
+<ParamField query="max_id" type="integer">
+    币种起始id，例100，系统将返回101后的币种，例：`100`，注意：不传时默认返回最新的1500个币种
+</ParamField>
+<ParamField query="limit" type="integer">
+    每次获取币种数量，不传时默认1500，例：`100`
+</ParamField>
 
 
 
 #### 响应参数数据结构
 <ResponseField type="object[ ]">
     <Expandable title="object">
+        <ResponseField name="id" type="string">id</ResponseField>
         <ResponseField name="address_regex" type="string">地址格式正则，例：`.*`</ResponseField>
         <ResponseField name="address_tag_regex" type="string">Memo类型tag正则</ResponseField>
         <ResponseField name="base_symbol" type="string">币种主币唯一标识，例：`MATIC1`</ResponseField>
@@ -65,6 +72,7 @@ api/mpc/coin_list?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data=SWYYr-LBVAmaS0eq8
 ```json
 [
     {
+        "id": "12",
         "address_regex":".*",
         "address_tag_regex":"",
         "base_symbol":"BSC",
@@ -86,6 +94,7 @@ api/mpc/coin_list?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data=SWYYr-LBVAmaS0eq8
         "merge_address_symbol" : "ETH"
     },
     {
+        "id": "100",
         "address_regex":".*",
         "address_tag_regex":"",
         "base_symbol":"ETH",
