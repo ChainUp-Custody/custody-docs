@@ -39,6 +39,7 @@ description: "Get the details of MPC workspace's native tokens, and tokens suppo
         <ResponseField name="contract_address" type="string">Contract address supported by MPC network</ResponseField>
         <ResponseField name="decimals" type="integer">Coin precision</ResponseField>
         <ResponseField name="deposit_confirmation" type="integer">Number of confirmations for deposits</ResponseField>
+        <ResponseField name="withdraw_confirmation" type="integer">Number of confirmations for withdraw</ResponseField>
         <ResponseField name="address_link" type="string">Prefix for the block explorer address query link.</ResponseField>
         <ResponseField name="txid_link" type="string">Prefix for the block explorer address query link.</ResponseField>
         <ResponseField name="icon" type="string">Coin icon</ResponseField>
@@ -53,6 +54,8 @@ description: "Get the details of MPC workspace's native tokens, and tokens suppo
         <ResponseField name="support_multi_addr" type="bool">Support for multiple addresses, `true`: supported, `false`: not supported</ResponseField>
         <ResponseField name="merge_address_symbol" type="string">Merged address Native token, Unique identifier for the coin</ResponseField>
        <ResponseField name="coin_type" type="integer">Belongs to the native token type, `0` for account type, `1` for utxo-type network, `2` for Memo type</ResponseField>
+       <ResponseField name="min_withdraw" type="integer">Minimum withdraw amount</ResponseField>
+        <ResponseField name="min_deposit" type="integer">Minimum deposit amount</ResponseField>
     </Expandable>
 </ResponseField>
 
