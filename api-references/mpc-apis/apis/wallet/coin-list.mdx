@@ -39,6 +39,7 @@ description: "获取ChainUp Custody MPC支持的网络及代币"
         <ResponseField name="contract_address" type="string">币种合约地址</ResponseField>
         <ResponseField name="decimals" type="integer">币种精度</ResponseField>
         <ResponseField name="deposit_confirmation" type="integer">币种充值确认数</ResponseField>
+        <ResponseField name="withdraw_confirmation" type="integer">币种提现确认数</ResponseField>
         <ResponseField name="address_link" type="string">区块浏览器地址查询链接前缀</ResponseField>
         <ResponseField name="txid_link" type="string">区块浏览器交易查询链接前缀</ResponseField>
         <ResponseField name="icon" type="string">币种图标</ResponseField>
@@ -53,6 +54,7 @@ description: "获取ChainUp Custody MPC支持的网络及代币"
         <ResponseField name="support_multi_addr" type="bool">币种是否支持多地址，`ture`支持，`false`不支持</ResponseField>
         <ResponseField name="merge_address_symbol" type="string">合并地址网络币，币种唯一标识</ResponseField>
         <ResponseField name="coin_type" type="integer">所属网络币类型，`0` 账户类型, `1` utxo类型网络, `2` Memo类型</ResponseField>
+        <ResponseField name="min_withdraw" type="string">最小提币金额</ResponseField>
     </Expandable>
 </ResponseField>
 
@@ -71,49 +73,56 @@ description: "获取ChainUp Custody MPC支持的网络及代币"
 ```json
 [
     {
-        "id": "12",
-        "address_regex":".*",
-        "address_tag_regex":"",
-        "base_symbol":"BSC",
-        "coin_net":"BSC",
-        "contract_address":"0xe9e7cea3dedca5984780bafc599bd69add087d56",
-        "decimals":"18",
-        "deposit_confirmation":"1",
-        "address_link":"https://www.bscscan.com/address/",
-        "txid_link":"https://www.bscscan.com/tx/",
-        "icon":"",
-        "if_open_chain":true,
-        "real_symbol":"BUSD",
-        "support_memo":"0",
-        "support_token":"0",
-        "symbol":"BUSD",
-        "symbol_alias":"BUSD",
+        "id": 124,
+        "address_regex": "\"^0x[0-9a-fA-F]{40}$\"",
+        "address_tag_regex": "",
+        "base_symbol": "ETH",
+        "contract_address": "0xfe5f141bf94fe84bc28ded0ab966c16b17490657",
+        "decimals": 18,
+        "deposit_confirmation": 6,
+        "withdraw_confirmation": 32,
+        "address_link": "",
+        "txid_link": "",
+        "icon": "https://fin-tech-vip.oss-ap-southeast-1.aliyuncs.com/coin/1530191245093.png",
+        "if_open_chain": true,
+        "real_symbol": "LBA",
+        "support_memo": "0",
+        "support_token": "",
+        "coin_net": "Ethereum",
+        "symbol": "LBA",
+        "symbol_alias": "LBA",
         "support_acceleration": true,
-        "support_multi_addr" : true,
-        "merge_address_symbol" : "ETH"
+        "support_multi_addr": true,
+        "merge_address_symbol": "ETH",
+        "coin_type": 0,
+        "min_withdraw": "0"         
     },
     {
-        "id":"100",
-        "address_regex":".*",
-        "address_tag_regex":"",
-        "base_symbol":"ETH",
-        "coin_net":"ETH",
-        "contract_address":"0xdac17f958d2ee523a2206206994597c13d831ec7",
-        "decimals":"18",
-        "deposit_confirmation":"1",
-        "address_link":"https://etherscan.io/address/",
-        "txid_link":"https://etherscan.io/tx/",
-        "icon":"",
-        "if_open_chain":false,
-        "real_symbol":"USDTERC20",
-        "support_memo":"0",
-        "support_token":"0",
-        "symbol":"USDTERC20",
-        "symbol_alias":"USDT",
+        "id": 125,
+        "address_regex": "\"^0x[0-9a-fA-F]{40}$\"",
+        "address_tag_regex": "",
+        "base_symbol": "ETH",
+        "contract_address": "0x9992ec3cf6a55b00978cddf2b27bc6882d88d1ec",
+        "decimals": 18,
+        "deposit_confirmation": 6,
+        "withdraw_confirmation": 32,
+        "address_link": "",
+        "txid_link": "",
+        "icon": "https://fin-tech-vip.oss-ap-southeast-1.aliyuncs.com/coin/1530191280380.png",
+        "if_open_chain": true,
+        "real_symbol": "POLY",
+        "support_memo": "0",
+        "support_token": "",
+        "coin_net": "Ethereum",
+        "symbol": "POLY",
+        "symbol_alias": "POLY",
         "support_acceleration": true,
-        "support_multi_addr" : true,
-        "merge_address_symbol" : "ETH"
+        "support_multi_addr": true,
+        "merge_address_symbol": "ETH",    
+        "coin_type": 0,
+        "min_withdraw": "0"    
     }
+
 ]
 ```
 </ResponseExample>
