@@ -19,6 +19,7 @@ description: "List of wallet addresses"
 #### Response Data Parameters
 <ResponseField type="object[ ]">
     <Expandable title="object">
+        <ResponseField name="id" type="integer">Address id</ResponseField>
         <ResponseField name="address" type="string">Created address</ResponseField>
         <ResponseField name="addr_type" type="integer">	Address type, 1: regular address, 2: change address ( occurs when a user uses an input that is worth more than the transaction cost, the extra funds are sent back to the users as change through a newly generated address.)</ResponseField>
         <ResponseField name="memo" type="string"></ResponseField>
@@ -40,11 +41,13 @@ description: "List of wallet addresses"
 ```json
 [
     {
+        "id": 3123,
         "address":"12ZzzA48sYnE12fdkmKmaxkR3Rz5j7Gjac",
         "addr_type": 1,
         "memo": ""
     },
     {
+        "id": 3122,
         "address":"139cRprA9siBDbScbjtCZTcESUgZ1rm9fr",
         "addr_type": 2,
         "memo": ""
