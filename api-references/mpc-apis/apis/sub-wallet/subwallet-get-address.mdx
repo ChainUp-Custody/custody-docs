@@ -19,6 +19,7 @@ description: "查询钱包下对应币种的地址信息"
 #### 响应参数数据结构
 <ResponseField type="object[ ]">
     <Expandable title="object">
+        <ResponseField name="id" type="integer">地址id</ResponseField>
         <ResponseField name="address" type="string">创建的地址</ResponseField>
         <ResponseField name="addr_type" type="integer">地址类型，1：用户地址，2：系统地址(包括归集地址、找零地址)。`系统地址`不可给分配给用户使用, UTXO交易的找零都会找零到找零地址</ResponseField>
         <ResponseField name="memo" type="string"></ResponseField>
@@ -41,11 +42,13 @@ api/mpc/sub_wallet/get/address/list?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data
 ```json
 [
     {
+        "id": 3123,
         "address":"12ZzzA48sYnE12fdkmKmaxkR3Rz5j7Gjac",
         "addr_type": 1,
         "memo": ""
     },
     {
+        "id": 3122,
         "address":"139cRprA9siBDbScbjtCZTcESUgZ1rm9fr",
         "addr_type": 2,
         "memo": ""
