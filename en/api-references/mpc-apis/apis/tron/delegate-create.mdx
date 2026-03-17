@@ -86,6 +86,9 @@ If you choose to purchase bandwidth (resource_type=0), please note the following
 </ParamField>
 <ParamField query="address_from" type="string" required>
     The address that will receive the resources
+    <Note>
+     Need to hold the available balance of the currency corresponding to contracted_address, otherwise the miner fee estimation will fail
+   </Note>
 </ParamField>
 <ParamField query="address_to" type="string">
     The transfer address for estimating miner fees.
