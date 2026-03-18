@@ -293,6 +293,30 @@ echo ""
 echo ${STR_PASSWORD} | nohup ${project_path}/co-signer -server >>nohup.out 2>&1 &
 ```
 
+- **完成启动后的初始化**
+
+<Steps>
+    <Step title="校验和下一步">
+        👉 Co-signer 完成配置并成功启动后，服务仍处于未初始化状态。请前往APP执行私钥刷新操作，完成后服务才可正常使用。
+         <div className="w-full flex items-center justify-left">
+            <CardGroup cols={5}>
+            <img src="/images/custody-guide/co_signer_log.png" width="1000"/>
+            </CardGroup>
+        </div>
+    </Step>
+    <Step title="登录APP生成私钥分片">
+        登录APP，进入安全页面后选择Co-Signer开始配置，为工作站API创建私钥分片。
+
+        <div className="w-full flex items-center justify-center">
+            <CardGroup cols={3}>
+                <img src="/images/user-guide/safecn.png" width="200"/>
+                <img src="/images/user-guide/cosign1cn.png" width="200"/>
+                <img src="/images/user-guide/cosign2cn.png" width="200"/>
+            </CardGroup>
+        </div>
+    </Step>
+</Steps>
+
 ## III. **Co-Signer** 快捷部署脚本（推荐）
 
 Keysecure也提供了更为便捷的部署方式，使用脚本一键式生成配置信息、以及运行环境

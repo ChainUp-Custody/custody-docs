@@ -314,6 +314,29 @@ Keysecure also provides a more convenient deployment method, using scripts to ge
 Please [Obtain Co-Signer](/api-references/mpc-apis/co-signer/deploy#obtain-co-signer) program first, and place the program and sh file in the same directory before performing script operations.
 </Tip>
 
+- **Complete initialization after startup**
+
+<Steps>
+    <Step title="Verification and next steps">
+        👉 After the Co designer completes configuration and successfully starts, the service is still in an uninitialized state. Please go to the APP to perform the private key refresh operation. The service can only be used normally after completion。
+         <div className="w-full flex items-center justify-left">
+            <CardGroup cols={5}>
+            <img src="/images/custody-guide/co_signer_log.png" width="1000"/>
+            </CardGroup>
+        </div>
+    </Step>
+    <Step title="Log in to the APP for Configuration">
+        Log in to the APP, and choose Co-Signer to start configuration after entering the security page.
+            <div className="w-full flex items-center justify-center">
+        <CardGroup cols={3}>
+            <img src="/images/user-guide/safe.jpg" width="200"/>
+            <img src="/images/user-guide/cosign1.png" width="200"/>
+             <img src="/images/user-guide/cosign2.png" width="200"/>
+        </CardGroup>
+    </div>
+    </Step>
+</Steps>
+
 ### **install.sh**
 
 Execute the install.sh script, follow the prompts, and import the necessary information and configurations to run Co-Signer.
