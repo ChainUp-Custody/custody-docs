@@ -305,15 +305,6 @@ echo ""
 # start
 echo ${STR_PASSWORD} | nohup ${project_path}/co-signer -server >>nohup.out 2>&1 &
 ```
-
-## **Co-Signer** Quick Deploy Script (Recommend)
-
-Keysecure also provides a more convenient deployment method, using scripts to generate configuration information and operating environments with one click
-
-<Tip>
-Please [Obtain Co-Signer](/api-references/mpc-apis/co-signer/deploy#obtain-co-signer) program first, and place the program and sh file in the same directory before performing script operations.
-</Tip>
-
 - **Complete initialization after startup**
 
 <Steps>
@@ -328,14 +319,22 @@ Please [Obtain Co-Signer](/api-references/mpc-apis/co-signer/deploy#obtain-co-si
     <Step title="Log in to the APP for Configuration">
         Log in to the APP, and choose Co-Signer to start configuration after entering the security page.
             <div className="w-full flex items-center justify-center">
-        <CardGroup cols={3}>
-            <img src="/images/user-guide/safe.jpg" width="200"/>
-            <img src="/images/user-guide/cosign1.png" width="200"/>
-             <img src="/images/user-guide/cosign2.png" width="200"/>
-        </CardGroup>
+      <CardGroup cols={3}>
+    <img src="/images/user-guide/safe.jpg" width="200"/>
+    <img src="/images/user-guide/cosign1.png" width="200"/>
+     <img src="/images/user-guide/cosign2.png" width="200"/>
+    </CardGroup>
     </div>
     </Step>
 </Steps>
+
+## **Co-Signer** Quick Deploy Script (Recommend)
+
+Keysecure also provides a more convenient deployment method, using scripts to generate configuration information and operating environments with one click
+
+<Tip>
+Please [Obtain Co-Signer](/api-references/mpc-apis/co-signer/deploy#obtain-co-signer) program first, and place the program and sh file in the same directory before performing script operations.
+</Tip>
 
 ### **install.sh**
 
