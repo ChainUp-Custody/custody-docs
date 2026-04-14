@@ -254,6 +254,13 @@
                 ]
               },
               {
+                "group": "OTC服务",
+                "pages": [
+                  "help-center/manage-mpc/OTC-Services/Service-Introduction",
+                  "help-center/manage-mpc/OTC-Services/OTC-Services-Provided-by-DtcPay"
+                ]
+              },
+              {
                 "group": "Web3访问",
                 "pages": [
                   "help-center/manage-mpc/web3/fil-multi-sign",
