@@ -3,6 +3,9 @@ title: "预估转账消耗的矿工费"
 api: "GET /v2/chain/minerfee"
 description: "预估当前币种转账消耗的矿工费"
 ---
+<Note>
+暂不支持 UTXO 类型网络;接口返回的预估矿工费仅供参考，实际矿工费请以链上确认为准。
+</Note>
 
 #### 请求参数数据结构
 <ParamField query="time" type="long" required>

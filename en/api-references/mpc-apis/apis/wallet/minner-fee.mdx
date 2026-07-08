@@ -3,6 +3,9 @@ title: "Estimated Mining Fee For Transfer"
 api: "GET /v2/chain/minerfee"
 description: "Estimated mining fee for current coin transfer"
 ---
+<Note>
+UTXO-based networks are not supported at this time. The estimated miner fee returned by the API is for reference only; the actual miner fee is subject to the on-chain result.
+</Note>
 
 #### 请求参数数据结构
 <ParamField query="time" type="long" required>
