@@ -99,7 +99,7 @@ The OTC policy engine is used to build a rigorous and customizable risk control 
 Once approval policies are configured, all business scenarios that trigger approvals will **strictly enforce** the preset rules. The system ensures policy execution integrity at the foundational level, preventing any bypass or malicious tampering.
 </Note>
 
-### Basic Policies
+### 1. Basic Policies
 <Frame>
       <img src="/images/help-center/otc/OTC006.png" />
 </Frame>  
@@ -120,7 +120,7 @@ Basic policies are system-level risk control schemes **automatically generated**
 - **Node Management:** Supports adding or removing approval nodes — click "Edit" to customize approval paths
 - **Audit Trail:** View all policy changes and approval execution details via "Approval Policy Records"
 
-### Advanced Policies
+### 2. Advanced Policies
 <Frame>
       <img src="/images/help-center/otc/OTC007.png" />
 </Frame>  
@@ -146,7 +146,7 @@ Each advanced policy supports configuring **independent approval paths and nodes
 
 ## IV. Stablecoin Whitelist & Fiat Account Management
 
-### Stablecoin Address Whitelist
+### 1. Stablecoin Address Whitelist
 
 The stablecoin address whitelist is used to manage and restrict **withdrawal addresses**, ensuring funds only flow to wallet addresses you control.
 
@@ -184,7 +184,7 @@ Verification funds will be **fully credited** to your DtcPay wallet balance. Aft
 
 ---
 
-### Fiat Account Configuration
+### 2. Fiat Account Configuration
 
 Fiat accounts are **receiving accounts** used for fiat withdrawals. You can choose your own account or a third-party account for withdrawal operations. Adding complete account information in advance helps improve efficiency and reduce errors.
 
@@ -212,7 +212,7 @@ DtcPay operates on a pre-deposit model. Before conducting OTC trades, you must f
 
 Account balances can be flexibly used based on business needs and can be withdrawn at any time to your bank account or blockchain address for efficient fund scheduling and management.
 
-### Stablecoin Deposits
+### 1. Stablecoin Deposits
 <Frame>
       <img src="/images/help-center/otc/OTC0012.png" />
 </Frame>  
@@ -229,7 +229,7 @@ After confirming the information is correct, transfer funds to the system-provid
 Please verify the blockchain network (e.g., ERC20, TRC20). Losses caused by selecting the wrong network are at your own risk.
 </Warning>
 
-### Fiat Deposits
+### 2. Fiat Deposits
 
 <Steps>
   <Step title="Create Order">
@@ -265,7 +265,7 @@ Please verify the blockchain network (e.g., ERC20, TRC20). Losses caused by sele
 
 ## VI. Withdrawals
 
-### Stablecoin Withdrawal
+### 1. Stablecoin Withdrawal
 
 <Note>
 The withdrawal address must be an address that has been added to the whitelist.
@@ -287,7 +287,7 @@ The withdrawal address must be an address that has been added to the whitelist.
 
 ---
 
-### Fiat Withdrawal
+### 2. Fiat Withdrawal
 
 Supports withdrawal to your registered entity account or a third-party account.
 
@@ -311,53 +311,53 @@ Withdrawals to third-party accounts require proof of fund purpose (e.g., invoice
 
 ---
 
-##  VII. OTC Trading
+## VII. OTC Trading
 
-### 1. What is OTC Trading
+### 1. What Is OTC Trading
 
-OTC (Over-The-Counter) trading refers to the direct exchange between fiat currencies and digital assets at real-time quotes on the platform.  
-Trades are settled by the OTC service provider (DTC Pay) through unified matching, rather than through open market order books.
+OTC (over-the-counter) trading allows you to exchange fiat currencies and digital assets directly on the platform at real-time quoted rates.  
+Trades are matched and settled by DtcPay, the OTC service provider, rather than through a public-market order book.
 
-In DTC's OTC trading, the primary use case is exchanging between fiat currencies and stablecoins or other digital assets. In some scenarios, the following are also supported:
-- Fiat-to-fiat exchange
-- Stablecoin-to-stablecoin exchange
+On DtcPay, OTC trading is primarily used to exchange fiat currencies for stablecoins or other digital assets. Some trading pairs also support:
+- Fiat-to-fiat exchanges
+- Stablecoin-to-stablecoin exchanges
 
-> The specific supported trading pairs are subject to what is displayed in the system.
+> Available trading pairs are subject to those displayed in the system.
 
-**Common trading examples:**
-- Purchase USDT using fiat currencies such as USD / SGD
-- Exchange stablecoins such as USDT / USDC for fiat currencies
+**Common examples:**
+- Buy USDT with fiat currencies such as USD or SGD
+- Convert stablecoins such as USDT or USDC into fiat currency
 
 ---
 
-## How to Conduct OTC Trading
+### 2. How to Make an OTC Trade
 
-Before initiating an OTC trade, please ensure the account used for payment has sufficient balance.  
-If the balance is insufficient, please complete a deposit first (refer to the "Fiat Deposit" or "Stablecoin Deposit" guide).
+Before initiating an OTC trade, make sure the account used for payment has sufficient funds.  
+If the balance is insufficient, make a deposit first. See the "Fiat Deposits" or "Stablecoin Deposits" section for instructions.
 
-Once prepared, follow the steps below:
+Then follow these steps:
 <Frame>
       <img src="/images/help-center/otc/OTC0018.png" />
 </Frame>
-
-### 1. Select Exchange Currencies
-Choose the currency you wish to sell (payment currency) and the currency you wish to receive (target currency).
-
-### 2. Enter Transaction Amount
-Enter the amount you wish to exchange. The system will display the corresponding conversion result in real time based on the current quote.
-
-### 3. Confirm Transaction
-After verifying that the transaction information is correct, submit the request.  
-Some transactions may require an approval process and will only be executed after approval.
-
-### 4. Exchange Rate Notice
-Due to quote validity limitations, if the original quote has expired by the time approval is completed, the system will execute the exchange at the latest valid rate.
-
-> The final exchange rate is based on the rate at the time of actual trade execution.
-
----
-
-After the trade is completed, the system will finalize the fund exchange based on the confirmed rate and automatically update your account balance.
+<Steps>
+  <Step title="Select Currencies">
+    Select the currency you want to sell (the payment currency) and the currency you want to receive (the target currency).
+  </Step>
+  <Step title="Enter the Trade Amount">
+    Enter the amount to exchange. The system will display the estimated amount you will receive in real time based on the current quote.
+  </Step>
+  <Step title="Confirm the Trade">
+    Review the trade details and submit the request.  
+    Some trades may require approval and will only be executed after the approval process is complete.
+  </Step>
+  <Step title="Complete the Trade">
+    Once the trade is complete, the system will convert the funds at the final confirmed rate and automatically update your account balance.
+  </Step>
+</Steps>
+<Note>
+Exchange rate: Quotes are valid for a limited time. If the original quote expires before approval is complete, the trade will be executed at the latest available rate.
+> The final exchange rate is the rate applied when the trade is executed.
+</Note>
 ---
 
 ## VIII. View Records
