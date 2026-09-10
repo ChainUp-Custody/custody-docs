@@ -23,6 +23,8 @@ api: POST /{custom-url}
 | amount        | Decimal | 是       | 交易金额                                               |
 | symbol        | String  | 是       | 交易币种唯一标识                                       |
 | txid          | String  | 否       | 交易hash，签名成功返回txid                      |
+| outputs          | String  | 否       | UTXO 往多个地址提现明细 ,JSON格式                  |
+
 
 
 <RequestExample>
@@ -30,16 +32,18 @@ api: POST /{custom-url}
   curl -X POST \
   --url 'https://custom-url/example-callback' \
   --data '{
-        "type":"sign_start",
-        "withdraw_id":321456,
-        "request_id":"c70d1eebb7c687ec8d56bead73f104",
-        "pending_round":false,
-        "from":"0xc70d1eebb7c687ec8d56bead73f104d41e6e0bda",
-        "to":"0x5EDc9177997Bf6B4db559A5C184051858B3B3704",
-        "memo": "123321",
-        "amount":167230.4978,
-        "symbol":"BTC"
-  }'
+    "amount": "0.3",
+    "from": "n2jRrmPLqmaDfcwsSEKfbx9bFs7FgZM2HY",
+    "memo": "",
+    "pending_round": false,
+    "request_id": "c70d1eebb7c687ec8d56bead73f104",
+    "symbol": "BTC",
+    "to": "32BfKjhByDSxx3BM5vUkQ3NQq9csZR6nt8",
+    "txid": "",
+    "type": "sign_start",
+    "withdraw_id": "",
+    "outputs": "[{\"address_to\":\"32BfKjhByDSxx3BM5vUkQ3NQq9csZR6nt8 \",\"amount\":\"0.1\"},{\"address_to\":\"32BfKjhByDSxx3BM5vUkQ3NQq9csZR6nt7 \",\"amount\":\"0.1\"},{\"address_to\":\"0x5EDc9177997Bf6B4db559A5C184051858B3B3709\",\"amount\":\"0.1\"}]"
+}'
   ```
 </RequestExample>
 
