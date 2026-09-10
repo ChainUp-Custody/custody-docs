@@ -23,7 +23,7 @@ api: POST /{custom-url}
 | amount        | Decimal | 是       | 交易金额                                               |
 | symbol        | String  | 是       | 交易币种唯一标识                                       |
 | txid          | String  | 否       | 交易hash，签名成功返回txid                      |
-| outputs          | String  | 否       | utxo 往多个地址提现明细                   |
+| outputs          | String  | 否       | UTXO 往多个地址提现明细 ,JSON格式                  |
 
 
 
@@ -35,7 +35,7 @@ api: POST /{custom-url}
     "amount": "0.3",
     "from": "n2jRrmPLqmaDfcwsSEKfbx9bFs7FgZM2HY",
     "memo": "",
-    "pending_round": "",
+    "pending_round": false,
     "request_id": "c70d1eebb7c687ec8d56bead73f104",
     "symbol": "BTC",
     "to": "32BfKjhByDSxx3BM5vUkQ3NQq9csZR6nt8",
