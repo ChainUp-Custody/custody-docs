@@ -14,7 +14,7 @@ api: POST /{custom-url}
 
 | Param         | 类型    | 是否必须 | 说明                                                   |
 | :------------ | :------ | :------- | :----------------------------------------------------- |
-| type                 | String  | 是       | 回调类型，`sign_start`签名开始，`sign_success`签名成功 |
+| type                 | String  | 是       | 回调类型，`sign_prepare`准备签名，`sign_start`签名开始，`sign_success`签名成功|
 | trans_id             | Integer | 是       | 交易ID                                             |
 | request_id           | String  | 是       | 发起交易唯一标识                                     |
 | pending_round        | Boolean | 是       | 加速状态，true是，false否（普通交易）                  |

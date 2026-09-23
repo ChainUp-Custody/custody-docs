@@ -14,7 +14,7 @@ api: POST /{custom-url}
 
 | Param         | Type    | Requried | Description                                                  |
 | :------------ | :------ | :------- | :----------------------------------------------------------- |
-| type          | String  | Yes      | Callback type, `sign_start`start signing，`sign_success`successfully signed. |
+| type          | String  | Yes      | Callback type,`sign_prepare`prepare to Sign， `sign_start`start signing，`sign_success`successfully signed. |
 | transfer_id   | Integer | Yes      | transfer id, example: 12345                                  |
 | request_id    | String  | Yes      | The unique identifier for initiating transfer                |
 | pending_round | Bool    | Yes      | Speed Up status, `false` means in transferring transaction , `true` means speeding up the transaction |
