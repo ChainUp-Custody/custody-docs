@@ -11,7 +11,7 @@ description: "通过API购买TRON交易资源，无需燃烧TRX即可完成交�
 
 #### 请求参数数据结构
 <ParamField query="request_id" type="string" required>
-    业务唯一标识。
+    转账唯一标识.不可重复提交,限 64 字符,仅支持字母、数字、下划线（`_`）和短横线（`-`）.
 </ParamField>
 <ParamField query="buy_type" type="integer">
     购买资源方式 0:系统预估-完整代理 ，1:指定数量 ，2:系统预估-补充代理，不指定默认为0。

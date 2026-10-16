@@ -28,7 +28,9 @@ Currently, the Web3 networks supported by ChainUp Custody are as follows:
     Wallet id
 </ParamField>
 <ParamField query="request_id" type="string" required>
-   	The unique identifier for transferring coins
+   	The unique identifier for transferring coins.cannot be reused for repeated submissions. Maximum 64 characters, letters, numbers, underscores (`_`), and hyphens (`-`) only.
+</ParamField>
+<ParamField query="remark" type="string">
 </ParamField>
 <ParamField query="main_chain_symbol" type="string" required>
     Native token symbol, Unique identifier for the coin, e.g.：`ETH`
