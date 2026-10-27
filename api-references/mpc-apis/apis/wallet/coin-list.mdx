@@ -55,6 +55,9 @@ description: "获取ChainUp Custody MPC支持的网络及代币"
         <ResponseField name="merge_address_symbol" type="string">合并地址网络币，币种唯一标识</ResponseField>
         <ResponseField name="coin_type" type="integer">所属网络币类型，`0` 账户类型, `1` utxo类型网络, `2` Memo类型</ResponseField>
         <ResponseField name="min_withdraw" type="string">最小提币金额</ResponseField>
+        <ResponseField name="enable_deposit" type="string">是否开启充值，`0`关闭，`1`开启</ResponseField>
+        <ResponseField name="enable_withdraw" type="string">是否开启提现，`0`关闭，`1`开启</ResponseField>
+
     </Expandable>
 </ResponseField>
 
@@ -95,6 +98,8 @@ description: "获取ChainUp Custody MPC支持的网络及代币"
         "support_multi_addr": true,
         "merge_address_symbol": "ETH",
         "coin_type": 0,
+        "enable_deposit": "1",
+        "supporenable_withdrawt_memo": "1",
         "min_withdraw": "0"         
     },
     {
@@ -120,6 +125,8 @@ description: "获取ChainUp Custody MPC支持的网络及代币"
         "support_multi_addr": true,
         "merge_address_symbol": "ETH",    
         "coin_type": 0,
+        "enable_deposit": "1",
+        "supporenable_withdrawt_memo": "1",
         "min_withdraw": "0"    
     }
 
