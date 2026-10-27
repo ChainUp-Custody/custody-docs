@@ -55,6 +55,8 @@ description: "获取Keysecure MPC支持的网络及代币"
         <ResponseField name="merge_address_symbol" type="string">合并地址网络币，币种唯一标识</ResponseField>
         <ResponseField name="coin_type" type="integer">所属网络币类型，`0` 账户类型, `1` utxo类型网络, `2` Memo类型</ResponseField>
         <ResponseField name="min_withdraw" type="string">最小提币金额</ResponseField>
+        <ResponseField name="enable_deposit" type="string">是否开启充值，`0`关闭，`1`开启</ResponseField>
+        <ResponseField name="enable_withdraw" type="string">是否开启提现，`0`关闭，`1`开启</ResponseField>
     </Expandable>
 </ResponseField>
 
@@ -63,8 +65,7 @@ description: "获取Keysecure MPC支持的网络及代币"
 <RequestExample>
   ```curl cURL
   curl -X GET \
-  --url 'https://openapi.keysecure.io/
-api/mpc/coin_list?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data=SWYYr-LBVAmaS0eq8n-CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov-7hsRsVmOhyPqC-JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8-BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht-n_ZcBdxIDt975dbOFUiH-oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ-6cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb-5g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI'
+  --url 'https://openapi.chainup.com/api/mpc/coin_list?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data=SWYYr-LBVAmaS0eq8n-CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov-7hsRsVmOhyPqC-JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8-BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht-n_ZcBdxIDt975dbOFUiH-oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ-6cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb-5g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI'
   ```
 </RequestExample>
 
@@ -96,6 +97,8 @@ api/mpc/coin_list?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data=SWYYr-LBVAmaS0eq8
         "support_multi_addr": true,
         "merge_address_symbol": "ETH",
         "coin_type": 0,
+        "enable_deposit": "1",
+        "enable_withdraw": "1",
         "min_withdraw": "0"         
     },
     {
@@ -121,8 +124,11 @@ api/mpc/coin_list?app_id=16a9f17fc2ad61ca4339fdd6a8a37f21&data=SWYYr-LBVAmaS0eq8
         "support_multi_addr": true,
         "merge_address_symbol": "ETH",    
         "coin_type": 0,
+        "enable_deposit": "1",
+        "enable_withdraw": "1",
         "min_withdraw": "0"    
     }
+
 ]
 ```
 </ResponseExample>
